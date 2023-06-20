@@ -1,0 +1,5 @@
+cfg_redpoint.xls 	红点偏移位置，增加显示位置参数配置
+cfg_att_score.xls   	增加附加属性字体颜色excolor字段，配合SETADDNEWABIL命令使用
+cfg_monster.xls		16列扩展怪物中毒回血配置
+cfg_monattack.xls	8列扩展群攻伤害随机目标数量选取
+cfg_model_info.xls	增加AD-AK列传统PC端配置特效ID，传统PC客户端读取3端统一脚本命令
