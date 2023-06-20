@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plist version="1.0">
+  <dict>
+    <key>frames</key>
+    <dict>
+      <key>npc_2028_0_0_0_0011.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,0},{189,204}}</string>
+        <key>offset</key>
+        <string>{-76,114}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{0,0},{189,204}</string>
+        <key>sourceSize</key>
+        <string>{189,204}</string>
+      </dict>
+    </dict>
+    <key>metadata</key>
+    <dict>
+      <key>format</key>
+      <integer>2</integer>
+      <key>realTextureFileName</key>
+      <string>npc_2028_0_0_7.png</string>
+      <key>size</key>
+      <string>{256,256}</string>
+      <key>textureFileName</key>
+      <string>npc_2028_0_0_7.png</string>
+    </dict>
+  </dict>
+</plist>
