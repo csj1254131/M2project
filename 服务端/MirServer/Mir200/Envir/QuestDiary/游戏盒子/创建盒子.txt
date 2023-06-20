@@ -1,0 +1,16 @@
+[@创建盒子]
+{
+#IF
+#ACT
+VAR Integer HUMAN 礼包申请状态
+VAR Integer HUMAN 礼包领取状态
+VAR Integer HUMAN 礼包码申请状态
+VAR Integer HUMAN 礼包码领取状态
+VAR String   HUMAN 礼包领取日期
+#IF
+EQUAL <$CLIENTFLAG> 2
+#ACT
+ADDBUTTON 101 1 <Button|x=330|y=5|nimg=private/main/bottom/youxilibao.png|link=@开启盒子>
+#ELSEACT
+ADDBUTTON 101 1 <Button|x=250|y=50|nimg=private/main/bottom/youxilibao.png|link=@开启盒子>
+}

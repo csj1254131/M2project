@@ -1,0 +1,310 @@
+[@启动夺宝奇兵排行]
+{
+#IF
+#ACT
+SortHumVar B_夺宝奇兵积分  S$夺宝积分名次  N$夺宝积分值 0 1 10
+#IF
+LARGE N$夺宝积分值1 0
+#ACT
+MOV A251 <$STR(S$夺宝积分名次1)>
+MOV G251 <$STR(N$夺宝积分值1)>
+#ELSEACT
+MOV A251 虚位以待
+MOV G251 0
+
+#IF
+LARGE N$夺宝积分值2 0
+#ACT
+MOV A252 <$STR(S$夺宝积分名次2)>
+MOV G252 <$STR(N$夺宝积分值2)>
+#ELSEACT
+MOV A252 虚位以待
+MOV G252 0
+
+#IF
+LARGE N$夺宝积分值3 0
+#ACT
+MOV A253 <$STR(S$夺宝积分名次3)>
+MOV G253 <$STR(N$夺宝积分值3)>
+#ELSEACT
+MOV A253 虚位以待
+MOV G253 0
+
+#IF
+LARGE N$夺宝积分值4 0
+#ACT
+MOV A254 <$STR(S$夺宝积分名次4)>
+MOV G254 <$STR(N$夺宝积分值4)>
+#ELSEACT
+MOV A254 虚位以待
+MOV G254 0
+
+#IF
+LARGE N$夺宝积分值5 0
+#ACT
+MOV A255 <$STR(S$夺宝积分名次5)>
+MOV G255 <$STR(N$夺宝积分值5)>
+#ELSEACT
+MOV A255 虚位以待
+MOV G255 0
+
+#IF
+LARGE N$夺宝积分值6 0
+#ACT
+MOV A256 <$STR(S$夺宝积分名次6)>
+MOV G256 <$STR(N$夺宝积分值6)>
+#ELSEACT
+MOV A256 虚位以待
+MOV G256 0
+
+#IF
+LARGE N$夺宝积分值7 0
+#ACT
+MOV A257 <$STR(S$夺宝积分名次7)>
+MOV G257 <$STR(N$夺宝积分值7)>
+#ELSEACT
+MOV A257 虚位以待
+MOV G257 0
+
+#IF
+LARGE N$夺宝积分值8 0
+#ACT
+MOV A258 <$STR(S$夺宝积分名次8)>
+MOV G258 <$STR(N$夺宝积分值8)>
+#ELSEACT
+MOV A258 虚位以待
+MOV G258 0
+
+#IF
+LARGE N$夺宝积分值9 0
+#ACT
+MOV A259 <$STR(S$夺宝积分名次9)>
+MOV G259 <$STR(N$夺宝积分值9)>
+#ELSEACT
+MOV A259 虚位以待
+MOV G259 0
+
+#IF
+LARGE N$夺宝积分值10 0
+#ACT
+MOV A260 <$STR(S$夺宝积分名次10)>
+MOV G260 <$STR(N$夺宝积分值10)>
+#ELSEACT
+MOV A260 虚位以待
+MOV G260 0
+
+[@更新夺宝判断]
+#IF
+EQUAL N$显示面板 0
+#ACT
+GOTO @夺宝积分面板
+break
+#IF
+EQUAL N$显示面板 1
+#ACT
+GOTO @夺宝奇兵榜单
+break
+
+[@夺宝积分面板]
+#IF
+EQUAL <$HUMAN(B_夺宝奇兵积分)> ??
+#ACT
+VAR Integer HUMAN B_夺宝奇兵积分
+#IF
+#ACT
+MOV N$临时夺宝时间 <$STR(G249)>
+DEC N$临时夺宝时间 <$UTCNOW8>
+MOV N$显示面板 0
+HumVarRank B_夺宝奇兵积分 N$夺宝榜单位置 0 1
+MOV S$夺宝积分排行面板 <ListView|children={1,2,3,4,5,6,7,8,9,10,11,12}|x=0|y=0|width=200|height=180|margin=0|bounce=0|direction=1|color=x>
+INC S$夺宝积分排行面板 <Layout|id=1|children={1110,1111}|width=200|height=25|color=x>
+INC S$夺宝积分排行面板 <Text|id=1110|a=4|percentx=45|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=夺宝奇兵>
+INC S$夺宝积分排行面板 <Img|id=2|img=public/1900000667_1.png|width=200>
+INC S$夺宝积分排行面板 <Layout|id=3|children={31}|width=200|height=50|color=x>
+INC S$夺宝积分排行面板 <Img|id=31|a=4|percentx=50|percenty=50|img=Topwear/duobao1.png>
+INC S$夺宝积分排行面板 <Layout|id=4|children={41,42}|width=200|height=20|color=x>
+#IF
+EQUAL G246 0
+#ACT
+INC S$夺宝积分排行面板 <RText|id=41|a=4|percentx=40|percenty=50|color=100|size=18|text=未刷新>
+INC S$夺宝积分排行面板 <COUNTDOWN|id=42|time=10|count=1|size=18|color=191|x=110|y=-2>
+#IF
+EQUAL G246 1
+#ACT
+INC S$夺宝积分排行面板 <RText|id=41|a=4|percentx=50|percenty=50|color=250|size=18|text=已刷新>
+#IF
+ISONMAP dbqb
+#ACT
+INC S$夺宝积分排行面板 <Layout|id=5|width=200|height=40|color=x>
+INC S$夺宝积分排行面板 <Layout|id=6|children={61}|width=200|height=20|color=x>
+INC S$夺宝积分排行面板 <RText|id=61|x=10|y=0|color=100|size=18|text=当前积分:　<<$HUMAN(B_夺宝奇兵积分)>/FCOLOR=253>>
+INC S$夺宝积分排行面板 <Layout|id=7|children={71}|width=200|height=20|color=x>
+INC S$夺宝积分排行面板 <RText|id=71|x=10|y=0|color=100|size=18|text=当前排名:　<第<$STR(N$夺宝榜单位置)>名/FCOLOR=218>>
+INC S$夺宝积分排行面板 <Img|x=225|y=70|img=custom/hl/hdtb_ui/duobaoph.png|link=@显示夺宝榜单>
+INC S$夺宝积分排行面板 <Img|x=225|y=130|img=custom/hl/hdtb_ui/duobaotc.png|link=@退出夺宝奇兵>
+INC S$夺宝积分排行面板 <TIMETIPS|time=<$STR(N$临时夺宝时间)>|color=191|size=18|outline=2|outlinecolor=0|x=220|y=185>
+ADDBUTTON 110 17 <$STR(S$夺宝积分排行面板)>
+
+[@夺宝奇兵榜单]
+#IF
+ISONMAP dbqb
+#ACT
+NEWDELETETASK 1
+MOV N$临时夺宝时间 <$STR(G249)>
+DEC N$临时夺宝时间 <$UTCNOW8>
+MOV N$显示面板 1
+MOV S$夺宝积分排行面板 <ListView|children={1,2,3,4,5,6,7,8,9,10,11,12}|x=0|y=0|width=200|height=180|margin=0|bounce=0|direction=1|color=x>
+INC S$夺宝积分排行面板 <Layout|id=1|children={1110,1111}|width=200|height=25|color=x>
+INC S$夺宝积分排行面板 <Text|id=1110|a=4|percentx=45|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=夺宝奇兵积分榜>
+INC S$夺宝积分排行面板 <COUNTDOWN|id=1111|a=4|percentx=90|percenty=50|time=10|count=1|size=18|color=249>
+INC S$夺宝积分排行面板 <Img|id=2|img=public/1900000667_1.png|width=200>
+INC S$夺宝积分排行面板 <Layout|id=3|children={31,32}|width=200|height=50|color=x>
+INC S$夺宝积分排行面板 <RText|id=31|x=0|y=0|color=253|size=18|text=1:<$STR(A251)>\　　　积分:<<$STR(G251)>/FCOLOR=250>>
+INC S$夺宝积分排行面板 <ItemShow|id=32|itemid=40706|itemcount=1|showtips=1|x=140|y=-5|bgtype=1|scale=0.8>
+INC S$夺宝积分排行面板 <Layout|id=4|children={41,42}|width=200|height=50|color=x>
+INC S$夺宝积分排行面板 <RText|id=41|x=0|y=0|color=243|size=18|text=2:<$STR(A252)>\　　　积分:<<$STR(G252)>/FCOLOR=250>>
+INC S$夺宝积分排行面板 <ItemShow|id=42|itemid=40707|itemcount=1|showtips=1|x=140|y=-5|bgtype=1|scale=0.8>
+INC S$夺宝积分排行面板 <Layout|id=5|children={51,52}|width=200|height=50|color=x>
+INC S$夺宝积分排行面板 <RText|id=51|x=0|y=0|color=239|size=18|text=3:<$STR(A253)>\　　　积分:<<$STR(G253)>/FCOLOR=250>>
+INC S$夺宝积分排行面板 <ItemShow|id=52|itemid=40708|itemcount=1|showtips=1|x=140|y=-5|bgtype=1|scale=0.8>
+INC S$夺宝积分排行面板 <Layout|id=6|children={61,62}|width=200|height=50|color=x>
+INC S$夺宝积分排行面板 <RText|id=61|x=0|y=0|color=100|size=18|text=4:<$STR(A254)>\　　　积分:<<$STR(G254)>/FCOLOR=250>>
+INC S$夺宝积分排行面板 <ItemShow|id=62|itemid=40709|itemcount=1|showtips=1|x=140|y=-5|bgtype=1|scale=0.8>
+INC S$夺宝积分排行面板 <Layout|id=7|children={71,72}|width=200|height=50|color=x>
+INC S$夺宝积分排行面板 <RText|id=71|x=0|y=0|color=100|size=18|text=5:<$STR(A255)>\　　　积分:<<$STR(G255)>/FCOLOR=250>>
+INC S$夺宝积分排行面板 <ItemShow|id=72|itemid=40709|itemcount=1|showtips=1|x=140|y=-5|bgtype=1|scale=0.8>
+INC S$夺宝积分排行面板 <Layout|id=8|children={81,82}|width=200|height=50|color=x>
+INC S$夺宝积分排行面板 <RText|id=81|x=0|y=0|color=100|size=18|text=6:<$STR(A256)>\　　　积分:<<$STR(G256)>/FCOLOR=250>>
+INC S$夺宝积分排行面板 <ItemShow|id=82|itemid=40709|itemcount=1|showtips=1|x=140|y=-5|bgtype=1|scale=0.8>
+INC S$夺宝积分排行面板 <Layout|id=9|children={91,92}|width=200|height=50|color=x>
+INC S$夺宝积分排行面板 <RText|id=91|x=0|y=0|color=100|size=18|text=7:<$STR(A257)>\　　　积分:<<$STR(G257)>/FCOLOR=250>>
+INC S$夺宝积分排行面板 <ItemShow|id=92|itemid=40709|itemcount=1|showtips=1|x=140|y=-5|bgtype=1|scale=0.8>
+INC S$夺宝积分排行面板 <Layout|id=10|children={101,102}|width=200|height=50|color=x>
+INC S$夺宝积分排行面板 <RText|id=101|x=0|y=0|color=100|size=18|text=8:<$STR(A258)>\　　　积分:<<$STR(G258)>/FCOLOR=250>>
+INC S$夺宝积分排行面板 <ItemShow|id=102|itemid=40709|itemcount=1|showtips=1|x=140|y=-5|bgtype=1|scale=0.8>
+INC S$夺宝积分排行面板 <Layout|id=11|children={111,112}|width=200|height=50|color=x>
+INC S$夺宝积分排行面板 <RText|id=111|x=0|y=0|color=100|size=18|text=9:<$STR(A259)>\　　　积分:<<$STR(G259)>/FCOLOR=250>>
+INC S$夺宝积分排行面板 <ItemShow|id=112|itemid=40709|itemcount=1|showtips=1|x=140|y=-5|bgtype=1|scale=0.8>
+INC S$夺宝积分排行面板 <Layout|id=12|children={121,122}|width=200|height=50|color=x>
+INC S$夺宝积分排行面板 <RText|id=121|x=0|y=0|color=100|size=18|text=10:<$STR(A260)>\　　　积分:<<$STR(G260)>/FCOLOR=250>>
+INC S$夺宝积分排行面板 <ItemShow|id=122|itemid=40709|itemcount=1|showtips=1|x=140|y=-5|bgtype=1|scale=0.8>
+INC S$夺宝积分排行面板 <Img|x=225|y=70|img=custom/hl/hdtb_ui/duobaoqibing.png|width=59|height=59|link=@去夺宝积分面板>
+INC S$夺宝积分排行面板 <Img|x=225|y=130|img=custom/hl/hdtb_ui/duobaotc.png|link=@退出夺宝奇兵>
+INC S$夺宝积分排行面板 <TIMETIPS|time=<$STR(N$临时夺宝时间)>|color=191|size=18|outline=2|outlinecolor=0|x=220|y=185>
+ADDBUTTON 110 17 <$STR(S$夺宝积分排行面板)>
+
+
+[@退出夺宝奇兵]
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/tsbj.png>
+<Layout|id=0|children={1}|x=452|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=170|y=8|width=120|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=夺宝奇兵>
+<Text|id=3|children={31,32,33}|x=30|y=50|color=251|size=18|outline=2|outlinecolor=0|text=夺宝奇兵>
+<RText|id=31|x=0|y=25|color=255|size=18|outline=2|outlinecolor=0|text=外面的空气真香,百花盛开,野菊遍地,>
+<RText|id=32|x=0|y=50|color=255|size=18|outline=2|outlinecolor=0|text=我想出去呼吸新鲜空气。>
+<Button|id=4|x=75|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=退出夺宝|link=@退出夺宝地图>
+<Button|id=5|x=225|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=继续留下|link=@exit>
+
+[@退出夺宝地图]
+#IF
+#ACT
+#CALL [\游戏功能\任务系统\主线流程.txt] @主线开始
+MAPMOVE 3 330 330 2
+
+[@发放夺宝奇兵奖励]
+#IF
+#ACT
+SetOffTimer 102
+#CALL [\游戏功能\任务系统\主线流程.txt] @主线开始
+DELBUTTON 110 17
+DELBUTTON 107 18
+#IF
+CHECKVAR HUMAN B_夺宝奇兵积分 = 0
+#ACT
+BREAK
+
+#IF
+EQUAL A251 <$USERNAME>
+#ACT
+MOV A280 <$USERNAME>
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+SENDMSG 0 恭喜玩家【<$USERNAME>】在夺宝奇兵活动中夺得榜首，并获得"瞅你咋地"称号
+MailGIVE 夺宝奇兵·榜首 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在夺宝奇兵的突出表现系统给你准备了【夺宝奇兵·榜首】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A252 <$USERNAME>
+#ACT
+MailGIVE 夺宝奇兵·二 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在夺宝奇兵的突出表现系统给你准备了【夺宝奇兵·二】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A253 <$USERNAME>
+#ACT
+MailGIVE 夺宝奇兵·三 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在夺宝奇兵的突出表现系统给你准备了【夺宝奇兵·三】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A254 <$USERNAME>
+#ACT
+MailGIVE 夺宝奇兵·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在夺宝奇兵的突出表现系统给你准备了【夺宝奇兵·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A255 <$USERNAME>
+#ACT
+MailGIVE 夺宝奇兵·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在夺宝奇兵的突出表现系统给你准备了【夺宝奇兵·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A256 <$USERNAME>
+#ACT
+MailGIVE 夺宝奇兵·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在夺宝奇兵的突出表现系统给你准备了【夺宝奇兵·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A257 <$USERNAME>
+#ACT
+MailGIVE 夺宝奇兵·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在夺宝奇兵的突出表现系统给你准备了【夺宝奇兵·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A258 <$USERNAME>
+#ACT
+MailGIVE 夺宝奇兵·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在夺宝奇兵的突出表现系统给你准备了【夺宝奇兵·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A259 <$USERNAME>
+#ACT
+MailGIVE 夺宝奇兵·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在夺宝奇兵的突出表现系统给你准备了【夺宝奇兵·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A260 <$USERNAME>
+#ACT
+MailGIVE 夺宝奇兵·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在夺宝奇兵的突出表现系统给你准备了【夺宝奇兵·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+#ACT
+MailGIVE 10000绑定元宝 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在夺宝奇兵的突出表现系统给你准备了【10000绑定元宝】作为奖励,请提取
+
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+[@材料支线]
+{
+#IF
+check [420] 0
+check [421] 0
+checkitem 火龙气息 1
+CHECKRENEWLEVEL > 4
+#ACT
+set [420] 1
+NEWPICKTASK 33
+
+#IF
+check [416] 0
+check [417] 0
+CheckContainsText <$NEWBAGITEMNAME> 经验卷
+NOT CheckContainsText <$NEWBAGITEMNAME> 经验卷轴
+#ACT
+set [416] 1
+NEWPICKTASK 26
+
+#IF
+check [422] 0
+check [423] 0
+checkitem 火龙凭证 3
+#ACT
+set [422] 1
+NEWPICKTASK 34
+
+#IF
+check [424] 0
+check [425] 0
+#ACT
+GOTO @龙魂材料任务四项
+
+[@龙魂材料任务四项]
+#OR
+checkitem 洗髓丹 5
+checkitem 恶魔头颅 5
+checkitem 龍の魄 5
+checkitem 龍の心 5
+#ACT
+set [424] 1
+NEWPICKTASK 35
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

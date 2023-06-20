@@ -1,0 +1,297 @@
+[@MAIN]
+#IF
+#ACT
+MOV S$等级榜提示
+GOTO @天下第一界面
+
+[@天下第一界面]
+#IF
+#ACT
+MOV N$给猛男第一 0
+MOV S$第一猛男记录 <$STR(A275)>
+GetValidstr <$STR(S$第一猛男记录)> | S$第一转生_猛男 S$经验串
+GetValidstr <$STR(S$经验串)> | S$第一等级_猛男 S$第一经验_猛男 
+MOV N$第一转生_猛男 <$STR(S$第一转生_猛男)>
+MOV N$第一等级_猛男 <$STR(S$第一等级_猛男)>
+MOV N$第一经验_猛男 <$STR(S$第一经验_猛男)>
+MOV N$给美女第一 0
+MOV S$第一美女记录 <$STR(A276)>
+GetValidstr <$STR(S$第一美女记录)> | S$第一转生_美女 S$经验串
+GetValidstr <$STR(S$经验串)> | S$第一等级_美女 S$第一经验_美女 
+MOV N$第一转生_美女 <$STR(S$第一转生_美女)>
+MOV N$第一等级_美女 <$STR(S$第一等级_美女)>
+MOV N$第一经验_美女 <$STR(S$第一经验_美女)>
+
+#IF
+NOT EQUAL A273
+NOT EQUAL A273 虚位以待
+#ACT
+MOV S$猛男经验显示 <RText|id=45|a=4|percentx=50|percenty=86|color=254|size=18|outline=2|outlinecolor=0|text=<<$STR(N$第一转生_猛男)>转　<$STR(N$第一等级_猛男)>级　<$STR(N$第一经验_猛男)>经验值/FCOLOR=250>>
+MOV S$第一猛男装备 <$STR(A277)>
+GetValidstr <$STR(S$第一猛男装备)> | S$武器内观ID S$猛男装备串
+GetValidstr <$STR(S$猛男装备串)> | S$武器特效ID S$猛男装备串
+GetValidstr <$STR(S$猛男装备串)> | S$衣服内观ID S$衣服特效ID
+MOV N$第一男武器内观ID <$STR(S$武器内观ID)>
+MOV N$第一男武器特效ID <$STR(S$武器特效ID)>
+MOV N$第一男衣服内观ID <$STR(S$衣服内观ID)>
+MOV N$第一男衣服特效ID <$STR(S$衣服特效ID)>
+#ELSEACT
+MOV A273 虚位以待
+MOV S$猛男经验显示
+MOV N$第一男武器内观ID 30
+MOV N$第一男衣服内观ID 60
+#IF
+NOT EQUAL A274
+NOT EQUAL A274 虚位以待
+#ACT
+MOV S$美女经验显示 <RText|id=55|a=4|percentx=50|percenty=86|color=254|size=18|outline=2|outlinecolor=0|text=<<$STR(N$第一转生_美女)>转　<$STR(N$第一等级_美女)>级　<$STR(N$第一经验_美女)>经验值/FCOLOR=250>>
+MOV S$第一美女装备 <$STR(A278)>
+GetValidstr <$STR(S$第一美女装备)> | S$武器内观ID S$美女装备串
+GetValidstr <$STR(S$美女装备串)> | S$武器特效ID S$美女装备串
+GetValidstr <$STR(S$美女装备串)> | S$衣服内观ID S$衣服特效ID
+MOV N$第一女武器内观ID <$STR(S$武器内观ID)>
+MOV N$第一女武器特效ID <$STR(S$武器特效ID)>
+MOV N$第一女衣服内观ID <$STR(S$衣服内观ID)>
+MOV N$第一女衣服特效ID <$STR(S$衣服特效ID)>
+#ELSEACT
+MOV A274 虚位以待
+MOV S$美女经验显示
+MOV N$第一女武器内观ID 30
+MOV N$第一女衣服内观ID 80
+#IF
+#ACT
+#SAY
+<Img|x=0|y=0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Layout|id=2|children={21}|x=300|y=5|width=170|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=100|size=20|outline=2|outlinecolor=0|text=天下第一>
+<Layout|id=3|children={31}|x=20|y=62|width=730|height=445|color=x>
+<Img|id=31|img=custom/hl/hdtb_ui/diyibeijing.jpg>
+
+<Layout|id=4|children={41,42,43,44,45,46}|x=25|y=60|width=320|height=445|color=x>
+<Img|id=41|x=39|y=255|img=custom/hl/hdtb_ui/diyitaizi.png>
+<UIModel|id=42|x=165|y=180|scale=1||sex=0|weaponID=<$STR(N$第一男武器内观ID)>|weaponEffectID=<$STR(N$第一男武器特效ID)>#0#0#0|clothID=<$STR(N$第一男衣服内观ID)>|clothEffectID=<$STR(N$第一男衣服特效ID)>#1#0#0>
+<RText|id=43|a=4|percentx=50|percenty=74|color=254|size=18|outline=2|outlinecolor=0|text=【天下第一猛男】>
+<RText|id=44|a=4|percentx=50|percenty=80|color=253|size=18|outline=2|outlinecolor=0|text=【<<$STR(A273)>/FCOLOR=249>】>
+<$STR(S$猛男经验显示)>
+<Button|id=46|a=4|percentx=50|percenty=95|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=申请第一猛男|link=@申请第一猛男>
+
+<Layout|id=5|children={51,52,53,54,55,56}|x=430|y=60|width=320|height=445|color=x>
+<Img|id=51|x=39|y=255|img=custom/hl/hdtb_ui/diyitaizi.png>
+<UIModel|id=52|x=165|y=180|scale=1||sex=1|weaponID=<$STR(N$第一女武器内观ID)>|weaponEffectID=<$STR(N$第一女武器特效ID)>#0#0#0|clothID=<$STR(N$第一女衣服内观ID)>|clothEffectID=<$STR(N$第一女衣服特效ID)>#1#0#0>
+<RText|id=53|a=4|percentx=50|percenty=74|color=254|size=18|outline=2|outlinecolor=0|text=【天下第一美女】>
+<RText|id=54|a=4|percentx=50|percenty=80|color=253|size=18|outline=2|outlinecolor=0|text=【<<$STR(A274)>/FCOLOR=249>】>
+<$STR(S$美女经验显示)>
+<Button|id=56|a=4|percentx=50|percenty=95|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=申请第一美女|link=@申请第一美女>
+
+<Text|id=6|a=4|percentx=50|percenty=48|color=254|size=20|outline=2|outlinecolor=0|text=[天下第一属性]>
+<Text|id=7|a=4|percentx=50|percenty=53|color=255|size=20|outline=2|outlinecolor=0|text=最大血量+1120>
+<Text|id=8|a=4|percentx=50|percenty=58|color=255|size=20|outline=2|outlinecolor=0|text=最大蓝量+540>
+<Text|id=9|a=4|percentx=50|percenty=63|color=255|size=20|outline=2|outlinecolor=0|text=人物减伤+5%>
+<Button|id=12|x=710.0|y=63.0|nimg=custom/hl/hl_ui/icon_fuhao_02.png|pimg=custom/hl/hl_ui/icon_fuhao_02.png|color=103|size=18|link=@等级榜提示>
+<$STR(S$等级榜提示)>
+
+[@等级榜提示]
+#IF
+NOT EQUAL S$等级榜提示
+#ACT
+MOV S$等级榜提示
+GOTO @天下第一界面
+#ELSEACT
+MOV S$等级榜提示 <Img|id=13|children={131,132,133,134,135}|x=389.0|y=70|img=public/1900000650.png>
+INC S$等级榜提示 <RText|id=131|x=20|y=10|color=103|size=18|text=1、每次合区之后，<天下第一等级榜/FCOLOR=250>\数据以<主服为准/FCOLOR=58>。>
+INC S$等级榜提示 <RText|id=132|x=20|y=60|color=103|size=18|text=2、从服玩家可以申请<抢夺天下第一/FCOLOR=253>>
+INC S$等级榜提示 <Layout|id=14|x=260|y=60|width=500|height=430|color=x|link=@关闭等级榜提示>
+GOTO @天下第一界面
+
+[@关闭等级榜提示]
+#IF
+#ACT
+MOV S$等级榜提示
+GOTO @天下第一界面
+
+
+[@申请第一猛男]
+#IF
+CHECKLEVELEX < 50
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级少于50级无法申请！</font>
+BREAK
+
+#IF
+gender man
+#ACT
+MOV N$给猛男第一 0
+MOV S$第一猛男记录 <$STR(A275)>
+GetValidstr <$STR(S$第一猛男记录)> | S$第一转生_猛男 S$经验串
+GetValidstr <$STR(S$经验串)> | S$第一等级_猛男 S$第一经验_猛男 
+MOV N$第一转生_猛男 <$STR(S$第一转生_猛男)>
+MOV N$第一等级_猛男 <$STR(S$第一等级_猛男)>
+MOV N$第一经验_猛男 <$STR(S$第一经验_猛男)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>你不是男性玩家！</font>
+BREAK
+
+#IF
+LARGE <$RELEVEL> <$STR(N$第一转生_猛男)>
+#ACT
+MOV N$给猛男第一 1
+GOTO @猛男天下第一
+BREAK
+#IF
+EQUAL <$RELEVEL> <$STR(N$第一转生_猛男)>
+LARGE <$LEVEL> <$STR(N$第一等级_猛男)>
+#ACT
+MOV N$给猛男第一 1
+GOTO @猛男天下第一
+BREAK
+#IF
+EQUAL <$RELEVEL> <$STR(N$第一转生_猛男)>
+EQUAL <$LEVEL> <$STR(N$第一等级_猛男)>
+LARGE <$EXP> <$STR(N$第一经验_猛男)>
+#ACT
+MOV N$给猛男第一 1
+GOTO @猛男天下第一
+BREAK
+
+#IF
+EQUAL <$RELEVEL> <$STR(N$第一转生_猛男)>
+EQUAL <$LEVEL> <$STR(N$第一等级_猛男)>
+EQUAL A273 <$USERNAME>
+#ACT
+SENDMSG 9 <font color='#ff0000'>您已上榜，请勿重复提交！</font>
+BREAK
+
+#IF
+#ACT
+SENDMSG 9 <font color='#ff0000'>你的资历不足，再去历练一下吧！</font>
+
+[@猛男天下第一]
+#IF
+EQUAL N$给猛男第一 1
+#ACT
+MOV S$上届第一猛男 <$STR(A273)>
+MOV A273 <$USERNAME>
+MOV A275 <$RELEVEL>|<$LEVEL>|<$EXP>
+CALCVAR HUMAN 顶戴展示八 = l1
+SAVEVAR HUMAN 顶戴展示八
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+HCALL <$STR(S$上届第一猛男)> @第一等级榜刷新
+GOTO @第一形象记录
+MOV A277 <$STR(N$第一武器内观ID)>|<$STR(N$第一武器特效ID)>|<$STR(N$第一衣服内观ID)>|<$STR(N$第一衣服特效ID)>
+S$上届第一猛男.sendmsg 7 你的【天下第一猛男】称号已经被【<$STR(A273)>】顶替。
+SENDMSGNEW 255 0 玩家:<$USERNAME>玩家成功申请为天下第一猛男，大家一起来膜拜吧！ 1 5
+GOTO @MAIN
+
+
+
+[@申请第一美女]
+#IF
+CHECKLEVELEX < 50
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级少于50级无法申请！</font>
+BREAK
+#IF
+gender woman
+#ACT
+MOV N$给美女第一 0
+MOV S$第一美女记录 <$STR(A276)>
+GetValidstr <$STR(S$第一美女记录)> | S$第一转生_美女 S$经验串
+GetValidstr <$STR(S$经验串)> | S$第一等级_美女 S$第一经验_美女 
+MOV N$第一转生_美女 <$STR(S$第一转生_美女)>
+MOV N$第一等级_美女 <$STR(S$第一等级_美女)>
+MOV N$第一经验_美女 <$STR(S$第一经验_美女)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>你不是女性玩家！</font>
+BREAK
+
+#IF
+LARGE <$RELEVEL> <$STR(N$第一转生_美女)>
+#ACT
+MOV N$给美女第一 1
+GOTO @美女天下第一
+BREAK
+#IF
+EQUAL <$RELEVEL> <$STR(N$第一转生_美女)>
+LARGE <$LEVEL> <$STR(N$第一等级_美女)>
+#ACT
+MOV N$给美女第一 1
+GOTO @美女天下第一
+BREAK
+#IF
+EQUAL <$RELEVEL> <$STR(N$第一转生_美女)>
+EQUAL <$LEVEL> <$STR(N$第一等级_美女)>
+LARGE <$EXP> <$STR(N$第一经验_美女)>
+#ACT
+MOV N$给美女第一 1
+GOTO @美女天下第一
+BREAK
+
+#IF
+EQUAL <$RELEVEL> <$STR(N$第一转生_美女)>
+EQUAL <$LEVEL> <$STR(N$第一等级_美女)>
+EQUAL A274 <$USERNAME>
+#ACT
+SENDMSG 9 <font color='#ff0000'>您已上榜，请勿重复提交！</font>
+BREAK
+
+#IF
+#ACT
+SENDMSG 9 <font color='#ff0000'>你的资历不足，再去历练一下吧！</font>
+
+[@美女天下第一]
+#IF
+EQUAL N$给美女第一 1
+#ACT
+MOV S$上届第一美女 <$STR(A274)>
+MOV A274 <$USERNAME>
+MOV A276 <$RELEVEL>|<$LEVEL>|<$EXP>
+CALCVAR HUMAN 顶戴展示八 = l2
+SAVEVAR HUMAN 顶戴展示八
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+HCALL <$STR(S$上届第一美女)> @第一等级榜刷新
+GOTO @第一形象记录
+MOV A278 <$STR(N$第一武器内观ID)>|<$STR(N$第一武器特效ID)>|<$STR(N$第一衣服内观ID)>|<$STR(N$第一衣服特效ID)>
+S$上届第一美女.sendmsg 7 你的【天下第一美女】称号已经被【<$STR(A274)>】顶替。
+SENDMSGNEW 255 0 玩家:<$USERNAME>玩家成功申请为天下第一美女，大家一起来膜拜吧！ 1 5
+GOTO @MAIN
+
+
+[@第一形象记录]
+#IF
+LARGE U229 0
+LARGE U230 0
+#ACT
+MOV N$第一武器内观ID <$STR(U229)>
+MOV N$第一武器特效ID <$STR(U230)>
+#ELSEACT
+GetDBItemFieldValue <$WEAPON> looks N$第一武器内观ID
+GetDBItemFieldValue <$WEAPON> sEffect N$第一武器特效ID
+
+
+#IF
+LARGE U233 0
+LARGE U234 0
+#ACT
+MOV N$第一衣服内观ID <$STR(U233)>
+MOV N$第一衣服特效ID <$STR(U234)>
+#ELSEACT
+GetDBItemFieldValue <$DRESS> looks N$第一衣服内观ID
+GetDBItemFieldValue <$DRESS> sEffect N$第一衣服特效ID
+
+
+
+
+
+
+
+
+

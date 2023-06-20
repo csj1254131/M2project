@@ -1,0 +1,129 @@
+[@首冲相关]
+{
+#IF
+EQUAL U119 1
+#ACT
+Mov s$首冲状态 立即领取
+Mov s$首冲跳转 首冲领取
+#ELSEACT
+Mov s$首冲状态 前往充值
+Mov s$首冲跳转 首冲充值
+
+#IF
+CHECKJOB  Warrior
+#ACT
+Mov s$职业序号 0
+#IF
+CHECKJOB  Wizard
+#ACT
+Mov s$职业序号 1
+#IF
+CHECKJOB  Taoist
+#ACT
+Mov s$职业序号 2
+
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励idx_1  s$首冲奖励idx_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励idx_2  s$首冲奖励idx_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励idx_3  s$首冲奖励idx_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励idx_4_<$Str(s$职业序号)>  s$首冲奖励idx_4
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励idx_5  s$首冲奖励idx_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励mc_1  s$首冲奖励mc_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励mc_2  s$首冲奖励mc_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励mc_3  s$首冲奖励mc_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励mc_4_<$Str(s$职业序号)>  s$首冲奖励mc_4
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励mc_5  s$首冲奖励mc_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励sl_1  s$首冲奖励sl_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励sl_2  s$首冲奖励sl_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励sl_3  s$首冲奖励sl_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励sl_4_<$Str(s$职业序号)>  s$首冲奖励sl_4
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲奖励sl_5  s$首冲奖励sl_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲武器Looks  s$首冲武器Looks
+ReadConfigFileItem ..\QuestDiary\功能脚本\首冲相关\首冲配置.ini 首冲配置 首冲武器tx   s$首冲武器tx
+Goto @首冲展示
+[@首冲展示]
+<Img|width=2500|height=2500|bg=1|show=4|img=public/1900000651_1.png>
+<Img|a=4|children={0,1,2,3,5,6,7,13,15}|img=custom/hl/shouchong_ui/bg.png|percentx=50|percenty=50>
+<Layout|a=4|id=13|children={14}|x=680|y=40|width=50|height=50|color=x|link=@exit>
+<Button|id=14|nimg=custom/hl/shouchong_ui/scgb.png|x=0|y=20|link=@exit>
+<Img|a=4|id=1|img=custom/hl/shouchong_ui/word_shouchong_01.png|percentx=50|percenty=5>
+<Img|a=4|id=2|img=custom/hl/shouchong_ui/word_shouchong_02.png|percentx=50|percenty=35>
+<Img|a=4|id=3|children={4}|img=custom/hl/shouchong_ui/bg_1.png|percentx=10|percenty=85>
+
+<UIModel|id=4|a=4|percentx=70|percenty=5|scale=1|weaponID=<$Str(s$首冲武器Looks)>|weaponEffectID=<$Str(s$首冲武器tx)>#0#0|notShowMold=true>
+
+<Img|a=4|id=5|img=custom/hl/shouchong_ui/word_shouchong_03.png|percentx=10|percenty=95>
+<ListView|a=4|id=7|children={8,9,10,11,12}|direction=2|bounce=0|margin=10|percentx=50|percenty=65|width=370|height=70|color=x>
+<ItemShow|id=8|children={8a}|itemid=<$Str(s$首冲奖励idx_1)>|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=9|children={9a}|itemid=<$Str(s$首冲奖励idx_2)>|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=10|children={10a}|itemid=<$Str(s$首冲奖励idx_3)>|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=11|children={11a}|itemid=<$Str(s$首冲奖励idx_4)>|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=12|children={12a}|itemid=<$Str(s$首冲奖励idx_5)>|itemcount=1|showtips=1|bgtype=1>
+<Button|a=4|id=15|children={16}|percentx=50|percenty=85|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|link=@<$str(s$首冲跳转)>>
+<Text|id=16|a=4|text=<$Str(s$首冲状态)>|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=50>
+#IF
+LARGE s$首冲奖励sl_1 0
+#SAY
+<Text|a=4|id=8a|text=<$Str(s$首冲奖励sl_1)>|size=17|color=255|outline=2|outlinecolor=0|percentx=80|percenty=80>
+#IF
+LARGE s$首冲奖励sl_2 0
+#SAY
+<Text|a=4|id=9a|text=<$Str(s$首冲奖励sl_2)>|size=17|color=255|outline=2|outlinecolor=0|percentx=80|percenty=80>
+#IF
+LARGE s$首冲奖励sl_3 0
+#SAY
+<Text|a=4|id=10a|text=<$Str(s$首冲奖励sl_3)>|size=17|color=255|outline=2|outlinecolor=0|percentx=80|percenty=80>
+#IF
+LARGE s$首冲奖励sl_4 0
+#SAY
+<Text|a=4|id=11a|text=<$Str(s$首冲奖励sl_4)>|size=17|color=255|outline=2|outlinecolor=0|percentx=80|percenty=80>
+#IF
+LARGE s$首冲奖励sl_5 0
+#SAY
+<Text|a=4|id=12a|text=<$Str(s$首冲奖励sl_5)>|size=17|color=255|outline=2|outlinecolor=0|percentx=80|percenty=80>
+
+
+[@首冲领取]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+
+#IF
+EQUAL U119 1
+;CHECK [001] 0
+#ACT
+;SET [001] 1
+INC U119 1
+;GiveStateItem <$Str(s$首冲奖励mc_1)> 1 0 1 0 1 1 1 1 1
+Give <$Str(s$首冲奖励mc_1)> 1
+GiveStateItem <$Str(s$首冲奖励mc_2)> <$Str(s$首冲奖励sl_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$首冲奖励mc_3)> <$Str(s$首冲奖励sl_3)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$首冲奖励mc_4)> <$Str(s$首冲奖励sl_4)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$首冲奖励mc_5)> <$Str(s$首冲奖励sl_5)> 0 1 0 1 1 1 1 1
+AutoTakeOnItem <$Str(s$首冲奖励mc_1)> 1
+SENDMSGNEW 255 0 玩家　{<$USERNAME>/FCOLOR=251}，领取了　{首冲礼包/FCOLOR=249} 1 2
+MOV S$图标2 <Layout|children={1,2,3,4,5,6}|width=300|height=80|x=-500|y=90|color=x>
+;addbutton 102 2 <$STR(S$图标2)>
+MOV n$top 1
+Close
+#CALL [\功能脚本\红点系统\红点系统.txt] @红点显示
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+Break
+
+
+[@首冲充值]
+#ACT
+Close
+OPENHYPERLINK 26
+
+
+
+}

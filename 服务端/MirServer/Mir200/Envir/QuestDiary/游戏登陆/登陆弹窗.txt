@@ -1,0 +1,16 @@
+[@移动端登陆弹窗]
+{
+<Img|width=2500|height=2500|bg=1|show=4|img=public/1900000651_1.png>
+<Img|a=4|children={0}|img=custom/hl/jinruyx_ui/bg_huanying_01.png|percentx=50|percenty=50>
+<Button|a=4|id=0|children={1}|percentx=70|percenty=75|nimg=custom/hl/jinruyx_ui/btn_shouchong_04.png|link=@跳转开始任务>
+
+
+[@跳转开始任务]
+#IF
+IsOnMap 0
+#ACT
+close
+OPENNPCSHOWEX 40
+#ELSEACT
+close
+}

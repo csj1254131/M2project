@@ -1,0 +1,465 @@
+[@启动变强]
+{
+#IF
+#ACT
+GOTO @变强红点检测
+GOTO @开通检测
+
+[@变强界面]
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4|layerid=677>
+<Img|children={0a,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0a|children={1}|x=770|y=5|width=50|height=50|color=x|link=@退出变强界面>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@退出变强界面>
+<Text|id=12|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=我要变强>
+<ListView|id=3|children={<$STR(S$排列序号_1)>}|x=30|y=68|width=720|height=120|margin=5|bounce=0|direction=2|color=x>
+<Img|id=<$STR(N$变强_31)>|children={<$STR(N$变强_31)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
+<Layout|id=<$STR(N$变强_31)>0|children={<$STR(N$变强_31)>01,<$STR(N$变强_31)>02,<$STR(N$变强_31)>0<$STR(N$红点_31)>}|x=0|y=0|width=235|height=85|color=x|link=@变强合成大师>
+<Text|id=<$STR(N$变强_31)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=合成大师>
+<Text|id=<$STR(N$变强_31)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=特殊合成，属性飞升>
+<Img|id=<$STR(N$变强_31)>03|x=210|y=8|img=custom/hl/hl_ui/hd.png>
+<Img|id=<$STR(N$变强_32)>|children={<$STR(N$变强_32)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
+<Layout|id=<$STR(N$变强_32)>0|children={<$STR(N$变强_32)>01,<$STR(N$变强_32)>02,<$STR(N$变强_32)>0<$STR(N$红点_32)>}|x=0|y=0|width=235|height=85|color=x|link=@变强装备强化>
+<Text|id=<$STR(N$变强_32)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=装备强化>
+<Text|id=<$STR(N$变强_32)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=装备升星，提升属性>
+<Img|id=<$STR(N$变强_32)>03|x=210|y=8|img=custom/hl/hl_ui/hd.png>
+<Img|id=<$STR(N$变强_33)>|children={<$STR(N$变强_33)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
+<Layout|id=<$STR(N$变强_33)>0|children={<$STR(N$变强_33)>01,<$STR(N$变强_33)>02,<$STR(N$变强_33)>0<$STR(N$红点_33)>}|x=0|y=0|width=235|height=85|color=x|link=@变强星座大师>
+<Text|id=<$STR(N$变强_33)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=星座大师>
+<Text|id=<$STR(N$变强_33)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=星座合成，PK必备>
+<Img|id=<$STR(N$变强_33)>03|x=210|y=8|img=custom/hl/hl_ui/hd.png>
+<ListView|id=4|children={<$STR(S$排列序号_2)>}|x=30|y=158|width=720|height=120|margin=5|bounce=0|direction=2|color=x>
+<Img|id=<$STR(N$变强_34)>|children={<$STR(N$变强_34)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
+<Layout|id=<$STR(N$变强_34)>0|children={<$STR(N$变强_34)>01,<$STR(N$变强_34)>02,<$STR(N$变强_34)>0<$STR(N$红点_34)>}|x=0|y=0|width=235|height=85|color=x|link=@变强龙魂炼体>
+<Text|id=<$STR(N$变强_34)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=龙魂炼体>
+<Text|id=<$STR(N$变强_34)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=强身炼体，攻防兼备>
+<Img|id=<$STR(N$变强_34)>03|x=210|y=8|img=custom/hl/hl_ui/hd.png>
+<Img|id=<$STR(N$变强_35)>|children={<$STR(N$变强_35)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
+<Layout|id=<$STR(N$变强_35)>0|children={<$STR(N$变强_35)>01,<$STR(N$变强_35)>02,<$STR(N$变强_35)>0<$STR(N$红点_35)>}|x=0|y=0|width=235|height=85|color=x|link=@变强幸运强化>
+<Text|id=<$STR(N$变强_35)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=幸运强化>
+<Text|id=<$STR(N$变强_35)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=项链强化，提升暴率>
+<Img|id=<$STR(N$变强_35)>03|x=210|y=8|img=custom/hl/hl_ui/hd.png>
+<Img|id=<$STR(N$变强_36)>|children={<$STR(N$变强_36)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
+<Layout|id=<$STR(N$变强_36)>0|children={<$STR(N$变强_36)>01,<$STR(N$变强_36)>02,<$STR(N$变强_36)>0<$STR(N$红点_36)>}|x=0|y=0|width=235|height=85|color=x|link=@变强铭文大师>
+<Text|id=<$STR(N$变强_36)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=铭文大师>
+<Text|id=<$STR(N$变强_36)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=镶嵌铭文，伤害翻倍>
+<Img|id=<$STR(N$变强_36)>03|x=210|y=8|img=custom/hl/hl_ui/hd.png>
+<ListView|id=5|children={<$STR(S$排列序号_3)>}|x=30|y=248|width=720|height=120|margin=5|bounce=0|direction=2|color=x>
+<Img|id=<$STR(N$变强_37)>|children={<$STR(N$变强_37)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
+<Layout|id=<$STR(N$变强_37)>0|children={<$STR(N$变强_37)>01,<$STR(N$变强_37)>02,<$STR(N$变强_37)>0<$STR(N$红点_37)>}|x=0|y=0|width=235|height=85|color=x|link=@变强神器大师>
+<Text|id=<$STR(N$变强_37)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=神器大师>
+<Text|id=<$STR(N$变强_37)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=神器合成，傲视群雄>
+<Img|id=<$STR(N$变强_37)>03|x=210|y=8|img=custom/hl/hl_ui/hd.png>
+<Img|id=<$STR(N$变强_38)>|children={<$STR(N$变强_38)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
+<Layout|id=<$STR(N$变强_38)>0|children={<$STR(N$变强_38)>01,<$STR(N$变强_38)>02,<$STR(N$变强_38)>0<$STR(N$红点_38)>}|x=0|y=0|width=235|height=85|color=x|link=@变强加官进爵>
+<Text|id=<$STR(N$变强_38)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=加官进爵>
+<Text|id=<$STR(N$变强_38)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=泽被苍生，威加宇内>
+<Img|id=<$STR(N$变强_38)>03|x=210|y=8|img=custom/hl/hl_ui/hd.png>
+<Img|id=<$STR(N$变强_39)>|children={<$STR(N$变强_39)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
+<Layout|id=<$STR(N$变强_39)>0|children={<$STR(N$变强_39)>01,<$STR(N$变强_39)>02,<$STR(N$变强_39)>0<$STR(N$红点_39)>}|x=0|y=0|width=235|height=85|color=x|link=@变强火龙元神>
+<Text|id=<$STR(N$变强_39)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=火龙元神>
+<Text|id=<$STR(N$变强_39)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=真体一出，谁与争锋>
+<Img|id=<$STR(N$变强_39)>03|x=210|y=8|img=custom/hl/hl_ui/hd.png>
+
+<ListView|id=6|children={<$STR(S$排列序号_4)>}|x=30|y=338|width=720|height=120|margin=5|bounce=0|direction=2|color=x>
+<Img|id=<$STR(N$变强_40)>|children={<$STR(N$变强_40)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
+<Layout|id=<$STR(N$变强_40)>0|children={<$STR(N$变强_40)>01,<$STR(N$变强_40)>02,<$STR(N$变强_40)>0<$STR(N$红点_40)>}|x=0|y=0|width=235|height=85|color=x|link=@变强附件合成>
+<Text|id=<$STR(N$变强_40)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=附件合成>
+<Text|id=<$STR(N$变强_40)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=附件合成，PK必备>
+<Img|id=<$STR(N$变强_40)>03|x=210|y=8|img=custom/hl/hl_ui/hd.png>
+
+
+#IF
+EQUAL <$STR(S$C_强化变强引导)> 开
+check [418] 1
+check [419] 0
+#ACT
+MOV S$C_强化变强引导
+Navigation 0 <$STR(N$变强_强化)>0 开始强化
+
+#IF
+EQUAL <$STR(S$C_官职变强引导)> 开
+check [422] 1
+check [423] 0
+#ACT
+MOV S$C_官职变强引导
+Navigation 0 <$STR(N$变强_官职)>0 开始提升
+
+#IF
+EQUAL <$STR(S$C_龙魂变强引导)> 开
+check [424] 1
+check [425] 0
+#ACT
+MOV S$C_龙魂变强引导
+Navigation 0 <$STR(N$变强_龙魂)>0 开始提升
+
+[@变强合成大师]
+#IF
+#ACT
+#CALL [\功能脚本\装备合成\装备合成.txt] @高级装备合成
+
+[@变强装备强化]
+#IF
+#ACT
+#CALL [\功能脚本\装备强星\装备强星.txt] @装备强星
+
+[@变强星座大师]
+#IF
+#ACT
+#CALL [\游戏功能\星座大师\移动端星座大师.txt] @移动端星座大师
+[@变强龙魂炼体]
+#IF
+#ACT
+#CALL [\游戏功能\龙魂炼体\移动端龙魂炼体.txt] @移动端龙魂炼体
+[@变强幸运强化]
+#IF
+#ACT
+#CALL [\游戏功能\系统功能\幸运强化.txt] @启动幸运强化
+[@变强铭文大师]
+#IF
+#ACT
+#CALL [\游戏功能\铭文大师\移动端铭文大师.txt] @移动端铭文大师
+[@变强神器大师]
+#IF
+#ACT
+#CALL [\游戏功能\神器大师\移动端神器大师.txt] @移动端神器大师
+
+[@变强加官进爵]
+#IF
+#ACT
+#CALL [\功能脚本\加官进爵\加官进爵.txt] @加官进爵
+[@变强火龙元神]
+#IF
+#ACT
+#CALL [\游戏功能\火龙元神\移动端火龙元神.txt] @移动端火龙元神
+
+[@变强附件合成]
+#IF
+#ACT
+#CALL [\游戏功能\系统功能\附件合成.txt] @启动附件合成
+[@开通检测]
+#IF
+#ACT
+MOV N$变强_31 0
+MOV N$变强_32 0
+MOV N$变强_33 0
+MOV N$变强_34 0
+MOV N$变强_35 0
+MOV N$变强_36 0
+MOV N$变强_37 0
+MOV N$变强_38 0
+MOV N$变强_39 0
+MOV N$变强_40 0
+MOV N$初始变强序号 31
+MOV N$变强顺序号 30
+MOV N$限制个数 0
+MOV N$追加序号 1
+MOV S$排列序号_1
+MOV S$排列序号_2
+MOV S$排列序号_3
+MOV S$排列序号_4
+#IF
+CHECKLEVELEX > 29
+#ACT
+INC N$变强顺序号 1
+MOV N$变强_<$STR(N$初始变强序号)> <$STR(N$初始变强序号)>
+INC N$限制个数 1
+#IF
+LARGE N$限制个数 2
+#ACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>
+INC N$追加序号 1
+MOV N$限制个数 0
+#ELSEACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>,
+#IF
+#ACT
+INC N$初始变强序号 1
+#IF
+CHECKLEVELEX > 34
+#ACT
+INC N$变强顺序号 1
+MOV N$变强_<$STR(N$初始变强序号)> <$STR(N$初始变强序号)>
+INC N$限制个数 1
+MOV N$变强_强化 <$STR(N$变强_<$STR(N$初始变强序号)>)>
+
+
+#IF
+LARGE N$限制个数 2
+#ACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>
+INC N$追加序号 1
+MOV N$限制个数 0
+#ELSEACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>,
+#IF
+#ACT
+INC N$初始变强序号 1
+#IF
+LARGE <$RELEVEL> 4
+#ACT
+INC N$变强顺序号 1
+MOV N$变强_<$STR(N$初始变强序号)> <$STR(N$初始变强序号)>
+INC N$限制个数 1
+#IF
+LARGE N$限制个数 2
+#ACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>
+INC N$追加序号 1
+MOV N$限制个数 0
+#ELSEACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>,
+#IF
+#ACT
+INC N$初始变强序号 1
+#IF
+CHECKLEVELEX > 34
+#ACT
+INC N$变强顺序号 1
+MOV N$变强_<$STR(N$初始变强序号)> <$STR(N$初始变强序号)>
+INC N$限制个数 1
+MOV N$变强_龙魂 <$STR(N$变强_<$STR(N$初始变强序号)>)>
+
+#IF
+LARGE N$限制个数 2
+#ACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>
+INC N$追加序号 1
+MOV N$限制个数 0
+#ELSEACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>,
+#IF
+#ACT
+INC N$初始变强序号 1
+#IF
+CHECKLEVELEX > 39
+#ACT
+INC N$变强顺序号 1
+MOV N$变强_<$STR(N$初始变强序号)> <$STR(N$初始变强序号)>
+INC N$限制个数 1
+#IF
+LARGE N$限制个数 2
+#ACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>
+INC N$追加序号 1
+MOV N$限制个数 0
+#ELSEACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>,
+#IF
+#ACT
+INC N$初始变强序号 1
+#IF
+LARGE <$RELEVEL> 4
+#ACT
+INC N$变强顺序号 1
+MOV N$变强_<$STR(N$初始变强序号)> <$STR(N$初始变强序号)>
+INC N$限制个数 1
+#IF
+LARGE N$限制个数 2
+#ACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>
+INC N$追加序号 1
+MOV N$限制个数 0
+#ELSEACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>,
+#IF
+#ACT
+INC N$初始变强序号 1
+#IF
+LARGE <$RELEVEL> 4
+#ACT
+INC N$变强顺序号 1
+MOV N$变强_<$STR(N$初始变强序号)> <$STR(N$初始变强序号)>
+INC N$限制个数 1
+#IF
+LARGE N$限制个数 2
+#ACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>
+INC N$追加序号 1
+MOV N$限制个数 0
+#ELSEACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>,
+#IF
+#ACT
+INC N$初始变强序号 1
+#IF
+CHECKLEVELEX > 34
+#ACT
+INC N$变强顺序号 1
+MOV N$变强_<$STR(N$初始变强序号)> <$STR(N$初始变强序号)>
+INC N$限制个数 1
+MOV N$变强_官职 <$STR(N$变强_<$STR(N$初始变强序号)>)>
+
+#IF
+LARGE N$限制个数 2
+#ACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>
+INC N$追加序号 1
+MOV N$限制个数 0
+#ELSEACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>,
+#IF
+#ACT
+INC N$初始变强序号 1
+#IF
+LARGE <$RELEVEL> 4
+#ACT
+INC N$变强顺序号 1
+MOV N$变强_<$STR(N$初始变强序号)> <$STR(N$初始变强序号)>
+INC N$限制个数 1
+#IF
+LARGE N$限制个数 2
+#ACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>
+INC N$追加序号 1
+MOV N$限制个数 0
+#ELSEACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>,
+
+#IF
+#ACT
+INC N$初始变强序号 1
+#IF
+CHECKLEVELEX > 34
+#ACT
+INC N$变强顺序号 1
+MOV N$变强_<$STR(N$初始变强序号)> <$STR(N$初始变强序号)>
+INC N$限制个数 1
+#IF
+LARGE N$限制个数 2
+#ACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>
+INC N$追加序号 1
+MOV N$限制个数 0
+#ELSEACT
+INC S$排列序号_<$STR(N$追加序号)> <$STR(N$初始变强序号)>,
+
+
+#IF
+#ACT
+GOTO @变强界面
+
+[@变强红点检测]
+#IF
+#ACT
+MOV N$红点_31 10
+MOV N$红点_32 10
+MOV N$红点_33 10
+MOV N$红点_34 10
+MOV N$红点_35 10
+MOV N$红点_36 10
+MOV N$红点_37 10
+MOV N$红点_38 10
+MOV N$红点_39 10
+MOV N$红点_40 10
+#CALL [\游戏功能\神器大师\移动端神器大师.txt] @神器红点检测
+#CALL [\游戏功能\龙魂炼体\龙魂炼体红点CALL.txt] @龙魂炼体整体红点
+#CALL [\游戏功能\铭文大师\铭文大师红点CALL.txt] @铭文大师整体红点
+#CALL [\游戏功能\星座大师\星座大师红点CALL.txt] @星座大师整体红点
+#CALL [\功能脚本\装备合成\合成红点.txt] @合成红点
+#CALL [\功能脚本\加官进爵\官职红点.txt] @官职红点
+#CALL [\游戏功能\系统功能\附件合成.txt] @附件合成红点检测
+Getbagitemcount 幸运转移符 N$幸运转移符数量
+
+
+#IF
+EQUAL n$合成红点 1
+#ACT
+MOV N$红点_31 3
+
+#IF
+EQUAL S$C_变强_星座大师 hd
+#ACT
+MOV N$红点_33 3
+
+#IF
+EQUAL S$C_变强_龙魂炼体 hd
+#ACT
+MOV N$红点_34 3
+
+#OR
+LARGE N$幸运转移符数量 0
+#ACT
+MOV N$红点_35 3
+
+#IF
+EQUAL S$C_变强_铭文大师 hd
+#ACT
+MOV N$红点_36 3
+
+#IF 
+EQUAL S$C_变强_神器红点 hd
+#ACT
+MOV N$红点_37 3
+
+#IF
+EQUAL N$官印红点状态 1
+#ACT
+MOV N$红点_38 3
+
+#IF
+CHECKITEM 火龙气息 1
+CHECKGAMEGOLD > 2999
+#ACT
+MOV N$红点_39 3
+
+#OR
+EQUAL S$宝珠红点 hd
+EQUAL S$斗笠红点 hd
+EQUAL S$盾牌红点 hd
+EQUAL S$灵玉红点 hd
+#ACT
+MOV N$红点_40 3
+
+#IF
+Equal n$top 1
+#ACT
+BREAK
+#IF
+EQUAL N$红点_31 10
+EQUAL N$红点_32 10
+EQUAL N$红点_33 10
+EQUAL N$红点_34 10
+EQUAL N$红点_35 10
+EQUAL N$红点_36 10
+EQUAL N$红点_37 10
+EQUAL N$红点_38 10
+EQUAL N$红点_39 10
+EQUAL N$红点_40 10
+CheckContainsText <$STR(S$图标1)> Img|id=600|x=55|y=5|img=custom/hl/hl_ui/hd.png
+#ACT
+DEC   S$图标1 <Img|id=600|x=55|y=5|img=custom/hl/hl_ui/hd.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+#IF
+CheckContainsText <$STR(S$图标1)> Img|id=600|x=55|y=5|img=custom/hl/hl_ui/hd.png
+#ACT
+BREAK
+
+#OR
+EQUAL N$红点_31 3
+EQUAL N$红点_32 3
+EQUAL N$红点_33 3
+EQUAL N$红点_34 3
+EQUAL N$红点_35 3
+EQUAL N$红点_36 3
+EQUAL N$红点_37 3
+EQUAL N$红点_38 3
+EQUAL N$红点_39 3
+EQUAL N$红点_40 3
+#ACT
+INC   S$图标1 <Img|id=600|x=55|y=5|img=custom/hl/hl_ui/hd.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+[@退出变强界面]
+#IF
+#ACT
+CLOSE
+MOV N$变强界面状态 0
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+
+}

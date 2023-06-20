@@ -1,0 +1,244 @@
+[@MAIN]
+#IF
+#ACT
+GOTO @官职条件判断
+GOTO @打开官职界面
+[@打开官职界面]
+#IF
+#ACT
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=300|y=5|width=170|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=100|size=20|outline=2|outlinecolor=0|text=官职专属>
+<Layout|id=3|children={31}|x=20|y=62|width=730|height=445|color=x>
+<ListView|id=13|children={131}|x=132|y=65|width=3|height=445|margin=2|bounce=1|direction=1|color=x>
+<Img|id=131|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48}|x=22|y=63|width=110|height=450|margin=2|bounce=0|direction=1|color=x>
+<Button|id=41|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|color=103|size=18|text=官职专属|link=@打开官职专属>
+
+<Layout|id=5|children={51,52,53,54,55,56}|x=140|y=60|width=320|height=450|color=X>
+<Text|id=51|x=5|y=8|color=251|size=18|outline=2|outlinecolor=0|text=地图介绍>
+<Img|id=52|children={521}|x=5|y=38|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=521|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=共七层>
+<Img|id=53|children={531}|x=5|y=78|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=531|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=精英怪30分钟，领主怪90分钟>
+<Img|id=54|children={541}|x=5|y=118|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=541|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=怪物难度略有提高，建议更新自身装备提升斗笠盾牌，主辅星后再进入>
+<Img|id=56|children={561}|x=5|y=158|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=561|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=每层刷新领主，领主极强，爆率超高，建议组队前往>
+<Img|id=55|children={551}|x=100|y=200|width=380|img=custom/hl/dtcs_ui/map_ui_01.png>
+<ListView|id=551|a=4|percentx=50|percenty=50|children={91,92,93,94,95,96,97,98,99,990,991,992,993,994,995}|width=275|height=65|direction=2|bounce=0|margin=3|color=x>
+<ItemShow|id=92|itemid=62501|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=93|itemid=62502|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=94|itemid=61301|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=95|itemid=61302|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=96|itemid=50288|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=97|itemid=50289|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=98|itemid=50299|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=99|itemid=50300|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=990|itemid=50310|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=991|itemid=50311|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=992|itemid=50321|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=993|itemid=50322|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=994|itemid=50332|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=995|itemid=50333|itemcount=1|showtips=1|bgtype=1>
+
+<ListView|id=7|x=185|y=370|children={70,71,72,73,74,75,76}|width=600|height=65|direction=2|bounce=0|margin=3|color=x>
+<Layout|id=70|children={701,702}|width=80|height=40|color=x>
+<Text|id=701|a=4|percentx=50|percenty=30|color=<$STR(N$颜色_1)>|size=18|outline=2|outlinecolor=0|text=官职一层|link=@进入地图一层>
+<Text|id=702|a=4|percentx=50|percenty=85|color=255|size=16|outline=2|outlinecolor=0|text=(官职五品)>
+<Layout|id=71|children={711,712}|width=60|height=40|color=x>
+<Layout|id=72|children={721,722,723}|width=80|height=65|color=x>
+<Text|id=721|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_2)>|size=18|outline=2|outlinecolor=0|text=官职二层|link=@进入地图二层>
+<Text|id=722|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(官职三品)>
+<Text|id=723|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP3直达)>
+<Layout|id=73|children={731,732}|width=60|height=40|color=x>
+<Layout|id=74|children={741,742,743}|width=80|height=65|color=x>
+<Text|id=741|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_3)>|size=18|outline=2|outlinecolor=0|text=官职三层|link=@进入地图三层>
+<Text|id=742|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(官职一品)>
+<Text|id=743|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP5直达)>
+<Layout|id=75|children={751,752}|width=60|height=40|color=x>
+<Layout|id=76|children={761,762,763}|width=80|height=65|color=x>
+<Text|id=761|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_4)>|size=18|outline=2|outlinecolor=0|text=官职四层|link=@进入地图四层>
+<Text|id=762|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(大都督)>
+<Text|id=763|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP8直达)>
+<ListView|id=8|x=185|y=435|children={80,81,82,83,84,85,86}|width=610|height=65|direction=2|bounce=0|margin=3|color=x>
+<Layout|id=80|children={801,802,803}|width=80|height=65|color=x>
+<Text|id=801|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_5)>|size=18|outline=2|outlinecolor=0|text=官职五层|link=@进入地图五层>
+<Text|id=802|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(冠绝一世)>
+<Text|id=803|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP10直达)>
+<Layout|id=81|children={811,812}|width=60|height=40|color=x>
+<Layout|id=82|children={821,822,823}|width=80|height=65|color=x>
+<Text|id=821|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_6)>|size=18|outline=2|outlinecolor=0|text=官职六层|link=@进入地图六层>
+<Text|id=822|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(逐鹿群雄)>
+<Text|id=823|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP12直达)>
+<Layout|id=83|children={831,832}|width=60|height=40|color=x>
+<Layout|id=84|children={841,842,843}|width=80|height=65|color=x>
+<Text|id=841|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_7)>|size=18|outline=2|outlinecolor=0|text=官职七层|link=@进入地图七层>
+<Text|id=842|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(雄霸天下)>
+<Text|id=843|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP14直达)>
+<Layout|id=85|children={851,852}|width=60|height=40|color=x>
+
+
+[@官职条件判断]
+#IF
+LARGE U23 4
+#ACT
+MOV N$颜色_1 250
+#ELSEACT
+MOV N$颜色_1 248
+#IF
+LARGE U23 6
+LARGE U13 2
+#ACT
+MOV N$颜色_2 250
+#ELSEACT
+MOV N$颜色_2 248
+#IF
+LARGE U23 8
+LARGE U13 4
+#ACT
+MOV N$颜色_3 250
+#ELSEACT
+MOV N$颜色_3 248
+#IF
+LARGE U23 10
+LARGE U13 7
+#ACT
+MOV N$颜色_4 250
+#ELSEACT
+MOV N$颜色_4 248
+#IF
+LARGE U23 11
+LARGE U13 9
+#ACT
+MOV N$颜色_5 250
+#ELSEACT
+MOV N$颜色_5 248
+#IF
+LARGE U23 12
+LARGE U13 11
+#ACT
+MOV N$颜色_6 250
+#ELSEACT
+MOV N$颜色_6 248
+#IF
+LARGE U23 13
+LARGE U13 12
+#ACT
+MOV N$颜色_7 250
+#ELSEACT
+MOV N$颜色_7 248
+
+[@进入地图一层]
+#IF
+LARGE u23 4
+#ACT
+map gzzs5
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的官阶不足</font>
+BREAK
+[@进入地图二层]
+#IF
+LARGE u23 6
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的官阶不足</font>
+BREAK
+#IF
+LARGE U13 2
+#ACT
+map gzzs3
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>会员等级不足3级</font>
+BREAK
+
+[@进入地图三层]
+#IF
+LARGE u23 8
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的官阶不足</font>
+BREAK
+#IF
+LARGE U13 4
+#ACT
+map gzzs1
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>会员等级不足5级</font>
+BREAK
+
+[@进入地图四层]
+#IF
+LARGE u23 10
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的官阶不足</font>
+BREAK
+#IF
+LARGE U13 7
+#ACT
+map gzzsdd
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>会员等级不足8级</font>
+BREAK
+
+[@进入地图五层]
+#IF
+LARGE u23 11
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的官阶不足</font>
+BREAK
+#IF
+LARGE U13 9
+#ACT
+map gzzsgj
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>会员等级不足10级</font>
+BREAK
+
+[@进入地图六层]
+#IF
+LARGE u23 12
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的官阶不足</font>
+BREAK
+#IF
+LARGE U13 11
+#ACT
+map gzzszl
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>会员等级不足13级</font>
+BREAK
+
+[@进入地图七层]
+#IF
+LARGE u23 13
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的官阶不足</font>
+BREAK
+#IF
+LARGE U13 13
+#ACT
+map gzzsxb
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>会员等级不足15级</font>
+BREAK
+
+
+
+
+
+
+
+
+
+
+
+

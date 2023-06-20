@@ -1,0 +1,125 @@
+[@ø™ ºº¯∂®]
+{
+#IF
+#ACT
+LINKITEMBYMAKEINDEX <$NEWBAGITEMID>
+UpDateBoxItem -1
+MOV N$±¶∏Ωº” 0
+#IF
+CheckItemFlag -1 1
+#ACT
+BREAK
+
+#IF
+CheckContainsText <$NEWBAGITEMNAME> ≤√æˆ±¶÷È
+#ACT
+MOV N$∏Ωº”±¶÷È Ù–‘_3 20
+MOV N$±¶∏Ωº” 1
+GOTO @±¶÷È∏Ωº” Ù–‘
+break
+
+#IF
+CheckContainsText <$NEWBAGITEMNAME> Õı’ﬂ±¶÷È
+#ACT
+MOV N$∏Ωº”±¶÷È Ù–‘_3 40
+MOV N$±¶∏Ωº” 1
+GOTO @±¶÷È∏Ωº” Ù–‘
+break
+
+#IF
+CheckContainsText <$NEWBAGITEMNAME> øÒÕΩ±¶÷È
+#ACT
+MOV N$∏Ωº”±¶÷È Ù–‘_3 60
+MOV N$±¶∏Ωº” 1
+GOTO @±¶÷È∏Ωº” Ù–‘
+break
+
+#IF
+CheckContainsText <$NEWBAGITEMNAME> ≥‡—Ê±¶÷È
+#ACT
+MOV N$∏Ωº”±¶÷È Ù–‘_3 80
+MOV N$±¶∏Ωº” 1
+GOTO @±¶÷È∏Ωº” Ù–‘
+break
+
+#IF
+CheckContainsText <$NEWBAGITEMNAME> ¥´Àµ±¶÷È
+#ACT
+MOV N$∏Ωº”±¶÷È Ù–‘_3 100
+MOV N$±¶∏Ωº” 1
+GOTO @±¶÷È∏Ωº” Ù–‘
+break
+
+#IF
+CheckContainsText <$NEWBAGITEMNAME> ª∆Ω±¶÷È
+#ACT
+MOV N$∏Ωº”±¶÷È Ù–‘_3 120
+MOV N$±¶∏Ωº” 1
+GOTO @±¶÷È∏Ωº” Ù–‘
+break
+
+#IF
+CheckContainsText <$NEWBAGITEMNAME> –€∞‘±¶÷È
+#ACT
+MOV N$∏Ωº”±¶÷È Ù–‘_3 140
+MOV N$±¶∏Ωº” 1
+GOTO @±¶÷È∏Ωº” Ù–‘
+break
+
+#IF
+CheckContainsText <$NEWBAGITEMNAME> ÃÏ÷Æ±¶÷È
+#ACT
+MOV N$∏Ωº”±¶÷È Ù–‘_3 160
+MOV N$±¶∏Ωº” 1
+GOTO @±¶÷È∏Ωº” Ù–‘
+break
+
+#IF
+CheckContainsText <$NEWBAGITEMNAME> ¡˙Ã⁄±¶÷È
+#ACT
+MOV N$∏Ωº”±¶÷È Ù–‘_3 180
+MOV N$±¶∏Ωº” 1
+GOTO @±¶÷È∏Ωº” Ù–‘
+break
+
+#IF
+CheckContainsText <$NEWBAGITEMNAME> ª¡˙±¶÷È
+#ACT
+MOV N$∏Ωº”±¶÷È Ù–‘_3 200
+MOV N$±¶∏Ωº” 1
+GOTO @±¶÷È∏Ωº” Ù–‘
+break
+
+
+
+
+
+[@±¶÷È∏Ωº” Ù–‘]
+#IF
+EQUAL N$±¶∏Ωº” 1
+#ACT
+CHANGECUSTOMITEMTEXT -1 °° 1
+CHANGECUSTOMITEMTEXTCOLOR -1 254 1
+CHANGECUSTOMITEMABIL  -1 0 0 250 1
+CHANGECUSTOMITEMABIL  -1 0 1 71 1
+CHANGECUSTOMITEMABIL  -1 0 2 31 1
+CHANGECUSTOMITEMABIL  -1 0 3 0 1
+CHANGECUSTOMITEMABIL  -1 0 4 0 1
+CHANGECUSTOMITEMVALUE -1 0 = <$STR(N$∏Ωº”±¶÷È Ù–‘_3)> 1
+
+CHANGECUSTOMITEMABIL  -1 1 0 250 1
+CHANGECUSTOMITEMABIL  -1 1 1 91 1
+CHANGECUSTOMITEMABIL  -1 1 2 32 1
+CHANGECUSTOMITEMABIL  -1 1 3 0 1
+CHANGECUSTOMITEMABIL  -1 1 4 1 1
+CHANGECUSTOMITEMVALUE -1 1 = <$STR(N$∏Ωº”±¶÷È Ù–‘_3)> 1
+SetItemFlag -1 1 1
+UpDateBoxItem -1
+
+}
+
+
+
+
+
+

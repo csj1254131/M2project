@@ -1,0 +1,304 @@
+[@元素刷新]
+{
+;暴击几率增加 21
+;暴击伤害增加 22
+;增加攻击伤害 25 万分比
+;物理伤害减少 26 万分比
+;魔法伤害减少 27
+;忽视目标防御 28
+;所有伤害反弹 29
+;人物体力增加 30
+;人物魔力增加 31
+;增加目标爆率 32
+;防御加成 36 万分比
+;对怪增伤75
+;经验倍率66
+
+#IF
+#ACT
+GOTO @元素清零
+
+;--------------------------------------沙捐
+#If
+Equal <$HUMAN(沙城捐献)> 已开启
+#Act
+Inc N$元素计算25 10
+Inc N$元素计算30 10
+
+
+;-----------------------------------狂暴保护
+
+;神龙之力
+#IF
+CHECK [597] 1
+#ACT
+Mul N$神龙之力 10
+INC N$属性计算25 <$Str(N$神龙之力)>
+
+
+
+
+;庇护之力
+#IF
+CHECK [598] 1
+#ACT
+Mul N$庇护之力 10
+INC N$属性计算26 <$Str(N$庇护之力)>
+
+;-----------------------------------第一猛男美女
+#IF
+EQUAL A273 <$USERNAME>
+gender man
+#ACT
+Inc N$元素计算25 5
+Inc N$元素计算26 5
+#IF
+EQUAL A274 <$USERNAME>
+gender woman
+#ACT
+Inc N$元素计算25 5
+Inc N$元素计算26 5
+
+
+;--------------------------------------沙巴克成员
+#If
+Checktitle 沙城成员
+#Act
+Inc N$元素计算25 50
+Inc N$元素计算30 50
+;--------------------------------------个人捐献
+
+#IF
+EQUAL A201 <$USERNAME>
+#ACT
+Inc N$元素计算26 10
+Inc N$元素计算27 10
+Inc N$元素计算75 500
+#IF
+EQUAL A202 <$USERNAME>
+#ACT
+Inc N$元素计算26 8
+Inc N$元素计算27 8
+Inc N$元素计算75 400
+#IF
+EQUAL A203 <$USERNAME>
+#ACT
+MOV S$我的排名 第三名
+Inc N$元素计算26 6
+Inc N$元素计算27 6
+Inc N$元素计算75 300
+#IF
+EQUAL A204 <$USERNAME>
+#ACT
+MOV S$我的排名 第四名
+Inc N$元素计算26 4
+Inc N$元素计算27 4
+Inc N$元素计算75 200
+#IF
+EQUAL A205 <$USERNAME>
+#ACT
+MOV S$我的排名 第五名
+Inc N$元素计算26 3
+Inc N$元素计算27 3
+Inc N$元素计算75 200
+#IF
+EQUAL A206 <$USERNAME>
+#ACT
+MOV S$我的排名 第六名
+Inc N$元素计算26 2
+Inc N$元素计算27 2
+Inc N$元素计算75 100
+#IF
+EQUAL A207 <$USERNAME>
+#ACT
+MOV S$我的排名 第七名
+Inc N$元素计算26 2
+Inc N$元素计算27 2
+Inc N$元素计算75 100
+#IF
+EQUAL A208 <$USERNAME>
+#ACT
+MOV S$我的排名 第八名
+Inc N$元素计算26 2
+Inc N$元素计算27 2
+Inc N$元素计算75 100
+#IF
+EQUAL A209 <$USERNAME>
+#ACT
+MOV S$我的排名 第九名
+Inc N$元素计算26 2
+Inc N$元素计算27 2
+Inc N$元素计算75 100
+#IF
+EQUAL A210 <$USERNAME>
+#ACT
+MOV S$我的排名 第十名
+Inc N$元素计算26 2
+Inc N$元素计算27 2
+Inc N$元素计算75 100
+
+#IF
+LARGE G210 0
+#ACT
+MOV N$上榜捐献数 <$STR(G210)>
+#elseact
+MOV N$上榜捐献数 200
+
+#IF
+NOT EQUAL A201 <$USERNAME>
+NOT EQUAL A202 <$USERNAME>
+NOT EQUAL A203 <$USERNAME>
+NOT EQUAL A204 <$USERNAME>
+NOT EQUAL A205 <$USERNAME>
+NOT EQUAL A206 <$USERNAME>
+NOT EQUAL A207 <$USERNAME>
+NOT EQUAL A208 <$USERNAME>
+NOT EQUAL A209 <$USERNAME>
+NOT EQUAL A210 <$USERNAME>
+CHECKVAR HUMAN 捐献灵符 > 0
+CHECKVAR HUMAN 捐献灵符 < <$STR(N$上榜捐献数)>
+#ACT
+Inc N$元素计算26 1
+Inc N$元素计算27 1
+
+;-----------------------------------夺宝称号你瞅啥
+#IF
+EQUAL A279 <$USERNAME>
+#ACT
+INC N$元素计算25 5
+
+#IF
+EQUAL A280 <$USERNAME>
+#ACT
+INC N$元素计算32 5
+INC N$元素计算76 5
+
+;--------------------------------------神魔之体
+#IF
+LARGE U2 0
+#ACT
+INC N$元素计算28 <$STR(U2)>
+#IF
+LARGE U3 0
+#ACT
+INC N$元素计算25 <$STR(U3)>
+#IF
+LARGE U4 0
+#ACT
+INC N$元素计算21 <$STR(U4)>
+#IF
+LARGE U5 0
+#ACT
+INC N$元素计算30 <$STR(U5)>
+
+
+#IF
+CHECKTITLE 火龙真身
+#ACT
+INC N$元素计算36 100
+
+
+#IF
+large u13 5
+#act
+mov S$a_对怪增伤 1000
+INC N$元素计算75 <$STR(S$a_对怪增伤)>
+
+
+#IF
+large u13 6
+#act
+mov S$a_对怪增伤 500
+INC N$元素计算75 <$STR(S$a_对怪增伤)>
+#IF
+large u13 8
+#act
+mov S$a_对怪增伤 500
+INC N$元素计算75 <$STR(S$a_对怪增伤)>
+
+#IF
+large u13 10
+#act
+mov S$a_对怪增伤 500
+INC N$元素计算75 <$STR(S$a_对怪增伤)>
+
+#IF
+large u13 12
+#act
+mov S$a_对怪增伤 500
+INC N$元素计算75 <$STR(S$a_对怪增伤)>
+#IF
+large u13 14
+#act
+mov S$a_对怪增伤 2000
+INC N$元素计算75 <$STR(S$a_对怪增伤)>
+
+
+
+#IF
+large u13 9
+#act
+mov S$a_伤害吸收 5
+INC N$元素计算26 <$STR(S$a_伤害吸收)>
+INC N$元素计算27 <$STR(S$a_伤害吸收)>
+
+#IF
+large u13 14
+#act
+mov S$a_伤害吸收 5
+INC N$元素计算26 <$STR(S$a_伤害吸收)>
+INC N$元素计算27 <$STR(S$a_伤害吸收)>
+INC N$元素计算66 10000
+
+#if
+#act
+GOTO @元素赋值
+;------------------------------------------------------------
+[@元素清零]
+#IF
+#ACT
+MOV N$元素计算21 0
+MOV N$元素计算22 0
+MOV N$元素计算25 0
+MOV N$元素计算26 0
+MOV N$元素计算27 0
+MOV N$元素计算28 0
+MOV N$元素计算29 0
+MOV N$元素计算30 0
+MOV N$元素计算31 0
+MOV N$元素计算32 0
+MOV N$元素计算33 0
+MOV N$元素计算36 0
+MOV N$元素计算41 0
+MOV N$元素计算66 0
+MOV N$元素计算73 0
+MOV N$元素计算74 0
+MOV N$元素计算75 0
+MOV N$元素计算76 0
+MOV N$元素计算82 0
+[@元素赋值]
+#IF
+#ACT
+ChangeHumNewValueEX 21 <$STR(N$元素计算21)> 200000000
+ChangeHumNewValueEX 22 <$STR(N$元素计算22)> 200000000
+ChangeHumNewValueEX 25 <$STR(N$元素计算25)> 200000000
+ChangeHumNewValueEX 26 <$STR(N$元素计算26)> 200000000
+ChangeHumNewValueEX 27 <$STR(N$元素计算27)> 200000000
+ChangeHumNewValueEX 28 <$STR(N$元素计算28)> 200000000
+ChangeHumNewValueEX 29 <$STR(N$元素计算29)> 200000000
+ChangeHumNewValueEX 30 <$STR(N$元素计算30)> 200000000
+ChangeHumNewValueEX 31 <$STR(N$元素计算31)> 200000000
+ChangeHumNewValueEX 32 <$STR(N$元素计算32)> 200000000
+ChangeHumNewValueEX 33 <$STR(N$元素计算33)> 200000000
+ChangeHumNewValueEX 36 <$STR(N$元素计算36)> 200000000
+ChangeHumNewValueEX 41 <$STR(N$元素计算41)> 200000000
+ChangeHumNewValueEX 66 <$STR(N$元素计算66)> 200000000
+ChangeHumNewValueEX 73 <$STR(N$元素计算73)> 200000000
+ChangeHumNewValueEX 74 <$STR(N$元素计算74)> 200000000
+ChangeHumNewValueEX 75 <$STR(N$元素计算75)> 200000000
+ChangeHumNewValueEX 76 <$STR(N$元素计算76)> 200000000
+ChangeHumNewValueEX 82 <$STR(N$元素计算82)> 200000000
+
+RecalcAbilitys
+break
+}

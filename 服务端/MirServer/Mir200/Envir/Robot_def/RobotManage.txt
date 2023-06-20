@@ -1,0 +1,609 @@
+[@通区下发]
+#Act
+UpDateTongFile \通区\<$Str(A490)>\<$Servername>.txt
+
+[@系统倒计时]
+#IF
+LARGE G100 0
+#ACT
+DEC   G100 1
+#IF
+EQUAL G261 2
+#ACT
+BREAK
+#IF
+EQUAL G261 0
+#ACT
+MOV G261 <$UTCNOW8>
+INC G261 7200
+#IF
+NOT EQUAL G248 2
+SMALL G261 <$UTCNOW8>
+LARGE G261 2
+#ACT
+INC G261 3600
+MOV G248 2
+SENDMSGNEW 255 0 {个人押镖/FCOLOR=250}活动已经开启。 1 5
+
+#IF
+LARGE G261 2
+SMALL G261 <$UTCNOW8>
+#ACT
+MOV G248 0
+MOV G261 2
+SENDMSGNEW 255 0 {个人押镖/FCOLOR=250}活动已经关闭。 1 5
+
+
+
+[@排行榜奖励AA]
+#IF
+Equal G491 1
+Equal <$HFCOUNT> 2
+#Act
+GMEXECUTE 开始提问 @竞技龙魂榜奖励cc
+Mov G491 2
+
+#IF
+Equal G491 2
+Equal <$HFCOUNT> 3
+#Act
+GMEXECUTE 开始提问 @竞技注灵榜奖励cc
+Mov G491 3
+
+#IF
+Equal G491 3
+Equal <$HFCOUNT> 4
+#Act
+GMEXECUTE 开始提问 @竞技元神榜奖励cc
+Mov G499 1
+Mov G491 4
+
+#IF
+Equal G491 0
+Equal <$HFCOUNT> 1
+#Act
+Mov G491 1
+GMEXECUTE 开始提问 @竞技转生榜奖励cc
+
+
+[@凌晨清理]
+#IF
+#ACT
+MOV G59 20
+Inc G497 1
+Mov G495 0
+Mov G498 0
+ClearHumCustVar 每日充值时间 0
+ClearHumCustVar B_世界BOSS伤害|B_押镖次数|B_劫镖次数|B_今日充值 0
+ClearHumCustVar B_上次在线时长|B_今日在线时长|B_今日签到状态|B_首次进炼狱|每日礼包_1|每日礼包_2|每日礼包_3|经验首次|经验炼制 0
+ClearHumCustVar B_在线奖励_1|B_在线奖励_2|B_在线奖励_3|B_在线奖励_4|B_今日挑战层|B_今日扫荡状态|B_聚元丹次数|B_可杀经验怪数量 0
+Clearnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+GMEXECUTE 开始提问 @在线时长重置
+#IF
+DAYOFWEEK MON
+#ACT
+ClearHumCustVar B_累计在线天数|B_累计在线奖励_2|B_累计在线奖励_3|B_累计在线奖励_4|B_累计在线奖励_5|B_累计在线奖励_6|B_累计在线奖励_7 0
+
+
+#IF
+EQUAL <$DAY> 1
+#ACT
+MOV A201
+MOV A202
+MOV A203
+MOV A204
+MOV A205
+MOV A206
+MOV A207
+MOV A208
+MOV A209
+MOV A210
+MOV G201 0
+MOV G202 0
+MOV G203 0
+MOV G204 0
+MOV G205 0
+MOV G206 0
+MOV G207 0
+MOV G208 0
+MOV G209 0
+MOV G210 0
+ClearHumCustVar B_累计签到天数|B_累计签到奖励|捐献灵符|顶戴展示六 0
+GMEXECUTE 开始提问 @刷新捐献属性
+SENDMSG 0 个人捐献榜单已清零，榜首属性超高虚位以待！
+SENDMSGNEW 255 0 {个人捐献/FCOLOR=58}榜单已清零，榜首属性超高{虚位以待/FCOLOR=250}！ 1 5
+
+
+
+
+
+
+[@早上提示]
+#IF
+#act
+SENDMSG 1 亲爱的玩家，现在已经是早上了
+SENDMSG 1 游戏虽然好玩，可别忘了工作和学习的时间
+
+[@中午提示]
+#IF
+#act
+SENDMSG 1 亲爱的玩家，现在已经是中午了
+SENDMSG 1 游戏虽然好玩，可别忘了多陪陪你的朋友和家人
+
+[@晚上提示]
+#IF
+#act
+SENDMSG 1 亲爱的玩家，现在已经是晚上了
+SENDMSG 1 游戏虽然好玩，也别忘了陪朋友和家人吃顿晚饭
+
+[@凌晨提示]
+#IF
+#act
+SENDMSG 1 亲爱的玩家，现在已经是凌晨了
+SENDMSG 1 游戏虽然好玩，也别忘了是不是该休息了
+
+
+[@攻城提示]
+#If
+Large <$Hfcount> 0
+#Act
+AddAttackSabukAll 0
+Scenevibration 1 1 1
+ClearHumCustVar 顶戴展示七
+SendMsg 1 ぐ系统：今日集体攻城20:00开启!--请提早建会!否则参加不了集体攻城!
+SendMsg 1 ぐ系统：今日集体攻城20:00开启!--今日晚上8点开启全服大型攻城!
+SendMsg 1 ぐ系统：今日集体攻城20:00开启!--每个行会都可以攻城!无需提交头像
+SendMsg 1 ぐ系统：今日集体攻城20:00开启!--如果您的势力不行!建议找结盟好友!
+SendMsg 1 ぐ系统：今日集体攻城20:00开启!--所有行会做好准备!它是否属于你呢?
+SendMsg 0 ぐ温馨提示：攻沙前清理所有城主顶戴...新届花落谁家呢....
+Sendcustommsg 0 征战沙巴克活动将在30分钟后开启... 0 249 500 333
+Sendcustommsg 0 荣誉、瓜分沙城奖池,希望大家勇于参与... 0 249 500 333
+Sendcustommsg 0 征战沙巴克活动将在30分钟后开启... 0 249 500 333
+Sendmsgnew 255 0 征战沙巴克活动将在30分钟后开启... 1 10
+GMEXECUTE 开始提问 @清理城主顶戴
+
+
+[@攻城开始]
+#If
+Large <$Hfcount> 0
+#Act
+Scenevibration 1 1 1
+SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
+SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
+SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
+SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
+SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
+Sendcustommsg 0 征战沙巴克活动开始了... 0 249 500 333
+Sendcustommsg 0 荣誉、瓜分沙城奖池,希望大家勇于参与... 0 249 500 333
+Sendcustommsg 0 征战沙巴克活动开始了... 0 249 500 333
+Sendmsgnew 255 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1 10
+GMEXECUTE 开始提问 @开启沙城狂暴保护
+
+
+
+[@攻城结束]
+#If
+Large <$Hfcount> 0
+#Act
+Mov A491 <$LORD>
+Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
+Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
+Sendmsgnew 255 0 征战沙巴克活动结束了,请耐心等待奖励发放... 1 10
+Gmexecute 开始提问 @清理狂暴保护
+
+
+[@攻城统计]
+#If
+Large <$Hfcount> 0
+#Act
+Gmexecute 开始提问 @攻城奖励前统计
+
+[@攻城奖励]
+#If
+Large <$Hfcount> 0
+#Act
+Gmexecute 开始提问 @攻城奖励发放
+
+[@清理沙城捐献平时]
+#If
+Large <$Hfcount> 0
+#Act
+Mov G495 0
+Mov G498 0
+Clearnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+Gmexecute 开始提问 @清理沙城捐献平时xx
+
+
+[@清理沙城捐献]
+#If
+Equal <$Hfcount> <$Str(G490)>
+#Act
+Inc G490 1
+Mov G492 0
+Mov G493 0
+Mov G494 0
+Mov G495 0
+Mov G498 0
+Gmexecute 开始提问 @清理沙城捐献xx
+
+;---------------------------------------活动
+
+
+[@天降元宝提醒]
+#OR
+DAYOFWEEK TUE
+DAYOFWEEK THU
+DAYOFWEEK SAT
+#ACT
+SENDMSGNEW 255 0 {天降元宝/FCOLOR=58}活动即将开启。 1 5
+MOV G243 1
+MOV G244 <$UTCNOW8>
+INC G244 2100
+GMEXECUTE 开始提问 @启动天降提醒
+
+[@天降元宝]
+#OR
+DAYOFWEEK TUE
+DAYOFWEEK THU
+DAYOFWEEK SAT
+#ACT
+MOV G243 2
+MonGenEx tjyb 38 38 散财猪 20 3 0 243
+MonGenEx tjyb 72 76 散财猪 20 3 0 243
+MonGenEx tjyb 68 144 散财猪 20 3 0 243
+MonGenEx tjyb 70 230 散财猪 20 3 0 243
+MonGenEx tjyb 125 230 散财猪 20 3 0 243
+MonGenEx tjyb 183 207 散财猪 20 3 0 243
+MonGenEx tjyb 177 133 散财猪 20 3 0 243
+MonGenEx tjyb 260 220 散财猪 20 3 0 243
+MonGenEx tjyb 260 220 散财猪 20 3 0 243
+MonGenEx tjyb 276 157 散财猪 20 3 0 243
+MonGenEx tjyb 252 93 散财猪 20 3 0 243
+MonGenEx tjyb 270 42 散财猪 20 3 0 243
+MonGenEx tjyb 210 48 散财猪 20 3 0 243
+MonGenEx tjyb 155 50 散财猪 20 3 0 243
+MonGenEx tjyb 193 95 散财猪 20 3 0 243
+MonGenEx tjyb 125 115 散财猪 20 3 0 243
+MonGenEx tjyb 110 47 散财猪 20 2 0 243
+SENDMSGNEW 255 0 一大波{散财猪/FCOLOR=250}空降{天降元宝/FCOLOR=58}地图，请火速前往击杀。 1 5
+GMEXECUTE 开始提问 @天降元宝开启
+
+[@天降元宝关闭]
+#IF
+#ACT
+MOV G243 0
+GMEXECUTE 开始提问 @天降元宝关闭
+MoveMapPlay tjyb 3 330 330
+CLEARMAPMON tjyb
+SENDMSGNEW 255 0 {天降元宝/FCOLOR=58}活动已结束。 1 5
+
+[@世界BOSS提醒]
+#OR
+DAYOFWEEK MON
+DAYOFWEEK FRI
+DAYOFWEEK SUN
+#ACT
+MOV G200 1
+MOV G245 <$UTCNOW8>
+INC G245 1200
+CLEARMAPMON sjboss
+SENDMSGNEW 255 0 {世界BOSS/FCOLOR=58}活动即将开启。 1 5
+GMEXECUTE 开始提问 @启动世界BOSS提醒
+
+[@开启世界BOSS]
+#OR
+DAYOFWEEK MON
+DAYOFWEEK FRI
+DAYOFWEEK SUN
+#ACT
+MOV G200 2
+MOV A211 虚位以待
+MOV A212 虚位以待
+MOV A213 虚位以待
+MOV A214 虚位以待
+MOV A215 虚位以待
+MOV A216 虚位以待
+MOV A217 虚位以待
+MOV A218 虚位以待
+MOV A219 虚位以待
+MOV A220 虚位以待
+MOV G211 0
+MOV G212 0
+MOV G213 0
+MOV G214 0
+MOV G215 0
+MOV G216 0
+MOV G217 0
+MOV G218 0
+MOV G219 0
+MOV G220 0
+SENDMSGNEW 255 0 {世界BOSS/FCOLOR=58}活动已经开启。 1 5
+ClearHumCustVar B_世界BOSS伤害 0
+MonGenEx sjboss 23 26 [世界]龙神 1 1 0 253
+GMEXECUTE 开始提问 @世界BOSS开启
+
+
+[@关闭世界BOSS]
+#OR
+DAYOFWEEK MON
+DAYOFWEEK FRI
+DAYOFWEEK SUN
+#ACT
+MOV G200 0
+SENDMSGNEW 255 0 {世界BOSS/FCOLOR=58}活动关闭。 1 5
+GMEXECUTE 开始提问 @世界BOSS关闭
+SetOffTimerEx 0
+
+[@勇闯炼狱提醒]
+#IF
+#ACT
+MOV A221 虚位以待
+MOV A222 虚位以待
+MOV A223 虚位以待
+MOV A224 虚位以待
+MOV A225 虚位以待
+MOV A226 虚位以待
+MOV A227 虚位以待
+MOV A228 虚位以待
+MOV A229 虚位以待
+MOV A230 虚位以待
+MOV G221 0
+MOV G222 0
+MOV G223 0
+MOV G224 0
+MOV G225 0
+MOV G226 0
+MOV G227 0
+MOV G228 0
+MOV G229 0
+MOV G230 0
+MOV G231 0
+MOV G232 0
+MOV G233 0
+MOV G234 0
+MOV G235 0
+MOV G236 0
+MOV G237 0
+MOV G238 0
+MOV G239 0
+MOV G240 0
+MOV G241 0
+MOV G231 1
+MOV G242 <$UTCNOW8>
+INC G242 3900
+SENDMSGNEW 255 0 {勇闯炼狱/FCOLOR=58}活动即将开启。 1 5
+ClearHumCustVar B_勇闯炼狱积分|B_首次进炼狱 0
+GMEXECUTE 开始提问 @启动炼狱提醒
+
+[@开启勇闯炼狱]
+#IF
+#ACT
+MOV G231 2
+MonGenEx ycly1 55 55 [活动]白野猪 100 100 0 250
+MonGenEx ycly1 55 55 [活动]猪王 1 1 0 253
+MonGenEx ycly2 55 55 [活动]僵尸 100 100 0 250
+MonGenEx ycly2 55 55 [活动]尸王 1 1 0 253
+MonGenEx ycly3 55 55 [活动]牛魔战士 100 100 0 250
+MonGenEx ycly3 55 55 [活动]牛魔王 1 1 0 253
+MonGenEx ycly4 55 55 [活动]血巨人 100 100 0 250
+MonGenEx ycly4 55 55 [活动]双头金刚 1 1 0 253
+MonGenEx ycly5 55 55 [活动]血魔 100 100 0 250
+MonGenEx ycly5 55 55 [活动]双头血魔 1 1 0 253
+MonGenEx ycly6 55 55 [活动]侍卫 100 100 0 250
+MonGenEx ycly6 55 55 [活动]侍卫长 1 1 0 253
+MonGenEx ycly7 55 55 [活动]神卫 100 100 0 250
+MonGenEx ycly7 55 55 [活动]神卫长 1 1 0 253
+MonGenEx ycly8 55 55 [活动]火龙刀兵 100 100 0 250
+MonGenEx ycly8 55 55 [活动]火龙教主 1 1 0 253
+MonGenEx ycly9 55 55 [活动]沃玛战士 100 100 0 250
+MonGenEx ycly9 55 55 [活动]沃玛教主 1 1 0 253
+MonGenEx ycly10 55 55 [活动]守卫 100 100 0 250
+MonGenEx ycly10 55 55 [活动]阿修罗 1 1 0 253
+SENDMSGNEW 255 0 {勇闯炼狱/FCOLOR=58}活动已经开启。 1 5
+GMEXECUTE 开始提问 @勇闯炼狱开启
+
+[@勇闯炼狱补怪]
+#IF
+NOT EQUAL G231 2
+#ACT
+BREAK
+#IF
+CheckMonMap ycly1 10
+#ELSEACT
+MonGenEx ycly1 55 55 [活动]白野猪 100 100 0 250
+#IF
+CheckMonMap ycly2 10
+#ELSEACT
+MonGenEx ycly2 55 55 [活动]僵尸 100 100 0 250
+#IF
+CheckMonMap ycly3 10
+#ELSEACT
+MonGenEx ycly3 55 55 [活动]牛魔战士 100 100 0 250
+#IF
+CheckMonMap ycly4 10
+#ELSEACT
+MonGenEx ycly4 55 55 [活动]血巨人 100 100 0 250
+#IF
+CheckMonMap ycly5 10
+#ELSEACT
+MonGenEx ycly5 55 55 [活动]血魔 100 100 0 250
+#IF
+CheckMonMap ycly6 10
+#ELSEACT
+MonGenEx ycly6 55 55 [活动]侍卫 100 100 0 250
+#IF
+CheckMonMap ycly7 10
+#ELSEACT
+MonGenEx ycly7 55 55 [活动]神卫 100 100 0 250
+#IF
+CheckMonMap ycly8 10
+#ELSEACT
+MonGenEx ycly8 55 55 [活动]火龙刀兵 100 100 0 250
+#IF
+CheckMonMap ycly9 10
+#ELSEACT
+MonGenEx ycly9 55 55 [活动]沃玛战士 100 100 0 250
+#IF
+CheckMonMap ycly10 10
+#ELSEACT
+MonGenEx ycly10 55 55 [活动]守卫 100 100 0 250
+
+
+[@关闭勇闯炼狱]
+#IF
+#ACT
+MOV G231 0
+MoveMapPlay ycly1 3 330 330
+MoveMapPlay ycly2 3 330 330
+MoveMapPlay ycly3 3 330 330
+MoveMapPlay ycly4 3 330 330
+MoveMapPlay ycly5 3 330 330
+MoveMapPlay ycly6 3 330 330
+MoveMapPlay ycly7 3 330 330
+MoveMapPlay ycly8 3 330 330
+MoveMapPlay ycly9 3 330 330
+MoveMapPlay ycly10 3 330 330
+CLEARMAPMON ycly1
+CLEARMAPMON ycly2
+CLEARMAPMON ycly3
+CLEARMAPMON ycly4
+CLEARMAPMON ycly5
+CLEARMAPMON ycly6
+CLEARMAPMON ycly7
+CLEARMAPMON ycly8
+CLEARMAPMON ycly9
+CLEARMAPMON ycly10
+SENDMSGNEW 255 0 {勇闯炼狱/FCOLOR=58}活动关闭。 1 5
+GMEXECUTE 开始提问 @勇闯炼狱奖励
+SetOffTimerEx 1
+
+[@夺宝奇兵提醒]
+#OR
+DAYOFWEEK TUE
+DAYOFWEEK THU
+#ACT
+MOV G250 1
+MOV G246 0
+MOV G249 <$UTCNOW8>
+INC G249 1200
+ClearHumCustVar B_夺宝奇兵积分 0
+SENDMSGNEW 255 0 {夺宝奇兵/FCOLOR=58}活动即将开启。 1 5
+GMEXECUTE 开始提问 @启动夺宝提醒
+
+
+[@开启夺宝奇兵]
+#IF
+#ACT
+MOV A279
+MOV A280
+ClearHumCustVar 顶戴你球啥|顶戴球你咋地 0
+GMEXECUTE 开始提问 @夺宝顶戴清理
+SENDMSGNEW 255 0 {夺宝奇兵/FCOLOR=58}称号已收回！ 1 5
+
+#OR
+DAYOFWEEK TUE
+DAYOFWEEK THU
+#ACT
+MOV G250 2
+MOV A251 虚位以待
+MOV A252 虚位以待
+MOV A253 虚位以待
+MOV A254 虚位以待
+MOV A255 虚位以待
+MOV A256 虚位以待
+MOV A257 虚位以待
+MOV A258 虚位以待
+MOV A259 虚位以待
+MOV A260 虚位以待
+MOV G251 0
+MOV G252 0
+MOV G253 0
+MOV G254 0
+MOV G255 0
+MOV G256 0
+MOV G257 0
+MOV G258 0
+MOV G259 0
+MOV G260 0
+CLEARMAPMON dbqb
+SENDMSGNEW 255 0 {夺宝奇兵/FCOLOR=58}活动已经开启。 1 5
+GMEXECUTE 开始提问 @夺宝奇兵开启
+
+[@刷夺宝BOSS]
+#IF
+EQUAL G250 2
+#ACT
+MOV G246 1
+MonGenEx dbqb 68 40 [活动]夺宝王 1 1 0 253
+SENDMSGNEW 255 0 {夺宝奇兵/FCOLOR=58}BOSS已经刷新,请前往击杀！ 1 5
+
+[@夺宝一分钟]
+#IF
+EQUAL G250 2
+#ACT
+SENDMSGNEW 255 0 {夺宝奇兵/FCOLOR=58}还剩一分钟结束！ 1 5
+
+[@夺宝30秒]
+#IF
+EQUAL G250 2
+#ACT
+SENDMSGNEW 255 0 {夺宝奇兵/FCOLOR=58}还剩30秒结束！ 1 5
+
+[@关闭夺宝奇兵]
+#OR
+DAYOFWEEK TUE
+DAYOFWEEK THU
+#ACT
+MOV G250 0
+MOV G249 0
+MOV G248 0
+MoveMapPlay dbqb 3 330 330
+CLEARMAPMON dbqb
+SENDMSGNEW 255 0 {夺宝奇兵/FCOLOR=58}活动已经关闭。 1 5
+GMEXECUTE 开始提问 @发夺宝奖励
+SetOffTimerEx 2
+
+[@开启个人押镖]
+#IF
+EQUAL G261 2
+#ACT
+MOV G248 2
+SENDMSGNEW 255 0 {个人押镖/FCOLOR=250}活动已经开启。 1 5
+
+[@关闭个人押镖]
+#IF
+EQUAL G261 2
+#ACT
+MOV G248 0
+SENDMSGNEW 255 0 {个人押镖/FCOLOR=250}活动已经关闭。 1 5
+
+[@清理夺宝顶戴]
+#IF
+NOT EQUAL A279
+#ACT
+HCALL <$STR(A279)> @刷新夺宝称号属性
+
+#IF
+NOT EQUAL A280
+#ACT
+HCALL <$STR(A280)> @刷新夺宝称号属性
+
+
+
+
+[@活跃系统重置每日]
+#IF
+#ACT
+ClearHumCustVar 日活跃重置
+GMEXECUTE 开始提问 @在线日活跃重置
+sendmsg 0 每日活跃任务已重置！！！
+break
+
+[@活跃系统重置每周]
+#IF
+DAYOFWEEK MON
+#ACT
+ClearHumCustVar 周活跃重置
+GMEXECUTE 开始提问 @在线周活跃重置
+sendmsg 0 每周活跃任务已重置！！！
+break

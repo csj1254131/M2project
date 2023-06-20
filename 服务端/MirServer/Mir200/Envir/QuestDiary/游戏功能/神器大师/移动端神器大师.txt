@@ -1,0 +1,1443 @@
+[@移动端神器大师]
+{
+#IF
+Gender Man
+#Act
+Mov S$性别 0
+#Elseact
+Mov S$性别 1
+
+#IF
+#Act
+Mov S$zong目录 神器
+Mov S$左显示
+Mov S$左显示sm
+Mov N$材料1id 40718
+Mov N$材料2id 40718
+Mov N$材料3id 40718
+Mov N$材料4id 40718
+Mov N$材料5id 40718
+Mov N$装备idx 40718
+Mov S$x显示 0
+Mov S$材料数量1
+Mov S$材料数量2
+Mov S$材料数量3
+Mov S$材料数量4
+Mov S$货币数量
+Mov S$锻造按钮
+Mov S$标识
+Mov S$标识1
+Mov S$标识2
+Mov S$标识3
+Mov S$标识4
+Mov S$标识5
+Mov S$标识6
+Mov S$标识7
+Mov S$标识8
+
+GetDBItemFieldValue <$WEAPON> Looks N$武器looks
+GetDBItemFieldValue <$WEAPON> sEffect S$武器eff
+GetDBItemFieldValue <$DRESS> Looks N$衣服looks
+GetDBItemFieldValue <$DRESS> sEffect S$衣服eff
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_1 装备系列 S$左按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_2 装备系列 S$左按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_3 装备系列 S$左按钮3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_4 装备名称 S$左按钮4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_5 装备名称 S$左按钮5
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_6 装备名称 S$左按钮6
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_7 装备名称 S$左按钮7
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_8 装备名称 S$左按钮8
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_9 装备名称 S$左按钮9
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神器1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神器2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神器3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神器4#标识=4>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神器5#标识=5>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神器6#标识=6>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神器7#标识=7>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神器8#标识=8>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神器9#标识=9>
+
+Goto @神器Npc会话
+
+[@神器Npc会话]
+
+
+<Img|x=0.0|y=0.0|bg=1|show=4|move=0|img=custom/hl/shajuan/hl_bg.png|esc=0|reset=1|layerid=673>
+<Layout|x=763.0|y=5.0|width=80|height=80|link=@exit>
+<Button|x=771.0|y=5.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|x=351.0|y=8.0|color=103|size=18|text=神器大师>
+<Layout|children={1a,1b,1c}|ay=1|x=-46.0|y=47.0|width=50|height=91|link=@移动端神器大师>
+<Button|id=1a|x=12.0|y=0.0|width=34|pimg=custom/hl/shajuan/cbl_4.png|size=18|color=255|nimg=custom/hl/shajuan/cbl_3.png|link=@移动端神器大师>
+<Text|id=1b|x=23.0|y=4.0|outline=2|color=100|size=18|text=神>
+<Text|id=1c|x=23.0|y=29.0|outline=2|color=100|size=18|text=兵>
+<Layout|children={2a,2b,2c}|ay=1|x=-46.0|y=141.0|width=50|height=91|link=@移动端神器大师A>
+<Button|id=2a|x=12.0|y=0.0|pimg=custom/hl/shajuan/cbl_4.png|color=255|size=18|nimg=custom/hl/shajuan/cbl_4.png|link=@移动端神器大师A>
+<Text|id=2b|x=23.0|y=4.0|outline=2|color=100|size=18|text=神>
+<Text|id=2c|x=23.0|y=29.0|outline=2|color=100|size=18|text=甲>
+<Img|x=190.0|y=60.0|width=450|rotate=90|esc=0|img=custom/hl/shajuan/fg.png>
+<ListView|children={m1,m2,m3,m4,m5,m6,m7,m8,m9}|x=20.0|y=62.0|width=170|height=446|bounce=0|direction=1|margin=0>
+<$Str(S$左显示)>
+<$Str(S$左显示sm)>
+<Img|x=246.0|y=358.0|img=custom/hl/hlsd/dz.png|esc=0>
+<UIModel|x=387.0|y=320.0|sex=<$Str(S$性别)>|weaponEffectID=<$Str(S$武器eff)>#1#0#0|clothEffectID=<$Str(S$衣服eff)>#1#0#0|capID=1188|clothID=<$Str(N$衣服looks)>|headID=344|weaponID=<$Str(N$武器looks)>|scale=0.8>
+
+<ItemShow|children={sw1,sw2}|x=681.0|y=70.0|width=70|height=70|itemid=<$Str(N$材料1id)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<RText|id=sw1|a=3|x=-3.0|y=45.0|color=255|size=16|text=<<$Str(N$背包数量1)>/FCOLOR=249><:背包/FCOLOR=249>>
+<Text|id=sw2|a=3|x=62.0|y=62.0|color=147|size=16|text=<$Str(S$材料数量1)>>
+<ItemShow|children={sw3,sw4}|x=681.0|y=145.0|width=70|height=70|itemid=<$Str(N$材料2id)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<RText|id=sw3|a=3|x=-3.0|y=45.0|color=255|size=16|text=<<$Str(N$背包数量2)>/FCOLOR=249><:背包/FCOLOR=249>>
+<Text|id=sw4|a=3|x=62.0|y=62.0|color=147|size=16|text=<$Str(S$材料数量2)>>
+<ItemShow|children={sw5,sw6}|x=681.0|y=220.0|width=70|height=70|itemid=<$Str(N$材料3id)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<RText|id=sw5|a=3|x=-3.0|y=45.0|color=255|size=16|text=<<$Str(N$背包数量3)>/FCOLOR=249><:背包/FCOLOR=249>>
+<Text|id=sw6|a=3|x=62.0|y=62.0|color=147|size=16|text=<$Str(S$材料数量3)>>
+<ItemShow|children={sw7,sw8}|x=681.0|y=295.0|width=70|height=70|itemid=<$Str(N$材料4id)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<RText|id=sw7|a=3|x=-3.0|y=45.0|color=255|size=16|text=<<$Str(N$背包数量4)>/FCOLOR=249><:背包/FCOLOR=249>>
+<Text|id=sw8|a=3|x=62.0|y=62.0|color=147|size=16|text=<$Str(S$材料数量4)>>
+<ItemShow|children={sw9,sw10}|x=681.0|y=370.0|width=70|height=70|itemid=<$Str(N$材料5id)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<RText|id=sw9|a=3|x=-3.0|y=45.0|color=255|size=16|text=<<$Str(N$身上货币)>/FCOLOR=249><:背包/FCOLOR=249>>
+<Text|id=sw10|a=3|x=62.0|y=62.0|color=147|size=16|text=<$Str(S$货币数量)>>
+<ItemShow|x=195.0|y=70.0|width=70|height=70|itemid=<$Str(N$装备idx)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<Text|x=195.0|y=490.0|color=159|size=16|text=当背包的材料数量满足锻造条件才会显示锻造按钮>
+<$Str(S$锻造按钮)>
+
+[@移动端神器大师A]
+#IF
+#Act
+Mov S$zong目录 神甲
+Mov S$左显示sm
+Mov S$左显示
+Mov N$材料1id 40718
+Mov N$材料2id 40718
+Mov N$材料3id 40718
+Mov N$材料4id 40718
+Mov N$材料5id 40718
+Mov N$装备idx 40718
+Mov S$x显示 0
+Mov S$材料数量1
+Mov S$材料数量2
+Mov S$材料数量3
+Mov S$材料数量4
+Mov S$货币数量
+Mov S$锻造按钮
+GetDBItemFieldValue <$WEAPON> Looks N$武器looks
+GetDBItemFieldValue <$WEAPON> sEffect S$武器eff
+GetDBItemFieldValue <$DRESS> Looks N$衣服looks
+GetDBItemFieldValue <$DRESS> sEffect S$衣服eff
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_1 装备系列 S$左按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_2 装备系列 S$左按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_3 装备系列 S$左按钮3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_4 装备系列 S$左按钮4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_5 装备系列 S$左按钮5
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_6 装备系列 S$左按钮6
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_7 装备系列 S$左按钮7
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_8 装备系列 S$左按钮8
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_9 装备系列 S$左按钮9
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神甲1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神甲2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神甲3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神甲4#标识=4>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神甲5#标识=5>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神甲6#标识=6>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神甲7#标识=7>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神甲8#标识=8>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神甲9#标识=9>
+
+Goto @神甲Npc会话
+[@神甲Npc会话]
+<Img|x=0.0|y=0.0|bg=1|show=4|move=0|img=custom/hl/shajuan/hl_bg.png|esc=0|reset=1|layerid=673>
+<Layout|x=763.0|y=5.0|width=80|height=80|link=@exit>
+<Button|x=771.0|y=5.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|x=351.0|y=8.0|color=103|size=18|text=神器大师>
+<Layout|children={1a,1b,1c}|ay=1|x=-46.0|y=47.0|width=50|height=91|link=@移动端神器大师>
+<Button|id=1a|x=12.0|y=0.0|width=34|pimg=custom/hl/shajuan/cbl_4.png|size=18|color=255|nimg=custom/hl/shajuan/cbl_4.png|link=@移动端神器大师>
+<Text|id=1b|x=23.0|y=4.0|outline=2|color=100|size=18|text=神>
+<Text|id=1c|x=23.0|y=29.0|outline=2|color=100|size=18|text=兵>
+<Layout|children={2a,2b,2c}|ay=1|x=-46.0|y=141.0|width=50|height=91|link=@移动端神器大师A>
+<Button|id=2a|x=12.0|y=0.0|pimg=custom/hl/shajuan/cbl_4.png|color=255|size=18|nimg=custom/hl/shajuan/cbl_3.png|link=@移动端神器大师A>
+<Text|id=2b|x=23.0|y=4.0|outline=2|color=100|size=18|text=神>
+<Text|id=2c|x=23.0|y=29.0|outline=2|color=100|size=18|text=甲>
+<Img|x=190.0|y=60.0|width=450|rotate=90|esc=0|img=custom/hl/shajuan/fg.png>
+<ListView|children={m1,m2,m3,m4,m5,m6,m7,m8,m9}|x=20.0|y=62.0|width=170|height=446|bounce=0|direction=1|margin=0>
+<$Str(S$左显示)>
+<$Str(S$左显示sm)>
+<Img|x=246.0|y=358.0|img=custom/hl/hlsd/dz.png|esc=0>
+<UIModel|x=387.0|y=320.0|sex=<$Str(S$性别)>|weaponEffectID=<$Str(S$武器eff)>#1#0#0|clothEffectID=<$Str(S$衣服eff)>#1#0#0|capID=1188|clothID=<$Str(N$衣服looks)>|headID=344|weaponID=<$Str(N$武器looks)>|scale=0.8>
+<ItemShow|children={sw1,sw2}|x=681.0|y=70.0|width=70|height=70|itemid=<$Str(N$材料1id)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<RText|id=sw1|a=3|x=-3.0|y=45.0|color=255|size=16|text=<<$Str(N$背包数量1)>/FCOLOR=249><:背包/FCOLOR=249>>
+<Text|id=sw2|a=3|x=62.0|y=62.0|color=147|size=16|text=<$Str(S$材料数量1)>>
+<ItemShow|children={sw3,sw4}|x=681.0|y=145.0|width=70|height=70|itemid=<$Str(N$材料2id)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<RText|id=sw3|a=3|x=-3.0|y=45.0|color=255|size=16|text=<<$Str(N$背包数量2)>/FCOLOR=249><:背包/FCOLOR=249>>
+<Text|id=sw4|a=3|x=62.0|y=62.0|color=147|size=16|text=<$Str(S$材料数量2)>>
+<ItemShow|children={sw5,sw6}|x=681.0|y=220.0|width=70|height=70|itemid=<$Str(N$材料3id)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<RText|id=sw5|a=3|x=-3.0|y=45.0|color=255|size=16|text=<<$Str(N$背包数量3)>/FCOLOR=249><:背包/FCOLOR=249>>
+<Text|id=sw6|a=3|x=62.0|y=62.0|color=147|size=16|text=<$Str(S$材料数量3)>>
+<ItemShow|children={sw7,sw8}|x=681.0|y=295.0|width=70|height=70|itemid=<$Str(N$材料4id)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<RText|id=sw7|a=3|x=-3.0|y=45.0|color=255|size=16|text=<<$Str(N$背包数量4)>/FCOLOR=249><:背包/FCOLOR=249>>
+<Text|id=sw8|a=3|x=62.0|y=62.0|color=147|size=16|text=<$Str(S$材料数量4)>>
+<ItemShow|children={sw9,sw10}|x=681.0|y=370.0|width=70|height=70|itemid=<$Str(N$材料5id)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<RText|id=sw9|a=3|x=-3.0|y=45.0|color=255|size=16|text=<<$Str(N$身上货币)>/FCOLOR=249><:背包/FCOLOR=249>>
+<Text|id=sw10|a=3|x=62.0|y=62.0|color=147|size=16|text=<$Str(S$货币数量)>>
+<ItemShow|x=195.0|y=70.0|width=70|height=70|itemid=<$Str(N$装备idx)>|itemcount=1|bgtype=1|showtips=<$Str(S$x显示)>>
+<Text|x=195.0|y=490.0|color=159|size=16|text=当背包的材料数量满足锻造条件才会显示锻造按钮>
+<$Str(S$锻造按钮)>
+
+
+
+[@神甲1]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_4 S$左mid按钮4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_5 S$左mid按钮5
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_6 S$左mid按钮6
+Mov S$锻造按钮
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1|height=600>
+Inc S$左显示 <Button|id=1m||children={11m,12m,13m,14m,15m,16m}|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮1)>|link=@神甲1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神甲2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神甲3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=360.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神甲4#标识=4>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=400.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神甲5#标识=5>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=440.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神甲6#标识=6>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=480.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神甲7#标识=7>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=520.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神甲8#标识=8>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=560.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神甲9#标识=9>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮2#标识1=3>
+Inc S$左显示sm <Button|id=14m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮4)>|link=@mid按钮2#标识1=4>
+Inc S$左显示sm <Button|id=15m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮5)>|link=@mid按钮2#标识1=5>
+Inc S$左显示sm <Button|id=16m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮6)>|link=@mid按钮2#标识1=6>
+
+Goto @神甲Npc会话
+[@神甲2]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_4 S$左mid按钮4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_5 S$左mid按钮5
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_6 S$左mid按钮6
+Mov S$锻造按钮
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1|height=600>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神甲1#标识=1>
+Inc S$左显示 <Button|id=2m|children={11m,12m,13m,14m,15m,16m}|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮2)>|link=@神甲2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神甲3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=360.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神甲4#标识=4>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=400.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神甲5#标识=5>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=440.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神甲6#标识=6>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=480.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神甲7#标识=7>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=520.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神甲8#标识=8>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=560.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神甲9#标识=9>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮2#标识1=3>
+Inc S$左显示sm <Button|id=14m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮4)>|link=@mid按钮2#标识1=4>
+Inc S$左显示sm <Button|id=15m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮5)>|link=@mid按钮2#标识1=5>
+Inc S$左显示sm <Button|id=16m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮6)>|link=@mid按钮2#标识1=6>
+
+Goto @神甲Npc会话
+
+[@神甲3]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_4 S$左mid按钮4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_5 S$左mid按钮5
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_6 S$左mid按钮6
+Mov S$锻造按钮
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1|height=600>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神甲1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神甲2#标识=2>
+Inc S$左显示 <Button|id=3m|children={11m,12m,13m,14m,15m,16m}|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮3)>|link=@神甲3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=360.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神甲4#标识=4>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=400.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神甲5#标识=5>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=440.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神甲6#标识=6>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=480.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神甲7#标识=7>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=520.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神甲8#标识=8>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=560.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神甲9#标识=9>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮2#标识1=3>
+Inc S$左显示sm <Button|id=14m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮4)>|link=@mid按钮2#标识1=4>
+Inc S$左显示sm <Button|id=15m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮5)>|link=@mid按钮2#标识1=5>
+Inc S$左显示sm <Button|id=16m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮6)>|link=@mid按钮2#标识1=6>
+
+Goto @神甲Npc会话
+
+[@神甲4]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_4 S$左mid按钮4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_5 S$左mid按钮5
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_6 S$左mid按钮6
+Mov S$锻造按钮
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神甲1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神甲2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神甲3#标识=3>
+Inc S$左显示 <Button|id=4m|children={11m,12m}|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮4)>|link=@神甲4#标识=4>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神甲5#标识=5>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神甲6#标识=6>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神甲7#标识=7>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=360.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神甲8#标识=8>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=400.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神甲9#标识=9>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=7>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=8>
+Goto @神甲Npc会话
+[@神甲5]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_4 S$左mid按钮4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_5 S$左mid按钮5
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_6 S$左mid按钮6
+Mov S$锻造按钮
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神甲1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神甲2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神甲3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神甲4#标识=4>
+Inc S$左显示 <Button|id=5m|children={11m,12m}|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮5)>|link=@神甲5#标识=5>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神甲6#标识=6>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神甲7#标识=7>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=360.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神甲8#标识=8>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=400.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神甲9#标识=9>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=7>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=8>
+Goto @神甲Npc会话
+[@神甲6]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_4 S$左mid按钮4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_5 S$左mid按钮5
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_6 S$左mid按钮6
+Mov S$锻造按钮
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神甲1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神甲2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神甲3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神甲4#标识=4>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神甲5#标识=5>
+Inc S$左显示 <Button|id=6m|children={11m,12m}|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮6)>|link=@神甲6#标识=6>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神甲7#标识=7>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=360.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神甲8#标识=8>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=400.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神甲9#标识=9>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=7>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=8>
+Goto @神甲Npc会话
+
+[@神甲7]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_4 S$左mid按钮4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_5 S$左mid按钮5
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_6 S$左mid按钮6
+Mov S$锻造按钮
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神甲1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神甲2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神甲3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神甲4#标识=4>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神甲5#标识=5>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神甲6#标识=6>
+Inc S$左显示 <Button|id=7m|children={11m,12m}|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮7)>|link=@神甲7#标识=7>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=360.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神甲8#标识=8>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=400.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神甲9#标识=9>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=7>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=8>
+Goto @神甲Npc会话
+[@神甲8]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_4 S$左mid按钮4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_5 S$左mid按钮5
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_6 S$左mid按钮6
+Mov S$锻造按钮
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神甲1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神甲2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神甲3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神甲4#标识=4>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神甲5#标识=5>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神甲6#标识=6>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神甲7#标识=7>
+Inc S$左显示 <Button|id=8m|children={11m,12m}|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮8)>|link=@神甲8#标识=8>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=400.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神甲9#标识=9>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=7>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=8>
+Goto @神甲Npc会话
+[@神甲9]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_4 S$左mid按钮4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_5 S$左mid按钮5
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_6 S$左mid按钮6
+Mov S$锻造按钮
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神甲1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神甲2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神甲3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神甲4#标识=4>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神甲5#标识=5>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神甲6#标识=6>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神甲7#标识=7>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神甲8#标识=8>
+Inc S$左显示 <Button|id=9m|children={11m,12m}|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮9)>|link=@神甲9#标识=9>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=7>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=8>
+Goto @神甲Npc会话
+[@神器1]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+Mov S$锻造按钮
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1|height=480>
+Inc S$左显示 <Button|id=1m||children={11m,12m,13m}|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮1)>|link=@神器1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神器2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神器3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神器4#标识=4#标识1=>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神器5#标识=5#标识1=>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神器6#标识=6#标识1=>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=360.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神器7#标识=7#标识1=>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=400.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神器8#标识=8#标识1=>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=440.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神器9#标识=9#标识1=>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮#标识1=3>
+
+Goto @神器Npc会话
+[@神器2]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+Mov S$锻造按钮
+Mov S$左显示sm
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1|height=480>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神器1#标识=1>
+Inc S$左显示 <Button|id=2m|children={11m,12m,13m}|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮2)>|link=@神器2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神器3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神器4#标识=4#标识1=>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神器5#标识=5#标识1=>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神器6#标识=6#标识1=>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=360.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神器7#标识=7#标识1=>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=400.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神器8#标识=8#标识1=>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=440.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神器9#标识=9#标识1=>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮#标识1=3>
+Goto @神器Npc会话
+[@神器3]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_1 S$左mid按钮1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_2 S$左mid按钮2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 装备名称_3 S$左mid按钮3
+Mov S$锻造按钮
+Mov S$左显示sm
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1|height=480>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神器1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神器2#标识=2>
+Inc S$左显示 <Button|id=3m|children={11m,12m,13m}|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮3)>|link=@神器3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神器4#标识=4#标识1=>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神器5#标识=5#标识1=>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神器6#标识=6#标识1=>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=360.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神器7#标识=7#标识1=>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=400.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神器8#标识=8#标识1=>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=440.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神器9#标识=9#标识1=>
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮#标识1=3>
+Goto @神器Npc会话
+[@神器4]
+#IF
+#Act
+Goto @神器大师通用配置
+GetDBItemFieldValue <$Str(S$左按钮4)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左按钮4)> Looks N$武器looks
+GetDBItemFieldValue <$Str(S$左按钮4)> sEffect S$武器eff
+Mov S$锻造按钮
+Mov S$左显示sm
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神器1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神器2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神器3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮4)>|link=@神器4#标识=4#标识1=>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神器5#标识=5#标识1=>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神器6#标识=6#标识1=>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神器7#标识=7#标识1=>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神器8#标识=8#标识1=>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神器9#标识=9#标识1=>
+#IF
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Mov S$锻造按钮 <Button|x=584.0|y=457.0|color=255|size=18|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=开始锻造|link=@开始锻造>
+#Elseact
+Mov S$锻造按钮
+#IF
+#Act
+Goto @神器Npc会话
+[@神器5]
+#IF
+#Act
+Goto @神器大师通用配置
+GetDBItemFieldValue <$Str(S$左按钮5)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左按钮5)> Looks N$武器looks
+GetDBItemFieldValue <$Str(S$左按钮5)> sEffect S$武器eff
+Mov S$锻造按钮
+Mov S$左显示sm
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神器1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神器2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神器3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神器4#标识=4#标识1=>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮5)>|link=@神器5#标识=5#标识1=>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神器6#标识=6#标识1=>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神器7#标识=7#标识1=>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神器8#标识=8#标识1=>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神器9#标识=9#标识1=>
+#IF
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Mov S$锻造按钮 <Button|x=584.0|y=457.0|color=255|size=18|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=开始锻造|link=@开始锻造>
+#Elseact
+Mov S$锻造按钮
+#IF
+#Act
+Goto @神器Npc会话
+[@神器6]
+#IF
+#Act
+Goto @神器大师通用配置
+GetDBItemFieldValue <$Str(S$左按钮6)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左按钮6)> Looks N$武器looks
+GetDBItemFieldValue <$Str(S$左按钮6)> sEffect S$武器eff
+Mov S$锻造按钮
+Mov S$左显示sm
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神器1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神器2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神器3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神器4#标识=4#标识1=>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神器5#标识=5#标识1=>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮6)>|link=@神器6#标识=6#标识1=>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神器7#标识=7#标识1=>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神器8#标识=8#标识1=>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神器9#标识=9#标识1=>
+
+#IF
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Mov S$锻造按钮 <Button|x=584.0|y=457.0|color=255|size=18|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=开始锻造|link=@开始锻造>
+#Elseact
+Mov S$锻造按钮
+#IF
+#Act
+Goto @神器Npc会话
+[@神器7]
+#IF
+#Act
+Goto @神器大师通用配置
+GetDBItemFieldValue <$Str(S$左按钮7)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左按钮7)> Looks N$武器looks
+GetDBItemFieldValue <$Str(S$左按钮7)> sEffect S$武器eff
+Mov S$锻造按钮
+Mov S$左显示sm
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神器1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神器2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神器3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神器4#标识=4#标识1=>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神器5#标识=5#标识1=>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神器6#标识=6#标识1=>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮7)>|link=@神器7#标识=7#标识1=>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神器8#标识=8#标识1=>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神器9#标识=9#标识1=>
+#IF
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Mov S$锻造按钮 <Button|x=584.0|y=457.0|color=255|size=18|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=开始锻造|link=@开始锻造>
+#Elseact
+Mov S$锻造按钮
+#IF
+#Act
+Goto @神器Npc会话
+[@神器8]
+#IF
+#Act
+Goto @神器大师通用配置
+GetDBItemFieldValue <$Str(S$左按钮8)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左按钮8)> Looks N$武器looks
+GetDBItemFieldValue <$Str(S$左按钮8)> sEffect S$武器eff
+Mov S$锻造按钮
+Mov S$左显示sm
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神器1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神器2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神器3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神器4#标识=4#标识1=>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神器5#标识=5#标识1=>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神器6#标识=6#标识1=>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神器7#标识=7#标识1=>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮8)>|link=@神器8#标识=8#标识1=>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮9)>|link=@神器9#标识=9#标识1=>
+#IF
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Mov S$锻造按钮 <Button|x=584.0|y=457.0|color=255|size=18|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=开始锻造|link=@开始锻造>
+#Elseact
+Mov S$锻造按钮
+#IF
+#Act
+Goto @神器Npc会话
+[@神器9]
+#IF
+#Act
+Goto @神器大师通用配置
+GetDBItemFieldValue <$Str(S$左按钮9)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左按钮9)> Looks N$武器looks
+GetDBItemFieldValue <$Str(S$左按钮9)> sEffect S$武器eff
+Mov S$锻造按钮
+Mov S$左显示sm
+Mov S$x显示 1
+Mov S$左显示 <Layout|id=m1|children={1m}|ay=1>
+Inc S$左显示 <Layout|id=m2|children={2m}|ay=1>
+Inc S$左显示 <Layout|id=m3|children={3m}|ay=1>
+Inc S$左显示 <Layout|id=m4|children={4m}|ay=1>
+Inc S$左显示 <Layout|id=m5|children={5m}|ay=1>
+Inc S$左显示 <Layout|id=m6|children={6m}|ay=1>
+Inc S$左显示 <Layout|id=m7|children={7m}|ay=1>
+Inc S$左显示 <Layout|id=m8|children={8m}|ay=1>
+Inc S$左显示 <Layout|id=m9|children={9m}|ay=1>
+Inc S$左显示 <Button|id=1m|ax=0|x=0.0|y=0.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮1)>|link=@神器1#标识=1>
+Inc S$左显示 <Button|id=2m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮2)>|link=@神器2#标识=2>
+Inc S$左显示 <Button|id=3m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮3)>|link=@神器3#标识=3>
+Inc S$左显示 <Button|id=4m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮4)>|link=@神器4#标识=4#标识1=>
+Inc S$左显示 <Button|id=5m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮5)>|link=@神器5#标识=5#标识1=>
+Inc S$左显示 <Button|id=6m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮6)>|link=@神器6#标识=6#标识1=>
+Inc S$左显示 <Button|id=7m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮7)>|link=@神器7#标识=7#标识1=>
+Inc S$左显示 <Button|id=8m|ax=0|x=0.0|y=280.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_2.png|text=<$Str(S$左按钮8)>|link=@神器8#标识=8#标识1=>
+Inc S$左显示 <Button|id=9m|ax=0|x=0.0|y=320.0|width=165|color=100|pimg=custom/hl/hl_ui/115_1.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=<$Str(S$左按钮9)>|link=@神器9#标识=9#标识1=>
+
+#IF
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Mov S$锻造按钮 <Button|x=584.0|y=457.0|color=255|size=18|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=开始锻造|link=@开始锻造>
+#Elseact
+Mov S$锻造按钮
+#IF
+#Act
+Goto @神器Npc会话
+
+[@mid按钮2]
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料1 S$材料1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料2 S$材料2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料3 S$材料3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料4 S$材料4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料5 S$材料5
+GetValidstr <$Str(S$材料1)> | S$材料1 S$材料数量1
+GetValidstr <$Str(S$材料2)> | S$材料2 S$材料数量2
+GetValidstr <$Str(S$材料3)> | S$材料3 S$材料数量3
+GetValidstr <$Str(S$材料4)> | S$材料4 S$材料数量4
+GetValidstr <$Str(S$材料5)> | S$材料5 S$材料数量5
+GetDBItemFieldValue <$Str(S$材料1)> Idx N$材料1id
+GetDBItemFieldValue <$Str(S$材料2)> Idx N$材料2id
+GetDBItemFieldValue <$Str(S$材料3)> Idx N$材料3id
+GetDBItemFieldValue <$Str(S$材料4)> Idx N$材料4id
+GetDBItemFieldValue <$Str(S$材料5)> Idx N$材料5id
+Mov N$材料数量5 <$Str(S$材料数量5)>
+Div N$材料数量5 <$Str(N$材料数量5)> 10000
+Mov S$货币数量 <$Str(N$材料数量5)>
+Inc S$货币数量 万
+Getbagitemcount <$Str(S$材料1)> N$背包数量1
+Getbagitemcount <$Str(S$材料2)> N$背包数量2
+Getbagitemcount <$Str(S$材料3)> N$背包数量3
+Getbagitemcount <$Str(S$材料4)> N$背包数量4
+GetBindMoney 元宝 N$身上货币
+#IF
+Equal S$标识1 1
+#Act
+GetDBItemFieldValue <$Str(S$左mid按钮1)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左mid按钮1)> Looks N$衣服looks
+GetDBItemFieldValue <$Str(S$左mid按钮1)> sEffect S$衣服eff
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮2#标识1=3>
+Inc S$左显示sm <Button|id=14m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮4)>|link=@mid按钮2#标识1=4>
+Inc S$左显示sm <Button|id=15m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮5)>|link=@mid按钮2#标识1=5>
+Inc S$左显示sm <Button|id=16m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮6)>|link=@mid按钮2#标识1=6>
+
+#IF
+Equal S$标识1 2
+#Act
+GetDBItemFieldValue <$Str(S$左mid按钮2)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左mid按钮2)> Looks N$衣服looks
+GetDBItemFieldValue <$Str(S$左mid按钮2)> sEffect S$衣服eff
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮2#标识1=3>
+Inc S$左显示sm <Button|id=14m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮4)>|link=@mid按钮2#标识1=4>
+Inc S$左显示sm <Button|id=15m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮5)>|link=@mid按钮2#标识1=5>
+Inc S$左显示sm <Button|id=16m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮6)>|link=@mid按钮2#标识1=6>
+
+#IF
+Equal S$标识1 3
+#Act
+GetDBItemFieldValue <$Str(S$左mid按钮3)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左mid按钮3)> Looks N$衣服looks
+GetDBItemFieldValue <$Str(S$左mid按钮3)> sEffect S$衣服eff
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮2#标识1=3>
+Inc S$左显示sm <Button|id=14m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮4)>|link=@mid按钮2#标识1=4>
+Inc S$左显示sm <Button|id=15m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮5)>|link=@mid按钮2#标识1=5>
+Inc S$左显示sm <Button|id=16m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮6)>|link=@mid按钮2#标识1=6>
+
+#IF
+Equal S$标识1 4
+#Act
+GetDBItemFieldValue <$Str(S$左mid按钮4)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左mid按钮4)> Looks N$衣服looks
+GetDBItemFieldValue <$Str(S$左mid按钮4)> sEffect S$衣服eff
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮2#标识1=3>
+Inc S$左显示sm <Button|id=14m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680.png|text=<$Str(S$左mid按钮4)>|link=@mid按钮2#标识1=4>
+Inc S$左显示sm <Button|id=15m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮5)>|link=@mid按钮2#标识1=5>
+Inc S$左显示sm <Button|id=16m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮6)>|link=@mid按钮2#标识1=6>
+
+#IF
+Equal S$标识1 5
+#Act
+GetDBItemFieldValue <$Str(S$左mid按钮5)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左mid按钮5)> Looks N$衣服looks
+GetDBItemFieldValue <$Str(S$左mid按钮5)> sEffect S$衣服eff
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮2#标识1=3>
+Inc S$左显示sm <Button|id=14m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮4)>|link=@mid按钮2#标识1=4>
+Inc S$左显示sm <Button|id=15m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680.png|text=<$Str(S$左mid按钮5)>|link=@mid按钮2#标识1=5>
+Inc S$左显示sm <Button|id=16m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮6)>|link=@mid按钮2#标识1=6>
+
+#IF
+Equal S$标识1 6
+#Act
+GetDBItemFieldValue <$Str(S$左mid按钮6)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左mid按钮6)> Looks N$衣服looks
+GetDBItemFieldValue <$Str(S$左mid按钮6)> sEffect S$衣服eff
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮2#标识1=3>
+Inc S$左显示sm <Button|id=14m|ax=0|x=0.0|y=160.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮4)>|link=@mid按钮2#标识1=4>
+Inc S$左显示sm <Button|id=15m|ax=0|x=0.0|y=200.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮5)>|link=@mid按钮2#标识1=5>
+Inc S$左显示sm <Button|id=16m|ax=0|x=0.0|y=240.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680.png|text=<$Str(S$左mid按钮6)>|link=@mid按钮2#标识1=6>
+#IF
+Equal S$标识1 7
+#Act
+GetDBItemFieldValue <$Str(S$左mid按钮1)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左mid按钮1)> Looks N$衣服looks
+GetDBItemFieldValue <$Str(S$左mid按钮1)> sEffect S$衣服eff
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=7>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=8>
+#IF
+Equal S$标识1 8
+#Act
+GetDBItemFieldValue <$Str(S$左mid按钮2)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左mid按钮2)> Looks N$衣服looks
+GetDBItemFieldValue <$Str(S$左mid按钮2)> sEffect S$衣服eff
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮2#标识1=7>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮2#标识1=8>
+
+
+#IF
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Mov S$锻造按钮 <Button|x=584.0|y=457.0|color=255|size=18|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=开始锻造|link=@开始锻造1>
+#Elseact
+Mov S$锻造按钮
+#IF
+#Act
+Goto @神甲Npc会话
+
+
+[@mid按钮]
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料1 S$材料1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料2 S$材料2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料3 S$材料3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料4 S$材料4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料5 S$材料5
+GetValidstr <$Str(S$材料1)> | S$材料1 S$材料数量1
+GetValidstr <$Str(S$材料2)> | S$材料2 S$材料数量2
+GetValidstr <$Str(S$材料3)> | S$材料3 S$材料数量3
+GetValidstr <$Str(S$材料4)> | S$材料4 S$材料数量4
+GetValidstr <$Str(S$材料5)> | S$材料5 S$材料数量5
+GetDBItemFieldValue <$Str(S$材料1)> Idx N$材料1id
+GetDBItemFieldValue <$Str(S$材料2)> Idx N$材料2id
+GetDBItemFieldValue <$Str(S$材料3)> Idx N$材料3id
+GetDBItemFieldValue <$Str(S$材料4)> Idx N$材料4id
+GetDBItemFieldValue <$Str(S$材料5)> Idx N$材料5id
+Mov N$材料数量5 <$Str(S$材料数量5)>
+Div N$材料数量5 <$Str(N$材料数量5)> 10000
+Mov S$货币数量 <$Str(N$材料数量5)>
+Inc S$货币数量 万
+Getbagitemcount <$Str(S$材料1)> N$背包数量1
+Getbagitemcount <$Str(S$材料2)> N$背包数量2
+Getbagitemcount <$Str(S$材料3)> N$背包数量3
+Getbagitemcount <$Str(S$材料4)> N$背包数量4
+GetBindMoney 元宝 N$身上货币
+#IF
+Equal S$标识1 1
+#Act
+GetDBItemFieldValue <$Str(S$左mid按钮1)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左mid按钮1)> Looks N$武器looks
+GetDBItemFieldValue <$Str(S$左mid按钮1)> sEffect S$武器eff
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮#标识1=3>
+
+#IF
+Equal S$标识1 2
+#Act
+GetDBItemFieldValue <$Str(S$左mid按钮2)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左mid按钮2)> Looks N$武器looks
+GetDBItemFieldValue <$Str(S$左mid按钮2)> sEffect S$武器eff
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮#标识1=3>
+
+#IF
+Equal S$标识1 3
+#Act
+GetDBItemFieldValue <$Str(S$左mid按钮3)> Idx N$装备idx
+GetDBItemFieldValue <$Str(S$左mid按钮3)> Looks N$武器looks
+GetDBItemFieldValue <$Str(S$左mid按钮3)> sEffect S$武器eff
+Mov S$左显示sm <Button|id=11m|ax=0|x=0.0|y=40.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮1)>|link=@mid按钮#标识1=1>
+Inc S$左显示sm <Button|id=12m|ax=0|x=0.0|y=80.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680_1.png|text=<$Str(S$左mid按钮2)>|link=@mid按钮#标识1=2>
+Inc S$左显示sm <Button|id=13m|ax=0|x=0.0|y=120.0|width=165|color=100|pimg=custom/hl/hl_ui/1900000680.png|size=18|nimg=custom/hl/hl_ui/1900000680.png|text=<$Str(S$左mid按钮3)>|link=@mid按钮#标识1=3>
+
+
+#IF
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Mov S$锻造按钮 <Button|x=584.0|y=457.0|color=255|size=18|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=开始锻造|link=@开始锻造>
+#Elseact
+Mov S$锻造按钮
+#IF
+#Act
+Goto @神器Npc会话
+
+
+[@开始锻造]
+#IF
+CheckHumBag <$Username> < 1
+#Act
+Sendmsg 9 请确保背包至少有1个空格子...
+Break
+#IF
+Equal S$标识1 1
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左mid按钮1)> 1
+Sendmsg 6 【<$Str(S$左mid按钮1)>】锻造成功...
+Sendmsg 9 【<$Str(S$左mid按钮1)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神器Npc会话
+Break
+#IF
+Equal S$标识1 2
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左mid按钮2)> 1
+Sendmsg 6 【<$Str(S$左mid按钮2)>】锻造成功...
+Sendmsg 9 【<$Str(S$左mid按钮2)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神器Npc会话
+Break
+#IF
+Equal S$标识1 3
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左mid按钮3)> 1
+Sendmsg 6 【<$Str(S$左mid按钮3)>】锻造成功...
+Sendmsg 9 【<$Str(S$左mid按钮3)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神器Npc会话
+Break
+
+#IF
+Equal S$标识 4
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左按钮4)> 1
+Sendmsg 6 【<$Str(S$左按钮4)>】锻造成功...
+Sendmsg 9 【<$Str(S$左按钮4)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神器Npc会话
+Break
+#IF
+Equal S$标识 5
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左按钮5)> 1
+Sendmsg 6 【<$Str(S$左按钮5)>】锻造成功...
+Sendmsg 9 【<$Str(S$左按钮5)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神器Npc会话
+Break
+#IF
+Equal S$标识 6
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左按钮6)> 1
+Sendmsg 6 【<$Str(S$左按钮6)>】锻造成功...
+Sendmsg 9 【<$Str(S$左按钮6)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神器Npc会话
+Break
+#IF
+Equal S$标识 7
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左按钮7)> 1
+Sendmsg 6 【<$Str(S$左按钮7)>】锻造成功...
+Sendmsg 9 【<$Str(S$左按钮7)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神器Npc会话
+Break
+#IF
+Equal S$标识 8
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左按钮8)> 1
+Sendmsg 6 【<$Str(S$左按钮8)>】锻造成功...
+Sendmsg 9 【<$Str(S$左按钮8)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神器Npc会话
+Break
+#IF
+Equal S$标识 9
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左按钮9)> 1
+Sendmsg 6 【<$Str(S$左按钮9)>】锻造成功...
+Sendmsg 9 【<$Str(S$左按钮9)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神器Npc会话
+Break
+#Elseact
+Sendmsg 6 材料不足,合成失败...
+Sendmsg 9 材料不足,合成失败...
+Goto @神器Npc会话
+Break
+
+[@开始锻造1]
+#IF
+CheckHumBag <$Username> < 1
+#Act
+Sendmsg 9 请确保背包至少有1个空格子...
+Break
+#IF
+Equal S$标识1 1
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左mid按钮1)> 1
+Sendmsg 6 【<$Str(S$左mid按钮1)>】锻造成功...
+Sendmsg 9 【<$Str(S$左mid按钮1)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神甲Npc会话
+Break
+#IF
+Equal S$标识1 2
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左mid按钮2)> 1
+Sendmsg 6 【<$Str(S$左mid按钮2)>】锻造成功...
+Sendmsg 9 【<$Str(S$左mid按钮2)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神甲Npc会话
+Break
+#IF
+Equal S$标识1 3
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左mid按钮3)> 1
+Sendmsg 6 【<$Str(S$左mid按钮3)>】锻造成功...
+Sendmsg 9 【<$Str(S$左mid按钮3)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神甲Npc会话
+Break
+#IF
+Equal S$标识1 4
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左mid按钮4)> 1
+Sendmsg 6 【<$Str(S$左mid按钮4)>】锻造成功...
+Sendmsg 9 【<$Str(S$左mid按钮4)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神甲Npc会话
+Break
+#IF
+Equal S$标识1 5
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左mid按钮5)> 1
+Sendmsg 6 【<$Str(S$左mid按钮5)>】锻造成功...
+Sendmsg 9 【<$Str(S$左mid按钮5)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神甲Npc会话
+Break
+#IF
+Equal S$标识1 6
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左mid按钮6)> 1
+Sendmsg 6 【<$Str(S$左mid按钮6)>】锻造成功...
+Sendmsg 9 【<$Str(S$左mid按钮6)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神甲Npc会话
+Break
+#IF
+Equal S$标识1 7
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左mid按钮1)> 1
+Sendmsg 6 【<$Str(S$左mid按钮1)>】锻造成功...
+Sendmsg 9 【<$Str(S$左mid按钮1)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神甲Npc会话
+Break
+#IF
+Equal S$标识1 8
+Checkitem <$Str(S$材料1)> <$Str(S$材料数量1)>
+Checkitem <$Str(S$材料2)> <$Str(S$材料数量2)>
+Checkitem <$Str(S$材料3)> <$Str(S$材料数量3)>
+Checkitem <$Str(S$材料4)> <$Str(S$材料数量4)>
+CheckBindMoney 元宝 ? <$Str(S$材料数量5)>
+#Act
+Take <$Str(S$材料1)> <$Str(S$材料数量1)>
+Take <$Str(S$材料2)> <$Str(S$材料数量2)>
+Take <$Str(S$材料3)> <$Str(S$材料数量3)>
+Take <$Str(S$材料4)> <$Str(S$材料数量4)>
+ChangeBindMoney 元宝 <$Str(S$材料数量5)>
+Give <$Str(S$左mid按钮2)> 1
+Sendmsg 6 【<$Str(S$左mid按钮2)>】锻造成功...
+Sendmsg 9 【<$Str(S$左mid按钮2)>】锻造成功...
+Goto @神器大师通用配置
+Goto @神甲Npc会话
+Break
+
+
+
+#Elseact
+Sendmsg 6 材料不足,合成失败...
+Sendmsg 9 材料不足,合成失败...
+Goto @神甲Npc会话
+Break
+
+
+[@神器大师通用配置]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料1 S$材料1
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料2 S$材料2
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料3 S$材料3
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料4 S$材料4
+ReadConfigFileItem ..\QuestDiary\游戏功能\神器大师\锻造系统.ini <$Str(S$zong目录)>_<$Str(S$标识)> 材料5 S$材料5
+GetValidstr <$Str(S$材料1)> | S$材料1 S$材料数量1
+GetValidstr <$Str(S$材料2)> | S$材料2 S$材料数量2
+GetValidstr <$Str(S$材料3)> | S$材料3 S$材料数量3
+GetValidstr <$Str(S$材料4)> | S$材料4 S$材料数量4
+GetValidstr <$Str(S$材料5)> | S$材料5 S$材料数量5
+GetDBItemFieldValue <$Str(S$材料1)> Idx N$材料1id
+GetDBItemFieldValue <$Str(S$材料2)> Idx N$材料2id
+GetDBItemFieldValue <$Str(S$材料3)> Idx N$材料3id
+GetDBItemFieldValue <$Str(S$材料4)> Idx N$材料4id
+GetDBItemFieldValue <$Str(S$材料5)> Idx N$材料5id
+Mov N$材料数量5 <$Str(S$材料数量5)>
+Div N$材料数量5 <$Str(N$材料数量5)> 10000
+Mov S$货币数量 <$Str(N$材料数量5)>
+Inc S$货币数量 万
+Getbagitemcount <$Str(S$材料1)> N$背包数量1
+Getbagitemcount <$Str(S$材料2)> N$背包数量2
+Getbagitemcount <$Str(S$材料3)> N$背包数量3
+Getbagitemcount <$Str(S$材料4)> N$背包数量4
+GetBindMoney 元宝 N$身上货币
+
+
+[@神器红点检测]
+}

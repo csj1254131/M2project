@@ -1,0 +1,214 @@
+[@启动世界BOSS排行]
+{
+#IF
+#ACT
+SortHumVar B_世界BOSS伤害  S$伤害名次  N$名次伤害值 0 1 10
+#IF
+LARGE N$名次伤害值1 0
+#ACT
+MOV A211 <$STR(S$伤害名次1)>
+MOV G211 <$STR(N$名次伤害值1)>
+#ELSEACT
+MOV A211 虚位以待
+MOV G211 0
+
+#IF
+LARGE N$名次伤害值2 0
+#ACT
+MOV A212 <$STR(S$伤害名次2)>
+MOV G212 <$STR(N$名次伤害值2)>
+#ELSEACT
+MOV A212 虚位以待
+MOV G212 0
+
+#IF
+LARGE N$名次伤害值3 0
+#ACT
+MOV A213 <$STR(S$伤害名次3)>
+MOV G213 <$STR(N$名次伤害值3)>
+#ELSEACT
+MOV A213 虚位以待
+MOV G213 0
+
+#IF
+LARGE N$名次伤害值4 0
+#ACT
+MOV A214 <$STR(S$伤害名次4)>
+MOV G214 <$STR(N$名次伤害值4)>
+#ELSEACT
+MOV A214 虚位以待
+MOV G214 0
+
+#IF
+LARGE N$名次伤害值5 0
+#ACT
+MOV A215 <$STR(S$伤害名次5)>
+MOV G215 <$STR(N$名次伤害值5)>
+#ELSEACT
+MOV A215 虚位以待
+MOV G215 0
+
+#IF
+LARGE N$名次伤害值6 0
+#ACT
+MOV A216 <$STR(S$伤害名次6)>
+MOV G216 <$STR(N$名次伤害值6)>
+#ELSEACT
+MOV A216 虚位以待
+MOV G216 0
+
+#IF
+LARGE N$名次伤害值7 0
+#ACT
+MOV A217 <$STR(S$伤害名次7)>
+MOV G217 <$STR(N$名次伤害值7)>
+#ELSEACT
+MOV A217 虚位以待
+MOV G217 0
+
+#IF
+LARGE N$名次伤害值8 0
+#ACT
+MOV A218 <$STR(S$伤害名次8)>
+MOV G218 <$STR(N$名次伤害值8)>
+#ELSEACT
+MOV A218 虚位以待
+MOV G218 0
+
+#IF
+LARGE N$名次伤害值9 0
+#ACT
+MOV A219 <$STR(S$伤害名次9)>
+MOV G219 <$STR(N$名次伤害值9)>
+#ELSEACT
+MOV A219 虚位以待
+MOV G219 0
+
+#IF
+LARGE N$名次伤害值10 0
+#ACT
+MOV A220 <$STR(S$伤害名次10)>
+MOV G220 <$STR(N$名次伤害值10)>
+#ELSEACT
+MOV A220 虚位以待
+MOV G220 0
+
+
+[@排行面板]
+#IF
+EQUAL <$HUMAN(B_世界BOSS伤害)> ??
+#ACT
+VAR Integer HUMAN B_世界BOSS伤害
+#IF
+ISONMAP sjboss
+#ACT
+MOV S$BOSS排行面板 <ListView|children={1,2,3,4,5,6,7,8,9,10,11,12}|x=0|y=0|width=200|height=160|margin=0|bounce=0|direction=1|color=x>
+INC S$BOSS排行面板 <Layout|id=1|children={110,111}|width=200|height=25|color=x>
+INC S$BOSS排行面板 <Text|id=110|a=4|percentx=45|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=世界BOSS伤害榜>
+INC S$BOSS排行面板 <COUNTDOWN|id=111|a=4|percentx=90|percenty=50|time=10|count=1|size=18|color=249>
+INC S$BOSS排行面板 <Img|id=2|img=public/1900000667_1.png|width=200>
+INC S$BOSS排行面板 <RText|id=3|color=253|size=18|text=第一名:<$STR(A211)>\　　　伤害:<<$STR(G211)>/FCOLOR=250>>
+INC S$BOSS排行面板 <RText|id=4|color=243|size=18|text=第二名:<$STR(A212)>\　　　伤害:<<$STR(G212)>/FCOLOR=250>>
+INC S$BOSS排行面板 <RText|id=5|color=239|size=18|text=第三名:<$STR(A213)>\　　　伤害:<<$STR(G213)>/FCOLOR=250>>
+INC S$BOSS排行面板 <RText|id=6|color=100|size=18|text=第四名:<$STR(A214)>\　　　伤害:<<$STR(G214)>/FCOLOR=250>>
+INC S$BOSS排行面板 <RText|id=7|color=100|size=18|text=第五名:<$STR(A215)>\　　　伤害:<<$STR(G215)>/FCOLOR=250>>
+INC S$BOSS排行面板 <RText|id=8|color=100|size=18|text=第六名:<$STR(A216)>\　　　伤害:<<$STR(G216)>/FCOLOR=250>>
+INC S$BOSS排行面板 <RText|id=9|color=100|size=18|text=第七名:<$STR(A217)>\　　　伤害:<<$STR(G217)>/FCOLOR=250>>
+INC S$BOSS排行面板 <RText|id=10|color=100|size=18|text=第八名:<$STR(A218)>\　　　伤害:<<$STR(G218)>/FCOLOR=250>>
+INC S$BOSS排行面板 <RText|id=11|color=100|size=18|text=第九名:<$STR(A219)>\　　　伤害:<<$STR(G219)>/FCOLOR=250>>
+INC S$BOSS排行面板 <RText|id=12|color=100|size=18|text=第十名:<$STR(A220)>\　　　伤害:<<$STR(G220)>/FCOLOR=250>>
+ADDBUTTON 110 15 <$STR(S$BOSS排行面板)>
+
+MOV S$我的伤害面板 <ListView|children={1,2,3,4,5,6,7,8,9,10,11,12}|x=0|y=162|width=200|height=25|margin=0|bounce=0|direction=1|color=x>
+INC S$我的伤害面板 <Img|id=1|img=public/1900000667_1.png|x=0|y=203|width=260>
+INC S$我的伤害面板 <Layout|id=2|children={21}|width=200|height=22|color=x>
+INC S$我的伤害面板 <RText|id=21|a=4|percentx=50|percenty=50|color=100|size=18|outline=2|outlinecolor=0|text=我的伤害:<<$HUMAN(B_世界BOSS伤害)>/FCOLOR=250>>
+ADDBUTTON 110 16 <$STR(S$我的伤害面板)>
+
+[@发放奖励]
+#IF
+#ACT
+#CALL [\游戏功能\任务系统\主线流程.txt] @主线开始
+DELBUTTON 110 15
+DELBUTTON 110 16
+DELBUTTON 107 18
+#IF
+CHECKVAR HUMAN B_世界BOSS伤害 = 0
+#ACT
+BREAK
+
+#IF
+EQUAL A211 <$USERNAME>
+#ACT
+MailGIVE 世界BOSS王者礼包 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\根据你在世界BOSS活动中的完美表现，系统为你准备了一份王者礼包，请查收
+BREAK
+#IF
+EQUAL A212 <$USERNAME>
+#ACT
+MailGIVE 世界BOSS至尊礼包 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\根据你在世界BOSS活动中的杰出表现，系统为你准备了一份至尊礼包，请查收
+BREAK
+#IF
+EQUAL A213 <$USERNAME>
+#ACT
+MailGIVE 世界BOSS钻石礼包 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\根据你在世界BOSS活动中的突出表现，系统为你准备了一份钻石礼包，请查收
+BREAK
+#IF
+EQUAL A214 <$USERNAME>
+#ACT
+MailGIVE 世界BOSS参与礼包 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\根据你在世界BOSS活动中的优秀表现，系统为你准备了一份参与礼包，请查收
+BREAK
+#IF
+EQUAL A215 <$USERNAME>
+#ACT
+MailGIVE 世界BOSS参与礼包 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\根据你在世界BOSS活动中的优秀表现，系统为你准备了一份参与礼包，请查收
+BREAK
+#IF
+EQUAL A216 <$USERNAME>
+#ACT
+MailGIVE 世界BOSS参与礼包 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\根据你在世界BOSS活动中的优秀表现，系统为你准备了一份参与礼包，请查收
+BREAK
+#IF
+EQUAL A217 <$USERNAME>
+#ACT
+MailGIVE 世界BOSS参与礼包 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\根据你在世界BOSS活动中的优秀表现，系统为你准备了一份参与礼包，请查收
+BREAK
+#IF
+EQUAL A218 <$USERNAME>
+#ACT
+MailGIVE 世界BOSS参与礼包 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\根据你在世界BOSS活动中的优秀表现，系统为你准备了一份参与礼包，请查收
+BREAK
+#IF
+EQUAL A219 <$USERNAME>
+#ACT
+MailGIVE 世界BOSS参与礼包 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\根据你在世界BOSS活动中的优秀表现，系统为你准备了一份参与礼包，请查收
+BREAK
+#IF
+EQUAL A220 <$USERNAME>
+#ACT
+MailGIVE 世界BOSS参与礼包 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\根据你在世界BOSS活动中的优秀表现，系统为你准备了一份参与礼包，请查收
+BREAK
+#IF
+#ACT
+MailGIVE 世界BOSS参与礼包 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\根据你在世界BOSS活动中的优秀表现，系统为你准备了一份参与礼包，请查收
+
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,126 @@
+[@铭文登录触发]
+{
+#IF
+CheckContainsText <$STR(T90)> 物抗印【开天斩】
+#ACT
+SetMagicDefPower 开天斩 20 1
+sendmsg 5 物抗印【开天斩】，承受开天的伤害减少20%！
+#IF
+CheckContainsText <$STR(T90)> 物抗印【烈火剑法】
+#ACT
+SetMagicDefPower 烈火剑法 20 1
+sendmsg 5 物抗印【烈火剑法】，承受烈火剑法的伤害减少20%！
+#IF
+CheckContainsText <$STR(T90)> 物抗印【逐日剑法】
+#ACT
+SetMagicDefPower 逐日剑法 20 1
+sendmsg 5 物抗印【逐日剑法】，承受逐日剑法的伤害减少20%！
+
+#IF
+CheckContainsText <$STR(T90)> 魔抗印【火墙】
+#ACT
+SetMagicDefPower 火墙 20 1
+sendmsg 5 魔抗印【火墙】，承受火墙的伤害减少20%！
+#IF
+CheckContainsText <$STR(T90)> 魔抗印【流星火雨】
+#ACT
+SetMagicDefPower 流星火雨 20 1
+sendmsg 5 魔抗印【流星火雨】，承受流星火雨的伤害减少20%！
+#IF
+CheckContainsText <$STR(T90)> 魔抗印【灭天火】
+#ACT
+SetMagicDefPower 灭天火 20 1
+sendmsg 5 魔抗印【灭天火】，承受灭天火的伤害减少20%！
+#IF
+CheckContainsText <$STR(T90)> 道抗印【灵魂火符】
+#ACT
+SetMagicDefPower 灵魂火符 20 1
+sendmsg 5 道抗印【灵魂火符】，承受灵魂火符的伤害减少20%！
+#IF
+CheckContainsText <$STR(T90)> 道抗印【噬血术】
+#ACT
+SetMagicDefPower 噬血术 20 1
+sendmsg 5 道抗印【噬血术】，承受噬血术的伤害减少20%！
+
+
+#IF
+CHECKJOB Warrior
+#ACT
+GOTO @战士铭文登录触发
+break
+
+#IF
+CHECKJOB Wizard
+#ACT
+GOTO @法师铭文登录触发
+break
+
+#IF
+CHECKJOB Taoist
+#ACT
+GOTO @道士铭文登录触发
+break
+
+
+[@战士铭文登录触发]
+
+#IF
+CheckContainsText <$STR(T90)> 开天印
+#ACT
+SetMagicPower 开天斩 30 1
+sendmsg 5 拥有开天印，开天伤害提升30%！
+
+#IF
+CheckContainsText <$STR(T90)> 烈火印
+#ACT
+SetMagicPower 烈火剑法 30 1
+sendmsg 5 拥有烈火印，烈火伤害提升30%！
+
+
+
+[@法师铭文登录触发]
+
+#IF
+CheckContainsText <$STR(T90)> 寒冰印
+#ACT
+SetMagicPower 寒冰掌 20 1
+sendmsg 5 拥有寒冰印，寒冰掌伤害提升20%！
+
+#IF
+CheckContainsText <$STR(T90)> 寒风印
+#ACT
+SetMagicPower 冰咆哮 20 1
+
+[@道士铭文登录触发]
+
+#IF
+CheckContainsText <$STR(T90)> 嗜血印
+#ACT
+SetMagicPower 噬血术 15 1
+sendmsg 5 拥有嗜血印，噬血术伤害提升15%！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

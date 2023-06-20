@@ -1,0 +1,360 @@
+[@竞技等级榜排序]
+{
+#IF
+Checkrenewlevel < 3
+#Act
+Break
+
+#IF
+Large G491 0
+#Act
+Break
+
+#IF
+#Act
+Makelongnum N0 <$Relevel> <$Level>
+Calcvar Human 竞技等级榜 = <$Str(N0)>
+Savevar Human 竞技等级榜
+SortHumVar 竞技等级榜 S$竞技第一参数 N$竞技第二参数 3 0 10
+
+#IF
+#Act
+Encodelongnum <$Str(N$竞技第二参数1)> N1 N2
+#IF
+Large N2 2
+#Act
+Mov A420 <$Str(N1)>
+Mov A410 <$Str(S$竞技第一参数1)>
+Mov G410 <$Str(N2)>
+
+#IF
+#Act
+Encodelongnum <$Str(N$竞技第二参数2)> N1 N2
+#IF
+Large N2 2
+#Act
+Mov A421 <$Str(N1)>
+Mov A411 <$Str(S$竞技第一参数2)>
+Mov G411 <$Str(N2)>
+
+#IF
+#Act
+Encodelongnum <$Str(N$竞技第二参数3)> N1 N2
+#IF
+Large N2 2
+#Act
+Mov A422 <$Str(N1)>
+Mov A412 <$Str(S$竞技第一参数3)>
+Mov G412 <$Str(N2)>
+
+#IF
+#Act
+Encodelongnum <$Str(N$竞技第二参数4)> N1 N2
+#IF
+Large N2 2
+#Act
+Mov A423 <$Str(N1)>
+Mov A413 <$Str(S$竞技第一参数4)>
+Mov G413 <$Str(N2)>
+#IF
+#Act
+Encodelongnum <$Str(N$竞技第二参数5)> N1 N2
+#IF
+Large N2 2
+#Act
+Mov A424 <$Str(N1)>
+Mov A414 <$Str(S$竞技第一参数5)>
+Mov G414 <$Str(N2)>
+#IF
+#Act
+Encodelongnum <$Str(N$竞技第二参数6)> N1 N2
+#IF
+Large N2 2
+#Act
+Mov A425 <$Str(N1)>
+Mov A415 <$Str(S$竞技第一参数6)>
+Mov G415 <$Str(N2)>
+#IF
+#Act
+Encodelongnum <$Str(N$竞技第二参数7)> N1 N2
+#IF
+Large N2 2
+#Act
+Mov A426 <$Str(N1)>
+Mov A416 <$Str(S$竞技第一参数7)>
+Mov G416 <$Str(N2)>
+#IF
+#Act
+Encodelongnum <$Str(N$竞技第二参数8)> N1 N2
+#IF
+Large N2 2
+#Act
+Mov A427 <$Str(N1)>
+Mov A417 <$Str(S$竞技第一参数8)>
+Mov G417 <$Str(N2)>
+#IF
+#Act
+Encodelongnum <$Str(N$竞技第二参数9)> N1 N2
+#IF
+Large N2 2
+#Act
+Mov A428 <$Str(N1)>
+Mov A418 <$Str(S$竞技第一参数9)>
+Mov G418 <$Str(N2)>
+#IF
+#Act
+Encodelongnum <$Str(N$竞技第二参数10)> N1 N2
+#IF
+Large N2 2
+#Act
+Mov A429 <$Str(N1)>
+Mov A419 <$Str(S$竞技第一参数10)>
+Mov G419 <$Str(N2)>
+}
+[@竞技龙魂榜排序]
+{
+#IF
+Small <$Human(竞技龙魂榜)> 10
+#Act
+Break
+#IF
+Large G491 1
+#Act
+Break
+
+#IF
+#Act
+SortHumVar 竞技龙魂榜 S$竞技第三参数 S$竞技第四参数 0 1 10
+#IF
+Large S$竞技第四参数1 9
+#Act
+Mov A440 <$Str(S$竞技第四参数1)>级
+Mov A430 <$Str(S$竞技第三参数1)>
+#IF
+Large S$竞技第四参数2 9
+#Act
+Mov A441 <$Str(S$竞技第四参数2)>级
+Mov A431 <$Str(S$竞技第三参数2)>
+#IF
+Large S$竞技第四参数3 9
+#Act
+Mov A442 <$Str(S$竞技第四参数3)>级
+Mov A432 <$Str(S$竞技第三参数3)>
+#IF
+Large S$竞技第四参数4 9
+#Act
+Mov A443 <$Str(S$竞技第四参数4)>级
+Mov A433 <$Str(S$竞技第三参数4)>
+#IF
+Large S$竞技第四参数5 9
+#Act
+Mov A444 <$Str(S$竞技第四参数5)>级
+Mov A434 <$Str(S$竞技第三参数5)>
+#IF
+Large S$竞技第四参数6 9
+#Act
+Mov A445 <$Str(S$竞技第四参数6)>级
+Mov A435 <$Str(S$竞技第三参数6)>
+#IF
+Large S$竞技第四参数7 9
+#Act
+Mov A446 <$Str(S$竞技第四参数7)>级
+Mov A436 <$Str(S$竞技第三参数7)>
+#IF
+Large S$竞技第四参数8 9
+#Act
+Mov A447 <$Str(S$竞技第四参数8)>级
+Mov A437 <$Str(S$竞技第三参数8)>
+#IF
+Large S$竞技第四参数9 9
+#Act
+Mov A448 <$Str(S$竞技第四参数9)>级
+Mov A438 <$Str(S$竞技第三参数9)>
+#IF
+Large S$竞技第四参数10 9
+#Act
+Mov A449 <$Str(S$竞技第四参数10)>级
+Mov A439 <$Str(S$竞技第三参数10)>
+;==========================================
+
+}
+[@竞技注灵榜排序]
+{
+#IF
+#Act
+Mov N$注灵排序 <$Str(U64)>
+Inc N$注灵排序 <$Str(U65)>
+Inc N$注灵排序 <$Str(U66)>
+Inc N$注灵排序 <$Str(U67)>
+Inc N$注灵排序 <$Str(U68)>
+Inc N$注灵排序 <$Str(U69)>
+Inc N$注灵排序 <$Str(U70)>
+Inc N$注灵排序 <$Str(U71)>
+Inc N$注灵排序 <$Str(U72)>
+Inc N$注灵排序 <$Str(U73)>
+Inc N$注灵排序 <$Str(U74)>
+#IF
+Small N$注灵排序 30
+#Act
+Break
+
+#IF
+Large G491 2
+#Act
+Break
+
+#IF
+#Act
+Mov N$注灵排序 <$Str(U64)>
+Inc N$注灵排序 <$Str(U65)>
+Inc N$注灵排序 <$Str(U66)>
+Inc N$注灵排序 <$Str(U67)>
+Inc N$注灵排序 <$Str(U68)>
+Inc N$注灵排序 <$Str(U69)>
+Inc N$注灵排序 <$Str(U70)>
+Inc N$注灵排序 <$Str(U71)>
+Inc N$注灵排序 <$Str(U72)>
+Inc N$注灵排序 <$Str(U73)>
+Inc N$注灵排序 <$Str(U74)>
+Calcvar Human 竞技注灵榜 = <$Str(N$注灵排序)>
+Savevar Human 竞技注灵榜
+SortHumVar 竞技注灵榜 S$竞技第五参数 S$竞技第六参数 0 1 10
+#IF
+Large S$竞技第六参数1 29
+#Act
+Mov A460 <$Str(S$竞技第六参数1)>级
+Mov A450 <$Str(S$竞技第五参数1)>
+#IF
+Large S$竞技第六参数2 29
+#Act
+Mov A461 <$Str(S$竞技第六参数2)>级
+Mov A451 <$Str(S$竞技第五参数2)>
+#IF
+Large S$竞技第六参数3 29
+#Act
+Mov A462 <$Str(S$竞技第六参数3)>级
+Mov A452 <$Str(S$竞技第五参数3)>
+#IF
+Large S$竞技第六参数4 29
+#Act
+Mov A463 <$Str(S$竞技第六参数4)>级
+Mov A453 <$Str(S$竞技第五参数4)>
+#IF
+Large S$竞技第六参数5 29
+#Act
+Mov A464 <$Str(S$竞技第六参数5)>级
+Mov A454 <$Str(S$竞技第五参数5)>
+#IF
+Large S$竞技第六参数6 29
+#Act
+Mov A465 <$Str(S$竞技第六参数6)>级
+Mov A455 <$Str(S$竞技第五参数6)>
+#IF
+Large S$竞技第六参数7 29
+#Act
+Mov A466 <$Str(S$竞技第六参数7)>级
+Mov A456 <$Str(S$竞技第五参数7)>
+#IF
+Large S$竞技第六参数8 29
+#Act
+Mov A467 <$Str(S$竞技第六参数8)>级
+Mov A457 <$Str(S$竞技第五参数8)>
+#IF
+Large S$竞技第六参数9 29
+#Act
+Mov A468 <$Str(S$竞技第六参数9)>级
+Mov A458 <$Str(S$竞技第五参数9)>
+#IF
+Large S$竞技第六参数10 29
+#Act
+Mov A469 <$Str(S$竞技第六参数10)>级
+Mov A459 <$Str(S$竞技第五参数10)>
+
+
+}
+[@竞技元神榜排序]
+{
+#IF
+#Act
+Mov N$元神排序 <$Str(U1)>
+Inc N$元神排序 <$Str(U2)>
+Inc N$元神排序 <$Str(U3)>
+Inc N$元神排序 <$Str(U4)>
+Inc N$元神排序 <$Str(U5)>
+#IF
+Small <$Str(N$元神排序)> 8
+#Act
+Break
+#IF
+Large G491 3
+#Act
+Break
+
+#IF
+#Act
+Mov N$元神排序 <$Str(U1)>
+Inc N$元神排序 <$Str(U2)>
+Inc N$元神排序 <$Str(U3)>
+Inc N$元神排序 <$Str(U4)>
+Inc N$元神排序 <$Str(U5)>
+Calcvar Human 竞技元神榜 = <$Str(N$元神排序)>
+Savevar Human 竞技元神榜
+SortHumVar 竞技元神榜 S$竞技第七参数 S$竞技第八参数 0 1 10
+#IF
+Large S$竞技第八参数1 7
+#Act
+Mov A480 <$Str(S$竞技第八参数1)>级
+Mov A470 <$Str(S$竞技第七参数1)>
+#IF
+Large S$竞技第八参数2 7
+#Act
+Mov A481 <$Str(S$竞技第八参数2)>级
+Mov A471 <$Str(S$竞技第七参数2)>
+#IF
+Large S$竞技第八参数3 7
+#Act
+Mov A482 <$Str(S$竞技第八参数3)>级
+Mov A472 <$Str(S$竞技第七参数3)>
+#IF
+Large S$竞技第八参数4 7
+#Act
+Mov A483 <$Str(S$竞技第八参数4)>级
+Mov A473 <$Str(S$竞技第七参数4)>
+#IF
+Large S$竞技第八参数5 7
+#Act
+Mov A484 <$Str(S$竞技第八参数5)>级
+Mov A474 <$Str(S$竞技第七参数5)>
+#IF
+Large S$竞技第八参数6 7
+#Act
+Mov A485 <$Str(S$竞技第八参数6)>级
+Mov A475 <$Str(S$竞技第七参数6)>
+#IF
+Large S$竞技第八参数7 7
+#Act
+Mov A486 <$Str(S$竞技第八参数7)>级
+Mov A476 <$Str(S$竞技第七参数7)>
+#IF
+Large S$竞技第八参数8 7
+#Act
+Mov A487 <$Str(S$竞技第八参数8)>级
+Mov A477 <$Str(S$竞技第七参数8)>
+#IF
+Large S$竞技第八参数9 7
+#Act
+Mov A488 <$Str(S$竞技第八参数9)>级
+Mov A478 <$Str(S$竞技第七参数9)>
+#IF
+Large S$竞技第八参数10 7
+#Act
+Mov A489 <$Str(S$竞技第八参数10)>级
+Mov A479 <$Str(S$竞技第七参数10)>
+;===============
+
+
+}
+[@竞技强星榜排序]
+{
+
+}

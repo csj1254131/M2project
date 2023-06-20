@@ -1,0 +1,2348 @@
+[@Startup]
+#IF
+Large <$HFCOUNT> 0
+#ACT
+Mov N$循环次数 1
+SortHumVar 沙城捐献金额 S$沙捐 N$金额 0 1 0
+Goto @合区后沙捐判断金额x
+
+
+#IF
+#Act
+
+MAPEFFECT 1 fxdt1 262 39 10088 -1 0
+MAPEFFECT 1 fxdt2 45 47 10088 -1 0
+MAPEFFECT 1 fxdt2 173 170 10088 -1 0
+MAPEFFECT 1 fxdt3 266 108 10088 -1 0
+MAPEFFECT 1 fxdt3 42 158 10088 -1 0
+MAPEFFECT 1 fxdt4 256 213 10088 -1 0
+MAPEFFECT 1 wjdy1 125 62 10088 -1 0
+MAPEFFECT 1 wjdy2 13 12 10088 -1 0
+MAPEFFECT 1 wjdy2 35 17 10088 -1 0
+MAPEFFECT 1 wjdy3 18 39 10088 -1 0
+MAPEFFECT 1 nmjt1 100 100 10088 -1 0
+MAPEFFECT 1 nmjt2 16 18 10088 -1 0
+MAPEFFECT 1 nmjt2 50 50 10088 -1 0
+MAPEFFECT 1 nmjt3 12 12 10088 -1 0
+MAPEFFECT 1 mly1 164 393 10088 -1 0
+MAPEFFECT 1 mly2 27 368 10088 -1 0
+MAPEFFECT 1 mly2 19 39 10088 -1 0
+MAPEFFECT 1 mly3 256 213 10088 -1 0
+MAPEFFECT 1 hld2 36 17 10088 -1 0
+MAPEFFECT 1 hldt1 277 280 10088 -1 0
+MAPEFFECT 1 hldt2 21 47 10088 -1 0
+MAPEFFECT 1 hldt2 282 108 10088 -1 0
+MAPEFFECT 1 hldt3 24 268 10088 -1 0
+MAPEFFECT 1 hldt3 271 38 10088 -1 0
+MAPEFFECT 1 hldt4 51 111 10088 -1 0
+MAPEFFECT 1 hywjdy1 125 62 10088 -1 0
+MAPEFFECT 1 hywjdy2 13 12 10088 -1 0
+MAPEFFECT 1 hywjdy2 35 17 10088 -1 0
+MAPEFFECT 1 hywjdy3 18 39 10088 -1 0
+MAPEFFECT 1 hynmjt1 100 100 10088 -1 0
+MAPEFFECT 1 hynmjt2 16 18 10088 -1 0
+MAPEFFECT 1 hynmjt2 50 50 10088 -1 0
+MAPEFFECT 1 hynmjt3 12 12 10088 -1 0
+MAPEFFECT 1 hymly1 164 393 10088 -1 0
+MAPEFFECT 1 hymly2 27 368 10088 -1 0
+MAPEFFECT 1 hymly2 19 39 10088 -1 0
+MAPEFFECT 1 hymly3 256 213 10088 -1 0
+MAPEFFECT 1 hyhld2 36 17 10088 -1 0
+MAPEFFECT 1 hyhldt1 277 280 10088 -1 0
+MAPEFFECT 1 hyhldt2 21 47 10088 -1 0
+MAPEFFECT 1 hyhldt2 282 108 10088 -1 0
+MAPEFFECT 1 hyhldt3 24 268 10088 -1 0
+MAPEFFECT 1 hyhldt3 271 38 10088 -1 0
+MAPEFFECT 1 hyhldt4 51 111 10088 -1 0
+MAPEFFECT 1 hxd2 271 37 10088 -1 0
+MAPEFFECT 1 hyhxd2 271 37 10088 -1 0
+
+MOV G200 0
+MOV G231 0
+MOV G250 0
+MOV G248 0
+MOV G243 0
+;Mov A0 
+;Mov G0 0
+
+#If
+Equal G490 0
+#Act
+Mov G490 1
+
+#If
+Equal A490
+#Act
+Mov A490 <$Month>月<$Day>号
+
+#If
+Not Checktextlist ..\QuestDiary\通区\<$Str(A490)>\检测是否已经创建目录.Txt 已创建目录
+#Act
+ForceDirectories ..\QuestDiary\通区\
+ForceDirectories ..\QuestDiary\通区\<$Str(A490)>\
+Createfile ..\QuestDiary\通区\<$Str(A490)>\<$Servername>.txt
+Createfile ..\QuestDiary\通区\<$Str(A490)>\检测是否已经创建目录.Txt
+Addtextlistex ..\QuestDiary\通区\<$Str(A490)>\检测是否已经创建目录.Txt 已创建目录 0
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\系统功能\BOSS配置.ini 领主 领主串1 S$首杀串1
+ReadConfigFileItem ..\QuestDiary\游戏功能\系统功能\BOSS配置.ini 领主 领主串2 S$首杀串2
+ReadConfigFileItem ..\QuestDiary\游戏功能\系统功能\BOSS配置.ini 领主 领主串3 S$首杀串3
+ReadConfigFileItem ..\QuestDiary\游戏功能\系统功能\BOSS配置.ini 领主 领主串4 S$首杀串4
+ReadConfigFileItem ..\QuestDiary\游戏功能\系统功能\BOSS配置.ini 领主 领主串5 S$首杀串5
+ReadConfigFileItem ..\QuestDiary\游戏功能\系统功能\BOSS配置.ini 领主 领主串6 S$首杀串6
+ReadConfigFileItem ..\QuestDiary\游戏功能\系统功能\BOSS配置.ini 领主 领主串7 S$首杀串7
+ReadConfigFileItem ..\QuestDiary\游戏功能\系统功能\BOSS配置.ini 领主 领主串8 S$首杀串8
+MOV A352 <$STR(S$首杀串1)><$STR(S$首杀串2)><$STR(S$首杀串3)><$STR(S$首杀串4)><$STR(S$首杀串5)><$STR(S$首杀串6)><$STR(S$首杀串7)><$STR(S$首杀串8)>
+
+
+#If
+Equal A491
+#Act
+Mov A491 ◆◆◆沙城争霸◆◆◆\虚位以待
+
+#IF
+#ACT
+Var Integer Global 全区沙捐金额
+#CALL [\游戏功能\系统功能\BOSS状态.txt] @清空BOSS变量
+
+
+#IF
+EQUAL G0 0
+#ACT
+MOV G2 200
+MOV G3 200
+MOV G4 200
+MOV G5 200
+MOV G6 100
+MOV G7 100
+
+#IF
+EQUAL A0
+#ACT
+Mov A0 <$YEAR>-<$MONTH>-<$DAY>
+Mov A497 <$HOUR>-<$MINUTE>-<$SECOND>
+MOV G100  604800
+
+MOV G101 <$HOUR>
+MOV G102 <$MINUTE>
+MOV G103 <$SECOND>
+
+MUL G101 3600
+MUL G102 60
+DEC G100 <$str(G101)>
+DEC G100 <$str(G102)>
+DEC G100 <$str(G103)>
+
+
+
+#IF
+Equal G497 0
+#Act
+Mov G497 1
+#IF
+Equal A410
+#Act
+Mov A410 此位暂无人占领
+#IF
+Equal A411
+#Act
+Mov A411 此位暂无人占领
+#IF
+Equal A412
+#Act
+Mov A412 此位暂无人占领
+#IF
+Equal A413
+#Act
+Mov A413 此位暂无人占领
+#IF
+Equal A414
+#Act
+Mov A414 此位暂无人占领
+#IF
+Equal A415
+#Act
+Mov A415 此位暂无人占领
+#IF
+Equal A416
+#Act
+Mov A416 此位暂无人占领
+#IF
+Equal A417
+#Act
+Mov A417 此位暂无人占领
+#IF
+Equal A418
+#Act
+Mov A418 此位暂无人占领
+#IF
+Equal A419
+#Act
+Mov A419 此位暂无人占领
+#IF
+Equal A430
+#Act
+Mov A430 此位暂无人占领
+#IF
+Equal A431
+#Act
+Mov A431 此位暂无人占领
+#IF
+Equal A432
+#Act
+Mov A432 此位暂无人占领
+#IF
+Equal A433
+#Act
+Mov A433 此位暂无人占领
+#IF
+Equal A434
+#Act
+Mov A434 此位暂无人占领
+#IF
+Equal A435
+#Act
+Mov A435 此位暂无人占领
+#IF
+Equal A436
+#Act
+Mov A436 此位暂无人占领
+#IF
+Equal A437
+#Act
+Mov A437 此位暂无人占领
+#IF
+Equal A438
+#Act
+Mov A438 此位暂无人占领
+#IF
+Equal A439
+#Act
+Mov A439 此位暂无人占领
+#IF
+Equal A470
+#Act
+Mov A470 此位暂无人占领
+#IF
+Equal A471
+#Act
+Mov A471 此位暂无人占领
+#IF
+Equal A472
+#Act
+Mov A472 此位暂无人占领
+#IF
+Equal A473
+#Act
+Mov A473 此位暂无人占领
+#IF
+Equal A474
+#Act
+Mov A474 此位暂无人占领
+#IF
+Equal A475
+#Act
+Mov A475 此位暂无人占领
+#IF
+Equal A476
+#Act
+Mov A476 此位暂无人占领
+#IF
+Equal A477
+#Act
+Mov A477 此位暂无人占领
+#IF
+Equal A478
+#Act
+Mov A478 此位暂无人占领
+#IF
+Equal A479
+#Act
+Mov A479 此位暂无人占领
+#IF
+Equal A450
+#Act
+Mov A450 此位暂无人占领
+#IF
+Equal A451
+#Act
+Mov A451 此位暂无人占领
+#IF
+Equal A452
+#Act
+Mov A452 此位暂无人占领
+#IF
+Equal A453
+#Act
+Mov A453 此位暂无人占领
+#IF
+Equal A454
+#Act
+Mov A454 此位暂无人占领
+#IF
+Equal A455
+#Act
+Mov A455 此位暂无人占领
+#IF
+Equal A456
+#Act
+Mov A456 此位暂无人占领
+#IF
+Equal A457
+#Act
+Mov A457 此位暂无人占领
+#IF
+Equal A458
+#Act
+Mov A458 此位暂无人占领
+#IF
+Equal A459
+#Act
+Mov A459 此位暂无人占领
+
+[@LoadGuild]
+#IF
+#ACT
+VAR Integer GUILD 参加沙巴克人数
+Savevar GUILD 参加沙巴克人数
+
+
+[@Login]
+#IF
+#ACT
+#CALL [\游戏变量\玩家变量声明.txt] @玩家变量声明
+
+#If
+LARGE <$Hfcount> 0
+Checkunderwar 沙巴克
+#Act
+SetOnTimer 255 1
+
+#IF
+large u13 4
+#ACT
+ChangeModeEx 14 65535
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+AUTOPICKITEMBYBTN
+#CALL [\游戏盒子\创建盒子.txt] @创建盒子
+#CALL [\游戏登陆\登陆脚本.txt] @登陆设置
+#CALL [\游戏功能\系统功能\捐献.txt] @捐献合区排序
+#CALL [\游戏功能\界面按钮\界面按钮QM.txt] @界面按钮QM
+#CALL [\游戏功能\界面按钮\其它按钮QM.txt] @其它按钮QM
+#CALL [\游戏功能\活动图标\活动图标QM.txt] @活动图标QM
+#CALL [\游戏功能\读取背包\读取背包.txt] @背包检测
+#CALL [\功能脚本\地图绘制\地图绘制.txt] @地图绘制
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\元素刷新.txt] @元素刷新
+#CALL [\爆率刷新.txt] @爆率刷新
+#CALL [\吸血刷新.txt] @吸血刷新
+#CALL [\功能脚本\装备强星\强星套装.txt] @强星套装
+#CALL [\游戏功能\铭文大师\铭文登录触发.txt] @铭文登录触发
+#CALL [\游戏功能\任务系统\主线流程.txt] @主线开始
+#CALL [\功能脚本\红点系统\红点系统.txt] @红点显示
+#CALL [\功能脚本\首冲相关\首冲推荐.txt] @首冲推荐
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装柜红点
+#CALL [\游戏功能\系统功能\复活相关.txt] @启动复活面板
+#CALL [\功能脚本\vip特权\vip红点检测.txt] @vip红点检测
+#Call [\游戏功能\活跃系统\每日活跃重置.txt] @每日活跃重置
+#Call [\游戏功能\活跃系统\每周活跃重置.txt] @每周活跃重置
+#CALL [\游戏功能\活跃系统\读取活跃配置.txt] @读取活跃配置
+BindEvent 1 1 @会员自动回收
+BindEvent 2 1 @删除背包满
+
+SetOnTimer 103 5
+SetOnTimer 104 300
+SetOnTimer 105 60
+#IF
+NOT CheckContainsText <$map> xssl
+#ACT
+CLEARDELAYGOTO 1
+
+#IF
+LARGE U247 0
+#ACT
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @召唤精灵
+#IF
+#ACT
+CALCVAR HUMAN B_本次登录时间 = <$UTCNOW8>
+SAVEVAR HUMAN B_本次登录时间
+MOV N$今日月日数据 <$MONTH><$DAY>
+
+#IF
+LARGE U248 <$UTCNOW8>
+#ACT
+MOV S$经验倍数值 <$STR(T203)>
+DEC S$经验倍数值 倍
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+;KILLMONEXPRATE <$STR(S$经验倍数值)>00 <$STR(N$剩余倍数时间)>
+SENDMSG 7 您的<$STR(S$经验倍数值)>倍经验卷剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+
+#IF
+NOT EQUAL N$今日月日数据 <$STR(U179)>
+#ACT
+MOV U180 0
+MOV U181 0
+MOV U182 0
+MOV U183 0
+MOV U184 0
+MOV U185 0
+MOV U186 0
+MOV U187 0
+MOV U188 0
+MOV U189 0
+MOV U190 0
+MOV U191 0
+MOV U192 0
+MOV U193 0
+MOV U194 0
+MOV U195 0
+MOV U196 0
+MOV U197 0
+MOV U198 0
+MOV U199 0
+MOV U160 0
+MOV U161 0
+MOV U162 0
+MOV U163 0
+MOV U164 0
+MOV U165 0
+MOV U166 0
+MOV U167 0
+MOV U168 0
+MOV U169 0
+MOV U170 0
+MOV U172 0
+MOV U173 0
+MOV U174 0
+MOV U249 0
+MOV T211
+MOV T212
+MOV T213
+MOV N$今日月日数据 <$MONTH><$DAY>
+MOV U179 <$STR(N$今日月日数据)>
+CALCVAR HUMAN B_历史登录天数 + 1
+SAVEVAR HUMAN B_历史登录天数
+CALCVAR HUMAN B_本次登录时间 = <$UTCNOW8>
+SAVEVAR HUMAN B_本次登录时间
+MOV N$加高倍经验 1
+CALCVAR HUMAN B_可杀经验怪数量 = 0
+SAVEVAR HUMAN B_可杀经验怪数量
+#IF
+LARGE U252 6
+#ACT
+MOV U252 0
+MOV T207
+MOV T208
+MOV T209
+MOV T210
+#IF
+EQUAL N$加高倍经验 1
+SMALL <$RELEVEL> 4
+#ACT
+MOV N$转生恢复值 30000000
+#IF
+EQUAL N$加高倍经验 1
+LARGE <$RELEVEL> 3
+SMALL <$RELEVEL> 6
+#ACT
+MOV N$转生恢复值 50000000
+
+#IF
+EQUAL N$加高倍经验 1
+LARGE <$RELEVEL> 5
+#ACT
+MOV N$转生恢复值 <$RELEVEL>
+MUL N$转生恢复值 20000000
+MOV N$等级恢复值 <$LEVEL>
+MUL N$等级恢复值 10000
+INC N$转生恢复值 <$STR(N$等级恢复值)>
+
+#IF
+LARGE N$转生恢复值 220000000
+#ACT
+MOV N$转生恢复值 220000000
+#IF
+EQUAL N$加高倍经验 1
+#ACT
+MOV N$高倍总经验值 <$STR(N$转生恢复值)>
+MUL N$高倍总经验值 7
+CALCVAR HUMAN B_高倍总经验值 = <$STR(N$高倍总经验值)>
+SAVEVAR HUMAN B_高倍总经验值
+MOV N$临时总经验 <$HUMAN(B_可恢复经验值)>
+INC N$临时总经验 <$STR(N$转生恢复值)>
+
+#IF
+LARGE N$临时总经验 <$HUMAN(B_高倍总经验值)>
+EQUAL N$加高倍经验 1
+#ACT
+CALCVAR HUMAN B_可恢复经验值 + <$HUMAN(B_高倍总经验值)>
+SAVEVAR HUMAN B_可恢复经验值
+MOV N$加高倍经验 0
+#ELSEACT
+CALCVAR HUMAN B_可恢复经验值 + <$STR(N$转生恢复值)>
+SAVEVAR HUMAN B_可恢复经验值
+MOV N$加高倍经验 0
+
+#IF
+Not Equal T250
+#Act
+Sendmsg 6 你于<$Str(T250)>购买的七日成长礼包..赶快去领取... 
+
+#IF
+equal T200 5阶特戒自选箱
+#Act
+GiveStateItem 5阶特戒自选箱 1 0 1 0 1 1 1 1 1
+MOV T200
+#IF
+equal T201 火龙秘宝
+#Act
+GiveStateItem 火龙秘宝 1 0 1 0 1 1 1 1 1
+MOV T201
+
+#IF
+Small G497 5
+#Act
+#Call [\全服活动\竞技排行榜.txt] @竞技等级榜排序
+#Call [\全服活动\竞技排行榜.txt] @竞技龙魂榜排序
+#Call [\全服活动\竞技排行榜.txt] @竞技注灵榜排序
+#Call [\全服活动\竞技排行榜.txt] @竞技元神榜排序
+#Call [\全服活动\竞技排行榜.txt] @竞技强星榜排序
+#IF
+large G497 2
+Small G497 5
+#Act
+#Call [\全服活动\竞技榜登陆排序奖励.txt] @竞技登陆排序奖励sm
+
+#IF
+NOT CheckContainsText <$map> xssl
+#ACT
+CLEARDELAYGOTO 1
+
+#IF
+NOT EQUAL <$HUMAN(C_兑换码间隔)> 0
+#ACT
+GOTO @兑换码间隔上线
+
+#IF
+NOT EQUAL <$HUMAN(C_烈阳印状态)> 0
+#ACT
+GOTO @烈阳印状态生效
+
+#IF
+NOT EQUAL <$HUMAN(C_玄冥印状态)> 0
+#ACT
+GOTO @玄冥印状态生效
+
+#IF
+NOT EQUAL <$HUMAN(C_龙炎印状态)> 0
+#ACT
+GOTO @龙炎印状态生效
+
+#IF
+NOT EQUAL <$HUMAN(C_撕裂印状态)> 0
+#ACT
+GOTO @撕裂印状态生效
+
+[@合区后沙捐判断金额x]
+#IF
+Large <$Str(N$金额<$Str(N$循环次数)>)> 0
+#Act
+Inc N$总沙捐 <$Str(N$金额<$Str(N$循环次数)>)>
+Inc N$循环次数 1
+Mov G492 <$Str(N$总沙捐)>
+Goto @合区后沙捐判断金额x
+
+[@兑换码间隔上线]
+#IF
+#ACT
+MOV N$C_激活码间隔当前 <$UTCNOW8>
+DEC N$C_激活码间隔当前 <$HUMAN(C_兑换码间隔)>
+
+#OR
+equal <$STR(N$C_激活码间隔当前)> <$HUMAN(C_兑换码间隔)>
+large <$STR(N$C_激活码间隔当前)> <$HUMAN(C_兑换码间隔)>
+#ACT
+CALCVAR HUMAN C_兑换码间隔 = 0
+SAVEVAR HUMAN C_兑换码间隔
+#ELSEACT
+SetOnTimer 160 1
+
+[@ONTIMER160]
+#IF
+#ACT
+MOV N$C_激活码间隔当前 <$UTCNOW8>
+DEC N$C_激活码间隔当前 <$HUMAN(C_兑换码间隔)>
+;sendmsg 0 兑换间隔：<$STR(N$C_激活码间隔当前)>序列号<$NPCINPUT(2)>
+
+#OR
+equal <$STR(N$C_激活码间隔当前)> 5
+large <$STR(N$C_激活码间隔当前)> 5
+#ACT
+CALCVAR HUMAN C_兑换码间隔 = 0
+SAVEVAR HUMAN C_兑换码间隔
+SetOffTimer 160
+
+
+;=============铭文相关==============================
+
+
+[@烈阳印状态生效]
+
+#IF
+#ACT
+MOV N$C_烈阳印当前 <$UTCNOW8>
+DEC N$C_烈阳印当前 <$HUMAN(C_烈阳印状态)>
+
+#OR
+equal <$STR(N$C_烈阳印当前)> <$HUMAN(C_烈阳印状态)>
+large <$STR(N$C_烈阳印当前)> <$HUMAN(C_烈阳印状态)>
+#ACT
+CALCVAR HUMAN C_烈阳印状态 = 0
+SAVEVAR HUMAN C_烈阳印状态
+#ELSEACT
+SetOnTimer 161 1
+
+[@ONTIMER161]
+#IF
+#ACT
+MOV N$C_烈阳印当前 <$UTCNOW8>
+DEC N$C_烈阳印当前 <$HUMAN(C_烈阳印状态)>
+AddhpPer - 3
+
+#OR
+equal <$STR(N$C_烈阳印当前)> 5
+large <$STR(N$C_烈阳印当前)> 5
+#ACT
+CALCVAR HUMAN C_烈阳印状态 = 0
+SAVEVAR HUMAN C_烈阳印状态
+SetOffTimer 161
+sendmsg 9 【烈阳印】效果已清除！
+break
+
+[@玄冥印状态生效]
+
+#IF
+#ACT
+MOV N$C_玄冥印当前 <$UTCNOW8>
+DEC N$C_玄冥印当前 <$HUMAN(C_玄冥印状态)>
+
+#OR
+equal <$STR(N$C_玄冥印当前)> <$HUMAN(C_玄冥印状态)>
+large <$STR(N$C_玄冥印当前)> <$HUMAN(C_玄冥印状态)>
+#ACT
+CALCVAR HUMAN C_玄冥印状态 = 0
+SAVEVAR HUMAN C_玄冥印状态
+#ELSEACT
+SetOnTimer 162 1
+
+[@ONTIMER162]
+#IF
+#ACT
+MOV N$C_玄冥印当前 <$UTCNOW8>
+DEC N$C_玄冥印当前 <$HUMAN(C_玄冥印状态)>
+AddhpPer - 2
+AddmpPer - 2
+
+#OR
+equal <$STR(N$C_玄冥印当前)> 5
+large <$STR(N$C_玄冥印当前)> 5
+#ACT
+CALCVAR HUMAN C_玄冥印状态 = 0
+SAVEVAR HUMAN C_玄冥印状态
+SetOffTimer 162
+sendmsg 9 【玄冥印】效果已清除！
+break
+
+[@龙炎印状态生效]
+
+#IF
+#ACT
+MOV N$C_龙炎印当前 <$UTCNOW8>
+DEC N$C_龙炎印当前 <$HUMAN(C_龙炎印状态)>
+
+#OR
+equal <$STR(N$C_龙炎印当前)> <$HUMAN(C_龙炎印状态)>
+large <$STR(N$C_龙炎印当前)> <$HUMAN(C_龙炎印状态)>
+#ACT
+CALCVAR HUMAN C_龙炎印状态 = 0
+SAVEVAR HUMAN C_龙炎印状态
+#ELSEACT
+SetOnTimer 163 1
+
+[@ONTIMER163]
+#IF
+#ACT
+MOV N$C_龙炎印当前 <$UTCNOW8>
+DEC N$C_龙炎印当前 <$HUMAN(C_龙炎印状态)>
+AddhpPer - 3
+
+#OR
+equal <$STR(N$C_龙炎印当前)> 5
+large <$STR(N$C_龙炎印当前)> 5
+#ACT
+CALCVAR HUMAN C_龙炎印状态 = 0
+SAVEVAR HUMAN C_龙炎印状态
+SetOffTimer 163
+sendmsg 9 【龙炎印】效果已清除！
+break
+
+
+[@撕裂印状态生效]
+
+#IF
+#ACT
+MOV N$C_撕裂印当前 <$UTCNOW8>
+DEC N$C_撕裂印当前 <$HUMAN(C_撕裂印状态)>
+
+#OR
+equal <$STR(N$C_撕裂印当前)> <$HUMAN(C_撕裂印状态)>
+large <$STR(N$C_撕裂印当前)> <$HUMAN(C_撕裂印状态)>
+#ACT
+CALCVAR HUMAN C_撕裂印状态 = 0
+SAVEVAR HUMAN C_撕裂印状态
+#ELSEACT
+SetOnTimer 164 1
+
+[@ONTIMER164]
+#IF
+#ACT
+MOV N$C_撕裂印当前 <$UTCNOW8>
+DEC N$C_撕裂印当前 <$HUMAN(C_撕裂印状态)>
+AddhpPer - 3
+
+#OR
+equal <$STR(N$C_撕裂印当前)> 5
+large <$STR(N$C_撕裂印当前)> 5
+#ACT
+CALCVAR HUMAN C_撕裂印状态 = 0
+SAVEVAR HUMAN C_撕裂印状态
+SetOffTimer 164
+sendmsg 9 【撕裂印】效果已清除！
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+[@刷新捐献排行]
+#IF
+CHECKVAR HUMAN 捐献灵符 < 200
+#ACT
+BREAK
+
+#IF
+CHECKVAR HUMAN 捐献灵符 > 9999
+CHECKVAR HUMAN 捐献灵符 > <$STR(G201)>
+#ACT
+MOV S$我的排名 第一名
+MOV N$当前排名 1
+MOV A201 <$USERNAME>
+MOV G201 <$HUMAN(捐献灵符)>
+CALCVAR HUMAN 顶戴展示六 = youqian
+SAVEVAR HUMAN 顶戴展示六
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+BREAK
+
+#IF
+EQUAL A201 <$USERNAME>
+#ACT
+BREAK
+
+#IF
+CHECKVAR HUMAN 捐献灵符 > 4999
+CHECKVAR HUMAN 捐献灵符 > <$STR(G202)>
+#ACT
+MOV S$我的排名 第二名
+MOV N$当前排名 2
+MOV A202 <$USERNAME>
+MOV G202 <$HUMAN(捐献灵符)>
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+BREAK
+
+#IF
+EQUAL A202 <$USERNAME>
+#ACT
+BREAK
+
+#IF
+CHECKVAR HUMAN 捐献灵符 > 2999
+CHECKVAR HUMAN 捐献灵符 > <$STR(G203)>
+#ACT
+MOV S$我的排名 第三名
+MOV N$当前排名 3
+MOV A203 <$USERNAME>
+MOV G203 <$HUMAN(捐献灵符)>
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+BREAK
+
+#IF
+EQUAL A203 <$USERNAME>
+#ACT
+BREAK
+
+#IF
+CHECKVAR HUMAN 捐献灵符 > 1999
+CHECKVAR HUMAN 捐献灵符 > <$STR(G204)>
+#ACT
+MOV S$我的排名 第四名
+MOV N$当前排名 4
+MOV A204 <$USERNAME>
+MOV G204 <$HUMAN(捐献灵符)>
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+BREAK
+
+#IF
+EQUAL A204 <$USERNAME>
+#ACT
+BREAK
+
+#IF
+CHECKVAR HUMAN 捐献灵符 > 999
+CHECKVAR HUMAN 捐献灵符 > <$STR(G205)>
+#ACT
+MOV S$我的排名 第五名
+MOV N$当前排名 5
+MOV A205 <$USERNAME>
+MOV G205 <$HUMAN(捐献灵符)>
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+BREAK
+
+#IF
+EQUAL A205 <$USERNAME>
+#ACT
+BREAK
+
+#IF
+CHECKVAR HUMAN 捐献灵符 > 199
+CHECKVAR HUMAN 捐献灵符 > <$STR(G206)>
+#ACT
+MOV S$我的排名 第六名
+MOV N$当前排名 6
+MOV A206 <$USERNAME>
+MOV G206 <$HUMAN(捐献灵符)>
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+BREAK
+
+#IF
+EQUAL A206 <$USERNAME>
+#ACT
+BREAK
+
+#IF
+CHECKVAR HUMAN 捐献灵符 > 199
+CHECKVAR HUMAN 捐献灵符 > <$STR(G207)>
+#ACT
+MOV S$我的排名 第七名
+MOV N$当前排名 7
+MOV A207 <$USERNAME>
+MOV G207 <$HUMAN(捐献灵符)>
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+BREAK
+
+#IF
+EQUAL A207 <$USERNAME>
+#ACT
+BREAK
+
+#IF
+CHECKVAR HUMAN 捐献灵符 > 199
+CHECKVAR HUMAN 捐献灵符 > <$STR(G208)>
+#ACT
+MOV S$我的排名 第八名
+MOV N$当前排名 8
+MOV A208 <$USERNAME>
+MOV G208 <$HUMAN(捐献灵符)>
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+BREAK
+
+#IF
+EQUAL A208 <$USERNAME>
+#ACT
+BREAK
+
+#IF
+CHECKVAR HUMAN 捐献灵符 > 199
+CHECKVAR HUMAN 捐献灵符 > <$STR(G209)>
+#ACT
+MOV S$我的排名 第九名
+MOV N$当前排名 9
+MOV A209 <$USERNAME>
+MOV G209 <$HUMAN(捐献灵符)>
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+BREAK
+
+#IF
+EQUAL A209 <$USERNAME>
+#ACT
+BREAK
+
+#IF
+CHECKVAR HUMAN 捐献灵符 > 199
+CHECKVAR HUMAN 捐献灵符 > <$STR(G210)>
+#ACT
+MOV S$我的排名 第十名
+MOV N$当前排名 10
+MOV A210 <$USERNAME>
+MOV G210 <$HUMAN(捐献灵符)>
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+BREAK
+
+
+[@排名重置]
+#IF
+LARGE N$临时流水号 9
+#ACT
+BREAK
+
+#IF
+EQUAL N$临时流水号 1
+#ACT
+MOV N$当前排名需求数 9999
+#IF
+EQUAL N$临时流水号 2
+#ACT
+MOV N$当前排名需求数 4999
+#IF
+EQUAL N$临时流水号 3
+#ACT
+MOV N$当前排名需求数 2999
+#IF
+EQUAL N$临时流水号 4
+#ACT
+MOV N$当前排名需求数 1999
+#IF
+EQUAL N$临时流水号 5
+#ACT
+MOV N$当前排名需求数 999
+#IF
+LARGE N$临时流水号 5
+#ACT
+MOV N$当前排名需求数 199
+
+#IF
+LARGE N$排名灵符<$STR(N$临时排名序号)> <$STR(N$当前排名需求数)>
+#ACT
+#ELSEACT
+INC N$临时流水号 1
+GOTO @排名重置
+BREAK
+
+#IF
+EQUAL N$临时流水号 1
+#ACT
+MOV A201 <$STR(S$排名<$STR(N$临时排名序号)>)>
+MOV G201 <$STR(N$排名灵符<$STR(N$临时排名序号)>)>
+#IF
+EQUAL N$临时流水号 2
+#ACT
+MOV A202 <$STR(S$排名<$STR(N$临时排名序号)>)>
+MOV G202 <$STR(N$排名灵符<$STR(N$临时排名序号)>)>
+#IF
+EQUAL N$临时流水号 3
+#ACT
+MOV A203 <$STR(S$排名<$STR(N$临时排名序号)>)>
+MOV G203 <$STR(N$排名灵符<$STR(N$临时排名序号)>)>
+#IF
+EQUAL N$临时流水号 4
+#ACT
+MOV A204 <$STR(S$排名<$STR(N$临时排名序号)>)>
+MOV G204 <$STR(N$排名灵符<$STR(N$临时排名序号)>)>
+#IF
+EQUAL N$临时流水号 5
+#ACT
+MOV A205 <$STR(S$排名<$STR(N$临时排名序号)>)>
+MOV G205 <$STR(N$排名灵符<$STR(N$临时排名序号)>)>
+#IF
+EQUAL N$临时流水号 6
+#ACT
+MOV A206 <$STR(S$排名<$STR(N$临时排名序号)>)>
+MOV G206 <$STR(N$排名灵符<$STR(N$临时排名序号)>)>
+#IF
+EQUAL N$临时流水号 7
+#ACT
+MOV A207 <$STR(S$排名<$STR(N$临时排名序号)>)>
+MOV G207 <$STR(N$排名灵符<$STR(N$临时排名序号)>)>
+#IF
+EQUAL N$临时流水号 8
+#ACT
+MOV A208 <$STR(S$排名<$STR(N$临时排名序号)>)>
+MOV G208 <$STR(N$排名灵符<$STR(N$临时排名序号)>)>
+#IF
+EQUAL N$临时流水号 9
+#ACT
+MOV A209 <$STR(S$排名<$STR(N$临时排名序号)>)>
+MOV G209 <$STR(N$排名灵符<$STR(N$临时排名序号)>)>
+#IF
+EQUAL N$临时流水号 10
+#ACT
+MOV A210 <$STR(S$排名<$STR(N$临时排名序号)>)>
+MOV G210 <$STR(N$排名灵符<$STR(N$临时排名序号)>)>
+#IF
+#ACT
+INC N$临时排名序号 1
+INC N$临时流水号 1
+GOTO @排名重置
+
+[@刷新捐献属性]
+#IF
+EQUAL <$USERNAME> <$STR(A201)>
+#ACT
+CALCVAR HUMAN 顶戴展示六 = youqian
+SAVEVAR HUMAN 顶戴展示六
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#ELSEACT
+CALCVAR HUMAN 顶戴展示六 =
+SAVEVAR HUMAN 顶戴展示六
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+
+#IF
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+
+
+
+
+;================================================
+[@清理狂暴保护]
+#If
+#Act
+Set [598] 0
+Set [597] 0
+ClearHumCustVar 神龙之力|庇护之力|狂暴保护 0
+SetOffTimer 255
+#CALL [\元素刷新.txt] @元素刷新
+
+[@攻城奖励前统计]
+#If
+Checkofguild <$Ownerguild>
+#ACT
+Mov G498 <$Guild(参加沙巴克人数)>
+
+[@攻城奖励发放]
+#If
+Not Equal <$Hfcount> <$Str(G490)>
+Checkofguild <$Ownerguild>
+Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Div N$沙城员火龙 1400 <$Guild(参加沙巴克人数)>
+Div N$沙城员元宝 3500000 <$Guild(参加沙巴克人数)>
+MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
+MailGIVE 火龙币 <$Str(N$沙城员火龙)>
+SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
+Mov N$沙城员元宝 0
+Mov N$沙城员火龙 0
+
+
+#If
+Not Equal <$Hfcount> <$Str(G490)>
+Not Checkofguild <$Ownerguild>
+Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Mov N$总沙城人数 <$Str(G495)>
+Dec N$总沙城人数 <$Str(G498)>
+Div N$沙城员火龙 600 <$Str(N$总沙城人数)>
+Div N$沙城员元宝 1500000 <$Str(N$总沙城人数)>
+MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
+MailGIVE 火龙币 <$Str(N$沙城员火龙)>
+SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
+Mov N$沙城员元宝 0
+Mov N$沙城员火龙 0
+
+
+
+#IF
+Equal <$Hfcount> <$Str(G490)>
+Checkofguild <$Ownerguild>
+Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Div N$沙城员 <$Str(G493)> <$Guild(参加沙巴克人数)>
+MailGIVE 绑定元宝 100000
+MailGIVE 火龙币 <$Str(N$沙城员)>
+SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
+Mov N$沙城员 0
+
+
+
+#IF
+Equal <$Hfcount> <$Str(G490)>
+Not Checkofguild <$Ownerguild>
+Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Mov N$总沙城人数 <$Str(G495)>
+Dec N$总沙城人数 <$Str(G498)>
+Div N$非沙城员 <$Str(G494)> <$Str(N$总沙城人数)>
+MailGIVE 火龙币 <$Str(N$非沙城员)>
+SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
+Mov N$非沙城员 0
+
+
+[@清理沙城捐献xx]
+#IF
+#Act
+Deprivetitle 沙捐大佬
+ClearHumCustVar 沙城捐献|顶戴展示四|沙城捐献金额 0
+ClearGlobalCustVar 全区沙捐金额
+Calcvar Guild 参加沙巴克人数 = 0
+Savevar Guild 参加沙巴克人数
+Clearnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+Clearnamelist ..\Questdiary\通区\<$Str(A490)>\<$Servername>.Txt
+#CALL [\吸血刷新.txt] @吸血刷新
+#CALL [\爆率刷新.txt] @爆率刷新
+#CALL [\元素刷新.txt] @元素刷新
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+
+[@清理沙城捐献平时xx]
+#IF
+#ACT
+Calcvar Guild 参加沙巴克人数 = 0
+Savevar Guild 参加沙巴克人数
+[@OnTimer255]
+#IF
+Checkvar Human 狂暴保护 = 已开启
+Checkunderwar 沙巴克
+NOT CheckInWarArea
+LARGE <$Human(神龙之力)> 0
+#Act
+MOV N$清空狂暴保护层 1
+#IF
+Checkvar Human 狂暴保护 = 已开启
+Checkunderwar 沙巴克
+NOT CheckInWarArea
+LARGE <$Human(庇护之力)> 0
+#Act
+MOV N$清空狂暴保护层 1
+
+#IF
+EQUAL N$清空狂暴保护层 1
+#ACT
+Mov N$神龙之力 0
+Mov N$庇护之力 0
+#CALL [\元素刷新.txt] @元素刷新
+MOV N$清空狂暴保护层 0
+
+#IF
+Checkunderwar 沙巴克
+CheckInWarArea
+Checkvar Human 沙城捐献 =
+#ACT
+Mapmove 3 335 327 3
+Sendmsg 9 你没有开启【沙城捐献】不能参加攻城活动...
+Sendmsg 6 你没有开启【沙城捐献】不能参加攻城活动...
+
+;-----------------------活动丶天下第一相关------------
+
+[@启动天降提醒]
+#IF
+#ACT
+MOV N$天降弹窗是否开启 0
+#CALL [\全服活动\天降元宝弹窗.txt] @天降提醒面板
+
+
+
+[@天降元宝开启]
+#IF
+#ACT
+#CALL [\全服活动\天降元宝弹窗.txt] @天降提醒面板
+#IF
+EQUAL N$天降弹窗是否开启 0
+#ACT
+MOV N$天降弹窗是否开启 1
+#CALL [\全服活动\天降元宝弹窗.txt] @天降元宝弹窗
+
+[@天降元宝关闭]
+#IF
+#ACT
+DELBUTTON 107 18
+
+[@启动世界BOSS提醒]
+#IF
+EQUAL <$HUMAN(B_世界BOSS伤害)> ??
+#ACT
+VAR Integer HUMAN B_世界BOSS伤害
+#IF
+#ACT
+#CALL [\全服活动\世界BOSS弹窗.txt] @世界提醒面板
+
+[@世界BOSS开启]
+#IF
+#ACT
+SetOnTimerEx 0 10
+#CALL [\全服活动\世界BOSS弹窗.txt] @世界提醒面板
+#CALL [\全服活动\世界BOSS弹窗.txt] @世界BOSS弹窗
+
+[@世界BOSS关闭]
+#IF
+#ACT
+#CALL [\全服活动\伤害排行.txt] @启动世界BOSS排行
+#CALL [\全服活动\伤害排行.txt] @发放奖励
+#IF
+ISONMAP sjboss
+#ACT
+mapmove 3 330 330
+
+[@OnTimerEx0]
+#IF
+#ACT
+SortHumVar B_世界BOSS伤害  S$伤害名次  N$名次伤害值 0 1 10
+#IF
+LARGE N$名次伤害值1 0
+#ACT
+MOV A211 <$STR(S$伤害名次1)>
+MOV G211 <$STR(N$名次伤害值1)>
+#ELSEACT
+MOV A211 虚位以待
+MOV G211 0
+
+#IF
+LARGE N$名次伤害值2 0
+#ACT
+MOV A212 <$STR(S$伤害名次2)>
+MOV G212 <$STR(N$名次伤害值2)>
+#ELSEACT
+MOV A212 虚位以待
+MOV G212 0
+
+#IF
+LARGE N$名次伤害值3 0
+#ACT
+MOV A213 <$STR(S$伤害名次3)>
+MOV G213 <$STR(N$名次伤害值3)>
+#ELSEACT
+MOV A213 虚位以待
+MOV G213 0
+
+#IF
+LARGE N$名次伤害值4 0
+#ACT
+MOV A214 <$STR(S$伤害名次4)>
+MOV G214 <$STR(N$名次伤害值4)>
+#ELSEACT
+MOV A214 虚位以待
+MOV G214 0
+
+#IF
+LARGE N$名次伤害值5 0
+#ACT
+MOV A215 <$STR(S$伤害名次5)>
+MOV G215 <$STR(N$名次伤害值5)>
+#ELSEACT
+MOV A215 虚位以待
+MOV G215 0
+
+#IF
+LARGE N$名次伤害值6 0
+#ACT
+MOV A216 <$STR(S$伤害名次6)>
+MOV G216 <$STR(N$名次伤害值6)>
+#ELSEACT
+MOV A216 虚位以待
+MOV G216 0
+
+#IF
+LARGE N$名次伤害值7 0
+#ACT
+MOV A217 <$STR(S$伤害名次7)>
+MOV G217 <$STR(N$名次伤害值7)>
+#ELSEACT
+MOV A217 虚位以待
+MOV G217 0
+
+#IF
+LARGE N$名次伤害值8 0
+#ACT
+MOV A218 <$STR(S$伤害名次8)>
+MOV G218 <$STR(N$名次伤害值8)>
+#ELSEACT
+MOV A218 虚位以待
+MOV G218 0
+
+#IF
+LARGE N$名次伤害值9 0
+#ACT
+MOV A219 <$STR(S$伤害名次9)>
+MOV G219 <$STR(N$名次伤害值9)>
+#ELSEACT
+MOV A219 虚位以待
+MOV G219 0
+
+#IF
+LARGE N$名次伤害值10 0
+#ACT
+MOV A220 <$STR(S$伤害名次10)>
+MOV G220 <$STR(N$名次伤害值10)>
+#ELSEACT
+MOV A220 虚位以待
+MOV G220 0
+
+#IF
+#ACT
+GMEXECUTE 开始提问 @更新伤害排名
+
+[@更新伤害排名]
+#IF
+EQUAL G200 2
+ISONMAP sjboss
+#ACT
+#CALL [\全服活动\伤害排行.txt] @排行面板
+
+#IF
+EQUAL G200 0
+#ACT
+#CALL [\全服活动\伤害排行.txt] @排行面板
+#CALL [\全服活动\伤害排行.txt] @发放奖励
+
+[@启动炼狱提醒]
+#IF
+EQUAL <$HUMAN(B_勇闯炼狱积分)> ??
+#ACT
+VAR Integer HUMAN B_勇闯炼狱积分
+#IF
+EQUAL <$HUMAN(B_首次进炼狱)> ??
+#ACT
+VAR Integer HUMAN B_首次进炼狱
+
+#IF
+#ACT
+#CALL [\全服活动\勇闯积分排行.txt] @勇闯提醒面板
+
+[@勇闯炼狱开启]
+#IF
+#ACT
+MOV U212 0
+MOV U213 0
+MOV U214 0
+MOV U215 0
+MOV U216 0
+MOV U217 0
+MOV U218 0
+MOV U219 0
+MOV U220 0
+MOV U221 0
+GETBAGITEMCOUNT 炼狱密令 N$密令数量
+TAKE 炼狱密令 <$STR(N$密令数量)>
+#CALL [\全服活动\勇闯积分排行.txt] @勇闯提醒面板
+#CALL [\全服活动\勇闯炼狱弹窗.txt] @勇闯炼狱弹窗
+
+[@开始勇闯炼狱排行]
+#IF
+EQUAL G231 2
+#ACT
+SortHumVar B_勇闯炼狱积分  S$积分名次  N$积分值 0 1 10
+#IF
+LARGE N$积分值1 0
+#ACT
+MOV A221 <$STR(S$积分名次1)>
+MOV G221 <$STR(N$积分值1)>
+#ELSEACT
+MOV A221 虚位以待
+MOV G221 0
+
+#IF
+LARGE N$积分值2 0
+#ACT
+MOV A222 <$STR(S$积分名次2)>
+MOV G222 <$STR(N$积分值2)>
+#ELSEACT
+MOV A222 虚位以待
+MOV G222 0
+
+#IF
+LARGE N$积分值3 0
+#ACT
+MOV A223 <$STR(S$积分名次3)>
+MOV G223 <$STR(N$积分值3)>
+#ELSEACT
+MOV A223 虚位以待
+MOV G223 0
+
+#IF
+LARGE N$积分值4 0
+#ACT
+MOV A224 <$STR(S$积分名次4)>
+MOV G224 <$STR(N$积分值4)>
+#ELSEACT
+MOV A224 虚位以待
+MOV G224 0
+
+#IF
+LARGE N$积分值5 0
+#ACT
+MOV A225 <$STR(S$积分名次5)>
+MOV G225 <$STR(N$积分值5)>
+#ELSEACT
+MOV A225 虚位以待
+MOV G225 0
+
+#IF
+LARGE N$积分值6 0
+#ACT
+MOV A226 <$STR(S$积分名次6)>
+MOV G226 <$STR(N$积分值6)>
+#ELSEACT
+MOV A226 虚位以待
+MOV G226 0
+
+#IF
+LARGE N$积分值7 0
+#ACT
+MOV A227 <$STR(S$积分名次7)>
+MOV G227 <$STR(N$积分值7)>
+#ELSEACT
+MOV A227 虚位以待
+MOV G227 0
+
+#IF
+LARGE N$积分值8 0
+#ACT
+MOV A228 <$STR(S$积分名次8)>
+MOV G228 <$STR(N$积分值8)>
+#ELSEACT
+MOV A228 虚位以待
+MOV G228 0
+
+#IF
+LARGE N$积分值9 0
+#ACT
+MOV A229 <$STR(S$积分名次9)>
+MOV G229 <$STR(N$积分值9)>
+#ELSEACT
+MOV A229 虚位以待
+MOV G229 0
+
+#IF
+LARGE N$积分值10 0
+#ACT
+MOV A230 <$STR(S$积分名次10)>
+MOV G230 <$STR(N$积分值10)>
+#ELSEACT
+MOV A230 虚位以待
+MOV G230 0
+
+#IF
+#ACT
+#CALL [\全服活动\勇闯积分排行.txt] @更新炼狱面板判断
+
+[@更新勇闯积分排名]
+#IF
+EQUAL G231 2
+CheckContainsText ycly1|ycly2|ycly3|ycly4|ycly5|ycly6|ycly7|ycly8|ycly9|ycly10 <$map>
+CheckContainsText <$map> ycly
+#ACT
+#CALL [\全服活动\勇闯积分排行.txt] @更新炼狱面板判断
+
+[@勇闯炼狱奖励]
+#IF
+#ACT
+GETBAGITEMCOUNT 炼狱密令 N$密令数量
+TAKE 炼狱密令 <$STR(N$密令数量)>
+#CALL [\全服活动\勇闯积分排行.txt] @发放勇闯炼狱奖励
+
+[@夺宝顶戴清理]
+#IF
+#ACT
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\元素刷新.txt] @元素刷新
+#CALL [\属性刷新.txt] @属性刷新
+
+[@启动夺宝提醒]
+#IF
+EQUAL <$HUMAN(B_夺宝奇兵积分)> ??
+#ACT
+VAR Integer HUMAN B_夺宝奇兵积分
+#IF
+#ACT
+#CALL [\全服活动\夺宝奇兵弹窗.txt] @夺宝提醒面板
+
+
+[@夺宝奇兵开启]
+#IF
+#ACT
+SetOnTimerEx 2 10
+SetOnTimer 102 2
+#CALL [\全服活动\夺宝奇兵弹窗.txt] @夺宝提醒面板
+#CALL [\全服活动\夺宝奇兵弹窗.txt] @夺宝奇兵弹窗
+
+[@OnTimerEx2]
+#IF
+#ACT
+SortHumVar B_夺宝奇兵积分  S$夺宝积分名次  N$夺宝积分值 0 1 10
+#IF
+LARGE N$夺宝积分值1 0
+#ACT
+MOV A251 <$STR(S$夺宝积分名次1)>
+MOV G251 <$STR(N$夺宝积分值1)>
+#ELSEACT
+MOV A251 虚位以待
+MOV G251 0
+
+#IF
+LARGE N$夺宝积分值2 0
+#ACT
+MOV A252 <$STR(S$夺宝积分名次2)>
+MOV G252 <$STR(N$夺宝积分值2)>
+#ELSEACT
+MOV A252 虚位以待
+MOV G252 0
+
+#IF
+LARGE N$夺宝积分值3 0
+#ACT
+MOV A253 <$STR(S$夺宝积分名次3)>
+MOV G253 <$STR(N$夺宝积分值3)>
+#ELSEACT
+MOV A253 虚位以待
+MOV G253 0
+
+#IF
+LARGE N$夺宝积分值4 0
+#ACT
+MOV A254 <$STR(S$夺宝积分名次4)>
+MOV G254 <$STR(N$夺宝积分值4)>
+#ELSEACT
+MOV A254 虚位以待
+MOV G254 0
+
+#IF
+LARGE N$夺宝积分值5 0
+#ACT
+MOV A255 <$STR(S$夺宝积分名次5)>
+MOV G255 <$STR(N$夺宝积分值5)>
+#ELSEACT
+MOV A255 虚位以待
+MOV G255 0
+
+#IF
+LARGE N$夺宝积分值6 0
+#ACT
+MOV A256 <$STR(S$夺宝积分名次6)>
+MOV G256 <$STR(N$夺宝积分值6)>
+#ELSEACT
+MOV A256 虚位以待
+MOV G256 0
+
+#IF
+LARGE N$夺宝积分值7 0
+#ACT
+MOV A257 <$STR(S$夺宝积分名次7)>
+MOV G257 <$STR(N$夺宝积分值7)>
+#ELSEACT
+MOV A257 虚位以待
+MOV G257 0
+
+#IF
+LARGE N$夺宝积分值8 0
+#ACT
+MOV A258 <$STR(S$夺宝积分名次8)>
+MOV G258 <$STR(N$夺宝积分值8)>
+#ELSEACT
+MOV A258 虚位以待
+MOV G258 0
+
+#IF
+LARGE N$夺宝积分值9 0
+#ACT
+MOV A259 <$STR(S$夺宝积分名次9)>
+MOV G259 <$STR(N$夺宝积分值9)>
+#ELSEACT
+MOV A259 虚位以待
+MOV G259 0
+
+#IF
+LARGE N$夺宝积分值10 0
+#ACT
+MOV A260 <$STR(S$夺宝积分名次10)>
+MOV G260 <$STR(N$夺宝积分值10)>
+#ELSEACT
+MOV A260 虚位以待
+MOV G260 0
+
+
+
+[@发夺宝奖励]
+#IF
+EQUAL G250 0
+#ACT
+#CALL [\全服活动\夺宝奇兵排行.txt] @更新夺宝判断
+#CALL [\全服活动\夺宝奇兵排行.txt] @发放夺宝奇兵奖励
+
+
+[@OnTimer102]
+#IF
+ISONMAP dbqb
+#ACT
+#CALL [\全服活动\夺宝奇兵排行.txt] @更新夺宝判断
+
+
+[@天下第一更新]
+
+#IF
+EQUAL <$USERNAME> <$STR(A261)>
+CHECKJOB Warrior
+gender man
+#ACT
+CALCVAR HUMAN 顶戴展示九 = 50705
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\属性刷新.txt] @属性刷新
+BREAK
+
+#IF
+EQUAL <$USERNAME> <$STR(A262)>
+CHECKJOB Warrior
+gender woman
+#ACT
+CALCVAR HUMAN 顶戴展示九 = 50705
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\属性刷新.txt] @属性刷新
+BREAK
+
+#IF
+EQUAL <$USERNAME> <$STR(A263)>
+CHECKJOB Wizard
+gender man
+#ACT
+CALCVAR HUMAN 顶戴展示九 = 50706
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\属性刷新.txt] @属性刷新
+BREAK
+
+#IF
+EQUAL <$USERNAME> <$STR(A264)>
+CHECKJOB Wizard
+gender woman
+#ACT
+CALCVAR HUMAN 顶戴展示九 = 50706
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\属性刷新.txt] @属性刷新
+BREAK
+
+#IF
+EQUAL <$USERNAME> <$STR(A265)>
+CHECKJOB Taoist
+gender man
+#ACT
+CALCVAR HUMAN 顶戴展示九 = 50707
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\属性刷新.txt] @属性刷新
+BREAK
+
+#IF
+EQUAL <$USERNAME> <$STR(A266)>
+CHECKJOB Taoist
+gender woman
+#ACT
+CALCVAR HUMAN 顶戴展示九 = 50707
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\属性刷新.txt] @属性刷新
+BREAK
+
+#IF
+#ACT
+CALCVAR HUMAN 顶戴展示九 =
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\属性刷新.txt] @属性刷新
+
+
+#IF
+EQUAL A273 <$USERNAME>
+gender man
+#ACT
+SENDMSGNEW 255 0 天下第一猛男【{<$USERNAME>/FCOLOR=58}】登陆游戏。 1 5
+
+#IF
+EQUAL A274 <$USERNAME>
+gender woman
+#ACT
+SENDMSGNEW 255 0 天下第一美女【{<$USERNAME>/FCOLOR=58}】登陆游戏。 1 5
+
+[@第一等级榜刷新]
+
+#IF
+EQUAL A273 <$USERNAME>
+gender man
+#ACT
+CALCVAR HUMAN 顶戴展示八 = l1
+SAVEVAR HUMAN 顶戴展示八
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+SENDMSGNEW 255 0 天下第一猛男【{<$USERNAME>/FCOLOR=58}】登陆游戏。 1 5
+BREAK
+#IF
+EQUAL A274 <$USERNAME>
+gender woman
+#ACT
+CALCVAR HUMAN 顶戴展示八 = l2
+SAVEVAR HUMAN 顶戴展示八
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+SENDMSGNEW 255 0 天下第一美女【{<$USERNAME>/FCOLOR=58}】登陆游戏。 1 5
+BREAK
+
+#IF
+#ACT
+CALCVAR HUMAN 顶戴展示九 =
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+
+
+
+
+
+[@刷新夺宝称号属性]
+#IF
+#ACT
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+
+[@OnTimer103]
+#IF
+#ACT
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+#IF
+NOT CHECKTITLE 钻石会员
+NOT EQUAL T3
+#ACT
+MOV T3
+CALCVAR HUMAN 顶戴展示三 =
+SAVEVAR HUMAN 顶戴展示三
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+BREAK
+#IF
+SMALL U247 0
+#ACT
+BREAK
+#IF
+SMALL U247 <$UTCNOW8>
+CHECKSPRITELEVEL
+NOT SMALL U247 0
+#ACT
+RELEASESPRITE
+SENDMSG 9 <font color='#ff0000'>月之精灵已收回！</font>
+
+
+
+[@在线时长重置]
+#IF
+#ACT
+MOV U180 0
+MOV U181 0
+MOV U182 0
+MOV U183 0
+MOV U184 0
+MOV U185 0
+MOV U186 0
+MOV U187 0
+MOV U188 0
+MOV U189 0
+MOV U190 0
+MOV U191 0
+MOV U192 0
+MOV U193 0
+MOV U194 0
+MOV U195 0
+MOV U196 0
+MOV U197 0
+MOV U198 0
+MOV U199 0
+MOV U160 0
+MOV U161 0
+MOV U162 0
+MOV U163 0
+MOV U164 0
+MOV U165 0
+MOV U166 0
+MOV U167 0
+MOV U168 0
+MOV U169 0
+MOV U170 0
+MOV U172 0
+MOV U173 0
+MOV U174 0
+MOV U249 0
+MOV T211
+MOV T212
+MOV T213
+MOV N$今日月日数据 <$MONTH><$DAY>
+MOV U179 <$STR(N$今日月日数据)>
+CALCVAR HUMAN B_历史登录天数 + 1
+SAVEVAR HUMAN B_历史登录天数
+CALCVAR HUMAN B_本次登录时间 = <$UTCNOW8>
+SAVEVAR HUMAN B_本次登录时间
+CALCVAR HUMAN B_可杀经验怪数量 = 0
+SAVEVAR HUMAN B_可杀经验怪数量
+#IF
+LARGE U252 6
+#ACT
+MOV U252 0
+MOV T207
+MOV T208
+MOV T209
+MOV T210
+#IF
+SMALL <$RELEVEL> 4
+#ACT
+MOV N$转生恢复值 30000000
+#IF
+LARGE <$RELEVEL> 3
+SMALL <$RELEVEL> 6
+#ACT
+MOV N$转生恢复值 50000000
+#IF
+LARGE <$RELEVEL> 5
+#ACT
+MOV N$转生恢复值 <$RELEVEL>
+MUL N$转生恢复值 20000000
+MOV N$等级恢复值 <$LEVEL>
+MUL N$等级恢复值 10000
+INC N$转生恢复值 <$STR(N$等级恢复值)>
+
+#IF
+LARGE N$转生恢复值 220000000
+#ACT
+MOV N$转生恢复值 220000000
+#IF
+#ACT
+MOV N$高倍总经验值 <$STR(N$转生恢复值)>
+MUL N$高倍总经验值 7
+CALCVAR HUMAN B_高倍总经验值 = <$STR(N$高倍总经验值)>
+SAVEVAR HUMAN B_高倍总经验值
+MOV N$临时总经验 <$HUMAN(B_可恢复经验值)>
+INC N$临时总经验 <$STR(N$转生恢复值)>
+
+#IF
+LARGE N$临时总经验 <$HUMAN(B_高倍总经验值)>
+EQUAL N$加高倍经验 1
+#ACT
+CALCVAR HUMAN B_可恢复经验值 + <$HUMAN(B_高倍总经验值)>
+SAVEVAR HUMAN B_可恢复经验值
+MOV N$加高倍经验 0
+#ELSEACT
+CALCVAR HUMAN B_可恢复经验值 + <$STR(N$转生恢复值)>
+SAVEVAR HUMAN B_可恢复经验值
+
+#IF
+LARGE G100 0
+Not EQUAL T10 <$YEAR>-<$MONTH>-<$DAY>
+#ACT
+MOV T10 <$YEAR>-<$MONTH>-<$DAY>
+Inc u56 1
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+[@竞技转生榜奖励cc]
+
+#IF
+Check [650] 0
+Equal <$Str(A410)> <$USername>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 100 0#1#2#3#4#5#6#8
+MailGIVE 2亿经验卷 1 0#1#2#3#4#5#6#8
+MailGIVE 傲视群雄 1 0#1#2#3#4#5#6#8
+SendMail 170 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+#IF
+Check [650] 0
+Equal <$Str(A411)> <$USername>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 70 0#1#2#3#4#5#6#8
+MailGIVE 1亿经验卷 1 0#1#2#3#4#5#6#8
+SendMail 1 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+#IF
+Check [650] 0
+Equal <$Str(A412)> <$USername>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 50 0#1#2#3#4#5#6#8
+MailGIVE 5000W经验卷 1 0#1#2#3#4#5#6#8
+SendMail 1 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+#IF
+Check [650] 0
+Equal <$Str(A413)> <$USername>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 30 0#1#2#3#4#5#6#8
+MailGIVE 2000W经验卷 1 0#1#2#3#4#5#6#8
+SendMail 1 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+#IF
+Check [650] 0
+Equal <$Str(A414)> <$USername>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 20 0#1#2#3#4#5#6#8
+MailGIVE 1000W经验卷 1 0#1#2#3#4#5#6#8
+SendMail 1 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+#Or
+Equal <$Str(A415)> <$USername>
+Equal <$Str(A416)> <$USername>
+Equal <$Str(A417)> <$USername>
+Equal <$Str(A418)> <$USername>
+Equal <$Str(A419)> <$USername>
+#Act
+Goto @竞技转生榜奖励smm
+Break
+#IF
+Check [650] 0
+Large <$RELEVEL> 2
+Not Equal <$USername> <$Str(A410)>
+Not Equal <$USername> <$Str(A411)>
+Not Equal <$USername> <$Str(A412)>
+Not Equal <$USername> <$Str(A413)>
+Not Equal <$USername> <$Str(A414)>
+Not Equal <$USername> <$Str(A415)>
+Not Equal <$USername> <$Str(A416)>
+Not Equal <$USername> <$Str(A417)>
+Not Equal <$USername> <$Str(A418)>
+Not Equal <$USername> <$Str(A419)>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 5 0#1#3#4#5#6#8
+SendMail 1 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+
+[@竞技转生榜奖励smm]
+#IF
+Check [650] 0
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 10 0#1#3#4#5#6#8
+MailGIVE 500W经验卷 1 0#1#3#4#5#6#8
+SendMail 1 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+
+[@竞技龙魂榜奖励cc]
+
+#IF
+Check [651] 0
+Equal <$Str(A430)> <$USername>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 100 0#1#3#4#5#6#8
+MailGIVE 火龙秘宝 10 0#1#3#4#5#6#8
+MailGIVE 超凡入圣 1 0#1#3#4#5#6#8
+SendMail 171 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+Break
+#IF
+Check [651] 0
+Equal <$Str(A431)> <$USername>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 70 0#1#3#4#5#6#8
+MailGIVE 火龙秘宝 7 0#1#3#4#5#6#8
+SendMail 1 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+Break
+#IF
+Check [651] 0
+Equal <$Str(A432)> <$USername>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 50 0#1#3#4#5#6#8
+MailGIVE 火龙秘宝 5 0#1#3#4#5#6#8
+SendMail 1 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+Break
+#IF
+Check [651] 0
+Equal <$Str(A433)> <$USername>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 30 0#1#3#4#5#6#8
+MailGIVE 火龙秘宝 3 0#1#3#4#5#6#8
+SendMail 1 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+Break
+#IF
+Check [651] 0
+Equal <$Str(A434)> <$USername>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 20 0#1#3#4#5#6#8
+MailGIVE 火龙秘宝 2 0#1#3#4#5#6#8
+SendMail 1 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+Break
+#Or
+Equal <$Str(A435)> <$USername>
+Equal <$Str(A436)> <$USername>
+Equal <$Str(A437)> <$USername>
+Equal <$Str(A438)> <$USername>
+Equal <$Str(A439)> <$USername>
+#Act
+Goto @竞技龙魂榜奖励smm
+Break
+#IF
+Check [651] 0
+Checkvar Human 竞技龙魂榜 > 10
+Not Equal <$USername> <$Str(A430)>
+Not Equal <$USername> <$Str(A431)>
+Not Equal <$USername> <$Str(A432)>
+Not Equal <$USername> <$Str(A433)>
+Not Equal <$USername> <$Str(A434)>
+Not Equal <$USername> <$Str(A435)>
+Not Equal <$USername> <$Str(A436)>
+Not Equal <$USername> <$Str(A437)>
+Not Equal <$USername> <$Str(A438)>
+Not Equal <$USername> <$Str(A439)>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 5 0#1#3#4#5#6#8
+SendMail 1 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+Break
+[@竞技龙魂榜奖励smm]
+#IF
+Check [651] 0
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 10 0#1#3#4#5#6#8
+MailGIVE 火龙秘宝 1 0#1#3#4#5#6#8
+SendMail 1 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+
+
+[@竞技元神榜奖励cc]
+#IF
+Check [652] 0
+Equal <$Str(A470)> <$USername>
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 100 0#1#3#4#5#6#8
+MailGIVE 火龙气息 30 0#1#3#4#5#6#8
+MailGIVE 唯我独尊 1 0#1#3#4#5#6#8
+SendMail 172 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+Break
+#IF
+Check [652] 0
+Equal <$Str(A471)> <$USername>
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 70 0#1#3#4#5#6#8
+MailGIVE 火龙气息 20 0#1#3#4#5#6#8
+SendMail 1 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+Break
+#IF
+Check [652] 0
+Equal <$Str(A472)> <$USername>
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 50 0#1#3#4#5#6#8
+MailGIVE 火龙气息 10 0#1#3#4#5#6#8
+SendMail 1 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+Break
+#IF
+Check [652] 0
+Equal <$Str(A473)> <$USername>
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 30 0#1#3#4#5#6#8
+MailGIVE 火龙气息 7 0#1#3#4#5#6#8
+SendMail 1 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+Break
+#IF
+Check [652] 0
+Equal <$Str(A474)> <$USername>
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 20 0#1#3#4#5#6#8
+MailGIVE 火龙气息 5 0#1#3#4#5#6#8
+SendMail 1 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+Break
+#Or
+Equal <$Str(A475)> <$USername>
+Equal <$Str(A476)> <$USername>
+Equal <$Str(A477)> <$USername>
+Equal <$Str(A478)> <$USername>
+Equal <$Str(A479)> <$USername>
+#Act
+Goto @竞技元神榜奖励smm
+Break
+#IF
+Check [652] 0
+Checkvar Human 竞技元神榜 > 7
+Not Equal <$USername> <$Str(A470)>
+Not Equal <$USername> <$Str(A471)>
+Not Equal <$USername> <$Str(A472)>
+Not Equal <$USername> <$Str(A473)>
+Not Equal <$USername> <$Str(A474)>
+Not Equal <$USername> <$Str(A475)>
+Not Equal <$USername> <$Str(A476)>
+Not Equal <$USername> <$Str(A477)>
+Not Equal <$USername> <$Str(A478)>
+Not Equal <$USername> <$Str(A479)>
+
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 5 0#1#3#4#5#6#8
+SendMail 1 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+Break
+[@竞技元神榜奖励smm]
+#IF
+Check [652] 0
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 10 0#1#3#4#5#6#8
+MailGIVE 火龙气息 3 0#1#3#4#5#6#8
+SendMail 1 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+
+
+
+[@竞技注灵榜奖励cc]
+#IF
+Check [653] 0
+Equal <$Str(A450)> <$USername>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 100 0#1#3#4#5#6#8
+MailGIVE 中品注灵石 500 0#1#3#4#5#6#8
+MailGIVE 巅峰之人 1 0#1#3#4#5#6#8
+SendMail 173 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+#IF
+Check [653] 0
+Equal <$Str(A451)> <$USername>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 70 0#1#3#4#5#6#8
+MailGIVE 中品注灵石 300 0#1#3#4#5#6#8
+SendMail 1 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+#IF
+Check [653] 0
+Equal <$Str(A452)> <$USername>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 50 0#1#3#4#5#6#8
+MailGIVE 中品注灵石 200 0#1#3#4#5#6#8
+SendMail 1 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+#IF
+Check [653] 0
+Equal <$Str(A453)> <$USername>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 30 0#1#3#4#5#6#8
+MailGIVE 中品注灵石 100 0#1#3#4#5#6#8
+SendMail 1 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+#IF
+Check [653] 0
+Equal <$Str(A454)> <$USername>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 20 0#1#3#4#5#6#8
+MailGIVE 中品注灵石 70 0#1#3#4#5#6#8
+SendMail 1 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+#Or
+Equal <$Str(A455)> <$USername>
+Equal <$Str(A456)> <$USername>
+Equal <$Str(A457)> <$USername>
+Equal <$Str(A458)> <$USername>
+Equal <$Str(A459)> <$USername>
+#Act
+Goto @竞技注灵榜奖励smm
+Break
+#IF
+Check [653] 0
+Checkvar Human 竞技注灵榜 > 29
+Not Equal <$USername> <$Str(A450)>
+Not Equal <$USername> <$Str(A451)>
+Not Equal <$USername> <$Str(A452)>
+Not Equal <$USername> <$Str(A453)>
+Not Equal <$USername> <$Str(A454)>
+Not Equal <$USername> <$Str(A455)>
+Not Equal <$USername> <$Str(A456)>
+Not Equal <$USername> <$Str(A457)>
+Not Equal <$USername> <$Str(A458)>
+Not Equal <$USername> <$Str(A459)>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 5 0#1#3#4#5#6#8
+SendMail 1 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+
+[@竞技注灵榜奖励smm]
+#IF
+Check [653] 0
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 10 0#1#3#4#5#6#8
+MailGIVE 中品注灵石 50 0#1#3#4#5#6#8
+SendMail 1 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+
+
+
+;=====================活跃相关======================================================
+
+[@在线日活跃重置]
+
+#IF
+EQUAL <$HUMAN(日活跃重置)>
+#ACT
+set [437] 0
+set [438] 0
+set [439] 0
+set [440] 0
+set [441] 0
+set [442] 0
+set [443] 0
+set [444] 0
+CALCVAR HUMAN 日活跃重置 = 已重置
+SAVEVAR HUMAN 日活跃重置
+CALCVAR HUMAN 活跃度_活跃度 = 0
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_每日登录 = 0
+SAVEVAR HUMAN 活跃度_每日登录
+CALCVAR HUMAN 活跃度_会员登录 = 0
+SAVEVAR HUMAN 活跃度_会员登录
+CALCVAR HUMAN 活跃度_装备强化 = 0
+SAVEVAR HUMAN 活跃度_装备强化
+CALCVAR HUMAN 活跃度_挑战领主 = 0
+SAVEVAR HUMAN 活跃度_挑战领主
+CALCVAR HUMAN 活跃度_消费元宝 = 0
+SAVEVAR HUMAN 活跃度_消费元宝
+CALCVAR HUMAN 活跃度_元宝任务 = 0
+SAVEVAR HUMAN 活跃度_元宝任务
+CALCVAR HUMAN 活跃度_清理魔物 = 0
+SAVEVAR HUMAN 活跃度_清理魔物
+CALCVAR HUMAN 活跃度_火龙币购物 = 0
+SAVEVAR HUMAN 活跃度_火龙币购物
+CALCVAR HUMAN 活跃度_每日充值 = 0
+SAVEVAR HUMAN 活跃度_每日充值
+CALCVAR HUMAN 活跃度_夺宝奇兵 = 0
+SAVEVAR HUMAN 活跃度_夺宝奇兵
+CALCVAR HUMAN 活跃度_勇闯炼狱 = 0
+SAVEVAR HUMAN 活跃度_勇闯炼狱
+CALCVAR HUMAN 活跃度_世界BOSS = 0
+SAVEVAR HUMAN 活跃度_世界BOSS
+CALCVAR HUMAN 活跃度_天降元宝 = 0
+SAVEVAR HUMAN 活跃度_天降元宝
+CALCVAR HUMAN 活跃度_装备注灵 = 0
+SAVEVAR HUMAN 活跃度_装备注灵
+CALCVAR HUMAN 活跃度_锁妖塔 = 0
+SAVEVAR HUMAN 活跃度_锁妖塔
+CALCVAR HUMAN 活跃度_分解装备 = 0
+SAVEVAR HUMAN 活跃度_分解装备
+CALCVAR HUMAN 活跃度_获得声望 = 0
+SAVEVAR HUMAN 活跃度_获得声望
+CALCVAR HUMAN 活跃度_声望任务 = 0
+SAVEVAR HUMAN 活跃度_声望任务
+CALCVAR HUMAN 活跃度_个人BOSS = 0
+SAVEVAR HUMAN 活跃度_个人BOSS
+SENDMSG 9 <font color='#FF0000'>活跃：每日活跃任务已重置!</font>
+SendMail 1 每日活跃 你好:<$MONTH>月<$DAY>日，每日活跃任务已重置!
+
+#IF
+EQUAL <$HUMAN(日活跃重置)> 已重置
+equal <$HUMAN(活跃度_每日登录)> 0
+#ACT
+CALCVAR HUMAN 活跃度_每日登录 = 1
+SAVEVAR HUMAN 活跃度_每日登录
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_每日登录)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_每日登录)>
+SAVEVAR HUMAN 活跃度_活跃度周
+
+#IF
+EQUAL <$HUMAN(日活跃重置)> 已重置
+equal <$HUMAN(活跃度_会员登录)> 0
+LARGE U13 0
+#ACT
+CALCVAR HUMAN 活跃度_会员登录 = 1
+SAVEVAR HUMAN 活跃度_会员登录
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_会员登录)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_会员登录)>
+SAVEVAR HUMAN 活跃度_活跃度周
+
+
+[@在线周活跃重置]
+
+#IF
+EQUAL <$HUMAN(周活跃重置)>
+#ACT
+set [433] 0
+set [434] 0
+set [435] 0
+CALCVAR HUMAN 周活跃重置 = 已重置
+SAVEVAR HUMAN 周活跃重置
+CALCVAR HUMAN 活跃度_活跃度周 = 0
+SAVEVAR HUMAN 活跃度_活跃度周
+SENDMSG 9 <font color='#FF0000'>活跃：每周活跃任务已重置!</font>
+break
+
+
+[@ONTIMER104]
+#IF
+#ACT
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+
+[@ONTIMER105]
+#IF
+CheckContainsText <$map> gldt
+EQUAL N$挂机状态 0
+#ACT
+#CALL [\游戏功能\界面按钮\其它按钮QF.txt] @开始挂机
+
+[@清理城主顶戴]
+#Act
+#CALL [\顶戴刷新.txt] @顶戴刷新
+
+[@开启沙城狂暴保护]
+#IF
+#ACT
+SetOnTimer 255 1

@@ -1,0 +1,91 @@
+[@帮助按钮QF]
+{
+#IF
+#ACT
+;坐标默认240
+Mov N$宽 -240
+Goto @展开绑定
+[@展开绑定]
+#IF
+EQUAL N$宽 20
+#ACT
+deC N$宽 20
+MOV S$助手 <ListView|children={1,2}|direction=2|bounce=0|margin=0|width=265|height=82|color=x|x=<$STR(N$宽)>|y=-58|default=0|link=@帮助按钮QF>
+INC S$助手 <Img|id=1|img=ustom\hl\bangzhu\1900012571.png|width=255|height=81|x=0|y=0|link=@帮助按钮QF>
+INC S$助手 <Button|id=2|x=250|y=0|color=251|nimg=custom\hl\bangzhu\1900012554.png|link=@帮助开关1>
+ADDBUTTON 105 1 <$STR(S$助手)>
+break
+
+#IF
+NOT EQUAL N$宽 0
+#ACT
+INC N$宽 120
+MOV S$助手 <ListView|children={1,2}|direction=2|bounce=0|margin=0|width=265|height=82|color=x|x=<$STR(N$宽)>|y=-58|default=0|link=@帮助按钮QF>
+INC S$助手 <Img|id=1|img=custom\hl\bangzhu\1900012571.png|width=235|height=81|x=0|y=0|link=@帮助按钮QF>
+INC S$助手 <Button|id=2|x=250|y=0|color=251|nimg=custom\hl\bangzhu\1900012554.png|link=@帮助开关1>
+ADDBUTTON 105 1 <$STR(S$助手)>
+DELAYGOTO 1 @展开绑定
+break
+
+#IF
+EQUAL N$宽 0
+#ACT
+MOV n$幸运值x 0
+MOV n$幸运值w 0
+GETITEMADDVALUE 3 5 n$幸运值x 1
+GETITEMADDVALUE 1 5 n$幸运值w 1
+INC n$幸运值x <$str(n$幸运值w)>
+MOV S$助手 <ListView|children={1,2}|direction=2|bounce=0|margin=0|width=265|height=82|color=x|x=2|y=-58|default=0>
+INC S$助手 <Img|id=1|children={3,4,5}|img=custom\hl\bangzhu\1900012571.png|width=225|height=79|x=0|y=0>
+INC S$助手 <RText|id=3|text=当前杀怪爆率为：<<$KILLMONBURSTRATE>/FCOLOR=250>|size=18|color=255|outline=2|outlinecolor=0|x=5|y=0>
+INC S$助手 <RText|id=4|text=当前杀人爆率为：<<$VALUE6>/FCOLOR=250>%|size=18|color=255|outline=2|outlinecolor=0|x=5|y=25>
+INC S$助手 <RText|id=5|text=当前幸运值：<<$Str(n$幸运值x)>/FCOLOR=250>|size=18|color=255|outline=2|outlinecolor=0|x=5|y=50>
+INC S$助手 <Layout|id=2|children={2a}|width=30|height=50|x=250|color=xx>
+INC S$助手 <Button|id=2a|x=0|y=-4|color=251|nimg=custom\hl\bangzhu\1900012554.png|link=@帮助开关>
+ADDBUTTON 105 1 <$STR(S$助手)>
+break
+
+
+
+
+
+[@帮助开关]
+#IF
+;EQUAL N$当前状态 0
+#ACT
+;Mov    N$当前状态 1
+;mov  N$宽 240
+MOV N$宽 0
+Goto @展开帮助
+break
+;幸运 杀怪爆率 人物爆率
+[@展开帮助]
+#IF
+SMALL N$宽 240
+#ACT
+INC     N$宽 120
+MOV S$助手 <ListView|children={1,2}|direction=2|bounce=0|margin=0|width=265|height=82|color=x|x=-<$STR(N$宽)>|y=-60>
+INC   S$助手 <Img|id=1|img=custom\hl\bangzhu\1900012571.png|width=225|height=82|x=0|y=0|link=@帮助按钮QF>
+INC   S$助手 <Button|id=2|x=250|y=0|color=251|nimg=custom\hl\bangzhu\1900012554.png|link=@帮助按钮QF>
+DELAYGOTO 1  @展开帮助
+ADDBUTTON 105 1 <$STR(S$助手)>
+break
+
+#IF
+EQUAL N$宽 240
+#ACT
+INC    N$宽 42
+MOV S$助手 <ListView|children={1,2}|direction=2|bounce=0|margin=0|width=265|height=82|color=x|x=-<$STR(N$宽)>|y=-60>
+INC   S$助手 <Img|id=1|img=custom\hl\bangzhu\1900012571.png|width=225|height=82|x=0|y=0|link=@帮助按钮QF>
+INC   S$助手 <Button|id=2|x=250|y=0|color=251|nimg=custom\hl\bangzhu\1900012554.png|link=@帮助按钮QF>
+DELAYGOTO 200 @拉出按钮
+ADDBUTTON 105 1 <$STR(S$助手)>
+break
+
+[@拉出按钮]
+#IF
+#ACT
+DELBUTTON 105 1
+MOV S$助手 <Button|x=0|y=-60|color=251|nimg=custom\hl\bangzhu\1900012554.png|link=@帮助按钮QF>
+ADDBUTTON 105 1 <$STR(S$助手)>
+}

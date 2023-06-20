@@ -1,0 +1,63 @@
+[@妖塔击杀BOSS]
+{
+#IF
+EQUAL N$闯塔失败 1
+#ACT
+BREAK
+#IF
+#ACT
+MOV N$今日挑战层 <$HUMAN(B_今日挑战层)>
+INC N$今日挑战层 1
+
+#IF
+CheckMonMap syt<$STR(N$今日挑战层)><$USERNAME> 1
+#ACT
+DEC N$现有怪物数 1
+#CALL [\全服活动\锁妖塔.txt] @妖塔任务面板
+#ELSEACT
+DEC N$现有怪物数 1
+CALCVAR HUMAN B_今日挑战层 + 1
+SAVEVAR HUMAN B_今日挑战层
+MOV N$当前通关层数 <$HUMAN(B_今日挑战层)>
+MOV N$妖塔挑战成功 1
+ReadCacheConfigFileItem ..\QuestDiary\全服活动\妖塔奖励配置.ini <$STR(N$当前通关层数)>层 <$STR(N$当前通关层数)>层_1 S$妖塔通关奖励_1
+ReadCacheConfigFileItem ..\QuestDiary\全服活动\妖塔奖励配置.ini <$STR(N$当前通关层数)>层 <$STR(N$当前通关层数)>层_2 S$妖塔通关奖励_2
+ReadCacheConfigFileItem ..\QuestDiary\全服活动\妖塔奖励配置.ini <$STR(N$当前通关层数)>层 <$STR(N$当前通关层数)>层_3 S$妖塔通关奖励_3
+GetDBIdxItemFieldValue <$STR(S$妖塔通关奖励_1)> name S$妖塔通关奖励1
+GetDBIdxItemFieldValue <$STR(S$妖塔通关奖励_2)> name S$妖塔通关奖励2
+GetDBIdxItemFieldValue <$STR(S$妖塔通关奖励_3)> name S$妖塔通关奖励3
+#IF
+EQUAL N$妖塔挑战成功 0
+#ACT
+BREAK
+#IF
+CHECKBAGSIZE 3
+#ACT
+GiveStateItem <$STR(S$妖塔通关奖励1)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$妖塔通关奖励2)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$妖塔通关奖励3)> 1 0 1 0 1 1 1 1 1
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>背包已满，奖励已发放到邮箱！</font>
+MailGIVE <$STR(S$妖塔通关奖励1)> 1 1#3#4#5#6#7#8
+MailGIVE <$STR(S$妖塔通关奖励2)> 1 1#3#4#5#6#7#8
+MailGIVE <$STR(S$妖塔通关奖励3)> 1 1#3#4#5#6#7#8
+SendMail 1 锁妖塔奖励 你好：<$USERNAME>\恭喜你成功通关锁妖塔第<$STR(N$今日挑战层)>层，请提取你的奖励！
+#IF
+#ACT
+MOV S$妖塔排序显示
+GOTO @刷新最高记录
+#CALL [\全服活动\锁妖塔.txt] @妖塔任务面板
+#CALL [\全服活动\锁妖塔.txt] @妖塔成功弹窗
+BREAK
+
+
+
+[@刷新最高记录]
+#IF
+LARGE <$HUMAN(B_今日挑战层)> <$HUMAN(B_历史最高层)>
+#ACT
+CALCVAR HUMAN B_历史最高层 = <$HUMAN(B_今日挑战层)>
+SAVEVAR HUMAN B_历史最高层
+
+
+}

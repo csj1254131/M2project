@@ -1,0 +1,2347 @@
+[@启动成长]
+{
+#IF
+#ACT
+MOV S$激活按钮 nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|color=100|size=18|outline=2|outlinecolor=0
+MOV S$默认按钮 nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=10|size=18|outline=2|outlinecolor=0
+GOTO @攻略
+
+
+[@成长界面]
+#IF
+#ACT
+MOV S$选择_攻略 <$STR(S$默认按钮)>
+MOV S$选择_玩法 <$STR(S$默认按钮)>
+MOV S$选择_装备 <$STR(S$默认按钮)>
+MOV S$选择_怪物 <$STR(S$默认按钮)>
+MOV S$选择_技能 <$STR(S$默认按钮)>
+MOV S$选择_<$STR(S$当前选择)> <$STR(S$激活按钮)>
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 2 S$40装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 4 S$45装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 6 S$50装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 8 S$55装备 |
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4|reload=1|loadDelay=1|loadCount=10|loadStep=1>
+<Img|children={0,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=成长之路>
+<ListView|id=3|children={31,32,33,34,35}|x=28|y=65|width=800|height=42|margin=10|bounce=0|direction=2|color=x>
+<Button|id=31|<$STR(S$选择_攻略)>|text=游戏攻略|link=@攻略>
+<Button|id=32|<$STR(S$选择_玩法)>|text=玩法推荐|link=@玩法>
+<Button|id=33|<$STR(S$选择_装备)>|text=装备图鉴|link=@装备>
+<Button|id=34|<$STR(S$选择_怪物)>|text=BOSS图鉴|link=@怪物>
+<Button|id=35|<$STR(S$选择_技能)>|text=技能铭文|link=@铭文技能>
+<ListView|id=7|children={711}|x=18|y=108|width=735|height=3|margin=0|bounce=0|direction=2|color=x>
+<Img|id=711|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=8|children={81a}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
+<Img|id=81a|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48,49,50}|x=23|y=115|width=112|height=390|margin=2|bounce=0|direction=1|color=x>
+<$STR(S$子项目显示)>
+<$STR(S$显示内容)>
+
+
+
+[@攻略]
+#IF
+#ACT
+MOV S$当前选择 攻略
+MOV P41 0
+GOTO @防诈骗提示
+
+[@防诈骗提示]
+#IF
+#ACT
+MOV S$子选择 防诈骗提示
+MOV S$选项串 防诈骗提示|游戏攻略|属性提升推荐|急速养成推荐|等级提升|突破转生|游戏技巧
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,76,52,53,54,55,56,57,58,59,60,61,62,63,77,64,65,66,67,68,69,70,71,72,73,74,75,78,79,80}|x=155|y=110|width=580|height=375|margin=3|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=58|size=17|text=为防止游戏内出现拉人的骗子，今天我们就普及下骗子的特征和套路！记得划>
+INC S$显示内容 <RText|id=76|color=58|size=17|text=重点！>
+INC S$显示内容 <RText|id=52|color=251|size=18|text=一、拉人玩家特征：>
+INC S$显示内容 <RText|id=53|color=255|size=16|text=1.大多是小号，战力刚好达到聊天标准>
+INC S$显示内容 <RText|id=54|color=255|size=16|text=2.不注重提升战力，只会疯狂找你聊天>
+INC S$显示内容 <RText|id=55|color=255|size=16|text=3.甚至只会疯狂刷屏，角色等级比较低，也不怎么升级>
+INC S$显示内容 <RText|id=56|color=251|size=18|text=二、拉人玩家常见话术：>
+INC S$显示内容 <RText|id=57|color=255|size=16|text=风格特点：强行尬聊，主动关心，不说正常话，拉群加微信>
+INC S$显示内容 <RText|id=58|color=255|size=16|text=1.在不在，我是某某小号，问你是否加入<微信群（加微信）/FCOLOR=250>>
+INC S$显示内容 <RText|id=59|color=255|size=16|text=2.你是新玩家吧，我带你刷怪打金，游戏不方便好多屏蔽字然后<（加微信）/FCOLOR=250>>
+INC S$显示内容 <RText|id=60|color=255|size=16|text=3.你是老玩家吗？我们行会好多老玩家来一起玩然后<（加微信）/FCOLOR=250>>
+INC S$显示内容 <RText|id=61|color=255|size=16|text=4.活动人物又固定队吗？<（加微信）/FCOLOR=250>一起玩吧？>
+INC S$显示内容 <RText|id=62|color=255|size=16|text=5.兄弟带我一起打BOSS好不好？<（加微信）/FCOLOR=250>>
+INC S$显示内容 <RText|id=63|color=255|size=16|text=6.兄弟，你们某某是托，刺激你消费的，来我们这边都是老玩家一起玩<（让你加微/FCOLOR=250>>
+INC S$显示内容 <RText|id=77|color=255|size=16|text=<信群）/FCOLOR=250>>
+INC S$显示内容 <RText|id=64|color=255|size=16|text=7.这样吧，这里限制太多，不好说，<（加微信）/FCOLOR=250>给你讲一下打金攻略吧>
+INC S$显示内容 <RText|id=65|color=255|size=16|text=8.邀你来行会群<（加微信）/FCOLOR=250>>
+INC S$显示内容 <RText|id=66|color=255|size=16|text=9.玩这个游戏啊，怎么打金都有套路，不懂的可以问我<（加微信）/FCOLOR=250>>
+INC S$显示内容 <RText|id=67|color=255|size=16|text=10.我VX上有这个玩法的攻略，是图片，VX发给你看看<（加微信）/FCOLOR=250>>
+INC S$显示内容 <RText|id=68|color=255|size=16|text=11.我是行会会长，小号统计情况，在不？<（伪装会长小号进行拉人）/FCOLOR=250>>
+INC S$显示内容 <RText|id=69|color=255|size=16|text=12.我行会人多，人多一起好玩些<（加微信）/FCOLOR=250>>
+INC S$显示内容 <RText|id=70|color=255|size=16|text=13.我艹，这打字限制太多了，把我VX加上，教你省钱<（加微信）/FCOLOR=250>>
+INC S$显示内容 <RText|id=71|color=251|size=18|text=三、加完微信拉你进群后：>
+INC S$显示内容 <RText|id=72|color=255|size=16|text=这个时候，你会发现，大部分都是游戏里的玩家，同时会隐藏1-3个托，他们会互>
+INC S$显示内容 <RText|id=73|color=255|size=16|text=相配合带节奏。>
+INC S$显示内容 <RText|id=74|color=255|size=16|text=有意无意的提起新的游戏，告诉你现在玩的游戏不好玩，引导你们一起去玩其他游>
+INC S$显示内容 <RText|id=75|color=255|size=16|text=戏，从而达到他们的目的。>
+GOTO @子项选择
+
+[@游戏攻略]
+#IF
+#ACT
+MOV S$子选择 游戏攻略
+MOV S$选项串 防诈骗提示|游戏攻略|属性提升推荐|急速养成推荐|等级提升|突破转生|游戏技巧
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,52,53,54,55,56,57,58,59,60,61,62,63,64,87,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,88,89,90,91,92,93,94,95,96,97,98,99,100}|x=155|y=110|width=580|height=375|margin=3|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=251|size=18|text=一、游戏前提（新手攻略）>
+INC S$显示内容 <RText|id=52|color=255|size=17|text=1.进入游戏后随主线任务前往土城后，先前往996盒子<领取礼包码和每日奖励。/FCOLOR=58>>
+INC S$显示内容 <RText|id=53|color=255|size=17|text=2.通过土城NPC<Q群礼包/FCOLOR=58>领取Q群礼包，获得大量奖励。>
+INC S$显示内容 <RText|id=54|color=255|size=17|text=3.顶部福利按钮<每日签到/FCOLOR=58>，获得首日奖励500W经验，快速提升角色等级。>
+INC S$显示内容 <RText|id=55|color=255|size=17|text=4.完成每日活动，活跃度达到一定值可以领取<活跃度奖励。/FCOLOR=58>>
+INC S$显示内容 <RText|id=56|color=255|size=17|text=5.每日保持2小时在线，领取在线奖励及累计登录奖励，更可获得稀有礼盒<神/FCOLOR=58>>
+INC S$显示内容 <RText|id=57|color=255|size=17|text=<秘惊喜礼包，/FCOLOR=58>开启有几率获得限定时装<[幻武]风花雪月/FCOLOR=58>等稀有奖励。>
+INC S$显示内容 <RText|id=58|color=255|size=17|text=6.每日参加锁妖塔获得，每日可获得大量强星注灵材料等。>
+INC S$显示内容 <RText|id=59|color=255|size=17|text=7.通过土城NPC<经验使者/FCOLOR=58>进入神秘古陵，消耗当日经验额度快速提升等级。>
+INC S$显示内容 <RText|id=60|color=255|size=17|text=8.前往野外地图，寻找<专属经验BOSS超级经验猪/FCOLOR=58>，打宝升级两不误。>
+INC S$显示内容 <RText|id=61|color=251|size=18|text=二、游戏注意事项>
+INC S$显示内容 <RText|id=62|color=255|size=17|text=1.<低等级/转生地图/FCOLOR=250>随开服时间逐渐关闭，高级地图<永久享受2倍爆率/FCOLOR=58>，产出更>
+INC S$显示内容 <RText|id=63|color=255|size=17|text=多，更容易爆出<顶级装备/FCOLOR=58>，更有<神器剑甲和全服终极装备掉落！/FCOLOR=58>>
+INC S$显示内容 <RText|id=64|color=255|size=17|text=2.各位勇士在打宝的时候，也要一边提升自己的战力，前往更高级地图获取更>
+INC S$显示内容 <RText|id=87|color=255|size=17|text=多的收益。>
+INC S$显示内容 <RText|id=65|color=255|size=17|text=3.新区有<开服竞技/FCOLOR=58>活动，入榜可获得各种奖励，榜首更可获得<唯一称号/FCOLOR=58>奖励。>
+INC S$显示内容 <RText|id=66|color=251|size=18|text=三、转生等级不足5转：（新手推荐）>
+INC S$显示内容 <RText|id=67|color=255|size=17|text=1.特戒、星座、附件材料等特殊装备，收集这类装备及材料可通过顶部<我要变/FCOLOR=251>>
+INC S$显示内容 <RText|id=68|color=255|size=17|text=<强/合成使者/FCOLOR=251>功能，合成锻造为更高级装备/附件，而且自己不需要的高级特戒>
+INC S$显示内容 <RText|id=69|color=255|size=17|text=/附件材料可以通过盟重土城左侧进行<摆摊交易或随身拍卖行/FCOLOR=251>进行出售。>
+INC S$显示内容 <RText|id=70|color=255|size=17|text=2.炼体材料、升星石、注灵石、火龙凭证、龙晶碎片、火龙气息等物品是人物>
+INC S$显示内容 <RText|id=71|color=255|size=17|text=提升<各项属性/FCOLOR=251>所需要的必要材料消耗。>
+INC S$显示内容 <RText|id=72|color=255|size=17|text=3.高级地图推荐：前往盟重土城下方，<地图等级越高，爆率越高，装备越好，/FCOLOR=251>>
+INC S$显示内容 <RText|id=73|color=255|size=17|text=但盟重土城最多产出5转装备。>
+INC S$显示内容 <RText|id=74|color=58|size=18|text=以上几类物品前期比较容易获得，并且价值价高，推荐快速出售积累元宝>
+INC S$显示内容 <RText|id=75|color=58|size=18|text=及火龙币！>
+INC S$显示内容 <RText|id=76|color=251|size=18|text=四、转生等级达到5转：（新手推荐）>
+INC S$显示内容 <RText|id=76|color=255|size=17|text=第二大陆开启，通过传送阵可以抵达二大陆火龙之城，这里所有怪物都有几率>
+INC S$显示内容 <RText|id=77|color=255|size=17|text=掉落游戏内所有高价值装备，甚至<盛世神器、辉煌神器、火龙神器等全服顶级/FCOLOR=58>>
+INC S$显示内容 <RText|id=78|color=255|size=17|text=<装备！/FCOLOR=58>是游戏内主要游戏区域，但这里怪物难度非常高，对人物装备属性要求>
+INC S$显示内容 <RText|id=79|color=255|size=17|text=较高，没有一定装备基础，建议不要轻易前往！>
+INC S$显示内容 <RText|id=80|color=255|size=17|text=游戏地图推荐：前往二大陆传送门前往火龙之城，地图等级越高，爆率越高，>
+INC S$显示内容 <RText|id=81|color=255|size=17|text=装备越好，这里可以产出全服顶级装备！>
+INC S$显示内容 <RText|id=82|color=251|size=18|text=五、击杀领主>
+INC S$显示内容 <RText|id=83|color=255|size=17|text=火龙之城、龙族领地、BOSS之家，5转及以上地图内都有高级领主BOSS，爆>
+INC S$显示内容 <RText|id=84|color=255|size=17|text=率远远高于普通怪物，其中不泛<神器部件等全服顶级装备，/FCOLOR=58>这些装备在开区>
+INC S$显示内容 <RText|id=85|color=255|size=17|text=的价值非常巨大，但是回血快、高防、高攻，是新手面临的三大问题。需要>
+INC S$显示内容 <RText|id=86|color=255|size=17|text=组队或提升自身属性再前往击杀。>
+
+GOTO @子项选择
+
+[@属性提升推荐]
+#IF
+#ACT
+MOV S$子选择 属性提升推荐
+MOV S$选项串 防诈骗提示|游戏攻略|属性提升推荐|急速养成推荐|等级提升|突破转生|游戏技巧
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,52,53,65,54,55,56,57,58,59,60,61,62,63,64,66,67,68,69,70,71}|x=155|y=110|width=580|height=375|margin=3|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=255|size=17|text=<吸血属性：/FCOLOR=58>对敌人造成伤害转为人物生命回复，该属性可以极大提升人物生存>
+INC S$显示内容 <RText|id=52|color=255|size=17|text=能力，同时降低药品消耗减少打怪成本，强烈推荐。>
+INC S$显示内容 <RText|id=53|color=255|size=17|text=<获取途径：/FCOLOR=58>龙魂炼体、吸血主辅星、开服竞技唯一限定称号、火龙元神（二大>
+INC S$显示内容 <RText|id=65|color=255|size=17|text=陆开启）>
+INC S$显示内容 <RText|id=54|color=251|size=18|text=<小提示：/FCOLOR=58>盟重土城NPC<龙魂炼体/FCOLOR=58>提升龙头部位可提升吸血属性（前期必备>
+INC S$显示内容 <RText|id=55|color=251|size=18|text=）>
+INC S$显示内容 <RText|id=56|color=255|size=17|text=<斗笠&盾牌&灵玉&宝珠：/FCOLOR=58>提升该四个部位可以大幅度提升人物物防、魔防攻魔>
+INC S$显示内容 <RText|id=57|color=255|size=17|text=道、HP/MP属性和每秒回血，极大提高生存续航能力！>
+INC S$显示内容 <RText|id=58|color=251|size=18|text=小提示：可前往盟重土城NPC<附件锻造/FCOLOR=58>处消耗材料龙晶碎片和元宝进行锻>
+INC S$显示内容 <RText|id=59|color=251|size=18|text=造提升。>
+INC S$显示内容 <RText|id=60|color=255|size=17|text=<幸运9：/FCOLOR=58>全身幸运+9时每次攻击都将触发最高上限，配合吸血能挑战更强大的>
+INC S$显示内容 <RText|id=61|color=255|size=17|text=BOSS。>
+INC S$显示内容 <RText|id=62|color=251|size=18|text=小提示：<首充礼包/FCOLOR=58>可领取运9武器，前期玩家必备装备，刀刀最高伤害。>
+INC S$显示内容 <RText|id=63|color=255|size=17|text=<狂暴之力：/FCOLOR=58>大量提高攻魔道属性，更有15%爆率及装备回收20%元宝加成！>
+;INC S$显示内容 <RText|id=64|color=255|size=17|text=必备！>
+GOTO @子项选择
+
+[@急速养成推荐]
+#IF
+#ACT
+MOV S$子选择 急速养成推荐
+MOV S$选项串 防诈骗提示|游戏攻略|属性提升推荐|急速养成推荐|等级提升|突破转生|游戏技巧
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69}|x=155|y=110|width=580|height=375|margin=3|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=255|size=17|text=1.<开服充值118元，/FCOLOR=58>获得<VIP3/FCOLOR=251>特权，购买VIP礼包和特惠礼包，<极速3转/FCOLOR=251>，更有>
+INC S$显示内容 <RText|id=52|color=255|size=17|text=3阶特戒，打怪下图更效率。>
+INC S$显示内容 <RText|id=53|color=255|size=17|text=2.<开服充值218元，/FCOLOR=58>获得<VIP4/FCOLOR=251>特权，购买VIP礼包和特惠礼包，<极速5转/FCOLOR=251>，前100>
+INC S$显示内容 <RText|id=54|color=255|size=17|text=名更可获得奖励<【审判の剑】/FCOLOR=251>>
+INC S$显示内容 <RText|id=55|color=255|size=17|text=3.提升VIP等级至<VIP6/FCOLOR=251>，独有称号<武林至尊/FCOLOR=251>，<专属会员防麻痹/FCOLOR=251>，PK必备。>
+INC S$显示内容 <RText|id=56|color=255|size=17|text=>
+INC S$显示内容 <RText|id=57|color=255|size=17|text=4.提升VIP等级至<VIP12/FCOLOR=251>，独有上线<全服通知/FCOLOR=251>，土豪必备！>
+GOTO @子项选择
+
+[@等级提升]
+#IF
+#ACT
+MOV S$子选择 等级提升
+MOV S$选项串 防诈骗提示|游戏攻略|属性提升推荐|急速养成推荐|等级提升|突破转生|游戏技巧
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,52,53,54,69,55,56,57,70,58,59,60,61,62,63,64,65,66,67,68,71,72,73,74,75}|x=155|y=110|width=580|height=375|margin=3|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=255|size=17|text=1.跟随游戏指引出新手地图，强烈推荐<首充礼包/FCOLOR=58>，可开启随身仓库功能，方便>
+INC S$显示内容 <RText|id=52|color=255|size=17|text=把获得的重要物品放入仓库，防止被人杀死掉落。>
+INC S$显示内容 <RText|id=53|color=251|size=17|text=2.<经验来源：/FCOLOR=58>火龙盛典-开服有礼（推荐），经验使者（每日经验快速提升），>
+INC S$显示内容 <RText|id=54|color=251|size=17|text=野外BOSS超级经验猪（海量经验），野外怪物（大量经验），装备回收（大>
+INC S$显示内容 <RText|id=69|color=251|size=17|text=量经验）>
+INC S$显示内容 <RText|id=55|color=255|size=17|text=3.从新手试炼开始刷怪，打到的装备先给自己用，多余的回收快速提升等级和>
+INC S$显示内容 <RText|id=56|color=255|size=17|text=元宝，收集各种材料，存满转生需要的材料后，40级后前往盟重土城完成一转，>
+INC S$显示内容 <RText|id=57|color=255|size=17|text=转生后可以选中去更高级的进阶地图或转生地图，高级地图爆率相对较高，更>
+INC S$显示内容 <RText|id=70|color=255|size=17|text=容易打到高级装备和材料。>
+INC S$显示内容 <RText|id=58|color=250|size=17|text=4.人物1转50级并且身上有王者套装或风暴套装的情况下，进阶地图和1转地图>
+INC S$显示内容 <RText|id=59|color=250|size=17|text=可以随意打，但还需注意二层地图的精英怪需要合理卡位才能更好的杀死。55>
+INC S$显示内容 <RText|id=60|color=250|size=17|text=级存够材料回盟重土城2转，前期可以先不要一次性击杀完超级经验猪，多留>
+INC S$显示内容 <RText|id=61|color=250|size=17|text=点次数，等转生等级提升起来了，去高级地图再打，经验更多。>
+INC S$显示内容 <RText|id=62|color=255|size=17|text=5.2转后可以考虑到2转地图刷怪，收集2转装备或当前等级装备。>
+INC S$显示内容 <RText|id=63|color=255|size=17|text=6.人物70级完成3转并且身上装备为雄霸套或3转套可以上雷霆之路二层刷怪。>
+INC S$显示内容 <RText|id=64|color=250|size=17|text=7.90级4转后可以呆在混乱殿堂中刷装备材料集元宝，同时寻找<超级经验猪/FCOLOR=58>，4>
+INC S$显示内容 <RText|id=65|color=250|size=17|text=转地图的经验猪经验非常丰厚，能快速提高角色等级，同时在材料收集足够后，>
+INC S$显示内容 <RText|id=66|color=250|size=17|text=可以前往盟重土城NPC<经验使者/FCOLOR=58>，进入神秘古陵挂机打怪，10分钟就可以快速>
+INC S$显示内容 <RText|id=67|color=250|size=17|text=获得大量经验，然后转生前往2大陆。>
+INC S$显示内容 <RText|id=68|color=251|size=17|text=8.推荐提升VIP等级，购买VIP礼包和开服特惠礼包等，穿戴90级装备，快速5>
+INC S$显示内容 <RText|id=71|color=251|size=17|text=转，直接跳过繁琐的试炼等地图，进入火龙之城刷怪。>
+INC S$显示内容 <RText|id=72|color=255|size=17|text=>
+INC S$显示内容 <RText|id=73|color=255|size=17|text=>
+INC S$显示内容 <RText|id=74|color=255|size=17|text=>
+INC S$显示内容 <RText|id=75|color=255|size=17|text=>
+GOTO @子项选择
+
+
+[@突破转生]
+#IF
+#ACT
+MOV S$子选择 突破转生
+MOV S$选项串 防诈骗提示|游戏攻略|属性提升推荐|急速养成推荐|等级提升|突破转生|游戏技巧
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,61,52,53,54,62,63,64,65,66,67,55,56,57,58,59,60}|x=155|y=110|width=580|height=375|margin=5|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=255|size=18|text=<转生是游戏中提升玩家属性的重要成长线！/FCOLOR=251>>
+INC S$显示内容 <RText|id=61|color=255|size=18|text=前往盟重土城NPC<人物转生/FCOLOR=58>处进行转生，满级转生可获得<1200HP，500/FCOLOR=58>>
+INC S$显示内容 <RText|id=52|color=255|size=18|text=<MP，80-100攻魔道/FCOLOR=58>属性加成！>
+INC S$显示内容 <RText|id=53|color=255|size=18|text=转生所需材料：<火龙凭证+元宝/FCOLOR=249>>
+INC S$显示内容 <RText|id=54|color=255|size=18|text=<材料获取：/FCOLOR=249><本服承诺所有转生材料均可从怪物处掉落！/FCOLOR=251>地图等级越高，>
+INC S$显示内容 <RText|id=62|color=255|size=18|text=掉落数量越多，推荐进入同转生地图地图。>
+INC S$显示内容 <RText|id=63|color=255|size=18|text=开服进游戏推荐前往<火龙盛典/FCOLOR=58>购买<特惠礼包和经验炼制系统/FCOLOR=58>，快速将转生>
+INC S$显示内容 <RText|id=64|color=255|size=18|text=等级提升至5转，争夺限额奖励<【审判の剑】/FCOLOR=58>>
+INC S$显示内容 <RText|id=65|color=255|size=18|text=转生需要材料<火龙凭证和元宝/FCOLOR=58>，不同转生等级消耗材料元宝不一致，转生>
+INC S$显示内容 <RText|id=66|color=255|size=18|text=等级越高消耗越多。>
+INC S$显示内容 <RText|id=67|color=255|size=18|text=转生后可解锁高级地图，怪物更强，爆率更高，奖励更丰富。>
+INC S$显示内容 <RText|id=55|color=255|size=18|text=<开启狂暴/FCOLOR=250>可以增加打怪爆率<15%/FCOLOR=250>>
+INC S$显示内容 <RText|id=56|color=255|size=18|text=提升<VIP等级/FCOLOR=250>可以获得最高<70%/FCOLOR=250>的打怪爆率加成>
+INC S$显示内容 <RText|id=57|color=255|size=18|text=升级官职可以增加怪物爆率，所有爆率加成均可叠加！>
+INC S$显示内容 <RText|id=58|color=255|size=18|text=提高转生等级可以穿戴对应转生的高级装备>
+INC S$显示内容 <RText|id=59|color=255|size=18|text=<5转/FCOLOR=250>后可以进入第二大陆--火龙支持，该大陆可获得<5转/FCOLOR=250>及以上装备，更有>
+INC S$显示内容 <RText|id=60|color=255|size=18|text=几率掉落顶级装备！>
+GOTO @子项选择
+
+
+[@提升装备]
+#IF
+#ACT
+MOV S$子选择 提升装备
+MOV S$选项串 活动玩法|附件合成|装备强化|装备分解|提升装备|龙魂炼体|官职官印
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,52,66,67,68,75,76,77,78,79,80,53,54,70,55,56,71,57,58,59,69,60,61,72,62,63,73,64,65,74}|x=155|y=110|width=580|height=375|margin=3|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=255|size=18|text=<一、装备升星：/FCOLOR=58>通过盟重土城NPC<装备强化/FCOLOR=250>顶部按钮<我要变强-装备强化/FCOLOR=250>，>
+INC S$显示内容 <RText|id=52|color=255|size=18|text=成功后可为装备提高大量额外属性，强星材料可通过<商城/活动购买/FCOLOR=250>，专属>
+INC S$显示内容 <RText|id=66|color=255|size=18|text=活动<锁妖塔/FCOLOR=250>必定产出。>
+INC S$显示内容 <RText|id=67|color=58|size=18|text=小提示：每日参加<锁妖塔/FCOLOR=250>活动必定获得一定数量升星石，单日最多可获得>
+INC S$显示内容 <RText|id=68|color=58|size=18|text=200个升星石，达到VIP4更可以一键扫荡。>
+INC S$显示内容 <RText|id=75|color=255|size=18|text=<二、装备注灵：/FCOLOR=58>4转开启，通过随身<注灵/FCOLOR=250>按钮操作，装备注灵是针对部位>
+INC S$显示内容 <RText|id=76|color=255|size=18|text=本身，不会随更换装备变化，前15级必定成功，成功后可为角色提高大量>
+INC S$显示内容 <RText|id=77|color=255|size=18|text=属性，注灵材料可通过<商城/活动购买/FCOLOR=250>，专属活动<锁妖塔/FCOLOR=250>必定产出。>
+INC S$显示内容 <RText|id=78|color=58|size=18|text=小提示：每日参加<锁妖塔/FCOLOR=250>活动必定获得一定数量注灵石，单日最多可获得>
+INC S$显示内容 <RText|id=79|color=58|size=18|text=200个注灵石，达到VIP4更可以一键扫荡。>
+INC S$显示内容 <RText|id=53|color=58|size=18|text=<三、合成装备（附件、剑、甲等）/FCOLOR=58>>
+INC S$显示内容 <RText|id=54|color=255|size=18|text=<1.特戒：/FCOLOR=251>盟重土城NPC<合成大师/FCOLOR=250>，可消耗同类型等级数量的特戒和一定元>
+INC S$显示内容 <RText|id=70|color=255|size=18|text=宝必定合成更高级特戒。>
+INC S$显示内容 <RText|id=55|color=255|size=18|text=<2.神器（剑/甲）：/FCOLOR=251>二大陆火龙之城（该地图可在五转后通过土城二大陆传送>
+INC S$显示内容 <RText|id=56|color=255|size=18|text=门进入）NPC<神器大师/FCOLOR=250>合成，消耗一定材料和元宝，必定合成指定神器（>
+INC S$显示内容 <RText|id=71|color=255|size=18|text=剑/甲）。>
+INC S$显示内容 <RText|id=57|color=255|size=18|text=<3.主辅星合成：/FCOLOR=251>顶部按钮我要变强<星座大师/FCOLOR=250>（5转开启）或二大陆火龙之>
+INC S$显示内容 <RText|id=58|color=255|size=18|text=城NPC<星座大师/FCOLOR=250>，消耗所需合成前1等级星座和材料<(注1：材料通过该N/FCOLOR=250>>
+INC S$显示内容 <RText|id=59|color=255|size=18|text=<PC分解5级以上主辅星获得)/FCOLOR=250>合成更高级星座<(注2：所有等级星座全服均有/FCOLOR=250>>
+INC S$显示内容 <RText|id=69|color=255|size=18|text=<掉落，地图等级越高掉落几率越高)/FCOLOR=250>。>
+INC S$显示内容 <RText|id=60|color=255|size=18|text=<4.附件合成：/FCOLOR=251>顶部按钮我要变强<附件合成/FCOLOR=250>或盟重土城NPC<附件合成/FCOLOR=250>，消耗>
+INC S$显示内容 <RText|id=61|color=255|size=18|text=材料及元宝必定提升更高级附件<（材料全服所有怪物均有产出，地图等级/FCOLOR=250>>
+INC S$显示内容 <RText|id=72|color=255|size=18|text=<越高掉落数量越多）/FCOLOR=250>。>
+INC S$显示内容 <RText|id=62|color=255|size=18|text=<5.铭文大师：/FCOLOR=251>顶部按钮我要变强<铭文大师/FCOLOR=250>（5转开启）或二大陆火龙之城N>
+INC S$显示内容 <RText|id=63|color=255|size=18|text=PC<铭文大师/FCOLOR=250><消耗觉醒石开启铭文槽和通过铭文币购买本职业强力铭文/FCOLOR=58><（铭/FCOLOR=250>>
+INC S$显示内容 <RText|id=73|color=255|size=18|text=<文币通过活动领主及2大陆领主几率产出）/FCOLOR=250>。>
+INC S$显示内容 <RText|id=64|color=255|size=18|text=<6.幸运强化：/FCOLOR=251>盟重土城NPC<幸运强化/FCOLOR=250>处，对项链进行提升幸运操作，项链>
+INC S$显示内容 <RText|id=65|color=255|size=18|text=幸运<+3/FCOLOR=58>时，还将随机获得<1-10%/FCOLOR=58>暴击率。<(注1：需要将穿戴的项链取下放/FCOLOR=250>>
+INC S$显示内容 <RText|id=74|color=255|size=18|text=<置背包才可强化。注2：幸运强化属性可以消耗材料转移至其余项链上)/FCOLOR=250>>
+GOTO @子项选择
+
+
+[@游戏技巧]
+#IF
+#ACT
+MOV S$子选择 游戏技巧
+MOV S$选项串 防诈骗提示|游戏攻略|属性提升推荐|急速养成推荐|等级提升|突破转生|游戏技巧
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,52,53,54,55,56,62,57,58,59,60,61,63,64,65,66}|x=155|y=110|width=580|height=375|margin=3|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=58|size=20|text=职业介绍>
+INC S$显示内容 <RText|id=52|color=255|size=17|text=战士：拥有吸血属性后，同时拉5个怪，利用角度同时攻击4个怪物，怪物半血>
+INC S$显示内容 <RText|id=53|color=255|size=17|text=后点击第五个怪，利用角度大幅度提高刷怪效率。>
+INC S$显示内容 <RText|id=54|color=255|size=17|text=法师：利用走位，拉一群怪边跑边放群攻技能，打BOSS时可利用地图上的障>
+INC S$显示内容 <RText|id=55|color=255|size=17|text=碍物卡位，远距离无伤打BOSS。>
+INC S$显示内容 <RText|id=56|color=255|size=17|text=道士：需要快速优先升级召唤技能和自身属性提高神兽血量。增加神兽抗伤>
+INC S$显示内容 <RText|id=62|color=255|size=17|text=害能力。>
+INC S$显示内容 <RText|id=57|color=58|size=20|text=进阶技巧>
+INC S$显示内容 <RText|id=58|color=255|size=17|text=战士：战士推荐佩戴麻痹戒指和复活戒指，可通过麻痹目标提高生存率，并且>
+INC S$显示内容 <RText|id=59|color=255|size=17|text=额外增加一条生命，充分利用障碍物卡怪使用刺杀剑术。>
+INC S$显示内容 <RText|id=60|color=255|size=17|text=法师：通过释放火墙来聚怪，配合冰咆哮和流星火雨的输出来完成放风筝战术。>
+INC S$显示内容 <RText|id=61|color=255|size=17|text=道士：先使用宝宝拉仇恨，然后间隔上毒，与怪物保持距离，远程使用灵魂火>
+INC S$显示内容 <RText|id=63|color=255|size=17|text=符打怪。>
+GOTO @子项选择
+
+[@官职官印]
+#IF
+#ACT
+MOV S$子选择 官职官印
+MOV S$选项串 活动玩法|附件合成|装备强化|装备分解|提升装备|龙魂炼体|官职官印
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70}|x=155|y=110|width=580|height=375|margin=3|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=58|size=20|text=官职晋升>
+INC S$显示内容 <RText|id=52|color=255|size=17|text=官职系统可以提升人物基础攻击，提升打怪爆率！>
+INC S$显示内容 <RText|id=53|color=255|size=17|text=官职封顶<15级/FCOLOR=250>，满级激活<13-50攻魔道/FCOLOR=250>，<20%打怪爆率/FCOLOR=250>！>
+INC S$显示内容 <RText|id=54|color=255|size=17|text=所需材料：<火龙凭证/FCOLOR=249>>
+INC S$显示内容 <RText|id=55|color=255|size=17|text=晋升官职后人物会获得官职称号！>
+INC S$显示内容 <RText|id=56|color=255|size=17|text=官职晋升等级越高，官职称号越精美华丽>
+INC S$显示内容 <RText|id=57|color=255|size=17|text=官职提升的怪物爆率可其他的爆率加成永久叠加>
+INC S$显示内容 <RText|id=58|color=255|size=17|text=火龙凭证通过任意地图击杀怪物获得>
+INC S$显示内容 <RText|id=59|color=255|size=17|text=>
+INC S$显示内容 <RText|id=60|color=58|size=20|text=官印提升>
+INC S$显示内容 <RText|id=61|color=255|size=17|text=官职等级达到五品后，可免费激活官印系统>
+INC S$显示内容 <RText|id=62|color=255|size=17|text=通过消耗声望值和元宝提升官印星级>
+INC S$显示内容 <RText|id=63|color=255|size=17|text=声望目前仅支持道具提升，道具通过每日限时活动或商店获得，后续会增加领>
+INC S$显示内容 <RText|id=64|color=255|size=17|text=主击杀获得。>
+INC S$显示内容 <RText|id=65|color=255|size=17|text=每次提升官印星级会获得双防、攻魔道、HP属性>
+INC S$显示内容 <RText|id=66|color=255|size=15|text=>
+INC S$显示内容 <RText|id=67|color=255|size=15|text=>
+INC S$显示内容 <RText|id=68|color=255|size=15|text=>
+INC S$显示内容 <RText|id=69|color=255|size=15|text=>
+INC S$显示内容 <RText|id=70|color=255|size=15|text=>
+GOTO @子项选择
+
+[@龙魂炼体]
+#IF
+#ACT
+MOV S$子选择 龙魂炼体
+MOV S$选项串 活动玩法|附件合成|装备强化|装备分解|提升装备|龙魂炼体|官职官印
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,60,52,61,53,54,62,55,56,63,57,58,64,59}|x=155|y=110|width=580|height=375|margin=5|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=255|size=18|text=<炼体等级的提升，能大幅度增加人物属性，增加PK能力，提高刷图效率/FCOLOR=251>>
+INC S$显示内容 <RText|id=60|color=255|size=18|text=<更可开启炼体专属地图（二大陆）/FCOLOR=58>>
+INC S$显示内容 <RText|id=52|color=255|size=17|text=<龙头：/FCOLOR=251><满级20级，/FCOLOR=250>提升龙头等级可获得<HP、攻击吸血加成/FCOLOR=250>，打怪PK必备属性>
+INC S$显示内容 <RText|id=61|color=255|size=17|text=满级获得<1000HP加成、10%攻击吸血/FCOLOR=250>>
+INC S$显示内容 <RText|id=53|color=255|size=17|text=所需材料：<洗髓丹、元宝/FCOLOR=249>>
+INC S$显示内容 <RText|id=54|color=255|size=17|text=<龙躯：/FCOLOR=251><满级20级，/FCOLOR=250>提升龙躯等级可获得<准确、受怪减伤效果/FCOLOR=250>，专属免伤保命>
+INC S$显示内容 <RText|id=62|color=255|size=17|text=神器！满级获得<准确+40、受怪减伤+20%/FCOLOR=250>>
+INC S$显示内容 <RText|id=55|color=255|size=17|text=所需材料：<恶魔头颅、元宝/FCOLOR=249>>
+INC S$显示内容 <RText|id=56|color=255|size=17|text=<龙骨：/FCOLOR=251><满级20级，/FCOLOR=250>提升龙骨等级可获得<双防、忽视防御效果/FCOLOR=250>，元素属性超高>
+INC S$显示内容 <RText|id=63|color=255|size=17|text=PK必备！满级获得<双防40-40、忽视防御+20%/FCOLOR=250>>
+INC S$显示内容 <RText|id=57|color=255|size=17|text=所需材料：<龍の魄、元宝/FCOLOR=249>>
+INC S$显示内容 <RText|id=58|color=255|size=17|text=<龙尾：/FCOLOR=251><满级20级，/FCOLOR=250>提升龙尾等级可获得<攻魔道、伤害加成属性/FCOLOR=250>，属性超高，>
+INC S$显示内容 <RText|id=64|color=255|size=17|text=PK必备！满级获得<攻魔道40-40、伤害加成+20%/FCOLOR=250>>
+INC S$显示内容 <RText|id=59|color=255|size=17|text=所需材料：<龍の心、元宝/FCOLOR=249>>
+GOTO @子项选择
+
+[@玩法]
+#IF
+#ACT
+MOV S$当前选择 玩法
+GOTO @活动玩法
+
+[@活动玩法]
+#IF
+#ACT
+MOV S$子选择 活动玩法
+MOV S$选项串 活动玩法|附件合成|装备强化|装备分解|提升装备|龙魂炼体|官职官印
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70}|x=155|y=110|width=580|height=375|margin=5|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=58|size=20|text=每日活动处可查看日常多种活动，参与活动更可以获得额外奖励！>
+INC S$显示内容 <RText|id=52|color=255|size=17|text=<1.天降元宝：每周二、四、六开启，/FCOLOR=251>传送到地图后开始抢夺散财猪，击杀怪物>
+INC S$显示内容 <RText|id=53|color=255|size=17|text=可爆出大量元宝奖励。>
+INC S$显示内容 <RText|id=54|color=255|size=17|text=<2.勇闯炼狱：每天开启，/FCOLOR=251>活动期间，炼狱每层都会刷新强力BOSS，击杀可获>
+INC S$显示内容 <RText|id=55|color=255|size=17|text=得丰厚奖励！当日首次通关每一层炼狱更可获得通关奖励！<活动地图死亡不掉/FCOLOR=58>>
+INC S$显示内容 <RText|id=56|color=255|size=17|text=<装备和狂暴！/FCOLOR=58>>
+INC S$显示内容 <RText|id=57|color=255|size=17|text=<3.夺宝奇兵：每周二、四开启，/FCOLOR=251>活动地图内击败其他玩家争夺<全服唯一限时称/FCOLOR=58>>
+INC S$显示内容 <RText|id=58|color=255|size=17|text=<号，/FCOLOR=58>击败BOSS更可获得稀有奖励！>
+INC S$显示内容 <RText|id=59|color=255|size=17|text=<4.锁妖塔：常驻活动，/FCOLOR=251>通关锁妖塔每日可获得稀有强化注灵奖励，每10层更可>
+INC S$显示内容 <RText|id=60|color=255|size=17|text=获得阶段奖励。>
+INC S$显示内容 <RText|id=61|color=255|size=17|text=<5.全民押镖：每天开启，/FCOLOR=251>运送镖车到指定位置，不同等级的镖车可以获得不同>
+INC S$显示内容 <RText|id=62|color=255|size=17|text=等级的经验奖励，一天可运送三次。<开服当天仅在开服2小时后开启！/FCOLOR=58>>
+INC S$显示内容 <RText|id=63|color=255|size=17|text=<6.世界BOSS：每周一、五、日开启，/FCOLOR=251>进入地图夺取唯一一只的世界BOSS，BO>
+INC S$显示内容 <RText|id=64|color=255|size=17|text=SS死亡后根据玩家总伤害计算排名。>
+INC S$显示内容 <RText|id=65|color=255|size=17|text=<7.剑指沙巴克：合服后开启，/FCOLOR=251>四方群雄前来征战沙巴克，获胜行会获得沙巴克>
+INC S$显示内容 <RText|id=66|color=255|size=17|text=称号、元宝和火龙币奖励，获胜行会会长可获得沙巴克<唯一限时称号奖励。/FCOLOR=58>>
+INC S$显示内容 <RText|id=67|color=255|size=17|text=<8.经验使者：/FCOLOR=251>每日凌晨恢复高倍经验额度，转生等级越高，恢复额度越多，>
+INC S$显示内容 <RText|id=68|color=255|size=17|text=可前往土城<经验使者/FCOLOR=58>进入。>
+INC S$显示内容 <RText|id=69|color=255|size=17|text=<9.超级经验猪：/FCOLOR=251>所有地图均有刷新，地图等级越高超级经验猪经验越多，每>
+INC S$显示内容 <RText|id=70|color=255|size=17|text=个玩家每日仅限击杀10个。>
+GOTO @子项选择
+
+
+[@附件合成]
+#IF
+#ACT
+MOV S$子选择 附件合成
+MOV S$选项串 活动玩法|附件合成|装备强化|装备分解|提升装备|龙魂炼体|官职官印
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,52,53,54,55,56,57,58,59,60,61,62,63,64,65}|x=155|y=110|width=580|height=375|margin=5|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=255|size=17|text=斗笠、盾牌、灵玉和宝珠都可以通过特殊材料前往<盟重-附件锻造/FCOLOR=250>锻造升级为>
+INC S$显示内容 <RText|id=52|color=255|size=17|text=更高品质装备。>
+INC S$显示内容 <RText|id=53|color=255|size=17|text=特戒更可以通过<盟重-合成大师/FCOLOR=250>进行装备合成。>
+INC S$显示内容 <RText|id=54|color=255|size=17|text=低级特戒合成更高级特戒，额外属性大大提升。>
+INC S$显示内容 <RText|id=55|color=255|size=17|text=斗笠和盾牌更有强力<单件套装属性/FCOLOR=250>，不需要再为集不齐套装属性苦恼。>
+INC S$显示内容 <RText|id=56|color=255|size=17|text=<专属灵玉/FCOLOR=250>超高属性加成，超强宝珠<回血回蓝！/FCOLOR=250>>
+INC S$显示内容 <RText|id=57|color=255|size=17|text=斗笠：<单件触发百分比HPMP加成/FCOLOR=250>>
+INC S$显示内容 <RText|id=58|color=255|size=17|text=盾牌：<单件触发百分比双防加成/FCOLOR=250>>
+INC S$显示内容 <RText|id=59|color=255|size=17|text=灵玉：<单件触发百分比HPMP/FCOLOR=250>和<忽视防御加成/FCOLOR=250>，打宝PK必不可少！>
+INC S$显示内容 <RText|id=60|color=255|size=17|text=宝珠：<单件触发百分比HPMP/FCOLOR=250>和<百分比攻魔道加成/FCOLOR=250>，更有每秒回血，给你强力>
+INC S$显示内容 <RText|id=61|color=255|size=17|text=续航功能。>
+INC S$显示内容 <RText|id=62|color=255|size=17|text=特戒：集齐佩戴<任意两件/FCOLOR=250>同等级特戒触发<百分比攻魔道/FCOLOR=250>加成套装属性。>
+GOTO @子项选择
+
+[@装备强化]
+#IF
+#ACT
+MOV S$子选择 装备强化
+MOV S$选项串 活动玩法|附件合成|装备强化|装备分解|提升装备|龙魂炼体|官职官印
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={71,51,52,53,54,55,56,57,58,59,60,61,72,62,63,64,65,66,67,68,69,70}|x=155|y=110|width=580|height=375|margin=5|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=71|color=58|size=20|text=一、装备强化>
+INC S$显示内容 <RText|id=51|color=255|size=18|text=装备强化满级<36星/FCOLOR=250>，强化基于装备本身进行，不能继承到其他同部位装备上>
+;INC S$显示内容 <RText|id=52|color=255|size=18|text=全身装备强化<+7/FCOLOR=250>后会激活特殊人物特效，华丽无比！>
+INC S$显示内容 <RText|id=53|color=255|size=18|text=每个部位的装备强化<36星/FCOLOR=249>均可获得<56-162点/FCOLOR=250>攻魔道属性>
+INC S$显示内容 <RText|id=54|color=255|size=18|text=<+6/FCOLOR=250>后每个部位可以额外获得<元素属性/FCOLOR=249>>
+;INC S$显示内容 <RText|id=55|color=255|size=18|text=1、<装备装备免爆属性/FCOLOR=249>，<+36满级/FCOLOR=250><免爆属性/FCOLOR=249>加成高达<70%/FCOLOR=249>>
+INC S$显示内容 <RText|id=56|color=255|size=18|text=<+36满级/FCOLOR=250><元素属性/FCOLOR=249>加成高达<18%/FCOLOR=250>>
+INC S$显示内容 <RText|id=57|children={571}|color=255|size=18|text=武器：<伤害加成/FCOLOR=250>>
+INC S$显示内容 <RText|id=571|x=200|y=0|color=255|size=18|text=衣服：<伤害减免/FCOLOR=250>>
+INC S$显示内容 <RText|id=58|children={581}|color=255|size=18|text=头盔：<防御加成/FCOLOR=250>>
+INC S$显示内容 <RText|id=581|x=200|y=0|color=255|size=18|text=项链：<暴击几率/FCOLOR=250>>
+INC S$显示内容 <RText|id=59|children={591}|color=255|size=18|text=手镯：<攻魔道加成/FCOLOR=250>>
+INC S$显示内容 <RText|id=591|x=200|y=0|color=255|size=18|text=戒指：<攻魔道加成/FCOLOR=250>>
+INC S$显示内容 <RText|id=60|children={601}|color=255|size=18|text=腰带：<生命加成/FCOLOR=250>>
+INC S$显示内容 <RText|id=601|x=200|y=0|color=255|size=18|text=鞋子：<生命加成/FCOLOR=250>>
+INC S$显示内容 <RText|id=61|children={611}|color=255|size=18|text=勋章：<伤害反弹/FCOLOR=250>>
+INC S$显示内容 <RText|id=72|color=58|size=20|text=二、装备注灵>
+INC S$显示内容 <RText|id=62|color=255|size=18|text=装备注灵满级<45级/FCOLOR=250>，注灵基于角色部位本身，不会因更换装备变化>
+INC S$显示内容 <RText|id=63|color=255|size=18|text=每个部位注灵满级最多可获得<654-654/FCOLOR=250>攻魔道或<654-654/FCOLOR=250>物防魔防或<19820/FCOLOR=250>>
+INC S$显示内容 <RText|id=64|color=255|size=18|text=HP属性>
+INC S$显示内容 <RText|id=65|color=255|size=18|text=全身部位注灵<5级/FCOLOR=250>后会激活套装属性！>
+INC S$显示内容 <RText|id=66|children={661}|color=255|size=18|text=武器：<攻魔道/FCOLOR=250>>
+INC S$显示内容 <RText|id=661|x=200|y=0|color=255|size=18|text=衣服：<物理防御/FCOLOR=250>>
+INC S$显示内容 <RText|id=67|children={671}|color=255|size=18|text=头盔：<魔法防御/FCOLOR=250>>
+INC S$显示内容 <RText|id=671|x=200|y=0|color=255|size=18|text=项链：<攻魔道/FCOLOR=250>>
+INC S$显示内容 <RText|id=68|children={681}|color=255|size=18|text=勋章：<HP/FCOLOR=250>>
+INC S$显示内容 <RText|id=681|x=200|y=0|color=255|size=18|text=手镯：<HP/FCOLOR=250>>
+INC S$显示内容 <RText|id=69|children={691}|color=255|size=18|text=戒指：<攻魔道/FCOLOR=250>>
+INC S$显示内容 <RText|id=691|x=200|y=0|color=255|size=18|text=腰带：<魔法防御/FCOLOR=250>>
+INC S$显示内容 <RText|id=70|children={701}|color=255|size=18|text=靴子：<物理防御/FCOLOR=250>>
+
+GOTO @子项选择
+
+[@装备合成]
+#IF
+#ACT
+MOV S$子选择 装备合成
+MOV S$选项串 活动玩法|附件合成|装备强化|装备分解|提升装备|龙魂炼体|官职官印
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,52,53,54,55,56,57,58,59}|x=155|y=110|width=580|height=375|margin=5|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=255|size=18|text=高级装备可以通过<盟重土城-神器大师/FCOLOR=250>合成>
+INC S$显示内容 <RText|id=52|color=255|size=18|text=消耗对应材料，必定合成指定武器或战甲>
+
+GOTO @子项选择
+
+[@装备分解]
+#IF
+#ACT
+MOV S$子选择 装备分解
+MOV S$选项串 活动玩法|附件合成|装备强化|装备分解|提升装备|龙魂炼体|官职官印
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+INC S$显示内容 <ListView|id=5|children={51,52,53,54,55,56,57,58,59}|x=155|y=110|width=580|height=375|margin=5|bounce=0|direction=1|color=x>
+INC S$显示内容 <RText|id=51|color=255|size=18|text=高级装备都可以前往<盟重-分解大师/FCOLOR=250>处进行分解！>
+INC S$显示内容 <RText|id=52|color=255|size=18|text=升级<VIP特权/FCOLOR=250>可以享受随身自动分解功能。>
+INC S$显示内容 <RText|id=53|color=255|size=18|text=分解后有必定获得<超大额元宝/FCOLOR=250>、<强化材料/FCOLOR=250>和<炼体材料/FCOLOR=250>等其中的一种或多种>
+INC S$显示内容 <RText|id=54|color=255|size=18|text=稀有材料包括<龙魂炼体材料/FCOLOR=250>和<神器锻造、注灵、强星、火龙元神材料/FCOLOR=250>。>
+;INC S$显示内容 <RText|id=55|color=255|size=18|text=稀有材料可用于剑甲锻造和龙魂炼体。>
+GOTO @子项选择
+
+
+[@装备]
+#IF
+#ACT
+MOV S$当前选择 装备
+MOV P41 0
+GOTO @基础装备
+
+
+[@基础装备]
+#IF
+#ACT
+MOV S$选择_攻略 <$STR(S$默认按钮)>
+MOV S$选择_玩法 <$STR(S$默认按钮)>
+MOV S$选择_装备 <$STR(S$默认按钮)>
+MOV S$选择_怪物 <$STR(S$默认按钮)>
+MOV S$选择_技能 <$STR(S$默认按钮)>
+MOV S$选择_<$STR(S$当前选择)> <$STR(S$激活按钮)>
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 2 S$35装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 4 S$40装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 6 S$55装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 8 S$70装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 10 S$90装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 12 S$105装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 14 S$120装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 16 S$135装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 18 S$155装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 20 S$175装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4|reload=1|loadDelay=1|loadCount=10|loadStep=3>
+<Img|children={0,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=成长之路>
+<ListView|id=3|children={31,32,33,34,35}|x=28|y=65|width=800|height=42|margin=10|bounce=0|direction=2|color=x>
+<Button|id=31|<$STR(S$选择_攻略)>|text=游戏攻略|link=@攻略>
+<Button|id=32|<$STR(S$选择_玩法)>|text=玩法推荐|link=@玩法>
+<Button|id=33|<$STR(S$选择_装备)>|text=装备图鉴|link=@装备>
+<Button|id=34|<$STR(S$选择_怪物)>|text=BOSS图鉴|link=@怪物>
+<Button|id=35|<$STR(S$选择_技能)>|text=技能铭文|link=@铭文技能>
+<ListView|id=7|children={71}|x=18|y=108|width=735|height=3|margin=0|bounce=0|direction=2|color=x>
+<Img|id=71|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
+<Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
+<Button|id=41|<$STR(S$激活按钮)>|text=等级装备|link=@基础装备>
+<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+<Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
+<Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
+<Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121}|x=150|y=115|width=600|height=390|margin=1|bounce=0|direction=1|color=x>
+<Layout|id=9|children={91,92}|width=590|height=40|color=x>
+<Img|id=91|children={92}|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=92|a=4|percentx=50|percenty=50|color=254|size=18|text=圣战套装>
+<Layout|id=101|a=2|children={1011,1012,1013,1014,1015,1016,1017,1018,1019,10111,10112,10113,10114,10115,10116,10117,10118,10119,10121,10122,10123,10124,10125,10126,10127,10128,10129,10131}|width=590|height=260|color=x>
+<ItemShow|id=1011|itemid=<$STR(S$35装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1012|itemid=<$STR(S$35装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1013|itemid=<$STR(S$35装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1014|itemid=<$STR(S$35装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1015|itemid=<$STR(S$35装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1016|itemid=<$STR(S$35装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1017|itemid=<$STR(S$35装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1018|itemid=<$STR(S$35装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1019|itemid=<$STR(S$35装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=10111|itemid=<$STR(S$35装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=10112|itemid=<$STR(S$35装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=10113|itemid=<$STR(S$35装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=10114|itemid=<$STR(S$35装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=10115|itemid=<$STR(S$35装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=10116|itemid=<$STR(S$35装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=10117|itemid=<$STR(S$35装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=10118|itemid=<$STR(S$35装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=10119|itemid=<$STR(S$35装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=10121|itemid=<$STR(S$35装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=10122|itemid=<$STR(S$35装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=10123|itemid=<$STR(S$35装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=10124|itemid=<$STR(S$35装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=10125|itemid=<$STR(S$35装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=10126|itemid=<$STR(S$35装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=10127|itemid=<$STR(S$35装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=10128|itemid=<$STR(S$35装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=10129|itemid=<$STR(S$35装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=10131|itemid=<$STR(S$35装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
+<Layout|id=102|children={1021,1022}|width=590|height=40|color=x>
+<Img|id=1021|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1022|a=4|percentx=50|percenty=50|color=254|size=18|text=纵横套装>
+<Layout|id=103|a=2|children={1031,1032,1033,1034,1035,1036,1037,1038,1039,10311,10312,10313,10314,10315,10316,10317,10318,10319,10321,10322,10323,10324,10325,10326,10327,10328,10329,10331}|width=590|height=260|color=x>
+<ItemShow|id=1031|itemid=<$STR(S$40装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1032|itemid=<$STR(S$40装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1033|itemid=<$STR(S$40装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1034|itemid=<$STR(S$40装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1035|itemid=<$STR(S$40装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1036|itemid=<$STR(S$40装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1037|itemid=<$STR(S$40装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1038|itemid=<$STR(S$40装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1039|itemid=<$STR(S$40装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=10311|itemid=<$STR(S$40装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=10312|itemid=<$STR(S$40装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=10313|itemid=<$STR(S$40装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=10314|itemid=<$STR(S$40装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=10315|itemid=<$STR(S$40装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=10316|itemid=<$STR(S$40装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=10317|itemid=<$STR(S$40装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=10318|itemid=<$STR(S$40装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=10319|itemid=<$STR(S$40装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=10321|itemid=<$STR(S$40装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=10322|itemid=<$STR(S$40装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=10323|itemid=<$STR(S$40装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=10324|itemid=<$STR(S$40装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=10325|itemid=<$STR(S$40装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=10326|itemid=<$STR(S$40装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=10327|itemid=<$STR(S$40装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=10328|itemid=<$STR(S$40装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=10329|itemid=<$STR(S$40装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=10331|itemid=<$STR(S$40装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
+<Layout|id=104|children={1041,1042}|width=590|height=40|color=x>
+<Img|id=1041|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1042|a=4|percentx=50|percenty=50|color=254|size=18|text=王者套装>
+<Layout|id=105|a=2|children={1051,1052,1053,1054,1055,1056,1057,1058,1059,10511,10512,10513,10514,10515,10516,10517,10518,10519,10521,10522,10523,10524,10525,10526,10527,10528,10529,10531}|width=590|height=260|color=x>
+<ItemShow|id=1051|itemid=<$STR(S$55装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1052|itemid=<$STR(S$55装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1053|itemid=<$STR(S$55装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1054|itemid=<$STR(S$55装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1055|itemid=<$STR(S$55装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1056|itemid=<$STR(S$55装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1057|itemid=<$STR(S$55装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1058|itemid=<$STR(S$55装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1059|itemid=<$STR(S$55装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=10511|itemid=<$STR(S$55装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=10512|itemid=<$STR(S$55装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=10513|itemid=<$STR(S$55装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=10514|itemid=<$STR(S$55装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=10515|itemid=<$STR(S$55装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=10516|itemid=<$STR(S$55装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=10517|itemid=<$STR(S$55装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=10518|itemid=<$STR(S$55装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=10519|itemid=<$STR(S$55装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=10521|itemid=<$STR(S$55装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=10522|itemid=<$STR(S$55装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=10523|itemid=<$STR(S$55装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=10524|itemid=<$STR(S$55装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=10525|itemid=<$STR(S$55装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=10526|itemid=<$STR(S$55装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=10527|itemid=<$STR(S$55装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=10528|itemid=<$STR(S$55装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=10529|itemid=<$STR(S$55装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=10531|itemid=<$STR(S$55装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
+<Layout|id=106|children={1061,1062}|width=590|height=40|color=x>
+<Img|id=1061|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1062|a=4|percentx=50|percenty=50|color=254|size=18|text=赤焰套装>
+<Layout|id=107|a=2|children={1071,1072,1073,1074,1075,1076,1077,1078,1079,10711,10712,10713,10714,10715,10716,10717,10718,10719,10721,10722,10723,10724,10725,10726,10727,10728,10729,10731}|width=590|height=260|color=x>
+<ItemShow|id=1071|itemid=<$STR(S$70装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1072|itemid=<$STR(S$70装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1073|itemid=<$STR(S$70装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1074|itemid=<$STR(S$70装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1075|itemid=<$STR(S$70装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1076|itemid=<$STR(S$70装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1077|itemid=<$STR(S$70装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1078|itemid=<$STR(S$70装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1079|itemid=<$STR(S$70装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=10711|itemid=<$STR(S$70装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=10712|itemid=<$STR(S$70装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=10713|itemid=<$STR(S$70装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=10714|itemid=<$STR(S$70装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=10715|itemid=<$STR(S$70装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=10716|itemid=<$STR(S$70装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=10717|itemid=<$STR(S$70装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=10718|itemid=<$STR(S$70装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=10719|itemid=<$STR(S$70装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=10721|itemid=<$STR(S$70装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=10722|itemid=<$STR(S$70装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=10723|itemid=<$STR(S$70装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=10724|itemid=<$STR(S$70装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=10725|itemid=<$STR(S$70装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=10726|itemid=<$STR(S$70装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=10727|itemid=<$STR(S$70装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=10728|itemid=<$STR(S$70装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=10729|itemid=<$STR(S$70装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=10731|itemid=<$STR(S$70装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
+<Layout|id=108|children={1081,1082}|width=590|height=40|color=x>
+<Img|id=1081|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1082|a=4|percentx=50|percenty=50|color=254|size=18|text=传说套装>
+<Layout|id=109|a=2|children={1091,1092,1093,1094,1095,1096,1097,1098,1099,10911,10912,10913,10914,10915,10916,10917,10918,10919,10921,10922,10923,10924,10925,10926,10927,10928,10929,10931}|width=590|height=260|color=x>
+<ItemShow|id=1091|itemid=<$STR(S$90装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1092|itemid=<$STR(S$90装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1093|itemid=<$STR(S$90装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1094|itemid=<$STR(S$90装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1095|itemid=<$STR(S$90装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1096|itemid=<$STR(S$90装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1097|itemid=<$STR(S$90装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1098|itemid=<$STR(S$90装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1099|itemid=<$STR(S$90装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=10911|itemid=<$STR(S$90装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=10912|itemid=<$STR(S$90装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=10913|itemid=<$STR(S$90装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=10914|itemid=<$STR(S$90装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=10915|itemid=<$STR(S$90装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=10916|itemid=<$STR(S$90装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=10917|itemid=<$STR(S$90装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=10918|itemid=<$STR(S$90装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=10919|itemid=<$STR(S$90装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=10921|itemid=<$STR(S$90装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=10922|itemid=<$STR(S$90装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=10923|itemid=<$STR(S$90装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=10924|itemid=<$STR(S$90装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=10925|itemid=<$STR(S$90装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=10926|itemid=<$STR(S$90装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=10927|itemid=<$STR(S$90装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=10928|itemid=<$STR(S$90装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=10929|itemid=<$STR(S$90装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=10931|itemid=<$STR(S$90装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
+<Layout|id=110|children={1101,1102}|width=590|height=40|color=x>
+<Img|id=1101|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1102|a=4|percentx=50|percenty=50|color=254|size=18|text=雄霸套装>
+<Layout|id=111|a=2|children={1111,1112,1113,1114,1115,1116,1117,1118,1119,11111,11112,11113,11114,11115,11116,11117,11118,11119,11121,11122,11123,11124,11125,11126,11127,11128,11129,11131}|width=590|height=260|color=x>
+<ItemShow|id=1111|itemid=<$STR(S$105装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1112|itemid=<$STR(S$105装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1113|itemid=<$STR(S$105装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1114|itemid=<$STR(S$105装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1115|itemid=<$STR(S$105装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1116|itemid=<$STR(S$105装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1117|itemid=<$STR(S$105装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1118|itemid=<$STR(S$105装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1119|itemid=<$STR(S$105装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11111|itemid=<$STR(S$105装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=11112|itemid=<$STR(S$105装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=11113|itemid=<$STR(S$105装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=11114|itemid=<$STR(S$105装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=11115|itemid=<$STR(S$105装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=11116|itemid=<$STR(S$105装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=11117|itemid=<$STR(S$105装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=11118|itemid=<$STR(S$105装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=11119|itemid=<$STR(S$105装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=11121|itemid=<$STR(S$105装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=11122|itemid=<$STR(S$105装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=11123|itemid=<$STR(S$105装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=11124|itemid=<$STR(S$105装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=11125|itemid=<$STR(S$105装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=11126|itemid=<$STR(S$105装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=11127|itemid=<$STR(S$105装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=11128|itemid=<$STR(S$105装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=11129|itemid=<$STR(S$105装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=11131|itemid=<$STR(S$105装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
+
+<Layout|id=112|children={1121,1122}|width=590|height=40|color=x>
+<Img|id=1121|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1122|a=4|percentx=50|percenty=50|color=254|size=18|text=苍穹套装>
+<Layout|id=113|a=2|children={1131,1132,1133,1134,1135,1136,1137,1138,1139,11311,11312,11313,11314,11315,11316,11317,11318,11319,11321,11322,11323,11324,11325,11326,11327,11328,11329,11331}|width=590|height=260|color=x>
+<ItemShow|id=1131|itemid=<$STR(S$120装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1132|itemid=<$STR(S$120装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1133|itemid=<$STR(S$120装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1134|itemid=<$STR(S$120装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1135|itemid=<$STR(S$120装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1136|itemid=<$STR(S$120装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1137|itemid=<$STR(S$120装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1138|itemid=<$STR(S$120装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1139|itemid=<$STR(S$120装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11311|itemid=<$STR(S$120装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=11312|itemid=<$STR(S$120装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=11313|itemid=<$STR(S$120装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=11314|itemid=<$STR(S$120装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=11315|itemid=<$STR(S$120装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=11316|itemid=<$STR(S$120装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=11317|itemid=<$STR(S$120装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=11318|itemid=<$STR(S$120装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=11319|itemid=<$STR(S$120装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=11321|itemid=<$STR(S$120装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=11322|itemid=<$STR(S$120装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=11323|itemid=<$STR(S$120装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=11324|itemid=<$STR(S$120装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=11325|itemid=<$STR(S$120装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=11326|itemid=<$STR(S$120装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=11327|itemid=<$STR(S$120装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=11328|itemid=<$STR(S$120装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=11329|itemid=<$STR(S$120装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=11331|itemid=<$STR(S$120装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
+<Layout|id=114|children={1141,1142}|width=590|height=40|color=x>
+<Img|id=1141|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1142|a=4|percentx=50|percenty=50|color=254|size=18|text=乾坤套装>
+<Layout|id=115|a=2|children={1151,1152,1153,1154,1155,1156,1157,1158,1159,11511,11512,11513,11514,11515,11516,11517,11518,11519,11521,11522,11523,11524,11525,11526,11527,11528,11529,11531}|width=590|height=260|color=x>
+<ItemShow|id=1151|itemid=<$STR(S$135装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1152|itemid=<$STR(S$135装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1153|itemid=<$STR(S$135装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1154|itemid=<$STR(S$135装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1155|itemid=<$STR(S$135装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1156|itemid=<$STR(S$135装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1157|itemid=<$STR(S$135装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1158|itemid=<$STR(S$135装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1159|itemid=<$STR(S$135装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11511|itemid=<$STR(S$135装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=11512|itemid=<$STR(S$135装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=11513|itemid=<$STR(S$135装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=11514|itemid=<$STR(S$135装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=11515|itemid=<$STR(S$135装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=11516|itemid=<$STR(S$135装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=11517|itemid=<$STR(S$135装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=11518|itemid=<$STR(S$135装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=11519|itemid=<$STR(S$135装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=11521|itemid=<$STR(S$135装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=11522|itemid=<$STR(S$135装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=11523|itemid=<$STR(S$135装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=11524|itemid=<$STR(S$135装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=11525|itemid=<$STR(S$135装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=11526|itemid=<$STR(S$135装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=11527|itemid=<$STR(S$135装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=11528|itemid=<$STR(S$135装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=11529|itemid=<$STR(S$135装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=11531|itemid=<$STR(S$135装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
+
+<Layout|id=116|children={1161,1162}|width=590|height=40|color=x>
+<Img|id=1161|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1162|a=4|percentx=50|percenty=50|color=254|size=18|text=雷霆套装>
+<Layout|id=117|a=2|children={1171,1172,1173,1174,1175,1176,1177,1178,1179,11711,11712,11713,11714,11715,11716,11717,11718,11719,11721,11722,11723,11724,11725,11726,11727,11728,11729,11731}|width=590|height=260|color=x>
+<ItemShow|id=1171|itemid=<$STR(S$155装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1172|itemid=<$STR(S$155装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1173|itemid=<$STR(S$155装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1174|itemid=<$STR(S$155装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1175|itemid=<$STR(S$155装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1176|itemid=<$STR(S$155装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1177|itemid=<$STR(S$155装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1178|itemid=<$STR(S$155装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1179|itemid=<$STR(S$155装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11711|itemid=<$STR(S$155装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=11712|itemid=<$STR(S$155装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=11713|itemid=<$STR(S$155装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=11714|itemid=<$STR(S$155装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=11715|itemid=<$STR(S$155装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=11716|itemid=<$STR(S$155装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=11717|itemid=<$STR(S$155装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=11718|itemid=<$STR(S$155装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=11719|itemid=<$STR(S$155装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=11721|itemid=<$STR(S$155装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=11722|itemid=<$STR(S$155装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=11723|itemid=<$STR(S$155装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=11724|itemid=<$STR(S$155装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=11725|itemid=<$STR(S$155装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=11726|itemid=<$STR(S$155装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=11727|itemid=<$STR(S$155装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=11728|itemid=<$STR(S$155装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=11729|itemid=<$STR(S$155装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=11731|itemid=<$STR(S$155装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
+<Layout|id=118|children={1181,1182}|width=590|height=40|color=x>
+<Img|id=1181|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1182|a=4|percentx=50|percenty=50|color=254|size=18|text=强化套装>
+<Layout|id=119|a=2|children={1191,1192,1193,1194,1195,1196,1197,1198,1199,11911,11912,11913,11914,11915,11916,11917,11918,11919,11921,11922,11923,11924,11925,11926,11927,11928,11929,11931}|width=590|height=260|color=x>
+<ItemShow|id=1191|itemid=<$STR(S$175装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1192|itemid=<$STR(S$175装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1193|itemid=<$STR(S$175装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1194|itemid=<$STR(S$175装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1195|itemid=<$STR(S$175装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1196|itemid=<$STR(S$175装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1197|itemid=<$STR(S$175装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1198|itemid=<$STR(S$175装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1199|itemid=<$STR(S$175装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11911|itemid=<$STR(S$175装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=11912|itemid=<$STR(S$175装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=11913|itemid=<$STR(S$175装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=11914|itemid=<$STR(S$175装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=11915|itemid=<$STR(S$175装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=11916|itemid=<$STR(S$175装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=11917|itemid=<$STR(S$175装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=11918|itemid=<$STR(S$175装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=11919|itemid=<$STR(S$175装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=11921|itemid=<$STR(S$175装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=11922|itemid=<$STR(S$175装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=11923|itemid=<$STR(S$175装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=11924|itemid=<$STR(S$175装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=11925|itemid=<$STR(S$175装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=11926|itemid=<$STR(S$175装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=11927|itemid=<$STR(S$175装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=11928|itemid=<$STR(S$175装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=11929|itemid=<$STR(S$175装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=11931|itemid=<$STR(S$175装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
+<Layout|id=120|children={1201,1202}|width=590|height=40|color=x>
+<Img|id=1201|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1202|a=4|percentx=50|percenty=50|color=254|size=18|text=天之套装>
+<Layout|id=121|a=2|children={1211,1212,1213,1214,1215,1216,1217,1218,1219,12111,12112,12113,12114,12115,12116,12117,12118,12119,12121,12122,12123,12124,12125,12126,12127,12128,12129,12131}|width=590|height=260|color=x>
+<ItemShow|id=1211|itemid=<$STR(S$195装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1212|itemid=<$STR(S$195装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1213|itemid=<$STR(S$195装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1214|itemid=<$STR(S$195装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1215|itemid=<$STR(S$195装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1216|itemid=<$STR(S$195装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1217|itemid=<$STR(S$195装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1218|itemid=<$STR(S$195装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1219|itemid=<$STR(S$195装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=12111|itemid=<$STR(S$195装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=12112|itemid=<$STR(S$195装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=12113|itemid=<$STR(S$195装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=12114|itemid=<$STR(S$195装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=12115|itemid=<$STR(S$195装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=12116|itemid=<$STR(S$195装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=12117|itemid=<$STR(S$195装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=12118|itemid=<$STR(S$195装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=12119|itemid=<$STR(S$195装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=12121|itemid=<$STR(S$195装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=12122|itemid=<$STR(S$195装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=12123|itemid=<$STR(S$195装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=12124|itemid=<$STR(S$195装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=12125|itemid=<$STR(S$195装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=12126|itemid=<$STR(S$195装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=12127|itemid=<$STR(S$195装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=12128|itemid=<$STR(S$195装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=12129|itemid=<$STR(S$195装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=12131|itemid=<$STR(S$195装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
+
+[@转生装备]
+#IF
+#ACT
+MOV S$选择_攻略 <$STR(S$默认按钮)>
+MOV S$选择_玩法 <$STR(S$默认按钮)>
+MOV S$选择_装备 <$STR(S$默认按钮)>
+MOV S$选择_怪物 <$STR(S$默认按钮)>
+MOV S$选择_技能 <$STR(S$默认按钮)>
+MOV S$选择_<$STR(S$当前选择)> <$STR(S$激活按钮)>
+;GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 24 S$风暴装备 |
+;GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 26 S$九耀装备 |
+;GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 28 S$湮灭装备 |
+;GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 30 S$混元装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 32 S$审判装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 34 S$逐月装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 36 S$大地装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 38 S$主宰装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 40 S$太虚装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 42 S$龙吟装备 |
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4|reload=1|loadDelay=1|loadCount=10|loadStep=3>
+<Img|children={0,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=成长之路>
+<ListView|id=3|children={31,32,33,34,35}|x=28|y=65|width=800|height=42|margin=10|bounce=0|direction=2|color=x>
+<Button|id=31|<$STR(S$选择_攻略)>|text=游戏攻略|link=@攻略>
+<Button|id=32|<$STR(S$选择_玩法)>|text=玩法推荐|link=@玩法>
+<Button|id=33|<$STR(S$选择_装备)>|text=装备图鉴|link=@装备>
+<Button|id=34|<$STR(S$选择_怪物)>|text=BOSS图鉴|link=@怪物>
+<Button|id=35|<$STR(S$选择_技能)>|text=技能铭文|link=@铭文技能>
+<ListView|id=7|children={71}|x=18|y=108|width=735|height=3|margin=0|bounce=0|direction=2|color=x>
+<Img|id=71|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
+<Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
+<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+<Button|id=42|<$STR(S$激活按钮)>|text=高级装备|link=@转生装备>
+<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+<Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
+<Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
+<Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
+<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+<Button|id=42|<$STR(S$激活按钮)>|text=高级装备|link=@转生装备>
+<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+<Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
+<Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
+<Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124}|x=150|y=115|width=600|height=390|margin=1|bounce=0|direction=1|color=x>
+
+<Layout|id=111|children={1111,1112}|width=590|height=40|color=x>
+<Img|id=1111|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1112|a=4|percentx=50|percenty=50|color=254|size=18|text=审判套装>
+<Layout|id=112|a=2|children={1121,1122,1123,1124,1125,1126,1127,1128,1129,11211,11212,11213,11214,11215,11216,11217,11218,11219,11221,11222,11223,11224,11225,11226,11227,11228,11229,11231}|width=590|height=130|color=x>
+<ItemShow|id=1121|itemid=<$STR(S$审判装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1122|itemid=<$STR(S$审判装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1123|itemid=<$STR(S$审判装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1124|itemid=<$STR(S$审判装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1125|itemid=<$STR(S$审判装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1126|itemid=<$STR(S$审判装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1127|itemid=<$STR(S$审判装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1128|itemid=<$STR(S$审判装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1129|itemid=<$STR(S$审判装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11211|itemid=<$STR(S$审判装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<Layout|id=113|children={1131,1132}|width=590|height=40|color=x>
+<Img|id=1131|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1132|a=4|percentx=50|percenty=50|color=254|size=18|text=逐月套装>
+<Layout|id=114|a=2|children={1141,1142,1143,1144,1145,1146,1147,1148,1149,11411}|width=590|height=130|color=x>
+<ItemShow|id=1141|itemid=<$STR(S$逐月装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1142|itemid=<$STR(S$逐月装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1143|itemid=<$STR(S$逐月装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1144|itemid=<$STR(S$逐月装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1145|itemid=<$STR(S$逐月装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1146|itemid=<$STR(S$逐月装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1147|itemid=<$STR(S$逐月装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1148|itemid=<$STR(S$逐月装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1149|itemid=<$STR(S$逐月装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11411|itemid=<$STR(S$逐月装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<Layout|id=115|children={1151,1152}|width=590|height=40|color=x>
+<Img|id=1151|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1152|a=4|percentx=50|percenty=50|color=254|size=18|text=大地套装>
+<Layout|id=116|a=2|children={1161,1162,1163,1164,1165,1166,1167,1168,1169,11611,11612,11613,11614,11615,11616,11617,11618,11619,11621,11622,11623,11624,11625,11626,11627,11628,11629,11631}|width=590|height=130|color=x>
+<ItemShow|id=1161|itemid=<$STR(S$大地装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1162|itemid=<$STR(S$大地装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1163|itemid=<$STR(S$大地装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1164|itemid=<$STR(S$大地装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1165|itemid=<$STR(S$大地装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1166|itemid=<$STR(S$大地装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1167|itemid=<$STR(S$大地装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1168|itemid=<$STR(S$大地装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1169|itemid=<$STR(S$大地装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11611|itemid=<$STR(S$大地装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<Layout|id=117|children={1171,1172}|width=590|height=40|color=x>
+<Img|id=1171|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1172|a=4|percentx=50|percenty=50|color=254|size=18|text=主宰套装>
+<Layout|id=118|a=2|children={1181,1182,1183,1184,1185,1186,1187,1188,1189,11811}|width=590|height=130|color=x>
+<ItemShow|id=1181|itemid=<$STR(S$主宰装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1182|itemid=<$STR(S$主宰装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1183|itemid=<$STR(S$主宰装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1184|itemid=<$STR(S$主宰装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1185|itemid=<$STR(S$主宰装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1186|itemid=<$STR(S$主宰装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1187|itemid=<$STR(S$主宰装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1188|itemid=<$STR(S$主宰装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1189|itemid=<$STR(S$主宰装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11811|itemid=<$STR(S$主宰装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=121|children={1211,1212}|width=590|height=40|color=x>
+<Img|id=1211|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1212|a=4|percentx=50|percenty=50|color=254|size=18|text=太虚套装>
+<Layout|id=122|a=2|children={1221,1222,1223,1224,1225,1226,1227,1228,1229,12211}|width=590|height=130|color=x>
+<ItemShow|id=1221|itemid=<$STR(S$太虚装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1222|itemid=<$STR(S$太虚装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1223|itemid=<$STR(S$太虚装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1224|itemid=<$STR(S$太虚装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1225|itemid=<$STR(S$太虚装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1226|itemid=<$STR(S$太虚装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1227|itemid=<$STR(S$太虚装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1228|itemid=<$STR(S$太虚装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1229|itemid=<$STR(S$太虚装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=12211|itemid=<$STR(S$太虚装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<Layout|id=123|children={1231,1232}|width=590|height=40|color=x>
+<Img|id=1231|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1232|a=4|percentx=50|percenty=50|color=254|size=18|text=龙吟套装>
+<Layout|id=124|a=2|children={1241,1242,1243,1244,1245,1246,1247,1248,1249,12411}|width=590|height=130|color=x>
+<ItemShow|id=1241|itemid=<$STR(S$龙吟装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1242|itemid=<$STR(S$龙吟装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1243|itemid=<$STR(S$龙吟装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1244|itemid=<$STR(S$龙吟装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1245|itemid=<$STR(S$龙吟装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1246|itemid=<$STR(S$龙吟装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1247|itemid=<$STR(S$龙吟装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1248|itemid=<$STR(S$龙吟装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1249|itemid=<$STR(S$龙吟装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=12411|itemid=<$STR(S$龙吟装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+
+
+[@合成装备]
+#IF
+#ACT
+MOV S$选择_攻略 <$STR(S$默认按钮)>
+MOV S$选择_玩法 <$STR(S$默认按钮)>
+MOV S$选择_装备 <$STR(S$默认按钮)>
+MOV S$选择_怪物 <$STR(S$默认按钮)>
+MOV S$选择_技能 <$STR(S$默认按钮)>
+MOV S$选择_<$STR(S$当前选择)> <$STR(S$激活按钮)>
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 56 S$终极附件 |
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4|reload=1|loadDelay=1|loadCount=15|loadStep=5>
+<Img|children={0,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=成长之路>
+<ListView|id=3|children={31,32,33,34,35}|x=28|y=65|width=800|height=42|margin=10|bounce=0|direction=2|color=x>
+<Button|id=31|<$STR(S$选择_攻略)>|text=游戏攻略|link=@攻略>
+<Button|id=32|<$STR(S$选择_玩法)>|text=玩法推荐|link=@玩法>
+<Button|id=33|<$STR(S$选择_装备)>|text=装备图鉴|link=@装备>
+<Button|id=34|<$STR(S$选择_怪物)>|text=BOSS图鉴|link=@怪物>
+<Button|id=35|<$STR(S$选择_技能)>|text=技能铭文|link=@铭文技能>
+<ListView|id=7|children={71}|x=18|y=108|width=735|height=3|margin=0|bounce=0|direction=2|color=x>
+<Img|id=71|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
+<Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
+<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+<Button|id=44|<$STR(S$激活按钮)>|text=合成装备|link=@合成装备>
+<Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
+<Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<RText|id=5|x=150|y=110|color=251|size=18|text=斗笠、盾牌、魔血石、火龙之心可在合成大师处进行合成>
+<RText|id=6|x=150|y=140|color=254|size=18|text=各地图小怪及BOSS也有几率掉落高级附件>
+<ListView|id=10|children={9,101}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
+<Layout|id=9|children={91,92}|width=590|height=40|color=x>
+<Img|id=91|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=92|a=4|percentx=50|percenty=50|color=254|size=18|text=终极附件>
+<Layout|id=101|children={1011,1012,1013,1014}|width=590|height=130|color=x>
+<ItemShow|id=1011|itemid=<$STR(S$终极附件1)>|itemcount=0|showtips=1|bgtype=1|x=170|y=0>
+<ItemShow|id=1012|itemid=<$STR(S$终极附件2)>|itemcount=0|showtips=1|bgtype=1|x=235|y=0>
+<ItemShow|id=1013|itemid=<$STR(S$终极附件3)>|itemcount=0|showtips=1|bgtype=1|x=300|y=0>
+<ItemShow|id=1014|itemid=<$STR(S$终极附件4)>|itemcount=0|showtips=1|bgtype=1|x=365|y=0>
+
+[@特戒装备]
+#IF
+#ACT
+MOV S$选择_攻略 <$STR(S$默认按钮)>
+MOV S$选择_玩法 <$STR(S$默认按钮)>
+MOV S$选择_装备 <$STR(S$默认按钮)>
+MOV S$选择_怪物 <$STR(S$默认按钮)>
+MOV S$选择_技能 <$STR(S$默认按钮)>
+MOV S$选择_<$STR(S$当前选择)> <$STR(S$激活按钮)>
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 58 S$特戒装备 |
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4|reload=1|loadDelay=1|loadCount=15|loadStep=5>
+<Img|children={0,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=成长之路>
+<ListView|id=3|children={31,32,33,34,35}|x=28|y=65|width=800|height=42|margin=10|bounce=0|direction=2|color=x>
+<Button|id=31|<$STR(S$选择_攻略)>|text=游戏攻略|link=@攻略>
+<Button|id=32|<$STR(S$选择_玩法)>|text=玩法推荐|link=@玩法>
+<Button|id=33|<$STR(S$选择_装备)>|text=装备图鉴|link=@装备>
+<Button|id=34|<$STR(S$选择_怪物)>|text=BOSS图鉴|link=@怪物>
+<Button|id=35|<$STR(S$选择_技能)>|text=技能铭文|link=@铭文技能>
+<ListView|id=7|children={71}|x=18|y=108|width=735|height=3|margin=0|bounce=0|direction=2|color=x>
+<Img|id=71|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
+<Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
+<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+<Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
+<Button|id=45|<$STR(S$激活按钮)>|text=特戒装备|link=@特戒装备>
+<Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<RText|id=5|x=150|y=110|color=251|size=18|text=特戒装备可在合成大师处合成>
+<RText|id=6|x=150|y=140|color=254|size=18|text=<麻痹特戒/FCOLOR=249>每次攻击有几率对目标造成<石化效果/FCOLOR=249>>
+<ListView|id=10|children={9,101}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
+<Layout|id=9|children={91,92}|width=590|height=40|color=x>
+<Img|id=91|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=92|a=4|percentx=50|percenty=50|color=254|size=18|text=特戒装备>
+<Layout|id=101|children={1011,1012,1013}|width=590|height=130|color=x>
+<ItemShow|id=1011|itemid=<$STR(S$特戒装备1)>|itemcount=0|showtips=1|bgtype=1|x=200|y=0>
+<ItemShow|id=1012|itemid=<$STR(S$特戒装备2)>|itemcount=0|showtips=1|bgtype=1|x=265|y=0>
+<ItemShow|id=1013|itemid=<$STR(S$特戒装备3)>|itemcount=0|showtips=1|bgtype=1|x=330|y=0>
+
+
+[@顶级装备]
+#IF
+#ACT
+MOV S$选择_攻略 <$STR(S$默认按钮)>
+MOV S$选择_玩法 <$STR(S$默认按钮)>
+MOV S$选择_装备 <$STR(S$默认按钮)>
+MOV S$选择_怪物 <$STR(S$默认按钮)>
+MOV S$选择_技能 <$STR(S$默认按钮)>
+MOV S$选择_<$STR(S$当前选择)> <$STR(S$激活按钮)>
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 44 S$荣耀装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 46 S$永恒装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 48 S$龙腾装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 50 S$盛世装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 52 S$辉煌装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 54 S$火龙装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 258 S$血光摄魂 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 260 S$嗜血狂杀 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 262 S$纵横天下 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 264 S$战无不胜 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 266 S$永恒霸主 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 268 S$扭转乾坤 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 270 S$独孤求败 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 272 S$鬼嚎神啸 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 274 S$斩尽杀绝 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 276 S$唯我独尊 |
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4|reload=1|loadDelay=1|loadCount=15|loadStep=5>
+<Img|children={0,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=成长之路>
+<ListView|id=3|children={31,32,33,34,35}|x=28|y=65|width=800|height=42|margin=10|bounce=0|direction=2|color=x>
+<Button|id=31|<$STR(S$选择_攻略)>|text=游戏攻略|link=@攻略>
+<Button|id=32|<$STR(S$选择_玩法)>|text=玩法推荐|link=@玩法>
+<Button|id=33|<$STR(S$选择_装备)>|text=装备图鉴|link=@装备>
+<Button|id=34|<$STR(S$选择_怪物)>|text=BOSS图鉴|link=@怪物>
+<Button|id=35|<$STR(S$选择_技能)>|text=技能铭文|link=@铭文技能>
+<RText|id=5|x=150|y=110|color=251|size=18|text=顶级装备剑甲可通过盟重-神器大师合成锻造>
+<ListView|id=7|children={71}|x=18|y=108|width=735|height=3|margin=0|bounce=0|direction=2|color=x>
+<Img|id=71|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
+<Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
+<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+<Button|id=43|<$STR(S$激活按钮)>|text=顶级装备|link=@顶级装备>
+<Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
+<Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
+<Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+;<RText|id=5|x=150|y=110|color=251|size=18|text=神器分<残神器/FCOLOR=250>和<成品神器/FCOLOR=250>>
+;<RText|id=6|x=150|y=140|color=254|size=18|text=<神器/FCOLOR=250>可晋级为<上古神器/FCOLOR=254>，<上古神器/FCOLOR=254>可以晋级为<荣耀神器/FCOLOR=253>>
+<ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
+
+<Layout|id=101|children={1011,1012}|width=590|height=40|color=x>
+<Img|id=1011|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1012|a=4|percentx=50|percenty=50|color=254|size=18|text=荣耀套装>
+<Layout|id=102|a=2|children={1021,1022,1023,1024,1025,1026,1027,1028,1029,10211}|width=590|height=130|color=x>
+<ItemShow|id=1021|itemid=<$STR(S$荣耀装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1022|itemid=<$STR(S$荣耀装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1023|itemid=<$STR(S$荣耀装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1024|itemid=<$STR(S$荣耀装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1025|itemid=<$STR(S$荣耀装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1026|itemid=<$STR(S$荣耀装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1027|itemid=<$STR(S$荣耀装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1028|itemid=<$STR(S$荣耀装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1029|itemid=<$STR(S$荣耀装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=10211|itemid=<$STR(S$荣耀装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=103|children={1031,1032}|width=590|height=40|color=x>
+<Img|id=1031|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1032|a=4|percentx=50|percenty=50|color=254|size=18|text=永恒套装>
+<Layout|id=104|a=2|children={1041,1042,1043,1044,1045,1046,1047,1048,1049,10411}|width=590|height=130|color=x>
+<ItemShow|id=1041|itemid=<$STR(S$永恒装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1042|itemid=<$STR(S$永恒装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1043|itemid=<$STR(S$永恒装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1044|itemid=<$STR(S$永恒装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1045|itemid=<$STR(S$永恒装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1046|itemid=<$STR(S$永恒装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1047|itemid=<$STR(S$永恒装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1048|itemid=<$STR(S$永恒装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1049|itemid=<$STR(S$永恒装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=10411|itemid=<$STR(S$永恒装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=105|children={1051,1052}|width=590|height=40|color=x>
+<Img|id=1051|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1052|a=4|percentx=50|percenty=50|color=254|size=18|text=龙腾套装>
+<Layout|id=106|a=2|children={1061,1062,1063,1064,1065,1066,1067,1068,1069,10611}|width=590|height=130|color=x>
+<ItemShow|id=1061|itemid=<$STR(S$龙腾装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1062|itemid=<$STR(S$龙腾装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1063|itemid=<$STR(S$龙腾装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1064|itemid=<$STR(S$龙腾装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1065|itemid=<$STR(S$龙腾装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1066|itemid=<$STR(S$龙腾装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1067|itemid=<$STR(S$龙腾装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1068|itemid=<$STR(S$龙腾装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1069|itemid=<$STR(S$龙腾装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=10611|itemid=<$STR(S$龙腾装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=107|children={1071,1072}|width=590|height=40|color=x>
+<Img|id=1071|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1072|a=4|percentx=50|percenty=50|color=254|size=18|text=盛世套装>
+<Layout|id=108|a=2|children={1081,1082,1083,1084,1085,1086,1087,1088,1089,10811}|width=590|height=130|color=x>
+<ItemShow|id=1081|itemid=<$STR(S$盛世装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1082|itemid=<$STR(S$盛世装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1083|itemid=<$STR(S$盛世装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1084|itemid=<$STR(S$盛世装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1085|itemid=<$STR(S$盛世装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1086|itemid=<$STR(S$盛世装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1087|itemid=<$STR(S$盛世装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1088|itemid=<$STR(S$盛世装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1089|itemid=<$STR(S$盛世装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=10811|itemid=<$STR(S$盛世装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=109|children={1091,1092}|width=590|height=40|color=x>
+<Img|id=1091|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1092|a=4|percentx=50|percenty=50|color=254|size=18|text=辉煌套装>
+<Layout|id=110|a=2|children={1101,1102,1103,1104,1105,1106,1107,1108,1109,11011}|width=590|height=130|color=x>
+<ItemShow|id=1101|itemid=<$STR(S$辉煌装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1102|itemid=<$STR(S$辉煌装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1103|itemid=<$STR(S$辉煌装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1104|itemid=<$STR(S$辉煌装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1105|itemid=<$STR(S$辉煌装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1106|itemid=<$STR(S$辉煌装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1107|itemid=<$STR(S$辉煌装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1108|itemid=<$STR(S$辉煌装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1109|itemid=<$STR(S$辉煌装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11011|itemid=<$STR(S$辉煌装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=111|children={1111,1112}|width=590|height=40|color=x>
+<Img|id=1111|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1112|a=4|percentx=50|percenty=50|color=254|size=18|text=火龙套装>
+<Layout|id=112|a=2|children={1121,1122,1123,1124,1125,1126,1127,1128,1129,11211}|width=590|height=130|color=x>
+<ItemShow|id=1121|itemid=<$STR(S$火龙装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1122|itemid=<$STR(S$火龙装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1123|itemid=<$STR(S$火龙装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1124|itemid=<$STR(S$火龙装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1125|itemid=<$STR(S$火龙装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1126|itemid=<$STR(S$火龙装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1127|itemid=<$STR(S$火龙装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1128|itemid=<$STR(S$火龙装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1129|itemid=<$STR(S$火龙装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11211|itemid=<$STR(S$火龙装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=113|children={1131,1132}|width=590|height=40|color=x>
+<Img|id=1131|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1132|a=4|percentx=50|percenty=50|color=254|size=18|text=血光摄魂套装>
+<Layout|id=114|a=2|children={1141,1142,1143,1144,1145,1146,1147,1148,1149,11411}|width=590|height=130|color=x>
+<ItemShow|id=1141|itemid=<$STR(S$血光摄魂1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1142|itemid=<$STR(S$血光摄魂2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1143|itemid=<$STR(S$血光摄魂3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1144|itemid=<$STR(S$血光摄魂4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1145|itemid=<$STR(S$血光摄魂5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1146|itemid=<$STR(S$血光摄魂6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1147|itemid=<$STR(S$血光摄魂7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1148|itemid=<$STR(S$血光摄魂8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1149|itemid=<$STR(S$血光摄魂9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11411|itemid=<$STR(S$血光摄魂10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=115|children={1151,1152}|width=590|height=40|color=x>
+<Img|id=1151|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1152|a=4|percentx=50|percenty=50|color=254|size=18|text=嗜血狂杀套装>
+<Layout|id=116|a=2|children={1161,1162,1163,1164,1165,1166,1167,1168,1169,11611}|width=590|height=130|color=x>
+<ItemShow|id=1161|itemid=<$STR(S$嗜血狂杀1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1162|itemid=<$STR(S$嗜血狂杀2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1163|itemid=<$STR(S$嗜血狂杀3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1164|itemid=<$STR(S$嗜血狂杀4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1165|itemid=<$STR(S$嗜血狂杀5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1166|itemid=<$STR(S$嗜血狂杀6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1167|itemid=<$STR(S$嗜血狂杀7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1168|itemid=<$STR(S$嗜血狂杀8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1169|itemid=<$STR(S$嗜血狂杀9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11611|itemid=<$STR(S$嗜血狂杀10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=117|children={1171,1172}|width=590|height=40|color=x>
+<Img|id=1171|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1172|a=4|percentx=50|percenty=50|color=254|size=18|text=纵横天下套装>
+<Layout|id=118|a=2|children={1181,1182,1183,1184,1185,1186,1187,1188,1189,11811}|width=590|height=130|color=x>
+<ItemShow|id=1181|itemid=<$STR(S$纵横天下1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1182|itemid=<$STR(S$纵横天下2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1183|itemid=<$STR(S$纵横天下3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1184|itemid=<$STR(S$纵横天下4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1185|itemid=<$STR(S$纵横天下5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1186|itemid=<$STR(S$纵横天下6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1187|itemid=<$STR(S$纵横天下7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1188|itemid=<$STR(S$纵横天下8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1189|itemid=<$STR(S$纵横天下9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=11811|itemid=<$STR(S$纵横天下10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=119|children={1191,1192}|width=590|height=40|color=x>
+<Img|id=1191|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1192|a=4|percentx=50|percenty=50|color=254|size=18|text=战无不胜套装>
+<Layout|id=120|a=2|children={1201,1202,1203,1204,1205,1206,1207,1208,1209,12011}|width=590|height=130|color=x>
+<ItemShow|id=1201|itemid=<$STR(S$战无不胜1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1202|itemid=<$STR(S$战无不胜2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1203|itemid=<$STR(S$战无不胜3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1204|itemid=<$STR(S$战无不胜4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1205|itemid=<$STR(S$战无不胜5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1206|itemid=<$STR(S$战无不胜6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1207|itemid=<$STR(S$战无不胜7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1208|itemid=<$STR(S$战无不胜8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1209|itemid=<$STR(S$战无不胜9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=12011|itemid=<$STR(S$战无不胜10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=121|children={1211,1212}|width=590|height=40|color=x>
+<Img|id=1211|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1212|a=4|percentx=50|percenty=50|color=254|size=18|text=永恒霸主套装>
+<Layout|id=122|a=2|children={1221,1222,1223,1224,1225,1226,1227,1228,1229,12211}|width=590|height=130|color=x>
+<ItemShow|id=1221|itemid=<$STR(S$永恒霸主1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1222|itemid=<$STR(S$永恒霸主2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1223|itemid=<$STR(S$永恒霸主3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1224|itemid=<$STR(S$永恒霸主4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1225|itemid=<$STR(S$永恒霸主5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1226|itemid=<$STR(S$永恒霸主6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1227|itemid=<$STR(S$永恒霸主7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1228|itemid=<$STR(S$永恒霸主8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1229|itemid=<$STR(S$永恒霸主9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=12211|itemid=<$STR(S$永恒霸主10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=123|children={1231,1232}|width=590|height=40|color=x>
+<Img|id=1231|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1232|a=4|percentx=50|percenty=50|color=254|size=18|text=扭转乾坤套装>
+<Layout|id=124|a=2|children={1241,1242,1243,1244,1245,1246,1247,1248,1249,12411}|width=590|height=130|color=x>
+<ItemShow|id=1241|itemid=<$STR(S$扭转乾坤1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1242|itemid=<$STR(S$扭转乾坤2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1243|itemid=<$STR(S$扭转乾坤3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1244|itemid=<$STR(S$扭转乾坤4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1245|itemid=<$STR(S$扭转乾坤5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1246|itemid=<$STR(S$扭转乾坤6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1247|itemid=<$STR(S$扭转乾坤7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1248|itemid=<$STR(S$扭转乾坤8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1249|itemid=<$STR(S$扭转乾坤9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=12411|itemid=<$STR(S$扭转乾坤10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=125|children={1251,1252}|width=590|height=40|color=x>
+<Img|id=1251|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1252|a=4|percentx=50|percenty=50|color=254|size=18|text=独孤求败套装>
+<Layout|id=126|a=2|children={1261,1262,1263,1264,1265,1266,1267,1268,1269,12611}|width=590|height=130|color=x>
+<ItemShow|id=1261|itemid=<$STR(S$独孤求败1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1262|itemid=<$STR(S$独孤求败2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1263|itemid=<$STR(S$独孤求败3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1264|itemid=<$STR(S$独孤求败4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1265|itemid=<$STR(S$独孤求败5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1266|itemid=<$STR(S$独孤求败6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1267|itemid=<$STR(S$独孤求败7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1268|itemid=<$STR(S$独孤求败8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1269|itemid=<$STR(S$独孤求败9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=12611|itemid=<$STR(S$独孤求败10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=127|children={1271,1272}|width=590|height=40|color=x>
+<Img|id=1271|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1272|a=4|percentx=50|percenty=50|color=254|size=18|text=鬼嚎神啸套装>
+<Layout|id=128|a=2|children={1281,1282,1283,1284,1285,1286,1287,1288,1289,12811}|width=590|height=130|color=x>
+<ItemShow|id=1281|itemid=<$STR(S$鬼嚎神啸1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1282|itemid=<$STR(S$鬼嚎神啸2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1283|itemid=<$STR(S$鬼嚎神啸3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1284|itemid=<$STR(S$鬼嚎神啸4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1285|itemid=<$STR(S$鬼嚎神啸5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1286|itemid=<$STR(S$鬼嚎神啸6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1287|itemid=<$STR(S$鬼嚎神啸7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1288|itemid=<$STR(S$鬼嚎神啸8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1289|itemid=<$STR(S$鬼嚎神啸9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=12811|itemid=<$STR(S$鬼嚎神啸10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=129|children={1291,1292}|width=590|height=40|color=x>
+<Img|id=1291|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1292|a=4|percentx=50|percenty=50|color=254|size=18|text=斩尽杀绝套装>
+<Layout|id=130|a=2|children={1301,1302,1303,1304,1305,1306,1307,1308,1309,13011}|width=590|height=130|color=x>
+<ItemShow|id=1301|itemid=<$STR(S$斩尽杀绝1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1302|itemid=<$STR(S$斩尽杀绝2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1303|itemid=<$STR(S$斩尽杀绝3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1304|itemid=<$STR(S$斩尽杀绝4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1305|itemid=<$STR(S$斩尽杀绝5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1306|itemid=<$STR(S$斩尽杀绝6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1307|itemid=<$STR(S$斩尽杀绝7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1308|itemid=<$STR(S$斩尽杀绝8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1309|itemid=<$STR(S$斩尽杀绝9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=13011|itemid=<$STR(S$斩尽杀绝10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+<Layout|id=131|children={1311,1312}|width=590|height=40|color=x>
+<Img|id=1311|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1312|a=4|percentx=50|percenty=50|color=254|size=18|text=唯我独尊套装>
+<Layout|id=132|a=2|children={1321,1322,1323,1324,1325,1326,1327,1328,1329,13211}|width=590|height=130|color=x>
+<ItemShow|id=1321|itemid=<$STR(S$唯我独尊1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1322|itemid=<$STR(S$唯我独尊2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1323|itemid=<$STR(S$唯我独尊3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1324|itemid=<$STR(S$唯我独尊4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1325|itemid=<$STR(S$唯我独尊5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1326|itemid=<$STR(S$唯我独尊6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1327|itemid=<$STR(S$唯我独尊7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1328|itemid=<$STR(S$唯我独尊8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1329|itemid=<$STR(S$唯我独尊9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=13211|itemid=<$STR(S$唯我独尊10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+
+
+[@辅助令牌]
+#IF
+#ACT
+MOV S$选择_攻略 <$STR(S$默认按钮)>
+MOV S$选择_玩法 <$STR(S$默认按钮)>
+MOV S$选择_装备 <$STR(S$默认按钮)>
+MOV S$选择_怪物 <$STR(S$默认按钮)>
+MOV S$选择_技能 <$STR(S$默认按钮)>
+MOV S$选择_<$STR(S$当前选择)> <$STR(S$激活按钮)>
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 60 S$主令装备 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 62 S$辅令装备 |
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4|reload=1|loadDelay=1|loadCount=15|loadStep=5>
+<Img|children={0,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=成长之路>
+<ListView|id=3|children={31,32,33,34,35}|x=28|y=65|width=800|height=42|margin=10|bounce=0|direction=2|color=x>
+<Button|id=31|<$STR(S$选择_攻略)>|text=游戏攻略|link=@攻略>
+<Button|id=32|<$STR(S$选择_玩法)>|text=玩法推荐|link=@玩法>
+<Button|id=33|<$STR(S$选择_装备)>|text=装备图鉴|link=@装备>
+<Button|id=34|<$STR(S$选择_怪物)>|text=BOSS图鉴|link=@怪物>
+<Button|id=35|<$STR(S$选择_技能)>|text=技能铭文|link=@铭文技能>
+<ListView|id=7|children={71}|x=18|y=108|width=735|height=3|margin=0|bounce=0|direction=2|color=x>
+<Img|id=71|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
+<Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
+<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+<Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
+<Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
+<Button|id=46|<$STR(S$激活按钮)>|text=辅助令牌|link=@辅助令牌>
+<RText|id=5|x=150|y=110|color=251|size=18|text=主令装备一共12件，辅令装备一共12件，代表十二星座>
+<RText|id=6|x=150|y=140|color=254|size=18|text=对应的属性各不相同，玩家可自由搭配主辅令牌以适应复杂多变的PK环境>
+<ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
+<Layout|id=9|children={91,92}|width=590|height=40|color=x>
+<Img|id=91|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=92|a=4|percentx=50|percenty=50|color=254|size=18|text=主令装备>
+<Layout|id=101|children={1011,1012,1013,1014,1015,1016,1017,1018,1019,10111,10112}|width=590|height=130|color=x>
+<ItemShow|id=1011|itemid=<$STR(S$主令装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1012|itemid=<$STR(S$主令装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1013|itemid=<$STR(S$主令装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1014|itemid=<$STR(S$主令装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1015|itemid=<$STR(S$主令装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1016|itemid=<$STR(S$主令装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1017|itemid=<$STR(S$主令装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1018|itemid=<$STR(S$主令装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1019|itemid=<$STR(S$主令装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=10111|itemid=<$STR(S$主令装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=10112|itemid=<$STR(S$主令装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<Layout|id=102|children={1021,1022}|width=590|height=40|color=x>
+<Img|id=1021|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1022|a=4|percentx=50|percenty=50|color=254|size=18|text=辅令装备>
+<Layout|id=103|a=4|percentx=50|percenty=20|children={1031,1032,1033,1034,1035,1036,1037,1038,1039,10311,10312}|width=590|height=130|color=x>
+<ItemShow|id=1031|itemid=<$STR(S$辅令装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=1032|itemid=<$STR(S$辅令装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=1033|itemid=<$STR(S$辅令装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=1034|itemid=<$STR(S$辅令装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=1035|itemid=<$STR(S$辅令装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=1036|itemid=<$STR(S$辅令装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=1037|itemid=<$STR(S$辅令装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=1038|itemid=<$STR(S$辅令装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=1039|itemid=<$STR(S$辅令装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=10311|itemid=<$STR(S$辅令装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=10312|itemid=<$STR(S$辅令装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+
+
+[@怪物]
+#IF
+#ACT
+MOV S$当前选择 怪物
+MOV P41 1
+MOV N$首次查看怪物 1
+GOTO @查看地图BOSS
+
+[@怪物界面显示]
+#IF
+#ACT
+SENDMSG 6 <$STR(S$BOSS选中状态6)>
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4|reload=0>
+<Img|children={0,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=成长之路>
+<ListView|id=3|children={31,32,33,34,35}|x=28|y=65|width=800|height=42|margin=10|bounce=0|direction=2|color=x>
+<Button|id=31|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=10|size=18|outline=2|outlinecolor=0|text=游戏攻略|link=@攻略>
+<Button|id=32|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=10|size=18|outline=2|outlinecolor=0|text=玩法推荐|link=@玩法>
+<Button|id=33|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=10|size=18|outline=2|outlinecolor=0|text=装备图鉴|link=@装备>
+<Button|id=34|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|color=100|size=18|outline=2|outlinecolor=0|text=BOSS图鉴|link=@怪物>
+<Button|id=35|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=10|size=18|outline=2|outlinecolor=0|text=技能铭文|link=@铭文技能>
+<ListView|id=17|children={171}|x=18|y=108|width=735|height=3|margin=0|bounce=0|direction=2|color=x>
+<Img|id=171|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=18|children={181}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
+<Img|id=181|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x|reload=0>
+<Layout|id=41|children={410,411,412}|width=116|height=37|color=x>
+<Img|id=410|img=custom/hl/hl_ui/<$STR(S$地图按钮_1)>>
+<Text|id=411|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_1)>|size=18|outline=2|outlinecolor=0|text=尸魔洞>
+<Layout|id=412|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=尸魔洞#配置行=128#按钮序号=1>
+<Layout|id=42|children={420,421,422}|width=116|height=37|color=x>
+<Img|id=420|img=custom/hl/hl_ui/<$STR(S$地图按钮_2)>>
+<Text|id=421|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_2)>|size=18|outline=2|outlinecolor=0|text=骷髅洞>
+<Layout|id=422|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=骷髅洞#配置行=130#按钮序号=2>
+<Layout|id=43|children={430,431,432}|width=116|height=37|color=x>
+<Img|id=430|img=custom/hl/hl_ui/<$STR(S$地图按钮_3)>>
+<Text|id=431|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_3)>|size=18|outline=2|outlinecolor=0|text=矿洞>
+<Layout|id=432|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=矿洞#配置行=132#按钮序号=3>
+<Layout|id=44|children={440,441,442}|width=116|height=37|color=x>
+<Img|id=440|img=custom/hl/hl_ui/<$STR(S$地图按钮_4)>>
+<Text|id=441|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_4)>|size=18|outline=2|outlinecolor=0|text=死亡棺材>
+<Layout|id=442|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=死亡棺材#配置行=134#按钮序号=4>
+<Layout|id=45|children={450,451,452}|width=116|height=37|color=x>
+<Img|id=450|img=custom/hl/hl_ui/<$STR(S$地图按钮_5)>>
+<Text|id=451|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_5)>|size=18|outline=2|outlinecolor=0|text=蜈蚣洞>
+<Layout|id=452|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=蜈蚣洞#配置行=136#按钮序号=5>
+<Layout|id=46|children={460,461,462}|width=116|height=37|color=x>
+<Img|id=460|img=custom/hl/hl_ui/<$STR(S$地图按钮_6)>>
+<Text|id=461|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_6)>|size=18|outline=2|outlinecolor=0|text=沃玛寺庙>
+<Layout|id=462|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=沃玛寺庙#配置行=138#按钮序号=6>
+<Layout|id=47|children={470,471,472}|width=116|height=37|color=x>
+<Img|id=470|img=custom/hl/hl_ui/<$STR(S$地图按钮_7)>>
+<Text|id=471|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_7)>|size=18|outline=2|outlinecolor=0|text=雷霆之路>
+<Layout|id=472|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=雷霆之路#配置行=140#按钮序号=7>
+<Layout|id=48|children={480,481,482}|width=116|height=37|color=x>
+<Img|id=480|img=custom/hl/hl_ui/<$STR(S$地图按钮_8)>>
+<Text|id=481|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_8)>|size=18|outline=2|outlinecolor=0|text=恶魔广场>
+<Layout|id=482|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=恶魔广场#配置行=142#按钮序号=8>
+<Layout|id=49|children={490,491,492}|width=116|height=37|color=x>
+<Img|id=490|img=custom/hl/hl_ui/<$STR(S$地图按钮_9)>>
+<Text|id=491|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_9)>|size=18|outline=2|outlinecolor=0|text=祖玛寺庙>
+<Layout|id=492|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=祖玛寺庙#配置行=144#按钮序号=9>
+<Layout|id=50|children={500,501,502}|width=116|height=37|color=x>
+<Img|id=500|img=custom/hl/hl_ui/<$STR(S$地图按钮_10)>>
+<Text|id=501|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_10)>|size=18|outline=2|outlinecolor=0|text=混乱殿堂>
+<Layout|id=502|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=混乱殿堂#配置行=146#按钮序号=10>
+<Layout|id=51|children={510,511,512}|width=116|height=37|color=x>
+<Img|id=510|img=custom/hl/hl_ui/<$STR(S$地图按钮_11)>>
+<Text|id=511|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_11)>|size=18|outline=2|outlinecolor=0|text=赤月峡谷>
+<Layout|id=512|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=赤月峡谷#配置行=148#按钮序号=11>
+<Layout|id=52|children={520,521,522}|width=116|height=37|color=x>
+<Img|id=520|img=custom/hl/hl_ui/<$STR(S$地图按钮_12)>>
+<Text|id=521|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_12)>|size=18|outline=2|outlinecolor=0|text=牛魔寺院>
+<Layout|id=522|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=牛魔寺院#配置行=150#按钮序号=12>
+<Layout|id=53|children={530,531,532}|width=116|height=37|color=x>
+<Img|id=530|img=custom/hl/hl_ui/<$STR(S$地图按钮_13)>>
+<Text|id=531|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_13)>|size=18|outline=2|outlinecolor=0|text=无间地狱>
+<Layout|id=532|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=无间地狱#配置行=152#按钮序号=13>
+<Layout|id=54|children={540,541,542}|width=116|height=37|color=x>
+<Img|id=540|img=custom/hl/hl_ui/<$STR(S$地图按钮_14)>>
+<Text|id=541|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_14)>|size=18|outline=2|outlinecolor=0|text=牛魔祭坛>
+<Layout|id=542|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=牛魔祭坛#配置行=154#按钮序号=14>
+<Layout|id=55|children={550,551,552}|width=116|height=37|color=x>
+<Img|id=550|img=custom/hl/hl_ui/<$STR(S$地图按钮_15)>>
+<Text|id=551|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_15)>|size=18|outline=2|outlinecolor=0|text=雷炎洞穴>
+<Layout|id=552|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=雷炎洞穴#配置行=156#按钮序号=15>
+<Layout|id=56|children={560,561,562}|width=116|height=37|color=x>
+<Img|id=560|img=custom/hl/hl_ui/<$STR(S$地图按钮_16)>>
+<Text|id=561|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_16)>|size=18|outline=2|outlinecolor=0|text=魔龙之渊>
+<Layout|id=562|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=魔龙之渊#配置行=158#按钮序号=16>
+<Layout|id=57|children={570,571,572}|width=116|height=37|color=x>
+<Img|id=570|img=custom/hl/hl_ui/<$STR(S$地图按钮_17)>>
+<Text|id=571|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_17)>|size=18|outline=2|outlinecolor=0|text=狐月岛>
+<Layout|id=572|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=狐月岛#配置行=160#按钮序号=17>
+<Layout|id=58|children={580,581,582}|width=116|height=37|color=x>
+<Img|id=580|img=custom/hl/hl_ui/<$STR(S$地图按钮_18)>>
+<Text|id=581|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_18)>|size=18|outline=2|outlinecolor=0|text=火龙洞>
+<Layout|id=582|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=火龙洞#配置行=162#按钮序号=18>
+<Layout|id=59|children={590,591,592}|width=116|height=37|color=x>
+<Img|id=590|img=custom/hl/hl_ui/<$STR(S$地图按钮_19)>>
+<Text|id=591|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_19)>|size=18|outline=2|outlinecolor=0|text=恶龙神域>
+<Layout|id=592|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=恶龙神域#配置行=164#按钮序号=19>
+<Layout|id=60|children={600,601,602}|width=116|height=37|color=x>
+<Img|id=600|img=custom/hl/hl_ui/<$STR(S$地图按钮_20)>>
+<Text|id=601|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_20)>|size=18|outline=2|outlinecolor=0|text=狐月庄>
+<Layout|id=602|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=狐月庄#配置行=166#按钮序号=20>
+<Layout|id=61|children={610,611,612}|width=116|height=37|color=x>
+<Img|id=610|img=custom/hl/hl_ui/<$STR(S$地图按钮_21)>>
+<Text|id=611|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_21)>|size=18|outline=2|outlinecolor=0|text=狐仙岛>
+<Layout|id=612|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=狐仙岛#配置行=168#按钮序号=21>
+<Layout|id=62|children={620,621,622}|width=116|height=37|color=x>
+<Img|id=620|img=custom/hl/hl_ui/<$STR(S$地图按钮_22)>>
+<Text|id=621|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_22)>|size=18|outline=2|outlinecolor=0|text=火龙殿>
+<Layout|id=622|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=火龙殿#配置行=170#按钮序号=22>
+<Layout|id=63|children={630,631,632}|width=116|height=37|color=x>
+<Img|id=630|img=custom/hl/hl_ui/<$STR(S$地图按钮_23)>>
+<Text|id=631|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_23)>|size=18|outline=2|outlinecolor=0|text=BOSS之家>
+<Layout|id=632|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=BOSS之家#配置行=172#按钮序号=23>
+<Layout|id=64|children={640,641,642}|width=116|height=37|color=x>
+<Img|id=640|img=custom/hl/hl_ui/<$STR(S$地图按钮_24)>>
+<Text|id=641|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_24)>|size=18|outline=2|outlinecolor=0|text=龙族领地>
+<Layout|id=642|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=龙族领地#配置行=174#按钮序号=24>
+
+<Layout|id=65|children={650,651,652}|width=116|height=37|color=x>
+<Img|id=650|img=custom/hl/hl_ui/<$STR(S$地图按钮_25)>>
+<Text|id=651|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_25)>|size=18|outline=2|outlinecolor=0|text=八品专属>
+<Layout|id=652|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=八品专属#配置行=176#按钮序号=25>
+<Layout|id=66|children={660,661,662}|width=116|height=37|color=x>
+<Img|id=660|img=custom/hl/hl_ui/<$STR(S$地图按钮_26)>>
+<Text|id=661|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_26)>|size=18|outline=2|outlinecolor=0|text=七品专属>
+<Layout|id=662|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=七品专属#配置行=178#按钮序号=26>
+<Layout|id=67|children={670,671,672}|width=116|height=37|color=x>
+<Img|id=670|img=custom/hl/hl_ui/<$STR(S$地图按钮_27)>>
+<Text|id=671|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_27)>|size=18|outline=2|outlinecolor=0|text=五品专属>
+<Layout|id=672|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=五品专属#配置行=180#按钮序号=27>
+<Layout|id=68|children={680,681,682}|width=116|height=37|color=x>
+<Img|id=680|img=custom/hl/hl_ui/<$STR(S$地图按钮_28)>>
+<Text|id=681|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_28)>|size=18|outline=2|outlinecolor=0|text=三品专属>
+<Layout|id=682|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=三品专属#配置行=182#按钮序号=28>
+<Layout|id=69|children={690,691,692}|width=116|height=37|color=x>
+<Img|id=690|img=custom/hl/hl_ui/<$STR(S$地图按钮_29)>>
+<Text|id=691|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_29)>|size=18|outline=2|outlinecolor=0|text=一品专属>
+<Layout|id=692|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=一品专属#配置行=184#按钮序号=29>
+<Layout|id=70|children={700,701,702}|width=116|height=37|color=x>
+<Img|id=700|img=custom/hl/hl_ui/<$STR(S$地图按钮_30)>>
+<Text|id=701|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_30)>|size=18|outline=2|outlinecolor=0|text=大都督>
+<Layout|id=702|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=大都督#配置行=186#按钮序号=30>
+<Layout|id=71|children={710,711,712}|width=116|height=37|color=x>
+<Img|id=710|img=custom/hl/hl_ui/<$STR(S$地图按钮_31)>>
+<Text|id=711|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_31)>|size=18|outline=2|outlinecolor=0|text=冠绝一世>
+<Layout|id=712|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=冠绝一世#配置行=188#按钮序号=31>
+<Layout|id=72|children={720,721,722}|width=116|height=37|color=x>
+<Img|id=720|img=custom/hl/hl_ui/<$STR(S$地图按钮_32)>>
+<Text|id=721|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_32)>|size=18|outline=2|outlinecolor=0|text=逐鹿群雄>
+<Layout|id=722|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=逐鹿群雄#配置行=190#按钮序号=32>
+<Layout|id=73|children={730,731,732}|width=116|height=37|color=x>
+<Img|id=730|img=custom/hl/hl_ui/<$STR(S$地图按钮_33)>>
+<Text|id=731|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_33)>|size=18|outline=2|outlinecolor=0|text=雄霸天下>
+<Layout|id=732|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=雄霸天下#配置行=192#按钮序号=33>
+
+<Layout|id=74|children={740,741,742}|width=116|height=37|color=x>
+<Img|id=740|img=custom/hl/hl_ui/<$STR(S$地图按钮_34)>>
+<Text|id=741|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_34)>|size=18|outline=2|outlinecolor=0|text=炼体一阶>
+<Layout|id=742|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=炼体一阶#配置行=194#按钮序号=34>
+<Layout|id=75|children={750,751,752}|width=116|height=37|color=x>
+<Img|id=750|img=custom/hl/hl_ui/<$STR(S$地图按钮_35)>>
+<Text|id=751|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_35)>|size=18|outline=2|outlinecolor=0|text=炼体二阶>
+<Layout|id=752|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=炼体二阶#配置行=196#按钮序号=35>
+<Layout|id=76|children={760,761,762}|width=116|height=37|color=x>
+<Img|id=760|img=custom/hl/hl_ui/<$STR(S$地图按钮_36)>>
+<Text|id=761|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_36)>|size=18|outline=2|outlinecolor=0|text=炼体三阶>
+<Layout|id=762|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=炼体三阶#配置行=198#按钮序号=36>
+<Layout|id=77|children={770,771,772}|width=116|height=37|color=x>
+<Img|id=770|img=custom/hl/hl_ui/<$STR(S$地图按钮_37)>>
+<Text|id=771|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_37)>|size=18|outline=2|outlinecolor=0|text=炼体四阶>
+<Layout|id=772|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=炼体四阶#配置行=200#按钮序号=37>
+<Layout|id=78|children={780,781,782}|width=116|height=37|color=x>
+<Img|id=780|img=custom/hl/hl_ui/<$STR(S$地图按钮_38)>>
+<Text|id=781|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_38)>|size=18|outline=2|outlinecolor=0|text=炼体五阶>
+<Layout|id=782|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=炼体五阶#配置行=202#按钮序号=38>
+<Layout|id=79|children={790,791,792}|width=116|height=37|color=x>
+<Img|id=790|img=custom/hl/hl_ui/<$STR(S$地图按钮_39)>>
+<Text|id=791|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_39)>|size=18|outline=2|outlinecolor=0|text=炼体六阶>
+<Layout|id=792|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=炼体六阶#配置行=204#按钮序号=39>
+<Layout|id=80|children={800,801,802}|width=116|height=37|color=x>
+<Img|id=800|img=custom/hl/hl_ui/<$STR(S$地图按钮_40)>>
+<Text|id=801|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_40)>|size=18|outline=2|outlinecolor=0|text=炼体七阶>
+<Layout|id=802|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=炼体七阶#配置行=206#按钮序号=40>
+<Layout|id=81|children={810,811,812}|width=116|height=37|color=x>
+<Img|id=810|img=custom/hl/hl_ui/<$STR(S$地图按钮_41)>>
+<Text|id=811|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_41)>|size=18|outline=2|outlinecolor=0|text=炼体八阶>
+<Layout|id=812|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=炼体八阶#配置行=208#按钮序号=41>
+<Layout|id=82|children={820,821,822}|width=116|height=37|color=x>
+<Img|id=820|img=custom/hl/hl_ui/<$STR(S$地图按钮_42)>>
+<Text|id=821|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_42)>|size=18|outline=2|outlinecolor=0|text=元神一层>
+<Layout|id=822|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=元神一层#配置行=210#按钮序号=42>
+<Layout|id=83|children={830,831,832}|width=116|height=37|color=x>
+<Img|id=830|img=custom/hl/hl_ui/<$STR(S$地图按钮_43)>>
+<Text|id=831|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_43)>|size=18|outline=2|outlinecolor=0|text=元神二层>
+<Layout|id=832|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=元神二层#配置行=212#按钮序号=43>
+<Layout|id=84|children={840,841,842}|width=116|height=37|color=x>
+<Img|id=840|img=custom/hl/hl_ui/<$STR(S$地图按钮_44)>>
+<Text|id=841|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_44)>|size=18|outline=2|outlinecolor=0|text=元神三层>
+<Layout|id=842|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=元神三层#配置行=214#按钮序号=44>
+<Layout|id=85|children={850,851,852}|width=116|height=37|color=x>
+<Img|id=850|img=custom/hl/hl_ui/<$STR(S$地图按钮_45)>>
+<Text|id=851|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_45)>|size=18|outline=2|outlinecolor=0|text=元神四层>
+<Layout|id=852|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=元神四层#配置行=216#按钮序号=45>
+<Layout|id=86|children={860,861,862}|width=116|height=37|color=x>
+<Img|id=860|img=custom/hl/hl_ui/<$STR(S$地图按钮_46)>>
+<Text|id=861|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_46)>|size=18|outline=2|outlinecolor=0|text=元神五层>
+<Layout|id=862|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=元神五层#配置行=218#按钮序号=46>
+<Layout|id=87|children={870,871,872}|width=116|height=37|color=x>
+<Img|id=870|img=custom/hl/hl_ui/<$STR(S$地图按钮_47)>>
+<Text|id=871|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_47)>|size=18|outline=2|outlinecolor=0|text=元神六层>
+<Layout|id=872|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=元神六层#配置行=220#按钮序号=47>
+<Layout|id=88|children={880,881,882}|width=116|height=37|color=x>
+<Img|id=880|img=custom/hl/hl_ui/<$STR(S$地图按钮_48)>>
+<Text|id=881|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_48)>|size=18|outline=2|outlinecolor=0|text=元神七层>
+<Layout|id=882|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=元神七层#配置行=222#按钮序号=48>
+<Layout|id=89|children={890,891,892}|width=116|height=37|color=x>
+<Img|id=890|img=custom/hl/hl_ui/<$STR(S$地图按钮_49)>>
+<Text|id=891|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_49)>|size=18|outline=2|outlinecolor=0|text=元神八层>
+<Layout|id=892|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=元神八层#配置行=224#按钮序号=49>
+
+<Layout|id=140|children={1400,1401,1402}|width=116|height=37|color=x>
+<Img|id=1400|img=custom/hl/hl_ui/<$STR(S$地图按钮_50)>>
+<Text|id=1401|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_50)>|size=18|outline=2|outlinecolor=0|text=11转地图>
+<Layout|id=1402|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=11转地图#配置行=226#按钮序号=50>
+
+<Layout|id=141|children={1410,1411,1412}|width=116|height=37|color=x>
+<Img|id=1410|img=custom/hl/hl_ui/<$STR(S$地图按钮_51)>>
+<Text|id=1411|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_51)>|size=18|outline=2|outlinecolor=0|text=13转地图>
+<Layout|id=1412|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=13转地图#配置行=228#按钮序号=51>
+
+<Layout|id=142|children={1420,1421,1422}|width=116|height=37|color=x>
+<Img|id=1420|img=custom/hl/hl_ui/<$STR(S$地图按钮_52)>>
+<Text|id=1421|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_52)>|size=18|outline=2|outlinecolor=0|text=15转地图>
+<Layout|id=1422|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=15转地图#配置行=230#按钮序号=52>
+
+<Layout|id=143|children={1430,1431,1432}|width=116|height=37|color=x>
+<Img|id=1430|img=custom/hl/hl_ui/<$STR(S$地图按钮_53)>>
+<Text|id=1431|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_53)>|size=18|outline=2|outlinecolor=0|text=17转地图>
+<Layout|id=1432|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=17转地图#配置行=232#按钮序号=53>
+
+<Layout|id=144|children={1440,1441,1442}|width=116|height=37|color=x>
+<Img|id=1440|img=custom/hl/hl_ui/<$STR(S$地图按钮_54)>>
+<Text|id=1441|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_54)>|size=18|outline=2|outlinecolor=0|text=19转地图>
+<Layout|id=1442|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=19转地图#配置行=234#按钮序号=54>
+
+<Layout|id=145|children={1450,1451,1452}|width=116|height=37|color=x>
+<Img|id=1450|img=custom/hl/hl_ui/<$STR(S$地图按钮_55)>>
+<Text|id=1451|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_55)>|size=18|outline=2|outlinecolor=0|text=200级地图>
+<Layout|id=1452|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=200级地图#配置行=236#按钮序号=55>
+
+<Layout|id=146|children={1460,1461,1462}|width=116|height=37|color=x>
+<Img|id=1460|img=custom/hl/hl_ui/<$STR(S$地图按钮_56)>>
+<Text|id=1461|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_56)>|size=18|outline=2|outlinecolor=0|text=220级地图>
+<Layout|id=1462|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=220级地图#配置行=238#按钮序号=56>
+
+
+<Layout|id=147|children={1470,1471,1472}|width=116|height=37|color=x>
+<Img|id=1470|img=custom/hl/hl_ui/<$STR(S$地图按钮_57)>>
+<Text|id=1471|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_57)>|size=18|outline=2|outlinecolor=0|text=240级地图>
+<Layout|id=1472|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=240级地图#配置行=240#按钮序号=57>
+
+
+<Layout|id=148|children={1480,1481,1482}|width=116|height=37|color=x>
+<Img|id=1480|img=custom/hl/hl_ui/<$STR(S$地图按钮_58)>>
+<Text|id=1481|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_58)>|size=18|outline=2|outlinecolor=0|text=260级地图>
+<Layout|id=1482|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=260级地图#配置行=242#按钮序号=58>
+
+
+<Layout|id=149|children={1490,1491,1492}|width=116|height=37|color=x>
+<Img|id=1490|img=custom/hl/hl_ui/<$STR(S$地图按钮_59)>>
+<Text|id=1491|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_59)>|size=18|outline=2|outlinecolor=0|text=280级地图>
+<Layout|id=1492|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=280级地图#配置行=244#按钮序号=59>
+
+<Layout|id=150|children={1500,1501,1502}|width=116|height=37|color=x>
+<Img|id=1500|img=custom/hl/hl_ui/<$STR(S$地图按钮_60)>>
+<Text|id=1501|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_60)>|size=18|outline=2|outlinecolor=0|text=300级地图>
+<Layout|id=1502|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=300级地图#配置行=246#按钮序号=60>
+
+<Layout|id=151|children={1510,1511,1512}|width=116|height=37|color=x>
+<Img|id=1510|img=custom/hl/hl_ui/<$STR(S$地图按钮_61)>>
+<Text|id=1511|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_61)>|size=18|outline=2|outlinecolor=0|text=VIP11地图>
+<Layout|id=1512|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=VIP11地图#配置行=248#按钮序号=61>
+
+<Layout|id=152|children={1520,1521,1522}|width=116|height=37|color=x>
+<Img|id=1520|img=custom/hl/hl_ui/<$STR(S$地图按钮_62)>>
+<Text|id=1521|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_62)>|size=18|outline=2|outlinecolor=0|text=VIP12地图>
+<Layout|id=1522|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=VIP12地图#配置行=250#按钮序号=62>
+
+
+<Layout|id=153|children={1530,1531,1532}|width=116|height=37|color=x>
+<Img|id=1530|img=custom/hl/hl_ui/<$STR(S$地图按钮_63)>>
+<Text|id=1531|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_63)>|size=18|outline=2|outlinecolor=0|text=VIP13地图>
+<Layout|id=1532|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=VIP13地图#配置行=252#按钮序号=63>
+
+
+<Layout|id=154|children={1540,1541,1542}|width=116|height=37|color=x>
+<Img|id=1540|img=custom/hl/hl_ui/<$STR(S$地图按钮_64)>>
+<Text|id=1541|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_64)>|size=18|outline=2|outlinecolor=0|text=VIP14地图>
+<Layout|id=1542|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=VIP14地图#配置行=254#按钮序号=64>
+
+<Layout|id=155|children={1550,1551,1552}|width=116|height=37|color=x>
+<Img|id=1550|img=custom/hl/hl_ui/<$STR(S$地图按钮_65)>>
+<Text|id=1551|a=4|percentx=50|percenty=50|color=<$STR(N$按钮颜色_65)>|size=18|outline=2|outlinecolor=0|text=VIP15地图>
+<Layout|id=1552|width=116|height=37|color=x|link=@查看地图BOSS#当前查看地图=VIP15地图#配置行=256#按钮序号=65>
+
+
+
+
+
+
+
+
+
+<ListView|id=9|children={90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107}|x=150|y=115|width=240|height=395|margin=0|bounce=0|direction=1|color=X>
+<$STR(S$领主状态)>
+<Layout|id=10|children={11}|x=395|y=115|width=355|height=390|color=x>
+<Img|id=11|children={110,111,112,113,114,115}|img=public/1900012391.png|width=355|height=390|scale9l=10|scale9r=10|scale9t=10|scale9b=10|x=0|y=0>
+<Img|id=111|children={1111,1112,1113}|img=public/bg_hhdb_01.jpg|width=355|height=40>
+<Img|id=1111|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1112|a=4|percentx=50|percenty=50|color=251|size=18|text=BOSS信息>
+<Layout|id=12|children={121,122,123,124}|x=395|y=160|width=355|height=160|color=x>
+<Text|id=121|color=255|size=18|a=4|percentx=50|percenty=30|text=攻高血厚>
+<RText|id=122|color=255|size=18|a=4|percentx=50|percenty=50|text=出没于<<$STR(S$当前查看地图)>/FCOLOR=250>地图>
+<Img|id=112|children={1121,1122}|img=public/bg_hhdb_01.jpg|width=355|height=40|y=220>
+<Img|id=1121|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=1122|a=4|percentx=50|percenty=50|color=251|size=18|text=极品掉落>
+<ListView|id=13|children={130,131,132,133,134,135,136,137,138,139,140}|x=405|y=375|width=340|height=130|margin=0|bounce=0|direction=2|color=x>
+<Layout|id=130|children={1301,1302}|width=70|height=130|color=x>
+<ItemShow|id=1301|itemid=<$STR(N$掉落展示1)>|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=1302|itemid=<$STR(N$掉落展示7)>|itemcount=1|showtips=1|bgtype=1|y=65>
+<Layout|id=131|children={1311,1312}|width=70|height=130|color=x>
+<ItemShow|id=1311|itemid=<$STR(N$掉落展示2)>|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=1312|itemid=<$STR(N$掉落展示8)>|itemcount=1|showtips=1|bgtype=1|y=65>
+<Layout|id=132|children={1321,1322}|width=70|height=130|color=x>
+<ItemShow|id=1321|itemid=<$STR(N$掉落展示3)>|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=1322|itemid=<$STR(N$掉落展示9)>|itemcount=1|showtips=1|bgtype=1|y=65>
+<Layout|id=133|children={1331,1332}|width=70|height=130|color=x>
+<ItemShow|id=1331|itemid=<$STR(N$掉落展示4)>|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=1332|itemid=<$STR(N$掉落展示10)>|itemcount=1|showtips=1|bgtype=1|y=65>
+<Layout|id=134|children={1341,1342}|width=70|height=130|color=x>
+<ItemShow|id=1341|itemid=<$STR(N$掉落展示5)>|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=1342|itemid=<$STR(N$掉落展示11)>|itemcount=1|showtips=1|bgtype=1|y=65>
+<Layout|id=135|children={1351,1352}|width=70|height=130|color=x>
+<ItemShow|id=1351|itemid=<$STR(N$掉落展示6)>|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=1352|itemid=<$STR(N$掉落展示12)>|itemcount=1|showtips=1|bgtype=1|y=65>
+
+[@选中状态恢复]
+#IF
+#ACT
+MOV S$BOSS选中状态1
+MOV S$BOSS选中状态2
+MOV S$BOSS选中状态3
+MOV S$BOSS选中状态4
+MOV S$BOSS选中状态5
+MOV S$BOSS选中状态6
+MOV S$BOSS选中状态7
+MOV S$BOSS选中状态8
+MOV S$BOSS选中状态9
+MOV S$BOSS选中状态10
+MOV S$BOSS选中状态11
+MOV S$BOSS选中状态12
+MOV S$BOSS选中状态13
+
+[@查看地图BOSS]
+#IF
+#ACT
+GOTO @怪物按钮赋值
+#IF
+EQUAL N$首次查看怪物 1
+#ACT
+MOV S$地图按钮_1 115_1.png
+MOV N$按钮颜色_1 100
+MOV S$当前查看地图 尸魔洞
+MOV S$配置行 128
+MOV N$首次查看怪物 0
+GOTO @选中状态恢复
+MOV S$BOSS选中状态1 hl_xz_01
+#ELSEACT
+MOV S$地图按钮_<$STR(S$按钮序号)> 115_1.png
+MOV N$按钮颜色_<$STR(S$按钮序号)> 100
+#IF
+EQUAL S$上次查看地图名 <$STR(S$当前查看地图)>
+#ACT
+GOTO @选中状态恢复
+MOV S$BOSS选中状态<$str(S$返回怪物序号)> hl_xz_01
+#ELSEACT
+GOTO @选中状态恢复
+MOV S$BOSS选中状态1 hl_xz_01
+#IF
+#ACT
+GOTO @地图怪物初始化
+
+[@地图怪物初始化]
+#IF
+#ACT
+MOV N$领主序号 90
+MOV N$怪物流水号 1
+MOV N$按钮序号 1
+MOV N$读取行数 124
+MOV S$领主状态
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt <$str(S$配置行)> S$本图怪物 |
+MOV N$读取行数 <$str(S$本图怪物0)>
+MOV S$上次查看地图名 <$STR(S$当前查看地图)>
+GOTO @循环取怪物
+
+[@循环取怪物]
+#IF
+NOT EQUAL S$本图怪物<$STR(N$怪物流水号)>
+#ACT
+INC S$领主状态 <Img|id=<$STR(N$领主序号)>|children={<$STR(N$领主序号)>1,<$STR(N$领主序号)>2,<$STR(N$领主序号)>3,<$STR(N$领主序号)>4}|img=custom/hl/bianqiang_ui/bq_01.png|link=@查看怪物#返回怪物序号=<$STR(N$按钮序号)>>
+INC S$领主状态 <Layout|id=<$STR(N$领主序号)>1|x=0|y=0|width=235|height=85|color=x>
+INC S$领主状态 <Text|id=<$STR(N$领主序号)>2|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=<$str(S$本图怪物<$STR(N$怪物流水号)>)>>
+INC S$领主状态 <Img|id=<$STR(N$领主序号)>4|width=235|height=85|img=custom/hl/hl_ui/<$STR(S$BOSS选中状态<$STR(N$按钮序号)>)>.png>
+MOV N$变量数 <$STR(N$怪物流水号)>
+INC N$变量数 1
+MOV N$全局变量名  <$STR(S$本图怪物<$STR(N$变量数)>)>
+GOTO @BOSS刷新状态
+INC N$按钮序号 1
+INC N$领主序号 1
+INC N$怪物流水号 2
+GOTO @循环取怪物
+#ELSEACT
+GOTO @读取掉落显示
+GOTO @怪物界面显示
+BREAK
+
+[@BOSS刷新状态]
+#OR
+SMALL G<$STR(N$全局变量名)> <$UTCNOW8>
+EQUAL G<$STR(N$全局变量名)> 0
+#ACT
+INC S$领主状态 <Text|id=<$STR(N$领主序号)>3|a=4|percentx=50|percenty=70|color=249|size=18|outline=2|outlinecolor=0|text=未刷新>
+#IF
+EQUAL G<$STR(N$全局变量名)> 1
+#ACT
+INC S$领主状态 <Text|id=<$STR(N$领主序号)>3|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=已刷新>
+#IF
+LARGE G<$STR(N$全局变量名)> 1
+#ACT
+MOV N$剩余时间1 <$STR(G<$STR(N$全局变量名)>)>
+DEC N$剩余时间1 <$UTCNOW8>
+#IF
+LARGE G<$STR(N$全局变量名)> 1
+LARGE N$剩余时间1 0
+#ACT
+INC S$领主状态 <TIMETIPS|id=<$STR(N$领主序号)>3|a=4|percentx=50|percenty=70|time=<$str(N$剩余时间1)>|color=249|size=18|outline=2|outlinecolor=0|link=@成长倒计时>
+#IF
+LARGE G<$STR(N$全局变量名)> 1
+SMALL N$剩余时间1 0
+#ACT
+INC S$领主状态 <Text|id=<$STR(N$领主序号)>3|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=已刷新>
+
+[@读取掉落显示]
+#IF
+#ACT
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt <$STR(N$读取行数)> S$怪物掉落显示 |
+MOV N$掉落展示1 <$STR(S$怪物掉落显示1)>
+MOV N$掉落展示2 <$STR(S$怪物掉落显示2)>
+MOV N$掉落展示3 <$STR(S$怪物掉落显示3)>
+MOV N$掉落展示4 <$STR(S$怪物掉落显示4)>
+MOV N$掉落展示5 <$STR(S$怪物掉落显示5)>
+MOV N$掉落展示6 <$STR(S$怪物掉落显示6)>
+MOV N$掉落展示7 <$STR(S$怪物掉落显示7)>
+MOV N$掉落展示8 <$STR(S$怪物掉落显示8)>
+MOV N$掉落展示9 <$STR(S$怪物掉落显示9)>
+MOV N$掉落展示10 <$STR(S$怪物掉落显示10)>
+MOV N$掉落展示11 <$STR(S$怪物掉落显示11)>
+MOV N$掉落展示12 <$STR(S$怪物掉落显示12)>
+
+[@查看怪物]
+#IF
+#ACT
+GOTO @查看地图BOSS
+
+
+[@怪物按钮赋值]
+#IF
+#ACT
+MOV S$地图按钮_1 115_2.png
+MOV S$地图按钮_2 115_2.png
+MOV S$地图按钮_3 115_2.png
+MOV S$地图按钮_4 115_2.png
+MOV S$地图按钮_5 115_2.png
+MOV S$地图按钮_6 115_2.png
+MOV S$地图按钮_7 115_2.png
+MOV S$地图按钮_8 115_2.png
+MOV S$地图按钮_9 115_2.png
+MOV S$地图按钮_10 115_2.png
+MOV S$地图按钮_11 115_2.png
+MOV S$地图按钮_12 115_2.png
+MOV S$地图按钮_13 115_2.png
+MOV S$地图按钮_14 115_2.png
+MOV S$地图按钮_15 115_2.png
+MOV S$地图按钮_16 115_2.png
+MOV S$地图按钮_17 115_2.png
+MOV S$地图按钮_18 115_2.png
+MOV S$地图按钮_19 115_2.png
+MOV S$地图按钮_20 115_2.png
+MOV S$地图按钮_21 115_2.png
+MOV S$地图按钮_22 115_2.png
+MOV S$地图按钮_23 115_2.png
+MOV S$地图按钮_24 115_2.png
+MOV S$地图按钮_25 115_2.png
+MOV S$地图按钮_26 115_2.png
+MOV S$地图按钮_27 115_2.png
+MOV S$地图按钮_28 115_2.png
+MOV S$地图按钮_29 115_2.png
+MOV S$地图按钮_30 115_2.png
+MOV S$地图按钮_31 115_2.png
+MOV S$地图按钮_32 115_2.png
+MOV S$地图按钮_33 115_2.png
+MOV S$地图按钮_34 115_2.png
+MOV S$地图按钮_35 115_2.png
+MOV S$地图按钮_36 115_2.png
+MOV S$地图按钮_37 115_2.png
+MOV S$地图按钮_38 115_2.png
+MOV S$地图按钮_39 115_2.png
+MOV S$地图按钮_40 115_2.png
+MOV S$地图按钮_41 115_2.png
+MOV S$地图按钮_42 115_2.png
+MOV S$地图按钮_43 115_2.png
+MOV S$地图按钮_44 115_2.png
+MOV S$地图按钮_45 115_2.png
+MOV S$地图按钮_46 115_2.png
+MOV S$地图按钮_47 115_2.png
+MOV S$地图按钮_48 115_2.png
+MOV S$地图按钮_49 115_2.png
+MOV S$地图按钮_50 115_2.png
+MOV S$地图按钮_51 115_2.png
+MOV S$地图按钮_52 115_2.png
+MOV S$地图按钮_53 115_2.png
+MOV S$地图按钮_54 115_2.png
+MOV S$地图按钮_55 115_2.png
+MOV S$地图按钮_56 115_2.png
+MOV S$地图按钮_57 115_2.png
+MOV S$地图按钮_58 115_2.png
+MOV S$地图按钮_59 115_2.png
+MOV S$地图按钮_60 115_2.png
+MOV S$地图按钮_61 115_2.png
+MOV S$地图按钮_62 115_2.png
+MOV S$地图按钮_63 115_2.png
+MOV S$地图按钮_64 115_2.png
+MOV S$地图按钮_65 115_2.png
+
+
+
+MOV N$按钮颜色_1 10
+MOV N$按钮颜色_2 10
+MOV N$按钮颜色_3 10
+MOV N$按钮颜色_4 10
+MOV N$按钮颜色_5 10
+MOV N$按钮颜色_6 10
+MOV N$按钮颜色_7 10
+MOV N$按钮颜色_8 10
+MOV N$按钮颜色_9 10
+MOV N$按钮颜色_10 10
+MOV N$按钮颜色_11 10
+MOV N$按钮颜色_12 10
+MOV N$按钮颜色_13 10
+MOV N$按钮颜色_14 10
+MOV N$按钮颜色_15 10
+MOV N$按钮颜色_16 10
+MOV N$按钮颜色_17 10
+MOV N$按钮颜色_18 10
+MOV N$按钮颜色_19 10
+MOV N$按钮颜色_20 10
+MOV N$按钮颜色_21 10
+MOV N$按钮颜色_22 10
+MOV N$按钮颜色_23 10
+MOV N$按钮颜色_24 10
+MOV N$按钮颜色_25 10
+MOV N$按钮颜色_26 10
+MOV N$按钮颜色_27 10
+MOV N$按钮颜色_28 10
+MOV N$按钮颜色_29 10
+MOV N$按钮颜色_30 10
+MOV N$按钮颜色_31 10
+MOV N$按钮颜色_32 10
+MOV N$按钮颜色_33 10
+MOV N$按钮颜色_34 10
+MOV N$按钮颜色_35 10
+MOV N$按钮颜色_36 10
+MOV N$按钮颜色_37 10
+MOV N$按钮颜色_38 10
+MOV N$按钮颜色_39 10
+MOV N$按钮颜色_40 10
+MOV N$按钮颜色_41 10
+MOV N$按钮颜色_42 10
+MOV N$按钮颜色_43 10
+MOV N$按钮颜色_44 10
+MOV N$按钮颜色_45 10
+MOV N$按钮颜色_46 10
+MOV N$按钮颜色_47 10
+MOV N$按钮颜色_48 10
+MOV N$按钮颜色_49 10
+MOV N$按钮颜色_50 10
+MOV N$按钮颜色_51 10
+MOV N$按钮颜色_52 10
+MOV N$按钮颜色_53 10
+MOV N$按钮颜色_54 10
+MOV N$按钮颜色_55 10
+MOV N$按钮颜色_56 10
+MOV N$按钮颜色_57 10
+MOV N$按钮颜色_58 10
+MOV N$按钮颜色_59 10
+MOV N$按钮颜色_60 10
+MOV N$按钮颜色_61 10
+MOV N$按钮颜色_62 10
+MOV N$按钮颜色_63 10
+MOV N$按钮颜色_64 10
+MOV N$按钮颜色_65 10
+MOV S$本图怪物0
+MOV S$本图怪物1
+MOV S$本图怪物2
+MOV S$本图怪物3
+MOV S$本图怪物4
+MOV S$本图怪物5
+MOV S$本图怪物6
+MOV S$本图怪物7
+MOV S$本图怪物8
+MOV S$本图怪物9
+MOV S$本图怪物10
+MOV S$本图怪物11
+MOV S$本图怪物12
+MOV S$本图怪物13
+MOV S$本图怪物14
+MOV S$本图怪物15
+MOV S$本图怪物16
+MOV S$本图怪物17
+MOV S$本图怪物18
+MOV S$本图怪物19
+MOV S$本图怪物20
+MOV S$本图怪物21
+MOV S$本图怪物22
+MOV S$本图怪物23
+MOV S$本图怪物24
+MOV S$本图怪物25
+MOV S$本图怪物26
+MOV S$本图怪物27
+MOV S$本图怪物28
+MOV S$本图怪物29
+MOV S$本图怪物30
+
+[@铭文技能]
+#IF
+#ACT
+MOV S$当前选择 技能
+MOV P41 0
+GOTO @技能介绍
+
+[@技能介绍]
+#IF
+#ACT
+MOV S$子选择 技能介绍
+MOV S$选项串 技能介绍|铭文攻略
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 64 S$战士技能 |
+INC S$显示内容 <RText|id=5|x=150|y=110|color=255|size=18|text=危机四伏的玛法除了提升等级和装备外，更重要的是对技能的渴求了！>
+;INC S$显示内容 <RText|id=6|x=150|y=140|color=255|size=18|text=<技能书的来源：各大BOSS均有掉落/FCOLOR=254>>
+INC S$显示内容 <ListView|id=10|children={9,101,102,103,104,105}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
+INC S$显示内容 <Layout|id=9|children={91,92}|width=590|height=40|color=x>
+INC S$显示内容 <Img|id=91|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+INC S$显示内容 <Text|id=92|a=4|percentx=50|percenty=50|color=254|size=18|text=战士技能>
+INC S$显示内容 <Layout|id=101|children={1011,1012,1013,1014,1015,1016,1017,1018,1019,10191,10192}|width=590|height=65|color=x>
+INC S$显示内容 <ItemShow|id=1011|itemid=<$STR(S$战士技能1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+INC S$显示内容 <ItemShow|id=1012|itemid=<$STR(S$战士技能2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+INC S$显示内容 <ItemShow|id=1013|itemid=<$STR(S$战士技能3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+INC S$显示内容 <ItemShow|id=1014|itemid=<$STR(S$战士技能4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+INC S$显示内容 <ItemShow|id=1015|itemid=<$STR(S$战士技能5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+INC S$显示内容 <ItemShow|id=1016|itemid=<$STR(S$战士技能6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+INC S$显示内容 <ItemShow|id=1017|itemid=<$STR(S$战士技能7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+INC S$显示内容 <ItemShow|id=1018|itemid=<$STR(S$战士技能8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+INC S$显示内容 <ItemShow|id=1019|itemid=<$STR(S$战士技能9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+;INC S$显示内容 <ItemShow|id=10191|itemid=<$STR(S$战士技能10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+;INC S$显示内容 <ItemShow|id=10192|itemid=<$STR(S$战士技能11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 66 S$法师技能 |
+INC S$显示内容 <Layout|id=102|children={1021,1022}|width=590|height=40|color=x>
+INC S$显示内容 <Img|id=1021|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+INC S$显示内容 <Text|id=1022|a=4|percentx=50|percenty=50|color=254|size=18|text=法师技能>
+INC S$显示内容 <Layout|id=103|children={1031,1032,1033,1034,1035,1036,1037,1038,1039,10391,10392,10393,10394,10395,10396,10397}|width=590|height=130|color=x>
+INC S$显示内容 <ItemShow|id=1031|itemid=<$STR(S$法师技能1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+INC S$显示内容 <ItemShow|id=1032|itemid=<$STR(S$法师技能2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+INC S$显示内容 <ItemShow|id=1033|itemid=<$STR(S$法师技能3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+INC S$显示内容 <ItemShow|id=1034|itemid=<$STR(S$法师技能4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+INC S$显示内容 <ItemShow|id=1035|itemid=<$STR(S$法师技能5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+INC S$显示内容 <ItemShow|id=1036|itemid=<$STR(S$法师技能6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+INC S$显示内容 <ItemShow|id=1037|itemid=<$STR(S$法师技能7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+INC S$显示内容 <ItemShow|id=1038|itemid=<$STR(S$法师技能8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+INC S$显示内容 <ItemShow|id=1039|itemid=<$STR(S$法师技能9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+INC S$显示内容 <ItemShow|id=10391|itemid=<$STR(S$法师技能10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+INC S$显示内容 <ItemShow|id=10392|itemid=<$STR(S$法师技能11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+INC S$显示内容 <ItemShow|id=10393|itemid=<$STR(S$法师技能12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+INC S$显示内容 <ItemShow|id=10394|itemid=<$STR(S$法师技能13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+INC S$显示内容 <ItemShow|id=10395|itemid=<$STR(S$法师技能14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+;INC S$显示内容 <ItemShow|id=10396|itemid=<$STR(S$法师技能15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+;INC S$显示内容 <ItemShow|id=10397|itemid=<$STR(S$法师技能16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 68 S$道士技能 |
+INC S$显示内容 <Layout|id=104|children={1041,1042}|width=590|height=40|color=x>
+INC S$显示内容 <Img|id=1041|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+INC S$显示内容 <Text|id=1042|a=4|percentx=50|percenty=50|color=254|size=18|text=道士技能>
+INC S$显示内容 <Layout|id=105|children={1051,1052,1053,1054,1055,1056,1057,1058,1059,10591,10592,10593,10594,10595}|width=590|height=130|color=x>
+INC S$显示内容 <ItemShow|id=1051|itemid=<$STR(S$道士技能1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+INC S$显示内容 <ItemShow|id=1052|itemid=<$STR(S$道士技能2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+INC S$显示内容 <ItemShow|id=1053|itemid=<$STR(S$道士技能3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+INC S$显示内容 <ItemShow|id=1054|itemid=<$STR(S$道士技能4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+INC S$显示内容 <ItemShow|id=1055|itemid=<$STR(S$道士技能5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+INC S$显示内容 <ItemShow|id=1056|itemid=<$STR(S$道士技能6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+INC S$显示内容 <ItemShow|id=1057|itemid=<$STR(S$道士技能7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+INC S$显示内容 <ItemShow|id=1058|itemid=<$STR(S$道士技能8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+INC S$显示内容 <ItemShow|id=1059|itemid=<$STR(S$道士技能9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+INC S$显示内容 <ItemShow|id=10591|itemid=<$STR(S$道士技能10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+INC S$显示内容 <ItemShow|id=10592|itemid=<$STR(S$道士技能11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+INC S$显示内容 <ItemShow|id=10593|itemid=<$STR(S$道士技能12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+INC S$显示内容 <ItemShow|id=10594|itemid=<$STR(S$道士技能13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+INC S$显示内容 <ItemShow|id=10595|itemid=<$STR(S$道士技能14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+
+GOTO @子项选择
+
+[@铭文攻略]
+#IF
+#ACT
+MOV S$子选择 铭文攻略
+MOV S$选项串 技能介绍|铭文攻略
+MOV N$控件ID 40
+MOV S$子项目显示
+MOV S$显示内容
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 70 S$战士铭文 |
+INC S$显示内容 <RText|id=5|x=150|y=110|color=251|size=18|text=铭文石可加强<特定技能/FCOLOR=253>的攻击效果，使技能更强大，从而极大提升战斗力！>
+INC S$显示内容 <RText|id=6|x=150|y=140|color=254|size=18|text=铭文石的来源：限时活动掉落宝箱几率获得>
+INC S$显示内容 <ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
+INC S$显示内容 <Layout|id=9|children={91,92}|width=590|height=40|color=x>
+INC S$显示内容 <Img|id=91|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+INC S$显示内容 <Text|id=92|a=4|percentx=50|percenty=50|color=254|size=18|text=战士铭文>
+MOV S$小控件ID children={1011,1012,1013,1014,1015,1016,1017,1018,1019,10111,10112,10113,10114,10115,10116,10117,10118,10119,10121,10122,10123,10124,10125,10126,10127,10128,10129,10131,10132,10133,10134,10135,10136,10137,10138,10139,10141,10142,10143,10144,10145,10146}
+INC S$显示内容 <Layout|id=101|<$STR(S$小控件ID)>|width=590|height=135|color=x>
+INC S$显示内容 <ItemShow|id=1011|itemid=<$STR(S$战士铭文1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+INC S$显示内容 <ItemShow|id=1012|itemid=<$STR(S$战士铭文2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+INC S$显示内容 <ItemShow|id=1013|itemid=<$STR(S$战士铭文3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+INC S$显示内容 <ItemShow|id=1014|itemid=<$STR(S$战士铭文4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+INC S$显示内容 <ItemShow|id=1015|itemid=<$STR(S$战士铭文5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+INC S$显示内容 <ItemShow|id=1016|itemid=<$STR(S$战士铭文6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+INC S$显示内容 <ItemShow|id=1017|itemid=<$STR(S$战士铭文7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+INC S$显示内容 <ItemShow|id=1018|itemid=<$STR(S$战士铭文8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+INC S$显示内容 <ItemShow|id=1019|itemid=<$STR(S$战士铭文9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+INC S$显示内容 <ItemShow|id=10111|itemid=<$STR(S$战士铭文10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+INC S$显示内容 <ItemShow|id=10112|itemid=<$STR(S$战士铭文11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+INC S$显示内容 <ItemShow|id=10113|itemid=<$STR(S$战士铭文12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+INC S$显示内容 <ItemShow|id=10114|itemid=<$STR(S$战士铭文13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+;INC S$显示内容 <ItemShow|id=10115|itemid=<$STR(S$战士铭文14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+;INC S$显示内容 <ItemShow|id=10116|itemid=<$STR(S$战士铭文15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+;INC S$显示内容 <ItemShow|id=10117|itemid=<$STR(S$战士铭文16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 72 S$法师铭文 |
+INC S$显示内容 <Layout|id=102|children={1021,1022}|width=590|height=40|color=x>
+INC S$显示内容 <Img|id=1021|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+INC S$显示内容 <Text|id=1022|a=4|percentx=50|percenty=50|color=254|size=18|text=法师铭文>
+MOV S$小控件ID children={1031,1032,1033,1034,1035,1036,1037,1038,1039,10311,10312,10313,10314,10315,10316,10317,10318,10319,10321,10322,10323,10324,10325,10326,10327,10328,10329,10331,10332,10333,10334,10335,10336,10337,10338,10339,10341,10342,10343,10344,10345,10346}
+INC S$显示内容 <Layout|id=103|<$STR(S$小控件ID)>|width=590|height=135|color=x>
+INC S$显示内容 <ItemShow|id=1031|itemid=<$STR(S$法师铭文1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+INC S$显示内容 <ItemShow|id=1032|itemid=<$STR(S$法师铭文2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+INC S$显示内容 <ItemShow|id=1033|itemid=<$STR(S$法师铭文3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+INC S$显示内容 <ItemShow|id=1034|itemid=<$STR(S$法师铭文4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+INC S$显示内容 <ItemShow|id=1035|itemid=<$STR(S$法师铭文5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+INC S$显示内容 <ItemShow|id=1036|itemid=<$STR(S$法师铭文6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+INC S$显示内容 <ItemShow|id=1037|itemid=<$STR(S$法师铭文7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+INC S$显示内容 <ItemShow|id=1038|itemid=<$STR(S$法师铭文8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+INC S$显示内容 <ItemShow|id=1039|itemid=<$STR(S$法师铭文9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+INC S$显示内容 <ItemShow|id=10311|itemid=<$STR(S$法师铭文10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+INC S$显示内容 <ItemShow|id=10312|itemid=<$STR(S$法师铭文11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+INC S$显示内容 <ItemShow|id=10313|itemid=<$STR(S$法师铭文12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+INC S$显示内容 <ItemShow|id=10314|itemid=<$STR(S$法师铭文13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+INC S$显示内容 <ItemShow|id=10315|itemid=<$STR(S$法师铭文14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+;INC S$显示内容 <ItemShow|id=10316|itemid=<$STR(S$法师铭文15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+;INC S$显示内容 <ItemShow|id=10317|itemid=<$STR(S$法师铭文16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+;INC S$显示内容 <ItemShow|id=10318|itemid=<$STR(S$法师铭文17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 74 S$道士铭文 |
+INC S$显示内容 <Layout|id=104|children={1041,1042}|width=590|height=40|color=x>
+INC S$显示内容 <Img|id=1041|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+INC S$显示内容 <Text|id=1042|a=4|percentx=50|percenty=50|color=254|size=18|text=道士铭文>
+MOV S$小控件ID children={1051,1052,1053,1054,1055,1056,1057,1058,1059,10511,10512,10513,10514,10515,10516,10517,10518,10519,10521,10522,10523,10524,10525,10526,10527,10528,10529,10531,10532,10533,10534,10535,10536,10537,10538,10539,10541,10542,10543,10544,10545,10546}
+INC S$显示内容 <Layout|id=105|<$STR(S$小控件ID)>|width=590|height=130|color=x>
+INC S$显示内容 <ItemShow|id=1051|itemid=<$STR(S$道士铭文1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+INC S$显示内容 <ItemShow|id=1052|itemid=<$STR(S$道士铭文2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+INC S$显示内容 <ItemShow|id=1053|itemid=<$STR(S$道士铭文3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+INC S$显示内容 <ItemShow|id=1054|itemid=<$STR(S$道士铭文4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+INC S$显示内容 <ItemShow|id=1055|itemid=<$STR(S$道士铭文5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+INC S$显示内容 <ItemShow|id=1056|itemid=<$STR(S$道士铭文6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+INC S$显示内容 <ItemShow|id=1057|itemid=<$STR(S$道士铭文7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+INC S$显示内容 <ItemShow|id=1058|itemid=<$STR(S$道士铭文8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+INC S$显示内容 <ItemShow|id=1059|itemid=<$STR(S$道士铭文9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+INC S$显示内容 <ItemShow|id=10511|itemid=<$STR(S$道士铭文10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+INC S$显示内容 <ItemShow|id=10512|itemid=<$STR(S$道士铭文11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+INC S$显示内容 <ItemShow|id=10513|itemid=<$STR(S$道士铭文12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+INC S$显示内容 <ItemShow|id=10514|itemid=<$STR(S$道士铭文13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+INC S$显示内容 <ItemShow|id=10515|itemid=<$STR(S$道士铭文14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+
+GOTO @子项选择
+
+
+[@子项选择]
+#IF
+NOT EQUAL S$选项串
+#ACT
+GetValidstr <$STR(S$选项串)> | S2 S$选项串
+#IF
+EQUAL S$子选择 <$STR(S2)>
+#ACT
+INC N$控件ID 1
+INC S$子项目显示 <Button|id=<$STR(N$控件ID)>|<$STR(S$激活按钮)>|text=<$STR(S2)>|link=@<$STR(S2)>>
+#ELSEACT
+INC N$控件ID 1
+INC S$子项目显示 <Button|id=<$STR(N$控件ID)>|<$STR(S$默认按钮)>|text=<$STR(S2)>|link=@<$STR(S2)>>
+
+#IF
+CheckContainsText <$STR(S$选项串)> |
+#ACT
+GOTO @子项选择
+#ELSEACT
+INC N$控件ID 1
+INC S$子项目显示 <Button|id=<$STR(N$控件ID)>|<$STR(S$默认按钮)>|text=<$STR(S$选项串)>|link=@<$STR(S$选项串)>>
+
+#IF
+EQUAL S$子选择 <$STR(S$选项串)>
+#ACT
+INC S$子项目显示 <Button|id=<$STR(N$控件ID)>|<$STR(S$激活按钮)>|text=<$STR(S$选项串)>|link=@<$STR(S$选项串)>>
+
+#IF
+NOT EQUAL S$子项选择 基础装备
+#ACT
+GOTO @成长界面
+
+}

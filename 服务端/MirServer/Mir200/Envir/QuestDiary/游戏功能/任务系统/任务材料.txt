@@ -1,0 +1,207 @@
+[@任务材料检测]
+{
+#OR
+EQUAL <$MAP> sjBOSS
+EQUAL <$MAP> dbqb
+EQUAL <$MAP> ycly1
+EQUAL <$MAP> ycly2
+EQUAL <$MAP> ycly3
+EQUAL <$MAP> ycly4
+EQUAL <$MAP> ycly5
+EQUAL <$MAP> ycly6
+EQUAL <$MAP> ycly7
+EQUAL <$MAP> ycly8
+EQUAL <$MAP> ycly9
+EQUAL <$MAP> ycly10
+#ACT
+BREAK
+
+#IF
+EQUAL <$STR(U91)> 6
+#ACT
+GOTO @一转任务材料检测
+break
+#IF
+EQUAL <$STR(U91)> 10
+#ACT
+GOTO @二转任务材料检测
+break
+#IF
+EQUAL <$STR(U91)> 14
+#ACT
+GOTO @三转任务材料检测
+break
+#IF
+EQUAL <$STR(U91)> 18
+#ACT
+GOTO @四转任务材料检测
+break
+#IF
+EQUAL <$STR(U91)> 20
+#ACT
+GOTO @五转任务材料检测
+break
+
+[@一转任务材料检测]
+#IF
+#ACT
+GETBAGITEMCOUNT 火龙凭证 N$转生任务材料一
+#IF
+LARGE <$STR(N$转生任务材料一)> 8
+#ACT
+MOV N$转生任务材料一 8
+
+
+#IF
+EQUAL <$STR(S$C_来自任务)> 是的
+#ACT
+MOV S$C_来自任务
+GOTO @任务材料更新
+break
+
+[@二转任务材料检测]
+#IF
+#ACT
+MOV N$转生任务材料一 0
+GETBAGITEMCOUNT 火龙凭证 N$转生任务材料一
+#IF
+LARGE <$STR(N$转生任务材料一)> 20
+#ACT
+MOV N$转生任务材料一 20
+
+#IF
+EQUAL <$STR(S$C_来自任务)> 是的
+#ACT
+MOV S$C_来自任务
+GOTO @任务材料更新
+break
+
+[@三转任务材料检测]
+#IF
+#ACT
+MOV N$转生任务材料一 0
+GETBAGITEMCOUNT 火龙凭证 N$转生任务材料一
+#IF
+LARGE <$STR(N$转生任务材料一)> 52
+#ACT
+MOV N$转生任务材料一 52
+
+
+#IF
+EQUAL <$STR(S$C_来自任务)> 是的
+#ACT
+MOV S$C_来自任务
+GOTO @任务材料更新
+break
+
+[@四转任务材料检测]
+#IF
+#ACT
+MOV N$转生任务材料一 0
+GETBAGITEMCOUNT 火龙凭证 N$转生任务材料一
+#IF
+LARGE <$STR(N$转生任务材料一)> 188
+#ACT
+MOV N$转生任务材料一 188
+
+#IF
+EQUAL <$STR(S$C_来自任务)> 是的
+#ACT
+MOV S$C_来自任务
+GOTO @任务材料更新
+break
+
+[@五转任务材料检测]
+#IF
+#ACT
+MOV N$转生任务材料一 0
+GETBAGITEMCOUNT 火龙凭证 N$转生任务材料一
+#IF
+LARGE <$STR(N$转生任务材料一)> 353
+#ACT
+MOV N$转生任务材料一 353
+
+#IF
+EQUAL <$STR(S$C_来自任务)> 是的
+#ACT
+MOV S$C_来自任务
+GOTO @任务材料更新
+break
+
+[@任务材料更新]
+
+#IF
+EQUAL <$STR(U91)> 6
+#ACT
+NEWPICKTASK 5 <$STR(N$转生任务材料一)>
+break
+
+#IF
+EQUAL <$STR(U91)> 10
+#ACT
+NEWPICKTASK 7 <$STR(N$转生任务材料一)>
+break
+
+#IF
+EQUAL <$STR(U91)> 14
+#ACT
+NEWPICKTASK 9 <$STR(N$转生任务材料一)>
+break
+
+#IF
+EQUAL <$STR(U91)> 18
+#ACT
+NEWPICKTASK 11 <$STR(N$转生任务材料一)>
+break
+
+#IF
+EQUAL <$STR(U91)> 20
+#ACT
+NEWPICKTASK 12 <$STR(N$转生任务材料一)>
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

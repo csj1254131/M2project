@@ -1,0 +1,970 @@
+[@移动端火龙元神]
+{
+#IF
+check [420] 1
+check [421] 0
+#ACT
+DELAYGOTO 100 @支线神魔完成
+
+#IF
+EQUAL <$STR(U91)> 23
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 新的征程 奖励装备 S$C_任务奖励_装备
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 新的征程 奖励装备IDX S$C_任务奖励_展示
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 新的征程 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 新的征程 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 新的征程 小还丹 S$C_任务奖励_药水
+#SAY
+<Img|show=4|y=-30|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}|bg=1|img=custom/hl/newtask/taskui_11.png>
+<Img|id=1|img=custom/hl/newtask/taskui_2.png|x=160|y=180>
+<Button|id=2|x=600|y=2|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=exit>
+<Layout|id=3|x=570|y=-5|width=70|height=70|link=exit>
+<Text|id=4|outline=1|outlinecolor=0|a=0|x=60|y=80|color=103|size=18|text=恭喜勇士，你现在已经很强大了!请探索第二大陆，击杀魔物获>
+<Text|id=5|outline=1|outlinecolor=0|a=0|x=60|y=100|color=103|size=18|text=得更强力的装备吧，提升火龙元神可大幅提升元素属性！>
+<ListView|id=12|x=160|y=215|children={101,102,103,104,105,106}|direction=2|bounce=1|margin=1|width=300|height=70>
+<ItemShow|id=101|width=70|height=70|itemid=6|itemcount=<$STR(S$C_任务奖励_经验)>|showtips=1|bgtype=1>
+<ItemShow|id=102|width=70|height=70|itemid=40088|itemcount=<$STR(S$C_任务奖励_药水)>|showtips=1|bgtype=1>
+<ItemShow|id=103|width=70|height=70|itemid=4|itemcount=<$STR(S$C_任务奖励_绑元)>|showtips=1|bgtype=1>
+<ItemShow|id=104|width=70|height=70|itemid=<$STR(S$C_任务奖励_展示)>|itemcount=1|showtips=1|bgtype=1>
+<Button|x=232|y=300|id=13|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=一路前行|color=103|size=18|link=@主线13>
+<Text|id=14|outline=2|outlinecolor=0|a=0|x=265|y=5|color=103|size=18|text=新的征程>
+<COUNTDOWN|id=15|a=0|x=280|y=355|time=5|count=1|size=16|color=224|link=@主线13>
+
+#IF
+EQUAL <$STR(U91)> 23
+#ACT
+break
+
+#IF
+#ACT
+MOV S$C_获取途径
+MOV N$C_神魔最小 0
+MOV N$C_神魔最大 0
+MOV N$C_神魔加成最小 0
+MOV N$C_神魔加成最大 0
+GOTO @移动端火龙元神界面
+break
+
+[@主线13]
+#IF
+EQUAL <$STR(U91)> 23
+#ACT
+MOV U91 24
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_任务奖励_装备)> 1 0 1 0 1 1 1 1 1
+NEWCOMPLETETASK 13
+NEWDELETETASK 13
+NEWPICKTASK 33
+set [420] 1
+close
+break
+
+
+[@移动端火龙元神界面]
+
+#IF
+NOT CHECKTITLE 火龙真体
+EQUAL U1 10
+EQUAL U2 10
+EQUAL U3 10
+EQUAL U4 10
+EQUAL U5 10
+#ACT
+CONFERTITLE 火龙真体
+CALCVAR HUMAN 顶戴展示五 = 5050
+SAVEVAR HUMAN 顶戴展示五
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#Call [\顶戴刷新.txt] @顶戴刷新
+SENDMSG 9 <font color='#00FF00'>恭喜，元神天赋全部满级，获得【火龙真体】称号！</font>
+
+#IF
+checkitem 火龙气息 1
+CheckBindMoney 元宝 ? 3000
+#ACT
+MOV S$C_红点1 hd
+MOV S$C_红点2 hd
+MOV S$C_红点3 hd
+MOV S$C_红点4 hd
+MOV S$C_红点5 hd
+MOV S$C_主红点 hd
+#ELSEACT
+MOV S$C_红点1
+MOV S$C_红点2
+MOV S$C_红点3
+MOV S$C_红点4
+MOV S$C_红点5
+MOV S$C_主红点
+
+#IF
+EQUAL U1 10
+#ACT
+MOV S$C_红点1
+#IF
+EQUAL U2 10
+#ACT
+MOV S$C_红点2
+#IF
+EQUAL U3 10
+#ACT
+MOV S$C_红点3
+#IF
+EQUAL U4 10
+#ACT
+MOV S$C_红点4
+#IF
+EQUAL U5 10
+#ACT
+MOV S$C_红点5
+
+#if
+large U1 <$STR(U2)>
+#ACT
+MOV N$C_神魔最小 <$STR(U2)>
+#elseact
+MOV N$C_神魔最小 <$STR(U1)>
+#if
+small U3 <$STR(N$C_神魔最小)>
+#ACT
+MOV N$C_神魔最小 <$STR(U3)>
+#if
+small U4 <$STR(N$C_神魔最小)>
+#ACT
+MOV N$C_神魔最小 <$STR(U4)>
+#if
+small U5 <$STR(N$C_神魔最小)>
+#ACT
+MOV N$C_神魔最小 <$STR(U5)>
+
+#if
+large U1 <$STR(U2)>
+#ACT
+MOV N$C_神魔最大 <$STR(U1)>
+#elseact
+MOV N$C_神魔最大 <$STR(U2)>
+#if
+large U3 <$STR(N$C_神魔最大)>
+#ACT
+MOV N$C_神魔最大 <$STR(U3)>
+#if
+large U4 <$STR(N$C_神魔最大)>
+#ACT
+MOV N$C_神魔最大 <$STR(U4)>
+#if
+large U5 <$STR(N$C_神魔最大)>
+#ACT
+MOV N$C_神魔最大 <$STR(U5)>
+
+
+#IF
+EQUAL U1 1
+EQUAL U2 1
+EQUAL U3 1
+EQUAL U4 1
+EQUAL U5 1
+#ACT
+MOV N$C_神魔最小 1
+MOV N$C_神魔最大 1
+#IF
+EQUAL U1 2
+EQUAL U2 2
+EQUAL U3 2
+EQUAL U4 2
+EQUAL U5 2
+#ACT
+MOV N$C_神魔最小 2
+MOV N$C_神魔最大 2
+#IF
+EQUAL U1 3
+EQUAL U2 3
+EQUAL U3 3
+EQUAL U4 3
+EQUAL U5 3
+#ACT
+MOV N$C_神魔最小 3
+MOV N$C_神魔最大 3
+#IF
+EQUAL U1 4
+EQUAL U2 4
+EQUAL U3 4
+EQUAL U4 4
+EQUAL U5 4
+#ACT
+MOV N$C_神魔最小 4
+MOV N$C_神魔最大 4
+#IF
+EQUAL U1 5
+EQUAL U2 5
+EQUAL U3 5
+EQUAL U4 5
+EQUAL U5 5
+#ACT
+MOV N$C_神魔最小 5
+MOV N$C_神魔最大 5
+#IF
+EQUAL U1 6
+EQUAL U2 6
+EQUAL U3 6
+EQUAL U4 6
+EQUAL U5 6
+#ACT
+MOV N$C_神魔最小 6
+MOV N$C_神魔最大 6
+#IF
+EQUAL U1 7
+EQUAL U2 7
+EQUAL U3 7
+EQUAL U4 7
+EQUAL U5 7
+#ACT
+MOV N$C_神魔最小 7
+MOV N$C_神魔最大 7
+#IF
+EQUAL U1 8
+EQUAL U2 8
+EQUAL U3 8
+EQUAL U4 8
+EQUAL U5 8
+#ACT
+MOV N$C_神魔最小 8
+MOV N$C_神魔最大 8
+#IF
+EQUAL U1 9
+EQUAL U2 9
+EQUAL U3 9
+EQUAL U4 9
+EQUAL U5 9
+#ACT
+MOV N$C_神魔最小 9
+MOV N$C_神魔最大 9
+
+#IF
+EQUAL U1 10
+EQUAL U2 10
+EQUAL U3 10
+EQUAL U4 10
+EQUAL U5 10
+#ACT
+MOV N$C_神魔最小 10
+MOV N$C_神魔最大 10
+MOV S$C_主红点
+
+#IF
+equal N$C_神魔最小 1
+#ACT
+MOV N$C_神魔加成最小 1
+#IF
+equal N$C_神魔最小 2
+#ACT
+MOV N$C_神魔加成最小 3
+#IF
+equal N$C_神魔最小 3
+#ACT
+MOV N$C_神魔加成最小 5
+#IF
+equal N$C_神魔最小 4
+#ACT
+MOV N$C_神魔加成最小 7
+#IF
+equal N$C_神魔最小 5
+#ACT
+MOV N$C_神魔加成最小 11
+#IF
+equal N$C_神魔最小 6
+#ACT
+MOV N$C_神魔加成最小 15
+#IF
+equal N$C_神魔最小 7
+#ACT
+MOV N$C_神魔加成最小 19
+#IF
+equal N$C_神魔最小 8
+#ACT
+MOV N$C_神魔加成最小 25
+#IF
+equal N$C_神魔最小 9
+#ACT
+MOV N$C_神魔加成最小 33
+#IF
+equal N$C_神魔最小 10
+#ACT
+MOV N$C_神魔加成最小 50
+#IF
+equal N$C_神魔最大 1
+#ACT
+MOV N$C_神魔加成最大 3
+#IF
+equal N$C_神魔最大 2
+#ACT
+MOV N$C_神魔加成最大 7
+#IF
+equal N$C_神魔最大 3
+#ACT
+MOV N$C_神魔加成最大 11
+#IF
+equal N$C_神魔最大 4
+#ACT
+MOV N$C_神魔加成最大 15
+#IF
+equal N$C_神魔最大 5
+#ACT
+MOV N$C_神魔加成最大 19
+#IF
+equal N$C_神魔最大 6
+#ACT
+MOV N$C_神魔加成最大 24
+#IF
+equal N$C_神魔最大 7
+#ACT
+MOV N$C_神魔加成最大 29
+#IF
+equal N$C_神魔最大 8
+#ACT
+MOV N$C_神魔加成最大 35
+#IF
+equal N$C_神魔最大 9
+#ACT
+MOV N$C_神魔加成最大 41
+#IF
+equal N$C_神魔最大 10
+#ACT
+MOV N$C_神魔加成最大 50
+#IF
+#ACT
+MOV U11 0
+INC U11 <$STR(N$C_神魔加成最小)>
+INC U11 <$STR(N$C_神魔加成最大)>
+MOV U12 <$STR(U11)>
+DIV U12 10
+MOV N$神魔计算A <$STR(U11)>
+MOV N$神魔计算B <$STR(U11)>
+MUL N$神魔计算A 5
+MUL N$神魔计算B 5
+MOV U17 <$STR(N$神魔计算A)>
+MOV U18 <$STR(N$神魔计算B)>
+MUL U18 10
+#IF
+LARGE U6 10000
+#ACT
+MOV U6 10000
+#IF
+LARGE U7 10000
+#ACT
+MOV U7 10000
+#IF
+LARGE U8 10000
+#ACT
+MOV U8 10000
+#IF
+LARGE U9 10000
+#ACT
+MOV U9 10000
+#IF
+LARGE U10 10000
+#ACT
+MOV U10 10000
+#IF
+#ACT
+MOV N$C_嗜血成功率 <$STR(U6)>
+MOV N$C_穿杨成功率 <$STR(U7)>
+MOV N$C_强化成功率 <$STR(U8)>
+MOV N$C_精准成功率 <$STR(U9)>
+MOV N$C_强身成功率 <$STR(U10)>
+DIV N$C_嗜血成功率 1000
+DIV N$C_穿杨成功率 1000
+DIV N$C_强化成功率 1000
+DIV N$C_精准成功率 1000
+DIV N$C_强身成功率 1000
+INC N$C_嗜血成功率 40
+INC N$C_穿杨成功率 40
+INC N$C_强化成功率 40
+INC N$C_精准成功率 40
+INC N$C_强身成功率 40
+#IF
+EQUAL U6 10000
+#ACT
+MOV N$C_嗜血成功率 100
+#IF
+EQUAL U7 10000
+#ACT
+MOV N$C_穿杨成功率 100
+#IF
+EQUAL U8 10000
+#ACT
+MOV N$C_强化成功率 100
+#IF
+EQUAL U9 10000
+#ACT
+MOV N$C_精准成功率 100
+#IF
+EQUAL U10 10000
+#ACT
+MOV N$C_强身成功率 100
+
+#IF
+#ACT
+#SAY
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|width=2000|height=2000|loadDelay=4|loadCount=4|layerid=675>
+<Img|children={30,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,100}|img=custom/hl/hl_ui/hl_bg.png|x=627|y=747>
+<Img|img=custom/hl/hl_ui/fg_1.png|x=764|y=808|height=449>
+<Text|outline=2|outlinecolor=0|a=0|x=970|y=750|color=103|size=20|text=火龙元神>
+<Button|x=1395|y=752|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|x=1380|y=755|width=70|height=70|link=@exit>
+<Text|id=41|outline=1|outlinecolor=0|a=0|x=150|y=70|color=151|size=18|text=每个元神天赋满级10级，升级成功率40%，成功+1，失败清零，第一级必成！>
+<Button|children={201}|x=645|y=810|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=元神天赋|color=100|size=18|link=@移动端元神天赋界面>
+<Button|x=645|y=851|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=天赋说明|color=10|size=18|link=@移动端天赋说明界面>
+<Button|x=645|y=892|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=火龙真体|color=10|size=18|link=@移动端火龙真体界面>
+<Button|x=645|y=933|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=元神保险|color=10|size=18|link=@移动端元神保险界面>
+<Text|id=42|outline=1|outlinecolor=0|a=0|x=150|y=100|color=103|size=18|text=您当前天赋等级组合为：>
+<Text|id=43|outline=1|outlinecolor=0|a=0|x=345|y=100|color=224|size=18|text=<$STR(N$C_神魔最小)>+<$STR(N$C_神魔最大)>>
+<Text|id=44|outline=1|outlinecolor=0|a=0|x=405|y=100|color=103|size=18|text=共获得元神点：>
+<Text|id=45|outline=1|outlinecolor=0|a=0|x=535|y=100|color=224|size=18|text=<$STR(U11)>>
+
+#IF
+EQUAL <$STR(S$C_获取途径)> 打开
+#act
+#SAY
+<Img|id=100|x=407|y=59|children={111,112,113,114}|width=350|height=446|img=custom/hl/yuanshen/hqtj_11.png>
+<Button|id=66|x=407|y=128|rotate=180|pimg=public/1900012111.png|nimg=public/1900012110.png|color=1003|link=@移动端火龙元神界面#C_获取途径=>
+<Text|id=67|x=384|y=68|outline=2|outlinecolor=0|size=18|color=1003|text=关>
+<Text|id=68|x=384|y=93|outline=2|outlinecolor=0|size=18|color=1003|text=闭>
+<ItemShow|id=111|x=30|y=275|width=70|height=70|itemid=40005|itemcount=1|showtips=1|bgtype=1>
+<Text|id=112|x=100|y=280|outline=2|outlinecolor=0|size=18|color=58|text=火龙气息>
+<Text|id=113|x=105|y=310|outline=2|outlinecolor=0|size=18|color=103|text=500火龙币>
+<Button|id=114|x=240|y=300|pimg=public/1900001023.png|nimg=public/1900001022.png|text=购买|color=1003|link=@移动端火龙气息购买>
+
+#IF
+#act
+#say
+<Img|id=201|img=custom/hl/hl_ui/<$STR(S$C_主红点)>.png|x=100|y=6>
+<Img|img=custom/hl/yuanshen/word_shenmo_01.png|x=800|y=919>
+<Text|id=51|outline=1|outlinecolor=0|a=0|x=275|y=170|color=103|size=18|text=攻击吸血<$STR(U1)>%>
+<Text|id=52|outline=1|outlinecolor=0|a=0|x=415|y=170|color=103|size=18|text=当前等级<$STR(U1)>级>
+<Button|children={21}|id=46|x=580|y=155|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=修炼|color=100|size=18|link=@移动端神魔修炼嗜血>
+<Img|id=21|img=custom/hl/hl_ui/<$STR(S$C_红点1)>.png|x=100|y=6>
+
+<Img|img=custom/hl/yuanshen/word_shenmo_02.png|x=800|y=966>
+<Text|id=53|outline=1|outlinecolor=0|a=0|x=275|y=217|color=103|size=18|text=忽视防御<$STR(U2)>%>
+<Text|id=54|outline=1|outlinecolor=0|a=0|x=415|y=217|color=103|size=18|text=当前等级<$STR(U2)>级>
+<Button|children={22}|id=47|x=580|y=207|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=修炼|color=100|size=18|link=@移动端神魔修炼穿杨>
+<Img|id=22|img=custom/hl/hl_ui/<$STR(S$C_红点2)>.png|x=100|y=6>
+
+<Img|img=custom/hl/yuanshen/word_shenmo_03.png|x=800|y=1011>
+<Text|id=55|outline=1|outlinecolor=0|a=0|x=275|y=264|color=103|size=18|text=伤害加成<$STR(U3)>%>
+<Text|id=56|outline=1|outlinecolor=0|a=0|x=415|y=264|color=103|size=18|text=当前等级<$STR(U3)>级>
+<Button|children={23}|id=48|x=580|y=257|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=修炼|color=100|size=18|link=@移动端神魔修炼强化>
+<Img|id=23|img=custom/hl/hl_ui/<$STR(S$C_红点3)>.png|x=100|y=6>
+
+<Img|img=custom/hl/yuanshen/word_shenmo_04.png|x=800|y=1061>
+<Text|id=57|outline=1|outlinecolor=0|a=0|x=275|y=314|color=103|size=18|text=暴击几率<$STR(U4)>%>
+<Text|id=58|outline=1|outlinecolor=0|a=0|x=415|y=314|color=103|size=18|text=当前等级<$STR(U4)>级>
+<Button|children={24}|id=49|x=580|y=307|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=修炼|color=100|size=18|link=@移动端神魔修炼精准>
+<Img|id=24|img=custom/hl/hl_ui/<$STR(S$C_红点4)>.png|x=100|y=6>
+
+<Img|img=custom/hl/yuanshen/word_shenmo_05.png|x=800|y=1106>
+<Text|id=59|outline=1|outlinecolor=0|a=0|x=275|y=360|color=103|size=18|text=血量加成<$STR(U5)>%>
+<Text|id=60|outline=1|outlinecolor=0|a=0|x=415|y=360|color=103|size=18|text=当前等级<$STR(U5)>级>
+<Button|children={25}|id=50|x=580|y=359|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=修炼|color=100|size=18|link=@移动端神魔修炼强身>
+<Img|id=25|img=custom/hl/hl_ui/<$STR(S$C_红点5)>.png|x=100|y=6>
+
+<ItemShow|id=61|x=405|y=410|width=70|height=70|itemid=40005|itemcount=1|showtips=1|bgtype=1>
+<Text|id=62|outline=1|outlinecolor=0|a=0|x=150|y=430|color=103|size=18|text=元神天赋修炼每级消耗均为一颗>
+<Text|id=63|outline=1|outlinecolor=0|a=0|x=402|y=475|color=58|size=18|text=火龙气息>
+<Text|id=64|outline=1|outlinecolor=0|a=0|x=470|y=430|color=224|size=18|text=+3000元宝>
+<Text|id=65|outline=1|outlinecolor=0|a=0|x=670|y=470|color=224|size=18|text=获取途径|link=@移动端火龙元神界面#C_获取途径=打开>
+
+<Text|id=69|outline=1|outlinecolor=0|a=0|x=150|y=128|color=224|size=18|text=激活属性：>
+<Text|id=70|outline=1|outlinecolor=0|a=0|x=240|y=128|color=70|size=18|text=攻魔道：0-<$STR(U17)>>
+<Text|id=71|outline=1|outlinecolor=0|a=0|x=370|y=128|color=151|size=18|text=生命值：<$STR(U18)>>
+<Text|id=72|outline=1|outlinecolor=0|a=0|x=490|y=128|color=146|size=18|text=魔法值：<$STR(U18)>>
+<Text|id=73|outline=1|outlinecolor=0|a=0|x=610|y=128|color=253|size=18|text=防御魔御：0-<$STR(U17)>>
+
+[@移动端火龙气息购买]
+#if
+#act
+OPENHYPERLINK 9
+break
+
+[@移动端神魔修炼嗜血]
+#IF
+EQUAL U1 10
+#ACT
+SENDMSG 9 <font color='#ff0000'>[嗜血]已经提升到顶级，无法继续提升！</font>
+break
+#IF
+checkitem 火龙气息 1
+CheckBindMoney 元宝 ? 3000
+#ACT
+MOVR N$C_神魔修炼掷骰 1 101
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝或者材料不足！</font>
+break
+#IF
+EQUAL U6 10000
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U1 1
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+
+#IF
+EQUAL <$STR(U1)> 0
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U1 1
+INC U6 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+
+#IF
+small N$C_神魔修炼掷骰 <$STR(N$C_嗜血成功率)>
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U1 1
+INC U6 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+#ELSEACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+MOV U1 0
+INC U6 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#ff0000'>元神天赋提升失败，等级已清零！</font>
+break
+
+
+[@移动端神魔修炼穿杨]
+#IF
+EQUAL U2 10
+#ACT
+SENDMSG 9 <font color='#ff0000'>[穿杨]已经提升到顶级，无法继续提升！</font>
+break
+
+#IF
+checkitem 火龙气息 1
+CheckBindMoney 元宝 ? 3000
+#ACT
+MOVR N$C_神魔修炼掷骰 1 101
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝或者材料不足！</font>
+break
+#IF
+EQUAL U7 10000
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U2 1
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+
+
+#IF
+EQUAL <$STR(U2)> 0
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U2 1
+INC U7 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+
+#IF
+small N$C_神魔修炼掷骰 <$STR(N$C_穿杨成功率)>
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U2 1
+INC U7 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+#ELSEACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+MOV U2 0
+INC U7 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#ff0000'>元神天赋提升失败，等级已清零！</font>
+break
+
+[@移动端神魔修炼强化]
+#IF
+EQUAL U3 10
+#ACT
+SENDMSG 9 <font color='#ff0000'>[强化]已经提升到顶级，无法继续提升！</font>
+break
+#IF
+checkitem 火龙气息 1
+CheckBindMoney 元宝 ? 3000
+#ACT
+MOVR N$C_神魔修炼掷骰 1 101
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝或者材料不足！</font>
+break
+
+#IF
+EQUAL U8 10000
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U3 1
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+
+#IF
+EQUAL <$STR(U3)> 0
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U3 1
+INC U8 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+
+#IF
+small N$C_神魔修炼掷骰 <$STR(N$C_强化成功率)>
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U3 1
+INC U8 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+#ELSEACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+MOV U3 0
+INC U8 5
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#ff0000'>元神天赋提升失败，等级已清零！</font>
+break
+
+[@移动端神魔修炼精准]
+#IF
+EQUAL U4 10
+#ACT
+SENDMSG 9 <font color='#ff0000'>[精准]已经提升到顶级，无法继续提升！</font>
+break
+#IF
+checkitem 火龙气息 1
+CheckBindMoney 元宝 ? 3000
+#ACT
+MOVR N$C_神魔修炼掷骰 1 101
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝或者材料不足！</font>
+break
+#IF
+EQUAL U9 10000
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U4 1
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+
+#IF
+EQUAL <$STR(U4)> 0
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U4 1
+INC U9 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+
+#IF
+small N$C_神魔修炼掷骰 <$STR(N$C_精准成功率)>
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U4 1
+INC U9 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+#ELSEACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+MOV U4 0
+INC U9 5
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#ff0000'>元神天赋提升失败，等级已清零！</font>
+break
+
+[@移动端神魔修炼强身]
+#IF
+EQUAL U5 10
+#ACT
+SENDMSG 9 <font color='#ff0000'>[强身]已经提升到顶级，无法继续提升！</font>
+break
+#IF
+checkitem 火龙气息 1
+CheckBindMoney 元宝 ? 3000
+#ACT
+MOVR N$C_神魔修炼掷骰 1 101
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝或者材料不足！</font>
+break
+#IF
+EQUAL U10 10000
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U5 1
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+
+#IF
+EQUAL <$STR(U5)> 0
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U5 1
+INC U10 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+
+#IF
+small N$C_神魔修炼掷骰 <$STR(N$C_强身成功率)>
+#ACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+INC U5 1
+INC U10 5
+Goto @竞技sm刷新
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#00FF00'>恭喜：元神天赋成功提升！</font>
+break
+#ELSEACT
+take 火龙气息 1
+ChangeBindMoney 元宝 3000
+MOV U5 0
+INC U10 5
+DELAYGOTO 50 @移动端火龙元神
+SENDMSG 9 <font color='#ff0000'>元神天赋提升失败，等级已清零！</font>
+break
+
+[@移动端天赋说明界面]
+#IF
+#ACT
+#SAY
+<Img|id=202|img=custom/hl/hl_ui/<$STR(S$C_主红点)>.png|x=100|y=6>
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|width=2000|height=2000|loadDelay=1|loadCount=4|layerid=675>
+<Img|img=custom/hl/hl_ui/hl_bg.png|x=627|y=747>
+<Img|img=custom/hl/hl_ui/fg_1.png|x=764|y=808|height=449>
+<Text|outline=2|outlinecolor=0|a=0|x=970|y=750|color=103|size=20|text=火龙元神>
+<Button|x=1395|y=752|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Layout|x=1380|y=755|width=70|height=70|link=@exit>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=820|color=151|size=18|text=五个元神天赋中，取最大等级数与最小等级数组合获得元神点！>
+<Button|children={202}|x=645|y=810|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=元神天赋|color=10|size=18|link=@移动端火龙元神>
+<Button|x=645|y=851|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=天赋说明|color=100|size=18>
+<Button|x=645|y=892|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=火龙真体|color=10|size=18|link=@移动端火龙真体界面>
+<Button|x=645|y=933|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=元神保险|color=10|size=18|link=@移动端元神保险界面>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=845|color=103|size=18|text=您当前元神天赋中最小等级为：>
+<Text|outline=1|outlinecolor=0|a=0|x=1055|y=845|color=224|size=18|text=<$STR(N$C_神魔最小)>级>
+<Text|outline=1|outlinecolor=0|a=0|x=1100|y=845|color=103|size=18|text=获得元神点：>
+<Text|outline=1|outlinecolor=0|a=0|x=1205|y=845|color=224|size=18|text=<$STR(N$C_神魔加成最小)>>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=870|color=103|size=18|text=您当前元神天赋中最大等级为：>
+<Text|outline=1|outlinecolor=0|a=0|x=1055|y=870|color=224|size=18|text=<$STR(N$C_神魔最大)>级>
+<Text|outline=1|outlinecolor=0|a=0|x=1100|y=870|color=103|size=18|text=获得元神点：>
+<Text|outline=1|outlinecolor=0|a=0|x=1205|y=870|color=224|size=18|text=<$STR(N$C_神魔加成最大)>>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=895|color=103|size=18|text=总共获得元神点：>
+<Text|outline=1|outlinecolor=0|a=0|x=950|y=895|color=58|size=18|text=<$STR(U11)>>
+<Text|outline=1|outlinecolor=0|a=0|x=980|y=895|color=103|size=18|text=已激活：>
+<Text|outline=1|outlinecolor=0|a=0|x=1055|y=895|color=146|size=18|text=<$STR(U12)>级火龙元神>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=930|color=103|size=18|text=最小等级为  1时 获得  1点元神点 最大等级为  1时 获得  3点元神点>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=955|color=103|size=18|text=最小等级为  2时 获得  3点元神点 最大等级为  2时 获得  7点元神点>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=980|color=103|size=18|text=最小等级为  3时 获得  5点元神点 最大等级为  3时 获得11点元神点>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1005|color=103|size=18|text=最小等级为  4时 获得  7点元神点 最大等级为  4时 获得15点元神点>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1030|color=103|size=18|text=最小等级为  5时 获得11点元神点 最大等级为  5时 获得19点元神点>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1055|color=103|size=18|text=最小等级为  6时 获得15点元神点 最大等级为  6时 获得24点元神点>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1080|color=103|size=18|text=最小等级为  7时 获得19点元神点 最大等级为  7时 获得29点元神点>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1105|color=103|size=18|text=最小等级为  8时 获得25点元神点 最大等级为  8时 获得35点元神点>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1130|color=103|size=18|text=最小等级为  9时 获得33点元神点 最大等级为  9时 获得41点元神点>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1155|color=103|size=18|text=最小等级为10时 获得50点元神点 最大等级为10时 获得50点元神点>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=1200|color=255|size=18|text=每1点元神点奖励5点攻魔道上限+5点防御上限+50点HP上限+MP值上限>
+
+<Img|img=custom/bingxue/icon_target_01.png|x=795|y=931>
+<Img|img=custom/bingxue/icon_target_01.png|x=795|y=956>
+<Img|img=custom/bingxue/icon_target_01.png|x=795|y=981>
+<Img|img=custom/bingxue/icon_target_01.png|x=795|y=1006>
+<Img|img=custom/bingxue/icon_target_01.png|x=795|y=1031>
+<Img|img=custom/bingxue/icon_target_01.png|x=795|y=1056>
+<Img|img=custom/bingxue/icon_target_01.png|x=795|y=1081>
+<Img|img=custom/bingxue/icon_target_01.png|x=795|y=1106>
+<Img|img=custom/bingxue/icon_target_01.png|x=795|y=1131>
+<Img|img=custom/bingxue/icon_target_01.png|x=795|y=1156>
+
+[@移动端火龙真体界面]
+#IF
+#ACT
+#SAY
+<Img|id=203|img=custom/hl/hl_ui/<$STR(S$C_主红点)>.png|x=100|y=6>
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|width=2000|height=2000|loadDelay=1|loadCount=4|layerid=675>
+<Img|img=custom/hl/hl_ui/hl_bg.png|x=627|y=747>
+<Img|img=custom/hl/hl_ui/fg_1.png|x=764|y=808|height=449>
+<Text|outline=2|outlinecolor=0|a=0|x=970|y=750|color=103|size=20|text=火龙元神>
+<Button|x=1395|y=752|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|x=1380|y=755|width=70|height=70|link=@exit>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=820|color=151|size=18|text=元神点每增加10点，火龙元神自动提升1级！>
+<Button|children={203}|x=645|y=810|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=元神天赋|color=10|size=18|link=@移动端火龙元神>
+<Button|x=645|y=851|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=天赋说明|color=10|size=18|link=@移动端天赋说明界面>
+<Button|x=645|y=892|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=火龙真体|color=100|size=18>
+<Button|x=645|y=933|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=元神保险|color=10|size=18|link=@移动端元神保险界面>
+
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=845|color=103|size=17|text=您当前元神点为：>
+<Text|outline=1|outlinecolor=0|a=0|x=945|y=845|color=58|size=17|text=<$STR(U11)>>
+<Text|outline=1|outlinecolor=0|a=0|x=980|y=845|color=146|size=17|text=火龙元神：>
+<Text|outline=1|outlinecolor=0|a=0|x=1070|y=845|color=224|size=17|text=<$STR(U12)>级>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=870|color=103|size=17|text=激活火龙元神属性：攻魔道：0-<$STR(U17)>　生命值&魔法值：<$STR(U18)>　防御魔御：0-<$STR(U17)>>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=910|color=151|size=18|text=火龙元神升至10级后会激活潜能，获得火龙真体的力量！>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=935|color=103|size=18|text=激活称号：>
+
+<Effect|x=960|y=950|effectid=5050|count=0|scale=1|dir=5|speed=1|effecttype=0|act=0>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=970|color=151|size=18|text=称号激活属性奖励：>
+
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1000|color=224|size=18|text=攻击吸血+1%>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1025|color=224|size=18|text=忽视防御+1%>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1050|color=224|size=18|text=暴击几率+1%>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1075|color=224|size=18|text=伤害加成+1%>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1100|color=224|size=18|text=目标爆率+1%>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1125|color=224|size=18|text=防御加成+1%>
+<Text|outline=1|outlinecolor=0|a=0|x=820|y=1150|color=224|size=18|text=血量加成+1%>
+<Img|img=custom/bingxue/icon_target_01.png|x=800|y=1001>
+<Img|img=custom/bingxue/icon_target_01.png|x=800|y=1026>
+<Img|img=custom/bingxue/icon_target_01.png|x=800|y=1051>
+<Img|img=custom/bingxue/icon_target_01.png|x=800|y=1076>
+<Img|img=custom/bingxue/icon_target_01.png|x=800|y=1101>
+<Img|img=custom/bingxue/icon_target_01.png|x=800|y=1126>
+<Img|img=custom/bingxue/icon_target_01.png|x=800|y=1151>
+
+[@移动端元神保险界面]
+#IF
+#ACT
+MOV S$C_祝福值1 <$STR(U6)>
+MOV S$C_祝福值2 <$STR(U7)>
+MOV S$C_祝福值3 <$STR(U8)>
+MOV S$C_祝福值4 <$STR(U9)>
+MOV S$C_祝福值5 <$STR(U10)>
+SetStringBlank S$C_祝福值1 7 0
+SetStringBlank S$C_祝福值2 7 0
+SetStringBlank S$C_祝福值3 7 0
+SetStringBlank S$C_祝福值4 7 0
+SetStringBlank S$C_祝福值5 7 0
+
+
+#IF
+EQUAL U1 0
+#ACT
+MOV N$C_嗜血成功率 100
+#IF
+EQUAL U2 0
+#ACT
+MOV N$C_穿杨成功率 100
+#IF
+EQUAL U3 0
+#ACT
+MOV N$C_强化成功率 100
+#IF
+EQUAL U4 0
+#ACT
+MOV N$C_精准成功率 100
+#IF
+EQUAL U5 0
+#ACT
+MOV N$C_强身成功率 100
+
+#IF
+#ACT
+#SAY
+<Img|id=204|img=custom/hl/hl_ui/<$STR(S$C_主红点)>.png|x=100|y=6>
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|width=2000|height=2000|loadDelay=1|loadCount=4|layerid=675>
+<Img|img=custom/hl/hl_ui/hl_bg.png|x=627|y=747>
+<Img|img=custom/hl/hl_ui/fg_1.png|x=764|y=808|height=449>
+<Text|outline=2|outlinecolor=0|a=0|x=970|y=750|color=103|size=20|text=火龙元神>
+<Button|x=1395|y=752|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|x=1380|y=755|width=70|height=70|link=@exit>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=820|color=151|size=18|text=元神原几率为40%，特为脸黑玩家设定保险机制！>
+<Button|children={204}|x=645|y=810|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=元神天赋|color=10|size=18|link=@移动端火龙元神>
+<Button|x=645|y=851|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=天赋说明|color=10|size=18|link=@移动端天赋说明界面>
+<Button|x=645|y=892|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=火龙真体|color=10|size=18|link=@移动端火龙真体界面>
+<Button|x=645|y=933|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=元神保险|color=100|size=18>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=845|color=103|size=18|text=每修炼   次增加       祝福值，         祝福值提高          成功几率！>
+<Text|outline=1|outlinecolor=0|a=0|x=855|y=845|color=224|size=18|text=1             5点             100点                    0.1%>
+<Text|outline=1|outlinecolor=0|a=0|x=800|y=870|color=103|size=18|text=积累          祝福值则每次升级必定         成功！>
+<Text|outline=1|outlinecolor=0|a=0|x=835|y=870|color=224|size=18|text=10000                                    100%>
+<Img|img=custom/hl/yuanshen/word_shenmo_01.png|x=800|y=900>
+<Img|img=custom/hl/yuanshen/ht1.png|x=870|y=905|width=150|height=25>
+<Text|outline=1|outlinecolor=0|a=0|x=880|y=904|color=103|size=18|text=　<$STR(S$C_祝福值1)>/10000>
+<Text|outline=1|outlinecolor=0|a=0|x=1050|y=904|color=103|size=18|text=当前成功率：<$STR(N$C_嗜血成功率)>%>
+<Img|img=custom/hl/yuanshen/word_shenmo_02.png|x=800|y=930>
+<Img|img=custom/hl/yuanshen/ht1.png|x=870|y=935|width=150|height=25>
+<Text|outline=1|outlinecolor=0|a=0|x=880|y=934|color=103|size=18|text=　<$STR(S$C_祝福值2)>/10000>
+<Text|outline=1|outlinecolor=0|a=0|x=1050|y=934|color=103|size=18|text=当前成功率：<$STR(N$C_穿杨成功率)>%>
+<Img|img=custom/hl/yuanshen/word_shenmo_03.png|x=800|y=960>
+<Img|img=custom/hl/yuanshen/ht1.png|x=870|y=965|width=150|height=25>
+<Text|outline=1|outlinecolor=0|a=0|x=880|y=964|color=103|size=18|text=　<$STR(S$C_祝福值3)>/10000>
+<Text|outline=1|outlinecolor=0|a=0|x=1050|y=964|color=103|size=18|text=当前成功率：<$STR(N$C_强化成功率)>%>
+<Img|img=custom/hl/yuanshen/word_shenmo_04.png|x=800|y=990>
+<Img|img=custom/hl/yuanshen/ht1.png|x=870|y=995|width=150|height=25>
+<Text|outline=1|outlinecolor=0|a=0|x=880|y=994|color=103|size=18|text=　<$STR(S$C_祝福值4)>/10000>
+<Text|outline=1|outlinecolor=0|a=0|x=1050|y=994|color=103|size=18|text=当前成功率：<$STR(N$C_精准成功率)>%>
+<Img|img=custom/hl/yuanshen/word_shenmo_05.png|x=800|y=1020>
+<Img|img=custom/hl/yuanshen/ht1.png|x=870|y=1025|width=150|height=25>
+<Text|outline=1|outlinecolor=0|a=0|x=880|y=1024|color=103|size=18|text=　<$STR(S$C_祝福值5)>/10000>
+<Text|outline=1|outlinecolor=0|a=0|x=1050|y=1024|color=103|size=18|text=当前成功率：<$STR(N$C_强身成功率)>%>
+;<Text|outline=1|outlinecolor=0|a=0|x=825|y=1100|color=103|size=18|text=领取VIP礼包最多可以获得元神祝福值2888点>
+<Text|outline=1|outlinecolor=0|a=0|x=825|y=1130|color=103|size=18|text=元神天赋第一级100%成功>
+
+
+[@支线神魔完成]
+
+#IF
+LARGE <$STR(U11)> 0
+#ACT
+set [421] 1
+NEWCHANGETASK 33
+close
+break
+
+
+[@竞技sm刷新]
+#IF
+#Act
+#Call [\全服活动\竞技排行榜.txt] @竞技元神榜排序
+
+
+}

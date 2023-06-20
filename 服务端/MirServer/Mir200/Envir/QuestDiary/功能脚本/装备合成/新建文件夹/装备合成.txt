@@ -1,0 +1,1086 @@
+[@高级装备合成]
+{
+
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini 合成条目 合成条目_1 s$合成条目_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini 合成条目 合成条目_2 s$合成条目_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini 合成条目 合成条目_3 s$合成条目_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini 合成条目 合成条目_4 s$合成条目_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini 合成条目 合成条目_5 s$合成条目_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini 合成条目 合成条目_6 s$合成条目_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini 合成条目 合成条目_7 s$合成条目_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini 合成条目 合成条目_8 s$合成条目_8
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini 合成条目 合成条目_9 s$合成条目_9
+Mov s$条目_1Tp 115_1
+Mov s$条目_1Ys 100
+Mov s$条目_2Tp 115_2
+Mov s$条目_2Ys 10
+Mov s$条目_3Tp 115_2
+Mov s$条目_3Ys 10
+Mov s$条目_4Tp 115_2
+Mov s$条目_4Ys 10
+Mov s$条目_5Tp 115_2
+Mov s$条目_5Ys 10
+Mov s$条目_6Tp 115_2
+Mov s$条目_6Ys 10
+Mov s$条目_7Tp 115_2
+Mov s$条目_7Ys 10
+Mov s$条目_8Tp 115_2
+Mov s$条目_8Ys 10
+Mov s$条目_9Tp 115_2
+Mov s$条目_9Ys 10
+Mov s$条目红点_1
+Mov s$条目红点_2
+Mov s$条目红点_3
+Mov s$条目红点_4
+Mov s$条目红点_5
+Mov s$条目红点_6
+Mov s$条目红点_7
+Mov s$条目红点_8
+Mov s$条目红点_9
+
+Mov n$默认读取 1
+Mov n$当前条目 1
+Mov n$默认条目 9
+Goto @合成红点判断
+BREAK
+
+
+[@合成红点判断]
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini <$STR(s$合成条目_<$STR(n$当前条目)>)>_<$STR(n$默认读取)>  消耗材料mc  s$消耗材料mc_<$STR(n$默认读取)>
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini <$STR(s$合成条目_<$STR(n$当前条目)>)>_<$STR(n$默认读取)>  消耗材料sl    s$消耗材料sl_<$STR(n$默认读取)>
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini 合成条目 读取条目_<$STR(n$当前条目)> s$默认条目_<$STR(n$当前条目)>
+#IF
+CHECKITEM <$Str(s$消耗材料mc_<$STR(n$默认读取)>)> <$Str(s$消耗材料sl_<$STR(n$默认读取)>)>
+#ACT
+Mov s$条目红点_<$STR(n$当前条目)>  icon_red_01
+
+#IF
+small n$默认读取 <$Str(s$默认条目_<$STR(n$当前条目)>)>
+#ACT
+Inc n$默认读取 1
+Goto @合成红点判断
+Break
+
+#IF
+small n$当前条目 9
+#ACT
+Inc    n$当前条目 1
+Mov  n$默认读取 1
+Goto @合成红点判断
+BREAK
+
+#IF
+#ACT
+Goto @读取斗笠
+[@读取斗笠]
+#IF
+#ACT
+Mov n$默认读取 1
+Mov n$当前条目 1
+Mov n$默认条目 9
+Goto @合成条目读取
+[@读取盾牌]
+#IF
+#ACT
+Mov n$默认读取 1
+Mov n$当前条目 2
+Mov n$默认条目 9
+Goto @合成条目读取
+[@读取宝珠]
+#IF
+#ACT
+Mov n$默认读取 1
+Mov n$当前条目 3
+Mov n$默认条目 9
+Goto @合成条目读取
+[@读取麻痹]
+#IF
+#ACT
+Mov n$默认读取 1
+Mov n$当前条目 4
+Mov n$默认条目 9
+Goto @合成条目读取
+[@读取护身]
+#IF
+#ACT
+Mov n$默认读取 1
+Mov n$当前条目 5
+Mov n$默认条目 9
+Goto @合成条目读取
+[@读取复活]
+#IF
+#ACT
+Mov n$默认读取 1
+Mov n$当前条目 6
+Mov n$默认条目 9
+Goto @合成条目读取
+[@读取证明]
+#IF
+#ACT
+Mov n$默认读取 1
+Mov n$当前条目 7
+Mov n$默认条目 10
+Goto @合成条目读取
+[@读取经验]
+#IF
+#ACT
+Mov n$默认读取 1
+Mov n$当前条目 8
+Mov n$默认条目 5
+Goto @合成条目读取
+[@读取龙心]
+#IF
+#ACT
+Mov n$默认读取 1
+Mov n$当前条目 9
+Mov n$默认条目 9
+Goto @合成条目读取
+[@合成条目读取]
+;默认读取条目1
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini <$STR(s$合成条目_<$STR(n$当前条目)>)>_<$STR(n$默认读取)>  合成预览idx s$合成预览idx_<$STR(n$默认读取)>
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini <$STR(s$合成条目_<$STR(n$当前条目)>)>_<$STR(n$默认读取)>  合成预览mc s$合成预览mc_<$STR(n$默认读取)>
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini <$STR(s$合成条目_<$STR(n$当前条目)>)>_<$STR(n$默认读取)>  合成预览ys   s$合成预览ys_<$STR(n$默认读取)>
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini <$STR(s$合成条目_<$STR(n$当前条目)>)>_<$STR(n$默认读取)>  消耗材料mc s$消耗材料mc_<$STR(n$默认读取)>
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini <$STR(s$合成条目_<$STR(n$当前条目)>)>_<$STR(n$默认读取)>  消耗材料ys   s$消耗材料ys_<$STR(n$默认读取)>
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini <$STR(s$合成条目_<$STR(n$当前条目)>)>_<$STR(n$默认读取)>  消耗材料sl    s$消耗材料sl_<$STR(n$默认读取)>
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini <$STR(s$合成条目_<$STR(n$当前条目)>)>_<$STR(n$默认读取)>  消耗货币mc  s$消耗货币mc_<$STR(n$默认读取)>
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\合成配置.ini <$STR(s$合成条目_<$STR(n$当前条目)>)>_<$STR(n$默认读取)>  消耗货币sl    s$消耗货币sl_<$STR(n$默认读取)>
+GETBAGITEMCOUNT <$STR(s$消耗材料mc_<$STR(n$默认读取)>)> n$消耗材料sl_<$STR(n$默认读取)>
+
+
+#IF
+CHECKITEM <$str(s$消耗材料mc_<$STR(n$默认读取)>)> <$str(s$消耗材料sl_<$STR(n$默认读取)>)>
+#ACT
+Mov s$合成红点_<$str(n$默认读取)> icon_red_01
+Mov s$条目红点_<$str(n$当前条目)> icon_red_01
+#ELSEACT
+Mov s$合成红点_<$str(n$默认读取)>
+
+
+#IF
+SMALL n$默认读取 <$str(n$默认条目)>
+#ACT
+Inc n$默认读取 1
+Goto @合成条目读取
+Break
+
+#IF
+#ACT
+Goto @装备合成展示
+BREAK
+
+
+
+[@装备合成展示]
+<Img|show=4|bg=1|img=custom/rxggui/bg_main_6.png|width=3000|height=3000|loadDelay=1|loadCount=50|loadStep=5>
+<Img|a=4|children={0,2,3,13,0a}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Text|id=0a|a=4|text=合成升级|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Layout|id=0|children={1}|width=50|height=42|x=770|y=4|color=x|link=@exit>
+<Button|id=1|x=0|y=0|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Img|id=2|img=custom/hl/hl_ui/fg_1.png|x=142|y=60|height=449>
+
+<Layout|id=3|children={5,7,9,11,13a,15a,17a,19a,21a}|width=120|height=380|color=x|x=20|y=65>
+<Button|id=5|x=3|y=0|children={6,6a}|nimg=custom/hl/hl_ui/<$Str(s$条目_1Tp)>.png|link=@高级装备合成>
+<Text|a=4|id=6|percentx=50|percenty=50|text=<$str(s$合成条目_1)>|color=<$Str(s$条目_1Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=6a|img=custom/hl/hl_ui/<$str(s$条目红点_1)>.png|x=95|y=5>
+
+<Button|id=7|x=3|y=40|children={8,8a}|nimg=custom/hl/hl_ui/<$Str(s$条目_2Tp)>.png|link=@读取盾牌#条目_1Tp=115_2#条目_2Tp=115_1#条目_3Tp=115_2#条目_4Tp=115_2#条目_5Tp=115_2#条目_6Tp=115_2#条目_7Tp=115_2#条目_8Tp=115_2#条目_9Tp=115_2#条目_1Ys=10#条目_2Ys=100#条目_3Ys=10#条目_4Ys=10#条目_5Ys=10#条目_6Ys=10#条目_7Ys=10#条目_8Ys=10#条目_9Ys=10>
+<Text|a=4|id=8|percentx=50|percenty=50|text=<$str(s$合成条目_2)>|color=<$Str(s$条目_2Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=8a|img=custom/hl/hl_ui/<$str(s$条目红点_2)>.png|x=95|y=5>
+
+<Button|id=9|x=3|y=80|children={10,10a}|nimg=custom/hl/hl_ui/<$Str(s$条目_3Tp)>.png|link=@读取宝珠#条目_1Tp=115_2#条目_2Tp=115_2#条目_3Tp=115_1#条目_4Tp=115_2#条目_5Tp=115_2#条目_6Tp=115_2#条目_7Tp=115_2#条目_8Tp=115_2#条目_9Tp=115_2#条目_1Ys=10#条目_2Ys=10#条目_3Ys=100#条目_4Ys=10#条目_5Ys=10#条目_6Ys=10#条目_7Ys=10#条目_8Ys=10#条目_9Ys=10>
+<Text|a=4|id=10|percentx=50|percenty=50|text=<$str(s$合成条目_3)>|color=<$Str(s$条目_3Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=10a|img=custom/hl/hl_ui/<$str(s$条目红点_3)>.png|x=95|y=5>
+
+<Button|id=11|x=3|y=120|children={12,12a}|nimg=custom/hl/hl_ui/<$Str(s$条目_4Tp)>.png|link=@读取麻痹#条目_1Tp=115_2#条目_2Tp=115_2#条目_3Tp=115_2#条目_4Tp=115_1#条目_5Tp=115_2#条目_6Tp=115_2#条目_7Tp=115_2#条目_8Tp=115_2#条目_9Tp=115_2#条目_1Ys=10#条目_2Ys=10#条目_3Ys=10#条目_4Ys=100#条目_5Ys=10#条目_6Ys=10#条目_7Ys=10#条目_8Ys=10#条目_9Ys=10>
+<Text|a=4|id=12|percentx=50|percenty=50|text=<$str(s$合成条目_4)>|color=<$Str(s$条目_4Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=12a|img=custom/hl/hl_ui/<$str(s$条目红点_4)>.png|x=95|y=5>
+
+<Button|id=13a|x=3|y=160|children={14a,14aa}|nimg=custom/hl/hl_ui/<$Str(s$条目_5Tp)>.png|link=@读取护身#条目_1Tp=115_2#条目_2Tp=115_2#条目_3Tp=115_2#条目_4Tp=115_2#条目_5Tp=115_1#条目_6Tp=115_2#条目_7Tp=115_2#条目_8Tp=115_2#条目_9Tp=115_2#条目_1Ys=10#条目_2Ys=10#条目_3Ys=10#条目_4Ys=10#条目_5Ys=100#条目_6Ys=10#条目_7Ys=10#条目_8Ys=10#条目_9Ys=10>
+<Text|a=4|id=14a|percentx=50|percenty=50|text=<$str(s$合成条目_5)>|color=<$Str(s$条目_5Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=14aa|img=custom/hl/hl_ui/<$str(s$条目红点_5)>.png|x=95|y=5>
+
+<Button|id=15a|x=3|y=200|children={16a,16aa}|nimg=custom/hl/hl_ui/<$Str(s$条目_6Tp)>.png|link=@读取复活#条目_1Tp=115_2#条目_2Tp=115_2#条目_3Tp=115_2#条目_4Tp=115_2#条目_5Tp=115_2#条目_6Tp=115_1#条目_7Tp=115_2#条目_8Tp=115_2#条目_9Tp=115_2#条目_1Ys=10#条目_2Ys=10#条目_3Ys=10#条目_4Ys=10#条目_5Ys=10#条目_6Ys=100#条目_7Ys=10#条目_8Ys=10#条目_9Ys=10>
+<Text|a=4|id=16a|percentx=50|percenty=50|text=<$str(s$合成条目_6)>|color=<$Str(s$条目_6Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=16aa|img=custom/hl/hl_ui/<$str(s$条目红点_6)>.png|x=95|y=5>
+
+<Button|id=17a|x=3|y=240|children={18a,18aa}|nimg=custom/hl/hl_ui/<$Str(s$条目_7Tp)>.png|link=@读取证明#条目_1Tp=115_2#条目_2Tp=115_2#条目_3Tp=115_2#条目_4Tp=115_2#条目_5Tp=115_2#条目_6Tp=115_2#条目_7Tp=115_1#条目_8Tp=115_2#条目_9Tp=115_2#条目_1Ys=10#条目_2Ys=10#条目_3Ys=10#条目_4Ys=10#条目_5Ys=10#条目_6Ys=10#条目_7Ys=100#条目_8Ys=10#条目_9Ys=10>
+<Text|a=4|id=18a|percentx=50|percenty=50|text=<$str(s$合成条目_7)>|color=<$Str(s$条目_7Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=18aa|img=custom/hl/hl_ui/<$str(s$条目红点_7)>.png|x=95|y=5>
+
+<Button|id=19a|x=3|y=280|children={20a,20aa}|nimg=custom/hl/hl_ui/<$Str(s$条目_8Tp)>.png|link=@读取经验#条目_1Tp=115_2#条目_2Tp=115_2#条目_3Tp=115_2#条目_4Tp=115_2#条目_5Tp=115_2#条目_6Tp=115_2#条目_7Tp=115_2#条目_8Tp=115_1#条目_9Tp=115_2#条目_1Ys=10#条目_2Ys=10#条目_3Ys=10#条目_4Ys=10#条目_5Ys=10#条目_6Ys=10#条目_7Ys=10#条目_8Ys=100#条目_9Ys=10>
+<Text|a=4|id=20a|percentx=50|percenty=50|text=<$str(s$合成条目_8)>|color=<$Str(s$条目_8Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=20aa|img=custom/hl/hl_ui/<$str(s$条目红点_8)>.png|x=95|y=5>
+
+<Button|id=21a|x=3|y=320|children={22a,22aa}|nimg=custom/hl/hl_ui/<$Str(s$条目_9Tp)>.png|link=@读取龙心#条目_1Tp=115_2#条目_2Tp=115_2#条目_3Tp=115_2#条目_4Tp=115_2#条目_5Tp=115_2#条目_6Tp=115_2#条目_7Tp=115_2#条目_8Tp=115_2#条目_9Tp=115_1#条目_1Ys=10#条目_2Ys=10#条目_3Ys=10#条目_4Ys=10#条目_5Ys=10#条目_6Ys=10#条目_7Ys=10#条目_8Ys=10#条目_9Ys=100>
+<Text|a=4|id=22a|percentx=50|percenty=50|text=<$str(s$合成条目_9)>|color=<$Str(s$条目_9Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=22aa|img=custom/hl/hl_ui/<$str(s$条目红点_9)>.png|x=95|y=5>
+
+<ListView|id=13|width=600|height=445|color=250|x=150|y=62|children={14,17,20,23,26,29,32,35,38,41}|direction=1|bounce=0|margin=4|color=x>
+<Layout|id=14|children={15,16}|width=606|height=170|color=x>
+;1
+<Img|id=15|children={150,152,154,155,156,157}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=150|children={151}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=151|percentx=50|percenty=50|text=<$STR(S$合成预览mc_1)>|color=<$STR(S$合成预览ys_1)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=152|children={153}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=153|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_1)>/FCOLOR=255> (<$STR(n$消耗材料sl_1)>/<$STR(S$消耗材料sl_1)>)|color=<$STR(S$消耗材料ys_1)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=154|itemid=<$STR(S$合成预览idx_1)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=155|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=156|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_1)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=157|children={158,158a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_1)>>
+<Text|a=4|id=158|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=158a|img=custom/hl/hl_ui/<$str(s$合成红点_1)>.png|x=85|y=5>
+
+;2
+<Img|id=16|children={160,162,164,165,166,167}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=160|children={161}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=161|percentx=50|percenty=50|text=<$STR(S$合成预览mc_2)>|color=<$STR(S$合成预览ys_2)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=162|children={163}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=163|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_2)>/FCOLOR=255> (<$STR(n$消耗材料sl_2)>/<$STR(S$消耗材料sl_2)>)|color=<$STR(S$消耗材料ys_2)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=164|itemid=<$STR(S$合成预览idx_2)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=165|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=166|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_2)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=167|children={168,168a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_2)>>
+<Text|a=4|id=168|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=168a|img=custom/hl/hl_ui/<$str(s$合成红点_2)>.png|x=85|y=5>
+<Layout|id=17|children={18,19}|width=606|height=170|color=x|link=@触发>
+;3
+<Img|id=18|children={180,182,184,185,186,187}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=180|children={181}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=181|percentx=50|percenty=50|text=<$STR(S$合成预览mc_3)>|color=<$STR(S$合成预览ys_3)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=182|children={183}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=183|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_3)>/FCOLOR=255> (<$STR(n$消耗材料sl_3)>/<$STR(S$消耗材料sl_3)>)|color=<$STR(S$消耗材料ys_3)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=184|itemid=<$STR(S$合成预览idx_3)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=185|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=186|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_3)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=187|children={188,188a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_3)>>
+<Text|a=4|id=188|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=188a|img=custom/hl/hl_ui/<$str(s$合成红点_3)>.png|x=85|y=5>
+;4
+<Img|id=19|children={190,192,194,195,196,197}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=190|children={191}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=191|percentx=50|percenty=50|text=<$STR(S$合成预览mc_4)>|color=<$STR(S$合成预览ys_4)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=192|children={193}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=193|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_4)>/FCOLOR=255> (<$STR(n$消耗材料sl_4)>/<$STR(S$消耗材料sl_4)>)|color=<$STR(S$消耗材料ys_4)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=194|itemid=<$STR(S$合成预览idx_4)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=195|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=196|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_4)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=197|children={198,198a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_4)>>
+<Text|a=4|id=198|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=198a|img=custom/hl/hl_ui/<$str(s$合成红点_4)>.png|x=85|y=5>
+<Layout|id=20|children={21,22}|width=606|height=170|color=x|link=@触发>
+;5
+<Img|id=21|children={210,212,214,215,216,217}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=210|children={211}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=211|percentx=50|percenty=50|text=<$STR(S$合成预览mc_5)>|color=<$STR(S$合成预览ys_5)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=212|children={213}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=213|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_5)>/FCOLOR=255> (<$STR(n$消耗材料sl_5)>/<$STR(S$消耗材料sl_5)>)|color=<$STR(S$消耗材料ys_5)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=214|itemid=<$STR(S$合成预览idx_5)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=215|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=216|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_5)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=217|children={218,218a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_5)>>
+<Text|a=4|id=218|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=218a|img=custom/hl/hl_ui/<$str(s$合成红点_5)>.png|x=85|y=5>
+;6
+#IF
+large n$默认条目 5
+#SAY
+<Img|id=22|children={220,222,224,225,226,227}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=220|children={221}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=221|percentx=50|percenty=50|text=<$STR(S$合成预览mc_6)>|color=<$STR(S$合成预览ys_6)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=222|children={223}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=223|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_6)>/FCOLOR=255> (<$STR(n$消耗材料sl_6)>/<$STR(S$消耗材料sl_6)>)|color=<$STR(S$消耗材料ys_6)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=224|itemid=<$STR(S$合成预览idx_6)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=225|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=226|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_6)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=227|children={228,228a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_6)>>
+<Text|a=4|id=228|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=228a|img=custom/hl/hl_ui/<$str(s$合成红点_6)>.png|x=85|y=5>
+<Layout|id=23|children={24,25}|width=606|height=170|color=x|link=@触发>
+;7
+<Img|id=24|children={240,242,244,245,246,247}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=240|children={241}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=241|percentx=50|percenty=50|text=<$STR(S$合成预览mc_7)>|color=<$STR(S$合成预览ys_7)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=242|children={243}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=243|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_7)>/FCOLOR=255> (<$STR(n$消耗材料sl_7)>/<$STR(S$消耗材料sl_7)>)|color=<$STR(S$消耗材料ys_7)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=244|itemid=<$STR(S$合成预览idx_7)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=245|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=246|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_7)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=247|children={248,248a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_7)>>
+<Text|a=4|id=248|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=248a|img=custom/hl/hl_ui/<$str(s$合成红点_7)>.png|x=85|y=5>
+;8
+<Img|id=25|children={250,252,254,255,256,257}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=250|children={251}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=251|percentx=50|percenty=50|text=<$STR(S$合成预览mc_8)>|color=<$STR(S$合成预览ys_8)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=252|children={253}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=253|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_8)>/FCOLOR=255> (<$STR(n$消耗材料sl_8)>/<$STR(S$消耗材料sl_8)>)|color=<$STR(S$消耗材料ys_8)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=254|itemid=<$STR(S$合成预览idx_8)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=255|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=256|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_8)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=257|children={258,258a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_8)>>
+<Text|a=4|id=258|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=258a|img=custom/hl/hl_ui/<$str(s$合成红点_8)>.png|x=85|y=5>
+<Layout|id=26|children={27,28}|width=606|height=170|color=x|link=@触发>
+;7
+#IF
+large n$默认条目 8
+
+#SAY
+<Img|id=27|children={270,272,274,275,276,277}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=270|children={271}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=271|percentx=50|percenty=50|text=<$STR(S$合成预览mc_9)>|color=<$STR(S$合成预览ys_9)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=272|children={273}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=273|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_9)>/FCOLOR=255> (<$STR(n$消耗材料sl_9)>/<$STR(S$消耗材料sl_9)>)|color=<$STR(S$消耗材料ys_9)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=274|itemid=<$STR(S$合成预览idx_9)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=275|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=276|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_9)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=277|children={278,278a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_9)>>
+<Text|a=4|id=278|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=278a|img=custom/hl/hl_ui/<$str(s$合成红点_9)>.png|x=85|y=5>
+
+#IF
+large n$默认条目 9
+#SAY
+;8
+<Img|id=28|children={280,282,284,285,286,287}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=280|children={281}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=281|percentx=50|percenty=50|text=<$STR(S$合成预览mc_10)>|color=<$STR(S$合成预览ys_10)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=282|children={283}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=283|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_10)>/FCOLOR=255> (<$STR(n$消耗材料sl_10)>/<$STR(S$消耗材料sl_10)>)|color=<$STR(S$消耗材料ys_10)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=284|itemid=<$STR(S$合成预览idx_10)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=285|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=286|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_10)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=287|children={288,288a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_10)>>
+<Text|a=4|id=288|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=288a|img=custom/hl/hl_ui/<$str(s$合成红点_10)>.png|x=85|y=5>
+#IF
+large n$默认条目 10
+#SAY
+<Layout|id=29|children={30,31}|width=606|height=170|color=x|link=@触发>
+;9
+<Img|id=30|children={300,302,304,305,306,307}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=300|children={301}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=301|percentx=50|percenty=50|text=<$STR(S$合成预览mc_11)>|color=<$STR(S$合成预览ys_11)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=302|children={303}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=303|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_11)>/FCOLOR=255> (<$STR(n$消耗材料sl_11)>/<$STR(S$消耗材料sl_11)>)|color=<$STR(S$消耗材料ys_11)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=304|itemid=<$STR(S$合成预览idx_11)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=305|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=306|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_11)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=307|children={308,308a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_11)>>
+<Text|a=4|id=308|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=308a|img=custom/hl/hl_ui/<$str(s$合成红点_11)>.png|x=85|y=5>
+;10
+<Img|id=31|children={310,312,314,315,316,317}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=310|children={311}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=311|percentx=50|percenty=50|text=<$STR(S$合成预览mc_12)>|color=<$STR(S$合成预览ys_12)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=312|children={313}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=313|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_12)>/FCOLOR=255> (<$STR(n$消耗材料sl_12)>/<$STR(S$消耗材料sl_12)>)|color=<$STR(S$消耗材料ys_12)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=314|itemid=<$STR(S$合成预览idx_12)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=315|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=316|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_12)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=317|children={318,318a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_12)>>
+<Text|a=4|id=318|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=318a|img=custom/hl/hl_ui/<$str(s$合成红点_12)>.png|x=85|y=5>
+<Layout|id=32|children={33,34}|width=606|height=170|color=x|link=@触发>
+
+;11
+<Img|id=33|children={330,332,334,335,336,337}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=330|children={331}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=331|percentx=50|percenty=50|text=<$STR(S$合成预览mc_13)>|color=<$STR(S$合成预览ys_13)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=332|children={333}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=333|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_13)>/FCOLOR=255> (<$STR(n$消耗材料sl_13)>/<$STR(S$消耗材料sl_13)>)|color=<$STR(S$消耗材料ys_13)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=334|itemid=<$STR(S$合成预览idx_13)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=335|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=336|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_13)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=337|children={338,338a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_13)>>
+<Text|a=4|id=338|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=338a|img=custom/hl/hl_ui/<$str(s$合成红点_13)>.png|x=85|y=5>
+;12
+<Img|id=34|children={340,342,344,345,346,347}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=340|children={341}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=341|percentx=50|percenty=50|text=<$STR(S$合成预览mc_14)>|color=<$STR(S$合成预览ys_14)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=342|children={343}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=343|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_14)>/FCOLOR=255> (<$STR(n$消耗材料sl_14)>/<$STR(S$消耗材料sl_14)>)|color=<$STR(S$消耗材料ys_14)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=344|itemid=<$STR(S$合成预览idx_14)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=345|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=346|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_14)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=347|children={348,348a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_14)>>
+<Text|a=4|id=348|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=348a|img=custom/hl/hl_ui/<$str(s$合成红点_14)>.png|x=85|y=5>
+<Layout|id=35|children={36,37}|width=606|height=170|color=x|link=@触发>
+;13
+<Img|id=36|children={360,362,364,365,366,367}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=360|children={361}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=361|percentx=50|percenty=50|text=<$STR(S$合成预览mc_15)>|color=<$STR(S$合成预览ys_15)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=362|children={363}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=363|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_15)>/FCOLOR=255> (<$STR(n$消耗材料sl_15)>/<$STR(S$消耗材料sl_15)>)|color=<$STR(S$消耗材料ys_15)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=364|itemid=<$STR(S$合成预览idx_15)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=365|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=366|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_15)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=367|children={368,368a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_15)>>
+<Text|a=4|id=368|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=368a|img=custom/hl/hl_ui/<$str(s$合成红点_15)>.png|x=85|y=5>
+
+
+;14
+<Img|id=37|children={370,372,374,375,376,377}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=370|children={371}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=371|percentx=50|percenty=50|text=<$STR(S$合成预览mc_16)>|color=<$STR(S$合成预览ys_16)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=372|children={373}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=373|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_16)>/FCOLOR=255> (<$STR(n$消耗材料sl_16)>/<$STR(S$消耗材料sl_16)>)|color=<$STR(S$消耗材料ys_16)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=374|itemid=<$STR(S$合成预览idx_16)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=375|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=376|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_16)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=377|children={378,378a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_16)>>
+<Text|a=4|id=378|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=378a|img=custom/hl/hl_ui/<$str(s$合成红点_16)>.png|x=85|y=5>
+
+;==============================斗笠
+[@火龙斗笠Lv.2]
+#IF
+#ACT
+Mov n$合成序号 1
+Mov s$合成刷新 读取斗笠
+Goto @执行装备合成
+BREAK
+[@火龙斗笠Lv.3]
+#IF
+#ACT
+Mov n$合成序号 2
+Mov s$合成刷新 读取斗笠
+Goto @执行装备合成
+BREAK
+[@火龙斗笠Lv.4]
+#IF
+#ACT
+Mov n$合成序号 3
+Mov s$合成刷新 读取斗笠
+Goto @执行装备合成
+BREAK
+[@火龙斗笠Lv.5]
+#IF
+#ACT
+Mov n$合成序号 4
+Mov s$合成刷新 读取斗笠
+Goto @执行装备合成
+BREAK
+[@火龙斗笠Lv.6]
+#IF
+#ACT
+Mov n$合成序号 5
+Mov s$合成刷新 读取斗笠
+Goto @执行装备合成
+BREAK
+[@火龙斗笠Lv.7]
+#IF
+#ACT
+Mov n$合成序号 6
+Mov s$合成刷新 读取斗笠
+Goto @执行装备合成
+BREAK
+[@火龙斗笠Lv.8]
+#IF
+#ACT
+Mov n$合成序号 7
+Mov s$合成刷新 读取斗笠
+Goto @执行装备合成
+BREAK
+[@火龙斗笠Lv.9]
+#IF
+#ACT
+Mov n$合成序号 8
+Mov s$合成刷新 读取斗笠
+Goto @执行装备合成
+BREAK
+[@火龙斗笠Lv.10]
+#IF
+#ACT
+Mov n$合成序号 9
+Mov s$合成刷新 读取斗笠
+Goto @执行装备合成
+BREAK
+;==============================盾牌
+[@火龙盾牌Lv.2]
+#IF
+#ACT
+Mov n$合成序号 1
+Mov s$合成刷新 读取盾牌
+Goto @执行装备合成
+BREAK
+[@火龙盾牌Lv.3]
+#IF
+#ACT
+Mov n$合成序号 2
+Mov s$合成刷新 读取盾牌
+Goto @执行装备合成
+BREAK
+[@火龙盾牌Lv.4]
+#IF
+#ACT
+Mov n$合成序号 3
+Mov s$合成刷新 读取盾牌
+Goto @执行装备合成
+BREAK
+[@火龙盾牌Lv.5]
+#IF
+#ACT
+Mov n$合成序号 4
+Mov s$合成刷新 读取盾牌
+Goto @执行装备合成
+BREAK
+[@火龙盾牌Lv.6]
+#IF
+#ACT
+Mov n$合成序号 5
+Mov s$合成刷新 读取盾牌
+Goto @执行装备合成
+BREAK
+[@火龙盾牌Lv.7]
+#IF
+#ACT
+Mov n$合成序号 6
+Mov s$合成刷新 读取盾牌
+Goto @执行装备合成
+BREAK
+[@火龙盾牌Lv.8]
+#IF
+#ACT
+Mov n$合成序号 7
+Mov s$合成刷新 读取盾牌
+Goto @执行装备合成
+BREAK
+[@火龙盾牌Lv.9]
+#IF
+#ACT
+Mov n$合成序号 8
+Mov s$合成刷新 读取盾牌
+Goto @执行装备合成
+BREAK
+[@火龙盾牌Lv.10]
+#IF
+#ACT
+Mov n$合成序号 9
+Mov s$合成刷新 读取盾牌
+Goto @执行装备合成
+BREAK
+;==============================宝珠
+[@王者宝珠]
+#IF
+#ACT
+Mov n$合成序号 1
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@狂徒宝珠]
+#IF
+#ACT
+Mov n$合成序号 2
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@赤焰宝珠]
+#IF
+#ACT
+Mov n$合成序号 3
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@传说宝珠]
+#IF
+#ACT
+Mov n$合成序号 4
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@黄金宝珠]
+#IF
+#ACT
+Mov n$合成序号 5
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@雄霸宝珠]
+#IF
+#ACT
+Mov n$合成序号 6
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@天之宝珠]
+#IF
+#ACT
+Mov n$合成序号 7
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@火龙宝珠]
+#IF
+#ACT
+Mov n$合成序号 8
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@龙腾宝珠]
+#IF
+#ACT
+Mov n$合成序号 9
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@永恒主宰の宝珠]
+#IF
+#ACT
+Mov n$合成序号 10
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@大地之怒ぃ宝珠]
+#IF
+#ACT
+Mov n$合成序号 11
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@龙游星界※宝珠]
+#IF
+#ACT
+Mov n$合成序号 12
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@天使降临☆宝珠]
+#IF
+#ACT
+Mov n$合成序号 13
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@正义之神★宝珠]
+#IF
+#ACT
+Mov n$合成序号 14
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@热血·宝珠]
+#IF
+#ACT
+Mov n$合成序号 15
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+[@荣耀·宝珠]
+#IF
+#ACT
+Mov n$合成序号 16
+Mov s$合成刷新 读取宝珠
+Goto @执行装备合成
+BREAK
+;==============================麻痹
+[@麻痹戒指②]
+#IF
+#ACT
+Mov n$合成序号 1
+Mov s$合成刷新 读取麻痹
+Goto @执行装备合成
+BREAK
+[@麻痹戒指③]
+#IF
+#ACT
+Mov n$合成序号 2
+Mov s$合成刷新 读取麻痹
+Goto @执行装备合成
+BREAK
+[@麻痹戒指④]
+#IF
+#ACT
+Mov n$合成序号 3
+Mov s$合成刷新 读取麻痹
+Goto @执行装备合成
+BREAK
+[@麻痹戒指⑤]
+#IF
+#ACT
+Mov n$合成序号 4
+Mov s$合成刷新 读取麻痹
+Goto @执行装备合成
+BREAK
+[@麻痹戒指⑥]
+#IF
+#ACT
+Mov n$合成序号 5
+Mov s$合成刷新 读取麻痹
+Goto @执行装备合成
+BREAK
+[@麻痹戒指⑦]
+#IF
+#ACT
+Mov n$合成序号 6
+Mov s$合成刷新 读取麻痹
+Goto @执行装备合成
+BREAK
+[@麻痹戒指⑧]
+#IF
+#ACT
+Mov n$合成序号 7
+Mov s$合成刷新 读取麻痹
+Goto @执行装备合成
+BREAK
+[@麻痹戒指⑨]
+#IF
+#ACT
+Mov n$合成序号 8
+Mov s$合成刷新 读取麻痹
+Goto @执行装备合成
+BREAK
+[@终极麻痹戒指]
+#IF
+#ACT
+Mov n$合成序号 9
+Mov s$合成刷新 读取麻痹
+Goto @执行装备合成
+BREAK
+;==============================护身
+[@护身戒指②]
+#IF
+#ACT
+Mov n$合成序号 1
+Mov s$合成刷新 读取护身
+Goto @执行装备合成
+BREAK
+[@护身戒指③]
+#IF
+#ACT
+Mov n$合成序号 2
+Mov s$合成刷新 读取护身
+Goto @执行装备合成
+BREAK
+[@护身戒指④]
+#IF
+#ACT
+Mov n$合成序号 3
+Mov s$合成刷新 读取护身
+Goto @执行装备合成
+BREAK
+[@护身戒指⑤]
+#IF
+#ACT
+Mov n$合成序号 4
+Mov s$合成刷新 读取护身
+Goto @执行装备合成
+BREAK
+[@护身戒指⑥]
+#IF
+#ACT
+Mov n$合成序号 5
+Mov s$合成刷新 读取护身
+Goto @执行装备合成
+BREAK
+[@护身戒指⑦]
+#IF
+#ACT
+Mov n$合成序号 6
+Mov s$合成刷新 读取护身
+Goto @执行装备合成
+BREAK
+[@护身戒指⑧]
+#IF
+#ACT
+Mov n$合成序号 7
+Mov s$合成刷新 读取护身
+Goto @执行装备合成
+BREAK
+[@护身戒指⑨]
+#IF
+#ACT
+Mov n$合成序号 8
+Mov s$合成刷新 读取护身
+Goto @执行装备合成
+BREAK
+[@终极护身戒指]
+#IF
+#ACT
+Mov n$合成序号 9
+Mov s$合成刷新 读取护身
+Goto @执行装备合成
+BREAK
+
+;==============================复活
+[@复活戒指②]
+#IF
+#ACT
+Mov n$合成序号 1
+Mov s$合成刷新 读取复活
+Goto @执行装备合成
+BREAK
+[@复活戒指③]
+#IF
+#ACT
+Mov n$合成序号 2
+Mov s$合成刷新 读取复活
+Goto @执行装备合成
+BREAK
+[@复活戒指④]
+#IF
+#ACT
+Mov n$合成序号 3
+Mov s$合成刷新 读取复活
+Goto @执行装备合成
+BREAK
+[@复活戒指⑤]
+#IF
+#ACT
+Mov n$合成序号 4
+Mov s$合成刷新 读取复活
+Goto @执行装备合成
+BREAK
+[@复活戒指⑥]
+#IF
+#ACT
+Mov n$合成序号 5
+Mov s$合成刷新 读取复活
+Goto @执行装备合成
+BREAK
+[@复活戒指⑦]
+#IF
+#ACT
+Mov n$合成序号 6
+Mov s$合成刷新 读取复活
+Goto @执行装备合成
+BREAK
+[@复活戒指⑧]
+#IF
+#ACT
+Mov n$合成序号 7
+Mov s$合成刷新 读取复活
+Goto @执行装备合成
+BREAK
+[@复活戒指⑨]
+#IF
+#ACT
+Mov n$合成序号 8
+Mov s$合成刷新 读取复活
+Goto @执行装备合成
+BREAK
+[@终极复活戒指]
+#IF
+#ACT
+Mov n$合成序号 9
+Mov s$合成刷新 读取复活
+Goto @执行装备合成
+BREAK
+;==============================证明
+[@八品证明]
+#IF
+#ACT
+Mov n$合成序号 1
+Mov s$合成刷新 读取证明
+Goto @执行装备合成
+BREAK
+[@七品证明]
+#IF
+#ACT
+Mov n$合成序号 2
+Mov s$合成刷新 读取证明
+Goto @执行装备合成
+BREAK
+[@六品证明]
+#IF
+#ACT
+Mov n$合成序号 3
+Mov s$合成刷新 读取证明
+Goto @执行装备合成
+BREAK
+[@五品证明]
+#IF
+#ACT
+Mov n$合成序号 4
+Mov s$合成刷新 读取证明
+Goto @执行装备合成
+BREAK
+[@四品证明]
+#IF
+#ACT
+Mov n$合成序号 5
+Mov s$合成刷新 读取证明
+Goto @执行装备合成
+BREAK
+[@三品证明]
+#IF
+#ACT
+Mov n$合成序号 6
+Mov s$合成刷新 读取证明
+Goto @执行装备合成
+BREAK
+[@二品证明]
+#IF
+#ACT
+Mov n$合成序号 7
+Mov s$合成刷新 读取证明
+Goto @执行装备合成
+BREAK
+[@一品证明]
+#IF
+#ACT
+Mov n$合成序号 8
+Mov s$合成刷新 读取证明
+Goto @执行装备合成
+BREAK
+[@辅国公证明]
+#IF
+#ACT
+Mov n$合成序号 9
+Mov s$合成刷新 读取证明
+Goto @执行装备合成
+BREAK
+[@大都督证明]
+#IF
+#ACT
+Mov n$合成序号 10
+Mov s$合成刷新 读取证明
+Goto @执行装备合成
+BREAK
+;==============================经验
+[@5000W经验卷]
+#IF
+#ACT
+Mov n$合成序号 1
+Mov s$合成刷新 读取经验
+Goto @执行装备合成
+BREAK
+[@1亿经验卷]
+#IF
+#ACT
+Mov n$合成序号 2
+Mov s$合成刷新 读取经验
+Goto @执行装备合成
+BREAK
+[@2亿经验卷]
+#IF
+#ACT
+Mov n$合成序号 3
+Mov s$合成刷新 读取经验
+Goto @执行装备合成
+BREAK
+[@5亿经验卷]
+#IF
+#ACT
+Mov n$合成序号 4
+Mov s$合成刷新 读取经验
+Goto @执行装备合成
+BREAK
+[@10亿经验卷]
+#IF
+#ACT
+Mov n$合成序号 5
+Mov s$合成刷新 读取经验
+Goto @执行装备合成
+BREAK
+;==============================龙心
+[@火龙之心Lv.2]
+#IF
+#ACT
+Mov n$合成序号 1
+Mov s$合成刷新 读取龙心
+Goto @执行装备合成
+BREAK
+[@火龙之心Lv.3]
+#IF
+#ACT
+Mov n$合成序号 2
+Mov s$合成刷新 读取龙心
+Goto @执行装备合成
+BREAK
+[@火龙之心Lv.4]
+#IF
+#ACT
+Mov n$合成序号 3
+Mov s$合成刷新 读取龙心
+Goto @执行装备合成
+BREAK
+[@火龙之心Lv.5]
+#IF
+#ACT
+Mov n$合成序号 4
+Mov s$合成刷新 读取龙心
+Goto @执行装备合成
+BREAK
+[@火龙之心Lv.6]
+#IF
+#ACT
+Mov n$合成序号 5
+Mov s$合成刷新 读取龙心
+Goto @执行装备合成
+BREAK
+[@火龙之心Lv.7]
+#IF
+#ACT
+Mov n$合成序号 6
+Mov s$合成刷新 读取龙心
+Goto @执行装备合成
+BREAK
+[@火龙之心Lv.8]
+#IF
+#ACT
+Mov n$合成序号 7
+Mov s$合成刷新 读取龙心
+Goto @执行装备合成
+BREAK
+[@火龙之心Lv.9]
+#IF
+#ACT
+Mov n$合成序号 8
+Mov s$合成刷新 读取龙心
+Goto @执行装备合成
+BREAK
+[@火龙之心Lv.10]
+#IF
+#ACT
+Mov n$合成序号 9
+Mov s$合成刷新 读取龙心
+Goto @执行装备合成
+BREAK
+
+
+[@执行装备合成]
+#ACT
+#IF
+Not EQUAL <$STR(s$合成预览mc_<$str(n$合成序号)>)>
+#ACT
+#ELSEACT
+BREAK
+
+#IF
+CHECKBAGSIZE 1
+#ACT
+#Elseact
+SENDMSG 9 <font color='#ff0000'>背包空格不足</font>
+BREAK
+#IF
+CheckBindMoney <$Str(s$消耗货币mc_<$str(n$合成序号)>)> ? <$Str(s$消耗货币sl_<$str(n$合成序号)>)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'><$Str(s$消耗货币mc_<$str(n$合成序号)>)>数量不足</font>
+BREAK
+
+#IF
+CHECKITEM <$STR(s$消耗材料mc_<$str(n$合成序号)>)> <$Str(s$消耗材料sl_<$str(n$合成序号)>)>
+#ACT
+ChangeBindMoney <$Str(s$消耗货币mc_<$str(n$合成序号)>)>   <$Str(s$消耗货币sl_<$str(n$合成序号)>)>
+Take <$STR(s$消耗材料mc_<$str(n$合成序号)>)>    <$Str(s$消耗材料sl_<$str(n$合成序号)>)>
+Give <$STR(s$合成预览mc_<$str(n$合成序号)>)> 1
+Mov s$条目红点_<$STR(n$当前条目)>
+Goto @<$Str(s$合成刷新)>
+#Elseact
+SENDMSG 9 <font color='#ff0000'>合成材料不足</font>
+BREAK
+
+
+}

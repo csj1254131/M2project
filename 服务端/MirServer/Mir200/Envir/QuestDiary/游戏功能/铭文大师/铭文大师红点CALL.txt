@@ -1,0 +1,41 @@
+[@铭文大师整体红点]
+{
+#IF
+#ACT
+MOV S$C_变强_铭文大师
+MOV S$C_开封元宝色 58
+MOV S$C_开封材料色 58
+
+#IF
+EQUAL U90 8
+#ACT
+MOV S$C_变强_铭文大师
+break
+
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\铭文大师\铭文大师配置.ini 铭文开封 开封材料 S$C_开封材料名
+ReadConfigFileItem  ..\QuestDiary\游戏功能\铭文大师\铭文大师配置.ini 铭文开封 开封材料IDX S$C_开封材料IDX
+ReadConfigFileItem  ..\QuestDiary\游戏功能\铭文大师\铭文大师配置.ini 铭文开封 <$STR(U90)>开数量 N$C_开封材料数量
+ReadConfigFileItem  ..\QuestDiary\游戏功能\铭文大师\铭文大师配置.ini 铭文开封 <$STR(U90)>开元宝 N$C_开封元宝价格
+
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_开封元宝价格)>
+#ACT
+MOV S$C_开封元宝色 224
+#IF
+checkitem <$STR(S$C_开封材料名)> <$STR(N$C_开封材料数量)>
+#ACT
+MOV S$C_开封材料色 224
+
+#IF
+EQUAL <$STR(S$C_开封元宝色)> 224
+EQUAL <$STR(S$C_开封材料色)> 224
+#ACT
+MOV S$C_变强_铭文大师 hd
+
+
+
+
+
+}

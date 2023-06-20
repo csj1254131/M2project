@@ -1,0 +1,981 @@
+[@龙头·未修炼]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量1阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格1阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+
+[@龙头·一阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量2阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格2阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+
+[@龙头·二阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量3阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格3阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+
+[@龙头·三阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量4阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格4阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+
+[@龙头·四阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量5阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格5阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·五阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量6阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格6阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+
+[@龙头·六阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量7阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格7阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·七阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量8阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格8阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+
+[@龙头·八阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量9阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格9阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·九阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量10阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格10阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·十阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量11阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格11阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·十一阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量12阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格12阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·十二阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量13阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格13阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·十三阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量14阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格14阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·十四阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量15阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格15阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·十五阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量16阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格16阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·十六阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量17阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格17阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·十七阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量18阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格18阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·十八阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量19阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格19阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+[@龙头·十九阶]
+{
+#IF
+checkitem <$STR(S$C_龙头材料名)> <$STR(N$C_红点数量20阶)>
+#ACT
+MOV S$C_龙头材料色 224
+MOV S$C_龙头材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格20阶)>
+#ACT
+MOV S$C_龙头元宝色 224
+}
+
+
+
+[@龙躯·未修炼]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量1阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格1阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+
+[@龙躯·一阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量2阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格2阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·二阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量3阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格3阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·三阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量4阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格4阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·四阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量5阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格5阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·五阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量6阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格6阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·六阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量7阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格7阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·七阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量8阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格8阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·八阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量9阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格9阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·九阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量10阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格10阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·十阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量11阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格11阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·十一阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量12阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格12阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·十二阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量13阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格13阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·十三阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量14阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格14阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·十四阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量15阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格15阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·十五阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量16阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格16阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·十六阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量17阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格17阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·十七阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量18阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格18阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·十八阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量19阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格19阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+[@龙躯·十九阶]
+{
+#IF
+checkitem <$STR(S$C_龙躯材料名)> <$STR(N$C_红点数量20阶)>
+#ACT
+MOV S$C_龙躯材料色 224
+MOV S$C_龙躯材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格20阶)>
+#ACT
+MOV S$C_龙躯元宝色 224
+}
+
+
+[@龙骨·未修炼]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量1阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格1阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·一阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量2阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格2阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·二阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量3阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格3阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·三阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量4阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格4阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·四阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量5阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格5阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·五阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量6阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格6阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·六阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量7阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格7阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·七阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量8阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格8阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·八阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量9阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格9阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·九阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量10阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格10阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·十阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量11阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格11阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·十一阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量12阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格12阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·十二阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量13阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格13阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·十三阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量14阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格14阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·十四阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量15阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格15阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+[@龙骨·十五阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量16阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格16阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·十六阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量17阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格17阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·十七阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量18阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格18阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·十八阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量19阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格19阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+[@龙骨·十九阶]
+{
+#IF
+checkitem <$STR(S$C_龙骨材料名)> <$STR(N$C_红点数量20阶)>
+#ACT
+MOV S$C_龙骨材料色 224
+MOV S$C_龙骨材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格20阶)>
+#ACT
+MOV S$C_龙骨元宝色 224
+}
+
+
+[@龙尾·未修炼]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量1阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格1阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·一阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量2阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格2阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·二阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量3阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格3阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·三阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量4阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格4阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·四阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量5阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格5阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·五阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量6阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格6阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·六阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量7阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格7阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·七阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量8阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格8阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·八阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量9阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格9阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·九阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量10阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格10阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·十阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量11阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格11阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·十一阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量12阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格12阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·十二阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量13阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格13阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·十三阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量14阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格14阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·十四阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量15阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格15阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·十五阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量16阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格16阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·十六阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量17阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格17阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·十七阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量18阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格18阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·十八阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量19阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格19阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+[@龙尾·十九阶]
+{
+#IF
+checkitem <$STR(S$C_龙尾材料名)> <$STR(N$C_红点数量20阶)>
+#ACT
+MOV S$C_龙尾材料色 224
+MOV S$C_龙尾材料灰 0
+#IF
+CheckBindMoney 元宝 ? <$STR(N$C_红点价格20阶)>
+#ACT
+MOV S$C_龙尾元宝色 224
+}
+
+
+
+
+
+
+
+

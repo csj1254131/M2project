@@ -1,0 +1,99 @@
+[@Main]
+
+#IF
+NOT CheckSlaveInRange 一级镖车 5
+NOT CheckSlaveInRange 二级镖车 5
+NOT CheckSlaveInRange 三级镖车 5
+NOT CheckSlaveInRange 四级镖车 5
+#Act
+SENDMSG 9 <font color='#ff0000'>没有检测到你的镖车</font>
+BREAK
+
+#IF
+#ACT
+#SAY
+<Img|move=0|img=public/bg_npc_01.png|bg=1|reset=1|show=0>
+<Button|x=546|y=0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Layout|x=545|y=0|width=80|height=80|link=@exit>
+<Text|x=25|y=20|color=255|size=18|text=恩，是从龍門镖局送过来的吧？>
+<Text|x=25.0|y=40.0|color=255|size=18|text=一路辛苦啦，我来点点看东西少了没！>
+<Text|x=25.0|y=60.0|color=255|size=18|text=稍等给你丰厚的报酬哦！嘿嘿>
+<Text|x=25.0|y=84.0|color=251|size=18|text=完成任务|link=@完成镖车任务>
+
+[@完成镖车任务]
+#IF
+LARGE U237 0
+LARGE <$UTCNOW8> <$STR(U251)>
+#ACT
+MOV U251 0
+MOV U237 0
+GOTO @押镖失败
+SENDMSG 9 <font color='#ff0000'>押送超时，任务失败</font>
+BREAK
+#OR
+CheckSlaveInRange 一级镖车 5
+CheckSlaveInRange 二级镖车 5
+CheckSlaveInRange 三级镖车 5
+CheckSlaveInRange 四级镖车 5
+#Act
+Goto @判断镖车
+#ElseSay
+镖车距离我太远了，叫我如何核查货物呢？\
+<关闭/@Exit>
+
+[@判断镖车]
+#IF
+CheckSlaveInRange 四级镖车 5
+#Act
+Sendmsg 6 恭喜您，镖车任务成功完成！
+KILLCALLMOB 四级镖车 1 1
+MOV U237 0
+GuildNoticeMsg 255 252 恭喜玩家%s成功将【四级镖车】押到.完成任务获得【5000万经验+10万绑定元宝】奖励！
+CHANGEEXP + 50000000
+MONEY 绑定元宝 + 100000
+MONEY 火龙币 + 1000
+close
+#IF
+CheckSlaveInRange 三级镖车 5
+#Act
+Sendmsg 6 恭喜您，镖车任务成功完成！
+KILLCALLMOB 三级镖车 1 1
+MOV U237 0
+GuildNoticeMsg 255 252 恭喜玩家%s成功将【三级镖车】押到.完成任务获得【3000万经验+5万绑定元宝】奖励！
+CHANGEEXP + 30000000
+MONEY 绑定元宝 + 50000
+MONEY 火龙币 + 600
+close
+#IF
+CheckSlaveInRange 二级镖车 5
+#Act
+Sendmsg 6 恭喜您，镖车任务成功完成！
+KILLCALLMOB 二级镖车 1 1
+MOV U237 0
+GuildNoticeMsg 255 252 恭喜玩家%s成功将【二级镖车】押到.完成任务获得【2000万经验+1万绑定元宝】奖励！
+CHANGEEXP + 20000000
+MONEY 绑定元宝 + 10000
+MONEY 火龙币 + 300
+close
+#IF
+CheckSlaveInRange 一级镖车 5
+#Act
+Sendmsg 6 恭喜您，镖车任务成功完成！
+KILLCALLMOB 一级镖车 1 1
+MOV U237 0
+GuildNoticeMsg 255 252 恭喜玩家%s成功将【一级镖车】押到.完成任务获得【1000万经验+5000绑定元宝】奖励！
+CHANGEEXP + 10000000
+MONEY 绑定元宝 + 5000
+close
+
+
+
+[@押镖失败]
+#IF
+#Act
+KILLCALLMOB 四级镖车 1 1
+KILLCALLMOB 三级镖车 1 1
+KILLCALLMOB 二级镖车 1 1
+KILLCALLMOB 一级镖车 1 1
+MOV U237 0
+Sendmsg 6 镖车任务失败！

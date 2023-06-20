@@ -1,0 +1,120 @@
+[@启动五阶特戒宝箱]
+{
+#IF
+equal N$开启五阶宝箱 0
+#ACT
+BREAK
+#IF
+NOT INSAFEZONE
+#ACT
+GiveStateItem 5阶特戒自选箱 1 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#ff0000'>请移步安全区开启！</font>
+close
+OPENHYPERLINK 7
+BREAK
+#IF
+#ACT
+MOV T200 5阶特戒自选箱
+MOV N$打开特戒宝箱 1
+GOTO @清空选择项
+GOTO @五阶特戒界面显示
+
+[@五阶特戒界面显示]
+#IF
+#ACT
+#SAY
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|img=custom/hl/hl_ui/tsbj.png|show=5|bg=1|layerid=680>
+<Layout|id=0|children={1}|x=452|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=170|y=8|width=120|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=特戒秘宝>
+<Text|id=3|a=4|percentx=50|percenty=30|color=250|size=18|outline=2|outlinecolor=0|text=请任选其中一件作为奖品>
+<ListView|id=4|children={41,42,43,44}|a=4|percentx=50|percenty=55|width=250|height=75|margin=10|bounce=0|direction=2|color=x>
+<Img|id=41|children={410,411}|img=custom/hl/equal_hc/hlhc_06.png|width=75|height=75>
+<ItemShow|id=410|x=3|y=3|itemid=50296|itemcount=1|showtips=1|link=@选择五阶宝箱1>
+<Img|id=411|img=custom/hl/hl_ui/<$str(S$宝箱选择1)>.png|width=75|height=75>
+<Img|id=42|children={420,421}|img=custom/hl/equal_hc/hlhc_06.png|width=75|height=75>
+<ItemShow|id=420|x=3|y=3|itemid=50307|itemcount=1|showtips=1|link=@选择五阶宝箱2>
+<Img|id=421|img=custom/hl/hl_ui/<$str(S$宝箱选择2)>.png|width=75|height=75>
+<Img|id=43|children={430,431}|img=custom/hl/equal_hc/hlhc_06.png|width=75|height=75>
+<ItemShow|id=430|x=3|y=3|itemid=50285|itemcount=1|showtips=1|link=@选择五阶宝箱3>
+<Img|id=431|img=custom/hl/hl_ui/<$str(S$宝箱选择3)>.png|width=75|height=75>
+<Button|id=5|a=4|percentx=50|percenty=83|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=领取奖励|link=@领取五阶宝箱奖励>
+
+
+
+[@选择五阶宝箱1]
+#IF
+#ACT
+GOTO @清空选择项
+MOV S$宝箱选择1 hl_xz_01
+GOTO @五阶特戒界面显示
+[@选择五阶宝箱2]
+#IF
+#ACT
+GOTO @清空选择项
+MOV S$宝箱选择2 hl_xz_01
+GOTO @五阶特戒界面显示
+[@选择五阶宝箱3]
+#IF
+#ACT
+GOTO @清空选择项
+MOV S$宝箱选择3 hl_xz_01
+GOTO @五阶特戒界面显示
+
+[@领取五阶宝箱奖励]
+#IF
+equal N$开启五阶宝箱 0
+#ACT
+BREAK
+#IF
+EQUAL S$宝箱选择1
+EQUAL S$宝箱选择2
+EQUAL S$宝箱选择3
+#ACT
+SENDMSG 9 <font color='#00ff00'>尚未选择您的奖品！</font>
+BREAK
+
+#IF
+EQUAL S$宝箱选择1 hl_xz_01
+#ACT
+MOV N$打开特戒宝箱 0
+MOV N$开启五阶宝箱 0
+close
+GiveStateItem 麻痹戒指⑤ 1 0 1 0 1 1 1 1 1
+MOV T200
+SENDMSG 9 <font color='#00ff00'>奖励领取成功！</font>
+OPENHYPERLINK 7
+BREAK
+#IF
+EQUAL S$宝箱选择2 hl_xz_01
+#ACT
+MOV N$打开特戒宝箱 0
+MOV N$开启五阶宝箱 0
+close
+GiveStateItem 护身戒指⑤ 1 0 1 0 1 1 1 1 1
+MOV T200
+SENDMSG 9 <font color='#00ff00'>奖励领取成功！</font>
+OPENHYPERLINK 7
+BREAK
+#IF
+EQUAL S$宝箱选择3 hl_xz_01
+#ACT
+MOV N$打开特戒宝箱 0
+MOV N$开启五阶宝箱 0
+close
+GiveStateItem 复活戒指⑤ 1 0 1 0 1 1 1 1 1
+MOV T200
+SENDMSG 9 <font color='#00ff00'>奖励领取成功！</font>
+OPENHYPERLINK 7
+BREAK
+
+
+[@清空选择项]
+#IF
+#ACT
+MOV S$宝箱选择1
+MOV S$宝箱选择2
+MOV S$宝箱选择3
+
+}

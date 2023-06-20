@@ -1,0 +1,2145 @@
+ [@移动端星座大师]
+{
+#IF
+CheckContainsText <$SDRUM> ①
+#ACT
+MOV  N$C_身上主星 1
+#IF
+CheckContainsText <$SDRUM> ②
+#ACT
+MOV  N$C_身上主星 2
+#IF
+CheckContainsText <$SDRUM> ③
+#ACT
+MOV  N$C_身上主星 3
+#IF
+CheckContainsText <$SDRUM> ④
+#ACT
+MOV  N$C_身上主星 4
+#IF
+CheckContainsText <$SDRUM> ⑤
+#ACT
+MOV  N$C_身上主星 5
+#IF
+CheckContainsText <$SDRUM> ⑥
+#ACT
+MOV  N$C_身上主星 6
+#IF
+CheckContainsText <$SDRUM> ⑦
+#ACT
+MOV  N$C_身上主星 7
+#IF
+CheckContainsText <$SDRUM> ⑧
+#ACT
+MOV  N$C_身上主星 8
+#IF
+CheckContainsText <$SDRUM> ⑨
+#ACT
+MOV  N$C_身上主星 9
+#IF
+CheckContainsText <$SDRUM> ⑩
+#ACT
+MOV  N$C_身上主星 10
+#IF
+CheckContainsText <$SHORSE> ①
+#ACT
+MOV  N$C_身上辅星 1
+#IF
+CheckContainsText <$SHORSE> ②
+#ACT
+MOV  N$C_身上辅星 2
+#IF
+CheckContainsText <$SHORSE> ③
+#ACT
+MOV  N$C_身上辅星 3
+#IF
+CheckContainsText <$SHORSE> ④
+#ACT
+MOV  N$C_身上辅星 4
+#IF
+CheckContainsText <$SHORSE> ⑤
+#ACT
+MOV  N$C_身上辅星 5
+#IF
+CheckContainsText <$SHORSE> ⑥
+#ACT
+MOV  N$C_身上辅星 6
+#IF
+CheckContainsText <$SHORSE> ⑦
+#ACT
+MOV  N$C_身上辅星 7
+#IF
+CheckContainsText <$SHORSE> ⑧
+#ACT
+MOV  N$C_身上辅星 8
+#IF
+CheckContainsText <$SHORSE> ⑨
+#ACT
+MOV  N$C_身上辅星 9
+#IF
+CheckContainsText <$SHORSE> ⑩
+#ACT
+MOV  N$C_身上辅星 10
+
+#IF
+#ACT
+MOV S$C_物品剩余
+MOV N$C_神印循环计数 0
+MOV N$C_主星碎片获得 0
+MOV N$C_辅星碎片获得 0
+MOV N$C_主星精华获得 0
+MOV N$C_辅星精华获得 0
+MOV S$C_神印分割
+
+MOV S$C_神印背包
+MOV S$C_神印第一格
+MOV N$C_星座大师防刷 0
+MOV S$C_主星合成按钮
+MOV S$C_辅星合成按钮
+
+#IF
+#ACT
+GOTO @移动端神印界面
+
+
+[@移动端神印界面]
+#IF
+#ACT
+MOV S$C_背包神印
+MOV N$C_背包神印 0
+MOV S$C_神印勾选表 <$STR(S0)>
+GOTO @移动端神印红点判断
+
+#IF
+NOT EQUAL <$STR(S0)>
+#ACT
+GetItemNameByMakeIndex <$STR(S0)> S$C_物品剩余
+GOTO @神印分割物品
+
+#IF
+LARGE N$C_主星碎片获得 0
+#ACT
+MOV N$主星灰 0
+#ELSEACT
+MOV N$主星灰 1
+#IF
+LARGE N$C_辅星碎片获得 0
+#ACT
+MOV N$辅星灰 0
+#ELSEACT
+MOV N$辅星灰 1
+#IF
+LARGE N$C_主星精华获得 0
+#ACT
+MOV N$主魄灰 0
+#ELSEACT
+MOV N$主魄灰 1
+#IF
+LARGE N$C_辅星精华获得 0
+#ACT
+MOV N$辅魄灰 0
+#ELSEACT
+MOV N$辅魄灰 1
+
+#IF
+#ACT
+#SAY
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|width=2000|height=2000|layerid=669|loadDelay=1|loadCount=4>
+<Img|a=4|children={2001}|img=custom/hl/hl_ui/hl_bg.png|x=1023|y=1016>
+<Img|id=2001|img=custom/hl/hl_ui/fg_1.png|x=140|y=60|height=449>
+<Img|img=custom/hl/xingzuo/bg_shenyin_02.jpg|x=663|y=816>
+<Img|img=custom/hl/xingzuo/bg_shenyin_01.jpg|x=785|y=816>
+<Img|children={101}|img=custom/hl/hl_ui/icon_target_02.png|x=795|y=823>
+<Img|img=custom/hl/xingzuo/word_shenyin_01.png|x=960|y=855>
+<Img|img=custom/hl/xingzuo/icon_shenyin_01.png|x=1065|y=1060>
+<Img|img=custom/hl/xingzuo/word_shenyin_02.png|x=960|y=1100>
+<Text|outline=2|outlinecolor=0|a=0|x=985|y=757|color=103|size=20|text=星座大师>
+<Button|x=1405|y=757|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Layout|x=1380|y=755|width=70|height=70|link=@exit>
+<ItemShow|grey=<$STR(N$主星灰)>|x=950|y=1120|width=70|height=70|itemid=40235|itemcount=<$STR(N$C_主星碎片获得)>|showtips=1|bgtype=1>
+<ItemShow|grey=<$STR(N$辅星灰)>|x=1020|y=1120|width=70|height=70|itemid=40237|itemcount=<$STR(N$C_辅星碎片获得)>|showtips=1|bgtype=1>
+<ItemShow|grey=<$STR(N$主魄灰)>|x=1090|y=1120|width=70|height=70|itemid=40236|itemcount=<$STR(N$C_主星精华获得)>|showtips=1|bgtype=1>
+<ItemShow|grey=<$STR(N$辅魄灰)>|x=1160|y=1120|width=70|height=70|itemid=40238|itemcount=<$STR(N$C_辅星精华获得)>|showtips=1|bgtype=1>
+<Text|outline=1|outlinecolor=0|a=0|x=830|y=820|color=151|size=18|text=5级至10级的印记可以分解为星座碎片>
+<Text|outline=1|outlinecolor=0|a=0|x=902|y=1030|color=58|size=18|text=注：获取背包内前12个星座，单次最多分解12个>
+<Button|x=657|y=820|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=星座分解|color=103|size=18|link=@移动端印记分解界面>
+<Button|x=657|y=860|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=主星合成|color=159|size=18|link=@移动端主星合成界面>
+<Button|x=657|y=900|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=辅星合成|color=159|size=18|link=@移动端辅星合成界面>
+<Button|children={951,952}|x=1020|y=1195|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=确定分解|color=103|size=18|link=@移动端神印分解>
+<BAGITEMS|id=101|condition=90#5,92#5,90#6,92#6,90#7,92#7,90#8,92#8,90#9,92#9,90#10,92#10|select=<$STR(S0)>|count=12|row=2|x=91|y=68|iwidth=68|iheight=68|link=@移动端神印中转>
+<Img|img=custom/hl/hl_ui/<$STR(S$C_主星红点)>.png|width=18|height=18|x=762|y=860>
+<Img|img=custom/hl/hl_ui/<$STR(S$C_辅星红点)>.png|width=18|height=18|x=762|y=900>
+
+#IF
+EQUAL <$STR(S$C_分解成功播放)> 播放特效
+#ACT
+MOV S$C_分解成功播放
+#SAY
+<Effect|id=951|x=40|y=-120|effectid=5025|count=1|scale=1|dir=5|speed=1|effecttype=0|act=0>
+<Effect|id=952|x=40|y=-120|effectid=5015|count=1|scale=1|dir=5|speed=1|effecttype=0|act=0>
+
+
+[@移动端神印分解确认]
+#OR
+LARGE N$C_背包神印_5 <$STR(N$C_身上主星)>
+LARGE N$C_背包神印_6 <$STR(N$C_身上主星)>
+LARGE N$C_背包神印_7 <$STR(N$C_身上主星)>
+LARGE N$C_背包神印_8 <$STR(N$C_身上主星)>
+LARGE N$C_背包神印_9 <$STR(N$C_身上主星)>
+LARGE N$C_背包神印_10 <$STR(N$C_身上主星)>
+LARGE N$C_背包神印_11 <$STR(N$C_身上主星)>
+LARGE N$C_背包神印_12 <$STR(N$C_身上主星)>
+LARGE N$C_背包神印_5 <$STR(N$C_身上辅星)>
+LARGE N$C_背包神印_6 <$STR(N$C_身上辅星)>
+LARGE N$C_背包神印_7 <$STR(N$C_身上辅星)>
+LARGE N$C_背包神印_8 <$STR(N$C_身上辅星)>
+LARGE N$C_背包神印_9 <$STR(N$C_身上辅星)>
+LARGE N$C_背包神印_10 <$STR(N$C_身上辅星)>
+LARGE N$C_背包神印_11 <$STR(N$C_身上辅星)>
+LARGE N$C_背包神印_12 <$STR(N$C_身上辅星)>
+#ACT
+messagebox 你勾选了比你身上等阶高的神印，确定分解吗？ @移动端确定分解神印 @移动端取消分解神印
+break
+#ELSEACT
+GOTO @移动端确定分解神印
+break
+
+[@移动端确定分解神印]
+#IF
+#ACT
+MOV S$C_包裹神印汇总
+MOV N$C_神印分解防刷 0
+MOV N$C_获得主星碎片 <$STR(N$C_主星碎片获得)>
+MOV N$C_获得辅星碎片 <$STR(N$C_辅星碎片获得)>
+MOV N$C_获得主星精华 <$STR(N$C_主星精华获得)>
+MOV N$C_获得辅星精华 <$STR(N$C_辅星精华获得)>
+DelItemByMakeIndex <$STR(S$C_神印勾选表)> N$C_无用数据 N$C_神印分解防刷
+
+#IF
+large <$STR(N$C_神印分解防刷)> 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>背包中已无此物品！</font>
+close
+break
+
+#IF
+LARGE N$C_获得主星碎片 0
+#ACT
+give 主星碎片 <$STR(N$C_获得主星碎片)>
+#IF
+LARGE N$C_获得辅星碎片 0
+#ACT
+give 辅星碎片 <$STR(N$C_获得辅星碎片)>
+#IF
+LARGE N$C_获得主星精华 0
+#ACT
+give 主星精华 <$STR(N$C_获得主星精华)>
+#IF
+LARGE N$C_获得辅星精华 0
+#ACT
+give 辅星精华 <$STR(N$C_获得辅星精华)>
+
+#IF
+#ACT
+MOV S$C_分解成功播放 播放特效 
+GOTO @移动端星座大师
+break
+
+
+
+[@移动端取消分解神印]
+#IF
+#ACT
+MOV N$C_获得主星碎片 0
+MOV N$C_获得辅星碎片 0
+MOV N$C_获得主星精华 0
+MOV N$C_获得辅星精华 0
+MOV N$C_主星碎片获得 0
+MOV N$C_辅星碎片获得 0
+MOV N$C_主星精华获得 0
+MOV N$C_辅星精华获得 0
+GOTO @移动端神印界面
+BREAK
+
+
+[@移动端神印分解]
+#IF
+EQUAL <$STR(S$C_神印勾选表)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请先勾选需要分解的印记！</font>
+break
+
+#IF
+NOT EQUAL <$STR(S$C_神印勾选表)>
+#ACT
+MOV N$C_神印循环计数 0
+MOV N$C_背包神印_1 0
+MOV N$C_背包神印_2 0
+MOV N$C_背包神印_3 0
+MOV N$C_背包神印_4 0
+MOV N$C_背包神印_5 0
+MOV N$C_背包神印_6 0
+MOV N$C_背包神印_7 0
+MOV N$C_背包神印_8 0
+MOV N$C_背包神印_9 0
+MOV N$C_背包神印_10 0
+MOV N$C_背包神印_11 0
+MOV N$C_背包神印_12 0
+MOV S$C_勾选神印_1
+MOV S$C_勾选神印_2
+MOV S$C_勾选神印_3
+MOV S$C_勾选神印_4
+MOV S$C_勾选神印_5
+MOV S$C_勾选神印_6
+MOV S$C_勾选神印_7
+MOV S$C_勾选神印_8
+MOV S$C_勾选神印_9
+MOV S$C_勾选神印_10
+MOV S$C_勾选神印_11
+MOV S$C_勾选神印_12
+GetItemNameByMakeIndex <$STR(S$C_神印勾选表)> S$C_勾选剩余
+GOTO @移动端神印分解开始
+
+[@移动端神印分解开始]
+#IF
+EQUAL <$STR(S$C_勾选剩余)>
+#ACT
+GOTO @移动端神印分解确认
+#ELSEACT
+INC N$C_神印循环计数 1
+GetValidstr <$STR(S$C_勾选剩余)> , S$C_勾选分割 S$C_勾选剩余
+MOV S$C_勾选神印_<$STR(N$C_神印循环计数)> <$STR(S$C_勾选分割)>
+GOTO @移动端神印名称统计
+break
+
+[@移动端神印中转]
+#IF
+#ACT
+MOV N$C_获得主星碎片 0
+MOV N$C_获得辅星碎片 0
+MOV N$C_获得主星精华 0
+MOV N$C_获得辅星精华 0
+MOV N$C_主星碎片获得 0
+MOV N$C_辅星碎片获得 0
+MOV N$C_主星精华获得 0
+MOV N$C_辅星精华获得 0
+GOTO @移动端神印界面
+
+[@神印分割物品]
+#IF
+NOT EQUAL <$STR(S$C_物品剩余)>
+#ACT
+GetValidstr <$STR(S$C_物品剩余)> , S$C_物品分割 S$C_物品剩余
+MOV S$C_神印分割 <$STR(S$C_物品分割)>
+GOTO @移动端神印收益统计
+#ELSEACT
+GOTO @移动端神印界面
+break
+
+[@移动端神印收益统计]
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑤
+CheckContainsText <$STR(S$C_神印分割)> 主星
+#ACT
+INC N$C_主星碎片获得 80
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑥
+CheckContainsText <$STR(S$C_神印分割)> 主星
+#ACT
+INC N$C_主星碎片获得 160
+INC N$C_主星精华获得 3
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑦
+CheckContainsText <$STR(S$C_神印分割)> 主星
+#ACT
+INC N$C_主星碎片获得 320
+INC N$C_主星精华获得 6
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑧
+CheckContainsText <$STR(S$C_神印分割)> 主星
+#ACT
+INC N$C_主星碎片获得 640
+INC N$C_主星精华获得 12
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑨
+CheckContainsText <$STR(S$C_神印分割)> 主星
+#ACT
+INC N$C_主星碎片获得 1280
+INC N$C_主星精华获得 24
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑩
+CheckContainsText <$STR(S$C_神印分割)> 主星
+#ACT
+INC N$C_主星碎片获得 2560
+INC N$C_主星精华获得 48
+
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑤
+CheckContainsText <$STR(S$C_神印分割)> 辅星
+#ACT
+INC N$C_辅星碎片获得 80
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑥
+CheckContainsText <$STR(S$C_神印分割)> 辅星
+#ACT
+INC N$C_辅星碎片获得 160
+INC N$C_辅星精华获得 3
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑦
+CheckContainsText <$STR(S$C_神印分割)> 辅星
+#ACT
+INC N$C_辅星碎片获得 320
+INC N$C_辅星精华获得 6
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑧
+CheckContainsText <$STR(S$C_神印分割)> 辅星
+#ACT
+INC N$C_辅星碎片获得 640
+INC N$C_辅星精华获得 12
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑨
+CheckContainsText <$STR(S$C_神印分割)> 辅星
+#ACT
+INC N$C_辅星碎片获得 1280
+INC N$C_辅星精华获得 24
+#IF
+CheckContainsText <$STR(S$C_神印分割)> ⑩
+CheckContainsText <$STR(S$C_神印分割)> 辅星
+#ACT
+INC N$C_辅星碎片获得 2560
+INC N$C_辅星精华获得 48
+
+#IF
+NOT EQUAL <$STR(S$C_物品剩余)>
+#ACT
+GOTO @神印分割物品
+break
+
+[@移动端神印名称统计]
+#IF
+CheckContainsText <$STR(S$C_勾选神印_1)> ⑤
+#ACT
+MOV N$C_背包神印_1 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_1)> ⑥
+#ACT
+MOV N$C_背包神印_1 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_1)> ⑦
+#ACT
+MOV N$C_背包神印_1 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_1)> ⑧
+#ACT
+MOV N$C_背包神印_1 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_1)> ⑨
+#ACT
+MOV N$C_背包神印_1 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_1)> ⑩
+#ACT
+MOV N$C_背包神印_1 10
+#IF
+CheckContainsText <$STR(S$C_勾选神印_2)> ⑤
+#ACT
+MOV N$C_背包神印_2 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_2)> ⑥
+#ACT
+MOV N$C_背包神印_2 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_2)> ⑦
+#ACT
+MOV N$C_背包神印_2 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_2)> ⑧
+#ACT
+MOV N$C_背包神印_2 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_2)> ⑨
+#ACT
+MOV N$C_背包神印_2 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_2)> ⑩
+#ACT
+MOV N$C_背包神印_2 10
+#IF
+CheckContainsText <$STR(S$C_勾选神印_3)> ⑤
+#ACT
+MOV N$C_背包神印_3 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_3)> ⑥
+#ACT
+MOV N$C_背包神印_3 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_3)> ⑦
+#ACT
+MOV N$C_背包神印_3 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_3)> ⑧
+#ACT
+MOV N$C_背包神印_3 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_3)> ⑨
+#ACT
+MOV N$C_背包神印_3 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_3)> ⑩
+#ACT
+MOV N$C_背包神印_3 10
+#IF
+CheckContainsText <$STR(S$C_勾选神印_4)> ⑤
+#ACT
+MOV N$C_背包神印_4 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_4)> ⑥
+#ACT
+MOV N$C_背包神印_4 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_4)> ⑦
+#ACT
+MOV N$C_背包神印_4 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_4)> ⑧
+#ACT
+MOV N$C_背包神印_4 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_4)> ⑨
+#ACT
+MOV N$C_背包神印_4 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_4)> ⑩
+#ACT
+MOV N$C_背包神印_4 10
+#IF
+CheckContainsText <$STR(S$C_勾选神印_5)> ⑤
+#ACT
+MOV N$C_背包神印_5 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_5)> ⑥
+#ACT
+MOV N$C_背包神印_5 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_5)> ⑦
+#ACT
+MOV N$C_背包神印_5 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_5)> ⑧
+#ACT
+MOV N$C_背包神印_5 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_5)> ⑨
+#ACT
+MOV N$C_背包神印_5 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_5)> ⑩
+#ACT
+MOV N$C_背包神印_5 10
+#IF
+CheckContainsText <$STR(S$C_勾选神印_6)> ⑤
+#ACT
+MOV N$C_背包神印_6 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_6)> ⑥
+#ACT
+MOV N$C_背包神印_6 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_6)> ⑦
+#ACT
+MOV N$C_背包神印_6 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_6)> ⑧
+#ACT
+MOV N$C_背包神印_6 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_6)> ⑨
+#ACT
+MOV N$C_背包神印_6 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_6)> ⑩
+#ACT
+MOV N$C_背包神印_6 10
+#IF
+CheckContainsText <$STR(S$C_勾选神印_7)> ⑤
+#ACT
+MOV N$C_背包神印_7 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_7)> ⑥
+#ACT
+MOV N$C_背包神印_7 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_7)> ⑦
+#ACT
+MOV N$C_背包神印_7 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_7)> ⑧
+#ACT
+MOV N$C_背包神印_7 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_7)> ⑨
+#ACT
+MOV N$C_背包神印_7 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_7)> ⑩
+#ACT
+MOV N$C_背包神印_7 10
+#IF
+CheckContainsText <$STR(S$C_勾选神印_8)> ⑤
+#ACT
+MOV N$C_背包神印_8 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_8)> ⑥
+#ACT
+MOV N$C_背包神印_8 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_8)> ⑦
+#ACT
+MOV N$C_背包神印_8 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_8)> ⑧
+#ACT
+MOV N$C_背包神印_8 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_8)> ⑨
+#ACT
+MOV N$C_背包神印_8 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_8)> ⑩
+#ACT
+MOV N$C_背包神印_8 10
+#IF
+CheckContainsText <$STR(S$C_勾选神印_9)> ⑤
+#ACT
+MOV N$C_背包神印_9 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_9)> ⑥
+#ACT
+MOV N$C_背包神印_9 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_9)> ⑦
+#ACT
+MOV N$C_背包神印_9 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_9)> ⑧
+#ACT
+MOV N$C_背包神印_9 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_9)> ⑨
+#ACT
+MOV N$C_背包神印_9 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_9)> ⑩
+#ACT
+MOV N$C_背包神印_9 10
+#IF
+CheckContainsText <$STR(S$C_勾选神印_10)> ⑤
+#ACT
+MOV N$C_背包神印_10 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_10)> ⑥
+#ACT
+MOV N$C_背包神印_10 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_10)> ⑦
+#ACT
+MOV N$C_背包神印_10 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_10)> ⑧
+#ACT
+MOV N$C_背包神印_10 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_10)> ⑨
+#ACT
+MOV N$C_背包神印_10 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_10)> ⑩
+#ACT
+MOV N$C_背包神印_10 10
+#IF
+CheckContainsText <$STR(S$C_勾选神印_11)> ⑤
+#ACT
+MOV N$C_背包神印_11 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_11)> ⑥
+#ACT
+MOV N$C_背包神印_11 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_11)> ⑦
+#ACT
+MOV N$C_背包神印_11 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_11)> ⑧
+#ACT
+MOV N$C_背包神印_11 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_11)> ⑨
+#ACT
+MOV N$C_背包神印_11 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_11)> ⑩
+#ACT
+MOV N$C_背包神印_11 10
+#IF
+CheckContainsText <$STR(S$C_勾选神印_12)> ⑤
+#ACT
+MOV N$C_背包神印_12 5
+#IF
+CheckContainsText <$STR(S$C_勾选神印_12)> ⑥
+#ACT
+MOV N$C_背包神印_12 6
+#IF
+CheckContainsText <$STR(S$C_勾选神印_12)> ⑦
+#ACT
+MOV N$C_背包神印_12 7
+#IF
+CheckContainsText <$STR(S$C_勾选神印_12)> ⑧
+#ACT
+MOV N$C_背包神印_12 8
+#IF
+CheckContainsText <$STR(S$C_勾选神印_12)> ⑨
+#ACT
+MOV N$C_背包神印_12 9
+#IF
+CheckContainsText <$STR(S$C_勾选神印_12)> ⑩
+#ACT
+MOV N$C_背包神印_12 10
+
+#IF
+#ACT
+GOTO @移动端神印分解开始
+break
+;======================合成=====================================
+
+[@移动端主星合成界面]
+#IF
+#ACT
+MOV S$C_主星合成按钮
+GOTO @移动端神印红点判断
+
+#IF
+checkitem 主星碎片 160
+#ACT
+MOV S$六级主星条件一 224
+#ELSEACT
+MOV S$六级主星条件一 58
+#IF
+checkitem 主星精华 3
+#ACT
+MOV S$六级主星条件二 224
+#ELSEACT
+MOV S$六级主星条件二 58
+#IF
+CheckBindMoney 元宝 ? 50000
+#ACT
+MOV S$六级主星条件三 224
+#ELSEACT
+MOV S$六级主星条件三 58
+#IF
+checkitem 主星碎片 320
+#ACT
+MOV S$七级主星条件一 224
+#ELSEACT
+MOV S$七级主星条件一 58
+#IF
+checkitem 主星精华 6
+#ACT
+MOV S$七级主星条件二 224
+#ELSEACT
+MOV S$七级主星条件二 58
+#IF
+CheckBindMoney 元宝 ? 100000
+#ACT
+MOV S$七级主星条件三 224
+#ELSEACT
+MOV S$七级主星条件三 58
+#IF
+checkitem 主星碎片 640
+#ACT
+MOV S$八级主星条件一 224
+#ELSEACT
+MOV S$八级主星条件一 58
+#IF
+checkitem 主星精华 12
+#ACT
+MOV S$八级主星条件二 224
+#ELSEACT
+MOV S$八级主星条件二 58
+#IF
+CheckBindMoney 元宝 ? 200000
+#ACT
+MOV S$八级主星条件三 224
+#ELSEACT
+MOV S$八级主星条件三 58
+#IF
+checkitem 主星碎片 1280
+#ACT
+MOV S$九级主星条件一 224
+#ELSEACT
+MOV S$九级主星条件一 58
+#IF
+checkitem 主星精华 24
+#ACT
+MOV S$九级主星条件二 224
+#ELSEACT
+MOV S$九级主星条件二 58
+#IF
+CheckBindMoney 元宝 ? 400000
+#ACT
+MOV S$九级主星条件三 224
+#ELSEACT
+MOV S$九级主星条件三 58
+#IF
+checkitem 主星碎片 2560
+#ACT
+MOV S$十级主星条件一 224
+#ELSEACT
+MOV S$十级主星条件一 58
+#IF
+checkitem 主星精华 48
+#ACT
+MOV S$十级主星条件二 224
+#ELSEACT
+MOV S$十级主星条件二 58
+#IF
+CheckBindMoney 元宝 ? 800000
+#ACT
+MOV S$十级主星条件三 224
+#ELSEACT
+MOV S$十级主星条件三 58
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印六
+#ACT
+MOV S$C_祭品神印ID <$STR(S0)>
+GetItemNameByMakeIndex <$STR(S0)> S$C_祭品神印名称
+GetDBItemFieldValue <$STR(S$C_祭品神印名称)> IDX N$C_祭品神印显示
+MOV S$C_神印第一格 <ItemShow|itemid=<$STR(N$C_祭品神印显示)>|x=92|y=32|id=1006|scale=0.8|showtips=0|bgtype=1|link=@移动端主星合成界面#C_神印背包=打开背包六>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印七
+#ACT
+MOV S$C_祭品神印ID <$STR(S0)>
+GetItemNameByMakeIndex <$STR(S0)> S$C_祭品神印名称
+GetDBItemFieldValue <$STR(S$C_祭品神印名称)> IDX N$C_祭品神印显示
+MOV S$C_神印第一格 <ItemShow|itemid=<$STR(N$C_祭品神印显示)>|x=92|y=32|id=1007|scale=0.8|showtips=0|bgtype=1|link=@移动端主星合成界面#C_神印背包=打开背包七>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印八
+#ACT
+MOV S$C_祭品神印ID <$STR(S0)>
+GetItemNameByMakeIndex <$STR(S0)> S$C_祭品神印名称
+GetDBItemFieldValue <$STR(S$C_祭品神印名称)> IDX N$C_祭品神印显示
+MOV S$C_神印第一格 <ItemShow|itemid=<$STR(N$C_祭品神印显示)>|x=92|y=32|id=1008|scale=0.8|showtips=0|bgtype=1|link=@移动端主星合成界面#C_神印背包=打开背包八>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印九
+#ACT
+MOV S$C_祭品神印ID <$STR(S0)>
+GetItemNameByMakeIndex <$STR(S0)> S$C_祭品神印名称
+GetDBItemFieldValue <$STR(S$C_祭品神印名称)> IDX N$C_祭品神印显示
+MOV S$C_神印第一格 <ItemShow|itemid=<$STR(N$C_祭品神印显示)>|x=92|y=32|id=1009|scale=0.8|showtips=0|bgtype=1|link=@移动端主星合成界面#C_神印背包=打开背包九>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印十
+#ACT
+MOV S$C_祭品神印ID <$STR(S0)>
+GetItemNameByMakeIndex <$STR(S0)> S$C_祭品神印名称
+GetDBItemFieldValue <$STR(S$C_祭品神印名称)> IDX N$C_祭品神印显示
+MOV S$C_神印第一格 <ItemShow|itemid=<$STR(N$C_祭品神印显示)>|x=92|y=32|id=1010|scale=0.8|showtips=0|bgtype=1|link=@移动端主星合成界面#C_神印背包=打开背包十>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印六
+NOT CheckContainsText <$STR(S$C_祭品神印名称)> ⑤
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择任意一个五级主星作为材料！</font>
+MOV S$C_神印第一格
+MOV S$C_主星合成按钮
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印七
+NOT CheckContainsText <$STR(S$C_祭品神印名称)> ⑥
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择任意一个六级主星作为材料！</font>
+MOV S$C_神印第一格
+MOV S$C_主星合成按钮
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印八
+NOT CheckContainsText <$STR(S$C_祭品神印名称)> ⑦
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择任意一个七级主星作为材料！</font>
+MOV S$C_神印第一格
+MOV S$C_主星合成按钮
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印九
+NOT CheckContainsText <$STR(S$C_祭品神印名称)> ⑧
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择任意一个八级主星作为材料！</font>
+MOV S$C_神印第一格
+MOV S$C_主星合成按钮
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印十
+NOT CheckContainsText <$STR(S$C_祭品神印名称)> ⑨
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择任意一个九级主星作为材料！</font>
+MOV S$C_神印第一格
+MOV S$C_主星合成按钮
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印六
+CheckContainsText <$STR(S$C_祭品神印名称)> ⑤
+#ACT
+MOV S$C_主星合成按钮 <Button|id=76|children={86}|x=450|y=35|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=合成|color=103|size=18|link=@移动端主星合成六>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印七
+CheckContainsText <$STR(S$C_祭品神印名称)> ⑥
+#ACT
+MOV S$C_主星合成按钮 <Button|id=77|children={87}|x=450|y=35|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=合成|color=103|size=18|link=@移动端主星合成七>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印八
+CheckContainsText <$STR(S$C_祭品神印名称)> ⑦
+#ACT
+MOV S$C_主星合成按钮 <Button|id=78|children={88}|x=450|y=35|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=合成|color=103|size=18|link=@移动端主星合成八>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印九
+CheckContainsText <$STR(S$C_祭品神印名称)> ⑧
+#ACT
+MOV S$C_主星合成按钮 <Button|id=79|children={89}|x=450|y=35|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=合成|color=103|size=18|link=@移动端主星合成九>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印十
+CheckContainsText <$STR(S$C_祭品神印名称)> ⑨
+#ACT
+MOV S$C_主星合成按钮 <Button|id=80|children={90}|x=450|y=35|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=合成|color=103|size=18|link=@移动端主星合成十>
+
+#OR
+EQUAL <$STR(S$C_神印背包)> 打开背包六
+EQUAL <$STR(S$C_神印背包)> 打开背包七
+EQUAL <$STR(S$C_神印背包)> 打开背包八
+EQUAL <$STR(S$C_神印背包)> 打开背包九
+EQUAL <$STR(S$C_神印背包)> 打开背包十
+#ACT
+MOV S$C_神印第一格
+
+#IF
+#ACT
+#SAY
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|width=2000|height=2000|layerid=669|loadCount=100|reload=1|loadDelay=1>
+<Img|a=4|children={2001,2002}|img=custom/hl/hl_ui/hl_bg.png|x=1023|y=1016|link=@移动端主星消除背包>
+<Img|id=2001|img=custom/hl/hl_ui/fg_1.png|x=140|y=60|height=449>
+<Img|img=custom/hl/xingzuo/bg_shenyin_02.jpg|x=663|y=816>
+<Img|children={2002}|img=custom/hl/hl_ui/icon_target_02.png|x=795|y=823>
+<ListView|children={2,3,4,5,6,7,8,9,10}|width=600|height=400|direction=1|bounce=0|margin=1|default=1|x=785|y=860> 
+<Img|id=6|children={16,36,46,56,66,76,101,102,103,1001,1006}|loadDelay=1|img=custom/hl/xingzuo/bg_shenyin_05.png|link=@移动端主星消除背包>
+<Img|id=7|children={17,37,47,57,67,77,104,105,106,1002,1007}|loadDelay=1|img=custom/hl/xingzuo/bg_shenyin_05.png|link=@移动端主星消除背包>
+<Img|id=8|children={18,38,48,58,68,78,107,108,109,1003,1008}|loadDelay=1|img=custom/hl/xingzuo/bg_shenyin_05.png|link=@移动端主星消除背包>
+<Img|id=9|children={19,39,49,59,69,79,110,111,112,1004,1009}|loadDelay=1|img=custom/hl/xingzuo/bg_shenyin_05.png|link=@移动端主星消除背包>
+<Img|id=10|children={20,40,50,60,70,80,113,114,115,1005,1010}|loadDelay=1|img=custom/hl/xingzuo/bg_shenyin_05.png|link=@移动端主星消除背包>
+<Text|id=16|outline=1|outlinecolor=0|x=100|y=8|color=159|size=16|text=六级主星(随机)：选择任意五级主星加材料可合成>
+<Text|id=17|outline=1|outlinecolor=0|x=100|y=8|color=159|size=16|text=七级主星(随机)：选择任意六级主星加材料可合成>
+<Text|id=18|outline=1|outlinecolor=0|x=100|y=8|color=159|size=16|text=八级主星(随机)：选择任意七级主星加材料可合成>
+<Text|id=19|outline=1|outlinecolor=0|x=100|y=8|color=159|size=16|text=九级主星(随机)：选择任意八级主星加材料可合成>
+<Text|id=20|outline=1|outlinecolor=0|x=100|y=8|color=159|size=16|text=十级主星(随机)：选择任意九级主星加材料可合成>
+<$STR(S$C_神印第一格)>
+<Img|x=100|y=40|id=1001|width=50|height=50|img=custom/hl/hl_ui/xfk.png|esc=0|link=@移动端主星合成界面#C_神印背包=打开背包六>
+<Img|x=100|y=40|id=1002|width=50|height=50|img=custom/hl/hl_ui/xfk.png|esc=0|link=@移动端主星合成界面#C_神印背包=打开背包七>
+<Img|x=100|y=40|id=1003|width=50|height=50|img=custom/hl/hl_ui/xfk.png|esc=0|link=@移动端主星合成界面#C_神印背包=打开背包八>
+<Img|x=100|y=40|id=1004|width=50|height=50|img=custom/hl/hl_ui/xfk.png|esc=0|link=@移动端主星合成界面#C_神印背包=打开背包九>
+<Img|x=100|y=40|id=1005|width=50|height=50|img=custom/hl/hl_ui/xfk.png|esc=0|link=@移动端主星合成界面#C_神印背包=打开背包十>
+<ItemShow|id=36|x=16.5|y=19|width=70|height=70|itemid=40245|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=37|x=16.5|y=19|width=70|height=70|itemid=40246|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=38|x=16.5|y=19|width=70|height=70|itemid=40247|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=39|x=16.5|y=19|width=70|height=70|itemid=40248|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=40|x=16.5|y=19|width=70|height=70|itemid=40249|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=46|x=177|y=34|scale=0.8|width=70|height=70|itemid=40235|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=47|x=177|y=34|scale=0.8|width=70|height=70|itemid=40235|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=48|x=177|y=34|scale=0.8|width=70|height=70|itemid=40235|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=49|x=177|y=34|scale=0.8|width=70|height=70|itemid=40235|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=50|x=177|y=34|scale=0.8|width=70|height=70|itemid=40235|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=56|x=258|y=34|scale=0.8|width=70|height=70|itemid=40236|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=57|x=258|y=34|scale=0.8|width=70|height=70|itemid=40236|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=58|x=258|y=34|scale=0.8|width=70|height=70|itemid=40236|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=59|x=258|y=34|scale=0.8|width=70|height=70|itemid=40236|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=60|x=258|y=34|scale=0.8|width=70|height=70|itemid=40236|itemcount=0|showtips=1|bgtype=1>
+<Text|id=101|outline=1|outlinecolor=0|x=210|y=80|color=<$STR(S$六级主星条件一)>|size=14|text=x160>
+<Text|id=102|outline=1|outlinecolor=0|x=300|y=80|color=<$STR(S$六级主星条件二)>|size=14|text=x3>
+<Text|id=103|outline=1|outlinecolor=0|x=350|y=52|color=<$STR(S$六级主星条件三)>|size=18|text=50000元宝>
+<Text|id=104|outline=1|outlinecolor=0|x=210|y=80|color=<$STR(S$七级主星条件一)>|size=14|text=x320>
+<Text|id=105|outline=1|outlinecolor=0|x=300|y=80|color=<$STR(S$七级主星条件二)>|size=14|text=x6>
+<Text|id=106|outline=1|outlinecolor=0|x=350|y=52|color=<$STR(S$七级主星条件三)>|size=18|text=100000元宝>
+<Text|id=107|outline=1|outlinecolor=0|x=210|y=80|color=<$STR(S$八级主星条件一)>|size=14|text=x640>
+<Text|id=108|outline=1|outlinecolor=0|x=300|y=80|color=<$STR(S$八级主星条件二)>|size=14|text=x12>
+<Text|id=109|outline=1|outlinecolor=0|x=350|y=52|color=<$STR(S$八级主星条件三)>|size=18|text=200000元宝>
+<Text|id=110|outline=1|outlinecolor=0|x=210|y=80|color=<$STR(S$九级主星条件一)>|size=14|text=x1280>
+<Text|id=111|outline=1|outlinecolor=0|x=300|y=80|color=<$STR(S$九级主星条件二)>|size=14|text=x24>
+<Text|id=112|outline=1|outlinecolor=0|x=350|y=52|color=<$STR(S$九级主星条件三)>|size=18|text=400000元宝>
+<Text|id=113|outline=1|outlinecolor=0|x=210|y=80|color=<$STR(S$十级主星条件一)>|size=14|text=x2560>
+<Text|id=114|outline=1|outlinecolor=0|x=300|y=80|color=<$STR(S$十级主星条件二)>|size=14|text=x48>
+<Text|id=115|outline=1|outlinecolor=0|x=350|y=52|color=<$STR(S$十级主星条件三)>|size=18|text=800000元宝>
+<$STR(S$C_主星合成按钮)>
+<Img|id=86|img=custom/hl/hl_ui/<$STR(S$C_主星红点6)>.png|width=18|height=18|x=95|y=3>
+<Img|id=87|img=custom/hl/hl_ui/<$STR(S$C_主星红点7)>.png|width=18|height=18|x=95|y=3>
+<Img|id=88|img=custom/hl/hl_ui/<$STR(S$C_主星红点8)>.png|width=18|height=18|x=95|y=3>
+<Img|id=89|img=custom/hl/hl_ui/<$STR(S$C_主星红点9)>.png|width=18|height=18|x=95|y=3>
+<Img|id=90|img=custom/hl/hl_ui/<$STR(S$C_主星红点10)>.png|width=18|height=18|x=95|y=3>
+<Text|outline=2|outlinecolor=0|a=0|x=985|y=757|color=103|size=20|text=星座大师>
+<Button|x=1405|y=757|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Layout|x=1380|y=755|width=70|height=70|link=@exit>
+<Text|outline=1|outlinecolor=0|a=0|x=830|y=820|color=151|size=18|text=四阶以上主星可以晋升为更高等阶的随机主星>
+<Button|x=657|y=820|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=星座分解|color=159|size=18|link=@移动端星座大师>
+<Button|children={953,954}|x=657|y=860|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=主星合成|color=103|size=18>
+<Button|x=657|y=900|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=辅星合成|color=159|size=18|link=@移动端辅星合成界面>
+<Img|img=custom/hl/hl_ui/<$STR(S$C_主星红点)>.png|width=18|height=18|x=762|y=860>
+<Img|img=custom/hl/hl_ui/<$STR(S$C_辅星红点)>.png|width=18|height=18|x=762|y=900>
+
+#IF
+EQUAL <$STR(S$C_合成成功播放)> 播放特效
+#ACT
+MOV S$C_合成成功播放
+#SAY
+<Effect|id=953|x=400|y=120|effectid=5025|count=1|scale=1|dir=5|speed=1|effecttype=0|act=0>
+<Effect|id=954|x=400|y=120|effectid=5016|count=1|scale=1|dir=5|speed=1|effecttype=0|act=0>
+
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 打开背包六
+#ACT
+MOV S$C_神印合成按钮
+#SAY
+<Img|x=850|y=1040|img=custom/hl/xingzuo/shenyinbb.png>
+<BAGITEMS|condition=92#5|select=<$STR(S0)>|count=12|row=2|x=905|y=1070|link=@移动端主星合成界面#C_神印背包=选中神印六>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 打开背包七
+#ACT
+MOV S$C_神印合成按钮
+#SAY
+<Img|x=850|y=1040|img=custom/hl/xingzuo/shenyinbb.png>
+<BAGITEMS|condition=92#6|select=<$STR(S0)>|count=12|row=2|x=905|y=1070|link=@移动端主星合成界面#C_神印背包=选中神印七>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 打开背包八
+#ACT
+MOV S$C_神印合成按钮
+#SAY
+<Img|x=850|y=1040|img=custom/hl/xingzuo/shenyinbb.png>
+<BAGITEMS|condition=92#7|select=<$STR(S0)>|count=12|row=2|x=905|y=1070|link=@移动端主星合成界面#C_神印背包=选中神印八>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 打开背包九
+#ACT
+MOV S$C_神印合成按钮
+#SAY
+<Img|x=850|y=1040|img=custom/hl/xingzuo/shenyinbb.png>
+<BAGITEMS|condition=92#8|select=<$STR(S0)>|count=12|row=2|x=905|y=1070|link=@移动端主星合成界面#C_神印背包=选中神印九>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 打开背包十
+#ACT
+MOV S$C_神印合成按钮
+#SAY
+<Img|x=850|y=1040|img=custom/hl/xingzuo/shenyinbb.png>
+<BAGITEMS|condition=92#9|select=<$STR(S0)>|count=12|row=2|x=905|y=1070|link=@移动端主星合成界面#C_神印背包=选中神印十>
+
+[@移动端主星消除背包]
+#OR
+EQUAL <$STR(S$C_神印背包)> 打开背包六
+EQUAL <$STR(S$C_神印背包)> 打开背包七
+EQUAL <$STR(S$C_神印背包)> 打开背包八
+EQUAL <$STR(S$C_神印背包)> 打开背包九
+EQUAL <$STR(S$C_神印背包)> 打开背包十
+#ACT
+MOV S$C_神印背包
+GOTO @移动端主星合成界面
+break
+
+
+[@移动端主星合成六]
+#IF
+EQUAL <$STR(S$C_神印第一格)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请点击第一个格子选择背包中任意五级主星作为材料！</font>
+break
+
+#IF
+CheckBindMoney 元宝 ? 50000
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足！</font>
+break
+
+#IF
+checkitem 主星碎片 160
+checkitem 主星精华 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>合成材料不足！</font>
+break
+
+#IF
+#ACT
+DelItemByMakeIndex <$STR(S$C_祭品神印ID)> N$C_无用数据 N$C_星座大师防刷
+
+#IF
+large <$STR(N$C_星座大师防刷)> 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>背包中已无此物品！</font>
+close
+break
+#ELSEACT
+take 主星碎片 160
+take 主星精华 3
+ChangeBindMoney 元宝  50000
+give 6级主星（随机） 1
+MOV S$C_祭品神印ID
+MOV S$C_神印背包
+MOV S$C_神印第一格
+MOV S$C_主星合成按钮
+MOV S$C_合成成功播放 播放特效
+SENDMSGNEW 255 0 恭喜玩家：{<$USERNAME>/FCOLOR=150}在星座大师处成功合成{【六级主星】/FCOLOR=58} 1 2
+SendMsg 0 <font color='#F8F8FF'>恭喜玩家：</font><font color='#FFFF00'><$USERNAME></font><font color='#F8F8FF'>在星座大师处成功合成</font><font color='#00FF00'>六级主星</font>
+GOTO @移动端主星合成界面
+break
+
+[@移动端主星合成七]
+#IF
+EQUAL <$STR(S$C_神印第一格)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请点击第一个格子选择背包中任意六级主星作为材料！</font>
+break
+
+#IF
+CheckBindMoney 元宝 ? 100000
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足！</font>
+break
+#IF
+checkitem 主星碎片 320
+checkitem 主星精华 6
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>合成材料不足！</font>
+break
+
+#IF
+#ACT
+DelItemByMakeIndex <$STR(S$C_祭品神印ID)> N$C_无用数据 N$C_星座大师防刷
+
+#IF
+large <$STR(N$C_星座大师防刷)> 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>背包中已无此物品！</font>
+close
+break
+#ELSEACT
+take 主星碎片 320
+take 主星精华 6
+ChangeBindMoney 元宝  100000
+give 7级主星（随机） 1
+MOV S$C_祭品神印ID
+MOV S$C_神印背包
+MOV S$C_神印第一格
+MOV S$C_主星合成按钮
+SENDMSGNEW 255 0 恭喜玩家：{<$USERNAME>/FCOLOR=150}在星座大师处成功合成{【七级主星】/FCOLOR=58} 1 2
+SendMsg 0 <font color='#F8F8FF'>恭喜玩家：</font><font color='#FFFF00'><$USERNAME></font><font color='#F8F8FF'>在星座大师处成功合成</font><font color='#00FF00'>七级主星</font>
+MOV S$C_合成成功播放 播放特效
+GOTO @移动端主星合成界面
+break
+
+[@移动端主星合成八]
+#IF
+EQUAL <$STR(S$C_神印第一格)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请点击第一个格子选择背包中任意七级主星作为材料！</font>
+break
+
+#IF
+CheckBindMoney 元宝 ? 200000
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足！</font>
+break
+
+#IF
+checkitem 主星碎片 640
+checkitem 主星精华 12
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>合成材料不足！</font>
+break
+
+#IF
+#ACT
+DelItemByMakeIndex <$STR(S$C_祭品神印ID)> N$C_无用数据 N$C_星座大师防刷
+
+#IF
+large <$STR(N$C_星座大师防刷)> 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>背包中已无此物品！</font>
+close
+break
+#ELSEACT
+take 主星碎片 640
+take 主星精华 12
+ChangeBindMoney 元宝  200000
+give 8级主星（随机） 1
+MOV S$C_祭品神印ID
+MOV S$C_神印背包
+MOV S$C_神印第一格
+MOV S$C_主星合成按钮
+SENDMSGNEW 255 0 恭喜玩家：{<$USERNAME>/FCOLOR=150}在星座大师处成功合成{【八级主星】/FCOLOR=58} 1 2
+SendMsg 0 <font color='#F8F8FF'>恭喜玩家：</font><font color='#FFFF00'><$USERNAME></font><font color='#F8F8FF'>在星座大师处成功合成</font><font color='#00FF00'>八级主星</font>
+MOV S$C_合成成功播放 播放特效
+GOTO @移动端主星合成界面
+break
+
+
+[@移动端主星合成九]
+#IF
+EQUAL <$STR(S$C_神印第一格)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请点击第一个格子选择背包中任意八级主星作为材料！</font>
+break
+
+#IF
+CheckBindMoney 元宝 ? 400000
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足！</font>
+break
+
+#IF
+checkitem 主星碎片 1280
+checkitem 主星精华 24
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>合成材料不足！</font>
+break
+
+#IF
+#ACT
+DelItemByMakeIndex <$STR(S$C_祭品神印ID)> N$C_无用数据 N$C_星座大师防刷
+
+#IF
+large <$STR(N$C_星座大师防刷)> 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>背包中已无此物品！</font>
+close
+break
+#ELSEACT
+take 主星碎片 1280
+take 主星精华 24
+ChangeBindMoney 元宝  400000
+give 9级主星（随机） 1
+MOV S$C_祭品神印ID
+MOV S$C_神印背包
+MOV S$C_神印第一格
+MOV S$C_主星合成按钮
+SENDMSGNEW 255 0 恭喜玩家：{<$USERNAME>/FCOLOR=150}在星座大师处成功合成{【九级主星】/FCOLOR=58} 1 2
+SendMsg 0 <font color='#F8F8FF'>恭喜玩家：</font><font color='#FFFF00'><$USERNAME></font><font color='#F8F8FF'>在星座大师处成功合成</font><font color='#00FF00'>九级主星</font>
+MOV S$C_合成成功播放 播放特效
+GOTO @移动端主星合成界面
+break
+
+[@移动端主星合成十]
+#IF
+EQUAL <$STR(S$C_神印第一格)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请点击第一个格子选择背包中任意九级主星作为材料！</font>
+break
+
+#IF
+CheckBindMoney 元宝 ? 800000
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足！</font>
+break
+
+#IF
+checkitem 主星碎片 2560
+checkitem 主星精华 48
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>合成材料不足！</font>
+break
+
+#IF
+#ACT
+DelItemByMakeIndex <$STR(S$C_祭品神印ID)> N$C_无用数据 N$C_星座大师防刷
+
+#IF
+large <$STR(N$C_星座大师防刷)> 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>背包中已无此物品！</font>
+close
+break
+#ELSEACT
+take 主星碎片 2560
+take 主星精华 48
+ChangeBindMoney 元宝  800000
+give 10级主星（随机） 1
+MOV S$C_祭品神印ID
+MOV S$C_神印背包
+MOV S$C_神印第一格
+MOV S$C_主星合成按钮
+SENDMSGNEW 255 0 恭喜玩家：{<$USERNAME>/FCOLOR=150}在星座大师处成功合成{【十级主星】/FCOLOR=58} 1 2
+SendMsg 0 <font color='#F8F8FF'>恭喜玩家：</font><font color='#FFFF00'><$USERNAME></font><font color='#F8F8FF'>在星座大师处成功合成</font><font color='#00FF00'>十级主星</font>
+MOV S$C_合成成功播放 播放特效
+GOTO @移动端主星合成界面
+break
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>合成材料不足！</font>
+break
+;========================辅星合成===========================================
+
+[@移动端辅星合成界面]
+#IF
+#ACT
+MOV S$C_辅星合成按钮
+GOTO @移动端神印红点判断
+
+
+#IF
+checkitem 辅星碎片 160
+#ACT
+MOV S$六级辅星条件一 224
+#ELSEACT
+MOV S$六级辅星条件一 58
+#IF
+checkitem 辅星精华 3
+#ACT
+MOV S$六级辅星条件二 224
+#ELSEACT
+MOV S$六级辅星条件二 58
+#IF
+CheckBindMoney 元宝 ? 50000
+#ACT
+MOV S$六级辅星条件三 224
+#ELSEACT
+MOV S$六级辅星条件三 58
+#IF
+checkitem 辅星碎片 320
+#ACT
+MOV S$七级辅星条件一 224
+#ELSEACT
+MOV S$七级辅星条件一 58
+#IF
+checkitem 辅星精华 6
+#ACT
+MOV S$七级辅星条件二 224
+#ELSEACT
+MOV S$七级辅星条件二 58
+#IF
+CheckBindMoney 元宝 ? 100000
+#ACT
+MOV S$七级辅星条件三 224
+#ELSEACT
+MOV S$七级辅星条件三 58
+#IF
+checkitem 辅星碎片 640
+#ACT
+MOV S$八级辅星条件一 224
+#ELSEACT
+MOV S$八级辅星条件一 58
+#IF
+checkitem 辅星精华 12
+#ACT
+MOV S$八级辅星条件二 224
+#ELSEACT
+MOV S$八级辅星条件二 58
+#IF
+CheckBindMoney 元宝 ? 200000
+#ACT
+MOV S$八级辅星条件三 224
+#ELSEACT
+MOV S$八级辅星条件三 58
+#IF
+checkitem 辅星碎片 1280
+#ACT
+MOV S$九级辅星条件一 224
+#ELSEACT
+MOV S$九级辅星条件一 58
+#IF
+checkitem 辅星精华 24
+#ACT
+MOV S$九级辅星条件二 224
+#ELSEACT
+MOV S$九级辅星条件二 58
+#IF
+CheckBindMoney 元宝 ? 400000
+#ACT
+MOV S$九级辅星条件三 224
+#ELSEACT
+MOV S$九级辅星条件三 58
+#IF
+checkitem 辅星碎片 2560
+#ACT
+MOV S$十级辅星条件一 224
+#ELSEACT
+MOV S$十级辅星条件一 58
+#IF
+checkitem 辅星精华 48
+#ACT
+MOV S$十级辅星条件二 224
+#ELSEACT
+MOV S$十级辅星条件二 58
+#IF
+CheckBindMoney 元宝 ? 800000
+#ACT
+MOV S$十级辅星条件三 224
+#ELSEACT
+MOV S$十级辅星条件三 58
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印六
+#ACT
+MOV S$C_祭品神印ID <$STR(S0)>
+GetItemNameByMakeIndex <$STR(S0)> S$C_祭品神印名称
+GetDBItemFieldValue <$STR(S$C_祭品神印名称)> IDX N$C_祭品神印显示
+MOV S$C_神印第一格 <ItemShow|itemid=<$STR(N$C_祭品神印显示)>|x=92|y=32|id=1106|scale=0.8|showtips=0|bgtype=1|link=@移动端辅星合成界面#C_神印背包=打开背包六>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印七
+#ACT
+MOV S$C_祭品神印ID <$STR(S0)>
+GetItemNameByMakeIndex <$STR(S0)> S$C_祭品神印名称
+GetDBItemFieldValue <$STR(S$C_祭品神印名称)> IDX N$C_祭品神印显示
+MOV S$C_神印第一格 <ItemShow|itemid=<$STR(N$C_祭品神印显示)>|x=92|y=32|id=1107|scale=0.8|showtips=0|bgtype=1|link=@移动端辅星合成界面#C_神印背包=打开背包七>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印八
+#ACT
+MOV S$C_祭品神印ID <$STR(S0)>
+GetItemNameByMakeIndex <$STR(S0)> S$C_祭品神印名称
+GetDBItemFieldValue <$STR(S$C_祭品神印名称)> IDX N$C_祭品神印显示
+MOV S$C_神印第一格 <ItemShow|itemid=<$STR(N$C_祭品神印显示)>|x=92|y=32|id=1108|scale=0.8|showtips=0|bgtype=1|link=@移动端辅星合成界面#C_神印背包=打开背包八>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印九
+#ACT
+MOV S$C_祭品神印ID <$STR(S0)>
+GetItemNameByMakeIndex <$STR(S0)> S$C_祭品神印名称
+GetDBItemFieldValue <$STR(S$C_祭品神印名称)> IDX N$C_祭品神印显示
+MOV S$C_神印第一格 <ItemShow|itemid=<$STR(N$C_祭品神印显示)>|x=92|y=32|id=1109|scale=0.8|showtips=0|bgtype=1|link=@移动端辅星合成界面#C_神印背包=打开背包九>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印十
+#ACT
+MOV S$C_祭品神印ID <$STR(S0)>
+GetItemNameByMakeIndex <$STR(S0)> S$C_祭品神印名称
+GetDBItemFieldValue <$STR(S$C_祭品神印名称)> IDX N$C_祭品神印显示
+MOV S$C_神印第一格 <ItemShow|itemid=<$STR(N$C_祭品神印显示)>|x=92|y=32|id=1110|scale=0.8|showtips=0|bgtype=1|link=@移动端辅星合成界面#C_神印背包=打开背包十>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印六
+NOT CheckContainsText <$STR(S$C_祭品神印名称)> ⑤
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择任意一个五级辅星作为材料！</font>
+MOV S$C_神印第一格
+MOV S$C_辅星合成按钮
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印七
+NOT CheckContainsText <$STR(S$C_祭品神印名称)> ⑥
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择任意一个六级辅星作为材料！</font>
+MOV S$C_神印第一格
+MOV S$C_辅星合成按钮
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印八
+NOT CheckContainsText <$STR(S$C_祭品神印名称)> ⑦
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择任意一个七级辅星作为材料！</font>
+MOV S$C_神印第一格
+MOV S$C_辅星合成按钮
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印九
+NOT CheckContainsText <$STR(S$C_祭品神印名称)> ⑧
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择任意一个八级辅星作为材料！</font>
+MOV S$C_神印第一格
+MOV S$C_辅星合成按钮
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印十
+NOT CheckContainsText <$STR(S$C_祭品神印名称)> ⑨
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择任意一个九级辅星作为材料！</font>
+MOV S$C_神印第一格
+MOV S$C_辅星合成按钮
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印六
+CheckContainsText <$STR(S$C_祭品神印名称)> ⑤
+#ACT
+MOV S$C_辅星合成按钮 <Button|id=76|children={86}|x=450|y=35|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=合成|color=103|size=18|link=@移动端辅星合成六>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印七
+CheckContainsText <$STR(S$C_祭品神印名称)> ⑥
+#ACT
+MOV S$C_辅星合成按钮 <Button|id=77|children={87}|x=450|y=35|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=合成|color=103|size=18|link=@移动端辅星合成七>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印八
+CheckContainsText <$STR(S$C_祭品神印名称)> ⑦
+#ACT
+MOV S$C_辅星合成按钮 <Button|id=78|children={88}|x=450|y=35|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=合成|color=103|size=18|link=@移动端辅星合成八>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印九
+CheckContainsText <$STR(S$C_祭品神印名称)> ⑧
+#ACT
+MOV S$C_辅星合成按钮 <Button|id=79|children={89}|x=450|y=35|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=合成|color=103|size=18|link=@移动端辅星合成九>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 选中神印十
+CheckContainsText <$STR(S$C_祭品神印名称)> ⑨
+#ACT
+MOV S$C_辅星合成按钮 <Button|id=80|children={90}|x=450|y=35|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=合成|color=103|size=18|link=@移动端辅星合成十>
+
+#OR
+EQUAL <$STR(S$C_神印背包)> 打开背包六
+EQUAL <$STR(S$C_神印背包)> 打开背包七
+EQUAL <$STR(S$C_神印背包)> 打开背包八
+EQUAL <$STR(S$C_神印背包)> 打开背包九
+EQUAL <$STR(S$C_神印背包)> 打开背包十
+#ACT
+MOV S$C_神印第一格
+
+#IF
+#ACT
+#SAY
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|width=2000|height=2000|layerid=669|loadDelay=0|loadCount=100>
+<Img|children={2000,2001}|a=4|img=custom/hl/hl_ui/hl_bg.png|x=1023|y=1016|link=@移动端辅星消除背包>
+<Img|id=2000|img=custom/hl/hl_ui/fg_1.png|x=140|y=60|height=449>
+<Img|img=custom/hl/xingzuo/bg_shenyin_02.jpg|x=663|y=816>
+<Img|children={2001}|img=custom/hl/hl_ui/icon_target_02.png|x=795|y=823>
+<ListView|children={2,3,4,5,6,7,8,9,10}|width=600|height=400|direction=1|bounce=0|margin=1|default=1|x=785|y=860> 
+<Img|id=6|children={16,36,46,56,66,76,201,202,203,1101,1106}|img=custom/hl/xingzuo/bg_shenyin_05.png|link=@移动端辅星消除背包>
+<Img|id=7|children={17,37,47,57,67,77,204,205,206,1102,1107}|img=custom/hl/xingzuo/bg_shenyin_05.png|link=@移动端辅星消除背包>
+<Img|id=8|children={18,38,48,58,68,78,207,208,209,1103,1108}|img=custom/hl/xingzuo/bg_shenyin_05.png|link=@移动端辅星消除背包>
+<Img|id=9|children={19,39,49,59,69,79,210,211,212,1104,1109}|img=custom/hl/xingzuo/bg_shenyin_05.png|link=@移动端辅星消除背包>
+<Img|id=10|children={20,40,50,60,70,80,213,214,215,1105,1110}|img=custom/hl/xingzuo/bg_shenyin_05.png|link=@移动端辅星消除背包>
+<Text|id=16|outline=1|outlinecolor=0|x=100|y=8|color=159|size=16|text=六级辅星(随机)：选择任意五级辅星加材料可合成>
+<Text|id=17|outline=1|outlinecolor=0|x=100|y=8|color=159|size=16|text=七级辅星(随机)：选择任意六级辅星加材料可合成>
+<Text|id=18|outline=1|outlinecolor=0|x=100|y=8|color=159|size=16|text=八级辅星(随机)：选择任意七级辅星加材料可合成>
+<Text|id=19|outline=1|outlinecolor=0|x=100|y=8|color=159|size=16|text=九级辅星(随机)：选择任意八级辅星加材料可合成>
+<Text|id=20|outline=1|outlinecolor=0|x=100|y=8|color=159|size=16|text=十级辅星(随机)：选择任意九级辅星加材料可合成>
+<$STR(S$C_神印第一格)>
+<Img|x=100|y=40|id=1101|width=50|height=50|img=custom/hl/hl_ui/xfk.png|esc=0|link=@移动端辅星合成界面#C_神印背包=打开背包六>
+<Img|x=100|y=40|id=1102|width=50|height=50|img=custom/hl/hl_ui/xfk.png|esc=0|link=@移动端辅星合成界面#C_神印背包=打开背包七>
+<Img|x=100|y=40|id=1103|width=50|height=50|img=custom/hl/hl_ui/xfk.png|esc=0|link=@移动端辅星合成界面#C_神印背包=打开背包八>
+<Img|x=100|y=40|id=1104|width=50|height=50|img=custom/hl/hl_ui/xfk.png|esc=0|link=@移动端辅星合成界面#C_神印背包=打开背包九>
+<Img|x=100|y=40|id=1105|width=50|height=50|img=custom/hl/hl_ui/xfk.png|esc=0|link=@移动端辅星合成界面#C_神印背包=打开背包十>
+<ItemShow|id=36|x=16.5|y=19|width=70|height=70|itemid=40256|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=37|x=16.5|y=19|width=70|height=70|itemid=40257|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=38|x=16.5|y=19|width=70|height=70|itemid=40258|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=39|x=16.5|y=19|width=70|height=70|itemid=40259|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=40|x=16.5|y=19|width=70|height=70|itemid=40260|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=46|x=177|y=34|scale=0.8|width=70|height=70|itemid=40237|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=47|x=177|y=34|scale=0.8|width=70|height=70|itemid=40237|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=48|x=177|y=34|scale=0.8|width=70|height=70|itemid=40237|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=49|x=177|y=34|scale=0.8|width=70|height=70|itemid=40237|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=50|x=177|y=34|scale=0.8|width=70|height=70|itemid=40237|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=56|x=258|y=34|scale=0.8|width=70|height=70|itemid=40238|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=57|x=258|y=34|scale=0.8|width=70|height=70|itemid=40238|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=58|x=258|y=34|scale=0.8|width=70|height=70|itemid=40238|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=59|x=258|y=34|scale=0.8|width=70|height=70|itemid=40238|itemcount=0|showtips=1|bgtype=1>
+<ItemShow|id=60|x=258|y=34|scale=0.8|width=70|height=70|itemid=40238|itemcount=0|showtips=1|bgtype=1>
+<Text|id=201|outline=1|outlinecolor=0|x=210|y=80|color=<$STR(S$六级辅星条件一)>|size=14|text=x160>
+<Text|id=202|outline=1|outlinecolor=0|x=300|y=80|color=<$STR(S$六级辅星条件二)>|size=14|text=x3>
+<Text|id=203|outline=1|outlinecolor=0|x=350|y=52|color=<$STR(S$六级辅星条件三)>|size=18|text=50000元宝>
+<Text|id=204|outline=1|outlinecolor=0|x=210|y=80|color=<$STR(S$七级辅星条件一)>|size=14|text=x320>
+<Text|id=205|outline=1|outlinecolor=0|x=300|y=80|color=<$STR(S$七级辅星条件二)>|size=14|text=x6>
+<Text|id=206|outline=1|outlinecolor=0|x=350|y=52|color=<$STR(S$七级辅星条件三)>|size=18|text=100000元宝>
+<Text|id=207|outline=1|outlinecolor=0|x=210|y=80|color=<$STR(S$八级辅星条件一)>|size=14|text=x640>
+<Text|id=208|outline=1|outlinecolor=0|x=300|y=80|color=<$STR(S$八级辅星条件二)>|size=14|text=x12>
+<Text|id=209|outline=1|outlinecolor=0|x=350|y=52|color=<$STR(S$八级辅星条件三)>|size=18|text=200000元宝>
+<Text|id=210|outline=1|outlinecolor=0|x=210|y=80|color=<$STR(S$九级辅星条件一)>|size=14|text=x1280>
+<Text|id=211|outline=1|outlinecolor=0|x=300|y=80|color=<$STR(S$九级辅星条件二)>|size=14|text=x24>
+<Text|id=212|outline=1|outlinecolor=0|x=350|y=52|color=<$STR(S$九级辅星条件三)>|size=18|text=400000元宝>
+<Text|id=213|outline=1|outlinecolor=0|x=210|y=80|color=<$STR(S$十级辅星条件一)>|size=14|text=x2560>
+<Text|id=214|outline=1|outlinecolor=0|x=300|y=80|color=<$STR(S$十级辅星条件二)>|size=14|text=x48>
+<Text|id=215|outline=1|outlinecolor=0|x=350|y=52|color=<$STR(S$十级辅星条件三)>|size=18|text=800000元宝>
+<$STR(S$C_辅星合成按钮)>
+<Img|id=86|img=custom/hl/hl_ui/<$STR(S$C_辅星红点6)>.png|width=18|height=18|x=95|y=3>
+<Img|id=87|img=custom/hl/hl_ui/<$STR(S$C_辅星红点7)>.png|width=18|height=18|x=95|y=3>
+<Img|id=88|img=custom/hl/hl_ui/<$STR(S$C_辅星红点8)>.png|width=18|height=18|x=95|y=3>
+<Img|id=89|img=custom/hl/hl_ui/<$STR(S$C_辅星红点9)>.png|width=18|height=18|x=95|y=3>
+<Img|id=90|img=custom/hl/hl_ui/<$STR(S$C_辅星红点10)>.png|width=18|height=18|x=95|y=3>
+<Text|outline=2|outlinecolor=0|a=0|x=985|y=757|color=103|size=20|text=星座大师>
+<Button|x=1405|y=757|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Layout|x=1380|y=755|width=70|height=70|link=@exit>
+<Text|outline=1|outlinecolor=0|a=0|x=830|y=820|color=151|size=18|text=四阶以上辅星可以晋升为更高等阶的随机辅星>
+<Button|x=657|y=820|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=星座分解|color=159|size=18|link=@移动端星座大师>
+<Button|x=657|y=860|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=主星合成|color=159|size=18|link=@移动端主星合成界面>
+<Button|children={955,956}|x=657|y=900|width=120|height=40|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=辅星合成|color=103|size=18>
+<Img|img=custom/hl/hl_ui/<$STR(S$C_主星红点)>.png|width=18|height=18|x=762|y=860>
+<Img|img=custom/hl/hl_ui/<$STR(S$C_辅星红点)>.png|width=18|height=18|x=762|y=900>
+
+
+#IF
+EQUAL <$STR(S$C_合成成功播放)> 播放特效
+#ACT
+MOV S$C_合成成功播放
+#SAY
+<Effect|id=955|x=400|y=120|effectid=5025|count=1|scale=1|dir=5|speed=1|effecttype=0|act=0>
+<Effect|id=956|x=400|y=120|effectid=5016|count=1|scale=1|dir=5|speed=1|effecttype=0|act=0>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 打开背包六
+#ACT
+MOV S$C_神印合成按钮
+#SAY
+<Img|x=850|y=1040|img=custom/hl/xingzuo/shenyinbb.png>
+<BAGITEMS|condition=90#5|select=<$STR(S0)>|count=12|row=2|x=905|y=1070|link=@移动端辅星合成界面#C_神印背包=选中神印六>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 打开背包七
+#ACT
+MOV S$C_神印合成按钮
+#SAY
+<Img|x=850|y=1040|img=custom/hl/xingzuo/shenyinbb.png>
+<BAGITEMS|condition=90#6|select=<$STR(S0)>|count=12|row=2|x=905|y=1070|link=@移动端辅星合成界面#C_神印背包=选中神印七>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 打开背包八
+#ACT
+MOV S$C_神印合成按钮
+#SAY
+<Img|x=850|y=1040|img=custom/hl/xingzuo/shenyinbb.png>
+<BAGITEMS|condition=90#7|select=<$STR(S0)>|count=12|row=2|x=905|y=1070|link=@移动端辅星合成界面#C_神印背包=选中神印八>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 打开背包九
+#ACT
+MOV S$C_神印合成按钮
+#SAY
+<Img|x=850|y=1040|img=custom/hl/xingzuo/shenyinbb.png>
+<BAGITEMS|condition=90#8|select=<$STR(S0)>|count=12|row=2|x=905|y=1070|link=@移动端辅星合成界面#C_神印背包=选中神印九>
+
+#IF
+EQUAL <$STR(S$C_神印背包)> 打开背包十
+#ACT
+MOV S$C_神印合成按钮
+#SAY
+<Img|x=850|y=1040|img=custom/hl/xingzuo/shenyinbb.png>
+<BAGITEMS|condition=90#9|select=<$STR(S0)>|count=12|row=2|x=905|y=1070|link=@移动端辅星合成界面#C_神印背包=选中神印十>
+
+[@移动端辅星消除背包]
+#OR
+EQUAL <$STR(S$C_神印背包)> 打开背包六
+EQUAL <$STR(S$C_神印背包)> 打开背包七
+EQUAL <$STR(S$C_神印背包)> 打开背包八
+EQUAL <$STR(S$C_神印背包)> 打开背包九
+EQUAL <$STR(S$C_神印背包)> 打开背包十
+#ACT
+MOV S$C_神印背包
+GOTO @移动端辅星合成界面
+break
+
+
+[@移动端辅星合成六]
+#IF
+EQUAL <$STR(S$C_神印第一格)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请点击第一个格子选择背包中任意五级辅星作为材料！</font>
+break
+
+#IF
+CheckBindMoney 元宝 ? 50000
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足！</font>
+break
+
+#IF
+checkitem 辅星碎片 160
+checkitem 辅星精华 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>合成材料不足！</font>
+break
+
+#IF
+#ACT
+DelItemByMakeIndex <$STR(S$C_祭品神印ID)> N$C_无用数据 N$C_星座大师防刷
+
+#IF
+large <$STR(N$C_星座大师防刷)> 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>背包中已无此物品！</font>
+close
+break
+#ELSEACT
+take 辅星碎片 160
+take 辅星精华 3
+ChangeBindMoney 元宝  50000
+give 6级辅星（随机） 1
+MOV S$C_祭品神印ID
+MOV S$C_神印背包
+MOV S$C_神印第一格
+MOV S$C_辅星合成按钮
+SENDMSGNEW 255 0 恭喜玩家：{<$USERNAME>/FCOLOR=150}在星座大师处成功合成{【六级辅星】/FCOLOR=58} 1 2
+SendMsg 0 <font color='#F8F8FF'>恭喜玩家：</font><font color='#FFFF00'><$USERNAME></font><font color='#F8F8FF'>在星座大师处成功合成</font><font color='#00FF00'>六级辅星</font>
+MOV S$C_合成成功播放 播放特效
+GOTO @移动端辅星合成界面
+break
+
+
+[@移动端辅星合成七]
+#IF
+EQUAL <$STR(S$C_神印第一格)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请点击第一个格子选择背包中任意六级辅星作为材料！</font>
+break
+
+#IF
+CheckBindMoney 元宝 ? 100000
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足！</font>
+break
+
+#IF
+checkitem 辅星碎片 320
+checkitem 辅星精华 6
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>合成材料不足！</font>
+break
+
+#IF
+#ACT
+DelItemByMakeIndex <$STR(S$C_祭品神印ID)> N$C_无用数据 N$C_星座大师防刷
+
+#IF
+large <$STR(N$C_星座大师防刷)> 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>背包中已无此物品！</font>
+close
+break
+#ELSEACT
+take 辅星碎片 320
+take 辅星精华 6
+ChangeBindMoney 元宝  100000
+give 7级辅星（随机） 1
+MOV S$C_祭品神印ID
+MOV S$C_神印背包
+MOV S$C_神印第一格
+MOV S$C_辅星合成按钮
+SENDMSGNEW 255 0 恭喜玩家：{<$USERNAME>/FCOLOR=150}在星座大师处成功合成{【七级辅星】/FCOLOR=58} 1 2
+SendMsg 0 <font color='#F8F8FF'>恭喜玩家：</font><font color='#FFFF00'><$USERNAME></font><font color='#F8F8FF'>在星座大师处成功合成</font><font color='#00FF00'>七级辅星</font>
+MOV S$C_合成成功播放 播放特效
+GOTO @移动端辅星合成界面
+break
+
+[@移动端辅星合成八]
+#IF
+EQUAL <$STR(S$C_神印第一格)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请点击第一个格子选择背包中任意七级辅星作为材料！</font>
+break
+
+#IF
+CheckBindMoney 元宝 ? 200000
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足！</font>
+break
+
+#IF
+checkitem 辅星碎片 640
+checkitem 辅星精华 12
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>合成材料不足！</font>
+break
+
+#IF
+#ACT
+DelItemByMakeIndex <$STR(S$C_祭品神印ID)> N$C_无用数据 N$C_星座大师防刷
+
+#IF
+large <$STR(N$C_星座大师防刷)> 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>背包中已无此物品！</font>
+close
+break
+#ELSEACT
+take 辅星碎片 640
+take 辅星精华 12
+ChangeBindMoney 元宝  200000
+give 8级辅星（随机） 1
+MOV S$C_祭品神印ID
+MOV S$C_神印背包
+MOV S$C_神印第一格
+MOV S$C_辅星合成按钮
+SENDMSGNEW 255 0 恭喜玩家：{<$USERNAME>/FCOLOR=150}在星座大师处成功合成{【八级辅星】/FCOLOR=58} 1 2
+SendMsg 0 <font color='#F8F8FF'>恭喜玩家：</font><font color='#FFFF00'><$USERNAME></font><font color='#F8F8FF'>在星座大师处成功合成</font><font color='#00FF00'>八级辅星</font>
+MOV S$C_合成成功播放 播放特效
+GOTO @移动端辅星合成界面
+break
+
+
+[@移动端辅星合成九]
+#IF
+EQUAL <$STR(S$C_神印第一格)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请点击第一个格子选择背包中任意八级辅星作为材料！</font>
+break
+
+#IF
+CheckBindMoney 元宝 ? 400000
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足！</font>
+break
+
+#IF
+checkitem 辅星碎片 1280
+checkitem 辅星精华 24
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>合成材料不足！</font>
+break
+
+#IF
+#ACT
+DelItemByMakeIndex <$STR(S$C_祭品神印ID)> N$C_无用数据 N$C_星座大师防刷
+
+#IF
+large <$STR(N$C_星座大师防刷)> 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>背包中已无此物品！</font>
+close
+break
+#ELSEACT
+take 辅星碎片 1280
+take 辅星精华 24
+ChangeBindMoney 元宝  400000
+give 9级辅星（随机） 1
+MOV S$C_祭品神印ID
+MOV S$C_神印背包
+MOV S$C_神印第一格
+MOV S$C_辅星合成按钮
+SENDMSGNEW 255 0 恭喜玩家：{<$USERNAME>/FCOLOR=150}在星座大师处成功合成{【九级辅星】/FCOLOR=58} 1 2
+SendMsg 0 <font color='#F8F8FF'>恭喜玩家：</font><font color='#FFFF00'><$USERNAME></font><font color='#F8F8FF'>在星座大师处成功合成</font><font color='#00FF00'>九级辅星</font>
+MOV S$C_合成成功播放 播放特效
+GOTO @移动端辅星合成界面
+break
+
+[@移动端辅星合成十]
+#IF
+EQUAL <$STR(S$C_神印第一格)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请点击第一个格子选择背包中任意五级辅星作为材料！</font>
+break
+
+#IF
+CheckBindMoney 元宝 ? 800000
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足！</font>
+break
+#IF
+checkitem 辅星碎片 2560
+checkitem 辅星精华 48
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>合成材料不足！</font>
+break
+
+#IF
+#ACT
+DelItemByMakeIndex <$STR(S$C_祭品神印ID)> N$C_无用数据 N$C_星座大师防刷
+
+#IF
+large <$STR(N$C_星座大师防刷)> 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>背包中已无此物品！</font>
+close
+break
+#ELSEACT
+take 辅星碎片 2560
+take 辅星精华 48
+ChangeBindMoney 元宝 800000
+give 10级辅星（随机） 1
+MOV S$C_祭品神印ID
+MOV S$C_神印背包
+MOV S$C_神印第一格
+MOV S$C_辅星合成按钮
+SENDMSGNEW 255 0 恭喜玩家：{<$USERNAME>/FCOLOR=150}在星座大师处成功合成{【十级辅星】/FCOLOR=58} 1 2
+SendMsg 0 <font color='#F8F8FF'>恭喜玩家：</font><font color='#FFFF00'><$USERNAME></font><font color='#F8F8FF'>在星座大师处成功合成</font><font color='#00FF00'>十级辅星</font>
+MOV S$C_合成成功播放 播放特效
+GOTO @移动端辅星合成界面
+break
+
+[@移动端神印红点判断]
+#IF
+#ACT
+MOV S$C_六级主星合成
+MOV S$C_七级主星合成
+MOV S$C_八级主星合成
+MOV S$C_九级主星合成
+MOV S$C_十级主星合成
+MOV S$C_六级辅星合成
+MOV S$C_七级辅星合成
+MOV S$C_八级辅星合成
+MOV S$C_九级辅星合成
+MOV S$C_十级辅星合成
+MOV S$C_主星红点
+MOV S$C_辅星红点
+MOV S$C_主星红点6
+MOV S$C_主星红点7
+MOV S$C_主星红点8
+MOV S$C_主星红点9
+MOV S$C_主星红点10
+MOV S$C_辅星红点6
+MOV S$C_辅星红点7
+MOV S$C_辅星红点8
+MOV S$C_辅星红点9
+MOV S$C_辅星红点10
+
+#OR
+checkitem 主星【白羊座⑤】
+checkitem 主星【金牛座⑤】
+checkitem 主星【双子座⑤】
+checkitem 主星【巨蟹座⑤】
+checkitem 主星【狮子座⑤】
+checkitem 主星【处女座⑤】
+checkitem 主星【天秤座⑤】
+checkitem 主星【天蝎座⑤】
+checkitem 主星【射手座⑤】
+checkitem 主星【摩羯座⑤】
+checkitem 主星【水瓶座⑤】
+checkitem 主星【双鱼座⑤】
+#ACT
+MOV S$C_六级主星合成 有
+#OR
+checkitem 辅星【白羊座⑤】
+checkitem 辅星【金牛座⑤】
+checkitem 辅星【双子座⑤】
+checkitem 辅星【巨蟹座⑤】
+checkitem 辅星【狮子座⑤】
+checkitem 辅星【处女座⑤】
+checkitem 辅星【天秤座⑤】
+checkitem 辅星【天蝎座⑤】
+checkitem 辅星【射手座⑤】
+checkitem 辅星【摩羯座⑤】
+checkitem 辅星【水瓶座⑤】
+checkitem 辅星【双鱼座⑤】
+#ACT
+MOV S$C_六级辅星合成 有
+#OR
+checkitem 主星【白羊座⑥】
+checkitem 主星【金牛座⑥】
+checkitem 主星【双子座⑥】
+checkitem 主星【巨蟹座⑥】
+checkitem 主星【狮子座⑥】
+checkitem 主星【处女座⑥】
+checkitem 主星【天秤座⑥】
+checkitem 主星【天蝎座⑥】
+checkitem 主星【射手座⑥】
+checkitem 主星【摩羯座⑥】
+checkitem 主星【水瓶座⑥】
+checkitem 主星【双鱼座⑥】
+#ACT
+MOV S$C_七级主星合成 有
+#OR
+checkitem 辅星【白羊座⑥】
+checkitem 辅星【金牛座⑥】
+checkitem 辅星【双子座⑥】
+checkitem 辅星【巨蟹座⑥】
+checkitem 辅星【狮子座⑥】
+checkitem 辅星【处女座⑥】
+checkitem 辅星【天秤座⑥】
+checkitem 辅星【天蝎座⑥】
+checkitem 辅星【射手座⑥】
+checkitem 辅星【摩羯座⑥】
+checkitem 辅星【水瓶座⑥】
+checkitem 辅星【双鱼座⑥】
+#ACT
+MOV S$C_七级辅星合成 有
+#OR
+checkitem 主星【白羊座⑦】
+checkitem 主星【金牛座⑦】
+checkitem 主星【双子座⑦】
+checkitem 主星【巨蟹座⑦】
+checkitem 主星【狮子座⑦】
+checkitem 主星【处女座⑦】
+checkitem 主星【天秤座⑦】
+checkitem 主星【天蝎座⑦】
+checkitem 主星【射手座⑦】
+checkitem 主星【摩羯座⑦】
+checkitem 主星【水瓶座⑦】
+checkitem 主星【双鱼座⑦】
+#ACT
+MOV S$C_八级主星合成 有
+#OR
+checkitem 辅星【白羊座⑦】
+checkitem 辅星【金牛座⑦】
+checkitem 辅星【双子座⑦】
+checkitem 辅星【巨蟹座⑦】
+checkitem 辅星【狮子座⑦】
+checkitem 辅星【处女座⑦】
+checkitem 辅星【天秤座⑦】
+checkitem 辅星【天蝎座⑦】
+checkitem 辅星【射手座⑦】
+checkitem 辅星【摩羯座⑦】
+checkitem 辅星【水瓶座⑦】
+checkitem 辅星【双鱼座⑦】
+#ACT
+MOV S$C_八级辅星合成 有
+#OR
+checkitem 主星【白羊座⑧】
+checkitem 主星【金牛座⑧】
+checkitem 主星【双子座⑧】
+checkitem 主星【巨蟹座⑧】
+checkitem 主星【狮子座⑧】
+checkitem 主星【处女座⑧】
+checkitem 主星【天秤座⑧】
+checkitem 主星【天蝎座⑧】
+checkitem 主星【射手座⑧】
+checkitem 主星【摩羯座⑧】
+checkitem 主星【水瓶座⑧】
+checkitem 主星【双鱼座⑧】
+#ACT
+MOV S$C_九级主星合成 有
+#OR
+checkitem 辅星【白羊座⑧】
+checkitem 辅星【金牛座⑧】
+checkitem 辅星【双子座⑧】
+checkitem 辅星【巨蟹座⑧】
+checkitem 辅星【狮子座⑧】
+checkitem 辅星【处女座⑧】
+checkitem 辅星【天秤座⑧】
+checkitem 辅星【天蝎座⑧】
+checkitem 辅星【射手座⑧】
+checkitem 辅星【摩羯座⑧】
+checkitem 辅星【水瓶座⑧】
+checkitem 辅星【双鱼座⑧】
+#ACT
+MOV S$C_九级辅星合成 有
+#OR
+checkitem 主星【白羊座⑨】
+checkitem 主星【金牛座⑨】
+checkitem 主星【双子座⑨】
+checkitem 主星【巨蟹座⑨】
+checkitem 主星【狮子座⑨】
+checkitem 主星【处女座⑨】
+checkitem 主星【天秤座⑨】
+checkitem 主星【天蝎座⑨】
+checkitem 主星【射手座⑨】
+checkitem 主星【摩羯座⑨】
+checkitem 主星【水瓶座⑨】
+checkitem 主星【双鱼座⑨】
+#ACT
+MOV S$C_十级主星合成 有
+#OR
+checkitem 辅星【白羊座⑨】
+checkitem 辅星【金牛座⑨】
+checkitem 辅星【双子座⑨】
+checkitem 辅星【巨蟹座⑨】
+checkitem 辅星【狮子座⑨】
+checkitem 辅星【处女座⑨】
+checkitem 辅星【天秤座⑨】
+checkitem 辅星【天蝎座⑨】
+checkitem 辅星【射手座⑨】
+checkitem 辅星【摩羯座⑨】
+checkitem 辅星【水瓶座⑨】
+checkitem 辅星【双鱼座⑨】
+#ACT
+MOV S$C_十级辅星合成 有
+
+#IF
+EQUAL <$STR(S$C_十级主星合成)> 有
+checkitem 主星精华 48
+checkitem 主星碎片 2560
+CheckBindMoney 元宝 ? 800000
+#ACT
+MOV S$C_主星红点10 icon_red_01
+MOV S$C_主星红点 icon_red_01
+
+#IF
+EQUAL <$STR(S$C_九级主星合成)> 有
+checkitem 主星精华 24
+checkitem 主星碎片 1280
+CheckBindMoney 元宝 ? 400000
+#ACT
+MOV S$C_主星红点9 icon_red_01
+MOV S$C_主星红点 icon_red_01
+
+#IF
+EQUAL <$STR(S$C_八级主星合成)> 有
+checkitem 主星精华 12
+checkitem 主星碎片 640
+CheckBindMoney 元宝 ? 200000
+#ACT
+MOV S$C_主星红点8 icon_red_01
+MOV S$C_主星红点 icon_red_01
+
+#IF
+EQUAL <$STR(S$C_七级主星合成)> 有
+checkitem 主星精华 6
+checkitem 主星碎片 320
+CheckBindMoney 元宝 ? 100000
+#ACT
+MOV S$C_主星红点7 icon_red_01
+MOV S$C_主星红点 icon_red_01
+
+#IF
+EQUAL <$STR(S$C_六级主星合成)> 有
+checkitem 主星精华 3
+checkitem 主星碎片 160
+CheckBindMoney 元宝 ? 50000
+#ACT
+MOV S$C_主星红点6 icon_red_01
+MOV S$C_主星红点 icon_red_01
+
+#IF
+EQUAL <$STR(S$C_十级辅星合成)> 有
+checkitem 辅星精华 48
+checkitem 辅星碎片 2560
+CheckBindMoney 元宝 ? 800000
+#ACT
+MOV S$C_辅星红点10 icon_red_01
+MOV S$C_辅星红点 icon_red_01
+
+#IF
+EQUAL <$STR(S$C_九级辅星合成)> 有
+checkitem 辅星精华 24
+checkitem 辅星碎片 1280
+CheckBindMoney 元宝 ? 400000
+#ACT
+MOV S$C_辅星红点9 icon_red_01
+MOV S$C_辅星红点 icon_red_01
+
+#IF
+EQUAL <$STR(S$C_八级辅星合成)> 有
+checkitem 辅星精华 12
+checkitem 辅星碎片 640
+CheckBindMoney 元宝 ? 200000
+#ACT
+MOV S$C_辅星红点8 icon_red_01
+MOV S$C_辅星红点 icon_red_01
+
+#IF
+EQUAL <$STR(S$C_七级辅星合成)> 有
+checkitem 辅星精华 6
+checkitem 辅星碎片 320
+CheckBindMoney 元宝 ? 100000
+#ACT
+MOV S$C_辅星红点7 icon_red_01
+MOV S$C_辅星红点 icon_red_01
+
+#IF
+EQUAL <$STR(S$C_六级辅星合成)> 有
+checkitem 辅星精华 3
+checkitem 辅星碎片 160
+CheckBindMoney 元宝 ? 50000
+#ACT
+MOV S$C_辅星红点6 icon_red_01
+MOV S$C_辅星红点 icon_red_01
+
+}

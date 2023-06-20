@@ -1,0 +1,122 @@
+[@main]
+#IF
+#ACT
+NEWCOMPLETETASK 1
+NEWDELETETASK 1
+NEWPICKTASK 2
+mov U91 2
+
+
+#IF
+gender man
+#ACT 
+sendmsg  男0
+
+MOV S$C_任务奖励性别 男
+sendmsg  男2
+#ELSEACT
+MOV S$C_任务奖励性别 女
+sendmsg  女
+
+
+#IF
+CHECKJOB Warrior
+#ACT
+MOV S$C_职业标签 战士
+#IF
+CHECKJOB Wizard
+#ACT
+MOV S$C_职业标签 法师
+#IF
+CHECKJOB Taoist
+#ACT
+MOV S$C_职业标签 道士
+
+#IF
+EQUAL <$STR(U91)> 2
+#ACT
+
+sendmsg 0 领取奖励
+
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备1 S$C_新手装备1
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备2 S$C_新手装备2
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备3 S$C_新手装备3
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备4 S$C_新手装备4
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备5 S$C_新手装备5
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备6 S$C_新手装备6
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备7 S$C_新手装备7
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备8 S$C_新手装备8
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备9 S$C_新手装备9
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备10 S$C_新手装备10
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 <$STR(S$C_任务奖励性别)> S$C_任务奖励_衣服
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 小还丹 S$C_任务奖励_药水
+
+
+#SAY
+<Img|show=4|y=-30|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}|bg=1|img=custom/hl/newtask/taskui_11.png>
+<Img|id=1|img=custom/hl/newtask/taskui_2.png|x=160|y=180>
+<Button|id=2|x=600|y=2|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=3|x=570|y=-5|width=70|height=70|link=@exit>
+<Text|id=4|outline=1|outlinecolor=0|a=0|x=60|y=80|color=103|size=18|text=勇士，我已在此等候您多时了,您当年的装备都在这了,收下这些>
+<Text|id=5|outline=1|outlinecolor=0|a=0|x=60|y=100|color=103|size=18|text=装备，我们现在就出发吧?>
+<ListView|id=12|x=190|y=215|children={101,102,103,104,105,106}|direction=2|bounce=1|margin=1|width=300|height=70>
+<ItemShow|id=101|width=70|height=70|itemid=6|itemcount=<$STR(S$C_任务奖励_经验)>|showtips=1|bgtype=1>
+<ItemShow|id=102|width=70|height=70|itemid=40088|itemcount=<$STR(S$C_任务奖励_药水)>|showtips=1|bgtype=1>
+<ItemShow|id=103|width=70|height=70|itemid=4|itemcount=<$STR(S$C_任务奖励_绑元)>|showtips=1|bgtype=1>
+<Button|x=232|y=300|id=13|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=一路前行|color=103|size=18|link=@主线2>
+<Text|id=14|outline=2|outlinecolor=0|a=0|x=265|y=5|color=103|size=18|text=重返玛法>
+<COUNTDOWN|id=15|a=0|x=280|y=355|time=5|count=1|size=16|color=224|link=@主线2>
+
+[@主线2]
+#IF
+EQUAL <$STR(U91)> 2
+#ACT
+MOV U91 3
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_新手装备1)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_新手装备2)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_新手装备3)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_新手装备4)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_新手装备5)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_新手装备6)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_新手装备7)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_新手装备8)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_新手装备9)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_新手装备10)> 1 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_任务奖励_衣服)> 1 0 1 0 1 1 1 1 1
+GiveStateItem 盟重回城石 1 0 1 0 1 1 1 1 1
+GiveStateItem 随机传送石 1 0 1 0 1 1 1 1 1
+TakeOnItem <$STR(S$C_新手装备1)> 4
+TakeOnItem <$STR(S$C_新手装备2)> 3
+TakeOnItem <$STR(S$C_新手装备3)> 5
+TakeOnItem <$STR(S$C_新手装备4)> 6
+TakeOnItem <$STR(S$C_新手装备5)> 7
+TakeOnItem <$STR(S$C_新手装备6)> 8
+TakeOnItem <$STR(S$C_新手装备7)> 10
+TakeOnItem <$STR(S$C_新手装备8)> 11
+TakeOnItem <$STR(S$C_新手装备9)> 1
+TakeOnItem <$STR(S$C_新手装备10)> 2
+TakeOnItem <$STR(S$C_任务奖励_衣服)> 0
+NEWCOMPLETETASK 2
+NEWDELETETASK 2
+NEWPICKTASK 3
+close
+mapmove 3 333 333 3
+DELAYGOTO 200 @延迟赠送新手技能
+break
+
+
+[@延迟赠送新手技能]
+#IF
+small <$LEVEL> 35
+#ACT
+CHANGELEVEL = 35
+
+#IF
+#ACT
+OPENNPCSHOWEX 32
+

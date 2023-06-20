@@ -1,0 +1,345 @@
+[@MAIN]
+#IF
+EQUAL <$HUMAN(B_押镖次数)> ??
+#ACT
+VAR Integer HUMAN B_押镖次数
+#IF
+EQUAL <$HUMAN(B_劫镖次数)> ??
+#ACT
+VAR Integer HUMAN B_劫镖次数
+#IF
+#ACT
+GOTO @镖车面板
+
+[@镖车面板]
+#IF
+#ACT
+#SAY
+<Img|x=0|y=0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Layout|id=2|children={21}|x=300|y=5|width=170|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=100|size=20|outline=2|outlinecolor=0|text=个人押镖>
+<ListView|id=3|children={31,32,33,34}|x=25|y=65|width=730|height=300|margin=2|bounce=0|direction=2|color=x>
+<Layout|id=31|children={311,312,313,314,315,316,317,318}|width=180|height=280|color=x>
+<Img|id=311|img=custom/hl/hl_ui/hqtj.png|width=180|height=280>
+<Effect|id=312|a=4|percentx=40|percenty=40|effectid=290|effecttype=2|act=0|dir=3|scale=0.8>
+<Img|id=313|y=10|img=custom/hl/shizhuanggui_ui/hl_sz_04.png|width=180>
+<Text|id=314|a=4|percentx=50|y=23|color=218|size=18|outline=2|outlinecolor=0|text=一级镖车>
+<Text|id=315|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
+<ItemShow|id=316|children={3161}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
+<Text|id=3161|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=5000>
+<ItemShow|id=317|children={3171}|itemid=40063|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
+<Text|id=3171|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=1000万>
+<Layout|id=32|children={321,322,323,324,325,326,327,328}|width=180|height=280|color=x>
+<Img|id=321|img=custom/hl/hl_ui/hqtj.png|width=180|height=280>
+<Effect|id=322|a=4|percentx=40|percenty=40|effectid=290|effecttype=2|act=0|dir=3|scale=0.8>
+<Img|id=323|y=10|img=custom/hl/shizhuanggui_ui/hl_sz_04.png|width=180>
+<Text|id=324|a=4|percentx=50|y=23|color=229|size=18|outline=2|outlinecolor=0|text=二级镖车>
+<Text|id=325|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
+<ItemShow|id=326|children={3261}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
+<Text|id=3261|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=1万>
+<ItemShow|id=327|children={3271}|itemid=40064|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
+<Text|id=3271|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=2000万>
+<Layout|id=33|children={331,332,333,334,335,336,337,338}|width=180|height=280|color=x>
+<Img|id=331|img=custom/hl/hl_ui/hqtj.png|width=180|height=280>
+<Effect|id=332|a=4|percentx=40|percenty=40|effectid=291|effecttype=2|act=0|dir=3|scale=0.8>
+<Img|id=333|y=10|img=custom/hl/shizhuanggui_ui/hl_sz_04.png|width=180>
+<Text|id=334|a=4|percentx=50|y=23|color=242|size=18|outline=2|outlinecolor=0|text=三级镖车>
+<Text|id=335|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
+<ItemShow|id=336|children={3361}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
+<Text|id=3361|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=5万>
+<ItemShow|id=337|children={3371}|itemid=40064|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
+<Text|id=3371|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=3000万>
+<Layout|id=34|children={341,342,343,344,345,346,347,348}|width=180|height=280|color=x>
+<Img|id=341|img=custom/hl/hl_ui/hqtj.png|width=180|height=280>
+<Effect|id=342|a=4|percentx=40|percenty=40|effectid=292|effecttype=2|act=0|dir=3|scale=0.7>
+<Img|id=343|y=10|img=custom/hl/shizhuanggui_ui/hl_sz_04.png|width=180>
+<Text|id=344|a=4|percentx=50|y=23|color=243|size=18|outline=2|outlinecolor=0|text=四级镖车>
+<Text|id=345|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
+<ItemShow|id=346|children={3461}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
+<Text|id=3461|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=10万>
+<ItemShow|id=347|children={3471}|itemid=40065|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
+<Text|id=3471|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=5000万>
+
+<Layout|id=4|x=26|y=350|children={41,42,43,44,45,46,47,48,49}|width=180|height=120|color=x>
+<Img|id=41|x=-3|y=10|img=custom/hl/fenjie_ui/hl_fj_02.png|width=50>
+<Text|id=42|a=4|percentx=50|percenty=10|color=255|size=18|outline=2|outlinecolor=0|text=免费押镖>
+<Img|id=43|x=131|y=10|img=custom/hl/fenjie_ui/hl_fj_04.png|width=50>
+<Button|id=44|x=35|y=28|color=218|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=免费押镖|link=@押镖一级镖车>
+
+<Layout|id=7|x=205|y=350|children={71,72,73,74}|width=180|height=120|color=x>
+<Img|id=71|x=-3|y=10|img=custom/hl/fenjie_ui/hl_fj_02.png|width=50>
+<Text|id=72|a=4|percentx=50|percenty=10|color=250|size=18|outline=2|outlinecolor=0|text=300龙币>
+<Img|id=73|x=131|y=10|img=custom/hl/fenjie_ui/hl_fj_04.png|width=50>
+<Button|id=74|x=35|y=28|color=229|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=收费押镖|link=@押镖二级镖车>
+
+<Layout|id=8|x=385|y=350|children={81,82,83,84}|width=180|height=120|color=x>
+<Img|id=81|x=-3|y=10|img=custom/hl/fenjie_ui/hl_fj_02.png|width=50>
+<Text|id=82|a=4|percentx=50|percenty=10|color=250|size=18|outline=2|outlinecolor=0|text=600龙币>
+<Img|id=83|x=131|y=10|img=custom/hl/fenjie_ui/hl_fj_04.png|width=50>
+<Button|id=84|x=35|y=28|color=242|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=收费押镖|link=@押镖三级镖车>
+
+<Layout|id=9|x=565|y=350|children={91,92,93,94}|width=180|height=120|color=x>
+<Img|id=91|x=-3|y=10|img=custom/hl/fenjie_ui/hl_fj_02.png|width=50>
+<Text|id=92|a=4|percentx=50|percenty=10|color=250|size=18|outline=2|outlinecolor=0|text=1000龙币>
+<Img|id=93|x=133|y=10|img=custom/hl/fenjie_ui/hl_fj_04.png|width=50>
+<Button|id=94|x=35|y=28|color=243|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=收费押镖|link=@押镖四级镖车>
+<Layout|id=5|x=225|y=435|children={51,52,53,54,55,56}|width=320|height=120|color=x>
+<Img|id=51|x=20|y=10|img=custom/hl/fenjie_ui/hl_fj_02.png>
+<Text|id=52|a=4|percentx=50|percenty=10|color=255|size=18|outline=2|outlinecolor=0|text=押镖状态>
+<Img|id=53|x=215|y=10|img=custom/hl/fenjie_ui/hl_fj_04.png>
+<RText|id=54|x=36|y=35|color=247|size=18|outline=2|outlinecolor=0|text=押镖次数：<<$HUMAN(B_押镖次数)>/3/FCOLOR=255>>
+<RText|id=55|x=160|y=35|color=247|size=18|outline=2|outlinecolor=0|text=押镖时间：<30分钟/FCOLOR=255>>
+;<Img|id=3<$STR(N$镖车等级)>8|x=7|y=7|img=custom/hl/hl_ui/hl_xz_01.png|width=166|height=266>
+<Text|id=6|x=670|y=475|color=250|size=18|outline=2|outlinecolor=0|text=规则说明|link=@规则说明>
+
+
+[@规则说明]
+#IF
+#ACT
+#SAY
+<Img|x=0|y=0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Layout|id=2|children={21}|x=300|y=5|width=170|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=100|size=20|outline=2|outlinecolor=0|text=个人押镖>
+<ListView|id=3|children={31,32,33,34}|x=25|y=65|width=730|height=300|margin=2|bounce=0|direction=2|color=x>
+<Layout|id=31|children={311,312,313,314,315,316,317,318}|width=180|height=280|color=x>
+<Img|id=311|img=custom/hl/hl_ui/hqtj.png|width=180|height=280>
+<Effect|id=312|a=4|percentx=40|percenty=40|effectid=290|effecttype=2|act=0|dir=3|scale=0.8>
+<Img|id=313|y=10|img=custom/hl/shizhuanggui_ui/hl_sz_04.png|width=180>
+<Text|id=314|a=4|percentx=50|y=23|color=218|size=18|outline=2|outlinecolor=0|text=一级镖车>
+<Text|id=315|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
+<ItemShow|id=316|children={3161}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
+<Text|id=3161|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=3500>
+<ItemShow|id=317|children={3171}|itemid=40063|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
+<Text|id=3171|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=1000万>
+<Layout|id=32|children={321,322,323,324,325,326,327,328}|width=180|height=280|color=x>
+<Img|id=321|img=custom/hl/hl_ui/hqtj.png|width=180|height=280>
+<Effect|id=322|a=4|percentx=40|percenty=40|effectid=290|effecttype=2|act=0|dir=3|scale=0.8>
+<Img|id=323|y=10|img=custom/hl/shizhuanggui_ui/hl_sz_04.png|width=180>
+<Text|id=324|a=4|percentx=50|y=23|color=229|size=18|outline=2|outlinecolor=0|text=二级镖车>
+<Text|id=325|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
+<ItemShow|id=326|children={3261}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
+<Text|id=3261|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=4000>
+<ItemShow|id=327|children={3271}|itemid=40064|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
+<Text|id=3271|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=2000万>
+<Layout|id=33|children={331,332,333,334,335,336,337,338}|width=180|height=280|color=x>
+<Img|id=331|img=custom/hl/hl_ui/hqtj.png|width=180|height=280>
+<Effect|id=332|a=4|percentx=40|percenty=40|effectid=291|effecttype=2|act=0|dir=3|scale=0.8>
+<Img|id=333|y=10|img=custom/hl/shizhuanggui_ui/hl_sz_04.png|width=180>
+<Text|id=334|a=4|percentx=50|y=23|color=242|size=18|outline=2|outlinecolor=0|text=三级镖车>
+<Text|id=335|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
+<ItemShow|id=336|children={3361}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
+<Text|id=3361|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=4500>
+<ItemShow|id=337|children={3371}|itemid=40064|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
+<Text|id=3371|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=3000万>
+<Layout|id=34|children={341,342,343,344,345,346,347,348}|width=180|height=280|color=x>
+<Img|id=341|img=custom/hl/hl_ui/hqtj.png|width=180|height=280>
+<Effect|id=342|a=4|percentx=40|percenty=40|effectid=292|effecttype=2|act=0|dir=3|scale=0.7>
+<Img|id=343|y=10|img=custom/hl/shizhuanggui_ui/hl_sz_04.png|width=180>
+<Text|id=344|a=4|percentx=50|y=23|color=243|size=18|outline=2|outlinecolor=0|text=四级镖车>
+<Text|id=345|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
+<ItemShow|id=346|children={3461}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
+<Text|id=3461|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=5000>
+<ItemShow|id=347|children={3471}|itemid=40065|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
+<Text|id=3471|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=5000万>
+
+<Layout|id=4|x=26|y=350|children={41,42,43,44,45,46,47,48,49}|width=180|height=120|color=x>
+<Img|id=41|x=-3|y=10|img=custom/hl/fenjie_ui/hl_fj_02.png|width=50>
+<Text|id=42|a=4|percentx=50|percenty=10|color=255|size=18|outline=2|outlinecolor=0|text=免费押镖>
+<Img|id=43|x=131|y=10|img=custom/hl/fenjie_ui/hl_fj_04.png|width=50>
+<Button|id=44|x=35|y=28|color=218|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=免费押镖|link=@押镖一级镖车>
+
+<Layout|id=7|x=205|y=350|children={71,72,73,74}|width=180|height=120|color=x>
+<Img|id=71|x=-3|y=10|img=custom/hl/fenjie_ui/hl_fj_02.png|width=50>
+<Text|id=72|a=4|percentx=50|percenty=10|color=250|size=18|outline=2|outlinecolor=0|text=300龙币>
+<Img|id=73|x=131|y=10|img=custom/hl/fenjie_ui/hl_fj_04.png|width=50>
+<Button|id=74|x=35|y=28|color=229|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=收费押镖|link=@押镖二级镖车>
+
+<Layout|id=8|x=385|y=350|children={81,82,83,84}|width=180|height=120|color=x>
+<Img|id=81|x=-3|y=10|img=custom/hl/fenjie_ui/hl_fj_02.png|width=50>
+<Text|id=82|a=4|percentx=50|percenty=10|color=250|size=18|outline=2|outlinecolor=0|text=600龙币>
+<Img|id=83|x=131|y=10|img=custom/hl/fenjie_ui/hl_fj_04.png|width=50>
+<Button|id=84|x=35|y=28|color=242|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=收费押镖|link=@押镖三级镖车>
+
+<Layout|id=9|x=565|y=350|children={91,92,93,94}|width=180|height=120|color=x>
+<Img|id=91|x=-3|y=10|img=custom/hl/fenjie_ui/hl_fj_02.png|width=50>
+<Text|id=92|a=4|percentx=50|percenty=10|color=250|size=18|outline=2|outlinecolor=0|text=1000龙币>
+<Img|id=93|x=133|y=10|img=custom/hl/fenjie_ui/hl_fj_04.png|width=50>
+<Button|id=94|x=35|y=28|color=243|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=收费押镖|link=@押镖四级镖车>
+<Layout|id=5|x=225|y=435|children={51,52,53,54,55,56}|width=320|height=120|color=x>
+<Img|id=51|x=20|y=10|img=custom/hl/fenjie_ui/hl_fj_02.png>
+<Text|id=52|a=4|percentx=50|percenty=10|color=255|size=18|outline=2|outlinecolor=0|text=押镖状态>
+<Img|id=53|x=215|y=10|img=custom/hl/fenjie_ui/hl_fj_04.png>
+<RText|id=54|x=36|y=35|color=247|size=18|outline=2|outlinecolor=0|text=押镖次数：<<$HUMAN(B_押镖次数)>/3/FCOLOR=255>>
+<RText|id=55|x=160|y=35|color=247|size=18|outline=2|outlinecolor=0|text=押镖时间：<30分钟/FCOLOR=255>>
+;<Img|id=3<$STR(N$镖车等级)>8|x=7|y=7|img=custom/hl/hl_ui/hl_xz_01.png|width=166|height=266>
+<Text|id=6|x=670|y=475|color=250|size=18|outline=2|outlinecolor=0|text=规则说明|link=@规则说明>
+
+;
+<Img|id=10|x=435|y=60|img=custom/hl/hl_ui/bg_kjhq_01.png|width=320|height=450|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+<Layout|id=11|children={111,112}|x=390|y=60|width=50|height=100|color=x|link=@镖车面板>
+<Img|id=111|x=10|y=0|img=custom/hl/hl_ui/1900012110.png>
+<Text|id=112|x=20|y=0|color=191|size=20|outline=2|outlinecolor=0|text=关\闭>
+<Text|id=20|a=4|percentx=75|y=85|color=100|size=18|outline=2|outlinecolor=0|text=个人押镖>
+<Img|id=21|a=4|percentx=77|y=100|img=custom/hl/duanzhao_ui/djfg.png|width=360>
+<Text|id=22|x=452|y=102|color=255|size=16|outline=2|outlinecolor=0|text=勇士!有兴趣发笔横财吗?那就来押运镖车\吧。>
+
+<Text|id=12|a=4|percentx=75|y=185|color=100|size=18|outline=2|outlinecolor=0|text=规则说明>
+<Img|id=13|a=4|percentx=77|y=200|img=custom/hl/duanzhao_ui/djfg.png|width=360>
+<Text|id=14|x=452|y=202|color=255|size=16|outline=2|outlinecolor=0|text=1.每天13:00-13:20和16:-16:20可进行\押运每天最多进行2次\2.押运镖车的品质越高奖励越丰厚。\3.被其他玩家劫镖成功则押镖失败\4.截镖成功将会获得额外奖励\5.接镖后5分钟内未送达则押镖失败>
+;<Text|id=18|x=452|y=365|color=100|size=18|outline=2|outlinecolor=0|text=奖励展示>
+;<ListView|id=19|children={191,192,193}|x=500|y=400|width=200|height=65|margin=2|bounce=0|direction=2|color=x>
+;<ItemShow|id=191|itemid=2|itemcount=1|showtips=1|bgtype=1>
+;<ItemShow|id=192|itemid=2|itemcount=1|showtips=1|bgtype=1>
+;<ItemShow|id=193|itemid=2|itemcount=1|showtips=1|bgtype=1>
+
+[@押镖一级镖车]
+#IF
+EQUAL G248 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>个人押镖活动尚未开启</font>
+BREAK
+
+#IF
+LARGE <$HUMAN(B_押镖次数)> 2
+#ACT
+SENDMSG 9 <font color='#ff0000'>今日押镖次数已满</font>
+BREAK
+#OR
+CHECKSLAVENAME 一级镖车
+CHECKSLAVENAME 二级镖车
+CHECKSLAVENAME 三级镖车
+CHECKSLAVENAME 四级镖车
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的镖车尚未送达。无法接取</font>
+BREAK
+#IF
+#ACT
+MOV U237 25
+CALCVAR HUMAN B_押镖次数 + 1
+SAVEVAR HUMAN B_押镖次数
+MOV U251 <$UTCNOW8>
+INC U251 300
+RECALLMOB 一级镖车 0 200 0
+Dartmap 390 335 8
+SendCenterMsg 251 249 [<$USERNAME>]成功接到了一个【一级镖车】的任务！ 1 10
+close
+
+[@押镖二级镖车]
+#IF
+EQUAL G248 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>活动尚未开启</font>
+BREAK
+#IF
+LARGE <$HUMAN(B_押镖次数)> 2
+#ACT
+SENDMSG 9 <font color='#ff0000'>今日押镖次数已满</font>
+BREAK
+#OR
+CHECKSLAVENAME 一级镖车
+CHECKSLAVENAME 二级镖车
+CHECKSLAVENAME 三级镖车
+CHECKSLAVENAME 四级镖车
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的镖车尚未送达。无法接取</font>
+BREAK
+#IF
+CHECKMONEY 火龙币 > 299
+#ACT
+MONEY 火龙币 - 300
+MOV U237 26
+CALCVAR HUMAN B_押镖次数 + 1
+SAVEVAR HUMAN B_押镖次数
+MOV U251 <$UTCNOW8>
+INC U251 300
+RECALLMOB 二级镖车 0 200 0
+Dartmap 390 335 8
+SendCenterMsg 251 249 [<$USERNAME>]成功接到了一个【二级镖车】的任务，劫镖成功可获得一半奖励！ 1 10
+close
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>火龙币不足300无法接取</font>
+BREAK
+[@押镖三级镖车]
+#IF
+EQUAL G248 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>活动尚未开启</font>
+BREAK
+#IF
+LARGE <$HUMAN(B_押镖次数)> 2
+#ACT
+SENDMSG 9 <font color='#ff0000'>今日押镖次数已满</font>
+BREAK
+#OR
+CHECKSLAVENAME 一级镖车
+CHECKSLAVENAME 二级镖车
+CHECKSLAVENAME 三级镖车
+CHECKSLAVENAME 四级镖车
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的镖车尚未送达。无法接取</font>
+BREAK
+#IF
+CHECKMONEY 火龙币 > 599
+#ACT
+MONEY 火龙币 - 600
+MOV U237 27
+CALCVAR HUMAN B_押镖次数 + 1
+SAVEVAR HUMAN B_押镖次数
+MOV U251 <$UTCNOW8>
+INC U251 300
+RECALLMOB 三级镖车 0 200 0
+Dartmap 390 335 8
+SendCenterMsg 251 249 [<$USERNAME>]成功接到了一个【三级镖车】的任务，劫镖成功可获得一半奖励！ 1 10
+close
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>火龙币不足600无法接取</font>
+BREAK
+[@押镖四级镖车]
+#IF
+EQUAL G248 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>活动尚未开启</font>
+BREAK
+#IF
+LARGE <$HUMAN(B_押镖次数)> 2
+#ACT
+SENDMSG 9 <font color='#ff0000'>今日押镖次数已满</font>
+BREAK
+#OR
+CHECKSLAVENAME 一级镖车
+CHECKSLAVENAME 二级镖车
+CHECKSLAVENAME 三级镖车
+CHECKSLAVENAME 四级镖车
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的镖车尚未送达。无法接取</font>
+BREAK
+#IF
+CHECKMONEY 火龙币 > 999
+#ACT
+MONEY 火龙币 - 1000
+MOV U237 28
+CALCVAR HUMAN B_押镖次数 + 1
+SAVEVAR HUMAN B_押镖次数
+MOV U251 <$UTCNOW8>
+INC U251 300
+RECALLMOB 四级镖车 0 200 0
+Dartmap 390 335 8
+SendCenterMsg 251 249 [<$USERNAME>]成功接到了一个【四级镖车】的任务，劫镖成功可获得一半奖励！ 1 10
+close
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>火龙币不足1000无法接取</font>
+BREAK
+
+
+
+

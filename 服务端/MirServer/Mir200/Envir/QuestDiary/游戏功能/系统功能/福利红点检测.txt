@@ -1,0 +1,211 @@
+[@启动福利红点检测]
+{
+#IF
+#ACT
+MOV N$临时在线时长 <$UTCNOW8>
+DEC N$临时在线时长 <$HUMAN(B_本次登录时间)>
+MOV N$今日时长 <$HUMAN(B_上次在线时长)>
+INC N$今日时长 <$STR(N$临时在线时长)>
+MOV S$福利红点_1
+MOV S$福利红点_2
+MOV S$福利红点_3
+#IF
+LARGE N$今日时长 59
+#ACT
+DIV N$今日时长 60
+CALCVAR HUMAN B_今日在线时长 = <$STR(N$今日时长)>
+SAVEVAR HUMAN B_今日在线时长
+#ELSEACT
+CALCVAR HUMAN B_今日在线时长 = 0
+SAVEVAR HUMAN B_今日在线时长
+
+#IF
+CHECKVAR HUMAN B_在线奖励_4 = 1
+#ACT
+GOTO @累计在线红点检测
+BREAK
+#IF
+CHECKVAR HUMAN B_今日在线时长 < 10
+#ACT
+GOTO @累计在线红点检测
+BREAK
+#IF
+CHECKVAR HUMAN B_在线奖励_1 = 0
+#ACT
+MOV S$福利红点_1 hd
+GOTO @累计在线红点检测
+BREAK
+#IF
+CHECKVAR HUMAN B_今日在线时长 < 30
+#ACT
+GOTO @累计在线红点检测
+BREAK
+#IF
+CHECKVAR HUMAN B_在线奖励_2 = 0
+#ACT
+MOV S$福利红点_1 hd
+GOTO @累计在线红点检测
+BREAK
+#IF
+CHECKVAR HUMAN B_今日在线时长 < 60
+#ACT
+GOTO @累计在线红点检测
+BREAK
+#IF
+CHECKVAR HUMAN B_在线奖励_3 = 0
+#ACT
+MOV S$福利红点_1 hd
+GOTO @累计在线红点检测
+BREAK
+#IF
+CHECKVAR HUMAN B_今日在线时长 < 120
+#ACT
+GOTO @累计在线红点检测
+BREAK
+#IF
+CHECKVAR HUMAN B_在线奖励_4 = 0
+#ACT
+MOV S$福利红点_1 hd
+GOTO @累计在线红点检测
+BREAK
+
+[@累计在线红点检测]
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 1
+CHECKVAR HUMAN B_累计在线奖励_2 = 0
+#ACT
+MOV S$福利红点_1 hd
+GOTO @签到状态红点判断
+BREAK
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 < 3
+#ACT
+GOTO @签到状态红点判断
+BREAK
+#IF
+CHECKVAR HUMAN B_累计在线奖励_3 = 0
+#ACT
+MOV S$福利红点_1 hd
+GOTO @签到状态红点判断
+BREAK
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 < 4
+#ACT
+GOTO @签到状态红点判断
+BREAK
+#IF
+CHECKVAR HUMAN B_累计在线奖励_4 = 0
+#ACT
+MOV S$福利红点_1 hd
+GOTO @签到状态红点判断
+BREAK
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 < 5
+#ACT
+GOTO @签到状态红点判断
+BREAK
+#IF
+CHECKVAR HUMAN B_累计在线奖励_5 = 0
+#ACT
+MOV S$福利红点_1 hd
+GOTO @签到状态红点判断
+BREAK
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 < 6
+#ACT
+GOTO @签到状态红点判断
+BREAK
+#IF
+CHECKVAR HUMAN B_累计在线奖励_6 = 0
+#ACT
+MOV S$福利红点_1 hd
+GOTO @签到状态红点判断
+BREAK
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 < 7
+#ACT
+GOTO @签到状态红点判断
+BREAK
+#IF
+CHECKVAR HUMAN B_累计在线奖励_7 = 0
+#ACT
+MOV S$福利红点_1 hd
+GOTO @签到状态红点判断
+BREAK
+
+[@签到状态红点判断]
+#IF
+CHECKVAR HUMAN B_今日签到状态 = 0
+#ACT
+MOV S$福利红点_2 hd
+#IF
+#ACT
+GOTO @尊享红点判断
+
+[@尊享红点判断]
+#IF
+EQUAL N$尊享记录号 0
+#ACT
+MOV N$尊享记录号 <$HUMAN(B_尊享礼包记录)>
+MOV N$尊享判断条件 <$HUMAN(B_尊享礼包记录)>
+INC N$尊享判断条件 17
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt <$STR(N$尊享判断条件)> S$尊享条件 |
+
+#IF
+NOT EQUAL N$尊享记录号 <$HUMAN(B_尊享礼包记录)>
+#ACT
+MOV N$尊享记录号 <$HUMAN(B_尊享礼包记录)>
+MOV N$尊享判断条件 <$HUMAN(B_尊享礼包记录)>
+INC N$尊享判断条件 17
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt <$STR(N$尊享判断条件)> S$尊享条件 |
+
+
+#IF
+SMALL N$尊享记录号 2
+#ACT
+MOV S$检测变量名 B_今日在线时长
+#ELSEACT
+MOV S$检测变量名 B_历史登录天数
+#IF
+CHECKVAR HUMAN <$STR(S$检测变量名)> ? <$STR(S$尊享条件0)>
+#ACT
+MOV S$福利红点_3 hd
+
+
+#IF
+Equal n$top 1
+#ACT
+BREAK
+#IF
+EQUAL S$福利红点_1
+EQUAL S$福利红点_2
+EQUAL S$福利红点_3
+CheckContainsText <$STR(S$图标1)> Img|id=30|x=55|y=5|img=custom/hl/hl_ui/hd.png
+#ACT
+DEC   S$图标1 <Img|id=30|x=55|y=5|img=custom/hl/hl_ui/hd.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+#IF
+CheckContainsText <$STR(S$图标1)> Img|id=30|x=55|y=5|img=custom/hl/hl_ui/hd.png
+#ACT
+BREAK
+
+#OR
+EQUAL S$福利红点_1 hd
+EQUAL S$福利红点_2 hd
+EQUAL S$福利红点_3 hd
+#ACT
+INC   S$图标1 <Img|id=30|x=55|y=5|img=custom/hl/hl_ui/hd.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+
+
+}
+

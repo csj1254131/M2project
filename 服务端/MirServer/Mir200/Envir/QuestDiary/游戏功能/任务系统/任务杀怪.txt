@@ -1,0 +1,32 @@
+[@»ŒŒÒ…±π÷¥•∑¢]
+{
+
+#IF
+EQUAL <$STR(U91)> 1
+small <$STR(U92)> 2
+CheckKillMonName º¶7
+equal <$MAP> 0
+#ACT
+INC U92 1
+NEWPICKTASK 2 <$STR(U92)>
+break
+
+#IF
+EQUAL <$STR(U91)> 1
+EQUAL <$STR(U92)> 2
+CheckKillMonName º¶7
+equal <$MAP> 0
+#ACT
+MOV U91 2
+MOV U92 0
+NEWCHANGETASK 2
+OPENNPCSHOWEX 53
+break
+
+
+
+
+
+
+
+}

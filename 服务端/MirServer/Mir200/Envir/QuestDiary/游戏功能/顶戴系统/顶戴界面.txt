@@ -1,0 +1,839 @@
+[@顶戴界面]
+{
+
+
+#IF
+#ACT
+MOV N$C_顶了几个 0
+MOV S$C_第一等级标识
+MOV S$C_第一属性标识
+MOV S$C_顶戴元素一1
+MOV S$C_顶戴元素一2
+MOV S$C_顶戴元素一3
+MOV S$C_顶戴元素二1
+MOV S$C_顶戴元素二2
+MOV S$C_顶戴元素二3
+MOV S$C_顶戴元素三1
+MOV S$C_顶戴元素三2
+MOV S$C_顶戴元素三3
+MOV S$C_顶戴元素四1
+MOV S$C_顶戴元素四2
+MOV S$C_顶戴元素四3
+MOV S$C_顶戴元素五1
+MOV S$C_顶戴元素五2
+MOV S$C_顶戴元素五3
+MOV S$C_顶戴元素六1
+MOV S$C_顶戴元素六2
+MOV S$C_顶戴元素六3
+MOV S$C_顶戴元素七1
+MOV S$C_顶戴元素七2
+MOV S$C_顶戴元素七3
+MOV S$C_顶戴元素八1
+MOV S$C_顶戴元素八2
+MOV S$C_顶戴元素八3
+MOV S$C_顶戴元素九1
+MOV S$C_顶戴元素九2
+MOV S$C_顶戴元素九3
+MOV S$C_顶戴元素六A1
+MOV S$C_顶戴元素六A2
+MOV S$C_顶戴元素六A3
+MOV S$C_顶戴元素七A1
+MOV S$C_顶戴元素七A2
+MOV S$C_顶戴元素七A3
+MOV S$C_顶戴元素八A1
+MOV S$C_顶戴元素八A2
+MOV S$C_顶戴元素八A3
+MOV S$C_顶戴元素九A1
+MOV S$C_顶戴元素九A2
+MOV S$C_顶戴元素九A3
+MOV S$C_顶戴元素你球啥1
+MOV S$C_顶戴元素你球啥2
+MOV S$C_顶戴元素你球啥3
+MOV S$C_顶戴元素球你咋地1
+MOV S$C_顶戴元素球你咋地2
+MOV S$C_顶戴元素球你咋地3
+MOV S$C_勾选顶戴1
+MOV S$C_勾选顶戴2
+MOV S$C_勾选顶戴3
+MOV S$C_勾选顶戴4
+MOV S$C_勾选顶戴5
+MOV S$C_勾选顶戴6
+MOV S$C_勾选顶戴7
+MOV S$C_勾选顶戴8
+MOV S$C_勾选顶戴9
+MOV S$C_勾选顶戴6A
+MOV S$C_勾选顶戴7A
+MOV S$C_勾选顶戴8A
+MOV S$C_勾选顶戴你球啥
+MOV S$C_勾选顶戴球你咋地
+
+#IF
+EQUAL <$HUMAN(顶戴你球啥)>
+#ACT
+MOV S$C_勾选顶戴你球啥 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴你球啥 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴球你咋地)>
+#ACT
+MOV S$C_勾选顶戴球你咋地 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴球你咋地 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示一)>
+#ACT
+MOV S$C_勾选顶戴5 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴5 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示三)>
+#ACT
+MOV S$C_勾选顶戴3 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴3 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示四)>
+#ACT
+MOV S$C_勾选顶戴2 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴2 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示五)>
+#ACT
+MOV S$C_勾选顶戴1 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴1 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示六)>
+#ACT
+MOV S$C_勾选顶戴6 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴6 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示七)>
+#ACT
+MOV S$C_勾选顶戴7 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴7 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示八)>
+#ACT
+MOV S$C_勾选顶戴8 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴8 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示九)>
+#ACT
+MOV S$C_勾选顶戴9 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴9 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示六A)>
+#ACT
+MOV S$C_勾选顶戴6A 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴6A 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示七A)>
+#ACT
+MOV S$C_勾选顶戴7A 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴7A 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示八A)>
+#ACT
+MOV S$C_勾选顶戴8A 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴8A 1900000683
+
+#IF
+EQUAL <$HUMAN(顶戴展示九A)>
+#ACT
+MOV S$C_勾选顶戴9A 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴9A 1900000683
+
+#IF
+EQUAL <$STR(A279)> <$USERNAME>
+#ACT
+MOV S$C_你球啥标识 duobao1
+
+#IF
+EQUAL <$STR(A280)> <$USERNAME>
+#ACT
+MOV S$C_球你咋地标识 duobao2
+
+#IF
+CHECKTITLE 武林至尊
+#ACT
+MOV S$C_会员顶戴标识 50690
+
+#IF
+CHECKTITLE 最强王者
+#ACT
+MOV S$C_会员顶戴标识 50691
+
+#IF
+EQUAL A273 <$USERNAME>
+gender man
+#ACT
+MOV S$C_第一等级标识 l1
+#IF
+EQUAL A274 <$USERNAME>
+gender woman
+#ACT
+MOV S$C_第一等级标识 l2
+
+#IF
+EQUAL A261 <$USERNAME>
+CHECKJOB Warrior
+#ACT
+MOV S$C_第一属性标识 50705
+#IF
+EQUAL A262 <$USERNAME>
+CHECKJOB Warrior
+#ACT
+MOV S$C_第一属性标识 50705
+
+#IF
+EQUAL A263 <$USERNAME>
+CHECKJOB Wizard
+#ACT
+MOV S$C_第一属性标识 50706
+#IF
+EQUAL A264 <$USERNAME>
+CHECKJOB Wizard
+#ACT
+MOV S$C_第一属性标识 50706
+
+#IF
+EQUAL A265 <$USERNAME>
+CHECKJOB Taoist
+#ACT
+MOV S$C_第一属性标识 50707
+#IF
+EQUAL A266 <$USERNAME>
+CHECKJOB Taoist
+#ACT
+MOV S$C_第一属性标识 50707
+
+#IF
+CHECKTITLE 傲视群雄
+#ACT
+MOV S$C_傲视群雄标识 50713
+
+#IF
+CHECKTITLE 超凡入圣
+#ACT
+MOV S$C_超凡入圣标识 50714
+
+#IF
+CHECKTITLE 唯我独尊
+#ACT
+MOV S$C_唯我独尊标识 50717
+
+#IF
+CHECKTITLE 巅峰之人
+#ACT
+MOV S$C_巅峰之人标识 50716
+
+
+#IF
+EQUAL <$HUMAN(顶戴你球啥)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴球你咋地)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示一)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示二)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示三)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示四)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示五)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示六)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示七)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示八)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示九)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示六A)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示七A)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示八A)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+EQUAL <$HUMAN(顶戴展示九A)>
+#ACT
+#ELSEACT
+INC N$C_顶了几个 1
+
+#IF
+CHECKTITLE 火龙真体 
+#ACT
+MOV S$C_顶戴元素一1 <Img|id=21|width=338|height=50|children={101,201}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始火龙真体>
+MOV S$C_顶戴元素一2 <Effect|id=101|x=170|y=22|effectid=5050|count=0|scale=1|dir=5|speed=1|effecttype=0|act=0>
+MOV S$C_顶戴元素一3 <Img|x=290|y=10|id=201|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴1)>.png>
+
+#IF
+EQUAL <$HUMAN(沙城捐献)> 已开启
+#ACT
+MOV S$C_顶戴元素二1 <Img|id=22|width=338|height=50|children={102,202}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始沙城捐献>
+MOV S$C_顶戴元素二2 <Effect|id=102|x=170|y=22|effectid=5051|count=0|scale=1|dir=5|speed=1|effecttype=0|act=0>
+MOV S$C_顶戴元素二3 <Img|x=290|y=10|id=202|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴2)>.png>
+
+#OR
+CHECKTITLE 武林至尊
+CHECKTITLE 最强王者
+#ACT
+MOV S$C_顶戴元素三1 <Img|id=23|width=338|height=50|children={103,203}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始会员>
+MOV S$C_顶戴元素三2 <Effect|id=103|x=170|y=40|effectid=<$STR(S$C_会员顶戴标识)>|count=0|scale=1|dir=5|speed=1|effecttype=0|act=0>
+MOV S$C_顶戴元素三3 <Img|x=290|y=10|id=203|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴3)>.png>
+
+#IF
+check [200] 1
+#ACT
+MOV S$C_顶戴元素四1 <Img|id=24|width=338|height=50|children={104,204}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始火龙之力>
+MOV S$C_顶戴元素四2 <Img|x=110|y=10|id=104|img=Topwear/kuangbao_1.png>
+MOV S$C_顶戴元素四3 <Img|x=290|y=10|id=204|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴4)>.png>
+
+#IF
+LARGE <$STR(u23)> 0
+#ACT
+MOV S$C_顶戴元素五1 <Img|id=25|width=338|height=50|children={105,205}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始官职系统>
+MOV S$C_顶戴元素五2 <Img|x=120|y=15|id=105|img=Topwear/<$STR(u23)>.png>
+MOV S$C_顶戴元素五3 <Img|x=290|y=10|id=205|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴5)>.png>
+
+#IF
+EQUAL A201 <$USERNAME>
+#ACT
+MOV S$C_顶戴元素六1 <Img|id=26|width=338|height=50|children={106,206}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始捐献系统>
+MOV S$C_顶戴元素六2 <Img|x=102|y=10|id=106|img=Topwear/youqian.png>
+MOV S$C_顶戴元素六3 <Img|x=290|y=10|id=206|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴6)>.png>
+
+#IF
+ISCASTLEMASTER
+#ACT
+MOV S$C_顶戴元素七1 <Img|id=27|width=338|height=50|children={107,207}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始沙城霸主>
+MOV S$C_顶戴元素七2 <Img|x=120|y=-5|id=107|img=Topwear/sbk.png>
+MOV S$C_顶戴元素七3 <Img|x=290|y=10|id=207|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴7)>.png>
+
+#OR
+EQUAL A273 <$USERNAME>
+EQUAL A274 <$USERNAME>
+#ACT
+MOV S$C_顶戴元素八1 <Img|id=28|width=338|height=50|children={108,208}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始第一等级>
+MOV S$C_顶戴元素八2 <Img|x=100|y=10|id=108|img=Topwear/<$STR(S$C_第一等级标识)>.png>
+MOV S$C_顶戴元素八3 <Img|x=290|y=10|id=208|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴8)>.png>
+
+#IF
+NOT EQUAL <$STR(S$C_第一属性标识)>
+#ACT
+MOV S$C_顶戴元素九1 <Img|id=29|width=338|height=50|children={109,209}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始第一属性>
+MOV S$C_顶戴元素九2 <Effect|id=109|x=175|y=25|effectid=<$STR(S$C_第一属性标识)>|count=0|scale=0.7|dir=5|speed=1|effecttype=0|act=0>
+MOV S$C_顶戴元素九3 <Img|x=290|y=10|id=209|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴9)>.png>
+
+#IF
+CHECKTITLE 傲视群雄
+#ACT
+MOV S$C_顶戴元素六A1 <Img|id=30|width=338|height=50|children={119,219}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始傲视群雄>
+MOV S$C_顶戴元素六A2 <Effect|id=119|x=170|y=25|effectid=<$STR(S$C_傲视群雄标识)>|count=0|scale=1.0|dir=5|speed=1|effecttype=0|act=0>
+MOV S$C_顶戴元素六A3 <Img|x=290|y=10|id=219|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴6A)>.png>
+
+#IF
+CHECKTITLE 超凡入圣
+#ACT
+MOV S$C_顶戴元素七A1 <Img|id=31|width=338|height=50|children={129,229}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始超凡入圣>
+MOV S$C_顶戴元素七A2 <Effect|id=129|x=170|y=25|effectid=<$STR(S$C_超凡入圣标识)>|count=0|scale=1.0|dir=5|speed=1|effecttype=0|act=0>
+MOV S$C_顶戴元素七A3 <Img|x=290|y=10|id=229|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴7A)>.png>
+
+#IF
+CHECKTITLE 唯我独尊
+#ACT
+MOV S$C_顶戴元素八A1 <Img|id=32|width=338|height=50|children={139,239}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始唯我独尊>
+MOV S$C_顶戴元素八A2 <Effect|id=139|x=170|y=25|effectid=<$STR(S$C_唯我独尊标识)>|count=0|scale=1.0|dir=5|speed=1|effecttype=0|act=0>
+MOV S$C_顶戴元素八A3 <Img|x=290|y=10|id=239|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴8A)>.png>
+
+#IF
+CHECKTITLE 巅峰之人
+#ACT
+MOV S$C_顶戴元素九A1 <Img|id=33|width=338|height=50|children={149,249}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始巅峰之人>
+MOV S$C_顶戴元素九A2 <Effect|id=149|x=170|y=25|effectid=<$STR(S$C_巅峰之人标识)>|count=0|scale=1.0|dir=5|speed=1|effecttype=0|act=0>
+MOV S$C_顶戴元素九A3 <Img|x=290|y=10|id=249|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴9A)>.png>
+
+
+#IF
+EQUAL <$STR(A279)> <$USERNAME>
+#ACT
+MOV S$C_顶戴元素你球啥1 <Img|id=34|width=338|height=50|children={159,259}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始你球啥>
+MOV S$C_顶戴元素你球啥2 <Img|x=115|y=5|id=159|img=Topwear/<$STR(S$C_你球啥标识)>.png>
+MOV S$C_顶戴元素你球啥3 <Img|x=290|y=10|id=259|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴你球啥)>.png>
+
+
+#IF
+EQUAL <$STR(A280)> <$USERNAME>
+#ACT
+MOV S$C_顶戴元素球你咋地1 <Img|id=35|width=338|height=50|children={169,269}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@称谓开始球你咋地>
+MOV S$C_顶戴元素球你咋地2 <Img|x=115|y=5|id=169|img=Topwear/<$STR(S$C_球你咋地标识)>.png>
+MOV S$C_顶戴元素球你咋地3 <Img|x=290|y=10|id=269|img=custom/hl/hl_ui/<$STR(S$C_勾选顶戴球你咋地)>.png>
+
+
+#IF
+#ACT
+MOV S$C_顶戴面板 <Img|x=-17|y=-500|bg=1|children={11,12,13,14,15,16}|width=382|height=515|img=custom/hl/chenhaoanniu/ch_ui1.png>
+INC S$C_顶戴面板 <Img|x=21|y=22|id=11|width=340|height=50|img=custom/hl/chenhaoanniu/ch_ui3.png>
+INC S$C_顶戴面板 <Button|id=15|x=380|y=0|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exitQF>
+INC S$C_顶戴面板 <Layout|id=16|x=375|y=0|width=70|height=70|link=@exitQF>
+INC S$C_顶戴面板 <Text|id=12|outline=2|outlinecolor=0|x=160|y=30|color=103|size=18|text=称谓展示>
+INC S$C_顶戴面板 <ListView|id=13|x=22|y=72|children={21,22,23,24,25,26,27,28,29,30,31,32,33,34,35}|width=340|height=340|direction=1|bounce=0|margin=1|default=1>
+INC S$C_顶戴面板 <Text|id=14|outline=1|outlinecolor=0|x=55|y=450|color=224|size=16|text=点击选择想要显示的称谓，最多显示5个>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素一1)><$STR(S$C_顶戴元素一2)><$STR(S$C_顶戴元素一3)>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素二1)><$STR(S$C_顶戴元素二2)><$STR(S$C_顶戴元素二3)>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素三1)><$STR(S$C_顶戴元素三2)><$STR(S$C_顶戴元素三3)>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素四1)><$STR(S$C_顶戴元素四2)><$STR(S$C_顶戴元素四3)>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素五1)><$STR(S$C_顶戴元素五2)><$STR(S$C_顶戴元素五3)> 
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素六1)><$STR(S$C_顶戴元素六2)><$STR(S$C_顶戴元素六3)>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素七1)><$STR(S$C_顶戴元素七2)><$STR(S$C_顶戴元素七3)>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素八1)><$STR(S$C_顶戴元素八2)><$STR(S$C_顶戴元素八3)>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素九1)><$STR(S$C_顶戴元素九2)><$STR(S$C_顶戴元素九3)>
+
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素六A1)><$STR(S$C_顶戴元素六A2)><$STR(S$C_顶戴元素六A3)>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素七A1)><$STR(S$C_顶戴元素七A2)><$STR(S$C_顶戴元素七A3)>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素八A1)><$STR(S$C_顶戴元素八A2)><$STR(S$C_顶戴元素八A3)>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素九A1)><$STR(S$C_顶戴元素九A2)><$STR(S$C_顶戴元素九A3)>
+
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素你球啥1)><$STR(S$C_顶戴元素你球啥2)><$STR(S$C_顶戴元素你球啥3)>
+INC S$C_顶戴面板 <$STR(S$C_顶戴元素球你咋地1)><$STR(S$C_顶戴元素球你咋地2)><$STR(S$C_顶戴元素球你咋地3)>
+
+ADDBUTTON 23 53  <$Str(S$C_顶戴面板)>
+
+
+[@称谓开始会员]
+#IF
+EQUAL <$STR(S$C_勾选顶戴3)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示三)>
+#ACT
+CALCVAR HUMAN 顶戴展示三 = <$STR(S$C_会员顶戴标识)>
+SAVEVAR HUMAN 顶戴展示三
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#ELSEACT
+CALCVAR HUMAN 顶戴展示三 =
+SAVEVAR HUMAN 顶戴展示三
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+
+[@称谓开始火龙真体]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴1)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示五)>
+#ACT
+CALCVAR HUMAN 顶戴展示五 = 5050
+SAVEVAR HUMAN 顶戴展示五
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#ELSEACT
+CALCVAR HUMAN 顶戴展示五 =
+SAVEVAR HUMAN 顶戴展示五
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+break
+
+[@称谓开始沙城捐献]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴2)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示四)>
+#ACT
+CALCVAR HUMAN 顶戴展示四 = 5051
+SAVEVAR HUMAN 顶戴展示四
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#ELSEACT
+CALCVAR HUMAN 顶戴展示四 =
+SAVEVAR HUMAN 顶戴展示四
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+
+[@称谓开始火龙之力]
+
+#IF
+#ACT
+sendmsg 9 狂暴称谓必须外显！
+break
+
+[@称谓开始官职系统]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴5)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示一)>
+#ACT
+CALCVAR HUMAN 顶戴展示一 = <$STR(u23)>
+SAVEVAR HUMAN 顶戴展示一
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+#ELSEACT
+CALCVAR HUMAN 顶戴展示一 =
+SAVEVAR HUMAN 顶戴展示一
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+
+[@称谓开始捐献系统]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴6)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示六)>
+#ACT
+CALCVAR HUMAN 顶戴展示六 = youqian
+SAVEVAR HUMAN 顶戴展示六
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+#ELSEACT
+CALCVAR HUMAN 顶戴展示六 =
+SAVEVAR HUMAN 顶戴展示六
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+
+[@称谓开始沙城霸主]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴7)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示七)>
+#ACT
+CALCVAR HUMAN 顶戴展示七 = sbk
+SAVEVAR HUMAN 顶戴展示七
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+#ELSEACT
+CALCVAR HUMAN 顶戴展示七 =
+SAVEVAR HUMAN 顶戴展示七
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+
+[@称谓开始第一等级]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴8)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示八)>
+#ACT
+CALCVAR HUMAN 顶戴展示八 = <$STR(S$C_第一等级标识)>
+SAVEVAR HUMAN 顶戴展示八
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+#ELSEACT
+CALCVAR HUMAN 顶戴展示八 =
+SAVEVAR HUMAN 顶戴展示八
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+
+[@称谓开始第一属性]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴9)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示九)>
+#ACT
+CALCVAR HUMAN 顶戴展示九 = <$STR(S$C_第一属性标识)>
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+#ELSEACT
+CALCVAR HUMAN 顶戴展示九 =
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+
+
+
+
+
+[@称谓开始傲视群雄]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴6A)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示六A)>
+#ACT
+CALCVAR HUMAN 顶戴展示六A = <$STR(S$C_傲视群雄标识)>
+SAVEVAR HUMAN 顶戴展示六A
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+#ELSEACT
+CALCVAR HUMAN 顶戴展示六A =
+SAVEVAR HUMAN 顶戴展示六A
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+
+
+
+[@称谓开始超凡入圣]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴7A)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示七A)>
+#ACT
+CALCVAR HUMAN 顶戴展示七A = <$STR(S$C_超凡入圣标识)>
+SAVEVAR HUMAN 顶戴展示七A
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+#ELSEACT
+CALCVAR HUMAN 顶戴展示七A =
+SAVEVAR HUMAN 顶戴展示七A
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+
+
+[@称谓开始唯我独尊]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴8A)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示八A)>
+#ACT
+CALCVAR HUMAN 顶戴展示八A = <$STR(S$C_唯我独尊标识)>
+SAVEVAR HUMAN 顶戴展示八A
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+#ELSEACT
+CALCVAR HUMAN 顶戴展示八A =
+SAVEVAR HUMAN 顶戴展示八A
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+
+
+
+[@称谓开始巅峰之人]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴9A)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴展示九A)>
+#ACT
+CALCVAR HUMAN 顶戴展示九A = <$STR(S$C_巅峰之人标识)>
+SAVEVAR HUMAN 顶戴展示九A
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+#ELSEACT
+CALCVAR HUMAN 顶戴展示九A =
+SAVEVAR HUMAN 顶戴展示九A
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+break
+
+
+[@称谓开始你球啥]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴你球啥)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴你球啥)>
+#ACT
+CALCVAR HUMAN 顶戴你球啥 = <$STR(S$C_你球啥标识)>
+SAVEVAR HUMAN 顶戴你球啥
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+break
+#ELSEACT
+CALCVAR HUMAN 顶戴你球啥 =
+SAVEVAR HUMAN 顶戴你球啥
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+break
+
+
+[@称谓开始球你咋地]
+
+#IF
+EQUAL <$STR(S$C_勾选顶戴球你咋地)> 1900000682
+EQUAL <$STR(N$C_顶了几个)> 5
+#ACT
+sendmsg 9 称谓外显已达上限，请先取消勾选一个其他称谓！
+break
+
+#IF
+EQUAL <$HUMAN(顶戴球你咋地)>
+#ACT
+CALCVAR HUMAN 顶戴球你咋地 = <$STR(S$C_球你咋地标识)>
+SAVEVAR HUMAN 顶戴球你咋地
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+break
+#ELSEACT
+CALCVAR HUMAN 顶戴球你咋地 =
+SAVEVAR HUMAN 顶戴球你咋地
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+break
+
+
+
+
+
+
+
+}

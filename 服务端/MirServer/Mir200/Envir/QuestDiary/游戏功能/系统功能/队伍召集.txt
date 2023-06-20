@@ -1,0 +1,140 @@
+[@启动召集]
+{
+#IF
+NOT EQUAL <$TEAM0> <$USERNAME>
+#ACT
+GIVE 队伍召集令 1
+SENDMSG 9 <font color='#ff0000'>您不是队长无法使用此物品</font>
+BREAK
+#IF
+LARGE <$RELEVEL> 2
+#ACT
+#ELSEACT
+GIVE 队伍召集令 1
+MESSAGEBOX 你的转生等级不足3级无法使用。
+BREAK
+#OR
+ISONMAP 0150
+ISONMAP 0151
+CheckContainsText <$MAPTITLE> 会员
+CheckContainsText <$MAP> hydt
+CheckContainsText <$MAPTITLE> 转
+CheckContainsText <$MAPTITLE> 级
+;禁止使用的地图
+#ACT
+GIVE 队伍召集令 1
+SENDMSG 9 <font color='#ff0000'>该地图禁止使用队伍召集令</font>
+BREAK
+#ELSEACT
+MOV N$发起召集 0
+
+#IF
+EQUAL <$TEAM0> <$USERNAME>
+#ACT
+MOV S$召集地图 <$MAP>
+MOV S$召集X <$X>
+MOV S$召集Y <$Y>
+MOV N$发起召集 1
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您不是队长无法使用此物品</font>
+BREAK
+
+#IF
+NOT EQUAL <$TEAM1>
+#ACT
+SetHumVar <$TEAM1> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM1> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM1> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM2>
+#ACT
+SetHumVar <$TEAM2> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM2> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM2> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM3>
+#ACT
+SetHumVar <$TEAM3> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM3> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM3> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM4>
+#ACT
+SetHumVar <$TEAM4> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM4> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM4> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM5>
+#ACT
+SetHumVar <$TEAM5> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM5> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM5> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM6>
+#ACT
+SetHumVar <$TEAM6> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM6> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM6> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM7>
+#ACT
+SetHumVar <$TEAM7> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM7> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM7> S72 <$STR(S$召集Y)>
+
+
+#IF
+NOT EQUAL <$TEAM8>
+#ACT
+SetHumVar <$TEAM8> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM8> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM8> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM9>
+#ACT
+SetHumVar <$TEAM9> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM9> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM9> S72 <$STR(S$召集Y)>
+
+#IF
+#ACT
+MOV N$队伍集合 1
+sendmsg 7 一支穿云箭，千军万马来相见。队伍召集已发出！
+GOTOLABEL 0 @队伍召集
+
+
+[@队伍召集]
+#IF
+NOT EQUAL S70
+NOT EQUAL <$TEAM0> <$USERNAME>
+#ACT
+AddbutShow 50 协助队长 @协助队长
+AddbutShow 51 放弃队长 @放弃队长
+
+[@协助队长]
+#IF
+NOT EQUAL S70
+#ACT
+MAPMOVE <$STR(S70)> <$STR(S71)> <$STR(S72)>
+MOV S70
+MOV S71
+MOV S72
+DelbutShow 50
+DelbutShow 51
+
+[@放弃队长]
+#ACT
+DelbutShow 50
+DelbutShow 51
+
+
+
+
+}

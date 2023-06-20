@@ -1,0 +1,26 @@
+[@每周活跃重置]
+{
+
+#IF
+EQUAL <$HUMAN(周活跃重置)>
+#ACT
+set [433] 0
+set [434] 0
+set [435] 0
+CALCVAR HUMAN 周活跃重置 = 已重置
+SAVEVAR HUMAN 周活跃重置
+CALCVAR HUMAN 活跃度_活跃度周 = 0
+SAVEVAR HUMAN 活跃度_活跃度周
+GOTO @每周活跃重置新人
+BREAK
+
+[@每周活跃重置新人]
+#IF
+ISNEWHUMAN
+#ACT
+BREAK
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>活跃：每周活跃任务已重置!</font>
+BREAK
+
+}

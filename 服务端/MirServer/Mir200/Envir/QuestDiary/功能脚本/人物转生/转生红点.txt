@@ -1,0 +1,26 @@
+[@转生红点]
+{
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini <$RELEVEL>转 下级dj s$下级dj
+MOV N$下级dj <$STR(s$下级dj)>
+DEC N$下级dj 1
+MOV S$转生红点
+
+#IF
+CHECKLEVELEX > <$STR(N$下级dj)>
+#ACT
+#ELSEACT
+BREAK
+
+#IF
+checkitem <$STR(s$下级clmc_1)> <$str(s$下级clsl_1)>
+CheckBindMoney 元宝 ? <$STR(s$下级ybsl)>
+#ACT
+MOV S$转生红点 icon_red_01
+
+
+
+
+
+
+}

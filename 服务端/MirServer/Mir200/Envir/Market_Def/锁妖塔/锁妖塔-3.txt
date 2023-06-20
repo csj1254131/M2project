@@ -1,0 +1,20 @@
+[@main]
+#IF
+EQUAL <$HUMAN(B_历史最高层)> ??
+#ACT
+VAR Integer HUMAN B_历史最高层
+#IF
+EQUAL <$HUMAN(B_今日挑战层)> ??
+#ACT
+VAR Integer HUMAN B_今日挑战层
+#IF
+EQUAL <$HUMAN(B_今日等阶奖励)> ??
+#ACT
+VAR Integer HUMAN B_今日等阶奖励
+#IF
+EQUAL <$HUMAN(B_今日扫荡状态)> ??
+#ACT
+VAR Integer HUMAN B_今日扫荡状态
+#IF
+#ACT
+#CALL [\全服活动\锁妖塔.txt] @启动锁妖塔

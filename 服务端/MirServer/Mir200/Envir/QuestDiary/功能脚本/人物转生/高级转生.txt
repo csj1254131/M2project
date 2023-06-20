@@ -1,0 +1,243 @@
+[@高级人物转生]
+{
+#IF
+SMALL <$RELEVEL> 10
+#ACT
+SENDMSG 9 <font color='#ff0000'>当前转生等级太低，请去一大陆转生</font>
+BREAK
+#IF
+CHECKJOB Warrior
+#ACT
+Mov s$Job 攻击
+#IF
+CHECKJOB Wizard
+#ACT
+Mov s$Job 魔法
+#IF
+CHECKJOB Taoist
+#ACT
+Mov s$Job 道术
+#IF
+#ACT
+MOV S$转生红点
+MOV N$转生等级 <$RELEVEL>
+MOV N$下级转生等级 <$STR(N$转生等级)>
+INC N$下级转生等级 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\高级转生配置.ini <$STR(N$转生等级)>转 <$STR(s$Job)> S$转生属性串
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\高级转生配置.ini <$STR(N$转生等级)>转 材料 S$转生材料串
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\高级转生配置.ini <$STR(N$下级转生等级)>转 <$STR(s$Job)> s$下级转生属性串
+GETVALIDSTRSUPER S$转生属性串 | S$转生属性_
+GETVALIDSTRSUPER s$转生材料串 | s$转生材料_
+GETVALIDSTRSUPER s$下级转生属性串 | s$下级转生属性_
+GetDBIdxItemFieldValue <$STR(s$转生材料_1)> name S$转生材料名_1
+GetDBIdxItemFieldValue <$STR(s$转生材料_3)> name S$转生材料名_3
+
+#if 
+checkitem <$STR(s$转生材料名_1)> <$str(s$转生材料_2)>
+#act 
+Mov s$材料ys_1 250
+#ELSEACT
+Mov s$材料ys_1 249
+#if 
+checkitem <$STR(s$转生材料名_3)> <$str(s$转生材料_4)>
+#act 
+Mov s$材料ys_2 250
+#ELSEACT
+Mov s$材料ys_2 249
+
+#if 
+CheckBindMoney 元宝 ? <$STR(s$转生材料_6)>
+#act 
+Mov s$元宝ys 250
+#ELSEACT
+Mov s$元宝ys 249
+
+#IF
+EQUAL s$材料ys_1 250
+EQUAL s$材料ys_2 250
+EQUAL s$元宝ys 250
+#ACT
+MOV S$转生红点 icon_red_01
+
+#IF
+#ACT
+MOV N$途径窗口 0
+Goto @人物转生展示
+
+
+
+[@人物转生展示]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png>
+<Img|a=4|children={0,2,3,4,20,22}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|text=高级转生|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Img|a=4|id=3|children={5,6,7,8,9,10,11,12,13,14,15,16,17,19}|img=custom/hl/zhuansheng_ui/bg_zhuansheng_01.jpg|percentx=50|percenty=54>
+<Effect|a=4|id=4|effectid=50701|effecttype=0|scale=0.8|percentx=33|percenty=12>
+<Text|id=5|a=4|text=人物转生等级：<$RELEVEL> 转|color=251|size=18|outline=2|outlinecolor=0|percentx=50|percenty=3>
+
+<Text|id=6|a=4|text=当前属性|color=251|size=18|outline=2|outlinecolor=0|percentx=20|percenty=15>
+<Text|id=7|a=4|text=下级属性|color=251|size=18|outline=2|outlinecolor=0|percentx=80|percenty=15>
+
+<Img|a=4|id=8|children={80,81,82}|img=custom/hl/zhuansheng_ui/bg_hhzy_01_1.png|percentx=20|percenty=35|width=270|height=130|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+<Img|a=4|id=9|children={90,91,92}|img=custom/hl/zhuansheng_ui/bg_hhzy_01_1.png|percentx=80|percenty=35|width=270|height=130|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+
+#IF
+large <$RELEVEL> 9
+#SAY
+<Text|id=80|text=Hp ：<$Str(s$转生属性_1)>|color=255|size=18|outline=2|outlinecolor=0|x=95|y=20>
+<Text|id=81|text=mp：<$Str(s$转生属性_2)>|color=255|size=18|outline=2|outlinecolor=0|x=95|y=50>
+<Text|id=82|text=<$Str(s$Job)>：<$Str(s$转生属性_3)> - <$Str(s$转生属性_4)>|color=255|size=18|outline=2|outlinecolor=0|x=85.5|y=80>
+#ELSESAY
+<Text|id=80|text=无|color=255|size=18|outline=2|outlinecolor=0|x=125|y=50>
+
+#IF
+SMALL <$RELEVEL> 20
+#SAY
+<Text|id=90|text=Hp ：<$Str(s$下级转生属性_1)>|color=250|size=18|outline=2|outlinecolor=0|x=95|y=20>
+<Text|id=91|text=mp：<$Str(s$下级转生属性_2)>|color=250|size=18|outline=2|outlinecolor=0|x=95|y=50>
+<Text|id=92|text=<$Str(s$Job)>：<$Str(s$下级转生属性_3)> - <$Str(s$下级转生属性_4)>|color=250|size=18|outline=2|outlinecolor=0|x=85.5|y=80>
+<Text|a=4|id=10|text=需要等级<$STR(s$转生材料_8)>，转生不降级|color=255|size=18|outline=2|outlinecolor=0|percentx=50|percenty=70>
+<Text|a=4|id=11|text=消耗材料：|color=255|size=18|outline=2|outlinecolor=0|percentx=24|percenty=82>
+
+<ItemShow|a=4|id=12|children={12a}|itemid=<$Str(s$转生材料_1)>|itemcount=1|showtips=1|bgtype=1|percentx=34|percenty=82>
+<Text|a=4|id=12a|text=<$Str(s$转生材料_2)>|color=<$Str(s$材料ys_1)>|size=17|outline=2|outlinecolor=0|percentx=82|percenty=80>
+<Img|a=4|id=13|img=custom/hl/hl_ui/icon_add_01.png|percentx=43|percenty=82>
+
+<ItemShow|a=4|id=14|children={14a}|itemid=<$Str(s$转生材料_3)>|itemcount=1|showtips=1|bgtype=1|percentx=52|percenty=82>
+<Text|a=4|id=14a|text=<$Str(s$转生材料_4)>|color=<$Str(s$材料ys_2)>|size=17|outline=2|outlinecolor=0|percentx=82|percenty=80>
+<Img|a=4|id=15|img=custom/hl/hl_ui/icon_add_01.png|percentx=60|percenty=82>
+
+
+<RText|id=16|text=<<$Str(s$转生材料_6)>/FCOLOR=<$Str(s$元宝ys)>> 元宝|color=255|size=18|outline=2|outlinecolor=0|x=470|y=350>
+<Button|a=4|id=17|children={18,17a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=95|link=@我要转生>
+<Img|id=17a|img=custom/hl/hl_ui/<$Str(s$转生红点)>.png|x=95|y=5>
+<Text|a=4|id=18|text=我要转生|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Text|a=4|id=19|text=获取途径|color=250|size=18|outline=2|outlinecolor=0|percentx=94|percenty=96|link=@转生途径>
+#ELSESAY
+<Text|id=90|text=无|color=250|size=18|outline=2|outlinecolor=0|x=125|y=50>
+
+#IF
+EQUAL N$途径窗口 1
+#SAY
+<Img|a=4|id=20|children={21}|img=custom/hl/hl_ui/hqtj.png|percentx=74.5|percenty=54>
+<Img|a=4|id=21|children={210,211,212,213,214,215,216,217,218,219}|img=custom/hl/hl_ui/hqtj_1.jpg|percentx=50|percenty=50|width=334|height=422>
+<Text|a=4|id=210|text=获取途径|color=251|size=18|outline=2|outlinecolor=0|percentx=50|percenty=5>
+<Text|a=4|id=211|text=转生材料高爆地图|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=15>
+<Button|a=4|id=215|children={215a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=30|link=@转生传送_1>
+<Text|a=4|id=215a|text=<$Str(s$地图mc_1)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|a=4|id=216|children={216a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=40|link=@转生传送_2>
+<Text|a=4|id=216a|text=<$Str(s$地图mc_2)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|a=4|id=217|children={217a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=50|link=@转生传送_3>
+<Text|a=4|id=217a|text=<$Str(s$地图mc_3)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Text|a=4|id=219|text=点击按钮直接前往|color=250|size=18|outline=2|outlinecolor=0|percentx=50|percenty=80>
+
+<Button|a=4|id=22|children={220,221}|nimg=custom/hl/hl_ui/1900012110.png|percentx=48.9|percenty=18|link=@转生途径>
+<Text|a=4|id=220|text=关|color=100|size=18|outline=2|outlinecolor=0|percentx=55|percenty=25>
+<Text|a=4|id=221|text=闭|color=100|size=18|outline=2|outlinecolor=0|percentx=55|percenty=65>
+
+[@转生传送_1]
+#IF
+#ACT
+OPENNPCSHOWEX <$Str(s$地图cs_1)>
+CLOSE
+[@转生传送_2]
+#IF
+#ACT
+OPENNPCSHOWEX  <$Str(s$地图cs_2)>
+CLOSE
+[@转生传送_3]
+#IF
+#ACT
+OPENNPCSHOWEX  <$Str(s$地图cs_3)>
+CLOSE
+
+
+[@转生途径]
+#IF
+EQUAL N$途径窗口 0
+#ACT
+Mov  N$途径窗口 1
+Goto @人物转生展示1
+BREAK
+#IF
+#ACT
+Mov  N$途径窗口 0
+Goto @人物转生展示
+BREAK
+
+[@人物转生展示1]
+#IF
+CHECKRENEWLEVEL < 10
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini <$RELEVEL>转地图 地图mc_1 s$地图mc_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini <$RELEVEL>转地图 地图cs_1 s$地图cs_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini <$RELEVEL>转地图 地图mc_2 s$地图mc_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini <$RELEVEL>转地图 地图cs_2 s$地图cs_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini <$RELEVEL>转地图 地图mc_3 s$地图mc_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini <$RELEVEL>转地图 地图cs_3 s$地图cs_3
+Goto @人物转生展示
+BREAK
+
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini 10转地图 地图mc_1 s$地图mc_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini 10转地图 地图cs_1 s$地图cs_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini 10转地图 地图mc_2 s$地图mc_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini 10转地图 地图cs_2 s$地图cs_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini 10转地图 地图mc_3 s$地图mc_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini 10转地图 地图cs_3 s$地图cs_3
+Goto @人物转生展示
+BREAK
+
+
+[@我要转生]
+#if 
+CHECKRENEWLEVEL < 10
+#act 
+SENDMSG 9 <font color='#ff0000'>当前转生等级太低，请去一大陆转生</font>
+break
+#if 
+CHECKRENEWLEVEL > 19
+#act 
+SENDMSG 9 <font color='#ff0000'>当前转生已经满级，无法再进行提升</font>
+break
+#or 
+CHECKLEVELEX > <$STR(s$转生材料_8)>
+CHECKLEVELEX = <$STR(s$转生材料_8)>
+#act 
+#elseact
+SENDMSG 9 <font color='#ff0000'>当前等级不足<$STR(s$转生材料_8)>级，无法进行提升</font>
+break
+
+
+#if 
+checkitem <$STR(s$转生材料名_1)> <$str(s$转生材料_2)>
+checkitem <$STR(s$转生材料名_3)> <$str(s$转生材料_4)>
+#act 
+#elseact
+SENDMSG 9 <font color='#ff0000'>材料不足，无法进行提升</font>
+break
+
+
+#if 
+CheckBindMoney 元宝 ? <$STR(s$转生材料_6)>
+#act 
+ChangeBindMoney 元宝  <$STR(s$转生材料_6)>
+RENEWLEVEL 1 0 0
+TAKE <$STR(s$转生材料名_1)> <$str(s$转生材料_2)>
+TAKE <$STR(s$转生材料名_3)> <$str(s$转生材料_4)>
+Mov u19 <$Str(S$转生属性_1)>
+Mov u20 <$Str(S$转生属性_2)>
+Mov u21 <$Str(S$转生属性_3)>
+Mov u22 <$Str(S$转生属性_4)>
+SENDMSGNEW 250 0 {<$USERNAME>/FCOLOR=251}转生达到{<$RELEVEL>/FCOLOR=249}转，属性大增，攻击翻倍 1 2
+#Call [\属性刷新.txt] @属性刷新
+goto @高级人物转生
+break
+#elseact
+SENDMSG 9 <font color='#ff0000'>您当前没有元宝x<$STR(s$转生材料_6)>，无法进行提升</font>
+break
+
+
+}

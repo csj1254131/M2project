@@ -1,0 +1,690 @@
+[@累计消费]
+{
+#IF
+#ACT
+Mov s$累消未达成
+Mov s$累消已达成
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_1 s$累消金额_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_2 s$累消金额_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_3 s$累消金额_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_4 s$累消金额_4
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_5 s$累消金额_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_6 s$累消金额_6
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_7 s$累消金额_7
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_8 s$累消金额_8
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx1_1 s$累消奖励idx1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx1_2 s$累消奖励idx1_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx1_3 s$累消奖励idx1_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx1_4 s$累消奖励idx1_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx1_5 s$累消奖励idx1_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl1_1 s$累消奖励sl1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl1_2 s$累消奖励sl1_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl1_3 s$累消奖励sl1_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl1_4 s$累消奖励sl1_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl1_5 s$累消奖励sl1_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx2_1 s$累消奖励idx2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx2_2 s$累消奖励idx2_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx2_3 s$累消奖励idx2_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx2_4 s$累消奖励idx2_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx2_5 s$累消奖励idx2_5
+
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl2_1 s$累消奖励sl2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl2_2 s$累消奖励sl2_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl2_3 s$累消奖励sl2_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl2_4 s$累消奖励sl2_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl2_5 s$累消奖励sl2_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx3_1 s$累消奖励idx3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx3_2 s$累消奖励idx3_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx3_3 s$累消奖励idx3_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx3_4 s$累消奖励idx3_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx3_5 s$累消奖励idx3_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl3_1 s$累消奖励sl3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl3_2 s$累消奖励sl3_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl3_3 s$累消奖励sl3_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl3_4 s$累消奖励sl3_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl3_5 s$累消奖励sl3_5
+
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx4_1 s$累消奖励idx4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx4_2 s$累消奖励idx4_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx4_3 s$累消奖励idx4_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx4_4 s$累消奖励idx4_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx4_5 s$累消奖励idx4_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl4_1 s$累消奖励sl4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl4_2 s$累消奖励sl4_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl4_3 s$累消奖励sl4_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl4_4 s$累消奖励sl4_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl4_5 s$累消奖励sl4_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx5_1 s$累消奖励idx5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx5_2 s$累消奖励idx5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx5_3 s$累消奖励idx5_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx5_4 s$累消奖励idx5_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx5_5 s$累消奖励idx5_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl5_1 s$累消奖励sl5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl5_2 s$累消奖励sl5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl5_3 s$累消奖励sl5_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl5_4 s$累消奖励sl5_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl5_5 s$累消奖励sl5_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx6_1 s$累消奖励idx6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx6_2 s$累消奖励idx6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx6_3 s$累消奖励idx6_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx6_4 s$累消奖励idx6_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx6_5 s$累消奖励idx6_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl6_1 s$累消奖励sl6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl6_2 s$累消奖励sl6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl6_3 s$累消奖励sl6_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl6_4 s$累消奖励sl6_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl6_5 s$累消奖励sl6_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx7_1 s$累消奖励idx7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx7_2 s$累消奖励idx7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx7_3 s$累消奖励idx7_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx7_4 s$累消奖励idx7_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx7_5 s$累消奖励idx7_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl7_1 s$累消奖励sl7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl7_2 s$累消奖励sl7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl7_3 s$累消奖励sl7_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl7_4 s$累消奖励sl7_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl7_5 s$累消奖励sl7_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx8_1 s$累消奖励idx8_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx8_2 s$累消奖励idx8_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx8_3 s$累消奖励idx8_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx8_4 s$累消奖励idx8_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励idx8_5 s$累消奖励idx8_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl8_1 s$累消奖励sl8_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl8_2 s$累消奖励sl8_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl8_3 s$累消奖励sl8_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl8_4 s$累消奖励sl8_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl8_5 s$累消奖励sl8_5
+
+#IF
+Not  small u120 <$Str(s$累消金额_1)>
+equal U128 0
+#ACT
+Mov s$累消执行_1 <Button|id=15|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=480|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@累消领奖_1>
+#ELSEACT
+Mov s$累消执行_1 <Img|id=15|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+
+#IF
+Not  small u120 <$Str(s$累消金额_2)>
+equal U129 0
+#ACT
+Mov s$累消执行_2 <Button|id=25|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=480|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@累消领奖_2>
+#ELSEACT
+Mov s$累消执行_2 <Img|id=25|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+#IF
+Not  small u120 <$Str(s$累消金额_3)>
+equal U130 0
+#ACT
+Mov s$累消执行_3 <Button|id=35|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=480|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@累消领奖_3>
+#ELSEACT
+Mov s$累消执行_3 <Img|id=35|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+#IF
+Not  small u120 <$Str(s$累消金额_4)>
+equal U131 0
+#ACT
+Mov s$累消执行_4 <Button|id=45|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=480|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@累消领奖_4>
+#ELSEACT
+Mov s$累消执行_4 <Img|id=45|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+#IF
+Not  small u120 <$Str(s$累消金额_5)>
+equal U132 0
+#ACT
+Mov s$累消执行_5 <Button|id=55|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=480|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@累消领奖_5>
+#ELSEACT
+Mov s$累消执行_5 <Img|id=55|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+#IF
+Not  small u120 <$Str(s$累消金额_6)>
+equal U133 0
+#ACT
+Mov s$累消执行_6 <Button|id=65|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=480|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@累消领奖_6>
+#ELSEACT
+Mov s$累消执行_6 <Img|id=65|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+#IF
+Not  small u120 <$Str(s$累消金额_7)>
+equal U134 0
+#ACT
+Mov s$累消执行_7 <Button|id=75|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=480|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@累消领奖_7>
+#ELSEACT
+Mov s$累消执行_7 <Img|id=75|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+
+#IF
+Not  small u120 <$Str(s$累消金额_8)>
+equal U135 0
+#ACT
+Mov s$累消执行_8 <Button|id=85|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=480|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@累消领奖_8>
+#ELSEACT
+Mov s$累消执行_8 <Img|id=85|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+
+
+#IF
+equal U128 1
+#ACT
+Mov s$累消执行_1 <Img|id=15|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Inc   s$累消已达成 10,
+#ELSEACT
+Inc  s$累消未达成 10,
+#IF
+equal U129 1
+#ACT
+Mov s$累消执行_2 <Img|id=25|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Inc   s$累消已达成 20,
+#ELSEACT
+Inc  s$累消未达成 20,
+#IF
+equal U130 1
+#ACT
+Mov s$累消执行_3 <Img|id=35|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Inc   s$累消已达成 30,
+#ELSEACT
+Inc  s$累消未达成 30,
+#IF
+equal U131 1
+#ACT
+Mov s$累消执行_4 <Img|id=45|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Inc   s$累消已达成 40,
+#ELSEACT
+Inc   s$累消未达成 40,
+#IF
+equal U132 1
+#ACT
+Mov s$累消执行_5 <Img|id=55|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Inc   s$累消已达成 50,
+#ELSEACT
+Inc  s$累消未达成 50,
+#IF
+equal U133 1
+#ACT
+Mov s$累消执行_6 <Img|id=65|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Inc   s$累消已达成 60,
+#ELSEACT
+Inc  s$累消未达成 60,
+#IF
+equal U134 1
+#ACT
+Mov s$累消执行_7 <Img|id=75|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Inc   s$累消已达成 70,
+#ELSEACT
+Inc  s$累消未达成 70,
+
+#IF
+equal U135 1
+#ACT
+Mov s$累消执行_8 <Img|id=85|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Inc   s$累消已达成 80,
+#ELSEACT
+Inc  s$累消未达成 80,
+
+#IF
+#ACT
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+Goto @每日累消展示
+
+
+[@每日累消展示]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png|reload=1|loadDelay=1|loadCount=25|loadStep=5>
+<Img|a=4|children={0,2,8}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|a=4|id=2|text=累计消费|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Img|a=4|id=8|children={3,9,1002}|img=custom/hl/kqhd_ui/djmb.jpg|percentx=50|percenty=54>
+<Img|a=4|id=1002|children={1003,1004,1005,1006}|img=custom/hl/kqhd_ui/banner2.png|percentx=58.5|percenty=11>
+<Text|id=1003|text=剩余时间：|x=20|y=65|size=17|color=255|outline=2|outlinecolor=0>
+<TIMETIPS|id=1004|time=<$str(G100)>|color=250|size=17|outline=2|outlinecolor=0|x=105|y=65>
+<Text|id=1005|text=当前已消费：          <$Str(u120)>|x=360|y=65|size=16|color=255|outline=2|outlinecolor=0>
+<Img|id=1006|img=item/item_1/000226.png|width=25|height=25|x=460|y=65>
+
+<Layout|id=3|children={4,5,6,7,1000,1001}|width=115|height=200|x=3.5|y=5|color=x>
+<Button|id=4|children={4a,4c}|nimg=custom/hl/hl_ui/115_2.png|link=@每日充值>
+<Text|a=4|id=4a|text=连续充值|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$连充红点)>
+
+<Button|id=5|children={5a,5c}|nimg=custom/hl/hl_ui/115_2.png|y=41|link=@跳转等级目标>
+<Text|a=4|id=5a|text=等级目标|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$目标红点)>
+
+<Button|id=6|children={6a,6c}|nimg=custom/hl/hl_ui/115_2.png|y=82|link=@跳转累计登陆>
+<Text|a=4|id=6a|text=累计登陆|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$累登红点)>
+
+;<Button|id=7|children={7a,7c}|nimg=custom/hl/hl_ui/115_2.png|y=123|link=@跳转每日限购>
+;<Text|a=4|id=7a|text=限时特惠|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+;<$Str(s$特惠红点)>
+
+<Button|id=1000|children={1000a,1000c}|nimg=custom/hl/hl_ui/115_2.png|x=0|y=123|link=@跳转累计充值>
+<Text|a=4|id=1000a|text=限时充值|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$累充红点)>
+
+<Button|id=1001|children={1001a,1001c}|nimg=custom/hl/hl_ui/115_1.png|x=0|y=163|link=@跳转累计消费>
+<Text|a=4|id=1001a|text=限时消费|x=30|y=20|size=18|color=100|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$累消红点)>
+
+
+
+
+<ListView|id=9|children={<$str(s$累消未达成)><$str(s$累消已达成)>}|direction=1|bounce=0|margin=2|width=605|height=348|x=128|y=102|color=x>
+<Layout|id=10|children={11,12,13,13a,100,101,102,103,104,15,16}|width=605|height=101|color=x>
+<Img|id=11|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=12|text=累计消费|x=40|y=22|size=18|color=251|outline=2|outlinecolor=0>
+<Text|a=4|id=13|text=<$Str(s$累消金额_1)>|size=18|color=250|outline=2|outlinecolor=0|percentx=12.5|percenty=60.5>
+<Img|id=13a|img=item/item_1/000226.png|width=25|height=25|x=17|y=49>
+
+<ItemShow|id=100|itemid=<$Str(s$累消奖励idx1_1)>|itemcount=1|showtips=1|bgtype=1|x=130|y=17|itemcount=<$Str(s$累消奖励sl1_1)>>
+<ItemShow|id=101|itemid=<$Str(s$累消奖励idx1_2)>|itemcount=1|showtips=1|bgtype=1|x=200|y=17|itemcount=<$Str(s$累消奖励sl1_2)>>
+;<ItemShow|id=102|itemid=<$Str(s$累消奖励idx1_3)>|itemcount=1|showtips=1|bgtype=1|x=270|y=17|itemcount=<$Str(s$累消奖励sl1_3)>>
+;<ItemShow|id=103|itemid=<$Str(s$累消奖励idx1_4)>|itemcount=1|showtips=1|bgtype=1|x=340|y=17|itemcount=<$Str(s$累消奖励sl1_4)>>
+;<ItemShow|id=104|itemid=<$Str(s$累消奖励idx1_5)>|itemcount=1|showtips=1|bgtype=1|x=410|y=17|itemcount=<$Str(s$累消奖励sl1_5)>>
+<$Str(s$累消执行_1)>
+
+<Layout|id=20|children={21,22,23,23a,200,201,202,203,204,25}|width=605|height=101|color=x>
+<Img|id=21|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=22|text=累计消费|x=40|y=22|size=18|color=251|outline=2|outlinecolor=0>
+<Text|a=4|id=23|text=<$Str(s$累消金额_2)>|size=18|color=250|outline=2|outlinecolor=0|percentx=12.5|percenty=60.5>
+<Img|id=23a|img=item/item_1/000226.png|width=25|height=25|x=17|y=49>
+<ItemShow|id=200|itemid=<$Str(s$累消奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=130|y=17|itemcount=<$Str(s$累消奖励sl2_1)>>
+<ItemShow|id=201|itemid=<$Str(s$累消奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=200|y=17|itemcount=<$Str(s$累消奖励sl2_2)>>
+;<ItemShow|id=202|itemid=<$Str(s$累消奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=270|y=17|itemcount=<$Str(s$累消奖励sl2_3)>>
+;<ItemShow|id=203|itemid=<$Str(s$累消奖励idx2_4)>|itemcount=1|showtips=1|bgtype=1|x=340|y=17|itemcount=<$Str(s$累消奖励sl2_4)>>
+;<ItemShow|id=204|itemid=<$Str(s$累消奖励idx2_5)>|itemcount=1|showtips=1|bgtype=1|x=410|y=17|itemcount=<$Str(s$累消奖励sl2_5)>>
+<$Str(s$累消执行_2)>
+
+<Layout|id=30|children={31,32,33,33a,300,301,302,303,304,35}|width=605|height=101|color=x>
+<Img|id=31|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=32|text=累计消费|x=40|y=22|size=18|color=251|outline=2|outlinecolor=0>
+<Text|a=4|id=33|text=<$Str(s$累消金额_3)>|size=18|color=250|outline=2|outlinecolor=0|percentx=12.5|percenty=60.5>
+<Img|id=33a|img=item/item_1/000226.png|width=25|height=25|x=17|y=49>
+<ItemShow|id=300|itemid=<$Str(s$累消奖励idx3_1)>|itemcount=1|showtips=1|bgtype=1|x=130|y=17|itemcount=<$Str(s$累消奖励sl3_1)>>
+<ItemShow|id=301|itemid=<$Str(s$累消奖励idx3_2)>|itemcount=1|showtips=1|bgtype=1|x=200|y=17|itemcount=<$Str(s$累消奖励sl3_2)>>
+;<ItemShow|id=302|itemid=<$Str(s$累消奖励idx3_3)>|itemcount=1|showtips=1|bgtype=1|x=270|y=17|itemcount=<$Str(s$累消奖励sl3_3)>>
+;<ItemShow|id=303|itemid=<$Str(s$累消奖励idx3_4)>|itemcount=1|showtips=1|bgtype=1|x=340|y=17|itemcount=<$Str(s$累消奖励sl3_4)>>
+;<ItemShow|id=304|itemid=<$Str(s$累消奖励idx3_5)>|itemcount=1|showtips=1|bgtype=1|x=410|y=17|itemcount=<$Str(s$累消奖励sl3_5)>>
+<$Str(s$累消执行_3)>
+
+<Layout|id=40|children={41,42,43,43a,400,401,402,403,404,45}|width=605|height=101|color=x>
+<Img|id=41|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+
+<Text|id=42|text=累计消费|x=40|y=22|size=18|color=251|outline=2|outlinecolor=0>
+<Text|a=4|id=43|text=<$Str(s$累消金额_4)>|size=18|color=250|outline=2|outlinecolor=0|percentx=12.5|percenty=60.5>
+<Img|id=43a|img=item/item_1/000226.png|width=25|height=25|x=17|y=49>
+<ItemShow|id=400|itemid=<$Str(s$累消奖励idx4_1)>|itemcount=1|showtips=1|bgtype=1|x=130|y=17|itemcount=<$Str(s$累消奖励sl4_1)>>
+<ItemShow|id=401|itemid=<$Str(s$累消奖励idx4_2)>|itemcount=1|showtips=1|bgtype=1|x=200|y=17|itemcount=<$Str(s$累消奖励sl4_2)>>
+;<ItemShow|id=402|itemid=<$Str(s$累消奖励idx4_3)>|itemcount=1|showtips=1|bgtype=1|x=270|y=17|itemcount=<$Str(s$累消奖励sl4_3)>>
+;<ItemShow|id=403|itemid=<$Str(s$累消奖励idx4_4)>|itemcount=1|showtips=1|bgtype=1|x=340|y=17|itemcount=<$Str(s$累消奖励sl4_4)>>
+;<ItemShow|id=404|itemid=<$Str(s$累消奖励idx4_5)>|itemcount=1|showtips=1|bgtype=1|x=410|y=17|itemcount=<$Str(s$累消奖励sl4_5)>>
+<$Str(s$累消执行_4)>
+
+<Layout|id=50|children={51,52,53,53a,500,501,502,503,504,55}|width=605|height=101|color=x>
+<Img|id=51|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=52|text=累计消费|x=40|y=22|size=18|color=251|outline=2|outlinecolor=0>
+<Text|a=4|id=53|text=<$Str(s$累消金额_5)>|size=18|color=250|outline=2|outlinecolor=0|percentx=12.5|percenty=60.5>
+<Img|id=53a|img=item/item_1/000226.png|width=25|height=25|x=17|y=49>
+<ItemShow|id=500|itemid=<$Str(s$累消奖励idx5_1)>|itemcount=1|showtips=1|bgtype=1|x=130|y=17|itemcount=<$Str(s$累消奖励sl5_1)>>
+<ItemShow|id=501|itemid=<$Str(s$累消奖励idx5_2)>|itemcount=1|showtips=1|bgtype=1|x=200|y=17|itemcount=<$Str(s$累消奖励sl5_2)>>
+<ItemShow|id=502|itemid=<$Str(s$累消奖励idx5_3)>|itemcount=1|showtips=1|bgtype=1|x=270|y=17|itemcount=<$Str(s$累消奖励sl5_3)>>
+;<ItemShow|id=503|itemid=<$Str(s$累消奖励idx5_4)>|itemcount=1|showtips=1|bgtype=1|x=340|y=17|itemcount=<$Str(s$累消奖励sl5_4)>>
+;<ItemShow|id=504|itemid=<$Str(s$累消奖励idx5_5)>|itemcount=1|showtips=1|bgtype=1|x=410|y=17|itemcount=<$Str(s$累消奖励sl5_5)>>
+<$Str(s$累消执行_5)>
+
+<Layout|id=60|children={61,62,63,63a,600,601,602,603,604,65}|width=605|height=101|color=x>
+<Img|id=61|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=62|text=累计消费|x=40|y=22|size=18|color=251|outline=2|outlinecolor=0>
+<Text|a=4|id=63|text=<$Str(s$累消金额_6)>|size=18|color=250|outline=2|outlinecolor=0|percentx=12.5|percenty=60.5>
+<Img|id=63a|img=item/item_1/000226.png|width=25|height=25|x=17|y=49>
+<ItemShow|id=600|itemid=<$Str(s$累消奖励idx6_1)>|itemcount=1|showtips=1|bgtype=1|x=130|y=17|itemcount=<$Str(s$累消奖励sl6_1)>>
+<ItemShow|id=601|itemid=<$Str(s$累消奖励idx6_2)>|itemcount=1|showtips=1|bgtype=1|x=200|y=17|itemcount=<$Str(s$累消奖励sl6_2)>>
+<ItemShow|id=602|itemid=<$Str(s$累消奖励idx6_3)>|itemcount=1|showtips=1|bgtype=1|x=270|y=17|itemcount=<$Str(s$累消奖励sl6_3)>>
+;<ItemShow|id=603|itemid=<$Str(s$累消奖励idx6_4)>|itemcount=1|showtips=1|bgtype=1|x=340|y=17|itemcount=<$Str(s$累消奖励sl6_4)>>
+;<ItemShow|id=604|itemid=<$Str(s$累消奖励idx6_5)>|itemcount=1|showtips=1|bgtype=1|x=410|y=17|itemcount=<$Str(s$累消奖励sl6_5)>>
+<$Str(s$累消执行_6)>
+
+<Layout|id=70|children={71,72,73,73a,700,701,702,703,704,75}|width=605|height=101|color=x>
+<Img|id=71|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=72|text=累计消费|x=40|y=22|size=18|color=251|outline=2|outlinecolor=0>
+<Text|a=4|id=73|text=<$Str(s$累消金额_7)>|size=18|color=250|outline=2|outlinecolor=0|percentx=12.5|percenty=60.5>
+<Img|id=73a|img=item/item_1/000226.png|width=25|height=25|x=17|y=49>
+<ItemShow|id=700|itemid=<$Str(s$累消奖励idx7_1)>|itemcount=1|showtips=1|bgtype=1|x=130|y=17|itemcount=<$Str(s$累消奖励sl7_1)>>
+<ItemShow|id=701|itemid=<$Str(s$累消奖励idx7_2)>|itemcount=1|showtips=1|bgtype=1|x=200|y=17|itemcount=<$Str(s$累消奖励sl7_2)>>
+<ItemShow|id=702|itemid=<$Str(s$累消奖励idx7_3)>|itemcount=1|showtips=1|bgtype=1|x=270|y=17|itemcount=<$Str(s$累消奖励sl7_3)>>
+;<ItemShow|id=703|itemid=<$Str(s$累消奖励idx7_4)>|itemcount=1|showtips=1|bgtype=1|x=340|y=17|itemcount=<$Str(s$累消奖励sl7_4)>>
+;<ItemShow|id=704|itemid=<$Str(s$累消奖励idx7_5)>|itemcount=1|showtips=1|bgtype=1|x=410|y=17|itemcount=<$Str(s$累消奖励sl7_5)>>
+<$Str(s$累消执行_7)>
+
+<Layout|id=80|children={81,82,83,83a,800,801,802,803,804,85}|width=605|height=101|color=x>
+<Img|id=81|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=82|text=累计消费|x=40|y=22|size=18|color=251|outline=2|outlinecolor=0>
+<Text|a=4|id=83|text=<$Str(s$累消金额_8)>|size=18|color=250|outline=2|outlinecolor=0|percentx=12.5|percenty=60.5>
+<Img|id=83a|img=item/item_1/000226.png|width=25|height=25|x=17|y=49>
+<ItemShow|id=800|itemid=<$Str(s$累消奖励idx8_1)>|itemcount=1|showtips=1|bgtype=1|x=130|y=17|itemcount=<$Str(s$累消奖励sl8_1)>>
+<ItemShow|id=801|itemid=<$Str(s$累消奖励idx8_2)>|itemcount=1|showtips=1|bgtype=1|x=200|y=17|itemcount=<$Str(s$累消奖励sl8_2)>>
+<ItemShow|id=802|itemid=<$Str(s$累消奖励idx8_3)>|itemcount=1|showtips=1|bgtype=1|x=270|y=17|itemcount=<$Str(s$累消奖励sl8_3)>>
+;<ItemShow|id=803|itemid=<$Str(s$累消奖励idx8_4)>|itemcount=1|showtips=1|bgtype=1|x=340|y=17|itemcount=<$Str(s$累消奖励sl8_4)>>
+;<ItemShow|id=804|itemid=<$Str(s$累消奖励idx8_5)>|itemcount=1|showtips=1|bgtype=1|x=410|y=17|itemcount=<$Str(s$累消奖励sl8_5)>>
+<$Str(s$累消执行_8)>
+
+[@累消领奖_1]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留3个背包空格</font>
+BREAK
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_1 s$累消金额_1
+
+#IF
+Not  small u120 <$Str(s$累消金额_1)>
+equal U128 0
+#ACT
+Mov U128 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc1_1 s$累消奖励mc1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc1_2 s$累消奖励mc1_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc1_3 s$累消奖励mc1_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc1_4 s$累消奖励mc1_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc1_5 s$累消奖励mc1_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl1_1 s$累消奖励sl1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl1_2 s$累消奖励sl1_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl1_3 s$累消奖励sl1_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl1_4 s$累消奖励sl1_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl1_5 s$累消奖励sl1_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 连充公告 s$连充公告
+GiveStateItem <$Str(s$累消奖励mc1_1)> <$str(s$累消奖励sl1_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc1_2)> <$str(s$累消奖励sl1_2)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc1_3)> <$str(s$累消奖励sl1_3)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc1_4)> <$str(s$累消奖励sl1_4)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc1_5)> <$str(s$累消奖励sl1_5)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @累计消费
+Break
+[@累消领奖_2]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留3个背包空格</font>
+BREAK
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_2 s$累消金额_2
+#IF
+Not  small u120 <$Str(s$累消金额_2)>
+equal U129 0
+#ACT
+Mov U129 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc2_1 s$累消奖励mc2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc2_2 s$累消奖励mc2_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc2_3 s$累消奖励mc2_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc2_4 s$累消奖励mc2_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc2_5 s$累消奖励mc2_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl2_1 s$累消奖励sl2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl2_2 s$累消奖励sl2_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl2_3 s$累消奖励sl2_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl2_4 s$累消奖励sl2_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl2_5 s$累消奖励sl2_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 连充公告 s$连充公告
+GiveStateItem <$Str(s$累消奖励mc2_1)> <$str(s$累消奖励sl2_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc2_2)> <$str(s$累消奖励sl2_2)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc2_3)> <$str(s$累消奖励sl2_3)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc2_4)> <$str(s$累消奖励sl2_4)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc2_5)> <$str(s$累消奖励sl2_5)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @累计消费
+Break
+[@累消领奖_3]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留3个背包空格</font>
+BREAK
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_3 s$累消金额_3
+#IF
+Not  small u120 <$Str(s$累消金额_3)>
+equal U130 0
+#ACT
+Mov U130 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc3_1 s$累消奖励mc3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc3_2 s$累消奖励mc3_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc3_3 s$累消奖励mc3_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc3_4 s$累消奖励mc3_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc3_5 s$累消奖励mc3_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl3_1 s$累消奖励sl3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl3_2 s$累消奖励sl3_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl3_3 s$累消奖励sl3_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl3_4 s$累消奖励sl3_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl3_5 s$累消奖励sl3_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 连充公告 s$连充公告
+GiveStateItem <$Str(s$累消奖励mc3_1)> <$str(s$累消奖励sl3_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc3_2)> <$str(s$累消奖励sl3_2)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc3_3)> <$str(s$累消奖励sl3_3)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc3_4)> <$str(s$累消奖励sl3_4)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc3_5)> <$str(s$累消奖励sl3_5)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @累计消费
+Break
+[@累消领奖_4]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留3个背包空格</font>
+BREAK
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_4 s$累消金额_4
+#IF
+Not  small u120 <$Str(s$累消金额_4)>
+equal U131 0
+#ACT
+Mov U131 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc4_1 s$累消奖励mc4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc4_2 s$累消奖励mc4_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc4_3 s$累消奖励mc4_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc4_4 s$累消奖励mc4_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc4_5 s$累消奖励mc4_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl4_1 s$累消奖励sl4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl4_2 s$累消奖励sl4_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl4_3 s$累消奖励sl4_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl4_4 s$累消奖励sl4_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl4_5 s$累消奖励sl4_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 连充公告 s$连充公告
+GiveStateItem <$Str(s$累消奖励mc4_1)> <$str(s$累消奖励sl4_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc4_2)> <$str(s$累消奖励sl4_2)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc4_3)> <$str(s$累消奖励sl4_3)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc4_4)> <$str(s$累消奖励sl4_4)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc4_5)> <$str(s$累消奖励sl4_5)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @累计消费
+Break
+[@累消领奖_5]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留3个背包空格</font>
+BREAK
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_5 s$累消金额_5
+#IF
+Not  small u120 <$Str(s$累消金额_5)>
+equal U132 0
+#ACT
+Mov U132 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc5_1 s$累消奖励mc5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc5_2 s$累消奖励mc5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc5_3 s$累消奖励mc5_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc5_4 s$累消奖励mc5_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc5_5 s$累消奖励mc5_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl5_1 s$累消奖励sl5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl5_2 s$累消奖励sl5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl5_3 s$累消奖励sl5_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl5_4 s$累消奖励sl5_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl5_5 s$累消奖励sl5_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 连充公告 s$连充公告
+GiveStateItem <$Str(s$累消奖励mc5_1)> <$str(s$累消奖励sl5_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc5_2)> <$str(s$累消奖励sl5_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc5_3)> <$str(s$累消奖励sl5_3)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc5_4)> <$str(s$累消奖励sl5_4)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc5_5)> <$str(s$累消奖励sl5_5)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @累计消费
+Break
+[@累消领奖_6]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留3个背包空格</font>
+BREAK
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_6 s$累消金额_6
+#IF
+Not  small u120 <$Str(s$累消金额_6)>
+equal U133 0
+#ACT
+Mov U133 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc6_1 s$累消奖励mc6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc6_2 s$累消奖励mc6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc6_3 s$累消奖励mc6_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc6_4 s$累消奖励mc6_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc6_5 s$累消奖励mc6_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl6_1 s$累消奖励sl6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl6_2 s$累消奖励sl6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl6_3 s$累消奖励sl6_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl6_4 s$累消奖励sl6_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl6_5 s$累消奖励sl6_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 连充公告 s$连充公告
+GiveStateItem <$Str(s$累消奖励mc6_1)> <$str(s$累消奖励sl6_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc6_2)> <$str(s$累消奖励sl6_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc6_3)> <$str(s$累消奖励sl6_3)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc6_4)> <$str(s$累消奖励sl6_4)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc6_5)> <$str(s$累消奖励sl6_5)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @累计消费
+Break
+[@累消领奖_7]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留3个背包空格</font>
+BREAK
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_7 s$累消金额_7
+#IF
+Not  small u120 <$Str(s$累消金额_7)>
+equal U134 0
+#ACT
+Mov U134 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc7_1 s$累消奖励mc7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc7_2 s$累消奖励mc7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc7_3 s$累消奖励mc7_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc7_4 s$累消奖励mc7_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc7_5 s$累消奖励mc7_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl7_1 s$累消奖励sl7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl7_2 s$累消奖励sl7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl7_3 s$累消奖励sl7_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl7_4 s$累消奖励sl7_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl7_5 s$累消奖励sl7_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 连充公告 s$连充公告
+GiveStateItem <$Str(s$累消奖励mc7_1)> <$str(s$累消奖励sl7_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc7_2)> <$str(s$累消奖励sl7_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc7_3)> <$str(s$累消奖励sl7_3)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc7_4)> <$str(s$累消奖励sl7_4)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc7_5)> <$str(s$累消奖励sl7_5)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @累计消费
+Break
+
+[@累消领奖_8]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留3个背包空格</font>
+BREAK
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_8 s$累消金额_8
+#IF
+Not  small u120 <$Str(s$累消金额_8)>
+equal U135 0
+#ACT
+Mov U135 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc8_1 s$累消奖励mc8_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc8_2 s$累消奖励mc8_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc8_3 s$累消奖励mc8_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc8_4 s$累消奖励mc8_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励mc8_5 s$累消奖励mc8_5
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl8_1 s$累消奖励sl8_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl8_2 s$累消奖励sl8_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl8_3 s$累消奖励sl8_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl8_4 s$累消奖励sl8_4
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消奖励sl8_5 s$累消奖励sl8_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 连充公告 s$连充公告
+GiveStateItem <$Str(s$累消奖励mc8_1)> <$str(s$累消奖励sl8_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc8_2)> <$str(s$累消奖励sl8_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$累消奖励mc8_3)> <$str(s$累消奖励sl8_3)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc8_4)> <$str(s$累消奖励sl8_4)> 0 1 0 1 1 1 1 1
+;GiveStateItem <$Str(s$累消奖励mc8_5)> <$str(s$累消奖励sl8_5)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @累计消费
+Break
+
+[@跳转每日充值]
+#ACT
+#CALL [\功能脚本\开区活动\每日充值.txt] @每日充值
+
+[@跳转等级目标]
+#ACT
+#CALL [\功能脚本\开区活动\等级目标.txt] @等级目标
+[@跳转累计登陆]
+#ACT
+#CALL [\功能脚本\开区活动\累计登陆.txt] @累计登陆
+[@跳转每日限购]
+#ACT
+#CALL [\功能脚本\开区活动\每日限购.txt] @每日限购
+
+[@跳转累计充值]
+#ACT
+#CALL [\功能脚本\开区活动\累计充值.txt] @累计充值
+
+[@跳转累计消费]
+#ACT
+#CALL [\功能脚本\开区活动\累计消费.txt] @累计消费
+}

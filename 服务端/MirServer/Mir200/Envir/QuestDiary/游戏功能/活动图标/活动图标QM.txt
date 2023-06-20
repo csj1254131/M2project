@@ -1,0 +1,175 @@
+[@活动图标QM]
+{
+#IF
+CHECKLEVELEX > 34
+#ACT
+goto @创建顶部按钮
+[@创建顶部按钮]
+#IF
+EQUAL <$CLIENTFLAG> 2
+#ACT
+Goto @移动端顶部图标
+break
+#IF
+EQUAL <$CLIENTFLAG> 1
+#ACT
+Goto @pc端顶部图标
+break
+[@移动端顶部图标]
+#IF
+#ACT
+MOV S$活动红点
+MOV S$赞助红点
+;常驻按钮 
+MOV   S$图标1 <Layout|children={1,2,3,4,5,6,7}|width=300|height=80|x=-500|y=5|color=x>
+INC   S$图标1 <Layout|id=1|children={10}|width=50|height=50|x=270|link=@开关>
+INC   S$图标1 <Button|id=10|a=4|x=15|y=15|nimg=custom/hl/top/0.png|link=@开关>
+INC   S$图标1 <Button|id=2|children={20}|x=180|nimg=custom/hl/top/1.png|link=@会员>
+
+INC   S$图标1 <Button|id=4|x=20|nimg=custom/hl/top/7.png|link=@狂暴>
+INC   S$图标1 <Button|id=5|x=-60|nimg=custom/hl/top/11.png|link=@调用沙捐>
+INC   S$图标1 <Img|id=20|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$赞助红点)>.png>
+INC   S$图标1 <Button|id=6|children={600}|x=-140|nimg=custom/hl/top/9.png|link=@我要变强>
+INC   S$图标1 <Button|id=3|children={30}|x=100|nimg=custom/hl/top/10.png|link=@福利>
+
+#IF
+#ACT
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+#OR
+EQUAL S$福利红点_1 hd
+EQUAL S$福利红点_2 hd
+#ACT
+INC   S$图标1 <Img|id=30|x=55|y=5|img=custom/hl/hl_ui/hd.png>
+addbutton 102 1 <$STR(S$图标1)>
+
+#IF
+LARGE G100 0
+#ACT
+INC   S$图标1 <Button|id=7|children={60}|x=-220|nimg=custom/hl/top/4.png|link=@开服活动>
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+
+
+
+
+#IF
+#ACT
+addbutton 102 1 <$STR(S$图标1)>
+#IF
+#ACT
+MOV S$图标2 <Layout|children={1,2,3a,40-a,4,5,6,40-b,7a,7c,8a}|width=300|height=80|x=-500|y=90|color=x>
+INC S$图标2 <Button|id=2|x=180|nimg=custom/hl/top/2.png|link=@介绍>
+INC S$图标2 <Button|id=3a|x=100|nimg=custom/hl/top/8.png|link=@日常活动>
+INC S$图标2 <Button|id=40-a|x=20|nimg=custom/hl/top/12.png|link=@火龙盛典>
+INC S$图标2 <Button|id=7a|x=-60|nimg=custom/hl/top/14.png|link=@灵符捐献榜>
+INC S$图标2 <Button|id=7c|x=-140|nimg=custom/hl/top/21.png|link=@充值活动>
+
+#IF
+equal   G499 0
+large   <$HFCOUNT> 0
+#ACT
+Inc S$图标2 <Button|id=40-b|x=-220|nimg=custom/hl/top/13.png|link=@全服晋级排行>
+
+#IF
+equal   G499 0
+large   <$HFCOUNT> 0
+small    U119 2
+#ACT
+Inc S$图标2 <Button|id=1|children={10,11}|x=-300|nimg=custom/hl/top/3.png|link=@首冲>
+
+#IF
+small  <$HFCOUNT> 1
+small   G499 1
+small   U119 2
+#ACT
+Inc S$图标2 <Button|id=1|children={10,11}|x=-220|nimg=custom/hl/top/3.png|link=@首冲>
+
+;============================================================首冲红点
+#IF
+EQUAL U119 1
+#ACT
+INC   S$图标2 <Img|id=10|x=55|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+
+
+#IF
+#ACT
+addbutton 102 2 <$STR(S$图标2)>
+
+#IF
+equal T202
+#ACT
+MOV S$图标3 <Layout|children={1c}|width=300|height=80|x=-500|y=180|color=x>
+inc    S$图标3 <Button|id=1c|children={2c}|x=180|nimg=custom/hl/top/17.png|link=@Q群礼包>
+INC   S$图标3 <Img|id=2c|x=55|y=5|img=custom/hl/hl_ui/hd.png>
+addbutton 102 3 <$STR(S$图标3)>
+
+[@pc端顶部图标]
+#IF
+#ACT
+MOV S$活动红点
+MOV S$赞助红点
+;常驻按钮 
+MOV   S$图标1 <Layout|children={1,2,3,4,5,6,7}|width=300|height=80|x=-460|y=5|color=x>
+INC   S$图标1 <Layout|id=1|children={10}|width=50|height=50|x=270|link=@开关>
+INC   S$图标1 <Button|id=10|a=4|x=15|y=15|nimg=custom/hl/top/0.png|link=@开关>
+INC   S$图标1 <Button|id=2|children={20}|x=180|nimg=custom/hl/top/1.png|link=@会员>
+
+INC   S$图标1 <Button|id=4|x=20|nimg=custom/hl/top/7.png|link=@狂暴>
+INC   S$图标1 <Button|id=5|x=-60|nimg=custom/hl/top/11.png|link=@调用沙捐>
+INC   S$图标1 <Img|id=20|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$赞助红点)>.png>
+INC   S$图标1 <Button|id=6|children={600}|x=-140|nimg=custom/hl/top/9.png|link=@我要变强>
+INC   S$图标1 <Button|id=3|children={30}|x=100|nimg=custom/hl/top/10.png|link=@福利>
+
+#IF
+#ACT
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+#OR
+EQUAL S$福利红点_1 hd
+EQUAL S$福利红点_2 hd
+#ACT
+INC   S$图标1 <Img|id=30|x=55|y=5|img=custom/hl/hl_ui/hd.png>
+addbutton 102 1 <$STR(S$图标1)>
+#IF
+LARGE G100 0
+#ACT
+INC   S$图标1 <Button|id=7|children={60}|x=-220|nimg=custom/hl/top/4.png|link=@开服活动>
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+
+
+#IF
+#ACT
+addbutton 102 1 <$STR(S$图标1)>
+#IF
+#ACT
+MOV S$图标2 <Layout|children={1,2,3a,40-a,4,5,6,40-b,7a,7c}|width=300|height=80|x=-460|y=90|color=x>
+INC S$图标2 <Button|id=2|x=180|nimg=custom/hl/top/2.png|link=@介绍>
+INC S$图标2 <Button|id=3a|x=100|nimg=custom/hl/top/8.png|link=@日常活动>
+INC S$图标2 <Button|id=40-a|x=20|nimg=custom/hl/top/12.png|link=@火龙盛典>
+INC S$图标2 <Button|id=7a|x=-60|nimg=custom/hl/top/14.png|link=@灵符捐献榜>
+INC S$图标2 <Button|id=7c|x=-140|nimg=custom/hl/top/21.png|link=@充值活动>
+
+
+#IF
+equal   G499 0
+large   <$HFCOUNT> 0
+#ACT
+Inc S$图标2 <Button|id=40-b|x=-220|nimg=custom/hl/top/13.png|link=@全服晋级排行>
+
+#IF
+equal   G499 0
+large   <$HFCOUNT> 0
+small    U119 2
+#ACT
+Inc S$图标2 <Button|id=1|children={10,11}|x=-300|nimg=custom/hl/top/3.png|link=@首冲>
+
+#IF
+small  <$HFCOUNT> 1
+small   G499 1
+small   U119 2
+#ACT
+Inc S$图标2 <Button|id=1|children={10,11}|x=-220|nimg=custom/hl/top/3.png|link=@首冲>
+
+#IF
+#ACT
+addbutton 102 2 <$STR(S$图标2)>
+
+}

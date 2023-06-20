@@ -1,0 +1,262 @@
+[@星座大师整体红点]
+{
+
+#IF
+#ACT
+MOV S$C_变强_星座大师
+MOV S$C_六级主星变强
+MOV S$C_七级主星变强
+MOV S$C_八级主星变强
+MOV S$C_九级主星变强
+MOV S$C_十级主星变强
+MOV S$C_六级辅星变强
+MOV S$C_七级辅星变强
+MOV S$C_八级辅星变强
+MOV S$C_九级辅星变强
+MOV S$C_十级辅星变强
+
+#OR
+checkitem 主星【白羊座⑤】
+checkitem 主星【金牛座⑤】
+checkitem 主星【双子座⑤】
+checkitem 主星【巨蟹座⑤】
+checkitem 主星【狮子座⑤】
+checkitem 主星【处女座⑤】
+checkitem 主星【天秤座⑤】
+checkitem 主星【天蝎座⑤】
+checkitem 主星【射手座⑤】
+checkitem 主星【摩羯座⑤】
+checkitem 主星【水瓶座⑤】
+checkitem 主星【双鱼座⑤】
+#ACT
+MOV S$C_六级主星变强 有
+#OR
+checkitem 辅星【白羊座⑤】
+checkitem 辅星【金牛座⑤】
+checkitem 辅星【双子座⑤】
+checkitem 辅星【巨蟹座⑤】
+checkitem 辅星【狮子座⑤】
+checkitem 辅星【处女座⑤】
+checkitem 辅星【天秤座⑤】
+checkitem 辅星【天蝎座⑤】
+checkitem 辅星【射手座⑤】
+checkitem 辅星【摩羯座⑤】
+checkitem 辅星【水瓶座⑤】
+checkitem 辅星【双鱼座⑤】
+#ACT
+MOV S$C_六级辅星变强 有
+#OR
+checkitem 主星【白羊座⑥】
+checkitem 主星【金牛座⑥】
+checkitem 主星【双子座⑥】
+checkitem 主星【巨蟹座⑥】
+checkitem 主星【狮子座⑥】
+checkitem 主星【处女座⑥】
+checkitem 主星【天秤座⑥】
+checkitem 主星【天蝎座⑥】
+checkitem 主星【射手座⑥】
+checkitem 主星【摩羯座⑥】
+checkitem 主星【水瓶座⑥】
+checkitem 主星【双鱼座⑥】
+#ACT
+MOV S$C_七级主星变强 有
+#OR
+checkitem 辅星【白羊座⑥】
+checkitem 辅星【金牛座⑥】
+checkitem 辅星【双子座⑥】
+checkitem 辅星【巨蟹座⑥】
+checkitem 辅星【狮子座⑥】
+checkitem 辅星【处女座⑥】
+checkitem 辅星【天秤座⑥】
+checkitem 辅星【天蝎座⑥】
+checkitem 辅星【射手座⑥】
+checkitem 辅星【摩羯座⑥】
+checkitem 辅星【水瓶座⑥】
+checkitem 辅星【双鱼座⑥】
+#ACT
+MOV S$C_七级辅星变强 有
+#OR
+checkitem 主星【白羊座⑦】
+checkitem 主星【金牛座⑦】
+checkitem 主星【双子座⑦】
+checkitem 主星【巨蟹座⑦】
+checkitem 主星【狮子座⑦】
+checkitem 主星【处女座⑦】
+checkitem 主星【天秤座⑦】
+checkitem 主星【天蝎座⑦】
+checkitem 主星【射手座⑦】
+checkitem 主星【摩羯座⑦】
+checkitem 主星【水瓶座⑦】
+checkitem 主星【双鱼座⑦】
+#ACT
+MOV S$C_八级主星变强 有
+#OR
+checkitem 辅星【白羊座⑦】
+checkitem 辅星【金牛座⑦】
+checkitem 辅星【双子座⑦】
+checkitem 辅星【巨蟹座⑦】
+checkitem 辅星【狮子座⑦】
+checkitem 辅星【处女座⑦】
+checkitem 辅星【天秤座⑦】
+checkitem 辅星【天蝎座⑦】
+checkitem 辅星【射手座⑦】
+checkitem 辅星【摩羯座⑦】
+checkitem 辅星【水瓶座⑦】
+checkitem 辅星【双鱼座⑦】
+#ACT
+MOV S$C_八级辅星变强 有
+#OR
+checkitem 主星【白羊座⑧】
+checkitem 主星【金牛座⑧】
+checkitem 主星【双子座⑧】
+checkitem 主星【巨蟹座⑧】
+checkitem 主星【狮子座⑧】
+checkitem 主星【处女座⑧】
+checkitem 主星【天秤座⑧】
+checkitem 主星【天蝎座⑧】
+checkitem 主星【射手座⑧】
+checkitem 主星【摩羯座⑧】
+checkitem 主星【水瓶座⑧】
+checkitem 主星【双鱼座⑧】
+#ACT
+MOV S$C_九级主星变强 有
+#OR
+checkitem 辅星【白羊座⑧】
+checkitem 辅星【金牛座⑧】
+checkitem 辅星【双子座⑧】
+checkitem 辅星【巨蟹座⑧】
+checkitem 辅星【狮子座⑧】
+checkitem 辅星【处女座⑧】
+checkitem 辅星【天秤座⑧】
+checkitem 辅星【天蝎座⑧】
+checkitem 辅星【射手座⑧】
+checkitem 辅星【摩羯座⑧】
+checkitem 辅星【水瓶座⑧】
+checkitem 辅星【双鱼座⑧】
+#ACT
+MOV S$C_九级辅星变强 有
+#OR
+checkitem 主星【白羊座⑨】
+checkitem 主星【金牛座⑨】
+checkitem 主星【双子座⑨】
+checkitem 主星【巨蟹座⑨】
+checkitem 主星【狮子座⑨】
+checkitem 主星【处女座⑨】
+checkitem 主星【天秤座⑨】
+checkitem 主星【天蝎座⑨】
+checkitem 主星【射手座⑨】
+checkitem 主星【摩羯座⑨】
+checkitem 主星【水瓶座⑨】
+checkitem 主星【双鱼座⑨】
+#ACT
+MOV S$C_十级主星变强 有
+#OR
+checkitem 辅星【白羊座⑨】
+checkitem 辅星【金牛座⑨】
+checkitem 辅星【双子座⑨】
+checkitem 辅星【巨蟹座⑨】
+checkitem 辅星【狮子座⑨】
+checkitem 辅星【处女座⑨】
+checkitem 辅星【天秤座⑨】
+checkitem 辅星【天蝎座⑨】
+checkitem 辅星【射手座⑨】
+checkitem 辅星【摩羯座⑨】
+checkitem 辅星【水瓶座⑨】
+checkitem 辅星【双鱼座⑨】
+#ACT
+MOV S$C_十级辅星变强 有
+
+#IF
+EQUAL <$STR(S$C_十级主星变强)> 有
+checkitem 主星精华 48
+checkitem 主星碎片 2560
+CheckBindMoney 元宝 ? 800000
+#ACT
+MOV S$C_变强_星座大师 hd
+break
+
+#IF
+EQUAL <$STR(S$C_九级主星变强)> 有
+checkitem 主星精华 24
+checkitem 主星碎片 1280
+CheckBindMoney 元宝 ? 400000
+#ACT
+MOV S$C_变强_星座大师 hd
+break
+
+#IF
+EQUAL <$STR(S$C_八级主星变强)> 有
+checkitem 主星精华 12
+checkitem 主星碎片 640
+CheckBindMoney 元宝 ? 200000
+#ACT
+MOV S$C_变强_星座大师 hd
+break
+
+#IF
+EQUAL <$STR(S$C_七级主星变强)> 有
+checkitem 主星精华 6
+checkitem 主星碎片 320
+CheckBindMoney 元宝 ? 100000
+#ACT
+MOV S$C_变强_星座大师 hd
+break
+
+#IF
+EQUAL <$STR(S$C_六级主星变强)> 有
+checkitem 主星精华 3
+checkitem 主星碎片 160
+CheckBindMoney 元宝 ? 50000
+#ACT
+MOV S$C_变强_星座大师 hd
+break
+
+#IF
+EQUAL <$STR(S$C_十级辅星变强)> 有
+checkitem 辅星精华 48
+checkitem 辅星碎片 2560
+CheckBindMoney 元宝 ? 800000
+#ACT
+MOV S$C_变强_星座大师 hd
+break
+
+#IF
+EQUAL <$STR(S$C_九级辅星变强)> 有
+checkitem 辅星精华 24
+checkitem 辅星碎片 1280
+CheckBindMoney 元宝 ? 400000
+#ACT
+MOV S$C_变强_星座大师 hd
+break
+
+#IF
+EQUAL <$STR(S$C_八级辅星变强)> 有
+checkitem 辅星精华 12
+checkitem 辅星碎片 640
+CheckBindMoney 元宝 ? 200000
+#ACT
+MOV S$C_变强_星座大师 hd
+break
+
+#IF
+EQUAL <$STR(S$C_七级辅星变强)> 有
+checkitem 辅星精华 6
+checkitem 辅星碎片 320
+CheckBindMoney 元宝 ? 100000
+#ACT
+MOV S$C_变强_星座大师 hd
+break
+
+#IF
+EQUAL <$STR(S$C_六级辅星变强)> 有
+checkitem 辅星精华 3
+checkitem 辅星碎片 160
+CheckBindMoney 元宝 ? 50000
+#ACT
+MOV S$C_变强_星座大师 hd
+break
+
+
+
+
+}

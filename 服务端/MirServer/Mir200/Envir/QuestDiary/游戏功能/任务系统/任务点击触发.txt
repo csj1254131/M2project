@@ -1,0 +1,970 @@
+[@点击任务面板]
+{
+#IF
+EQUAL <$CURRTASKID> 1
+#ACT
+OPENNPCSHOWEX 53
+sendmsg 0 当前信息<$GENDER> <$JOB>
+break
+#IF
+EQUAL <$CURRTASKID> 26
+check [416] 1
+check [417] 0
+#ACT
+OPENHYPERLINK 7 1
+sendmsg 9 使用任意经验卷即可完成经验达人任务
+break
+
+#IF
+EQUAL <$CURRTASKID> 26
+check [416] 1
+check [417] 1
+#ACT
+set [416] 0
+NEWCOMPLETETASK 26
+NEWDELETETASK 26
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成经验达人任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 27
+check [414] 1
+check [415] 0
+#ACT
+OPENHYPERLINK 7 1
+Navigation 7 52 点击回收
+break
+
+#IF
+EQUAL <$CURRTASKID> 27
+check [414] 1
+check [415] 1
+#ACT
+set [414] 0
+NEWCOMPLETETASK 27
+NEWDELETETASK 27
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成装备回收任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 28
+check [418] 1
+check [419] 0
+#ACT
+MOV S$C_强化变强引导 开
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+break
+
+#IF
+EQUAL <$CURRTASKID> 28
+check [418] 1
+check [419] 1
+#ACT
+set [418] 0
+NEWCOMPLETETASK 28
+NEWDELETETASK 28
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成装备强化任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 29
+EQUAL <$STR(U93)> 1
+#ACT
+#CALL [\功能脚本\装备注灵\装备注灵.txt] @装备注灵
+break
+
+#IF
+EQUAL <$CURRTASKID> 29
+EQUAL <$STR(U93)> 2
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务一 奖励材料 S$C_任务奖励_材料
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务一 奖励数量 S$C_任务奖励_数量
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务一 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务一 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务一 小还丹 S$C_任务奖励_药水
+MOV U93 3
+NEWCOMPLETETASK 29
+NEWDELETETASK 29
+NEWPICKTASK 30
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_任务奖励_材料)> <$STR(S$C_任务奖励_数量)> 0 1 0 1 1 1 1 1
+GOTO @任务提前完成处理注灵二
+sendmsg 9 恭喜完成装备注灵任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 30
+EQUAL <$STR(U93)> 3
+#ACT
+#CALL [\功能脚本\装备注灵\装备注灵.txt] @装备注灵
+break
+
+#IF
+EQUAL <$CURRTASKID> 30
+EQUAL <$STR(U93)> 4
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务二 奖励材料 S$C_任务奖励_材料
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务二 奖励数量 S$C_任务奖励_数量
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务二 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务二 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务二 小还丹 S$C_任务奖励_药水
+MOV U93 5
+NEWCOMPLETETASK 30
+NEWDELETETASK 30
+NEWPICKTASK 31
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_任务奖励_材料)> <$STR(S$C_任务奖励_数量)> 0 1 0 1 1 1 1 1
+GOTO @任务提前完成处理注灵三
+sendmsg 9 恭喜完成装备注灵任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 31
+EQUAL <$STR(U93)> 5
+#ACT
+#CALL [\功能脚本\装备注灵\装备注灵.txt] @装备注灵
+break
+
+#IF
+EQUAL <$CURRTASKID> 31
+EQUAL <$STR(U93)> 6
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务三 奖励材料 S$C_任务奖励_材料
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务三 奖励数量 S$C_任务奖励_数量
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务三 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务三 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务三 小还丹 S$C_任务奖励_药水
+MOV U93 7
+NEWCOMPLETETASK 31
+NEWDELETETASK 31
+NEWPICKTASK 32
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_任务奖励_材料)> <$STR(S$C_任务奖励_数量)> 0 1 0 1 1 1 1 1
+GOTO @任务提前完成处理注灵四
+sendmsg 9 恭喜完成装备注灵任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 32
+EQUAL <$STR(U93)> 7
+#ACT
+#CALL [\功能脚本\装备注灵\装备注灵.txt] @装备注灵
+break
+
+#IF
+EQUAL <$CURRTASKID> 32
+EQUAL <$STR(U93)> 8
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务四 奖励材料 S$C_任务奖励_材料
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务四 奖励数量 S$C_任务奖励_数量
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务四 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务四 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 注灵任务四 小还丹 S$C_任务奖励_药水
+MOV U93 9
+NEWCOMPLETETASK 32
+NEWDELETETASK 32
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_任务奖励_材料)> <$STR(S$C_任务奖励_数量)> 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成装备注灵任务，奖励已发放到包裹！
+break
+
+
+#IF
+NOT EQUAL <$MAP> 0
+EQUAL <$STR(U91)> 0
+#ACT
+mapmove 0 284 612 2
+OPENNPCSHOWEX 2
+break
+
+#IF
+EQUAL <$MAP> 0
+EQUAL <$STR(U91)> 0
+#ACT
+OPENNPCSHOWEX 2
+break
+
+#IF
+NOT EQUAL <$MAP> 0
+EQUAL <$STR(U91)> 1
+#ACT
+mapmove 0 284 612 2
+KILLMOBAPPOINT 0 284 612 10 鸡
+break
+
+#IF
+EQUAL <$MAP> 0
+EQUAL <$STR(U91)> 1
+#ACT
+KILLMOBAPPOINT 0 284 612 10 鸡
+break
+
+#IF
+EQUAL <$STR(U91)> 2
+#ACT
+OPENNPCSHOWEX 53 50 2
+break
+
+#IF
+EQUAL <$CURRTASKID> 3
+EQUAL <$STR(U91)> 3
+#ACT
+OPENNPCSHOWEX 32 50 2
+break
+
+#IF
+EQUAL <$CURRTASKID> 4
+EQUAL <$STR(U91)> 4
+#ACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=20> 
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=新手试炼|color=103|size=18|link=@40级去新手试炼>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=新手迷宫|color=103|size=18|link=@40级去新手迷宫>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+
+#IF
+EQUAL <$CURRTASKID> 4
+EQUAL <$STR(U91)> 5
+#ACT
+OPENNPCSHOWEX 48 50 2
+break
+
+#IF
+EQUAL <$CURRTASKID> 5
+EQUAL <$STR(U91)> 6
+#ACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=230|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14}|width=185|height=220|direction=1|bounce=0|margin=10|default=1|x=42|y=20>
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=开始转生|color=224|size=18|link=@任务访问转生>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=新手试炼|color=103|size=18|link=@40级去新手试炼>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=新手迷宫|color=103|size=18|link=@40级去新手迷宫>
+INC S$C_任务界面 <Button|id=14|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+
+#IF
+EQUAL <$CURRTASKID> 5
+EQUAL <$STR(U91)> 7
+#ACT
+MOV U91 8
+MOV U92 <$LEVEL>
+NEWCOMPLETETASK 5
+NEWDELETETASK 5
+NEWPICKTASK 42
+NEWPICKTASK 6 <$STR(U92)>
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+GOTO @任务提前完成处理主线六
+sendmsg 9 恭喜完成一重转生任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 6
+EQUAL <$STR(U91)> 8
+#ACT
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=25> 
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=进阶地图|color=103|size=18|link=@55级去进阶地图>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=一转地图|color=103|size=18|link=@55级去一转地图>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+#IF
+EQUAL <$CURRTASKID> 6
+EQUAL <$STR(U91)> 9
+#ACT
+OPENNPCSHOWEX 48 50 2
+break
+
+#IF
+EQUAL <$CURRTASKID> 7
+EQUAL <$STR(U91)> 10
+#ACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=230|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=220|direction=1|bounce=0|margin=10|default=1|x=42|y=20> 
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=开始转生|color=224|size=18|link=@任务访问转生>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=进阶地图|color=103|size=18|link=@55级去进阶地图>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=一转地图|color=103|size=18|link=@55级去一转地图>
+INC S$C_任务界面 <Button|id=14|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速获得|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+#IF
+EQUAL <$CURRTASKID> 7
+EQUAL <$STR(U91)> 11
+#ACT
+MOV U91 12
+MOV U92 <$LEVEL>
+NEWCOMPLETETASK 7
+NEWDELETETASK 7
+NEWPICKTASK 8 <$STR(U92)>
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+set [430] 1
+NEWPICKTASK 38
+GOTO @任务提前完成处理主线八
+sendmsg 9 恭喜完成二重转生任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 8
+EQUAL <$STR(U91)> 12
+#ACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=25> 
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=一转地图|color=103|size=18|link=@55级去一转地图>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=二转地图|color=103|size=18|link=@70级去蜈蚣洞>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+#IF
+EQUAL <$CURRTASKID> 8
+EQUAL <$STR(U91)> 13
+#ACT
+OPENNPCSHOWEX 48 50 2
+break
+
+#IF
+EQUAL <$CURRTASKID> 9
+EQUAL <$STR(U91)> 14
+#ACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=25> 
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=开始转生|color=224|size=18|link=@任务访问转生>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=二转地图|color=103|size=18|link=@70级去蜈蚣洞>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+#IF
+EQUAL <$CURRTASKID> 9
+EQUAL <$STR(U91)> 15
+#ACT
+MOV U91 16
+MOV U92 <$LEVEL>
+NEWCOMPLETETASK 9
+NEWDELETETASK 9
+NEWPICKTASK 10 <$STR(U92)>
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+GiveStateItem 中品注灵石 2 0 1 0 1 1 1 1 1
+GOTO @任务提前完成处理主线十
+sendmsg 9 恭喜完成三重转生任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 10
+EQUAL <$STR(U91)> 16
+#ACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=25> 
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=二转地图|color=103|size=18|link=@70级去蜈蚣洞>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=三转地图|color=103|size=18|link=@90级去祖玛>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+#IF
+EQUAL <$CURRTASKID> 10
+EQUAL <$STR(U91)> 17
+#ACT
+OPENNPCSHOWEX 48 50 2
+break
+
+#IF
+EQUAL <$CURRTASKID> 11
+EQUAL <$STR(U91)> 18
+#ACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=20>
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=开始转生|color=224|size=18|link=@任务访问转生> 
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=三转地图|color=103|size=18|link=@90级去祖玛>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+#IF
+EQUAL <$CURRTASKID> 11
+EQUAL <$STR(U91)> 19
+#ACT
+MOV U91 20
+NEWCOMPLETETASK 11
+NEWDELETETASK 11
+NEWPICKTASK 12 <$STR(N$转生任务材料一)> <$STR(N$转生任务材料二)>
+MOV U93 1
+NEWPICKTASK 29
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+GOTO @任务提前完成处理主线十一
+GOTO @任务提前完成处理注灵一
+sendmsg 9 恭喜完成四重转生任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 12
+EQUAL <$STR(U91)> 20
+#ACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=20>
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=开始转生|color=224|size=18|link=@任务访问转生> 
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=四转地图|color=103|size=18|link=@五转去混乱殿堂>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+#IF
+EQUAL <$CURRTASKID> 12
+EQUAL <$STR(U91)> 21
+#ACT
+MOV U91 22
+NEWCOMPLETETASK 12
+NEWDELETETASK 12
+NEWPICKTASK 13
+money 经验 + 500000
+money 绑定元宝 + 5000
+GiveStateItem 小还丹 50 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成五重转生任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 13
+EQUAL <$STR(U91)> 22
+#ACT
+OPENNPCSHOWEX 89 50 2
+break
+
+#IF
+EQUAL <$CURRTASKID> 13
+EQUAL <$STR(U91)> 23
+#ACT
+MOV U91 24
+NEWCOMPLETETASK 13
+NEWDELETETASK 13
+money 经验 + 500000
+money 绑定元宝 + 5000
+GiveStateItem 小还丹 50 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成主线任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 33
+check [420] 1
+check [421] 0
+#ACT
+OPENNPCSHOWEX 34 50 2
+break
+
+#IF
+EQUAL <$CURRTASKID> 33
+check [420] 1
+check [421] 1
+#ACT
+set [420] 0
+NEWCOMPLETETASK 33
+NEWDELETETASK 33
+money 经验 + 500000
+money 绑定元宝 + 5000
+GiveStateItem 小还丹 50 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成支线任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 34
+check [422] 1
+check [423] 0
+#ACT
+MOV S$C_官职变强引导 开
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+break
+
+#IF
+EQUAL <$CURRTASKID> 34
+check [422] 1
+check [423] 1
+#ACT
+set [422] 0
+NEWCOMPLETETASK 34
+NEWDELETETASK 34
+money 经验 + 500000
+money 绑定元宝 + 5000
+GiveStateItem 小还丹 50 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成支线任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 35
+check [424] 1
+check [425] 0
+#ACT
+MOV S$C_龙魂变强引导 开
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+break
+
+#IF
+EQUAL <$CURRTASKID> 35
+check [424] 1
+check [425] 1
+#ACT
+set [424] 0
+NEWCOMPLETETASK 35
+NEWDELETETASK 35
+money 经验 + 500000
+money 绑定元宝 + 5000
+GiveStateItem 小还丹 50 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成支线任务，奖励已发放到包裹！
+break
+
+
+#IF
+EQUAL <$CURRTASKID> 36
+check [426] 1
+check [427] 0
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_签到支线跳转 开
+Navigation 102 3 点此领取
+break
+
+#IF
+EQUAL <$CURRTASKID> 36
+check [426] 1
+check [427] 1
+#ACT
+set [426] 0
+NEWCOMPLETETASK 36
+NEWDELETETASK 36
+money 经验 + 200000
+money 绑定元宝 + 2000
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成支线任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 37
+check [428] 1
+check [429] 0
+small G100 1
+#ACT
+set [429] 1
+NEWCHANGETASK 37
+break
+
+#IF
+EQUAL <$CURRTASKID> 37
+check [428] 1
+check [429] 0
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_冲级支线跳转 开
+Navigation 102 7 点此领取
+break
+
+
+#IF
+EQUAL <$CURRTASKID> 37
+check [428] 1
+check [429] 1
+#ACT
+set [428] 0
+NEWCOMPLETETASK 37
+NEWDELETETASK 37
+money 经验 + 200000
+money 绑定元宝 + 2000
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成支线任务，奖励已发放到包裹！
+break
+
+#IF
+EQUAL <$CURRTASKID> 38
+check [430] 1
+check [431] 0
+NOT HAVEGUILD
+#ACT
+OPENHYPERLINK 30
+break
+
+#IF
+EQUAL <$CURRTASKID> 38
+check [430] 1
+check [431] 0
+HAVEGUILD
+#ACT
+set [431] 1
+NEWCHANGETASK 38
+break
+
+#IF
+EQUAL <$CURRTASKID> 38
+check [430] 1
+check [431] 1
+#ACT
+set [430] 0
+NEWCOMPLETETASK 38
+NEWDELETETASK 38
+money 经验 + 200000
+money 绑定元宝 + 2000
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成支线任务，奖励已发放到包裹！
+break
+
+
+#IF
+EQUAL <$CURRTASKID> 42
+#ACT
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+break
+
+
+
+[@任务访问转生]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务访问转生 是
+DELBUTTON 110 50
+OPENNPCSHOWEX 36 50 2
+break
+
+[@40级去新手试炼]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+OPENNPCSHOWEX 21 50 2
+break
+
+[@40级去新手迷宫]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+OPENNPCSHOWEX 22 50 2
+break
+
+[@40级去购买会员]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+#CALL [\功能脚本\vip特权\vip特权.txt] @vip特权
+break
+
+[@55级去进阶地图]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+OPENNPCSHOWEX 22 50 2
+break
+
+[@55级去一转地图]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+OPENNPCSHOWEX 23 50 2
+break
+
+[@55级去迷宫废墟]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+OPENNPCSHOWEX 22 50 2
+break
+
+[@55级去尸魔骷髅矿]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+OPENNPCSHOWEX 23 50 2
+break
+
+[@70级去蜈蚣洞]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+OPENNPCSHOWEX 24 50 2
+break
+
+[@90级去祖玛]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+OPENNPCSHOWEX 25 50 2
+break
+
+[@五转去混乱殿堂]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+OPENNPCSHOWEX 26 50 2
+break
+
+
+[@关闭任务小界面]
+#IF
+#ACT
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+DELBUTTON 110 50
+break
+
+
+[@任务提前完成处理主线六]
+
+#IF
+LARGE <$LEVEL> 54
+#ACT
+MOV U91 9
+MOV U92 0
+NEWCHANGETASK 6
+break
+#ELSEACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=25> 
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=进阶地图|color=103|size=18|link=@55级去进阶地图>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=一转地图|color=103|size=18|link=@55级去一转地图>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+[@任务提前完成处理主线八]
+
+#IF
+HAVEGUILD
+check [430] 1
+check [431] 0
+#ACT
+set [431] 1
+NEWCHANGETASK 38
+
+#IF
+LARGE <$LEVEL> 69
+#ACT
+MOV U91 13
+MOV U92 0
+NEWCHANGETASK 8
+break
+#ELSEACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=25> 
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=一转地图|color=103|size=18|link=@55级去一转地图>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=二转地图|color=103|size=18|link=@70级去蜈蚣洞>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+[@任务提前完成处理主线十]
+
+#IF
+LARGE <$LEVEL> 89
+#ACT
+MOV U91 17
+MOV U92 0
+NEWCHANGETASK 10
+break
+#ELSEACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=25> 
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=二转地图|color=103|size=18|link=@70级去蜈蚣洞>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=三转地图|color=103|size=18|link=@90级去祖玛>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+[@任务提前完成处理主线十一]
+
+#IF
+CHECKRENEWLEVEL > 4
+#ACT
+MOV U91 21
+NEWCHANGETASK 12
+break
+#ELSEACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=20>
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=开始转生|color=224|size=18|link=@任务访问转生> 
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=四转地图|color=103|size=18|link=@五转去混乱殿堂>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+[@任务提前完成处理注灵一]
+
+#OR
+LARGE U64 0
+LARGE U65 0
+LARGE U66 0
+LARGE U67 0
+LARGE U68 0
+LARGE U69 0
+LARGE U70 0
+LARGE U71 0
+LARGE U72 0
+LARGE U73 0
+LARGE U74 0
+#ACT
+MOV U93 2
+NEWCHANGETASK 29
+sendmsg 9 恭喜，装备注灵支线任务完成！
+break
+
+[@任务提前完成处理注灵二]
+
+#OR
+LARGE U64 4
+LARGE U65 4
+LARGE U66 4
+LARGE U67 4
+LARGE U68 4
+LARGE U69 4
+LARGE U70 4
+LARGE U71 4
+LARGE U72 4
+LARGE U73 4
+LARGE U74 4
+#ACT
+MOV U93 4
+NEWCHANGETASK 30
+sendmsg 9 恭喜，装备注灵支线任务完成！
+break
+
+[@任务提前完成处理注灵三]
+
+#OR
+LARGE U64 9
+LARGE U65 9
+LARGE U66 9
+LARGE U67 9
+LARGE U68 9
+LARGE U69 9
+LARGE U70 9
+LARGE U71 9
+LARGE U72 9
+LARGE U73 9
+LARGE U74 9
+#ACT
+MOV U93 6
+NEWCHANGETASK 31
+sendmsg 9 恭喜，装备注灵支线任务完成！
+break
+
+[@任务提前完成处理注灵四]
+
+#IF
+LARGE U64 4
+LARGE U65 4
+LARGE U66 4
+LARGE U67 4
+LARGE U68 4
+LARGE U69 4
+LARGE U70 4
+LARGE U71 4
+LARGE U72 4
+LARGE U73 4
+LARGE U74 4
+#ACT
+MOV U93 8
+NEWCHANGETASK 32
+sendmsg 9 恭喜，装备注灵支线任务完成！
+break
+
+
+}

@@ -1,0 +1,6 @@
+[@MAIN]
+#IF
+#ACT
+addhpper + 100
+addmpper + 100
+#CALL [\全服活动\勇闯炼狱.txt] @启动勇闯炼狱

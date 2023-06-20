@@ -1,0 +1,314 @@
+[@主线开始]
+{
+
+#OR
+EQUAL <$STR(U91)> 6
+EQUAL <$STR(U91)> 10
+EQUAL <$STR(U91)> 14
+EQUAL <$STR(U91)> 18
+EQUAL <$STR(U91)> 20
+#ACT
+#CALL [\游戏功能\任务系统\任务材料.txt] @任务材料检测
+
+#IF
+check [420] 1
+check [421] 0
+#ACT
+NEWPICKTASK 33
+#IF
+check [420] 1
+check [421] 1
+#ACT
+NEWCHANGETASK 33
+
+
+#IF
+large <$STR(U91)> 6
+#ACT
+NEWPICKTASK 42
+
+#IF
+check [416] 1
+check [417] 0
+#ACT
+NEWPICKTASK 26
+
+#IF
+check [416] 1
+check [417] 1
+#ACT
+NEWCHANGETASK 26
+
+#IF
+check [414] 1
+check [415] 0
+#ACT
+NEWPICKTASK 27
+
+#IF
+check [414] 1
+check [415] 1
+#ACT
+NEWCHANGETASK 27
+
+#IF
+check [418] 1
+check [419] 0
+#ACT
+NEWPICKTASK 28
+
+#IF
+check [418] 1
+check [419] 1
+#ACT
+NEWCHANGETASK 28
+
+#IF
+check [420] 1
+check [421] 0
+#ACT
+NEWPICKTASK 33
+#IF
+check [420] 1
+check [421] 1
+#ACT
+NEWCHANGETASK 33
+
+#IF
+check [422] 1
+check [423] 0
+#ACT
+NEWPICKTASK 34
+#IF
+check [422] 1
+check [423] 1
+#ACT
+NEWCHANGETASK 34
+
+#IF
+check [424] 1
+check [425] 0
+#ACT
+NEWPICKTASK 35
+#IF
+check [424] 1
+check [425] 1
+#ACT
+NEWCHANGETASK 35
+
+#IF
+check [426] 1
+check [427] 0
+#ACT
+NEWPICKTASK 36
+#IF
+check [426] 1
+check [427] 1
+#ACT
+NEWCHANGETASK 36
+
+#IF
+check [428] 1
+check [429] 0
+#ACT
+NEWPICKTASK 37
+#IF
+check [428] 1
+check [429] 1
+#ACT
+NEWCHANGETASK 37
+
+#IF
+check [430] 1
+check [431] 0
+#ACT
+NEWPICKTASK 38
+#IF
+check [430] 1
+check [431] 1
+#ACT
+NEWCHANGETASK 38
+
+
+
+#IF
+EQUAL <$STR(U93)> 1
+#ACT
+NEWPICKTASK 29
+#IF
+EQUAL <$STR(U93)> 2
+#ACT
+NEWCHANGETASK 29
+#IF
+EQUAL <$STR(U93)> 3
+#ACT
+NEWPICKTASK 30
+#IF
+EQUAL <$STR(U93)> 4
+#ACT
+NEWCHANGETASK 30
+#IF
+EQUAL <$STR(U93)> 5
+#ACT
+NEWPICKTASK 31
+#IF
+EQUAL <$STR(U93)> 6
+#ACT
+NEWCHANGETASK 31
+#IF
+EQUAL <$STR(U93)> 7
+#ACT
+NEWPICKTASK 32
+#IF
+EQUAL <$STR(U93)> 8
+#ACT
+NEWCHANGETASK 32
+
+
+#IF
+NOT ISNEWHUMAN
+EQUAL <$STR(U91)> 0
+#ACT
+NEWPICKTASK 1
+break
+
+#IF
+EQUAL <$STR(U91)> 1
+#ACT
+NEWPICKTASK 2 <$STR(U92)>
+break
+#IF
+EQUAL <$STR(U91)> 2
+#ACT
+NEWCHANGETASK 2
+break
+#IF
+EQUAL <$STR(U91)> 3
+#ACT
+NEWPICKTASK 3
+break
+#IF
+EQUAL <$STR(U91)> 4
+#ACT
+NEWPICKTASK 4 <$STR(U92)>
+break
+#IF
+EQUAL <$STR(U91)> 5
+#ACT
+NEWCHANGETASK 4
+break
+
+#IF
+EQUAL <$STR(U91)> 6
+#ACT
+NEWPICKTASK 5 <$STR(N$转生任务材料一)> <$STR(N$转生任务材料二)>
+break
+#IF
+EQUAL <$STR(U91)> 7
+#ACT
+NEWCHANGETASK 5
+break
+#IF
+EQUAL <$STR(U91)> 8
+#ACT
+NEWPICKTASK 6 <$STR(U92)>
+break
+#IF
+EQUAL <$STR(U91)> 9
+#ACT
+NEWCHANGETASK 6
+break
+#IF
+EQUAL <$STR(U91)> 10
+#ACT
+NEWPICKTASK 7 <$STR(N$转生任务材料一)> <$STR(N$转生任务材料二)>
+break
+#IF
+EQUAL <$STR(U91)> 11
+#ACT
+NEWCHANGETASK 7
+break
+#IF
+EQUAL <$STR(U91)> 12
+#ACT
+NEWPICKTASK 8 <$STR(U92)>
+break
+#IF
+EQUAL <$STR(U91)> 13
+#ACT
+NEWCHANGETASK 8
+break
+#IF
+EQUAL <$STR(U91)> 14
+#ACT
+NEWPICKTASK 9 <$STR(N$转生任务材料一)> <$STR(N$转生任务材料二)>
+break
+#IF
+EQUAL <$STR(U91)> 15
+#ACT
+NEWCHANGETASK 9
+break
+#IF
+EQUAL <$STR(U91)> 16
+#ACT
+NEWPICKTASK 10 <$STR(U92)>
+break
+#IF
+EQUAL <$STR(U91)> 17
+#ACT
+NEWCHANGETASK 10
+break
+#IF
+EQUAL <$STR(U91)> 18
+#ACT
+NEWPICKTASK 11 <$STR(N$转生任务材料一)> <$STR(N$转生任务材料二)>
+break
+
+#IF
+EQUAL <$STR(U91)> 19
+#ACT
+NEWCHANGETASK 11
+break
+
+#IF
+EQUAL <$STR(U91)> 20
+#ACT
+NEWPICKTASK 12 <$STR(N$转生任务材料一)> <$STR(N$转生任务材料二)>
+break
+
+#IF
+EQUAL <$STR(U91)> 21
+#ACT
+NEWCHANGETASK 12
+break
+
+#IF
+EQUAL <$STR(U91)> 22
+#ACT
+NEWPICKTASK 13
+break
+
+#IF
+EQUAL <$STR(U91)> 23
+#ACT
+NEWCHANGETASK 13
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

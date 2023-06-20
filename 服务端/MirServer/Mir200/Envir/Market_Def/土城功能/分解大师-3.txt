@@ -1,0 +1,7 @@
+[@MAIN]
+#IF
+#ACT
+OPENHYPERLINK 7
+#CALL [\游戏功能\系统功能\分解大师.txt] @启动分解
+
+

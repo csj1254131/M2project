@@ -1,0 +1,95 @@
+[@设置弹窗]
+{
+
+;透明背景
+<Img|width=3000|height=3000|bg=1|show=4|img=public/alpha_1px.png|bagPos=1>
+;背景
+<Img|a=4|children={0,2,3,4,5,6,7,8,9,10}|img=custom/hl/hl_ui/tsbj.png|percentx=50|percenty=50>
+;基础容器
+<Layout|id=0|children={1}|x=450|y=0|width=50|height=50|color=x|link=@exit>
+;关闭按钮
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Button|id=2|nimg=custom/hl/hl_ui/fxkk_<$Str(u110)>.png|x=20|y=58|link=@设置使用元宝>
+<Text|id=3|text=自动使用元宝|color=255|size=18|outline=2|outlinecolor=0|x=60|y=58|link=@设置使用元宝>
+<Button|id=4|nimg=custom/hl/hl_ui/fxkk_<$Str(u111)>.png|x=20|y=98|link=@设置使用经验_1>
+;<Text|id=5|text=自动使用1000万以下经验卷|color=255|size=18|outline=2|outlinecolor=0|x=60|y=98|link=@设置使用经验_1>
+;<Button|id=6|nimg=custom/hl/hl_ui/fxkk_<$Str(u112)>.png|x=20|y=138|link=@设置使用经验_2>
+;<Text|id=7|text=自动使用1000万以上经验卷|color=255|size=18|outline=2|outlinecolor=0|x=60|y=138|link=@设置使用经验_2>
+<Text|id=8|a=4|text=设 置|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=10>
+
+<Button|id=9|nimg=custom/hl/hl_ui/fxkk_<$Str(u152)>.png|x=20|y=98|link=@设置极品回收>
+<Text|id=10|text=回收极品装备|color=255|size=18|outline=2|outlinecolor=0|x=60|y=98|link=@设置极品回收>
+
+
+[@设置极品回收]
+#IF
+EQUAL U152 0
+#ACT
+Mov u152 1
+goto @设置弹窗
+break
+#IF
+#ACT
+Mov u152 0
+goto @设置弹窗
+break
+
+[@设置使用元宝]
+#IF
+large U13 1
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>开通VIP2可设置自动使用元宝</font>
+BREAK
+
+
+#IF
+EQUAL U110 0
+#ACT
+Mov u110 1
+goto @设置弹窗
+break
+
+#IF
+#ACT
+Mov u110 0
+goto @设置弹窗
+break
+
+[@设置使用经验_1]
+#IF
+large U13 1
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>开通VIP2可设置自动使用元宝</font>
+BREAK
+#IF
+EQUAL U111 0
+#ACT
+Mov u111 1
+goto @设置弹窗
+break
+#IF
+#ACT
+Mov u111 0
+goto @设置弹窗 
+break
+[@设置使用经验_2]
+#IF
+large U13 1
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>开通VIP2可设置自动使用元宝</font>
+BREAK
+#IF
+EQUAL U112 0
+#ACT
+Mov u112 1
+goto @设置弹窗
+break
+#IF
+#ACT
+Mov u112 0
+goto @设置弹窗
+break
+}

@@ -1,0 +1,45 @@
+[@启动复活面板]
+{
+#IF
+#ACT
+MOV s$面板状态显示 <Img|children={601}|x=266|y=2|img=custom/hl/buff_ui/buff_1.png|link=@顶部状态展示>
+ADDBUTTON 101 60 <$STR(s$面板状态显示)>
+
+#IF
+EQUAL <$CLIENTFLAG> 2
+#ACT
+Goto @复活相关其他
+
+[@复活相关其他]
+#IF
+CHECKUSEITEM 15
+#ACT
+#ELSEACT
+MOV S$主界面按钮 <Img|x=-325.0|y=-65|children={f1,f2}|img=public/1900000550.png|width=40|height=40|link=@空>
+INC S$主界面按钮 <Img|id=f1|x=5|y=6|img=item/item_0/001783.png|grey=1>
+ADDBUTTON 108 83 <$STR(S$主界面按钮)>
+BREAK
+
+#IF
+LARGE U243 <$UTCNOW8>
+#ACT
+MOV N$剩余复活时间 <$STR(U243)>
+DEC N$剩余复活时间 <$UTCNOW8>
+MOV S$主界面按钮 <Img|x=-325.0|y=-65|children={f1,f2}|img=public/1900000550.png|width=40|height=40|link=@空>
+INC S$主界面按钮 <Img|id=f1|x=5|y=6|img=item/item_0/001783.png|grey=1>
+INC S$主界面按钮 <COUNTDOWN|id=f2|x=2|y=20|time=<$STR(N$剩余复活时间)>|count=1|size=16|color=249|link=@复活倒计时触发>
+ADDBUTTON 108 83 <$STR(S$主界面按钮)>
+#ELSEACT
+MOV U243 0
+MOV S$主界面按钮 <Img|x=-325.0|y=-65|children={f1,f2}|img=public/1900000550.png|width=40|height=40|link=@空>
+INC S$主界面按钮 <Img|id=f1|x=5|y=6|img=item/item_0/001783.png|grey=0>
+INC S$主界面按钮 <Img|id=f2|x=3|y=5|img=public/1900000582.png|width=33|height=32|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+ADDBUTTON 108 83 <$STR(S$主界面按钮)>
+
+}
+
+
+
+
+
+

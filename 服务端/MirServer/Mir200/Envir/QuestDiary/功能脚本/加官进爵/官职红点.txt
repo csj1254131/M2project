@@ -1,0 +1,82 @@
+[@官职红点]
+{
+#IF
+#ACT
+MOV N$官印红点状态 0
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 当前gj  s$当前gj
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 当前pj  s$当前pj
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 当前sx s$当前sx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 当前xx s$当前xx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 当前ts  s$当前ts
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级pj  s$下级pj
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级sx s$下级sx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级xx s$下级xx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级ts s$下级ts
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级clmc s$下级clmc
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级clid  s$下级clid
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级clsl   s$下级clsl
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级ybsl  s$下级ybsl
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级dj     s$下级dj
+
+
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 消耗_1     s$消耗_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 消耗_2     s$消耗_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 激活_2     s$激活_2
+
+
+#IF
+LARGE  U27 9
+SMALL U28 6
+#ACT
+Mov n$u28 <$str(u28)>
+inc   n$u28 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 消耗_1     s$消耗_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 消耗_2     s$消耗_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 激活_2     s$激活_2
+
+#IF
+LARGE  U27 9
+EQUAL U28 6
+#ACT
+Mov n$u28 <$str(u28)>
+Dec  n$u28 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 消耗_1     s$消耗_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 消耗_2     s$消耗_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 激活_2     s$激活_2
+
+#IF
+checkitem <$STR(s$下级clmc)> <$str(s$下级clsl)>
+CheckBindMoney 元宝 ? <$STR(s$下级ybsl)>
+#ACT
+Mov s$官职红点 icon_red_01
+MOV N$官印红点状态 1
+#ELSEACT
+Mov s$官职红点
+
+
+#IF
+LARGE  U23 <$Str(s$激活_2)>
+EQUAL U27 0
+#ACT
+Mov s$官印红点 icon_red_01
+MOV N$官印红点状态 1
+BREAK
+
+
+#IF
+CHECKMONEY     声望 ? <$Str(s$消耗_2)>
+CheckBindMoney 元宝 ? <$Str(s$消耗_1)>
+LARGE  U23 <$Str(s$激活_2)>
+#ACT
+Mov s$官印红点 icon_red_01
+MOV N$官印红点状态 1
+#ELSEACT
+Mov s$官印红点
+#IF
+EQUAL U28 11
+#ACT
+Mov s$官印红点
+MOV N$官印红点状态 1
+}

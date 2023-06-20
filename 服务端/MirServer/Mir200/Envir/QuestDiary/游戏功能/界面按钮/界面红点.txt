@@ -1,0 +1,23 @@
+[@界面红点]
+{
+#IF
+CHECKRENEWLEVEL > 3
+#ACT
+MOV S$注灵红点 
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  注灵材料xh s$注灵材料xh
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV S$注灵红点 icon_red_01
+MOV S$主界面按钮 <Img|x=135|y=100|img=custom/hl/hl_ui/<$Str(s$注灵红点)>.png>
+ADDBUTTON 109 8 <$STR(S$主界面按钮)>
+BREAK
+#IF
+#ACT
+MOV S$主界面按钮 <Img|x=135|y=100|img=custom/hl/hl_ui/<$Str(s$注灵红点)>.png>
+ADDBUTTON 109 8 <$STR(S$主界面按钮)>
+}

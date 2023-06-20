@@ -1,0 +1,178 @@
+[@他人顶戴界面]
+{
+
+#IF
+#ACT
+GetHumVar <$USERSTATENAME> S$C_对方顶戴一 <$HUMAN(顶戴展示一)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴二 <$HUMAN(顶戴展示二)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴三 <$HUMAN(顶戴展示三)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴四 <$HUMAN(顶戴展示四)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴五 <$HUMAN(顶戴展示五)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴六 <$HUMAN(顶戴展示六)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴七 <$HUMAN(顶戴展示七)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴八 <$HUMAN(顶戴展示八)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴九 <$HUMAN(顶戴展示九)>
+
+GetHumVar <$USERSTATENAME> S$C_对方顶戴六A <$HUMAN(顶戴展示六A)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴七A <$HUMAN(顶戴展示七A)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴八A <$HUMAN(顶戴展示八A)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴九A <$HUMAN(顶戴展示九A)>
+
+GetHumVar <$USERSTATENAME> S$C_对方顶戴你球啥 <$HUMAN(顶戴你球啥)>
+GetHumVar <$USERSTATENAME> S$C_对方顶戴球你咋地 <$HUMAN(顶戴球你咋地)>
+
+MOV S$C_他人顶戴元素一1
+MOV S$C_他人顶戴元素一2
+MOV S$C_他人顶戴元素二1
+MOV S$C_他人顶戴元素二2
+MOV S$C_他人顶戴元素三1
+MOV S$C_他人顶戴元素三2
+MOV S$C_他人顶戴元素三1
+MOV S$C_他人顶戴元素三2
+MOV S$C_他人顶戴元素四1
+MOV S$C_他人顶戴元素四2
+MOV S$C_他人顶戴元素五1
+MOV S$C_他人顶戴元素五2
+MOV S$C_他人顶戴元素六1
+MOV S$C_他人顶戴元素六2
+MOV S$C_他人顶戴元素七1
+MOV S$C_他人顶戴元素七2
+MOV S$C_他人顶戴元素八1
+MOV S$C_他人顶戴元素八2
+MOV S$C_他人顶戴元素九1
+MOV S$C_他人顶戴元素九2
+
+MOV S$C_他人顶戴元素六1A
+MOV S$C_他人顶戴元素六2A
+MOV S$C_他人顶戴元素七1A
+MOV S$C_他人顶戴元素七2A
+MOV S$C_他人顶戴元素八1A
+MOV S$C_他人顶戴元素八2A
+MOV S$C_他人顶戴元素九1A
+MOV S$C_他人顶戴元素九2A
+MOV S$C_他人顶戴顶戴你球啥1
+MOV S$C_他人顶戴顶戴你球啥2
+MOV S$C_他人顶戴顶戴球你咋地1
+MOV S$C_他人顶戴顶戴球你咋地2
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴五)>
+#ACT
+MOV S$C_他人顶戴元素一1 <Img|id=21|width=338|height=50|children={101,201}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素一2 <Effect|id=101|x=170|y=22|effectid=5050|count=0|scale=1|dir=5|speed=1|effecttype=0|act=0>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴四)>
+#ACT
+MOV S$C_他人顶戴元素二1 <Img|id=22|width=338|height=50|children={102,202}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素二2 <Effect|id=102|x=170|y=22|effectid=5051|count=0|scale=1|dir=5|speed=1|effecttype=0|act=0>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴三)>
+#ACT
+MOV S$C_他人顶戴元素三1 <Img|id=23|width=338|height=50|children={103,203}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素三2 <Effect|id=103|x=170|y=40|effectid=<$STR(S$C_对方顶戴三)>|count=0|scale=1|dir=5|speed=1|effecttype=0|act=0>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴二)>
+#ACT
+MOV S$C_他人顶戴元素四1 <Img|id=24|width=338|height=50|children={104,204}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素四2 <Img|x=110|y=10|id=104|img=Topwear/kuangbao_1.png>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴一)>
+#ACT
+MOV S$C_他人顶戴元素五1 <Img|id=25|width=338|height=50|children={105,205}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素五2 <Img|x=112|y=15|id=105|img=Topwear/<$STR(S$C_对方顶戴一)>.png>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴六)>
+#ACT
+MOV S$C_他人顶戴元素六1 <Img|id=26|width=338|height=50|children={106,206}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素六2 <Img|x=102|y=10|id=106|img=Topwear/youqian.png>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴七)>
+#ACT
+MOV S$C_他人顶戴元素七1 <Img|id=27|width=338|height=50|children={107,207}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素七2 <Img|x=120|y=-5|id=107|img=Topwear/sbk.png>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴八)>
+#ACT
+MOV S$C_他人顶戴元素八1 <Img|id=28|width=338|height=50|children={108,208}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素八2 <Img|x=100|y=10|id=108|img=Topwear/<$STR(S$C_对方顶戴八)>.png>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴九)>
+#ACT
+MOV S$C_他人顶戴元素九1 <Img|id=29|width=338|height=50|children={109,209}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素九2 <Effect|id=109|x=175|y=25|effectid=<$STR(S$C_对方顶戴九)>|count=0|scale=0.7|dir=5|speed=1|effecttype=0|act=0>
+
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴六A)>
+#ACT
+MOV S$C_他人顶戴元素六A1 <Img|id=30|width=338|height=50|children={119,219}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素六A2 <Effect|id=119|x=175|y=25|effectid=<$STR(S$C_对方顶戴六A)>|count=0|scale=1.0|dir=5|speed=1|effecttype=0|act=0>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴七A)>
+#ACT
+MOV S$C_他人顶戴元素七A1 <Img|id=31|width=338|height=50|children={129,229}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素七A2 <Effect|id=129|x=175|y=25|effectid=<$STR(S$C_对方顶戴七A)>|count=0|scale=1.0|dir=5|speed=1|effecttype=0|act=0>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴八A)>
+#ACT
+MOV S$C_他人顶戴元素八A1 <Img|id=32|width=338|height=50|children={139,239}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素八A2 <Effect|id=139|x=175|y=25|effectid=<$STR(S$C_对方顶戴八A)>|count=0|scale=1.0|dir=5|speed=1|effecttype=0|act=0>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴九A)>
+#ACT
+MOV S$C_他人顶戴元素九A1 <Img|id=33|width=338|height=50|children={149,249}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴元素九A2 <Effect|id=149|x=175|y=25|effectid=<$STR(S$C_对方顶戴九A)>|count=0|scale=1.0|dir=5|speed=1|effecttype=0|act=0>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴你球啥)>
+#ACT
+MOV S$C_他人顶戴你球啥1 <Img|id=34|width=338|height=50|children={159,259}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴你球啥2 <Img|x=115|y=5|id=159|img=Topwear/<$STR(S$C_对方顶戴你球啥)>.png>
+
+#IF
+NOT EQUAL <$STR(S$C_对方顶戴球你咋地)>
+#ACT
+MOV S$C_他人顶戴球你咋地1 <Img|id=35|width=338|height=50|children={169,269}|img=custom/hl/chenhaoanniu/ch_ui2.png>
+MOV S$C_他人顶戴球你咋地2 <Img|x=115|y=5|id=169|img=Topwear/<$STR(S$C_对方顶戴球你咋地)>.png>
+
+
+#IF
+#ACT
+MOV S$C_他人顶戴面板 <Img|x=-17|y=-500|bg=1|children={11,12,13,14,15,16}|width=382|height=515|img=custom/hl/chenhaoanniu/ch_ui1.png>
+INC S$C_他人顶戴面板 <Img|x=21|y=22|id=11|width=340|height=50|img=custom/hl/chenhaoanniu/ch_ui3.png>
+INC S$C_他人顶戴面板 <Text|id=12|outline=2|outlinecolor=0|x=160|y=30|color=103|size=18|text=称谓展示>
+INC S$C_他人顶戴面板 <ListView|id=13|x=22|y=72|children={21,22,23,24,25,26,27,28,29,30,31,32,33,34,35}|width=340|height=340|direction=1|bounce=0|margin=1|default=1>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素一1)><$STR(S$C_他人顶戴元素一2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素二1)><$STR(S$C_他人顶戴元素二2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素三1)><$STR(S$C_他人顶戴元素三2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素四1)><$STR(S$C_他人顶戴元素四2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素五1)><$STR(S$C_他人顶戴元素五2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素六1)><$STR(S$C_他人顶戴元素六2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素七1)><$STR(S$C_他人顶戴元素七2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素八1)><$STR(S$C_他人顶戴元素八2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素九1)><$STR(S$C_他人顶戴元素九2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素六A1)><$STR(S$C_他人顶戴元素六A2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素七A1)><$STR(S$C_他人顶戴元素七A2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素八A1)><$STR(S$C_他人顶戴元素八A2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴元素九A1)><$STR(S$C_他人顶戴元素九A2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴你球啥1)><$STR(S$C_他人顶戴你球啥2)>
+INC S$C_他人顶戴面板 <$STR(S$C_他人顶戴球你咋地1)><$STR(S$C_他人顶戴球你咋地2)>
+
+ADDBUTTON 2301 55  <$Str(S$C_他人顶戴面板)>
+GetHumVar <$USERSTATENAME> S$C_对方ID <$USERID>
+VIEWPLAYER <$STR(S$C_对方ID)> 106
+
+
+
+}

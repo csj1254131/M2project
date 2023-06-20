@@ -1,0 +1,91 @@
+[@其它按钮QF]
+{
+[@开始挂机]
+{
+#IF
+EQUAL N$挂机状态 0
+#ACT
+MOV N$挂机状态 1
+#ELSEACT
+StopAutoPlayGame
+BREAK
+
+
+#IF
+Equal <$CLIENTFLAG> 2
+#act
+StartAutoPlayGame
+MOV S$挂机 <Button|x=-127|y=-374|color=251|mimg=private\main\Skill\1900012709.png|size=16|nimg=private\main\Skill\1900012709.png|pimg=private\main\Skill\1900012709.png|link=@停止挂机>
+DELBUTTON 104 1
+ADDBUTTON 104 1 <$STR(S$挂机)>
+
+#IF
+Equal <$CLIENTFLAG> 1
+#act
+StartAutoPlayGame
+MOV S$PC图标1 <Button|x=-60|y=65|mimg=private\main\Skill\1900012709.png|size=16|nimg=private\main\Skill\1900012709.png|pimg=private\main\Skill\1900012709.png|link=@停止挂机>
+DELBUTTON 107 60
+ADDBUTTON 107 60 <$STR(S$PC图标1)>
+
+[@停止挂机]
+#IF
+EQUAL N$挂机状态 1
+#ACT
+MOV N$挂机状态 0
+#ELSEACT
+BREAK
+
+#IF
+Equal <$CLIENTFLAG> 2
+#act
+StopAutoPlayGame
+MOV S$挂机 <Button|x=-127|y=-374|color=251|mimg=private\main\Skill\1900012708.png|size=16|nimg=private\main\Skill\1900012708.png|pimg=private\main\Skill\1900012708.png|link=@开始挂机>
+DELBUTTON 104 1
+ADDBUTTON 104 1 <$STR(S$挂机)>
+DELBUTTON  108 1
+
+#IF
+Equal <$CLIENTFLAG> 1
+#act
+StopAutoPlayGame
+MOV S$PC图标1 <Button|x=-60|y=65|mimg=private\main\Skill\1900012708.png|size=16|nimg=private\main\Skill\1900012708.png|pimg=private\main\Skill\1900012708.png|link=@开始挂机>
+DELBUTTON 107 60
+ADDBUTTON 107 60 <$STR(S$PC图标1)>
+
+[@StartAutoPlayGame]
+#if
+#ACT
+;MOV s$设置 <Button|x=196|y=-226|nimg=private/main/auto_tips/bg_kjxl_03.png|link=@设置>
+;ADDBUTTON 108 1 <$STR(S$设置)>
+
+
+
+[@StopAutoPlayGame]
+#IF
+EQUAL N$挂机状态 1
+#ACT
+MOV N$挂机状态 0
+#ELSEACT
+BREAK
+
+
+#IF
+Equal <$CLIENTFLAG> 2
+#act
+MOV N$挂机状态 0
+MOV S$挂机 <Button|x=-127|y=-374|color=251|mimg=private\main\Skill\1900012708.png|size=16|nimg=private\main\Skill\1900012708.png|pimg=private\main\Skill\1900012708.png|link=@开始挂机>
+DELBUTTON 104 1
+ADDBUTTON 104 1 <$STR(S$挂机)>
+DELBUTTON  108 1
+
+
+#IF
+Equal <$CLIENTFLAG> 1
+#act
+MOV N$挂机状态 0
+MOV S$PC图标1 <Button|x=-60|y=65|mimg=private\main\Skill\1900012708.png|size=16|nimg=private\main\Skill\1900012708.png|pimg=private\main\Skill\1900012708.png|link=@开始挂机>
+DELBUTTON 107 60
+ADDBUTTON 107 60 <$STR(S$PC图标1)>
+
+}
+}

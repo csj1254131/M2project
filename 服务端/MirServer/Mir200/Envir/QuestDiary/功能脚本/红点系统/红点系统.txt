@@ -1,0 +1,244 @@
+[@红点显示]
+{
+#IF
+#ACT
+
+
+#or
+EQUAL U14 1
+EQUAL U15 1
+EQUAL U16 1
+#act
+MOV S$赞助红点  icon_red_01
+INC   S$图标1 <Img|id=20|x=55|y=5|img=custom/hl/hl_ui/<$Str(S$赞助红点)>.png>
+#ELSEACT
+MOV S$赞助红点
+
+#IF
+;large G100 0
+#ACT
+Goto @连续充值红点显示
+#ELSEACT
+BREAK
+
+[@连续充值红点显示]
+#IF
+large U36 0
+equal U37 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large U36 1
+equal U38 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  U36 2
+equal U39 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large U36 3
+equal U40 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large U36 4
+equal U41 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large U36 5
+equal U42 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large U36 6
+equal U43 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+#ACT
+
+Goto @等级目标红点显示
+BREAK
+[@等级目标红点显示]
+;等级目标
+#IF
+equal U45 0
+CHECKLEVELEX > 39
+#ACT
+MOV S$活动红点  icon_red_01
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+equal U46 0
+CHECKLEVELEX > 49
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  G2   0
+equal U47 0
+CHECKLEVELEX > 59
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  G3   0
+equal U48 0
+CHECKLEVELEX > 69
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  G4   0
+equal U49 0
+CHECKLEVELEX > 79
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  G5   0
+equal U50 0
+CHECKLEVELEX > 99
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  G6   0
+equal U51 0
+CHECKRENEWLEVEL > 3
+#ACT
+MOV S$活动红点  icon_red_01
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+#ACT
+
+Goto @累计登陆红点显示
+BREAK
+
+[@累计登陆红点显示]
+#IF
+large  U56 0
+equal U57 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  U56 1
+equal U58 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  U56 2
+equal U59 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  U56 3
+equal U60 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  U56 4
+equal U61 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  U56 5
+equal U62 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+#IF
+large  U56 6
+equal U63 0
+#ACT
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+#IF
+#ACT
+MOV S$活动红点
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+
+
+;#IF
+;#ACT
+;Goto @限时特惠红点显示
+;BREAK
+
+[@限时特惠红点显示]
+#or
+EQUAL U114 0
+EQUAL U115 0
+EQUAL U116 0
+#act
+MOV S$活动红点  icon_red_01
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+
+
+#IF
+#ACT
+MOV S$活动红点
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+}

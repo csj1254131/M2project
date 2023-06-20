@@ -1,0 +1,108 @@
+[@main]
+
+#IF
+EQUAL <$STR(U91)> 3
+CHECKJOB Warrior
+#ACT
+MOV S$C_职业标签 z4
+
+#IF
+EQUAL <$STR(U91)> 3
+CHECKJOB Wizard
+#ACT
+MOV S$C_职业标签 f4
+
+#IF
+EQUAL <$STR(U91)> 3
+CHECKJOB Taoist
+#ACT
+MOV S$C_职业标签 ds4
+
+#IF
+gender man
+#ACT
+MOV S$C_任务奖励 轻型盔甲(男)
+MOV S$C_任务奖励IDX 11004
+#ELSEACT
+MOV S$C_任务奖励 轻型盔甲(女)
+MOV S$C_任务奖励IDX 11005
+
+#IF
+EQUAL <$STR(U91)> 3
+#ACT
+#SAY
+<Img|show=4|y=-30|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}|bg=1|img=custom/hl/newtask/taskui_11.png>
+<Img|id=1|img=custom/hl/newtask/taskui_2.png|x=160|y=180>
+<Button|id=2|x=600|y=2|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=3|x=570|y=-5|width=70|height=70|link=@exit>
+<Text|id=4|outline=1|outlinecolor=0|a=0|x=60|y=80|color=103|size=18|text=侠士，这件衣服请收下，村外有一群僵尸肆虐，我们都吓得不敢>
+<Text|id=5|outline=1|outlinecolor=0|a=0|x=60|y=100|color=103|size=18|text=出门，村长也是愁得不可开交。请侠士前去为我们清除魔物！>
+<ListView|id=12|x=160|y=215|children={101,102,103,104,105,106}|direction=2|bounce=1|margin=1|width=300|height=70>
+<ItemShow|id=101|width=70|height=70|itemid=6|itemcount=100000|showtips=1|bgtype=1>
+<ItemShow|id=102|width=70|height=70|itemid=<$STR(S$C_任务奖励IDX)>|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=103|width=70|height=70|itemid=4|itemcount=2000|showtips=1|bgtype=1>
+<Img|id=104|img=custom/hl/newtask/<$STR(S$C_职业标签)>.png>
+<Button|x=232|y=300|id=13|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=一路前行|color=103|size=18|link=@主线4>
+<Text|id=14|outline=2|outlinecolor=0|a=0|x=247|y=5|color=103|size=18|text=4.阿霞的礼物>
+<COUNTDOWN|id=15|a=0|x=280|y=355|time=5|count=1|size=16|color=224|link=@主线4>
+
+[@主线4]
+
+#IF
+EQUAL <$STR(U91)> 3
+CHECKJOB Warrior
+#ACT
+MOV U91 4
+money 经验 + 100000
+money 绑定元宝 + 2000
+ADDSKILL 半月弯刀
+SKILLLEVEL 半月弯刀 = 3
+;GiveStateItem <$STR(S$C_任务奖励)> 1 0 1 0 0 1 1 1 1
+GiveOnItem 0 <$STR(S$C_任务奖励)> 1
+NEWCOMPLETETASK 4
+NEWDELETETASK 4
+NEWCHANGETASK 5 <$STR(U2)>
+KILLMOBAPPOINT 0 266 577 10 僵尸3
+close
+
+#IF
+EQUAL <$STR(U91)> 3
+CHECKJOB Wizard
+#ACT
+MOV U91 4
+money 经验 + 100000
+money 绑定元宝 + 2000
+ADDSKILL 火墙
+ADDSKILL 圣言术
+ADDSKILL 冰咆哮
+SKILLLEVEL 火墙 = 3
+SKILLLEVEL 圣言术 = 3
+SKILLLEVEL 冰咆哮 = 3
+;GiveStateItem <$STR(S$C_任务奖励)> 1 0 1 0 0 1 1 1 1
+GiveOnItem 0 <$STR(S$C_任务奖励)> 1
+NEWCOMPLETETASK 4
+NEWDELETETASK 4
+NEWCHANGETASK 5 <$STR(U2)>
+KILLMOBAPPOINT 0 266 577 10 僵尸3
+close
+
+#IF
+EQUAL <$STR(U91)> 3
+CHECKJOB Taoist
+#ACT
+MOV U91 4
+money 经验 + 100000
+money 绑定元宝 + 2000
+ADDSKILL 神圣战甲术
+ADDSKILL 幽灵盾
+ADDSKILL 群体治疗术
+SKILLLEVEL 神圣战甲术 = 3
+SKILLLEVEL 幽灵盾 = 3
+SKILLLEVEL 群体治疗术 = 3
+;GiveStateItem <$STR(S$C_任务奖励)> 1 0 1 0 0 1 1 1 1
+GiveOnItem 0 <$STR(S$C_任务奖励)> 1
+NEWCOMPLETETASK 4
+NEWDELETETASK 4
+NEWCHANGETASK 5 <$STR(U2)>
+KILLMOBAPPOINT 0 266 577 10 僵尸3
+close

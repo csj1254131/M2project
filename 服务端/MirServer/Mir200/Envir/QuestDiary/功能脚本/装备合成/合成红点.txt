@@ -1,0 +1,336 @@
+[@合成红点]
+{
+#IF
+#ACT
+Mov n$合成红点 0
+#IF
+CHECKITEM 麻痹戒指① 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 麻痹戒指② 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 麻痹戒指③ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 麻痹戒指④ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 麻痹戒指⑤ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 麻痹戒指⑥ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 麻痹戒指⑦ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 麻痹戒指⑧ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 麻痹戒指⑨ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 护身戒指① 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 护身戒指② 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 护身戒指③ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 护身戒指④ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 护身戒指⑤ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 护身戒指⑥ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 护身戒指⑦ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 护身戒指⑧ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 护身戒指⑨ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 复活戒指① 2
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 复活戒指② 2
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 复活戒指③ 2
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 复活戒指④ 2
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 复活戒指⑤ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 复活戒指⑥ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 复活戒指⑦ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 复活戒指⑧ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+#IF
+CHECKITEM 复活戒指⑨ 3
+#ACT
+Mov n$合成红点  1
+BREAK
+
+[@麻痹红点判断]
+#IF
+#ACT
+Mov s$麻痹戒指红点_1
+Mov s$麻痹戒指红点_2
+Mov s$麻痹戒指红点_3
+Mov s$麻痹戒指红点_4
+Mov s$麻痹戒指红点_5
+Mov s$麻痹戒指红点_6
+Mov s$麻痹戒指红点_7
+Mov s$麻痹戒指红点_8
+Mov s$麻痹戒指红点_9
+MOV s$条目红点_1
+#IF
+CHECKITEM 麻痹戒指① 3
+#ACT
+Mov s$麻痹戒指红点_1 icon_red_01
+#IF
+CHECKITEM 麻痹戒指② 3
+#ACT
+Mov s$麻痹戒指红点_2 icon_red_01
+#IF
+CHECKITEM 麻痹戒指③ 3
+#ACT
+Mov s$麻痹戒指红点_3 icon_red_01
+#IF
+CHECKITEM 麻痹戒指④ 3
+#ACT
+Mov s$麻痹戒指红点_4 icon_red_01
+#IF
+CHECKITEM 麻痹戒指⑤ 3
+#ACT
+Mov s$麻痹戒指红点_5 icon_red_01
+#IF
+CHECKITEM 麻痹戒指⑥ 3
+#ACT
+Mov s$麻痹戒指红点_6 icon_red_01
+#IF
+CHECKITEM 麻痹戒指⑦ 3
+#ACT
+Mov s$麻痹戒指红点_7 icon_red_01
+#IF
+CHECKITEM 麻痹戒指⑧ 3
+#ACT
+Mov s$麻痹戒指红点_8 icon_red_01
+#IF
+CHECKITEM 麻痹戒指⑨ 3
+#ACT
+Mov s$麻痹戒指红点_9 icon_red_01
+
+#OR
+equal s$麻痹戒指红点_1 icon_red_01
+equal s$麻痹戒指红点_2 icon_red_01
+equal s$麻痹戒指红点_3 icon_red_01
+equal s$麻痹戒指红点_4 icon_red_01
+equal s$麻痹戒指红点_5 icon_red_01
+equal s$麻痹戒指红点_6 icon_red_01
+equal s$麻痹戒指红点_7 icon_red_01
+equal s$麻痹戒指红点_8 icon_red_01
+equal s$麻痹戒指红点_9 icon_red_01
+#ACT
+MOV s$条目红点_1 icon_red_01
+
+
+[@护身红点判断]
+#IF
+#ACT
+Mov s$护身戒指红点_1
+Mov s$护身戒指红点_2
+Mov s$护身戒指红点_3
+Mov s$护身戒指红点_4
+Mov s$护身戒指红点_5
+Mov s$护身戒指红点_6
+Mov s$护身戒指红点_7
+Mov s$护身戒指红点_8
+Mov s$护身戒指红点_9
+MOV s$条目红点_2
+#IF
+CHECKITEM 护身戒指① 3
+#ACT
+Mov s$护身戒指红点_1 icon_red_01
+#IF
+CHECKITEM 护身戒指② 3
+#ACT
+Mov s$护身戒指红点_2 icon_red_01
+#IF
+CHECKITEM 护身戒指③ 3
+#ACT
+Mov s$护身戒指红点_3 icon_red_01
+#IF
+CHECKITEM 护身戒指④ 3
+#ACT
+Mov s$护身戒指红点_4 icon_red_01
+#IF
+CHECKITEM 护身戒指⑤ 3
+#ACT
+Mov s$护身戒指红点_5 icon_red_01
+#IF
+CHECKITEM 护身戒指⑥ 3
+#ACT
+Mov s$护身戒指红点_6 icon_red_01
+#IF
+CHECKITEM 护身戒指⑦ 3
+#ACT
+Mov s$护身戒指红点_7 icon_red_01
+#IF
+CHECKITEM 护身戒指⑧ 3
+#ACT
+Mov s$护身戒指红点_8 icon_red_01
+#IF
+CHECKITEM 护身戒指⑨ 3
+#ACT
+Mov s$护身戒指红点_9 icon_red_01
+
+#OR
+equal s$护身戒指红点_1 icon_red_01
+equal s$护身戒指红点_2 icon_red_01
+equal s$护身戒指红点_3 icon_red_01
+equal s$护身戒指红点_4 icon_red_01
+equal s$护身戒指红点_5 icon_red_01
+equal s$护身戒指红点_6 icon_red_01
+equal s$护身戒指红点_7 icon_red_01
+equal s$护身戒指红点_8 icon_red_01
+equal s$护身戒指红点_9 icon_red_01
+#ACT
+MOV s$条目红点_2 icon_red_01
+
+
+[@复活红点判断]
+#IF
+#ACT
+Mov s$复活戒指红点_1
+Mov s$复活戒指红点_2
+Mov s$复活戒指红点_3
+Mov s$复活戒指红点_4
+Mov s$复活戒指红点_5
+Mov s$复活戒指红点_6
+Mov s$复活戒指红点_7
+Mov s$复活戒指红点_8
+Mov s$复活戒指红点_9
+MOV s$条目红点_3
+#IF
+CHECKITEM 复活戒指① 2
+#ACT
+Mov s$复活戒指红点_1 icon_red_01
+#IF
+CHECKITEM 复活戒指② 2
+#ACT
+Mov s$复活戒指红点_2 icon_red_01
+#IF
+CHECKITEM 复活戒指③ 2
+#ACT
+Mov s$复活戒指红点_3 icon_red_01
+#IF
+CHECKITEM 复活戒指④ 2
+#ACT
+Mov s$复活戒指红点_4 icon_red_01
+#IF
+CHECKITEM 复活戒指⑤ 3
+#ACT
+Mov s$复活戒指红点_5 icon_red_01
+#IF
+CHECKITEM 复活戒指⑥ 3
+#ACT
+Mov s$复活戒指红点_6 icon_red_01
+#IF
+CHECKITEM 复活戒指⑦ 3
+#ACT
+Mov s$复活戒指红点_7 icon_red_01
+#IF
+CHECKITEM 复活戒指⑧ 3
+#ACT
+Mov s$复活戒指红点_8 icon_red_01
+#IF
+CHECKITEM 复活戒指⑨ 3
+#ACT
+Mov s$复活戒指红点_9 icon_red_01
+
+#OR
+equal s$复活戒指红点_1 icon_red_01
+equal s$复活戒指红点_2 icon_red_01
+equal s$复活戒指红点_3 icon_red_01
+equal s$复活戒指红点_4 icon_red_01
+equal s$复活戒指红点_5 icon_red_01
+equal s$复活戒指红点_6 icon_red_01
+equal s$复活戒指红点_7 icon_red_01
+equal s$复活戒指红点_8 icon_red_01
+equal s$复活戒指红点_9 icon_red_01
+#ACT
+MOV s$条目红点_3 icon_red_01
+
+
+
+
+}

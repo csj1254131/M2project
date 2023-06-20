@@ -1,0 +1,598 @@
+[@启动捐献]
+{
+#IF
+EQUAL <$HUMAN(捐献灵符)> ??
+#ACT
+VAR Integer HUMAN 捐献灵符
+
+#IF
+SMALL G201 10000
+#ACT
+MOV A201 虚位以待
+
+#IF
+SMALL G202 5000
+#ACT
+MOV A202 虚位以待
+
+#IF
+SMALL G203 3000
+#ACT
+MOV A203 虚位以待
+
+#IF
+SMALL G204 2000
+#ACT
+MOV A204 虚位以待
+
+#IF
+SMALL G205 1000
+#ACT
+MOV A205 虚位以待
+
+#IF
+SMALL G206 200
+#ACT
+MOV A206 虚位以待
+
+#IF
+#ACT
+MOV N$小界面开关 0
+MOV N$捐献数量 0
+MOV N$停留界面 0
+MOV S$我名次颜色 250
+GOTO @捐献说明
+
+
+[@捐献说明]
+#IF
+#ACT
+MOV S$激活按钮 nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png
+MOV S$默认按钮 nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png
+HumVarRank 捐献灵符 N$变量位置 0 1
+
+#IF
+LARGE N$变量位置 10
+CHECKVAR HUMAN 捐献灵符 > 0
+#ACT
+MOV S$我的排名 第
+INC S$我的排名 <$STR(N$变量位置)>
+INC S$我的排名 名
+#ELSEACT
+GOTO @排名获取
+#IF
+CHECKVAR HUMAN 捐献灵符 = 0
+#ACT
+MOV S$我名次颜色 249
+MOV S$我的排名 未捐献
+
+#IF
+CHECKVAR HUMAN 捐献灵符 > 0
+CHECKVAR HUMAN 捐献灵符 < 200
+#ACT
+MOV S$我名次颜色 249
+MOV S$我的排名 未上榜
+
+#IF
+EQUAL N$小界面开关 0
+EQUAL N$停留界面 0
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=个人捐献>
+<ListView|id=3|children={31}|x=132|y=60|width=3|height=450|bounce=1|direction=1|color=x|margin=2>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=4|x=22.0|y=65.0|<$STR(S$激活按钮)>|outline=2|outlinecolor=0|color=103|size=18|text=捐献说明|link=@启动捐献>
+<Button|id=5|x=22.0|y=105.0|<$STR(S$默认按钮)>|outline=2|outlinecolor=0|color=160|size=18|text=捐献排行|link=@去排行界面>
+<Text|id=6|x=159.0|y=67.0|color=251|outline=2|outlinecolor=0|size=18|text=欢迎使用火龙币捐献系统！榜单每月1号会重置>
+<Img|id=7|children={71,72,73}|x=165.0|y=106.0|img=private/rank_ui/rank_ui_mobile/1900020023.png>
+<Img|id=71|x=-3.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020025.png>
+<Img|id=72|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=73|x=60.0|y=5|color=249|size=18|outline=2|outlinecolor=0|text=属性加成：攻魔道 100-100，+10%伤害减免，+5%对怪增伤>
+<Img|id=8|children={81,82,83}|x=165.0|y=146.0|img=private/rank_ui/rank_ui_mobile/1900020023.png>
+<Img|id=81|x=-3.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020026.png>
+<Img|id=82|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=83|x=60.0|y=5|color=69|size=18|outline=2|outlinecolor=0|text=属性加成：攻魔道 70-70，+  8%伤害减免，+4%对怪增伤>
+<Img|id=9|children={91,92,93}|x=165.0|y=186.0|img=private/rank_ui/rank_ui_mobile/1900020023.png>
+<Img|id=91|x=-3.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020027.png>
+<Img|id=92|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=93|x=60.0|y=5|color=251|size=18|outline=2|outlinecolor=0|text=属性加成：攻魔道 50-50，+  6%伤害减免，+3%对怪增伤>
+<Img|id=10|children={101,102,103}|x=155.0|y=234.0|img=custom/hl/grjx_ui/word_juanxianbang_01.png>
+<Img|id=102|x=50.0|y=-10|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=103|x=68.0|y=-3|color=253|size=18|outline=2|outlinecolor=0|text=属性加成：攻魔道 20-20，+  4%伤害减免，+2%对怪增伤>
+<Img|id=11|children={111,112,113}|x=155.0|y=274.0|img=custom/hl/grjx_ui/word_juanxianbang_02.png>
+<Img|id=112|x=50.0|y=-10|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=113|x=68.0|y=-3|color=254|size=18|outline=2|outlinecolor=0|text=属性加成：攻魔道 10-10，+  3%伤害减免，+2%对怪增伤>
+
+<Img|id=12|children={121,122,123}|x=140.0|y=314.0|img=custom/hl/grjx_ui/word_juanxianbang_03.png>
+<Img|id=122|x=50.0|y=-10|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=123|x=82.0|y=-3|color=250|size=18|outline=2|outlinecolor=0|text=属性加成：攻魔道 5  -  5，+  2%伤害减免，+1%对怪增伤>
+<Text|id=13|x=278.0|y=355|color=103|size=18|outline=2|outlinecolor=0|text=参与奖励：攻魔道 1 - 1，1%伤害减免>
+<ListView|id=14|children={141}|x=136|y=428|width=617|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=141|img=custom/hl/hl_ui/hl_bg_01.png>
+<Text|id=15|children={151}|x=158.0|y=439|outline=2|outlinecolor=0|color=103|size=18|text=我已捐献：>
+<Text|id=151|x=95.0|y=0|color=250|size=18|outline=2|outlinecolor=0|text=<$HUMAN(捐献灵符)>火龙币>
+<Text|id=16|children={161}|x=158.0|y=470|outline=2|outlinecolor=0|color=103|size=18|text=我的排名：>
+<Text|id=161|x=95.0|y=0|color=<$STR(S$我名次颜色)>|outline=2|outlinecolor=0|size=18|text=<$STR(S$我的排名)>>
+<Button|id=17|x=605.0|y=448.0|<$STR(S$激活按钮)>|outline=2|outlinecolor=0|color=103|size=18|text=我要捐献|link=@去捐献>
+#IF
+EQUAL N$小界面开关 1
+#ACT
+GOTO @去捐献
+BREAK
+#IF
+EQUAL N$停留界面 1
+#ACT
+GOTO @去排行界面
+
+[@去排行界面]
+#IF
+SMALL G201 10000
+#ACT
+MOV A201 虚位以待
+
+#IF
+SMALL G202 5000
+#ACT
+MOV A202 虚位以待
+
+#IF
+SMALL G203 3000
+#ACT
+MOV A203 虚位以待
+
+#IF
+SMALL G204 2000
+#ACT
+MOV A204 虚位以待
+
+#IF
+SMALL G205 1000
+#ACT
+MOV A205 虚位以待
+
+#IF
+SMALL G206 200
+#ACT
+MOV A206 虚位以待
+#IF
+#ACT
+MOV N$停留界面 1
+#IF
+EQUAL N$小界面开关 0
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=个人捐献>
+<ListView|id=3|children={31}|x=132|y=60|width=3|height=450|bounce=1|direction=1|color=x|margin=2>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=4|x=22.0|y=65.0|<$STR(S$默认按钮)>|outline=2|outlinecolor=0|color=160|size=18|text=捐献说明|link=@启动捐献>
+<Button|id=5|x=22.0|y=105.0|<$STR(S$激活按钮)>|outline=2|outlinecolor=0|color=103|size=18|text=捐献排行|link=@去排行界面>
+<Text|id=6|x=159.0|y=67.0|color=251|outline=2|outlinecolor=0|size=18|text=欢迎使用火龙币捐献系统！>
+<ListView|id=18|children={7,8,9,10,11,12}|x=145|y=106|width=580|height=280|bounce=0|direction=1|color=x|margin=5>
+
+<Layout|id=7|children={71,72,73,74,75,76}|width=580|height=35|color=x>
+<Img|id=71|x=20|y=0|img=private/rank_ui/rank_ui_mobile/1900020023.png>
+<Img|id=72|x=17|y=-2|img=private/rank_ui/rank_ui_mobile/1900020025.png>
+<Img|id=73|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=74|a=4|percentx=26|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=1  万火龙币可上榜>
+<Text|id=75|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A201)>>
+<RText|id=76|x=390|y=4|outline=2|outlinecolor=0|color=255|size=18|text=捐献火龙币：<<$STR(G201)>/FCOLOR=254>>
+
+<Layout|id=8|children={81,82,83,84,85,86}|width=580|height=35|color=x>
+<Img|id=81|x=20|y=0|img=private/rank_ui/rank_ui_mobile/1900020023.png>
+<Img|id=82|x=17|y=-2|img=private/rank_ui/rank_ui_mobile/1900020026.png>
+<Img|id=83|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=84|a=4|percentx=26|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=5000火龙币可上榜>
+<Text|id=85|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A202)>>
+<RText|id=86|x=390|y=4|outline=2|outlinecolor=0|color=255|size=18|text=捐献火龙币：<<$STR(G202)>/FCOLOR=254>>
+
+<Layout|id=9|children={91,92,93,94,95,96}|width=580|height=35|color=x>
+<Img|id=91|x=20|y=0|img=private/rank_ui/rank_ui_mobile/1900020023.png>
+<Img|id=92|x=17|y=-2|img=private/rank_ui/rank_ui_mobile/1900020027.png>
+<Img|id=93|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=94|a=4|percentx=26|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=3000火龙币可上榜>
+<Text|id=95|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A203)>>
+<RText|id=96|x=390|y=4|outline=2|outlinecolor=0|color=255|size=18|text=捐献火龙币：<<$STR(G203)>/FCOLOR=254>>
+
+<Layout|id=10|children={101,102,103,104,105,106}|width=580|height=35|color=x>
+
+<Img|id=101|a=4|percentx=5.6|percenty=55|img=custom/hl/grjx_ui/word_juanxianbang_01.png>
+<Img|id=102|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=103|a=4|percentx=26|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=2000火龙币可上榜>
+<Text|id=104|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A204)>>
+<RText|id=105|x=390|y=4|outline=2|outlinecolor=0|color=255|size=18|text=捐献火龙币：<<$STR(G204)>/FCOLOR=254>>
+
+<Layout|id=11|children={111,112,113,114,115,116}|width=580|height=35|color=x>
+<Img|id=111|a=4|percentx=5.6|percenty=55|img=custom/hl/grjx_ui/word_juanxianbang_02.png>
+<Img|id=112|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=113|a=4|percentx=26|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=1000火龙币可上榜>
+<Text|id=114|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A205)>>
+<RText|id=115|x=390|y=4|outline=2|outlinecolor=0|color=255|size=18|text=捐献火龙币：<<$STR(G205)>/FCOLOR=254>>
+
+<Layout|id=12|children={121,122,123,124,125,126}|width=580|height=35|color=x>
+<Img|id=121|a=4|percentx=5.6|percenty=55|img=custom/hl/grjx_ui/word_juanxianbang_03.png>
+<Img|id=122|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=123|a=4|percentx=26|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=200  火龙币可上榜>
+<Text|id=124|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A206)>>
+<RText|id=125|x=390|y=4|outline=2|outlinecolor=0|color=255|size=18|text=捐献火龙币：<<$STR(G206)>/FCOLOR=254>>
+<Text|id=13|children={131}|x=166|y=356|outline=2|outlinecolor=0|color=103|size=18|text=上榜说明：捐献需要达到对应的榜单数额才能上榜>
+<Text|id=131|x=82|y=36|color=103|size=18|outline=2|outlinecolor=0|text=第6-10名200火龙币可上榜>
+<ListView|id=14|children={141}|x=136|y=428|width=617|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=141|img=custom/hl/hl_ui/hl_bg_01.png>
+<Text|id=15|children={151}|x=158.0|y=439|outline=2|outlinecolor=0|color=103|size=18|text=我已捐献：>
+<Text|id=151|x=95.0|y=0|color=250|size=18|outline=2|outlinecolor=0|text=<$HUMAN(捐献灵符)>火龙币>
+<Text|id=16|children={161}|x=158.0|y=470|outline=2|outlinecolor=0|color=103|size=18|text=我的排名：>
+<Text|id=161|x=95.0|y=0|color=<$STR(S$我名次颜色)>|outline=2|outlinecolor=0|size=18|text=<$STR(S$我的排名)>>
+<Button|id=17|x=605.0|y=448.0|<$STR(S$激活按钮)>|outline=2|outlinecolor=0|color=103|size=18|text=我要捐献|link=@去捐献>
+
+#IF
+EQUAL N$小界面开关 1
+#ACT
+GOTO @去捐献
+
+
+[@去捐献]
+#IF
+EQUAL N$捐献数量 0
+#ACT
+MOV N$捐献数量 100
+
+#IF
+#ACT
+MOV N$停留界面 1
+MOV N$小界面开关 1
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=个人捐献>
+<ListView|id=3|children={31}|x=132|y=60|width=3|height=450|bounce=1|direction=1|color=x|margin=2>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=4|x=22.0|y=65.0|<$STR(S$默认按钮)>|outline=2|outlinecolor=0|color=160|size=18|text=捐献说明|link=@启动捐献>
+<Button|id=5|x=22.0|y=105.0|<$STR(S$激活按钮)>|outline=2|outlinecolor=0|color=103|size=18|text=捐献排行|link=@去排行界面>
+<Text|id=6|x=159.0|y=67.0|color=251|outline=2|outlinecolor=0|size=18|text=欢迎使用火龙币捐献系统！>
+<ListView|id=18|children={7,8,9,10,11,12}|x=145|y=106|width=580|height=280|bounce=0|direction=1|color=x|margin=5>
+
+<Layout|id=7|children={71,72,73,74,75,76}|width=580|height=35|color=x>
+<Img|id=71|x=20|y=0|img=private/rank_ui/rank_ui_mobile/1900020023.png>
+<Img|id=72|x=17|y=-2|img=private/rank_ui/rank_ui_mobile/1900020025.png>
+<Img|id=73|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=74|a=4|percentx=25|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=1  万火龙币可上榜>
+<Text|id=75|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A201)>>
+<RText|id=76|x=390|y=4|color=255|size=18|text=捐献火龙币：<<$STR(G201)>/FCOLOR=254>>
+
+<Layout|id=8|children={81,82,83,84,85,86}|width=580|height=35|color=x>
+<Img|id=81|x=20|y=0|img=private/rank_ui/rank_ui_mobile/1900020023.png>
+<Img|id=82|x=17|y=-2|img=private/rank_ui/rank_ui_mobile/1900020026.png>
+<Img|id=83|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=84|a=4|percentx=25|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=5000火龙币可上榜>
+<Text|id=85|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A202)>>
+<RText|id=86|x=390|y=4|color=255|size=18|text=捐献火龙币：<<$STR(G202)>/FCOLOR=254>>
+
+<Layout|id=9|children={91,92,93,94,95,96}|width=580|height=35|color=x>
+<Img|id=91|x=20|y=0|img=private/rank_ui/rank_ui_mobile/1900020023.png>
+<Img|id=92|x=17|y=-2|img=private/rank_ui/rank_ui_mobile/1900020027.png>
+<Img|id=93|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=94|a=4|percentx=25|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=3000火龙币可上榜>
+<Text|id=95|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A203)>>
+<RText|id=96|x=390|y=4|color=255|size=18|text=捐献火龙币：<<$STR(G203)>/FCOLOR=254>>
+
+<Layout|id=10|children={101,102,103,104,105,106}|width=580|height=35|color=x>
+
+<Img|id=101|a=4|percentx=5.6|percenty=55|img=custom/hl/grjx_ui/word_juanxianbang_01.png>
+<Img|id=102|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=103|a=4|percentx=25|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=2000火龙币可上榜>
+<Text|id=104|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A204)>>
+<RText|id=105|x=390|y=4|color=255|size=18|text=捐献火龙币：<<$STR(G204)>/FCOLOR=254>>
+
+<Layout|id=11|children={111,112,113,114,115,116}|width=580|height=35|color=x>
+<Img|id=111|a=4|percentx=5.6|percenty=55|img=custom/hl/grjx_ui/word_juanxianbang_02.png>
+<Img|id=112|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=113|a=4|percentx=25|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=1000火龙币可上榜>
+<Text|id=114|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A205)>>
+<RText|id=115|x=390|y=4|color=255|size=18|text=捐献火龙币：<<$STR(G205)>/FCOLOR=254>>
+
+<Layout|id=12|children={121,122,123,124,125,126}|width=580|height=35|color=x>
+<Img|id=121|a=4|percentx=5.6|percenty=55|img=custom/hl/grjx_ui/word_juanxianbang_03.png>
+<Img|id=122|x=50.0|y=-2|img=private/rank_ui/rank_ui_mobile/1900020028.png>
+<Text|id=123|a=4|percentx=25|percenty=50|outline=2|outlinecolor=0|color=250|size=18|text=200  火龙币可上榜>
+<Text|id=124|a=4|percentx=53|percenty=50|outline=2|outlinecolor=0|color=69|size=18|text=<$STR(A206)>>
+<RText|id=125|x=390|y=4|color=255|size=18|text=捐献火龙币：<<$STR(G206)>/FCOLOR=254>>
+
+<Text|id=13|children={131}|x=166|y=356|outline=2|outlinecolor=0|color=103|size=18|text=上榜说明：捐献需要达到对应的榜单数额才能上榜>
+<Text|id=131|x=82|y=36|outline=2|outlinecolor=0|color=103|size=18|text=第6-10名200火龙币可上榜>
+<ListView|id=14|children={141}|x=132|y=428|width=622|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=141|img=custom/hl/hl_ui/hl_bg_01.png>
+<Text|id=15|children={151}|x=158.0|y=439|outline=2|outlinecolor=0|color=103|size=18|text=我已捐献：>
+<Text|id=151|x=95.0|y=0|color=250|outline=2|outlinecolor=0|size=18|text=<$HUMAN(捐献灵符)>火龙币>
+<Text|id=16|children={161}|x=158.0|y=470|outline=2|outlinecolor=0|color=103|size=18|text=我的排名：>
+<Text|id=161|x=95.0|y=0|color=<$STR(S$我名次颜色)>|outline=2|outlinecolor=0|size=18|text=<$STR(S$我的排名)>>
+<Button|id=17|x=605.0|y=448.0|<$STR(S$激活按钮)>|outline=2|outlinecolor=0|color=103|size=18|text=我要捐献|link=@去捐献>
+
+<Img|id=18|children={181,182,183,184,185,186,187,188,189}|x=203.0|y=130.0|img=custom/hl/hl_ui/tsbj.png>
+<Text|id=181|children={1811}|x=20|y=50|outline=2|outlinecolor=0|color=103|size=18|text=每次最低捐献>
+<Text|id=1811|x=110|y=0|color=250|outline=2|outlinecolor=0|size=18|text=100火龙币>
+<Img|id=182|children={1821,1822,1823,1824,1825}|x=160.0|y=100.0|img=public/1900000678.png>
+<Button|id=1821|x=-20|y=-4|nimg=public/1900000620_1.png|pimg=public/1900000620.png|color=103|size=18|link=@减灵符>
+<Button|id=1822|x=118|y=-4|nimg=public/1900000621_1.png|pimg=public/1900000621.png|color=103|size=18|link=@加灵符>
+<Layout|id=1823|x=-16|y=-1|width=30|height=30|color=x|link=@减灵符>
+<Layout|id=1824|x=121|y=-1|width=30|height=30|color=x|link=@加灵符>
+<Input|id=1825|inputid=1|type=1|x=17|y=0|width=100|height=32|color=254|size=18|mincount=6|maxcount=12|errortips=3|text=<$STR(N$捐献数量)>|submitInput=1|reload=1|link=@移自行输入>
+<Button|id=183|x=120|y=153|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|submitInput=1|outline=2|outlinecolor=0|color=103|size=18|text=我要捐献|link=@确定捐献>
+<Button|id=184|x=240|y=153|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|color=103|outline=2|outlinecolor=0|size=18|text=取消捐献|link=@取消捐献>
+<Layout|id=185|children={1851}|x=448|y=-2|width=50|height=50|color=x|link=@取消捐献>
+<Button|id=1851|x=3|y=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@取消捐献>
+
+
+[@移自行输入]
+#IF
+small <$NPCINPUT(1)> 100
+#ACT
+MOV N$捐献数量 100
+SENDMSG 9 <font color='#ff0000'>每次最低捐献100火龙币！</font>
+GOTO @捐献说明
+break
+#IF
+#ACT
+MOV N$捐献数量 <$NPCINPUT(1)>
+DIV N$捐献数量 100
+MUL N$捐献数量 100
+#IF
+LARGE <$STR(N$捐献数量)> <$NPCINPUT(1)>
+#ACT
+DEC N$捐献数量 100
+GOTO @捐献说明
+#ELSEACT
+GOTO @捐献说明
+
+[@确定捐献]
+#IF
+small <$NPCINPUT(1)> 100
+#ACT
+SENDMSG 9 <font color='#ff0000'>每次最低捐献100火龙币！</font>
+break
+#IF
+#ACT
+INC U120 <$NPCINPUT(1)>
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+MOV S$排名标识 0
+MOV N$本次捐灵符数 <$NPCINPUT(1)>
+DIV N$本次捐灵符数 100
+MUL N$本次捐灵符数 100
+
+#IF
+CHECKGAMEGIRD ? <$STR(N$本次捐灵符数)>
+#ACT
+GAMEGIRD - <$STR(N$本次捐灵符数)>
+CALCVAR HUMAN 捐献灵符 + <$STR(N$本次捐灵符数)>
+SAVEVAR HUMAN 捐献灵符
+MOV N$捐献数量 0
+MOV S$上阶第一 A201
+MOV S$上阶第二 A202
+MOV S$上阶第三 A203
+MOV S$上阶第四 A204
+MOV S$上阶第五 A205
+MOV S$上阶第六 A206
+MOV S$上阶第七 A207
+MOV S$上阶第八 A208
+MOV S$上阶第九 A209
+MOV S$上阶第十 A210
+MOV N$上阶第一 G201
+MOV N$上阶第二 G202
+MOV N$上阶第三 G203
+MOV N$上阶第四 G204
+MOV N$上阶第五 G205
+MOV N$上阶第六 G206
+MOV N$上阶第七 G207
+MOV N$上阶第八 G208
+MOV N$上阶第九 G209
+MOV N$上阶第十 G210
+SortHumVar 捐献灵符  S$排名  N$排名灵符 0 1 10
+MOV N$小界面开关 0
+MOV S$排名标识 1
+GOTO @启动排名
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=253}在{个人捐献/FCOLOR=58}处成功捐献火龙币【{<$STR(N$本次捐灵符数)>/FCOLOR=250}】，捐献榜排名已刷新。 1 5
+GOTO @捐献说明
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的火龙币不足！</font>
+BREAK
+
+
+[@取消捐献]
+#ACT
+MOV N$捐献数量 100
+MOV N$小界面开关 0
+MOV N$停留界面 1
+GOTO @捐献说明
+
+[@加灵符]
+#IF
+#ACT
+INC N$捐献数量 100
+GOTO @捐献说明
+
+[@减灵符]
+#IF
+LARGE N$捐献数量 99
+#ACT
+DEC N$捐献数量 100
+GOTO @捐献说明
+
+[@启动排名]
+#IF
+LARGE G210 0
+#ACT
+MOV N$上榜捐献数 <$STR(G210)>
+#elseact
+MOV N$上榜捐献数 200
+
+#IF
+CHECKVAR HUMAN 捐献灵符 < <$STR(N$上榜捐献数)>
+#ACT
+HCALL <$USERNAME> @刷新捐献属性
+BREAK
+
+#IF
+EQUAL S$排名标识 1
+#ACT
+MOV N$上次排名 <$STR(N$当前排名)>
+MOV N$临时排名序号 1
+MOV N$临时流水号 1
+MOV A201
+MOV A202
+MOV A203
+MOV A204
+MOV A205
+MOV A206
+MOV A207
+MOV A208
+MOV A209
+MOV A210
+MOV G201 0
+MOV G202 0
+MOV G203 0
+MOV G204 0
+MOV G205 0
+MOV G206 0
+MOV G207 0
+MOV G208 0
+MOV G209 0
+MOV G210 0
+HCALL <$USERNAME> @排名重置
+HCALL <$USERNAME> @刷新捐献属性
+HCALL <$STR(S$上阶第一)> @刷新捐献属性
+HCALL <$STR(S$上阶第二)> @刷新捐献属性
+HCALL <$STR(S$上阶第三)> @刷新捐献属性
+HCALL <$STR(S$上阶第四)> @刷新捐献属性
+HCALL <$STR(S$上阶第五)> @刷新捐献属性
+HCALL <$STR(S$上阶第六)> @刷新捐献属性
+HCALL <$STR(S$上阶第七)> @刷新捐献属性
+HCALL <$STR(S$上阶第八)> @刷新捐献属性
+HCALL <$STR(S$上阶第九)> @刷新捐献属性
+HCALL <$STR(S$上阶第十)> @刷新捐献属性
+GOTO @去排行界面
+
+[@排名获取]
+#IF
+EQUAL A201 <$USERNAME>
+#ACT
+MOV S$我的排名 第一名
+MOV N$当前排名 1
+BREAK
+#IF
+EQUAL A202 <$USERNAME>
+#ACT
+MOV S$我的排名 第二名
+MOV N$当前排名 2
+BREAK
+#IF
+EQUAL A203 <$USERNAME>
+#ACT
+MOV S$我的排名 第三名
+MOV N$当前排名 3
+BREAK
+#IF
+EQUAL A204 <$USERNAME>
+#ACT
+MOV S$我的排名 第四名
+MOV N$当前排名 4
+BREAK
+#IF
+EQUAL A205 <$USERNAME>
+#ACT
+MOV S$我的排名 第五名
+MOV N$当前排名 5
+BREAK
+#IF
+EQUAL A206 <$USERNAME>
+#ACT
+MOV S$我的排名 第六名
+MOV N$当前排名 6
+BREAK
+#IF
+EQUAL A207 <$USERNAME>
+#ACT
+MOV S$我的排名 第七名
+MOV N$当前排名 7
+BREAK
+#IF
+EQUAL A208 <$USERNAME>
+#ACT
+MOV S$我的排名 第八名
+MOV N$当前排名 8
+BREAK
+#IF
+EQUAL A209 <$USERNAME>
+#ACT
+MOV S$我的排名 第九名
+MOV N$当前排名 9
+BREAK
+#IF
+EQUAL A210 <$USERNAME>
+#ACT
+MOV S$我的排名 第十名
+MOV N$当前排名 10
+BREAK
+
+[@捐献合区排序]
+#IF
+LARGE G247 0
+NOT EQUAL G247 <$HFCOUNT>
+#ACT
+MOV G247 <$HFCOUNT>
+MOV S$上阶第一 A201
+MOV S$上阶第二 A202
+MOV S$上阶第三 A203
+MOV S$上阶第四 A204
+MOV S$上阶第五 A205
+MOV S$上阶第六 A206
+MOV S$上阶第七 A207
+MOV S$上阶第八 A208
+MOV S$上阶第九 A209
+MOV S$上阶第十 A210
+SortHumVar 捐献灵符  S$排名  N$排名灵符 0 1 10
+MOV N$临时排名序号 1
+MOV N$临时流水号 1
+MOV A201
+MOV A202
+MOV A203
+MOV A204
+MOV A205
+MOV A206
+MOV A207
+MOV A208
+MOV A209
+MOV A210
+MOV G201 0
+MOV G202 0
+MOV G203 0
+MOV G204 0
+MOV G205 0
+MOV G206 0
+MOV G207 0
+MOV G208 0
+MOV G209 0
+MOV G210 0
+HCALL <$USERNAME> @排名重置
+HCALL <$USERNAME> @刷新捐献属性
+HCALL <$STR(S$上阶第一)> @刷新捐献属性
+HCALL <$STR(S$上阶第二)> @刷新捐献属性
+HCALL <$STR(S$上阶第三)> @刷新捐献属性
+HCALL <$STR(S$上阶第四)> @刷新捐献属性
+HCALL <$STR(S$上阶第五)> @刷新捐献属性
+HCALL <$STR(S$上阶第六)> @刷新捐献属性
+HCALL <$STR(S$上阶第七)> @刷新捐献属性
+HCALL <$STR(S$上阶第八)> @刷新捐献属性
+HCALL <$STR(S$上阶第九)> @刷新捐献属性
+HCALL <$STR(S$上阶第十)> @刷新捐献属性
+
+
+}

@@ -1,0 +1,420 @@
+[@顶戴刷新]
+{
+
+
+#IF
+#ACT
+MOV S$顶戴串
+SetIcon 0 -1
+SetIcon 1 -1
+SetIcon 2 -1
+SetIcon 3 -1
+SetIcon 4 -1
+SetIcon 5 -1
+SetIcon 6 -1
+SetIcon 7 -1
+MOV S$顶戴编号1
+MOV S$顶戴编号2
+MOV S$顶戴编号3
+MOV S$顶戴编号4
+MOV S$顶戴编号5
+MOV S$C_顶戴素材一
+MOV S$C_顶戴素材二
+MOV S$C_顶戴素材三
+MOV S$C_顶戴素材四
+MOV S$C_顶戴素材五
+MOV S$C_顶戴素材六
+MOV S$C_顶戴素材七
+MOV S$C_顶戴素材八
+MOV S$C_顶戴素材九
+MOV S$C_顶戴素材六A
+MOV S$C_顶戴素材七A
+MOV S$C_顶戴素材八A
+MOV S$C_顶戴素材九A
+MOV S$C_顶戴素材你球啥
+MOV S$C_顶戴素材球你咋地
+
+;======================【0】官职==========================================
+#if
+NOT EQUAL <$HUMAN(顶戴展示一)>
+#act
+MOV S$C_顶戴素材一 <$HUMAN(顶戴展示一)>
+
+;======================【1】狂暴==========================================
+
+#if
+check [200] 1
+#act
+MOV S$C_顶戴素材二 kuangbao_1
+
+;======================【2】会员==========================================
+
+#if
+NOT EQUAL <$HUMAN(顶戴展示三)>
+#act
+MOV S$C_顶戴素材三 <$HUMAN(顶戴展示三)>
+
+;======================【3】沙捐==========================================
+#IF
+NOT EQUAL <$HUMAN(顶戴展示四)>
+#ACT
+MOV S$C_顶戴素材四 <$HUMAN(顶戴展示四)>
+
+;======================【4】火龙真体==========================================
+
+#IF
+NOT EQUAL <$HUMAN(顶戴展示五)>
+#ACT
+MOV S$C_顶戴素材五 <$HUMAN(顶戴展示五)>
+
+;=======================【有钱任性】===================================
+#IF
+NOT EQUAL <$HUMAN(顶戴展示六)>
+#ACT
+MOV S$C_顶戴素材六 <$HUMAN(顶戴展示六)>
+
+;===========================【沙城霸主】===========================
+#IF
+NOT EQUAL <$HUMAN(顶戴展示七)>
+#ACT
+MOV S$C_顶戴素材七 <$HUMAN(顶戴展示七)>
+;===========================【天下第一等级】===========================
+#IF
+NOT EQUAL <$HUMAN(顶戴展示八)>
+#ACT
+MOV S$C_顶戴素材八 <$HUMAN(顶戴展示八)>
+;===========================【天下第一属性】===========================
+#IF
+NOT EQUAL <$HUMAN(顶戴展示九)>
+#ACT
+MOV S$C_顶戴素材九 <$HUMAN(顶戴展示九)>
+;======================【傲视群雄】=======顶戴六A===================================
+#IF
+NOT EQUAL <$HUMAN(顶戴展示六A)>
+#Act
+MOV S$C_顶戴素材六A <$HUMAN(顶戴展示六A)>
+;======================【超凡入圣】===========顶戴七A===============================
+#IF
+NOT EQUAL <$HUMAN(顶戴展示七A)>
+#Act
+MOV S$C_顶戴素材七A <$HUMAN(顶戴展示七A)>
+;======================【唯我独尊】============顶戴八A==============================
+#IF
+NOT EQUAL <$HUMAN(顶戴展示八A)>
+#Act
+MOV S$C_顶戴素材八A <$HUMAN(顶戴展示八A)>
+;======================【巅峰之人】==============顶戴九A============================
+#IF
+NOT EQUAL <$HUMAN(顶戴展示九A)>
+#Act
+MOV S$C_顶戴素材九A <$HUMAN(顶戴展示九A)>
+;=======================【你球啥】===================================
+#IF
+NOT EQUAL <$HUMAN(顶戴你球啥)>
+#ACT
+MOV S$C_顶戴素材你球啥 <$HUMAN(顶戴你球啥)>
+;=======================【球你咋地】===================================
+
+#IF
+NOT EQUAL <$HUMAN(顶戴球你咋地)>
+#ACT
+MOV S$C_顶戴素材球你咋地 <$HUMAN(顶戴球你咋地)>
+
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材一)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材一)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材二)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材二)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材三)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材三)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材四)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材四)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材五)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材五)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材六)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材六)>|
+
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材你球啥)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材你球啥)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材球你咋地)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材球你咋地)>|
+
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材七)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材七)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材八)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材八)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材九)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材九)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材六A)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材六A)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材七A)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材七A)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材八A)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材八A)>|
+
+#IF
+NOT EQUAL <$STR(S$C_顶戴素材九A)>
+#ACT
+INC S$顶戴串 <$STR(S$C_顶戴素材九A)>|
+
+
+#IF
+#ACT
+MOV N$顶戴流水号 0
+MOV N$间隙 5
+MOV N$顶戴总值 0
+INC N$顶戴总值 300
+MOV S$剩余顶戴 <$STR(S$顶戴串)>
+GOTO @顶戴赋值
+
+
+[@顶戴赋值]
+#IF
+#ACT
+GetValidstr <$STR(S$剩余顶戴)> | S$分割顶戴 S$剩余顶戴
+#IF
+EQUAL S$分割顶戴
+#ACT
+GOTO @顶戴综合显示
+BREAK
+#ELSEACT
+INC N$顶戴流水号 1
+MOV S$顶戴<$STR(N$顶戴流水号)> <$STR(S$分割顶戴)>
+;SENDMSG 7 顶戴名<$STR(S$顶戴<$STR(N$顶戴流水号)>)>
+
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示一)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 22
+MOV N$类别<$STR(N$顶戴流水号)> 0
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示一)>
+;SENDMSG 6 【官职】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> kuangbao_1
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 22
+MOV N$类别<$STR(N$顶戴流水号)> 0
+MOV S$顶戴编号<$STR(N$顶戴流水号)> kuangbao_1
+;SENDMSG 6 【狂暴】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示三)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 22
+MOV N$类别<$STR(N$顶戴流水号)> 1
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示三)>
+;SENDMSG 6 【会员】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示四)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 25
+MOV N$类别<$STR(N$顶戴流水号)> 1
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示四)>
+;SENDMSG 6 【沙捐】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>、
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示五)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 25
+MOV N$类别<$STR(N$顶戴流水号)> 1
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示五)>
+;SENDMSG 6 【火龙真体】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示六)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 22
+MOV N$类别<$STR(N$顶戴流水号)> 0
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示六)>
+;SENDMSG 6 【捐献榜】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示七)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 55
+MOV N$类别<$STR(N$顶戴流水号)> 0
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示七)>
+;SENDMSG 6 【沙城霸主】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示八)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 25
+MOV N$类别<$STR(N$顶戴流水号)> 0
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示八)>
+;SENDMSG 6 【天下第一等级】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示九)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 25
+MOV N$类别<$STR(N$顶戴流水号)> 1
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示九)>
+;SENDMSG 6 【天下第一职业】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示六A)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 35
+MOV N$类别<$STR(N$顶戴流水号)> 1
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示六A)>
+;SENDMSG 6 【傲视群雄】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示七A)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 35
+MOV N$类别<$STR(N$顶戴流水号)> 1
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示七A)>
+;SENDMSG 6 【超凡入圣】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示八A)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 35
+MOV N$类别<$STR(N$顶戴流水号)> 1
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示八A)>
+;SENDMSG 6 【唯我独尊】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示九A)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 35
+MOV N$类别<$STR(N$顶戴流水号)> 1
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示九A)>
+;SENDMSG 6 【巅峰之人】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴你球啥)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 25
+MOV N$类别<$STR(N$顶戴流水号)> 0
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴你球啥)>
+;SENDMSG 6 【你球啥】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+#IF
+EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴球你咋地)>
+#ACT
+MOV N$顶戴宽<$STR(N$顶戴流水号)> 25
+MOV N$类别<$STR(N$顶戴流水号)> 0
+MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴球你咋地)>
+;SENDMSG 6 【球你咋地】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+
+
+#IF
+#ACT
+MOV N$上次流水号 <$STR(N$顶戴流水号)>
+DEC N$上次流水号 1
+DEC N$顶戴总值 <$STR(N$顶戴宽<$STR(N$上次流水号)>)>
+DEC N$顶戴总值 5
+MOV N$顶戴Y坐标<$STR(N$顶戴流水号)> <$STR(N$顶戴总值)>
+DEC N$顶戴Y坐标<$STR(N$顶戴流水号)> 300
+;sendmsg 6 0顶戴坐标<$STR(N$顶戴流水号)>:<$STR(N$顶戴Y坐标<$STR(N$顶戴流水号)>)>
+
+
+#IF
+EQUAL S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示三)>
+#ACT
+INC N$顶戴Y坐标<$STR(N$顶戴流水号)> 19
+
+#IF
+EQUAL S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示六)>
+#ACT
+INC N$顶戴Y坐标<$STR(N$顶戴流水号)> 10
+
+#IF
+EQUAL S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴你球啥)>
+#ACT
+INC N$顶戴Y坐标<$STR(N$顶戴流水号)> 10
+
+#IF
+EQUAL S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴球你咋地)>
+#ACT
+INC N$顶戴Y坐标<$STR(N$顶戴流水号)> 10
+
+#IF
+#ACT
+GOTO @顶戴赋值
+
+
+
+[@顶戴综合显示]
+#IF
+LARGE N$顶戴流水号 0
+#ACT
+SetIcon 0 <$STR(N$类别1)> <$STR(S$顶戴编号1)> 0 <$STR(N$顶戴Y坐标1)> 0 0
+#IF
+LARGE N$顶戴流水号 1
+#ACT
+SetIcon 1 <$STR(N$类别2)> <$STR(S$顶戴编号2)> 0 <$STR(N$顶戴Y坐标2)> 0 0
+#IF
+LARGE N$顶戴流水号 2
+#ACT
+SetIcon 2 <$STR(N$类别3)> <$STR(S$顶戴编号3)> 0 <$STR(N$顶戴Y坐标3)> 0 0
+#IF
+LARGE N$顶戴流水号 3
+#ACT
+SetIcon 3 <$STR(N$类别4)> <$STR(S$顶戴编号4)> 0 <$STR(N$顶戴Y坐标4)> 0 0
+#IF
+LARGE N$顶戴流水号 4
+#ACT
+SetIcon 4 <$STR(N$类别5)> <$STR(S$顶戴编号5)> 0 <$STR(N$顶戴Y坐标5)> 0 0
+
+#IF
+LARGE U13 0
+#ACT
+MOV N$会员顶戴 50718
+INC N$会员顶戴 <$STR(u13)>
+SetIcon 5 1 <$STR(N$会员顶戴)> -35 30 0 0
+
+
+
+
+}

@@ -1,0 +1,823 @@
+[@移动端高级龙魂炼体]
+{
+#IF
+#ACT
+MOV N$炼体计算流水号 0
+MOV N$总重数 0
+goto @炼体重数计算
+#IF
+SMALL N$炼体总重数 80
+#ACT
+SENDMSG 9 <font color='#ff0000'>未到达炼体80层:</font><font color='#00ff00'>当前炼体<$STR(N$总重数)>重</font>
+break
+
+#IF
+EQUAL <$SNECKLACE>
+#ACT
+GiveOnItem 20 龙头·未修炼 1
+
+#IF
+EQUAL <$SBUJUK>
+#ACT
+GiveOnItem 43 龙躯·未修炼 1
+
+#IF
+EQUAL <$SRIGHTHAND>
+#ACT
+GiveOnItem 26 龙骨·未修炼 1
+
+#IF
+EQUAL <$SCHARM>
+#ACT
+GiveOnItem 29 龙尾·未修炼 1
+
+#IF
+#ACT
+MOV S$C_选择界面 龙头
+MOV S$等阶串 一阶|二阶|三阶|四阶|五阶|六阶|七阶|八阶|九阶|十阶|十一阶|十二阶|十三阶|十四阶|十五阶|十六阶|十七阶|十八阶|十九阶|二十阶|二十一阶|二十二阶|二十三阶|二十四阶|二十五阶|二十六阶|二十七阶|二十八阶|二十九阶|三十阶|三十一阶|三十二阶|三十三阶|三十四阶|三十五阶|三十六阶|三十七阶|三十八阶|三十九阶|四十阶|四十一阶|四十二阶|四十三阶|四十四阶|四十五阶|四十六阶|四十七阶|四十八阶|四十九阶|五十阶
+GOTO @炼体红点
+
+
+[@高级龙头界面]
+#IF
+EQUAL S$C_当前等级 50
+#ACT
+MOV S$C_满级遮挡 <Img|id=100|img=custom/hl/longhunlt/ym.png|x=140|y=61>
+#IF
+#ACT
+MOV S$第三条属性
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙头 龙头<$STR(S$C_当前等级)> S$C_龙头材料串
+GETVALIDSTRSUPER <$STR(S$C_龙头材料串)> | S$高级龙头材料
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙头 龙头<$STR(S$C_下一等级)> S$C_下级龙头材料串
+GETVALIDSTRSUPER <$STR(S$C_下级龙头材料串)> | S$下级高级龙头材料
+#IF
+NOT EQUAL <$STR(S$下级高级龙头材料5)> 0
+#ACT
+MOV S$第三条属性 <Text|id=22b|outline=1|outlinecolor=0|a=0|x=237|y=330|color=103|size=18|text=吸血抵抗:+<$STR(S$高级龙头材料5)>%>
+INC S$第三条属性 <Text|id=23b|outline=1|outlinecolor=0|a=0|x=517|y=330|color=103|size=18|text=吸血抵抗:+<$STR(S$下级高级龙头材料5)>%>
+
+#IF
+#ACT
+#SAY
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|layerid=670|loadDelay=4|loadCount=4>
+<Img|a=4|id=10|percentx=50|percenty=50|children={11,12,13,14,15,16,17,18,19,20,21,22,23,22a,23a,22b,23b,24,25,26,27,28,29,30,100}|img=custom/hl/longhunlt/lt.png>
+<Img|id=11|img=custom/hl/hl_ui/fg_1.png|x=135|y=60|height=449>
+<Text|id=12|outline=2|outlinecolor=0|a=0|x=347|y=5|color=103|size=20|text=龙魂炼体>
+<Button|id=13|x=770|y=5|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=14|x=765|y=0|width=70|height=70|link=@exit>
+<Button|id=15|children={201}|x=20|y=60|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=龙头|color=100|size=18>
+<Button|id=16|children={202}|x=20|y=98|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙躯|color=10|size=18|link=@炼体红点#C_选择界面=龙躯>
+<Button|id=17|children={203}|x=20|y=136|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙骨|color=10|size=18|link=@炼体红点#C_选择界面=龙骨>
+<Button|id=18|children={204}|x=20|y=174|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙尾|color=10|size=18|link=@炼体红点#C_选择界面=龙尾>
+<DBItemShow|id=19|makeindex=<$SNECKLACEID>|scale=1.0|x=420|y=130|showtips=1|bgtype=0>
+<Text|id=20|outline=1|outlinecolor=0|a=0|x=355|y=214|color=151|size=18|text=<$STR(S$C_当前等级)>>
+<Text|id=21|outline=1|outlinecolor=0|a=0|x=650|y=214|color=151|size=18|text=<$STR(S$C_下一等级)>>
+<Text|id=22|outline=1|outlinecolor=0|a=0|x=250|y=270|color=103|size=18|text=HP上限:+<$STR(S$高级龙头材料3)>点>
+<Text|id=23|outline=1|outlinecolor=0|a=0|x=530|y=270|color=103|size=18|text=HP上限:+<$STR(S$下级高级龙头材料3)>点>
+<Text|id=22a|outline=1|outlinecolor=0|a=0|x=237|y=300|color=103|size=18|text=攻击吸血:+<$STR(S$高级龙头材料4)>%>
+<Text|id=23a|outline=1|outlinecolor=0|a=0|x=517|y=300|color=103|size=18|text=攻击吸血:+<$STR(S$下级高级龙头材料4)>%>
+<$STR(S$第三条属性)>
+<Text|id=24|outline=1|outlinecolor=0|a=0|x=260|y=390|color=255|size=18|text=炼体费用:>
+<ItemShow|id=25|grey=<$STR(S$C_龙头材料灰)>|itemid=40001|scale=1.0|x=350|y=370|itemcount=1|showtips=1|bgtype=1>
+<Text|id=26|outline=1|outlinecolor=0|a=0|x=385|y=410|color=<$STR(S$C_龙头材料色)>|size=16|text=x<$STR(S$高级龙头材料1)>>
+<Img|id=27|img=custom/hl/hl_ui/icon_add_01.png|x=435|y=390>
+<Text|id=28|outline=1|outlinecolor=0|a=0|x=480|y=390|color=<$STR(S$C_龙头元宝色)>|size=16|text=<$STR(S$高级龙头材料2)>元宝>
+<Button|x=380|y=450|id=29|children={1000}|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定修炼|color=103|size=18|link=@移动端炼体开始修炼>
+<Img|id=1000|img=custom/hl/hl_ui/<$STR(S$C_龙头修炼红点)>.png|x=98|y=2>
+<Img|id=201|img=custom/hl/hl_ui/<$STR(S$C_龙头侧边红点)>.png|x=98|y=0>
+<Img|id=202|img=custom/hl/hl_ui/<$STR(S$C_龙躯侧边红点)>.png|x=98|y=0>
+<Img|id=203|img=custom/hl/hl_ui/<$STR(S$C_龙骨侧边红点)>.png|x=98|y=0>
+<Img|id=204|img=custom/hl/hl_ui/<$STR(S$C_龙尾侧边红点)>.png|x=98|y=0>
+<$STR(S$C_满级遮挡)>
+
+;=======================================================龙躯===============================================================================
+
+[@高级龙躯界面]
+#IF
+EQUAL S$C_当前等级 50
+#ACT
+MOV S$C_满级遮挡 <Img|id=100|img=custom/hl/longhunlt/ym.png|x=140|y=61>
+#IF
+#ACT
+MOV S$第三条属性
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙躯 龙躯<$STR(S$C_当前等级)> S$C_龙躯材料串
+GETVALIDSTRSUPER <$STR(S$C_龙躯材料串)> | S$高级龙躯材料
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙躯 龙躯<$STR(S$C_下一等级)> S$C_下级龙躯材料串
+GETVALIDSTRSUPER <$STR(S$C_下级龙躯材料串)> | S$下级高级龙躯材料
+#IF
+NOT EQUAL <$STR(S$下级高级龙躯材料5)> 0
+#ACT
+MOV S$第三条属性 <Text|id=22b|outline=1|outlinecolor=0|a=0|x=250|y=330|color=103|size=18|text=对怪增伤:+<$STR(S$高级龙躯材料5)>%>
+INC S$第三条属性 <Text|id=23b|outline=1|outlinecolor=0|a=0|x=530|y=330|color=103|size=18|text=对怪增伤:+<$STR(S$下级高级龙躯材料5)>%>
+
+#IF
+#ACT
+#SAY
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|layerid=670|loadDelay=4|loadCount=4>
+<Img|a=4|id=10|percentx=50|percenty=50|children={11,12,13,14,15,16,17,18,19,20,21,22,23,22a,23a,22b,23b,24,25,26,27,28,29,30,100}|img=custom/hl/longhunlt/lt.png>
+<Img|id=11|img=custom/hl/hl_ui/fg_1.png|x=135|y=60|height=449>
+<Text|id=12|outline=2|outlinecolor=0|a=0|x=347|y=5|color=103|size=20|text=龙魂炼体>
+<Button|id=13|x=770|y=5|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=14|x=765|y=0|width=70|height=70|link=@exit>
+<Button|id=15|children={201}|x=20|y=60|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙头|color=10|size=18|link=@炼体红点#C_选择界面=龙头>
+<Button|id=16|children={202}|x=20|y=98|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=龙躯|color=100|size=18>
+<Button|id=17|children={203}|x=20|y=136|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙骨|color=10|size=18|link=@炼体红点#C_选择界面=龙骨>
+<Button|id=18|children={204}|x=20|y=174|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙尾|color=10|size=18|link=@炼体红点#C_选择界面=龙尾>
+<DBItemShow|id=19|makeindex=<$SBUJUKID>|scale=1.0|x=420|y=130|showtips=1|bgtype=0>
+<Text|id=20|outline=1|outlinecolor=0|a=0|x=355|y=214|color=151|size=18|text=<$STR(S$C_当前等级)>>
+<Text|id=21|outline=1|outlinecolor=0|a=0|x=650|y=214|color=151|size=18|text=<$STR(S$C_下一等级)>>
+<Text|id=22|outline=1|outlinecolor=0|a=0|x=250|y=270|color=103|size=18|text=准确提升:+<$STR(S$高级龙躯材料3)>点>
+<Text|id=23|outline=1|outlinecolor=0|a=0|x=530|y=270|color=103|size=18|text=准确提升:+<$STR(S$下级高级龙躯材料3)>点>
+<Text|id=22a|outline=1|outlinecolor=0|a=0|x=250|y=300|color=103|size=18|text=受怪减伤:+<$STR(S$高级龙躯材料4)>%>
+<Text|id=23a|outline=1|outlinecolor=0|a=0|x=530|y=300|color=103|size=18|text=受怪减伤:+<$STR(S$下级高级龙躯材料4)>%>
+<$STR(S$第三条属性)>
+<Text|id=24|outline=1|outlinecolor=0|a=0|x=260|y=390|color=255|size=18|text=炼体费用:>
+<ItemShow|id=25|grey=<$STR(S$C_龙躯材料灰)>|itemid=40002|scale=1.0|x=350|y=370|itemcount=1|showtips=1|bgtype=1>
+<Text|id=26|outline=1|outlinecolor=0|a=0|x=385|y=410|color=<$STR(S$C_龙躯材料色)>|size=16|text=x<$STR(S$高级龙躯材料1)>>
+<Img|id=27|img=custom/hl/hl_ui/icon_add_01.png|x=435|y=390>
+<Text|id=28|outline=1|outlinecolor=0|a=0|x=480|y=390|color=<$STR(S$C_龙躯元宝色)>|size=16|text=<$STR(S$高级龙躯材料2)>元宝>
+<Button|x=380|y=450|id=29|children={1000}|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定修炼|color=103|size=18|link=@移动端炼体开始修炼>
+<Img|id=1000|img=custom/hl/hl_ui/<$STR(S$C_龙躯修炼红点)>.png|x=98|y=2>
+<Img|id=201|img=custom/hl/hl_ui/<$STR(S$C_龙头侧边红点)>.png|x=98|y=0>
+<Img|id=202|img=custom/hl/hl_ui/<$STR(S$C_龙躯侧边红点)>.png|x=98|y=0>
+<Img|id=203|img=custom/hl/hl_ui/<$STR(S$C_龙骨侧边红点)>.png|x=98|y=0>
+<Img|id=204|img=custom/hl/hl_ui/<$STR(S$C_龙尾侧边红点)>.png|x=98|y=0>
+<$STR(S$C_满级遮挡)>
+
+
+
+[@高级龙骨界面]
+#IF
+EQUAL S$C_当前等级 50
+#ACT
+MOV S$C_满级遮挡 <Img|id=100|img=custom/hl/longhunlt/ym.png|x=140|y=61>
+#IF
+#ACT
+MOV S$第三条属性
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙骨 龙骨<$STR(S$C_当前等级)> S$C_龙骨材料串
+GETVALIDSTRSUPER <$STR(S$C_龙骨材料串)> | S$高级龙骨材料
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙骨 龙骨<$STR(S$C_下一等级)> S$C_下级龙骨材料串
+GETVALIDSTRSUPER <$STR(S$C_下级龙骨材料串)> | S$下级高级龙骨材料
+#IF
+NOT EQUAL <$STR(S$下级高级龙骨材料5)> 0
+#ACT
+MOV S$第三条属性 <Text|id=22b|outline=1|outlinecolor=0|a=0|x=250|y=330|color=103|size=18|text=暴伤加成:+<$STR(S$高级龙骨材料5)>%>
+INC S$第三条属性 <Text|id=23b|outline=1|outlinecolor=0|a=0|x=530|y=330|color=103|size=18|text=暴伤加成:+<$STR(S$下级高级龙骨材料5)>%>
+
+#IF
+#ACT
+#SAY
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|layerid=670|loadDelay=4|loadCount=4>
+<Img|a=4|id=10|percentx=50|percenty=50|children={11,12,13,14,15,16,17,18,19,20,21,22,23,22a,23a,22b,23b,24,25,26,27,28,29,30,100}|img=custom/hl/longhunlt/lt.png>
+<Img|id=11|img=custom/hl/hl_ui/fg_1.png|x=135|y=60|height=449>
+<Text|id=12|outline=2|outlinecolor=0|a=0|x=347|y=5|color=103|size=20|text=龙魂炼体>
+<Button|id=13|x=770|y=5|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=14|x=765|y=0|width=70|height=70|link=@exit>
+<Button|id=15|children={201}|x=20|y=60|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙头|color=10|size=18|link=@炼体红点#C_选择界面=龙头>
+<Button|id=16|children={202}|x=20|y=98|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙躯|color=10|size=18|link=@炼体红点#C_选择界面=龙躯>
+<Button|id=17|children={203}|x=20|y=136|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=龙骨|color=100|size=18>
+<Button|id=18|children={204}|x=20|y=174|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙尾|color=10|size=18|link=@炼体红点#C_选择界面=龙尾>
+<DBItemShow|id=19|makeindex=<$SRIGHTHANDID>|scale=1.0|x=420|y=130|showtips=1|bgtype=0>
+<Text|id=20|outline=1|outlinecolor=0|a=0|x=355|y=214|color=151|size=18|text=<$STR(S$C_当前等级)>>
+<Text|id=21|outline=1|outlinecolor=0|a=0|x=650|y=214|color=151|size=18|text=<$STR(S$C_下一等级)>>
+<Text|id=22|outline=1|outlinecolor=0|a=0|x=250|y=270|color=103|size=18|text=防御魔防:+<$STR(S$高级龙骨材料3)>点>
+<Text|id=23|outline=1|outlinecolor=0|a=0|x=530|y=270|color=103|size=18|text=防御魔防:+<$STR(S$下级高级龙骨材料3)>点>
+<Text|id=22a|outline=1|outlinecolor=0|a=0|x=250|y=300|color=103|size=18|text=忽视防御:+<$STR(S$高级龙骨材料4)>%>
+<Text|id=23a|outline=1|outlinecolor=0|a=0|x=530|y=300|color=103|size=18|text=忽视防御:+<$STR(S$下级高级龙骨材料4)>%>
+<$STR(S$第三条属性)>
+<Text|id=24|outline=1|outlinecolor=0|a=0|x=260|y=390|color=255|size=18|text=炼体费用:>
+<ItemShow|id=25|grey=<$STR(S$C_龙骨材料灰)>|itemid=40003|scale=1.0|x=350|y=370|itemcount=1|showtips=1|bgtype=1>
+<Text|id=26|outline=1|outlinecolor=0|a=0|x=385|y=410|color=<$STR(S$C_龙骨材料色)>|size=16|text=x<$STR(S$高级龙骨材料1)>>
+<Img|id=27|img=custom/hl/hl_ui/icon_add_01.png|x=435|y=390>
+<Text|id=28|outline=1|outlinecolor=0|a=0|x=480|y=390|color=<$STR(S$C_龙骨元宝色)>|size=16|text=<$STR(S$高级龙骨材料2)>元宝>
+<Button|x=380|y=450|id=29|children={1000}|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定修炼|color=103|size=18|link=@移动端炼体开始修炼>
+<Img|id=1000|img=custom/hl/hl_ui/<$STR(S$C_龙骨修炼红点)>.png|x=98|y=2>
+<Img|id=201|img=custom/hl/hl_ui/<$STR(S$C_龙头侧边红点)>.png|x=98|y=0>
+<Img|id=202|img=custom/hl/hl_ui/<$STR(S$C_龙躯侧边红点)>.png|x=98|y=0>
+<Img|id=203|img=custom/hl/hl_ui/<$STR(S$C_龙骨侧边红点)>.png|x=98|y=0>
+<Img|id=204|img=custom/hl/hl_ui/<$STR(S$C_龙尾侧边红点)>.png|x=98|y=0>
+<$STR(S$C_满级遮挡)>
+
+[@高级龙尾界面]
+#IF
+EQUAL S$C_当前等级 50
+#ACT
+MOV S$C_满级遮挡 <Img|id=100|img=custom/hl/longhunlt/ym.png|x=140|y=61>
+#IF
+#ACT
+MOV S$第三条属性
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙尾 龙尾<$STR(S$C_当前等级)> S$C_龙尾材料串
+GETVALIDSTRSUPER <$STR(S$C_龙尾材料串)> | S$高级龙尾材料
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙尾 龙尾<$STR(S$C_下一等级)> S$C_下级龙尾材料串
+GETVALIDSTRSUPER <$STR(S$C_下级龙尾材料串)> | S$下级高级龙尾材料
+
+#IF
+#ACT
+#SAY
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|layerid=670|loadDelay=4|loadCount=4>
+<Img|a=4|id=10|percentx=50|percenty=50|children={11,12,13,14,15,16,17,18,19,20,21,22,23,22a,23a,,22b,23b,24,25,26,27,28,29,30,100}|img=custom/hl/longhunlt/lt.png>
+<Img|id=11|img=custom/hl/hl_ui/fg_1.png|x=135|y=60|height=449>
+<Text|id=12|outline=2|outlinecolor=0|a=0|x=347|y=5|color=103|size=20|text=龙魂炼体>
+<Button|id=13|x=770|y=5|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=14|x=765|y=0|width=70|height=70|link=@exit>
+<Button|id=15|children={201}|x=20|y=60|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙头|color=10|size=18|link=@炼体红点#C_选择界面=龙头>
+<Button|id=16|children={202}|x=20|y=98|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙躯|color=10|size=18|link=@炼体红点#C_选择界面=龙躯>
+<Button|id=17|children={203}|x=20|y=136|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=龙骨|color=10|size=18|link=@炼体红点#C_选择界面=龙骨>
+<Button|id=18|children={204}|x=20|y=174|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=龙尾|color=100|size=18|link=@炼体红点#C_选择界面=龙尾>
+<DBItemShow|id=19|makeindex=<$SCHARMID>|scale=1.0|x=420|y=130|showtips=1|bgtype=0>
+<Text|id=20|outline=1|outlinecolor=0|a=0|x=355|y=214|color=151|size=18|text=<$STR(S$C_当前等级)>>
+<Text|id=21|outline=1|outlinecolor=0|a=0|x=650|y=214|color=151|size=18|text=<$STR(S$C_下一等级)>>
+<Text|id=22|outline=1|outlinecolor=0|a=0|x=250|y=270|color=103|size=18|text=攻魔道提升:+<$STR(S$高级龙尾材料3)>点>
+<Text|id=23|outline=1|outlinecolor=0|a=0|x=530|y=270|color=103|size=18|text=攻魔道提升:+<$STR(S$下级高级龙尾材料3)>点>
+<Text|id=22a|outline=1|outlinecolor=0|a=0|x=250|y=300|color=103|size=18|text=伤害加成:+<$STR(S$高级龙尾材料4)>%>
+<Text|id=23a|outline=1|outlinecolor=0|a=0|x=530|y=300|color=103|size=18|text=伤害加成:+<$STR(S$下级高级龙尾材料4)>%>
+
+<Text|id=24|outline=1|outlinecolor=0|a=0|x=260|y=390|color=255|size=18|text=炼体费用:>
+<ItemShow|id=25|grey=<$STR(S$C_龙尾材料灰)>|itemid=40004|scale=1.0|x=350|y=370|itemcount=1|showtips=1|bgtype=1>
+<Text|id=26|outline=1|outlinecolor=0|a=0|x=385|y=410|color=<$STR(S$C_龙尾材料色)>|size=16|text=x<$STR(S$高级龙尾材料1)>>
+<Img|id=27|img=custom/hl/hl_ui/icon_add_01.png|x=435|y=390>
+<Text|id=28|outline=1|outlinecolor=0|a=0|x=480|y=390|color=<$STR(S$C_龙尾元宝色)>|size=16|text=<$STR(S$高级龙尾材料2)>元宝>
+<Button|x=380|y=450|id=29|children={1000}|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定修炼|color=103|size=18|link=@移动端炼体开始修炼>
+<Img|id=1000|img=custom/hl/hl_ui/<$STR(S$C_龙尾修炼红点)>.png|x=98|y=2>
+<Img|id=201|img=custom/hl/hl_ui/<$STR(S$C_龙头侧边红点)>.png|x=98|y=0>
+<Img|id=202|img=custom/hl/hl_ui/<$STR(S$C_龙躯侧边红点)>.png|x=98|y=0>
+<Img|id=203|img=custom/hl/hl_ui/<$STR(S$C_龙骨侧边红点)>.png|x=98|y=0>
+<Img|id=204|img=custom/hl/hl_ui/<$STR(S$C_龙尾侧边红点)>.png|x=98|y=0>
+<$STR(S$C_满级遮挡)>
+
+
+[@移动端炼体开始修炼]
+#IF
+equal <$STR(S$C_选择界面)> 龙头
+#ACT
+MOV S$当前炼体名称 <$SNECKLACE>
+MOV S$前缀 龙头·
+MOV S$龙魂材料名 洗髓丹
+MOV S$C_炼体穿戴部位 20
+GOTO @单个炼体判断
+#IF
+equal <$STR(S$C_选择界面)> 龙躯
+#ACT
+MOV S$当前炼体名称 <$SBUJUK>
+MOV S$前缀 龙躯·
+MOV S$龙魂材料名 恶魔头颅
+MOV S$C_炼体穿戴部位 43
+GOTO @单个炼体判断
+#IF
+equal <$STR(S$C_选择界面)> 龙骨
+#ACT
+MOV S$当前炼体名称 <$SRIGHTHAND>
+MOV S$前缀 龙骨·
+MOV S$龙魂材料名 龍の魄
+MOV S$C_炼体穿戴部位 26
+GOTO @单个炼体判断
+#IF
+equal <$STR(S$C_选择界面)> 龙尾
+#ACT
+MOV S$当前炼体名称 <$SCHARM>
+MOV S$前缀 龙尾·
+MOV S$龙魂材料名 龍の心
+MOV S$C_炼体穿戴部位 29
+GOTO @单个炼体判断
+
+#IF
+SMALL N$总重数 50
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini <$STR(S$C_选择界面)> <$STR(S$C_选择界面)><$STR(N$总重数)> S$C_龙魂材料串
+GETVALIDSTRSUPER <$STR(S$C_龙魂材料串)> | S$高级龙魂材料
+GETVALIDSTRSUPER <$STR(S$等阶串)> | S$龙魂等阶
+MOV N$下阶序号 <$STR(N$总重数)>
+INC N$下阶序号 1
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>炼体已达圆满境界！</font>
+break
+
+#IF
+LARGE S$高级龙魂材料2 0
+CheckBindMoney 元宝 ? <$STR(S$高级龙魂材料2)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>炼体所需元宝不足！</font>
+break
+
+#IF
+LARGE S$高级龙魂材料1 0
+checkitem <$STR(S$龙魂材料名)> <$STR(S$高级龙魂材料1)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>炼体所需材料不足！</font>
+break
+
+#IF
+CheckBindMoney 元宝 ? <$STR(S$高级龙魂材料2)>
+checkitem <$STR(S$龙魂材料名)> <$STR(S$高级龙魂材料1)>
+#ACT
+ChangeBindMoney 元宝 <$STR(S$高级龙魂材料2)>
+take <$STR(S$龙魂材料名)> <$STR(S$高级龙魂材料1)>
+takew <$STR(S$前缀)><$STR(S$龙魂等阶<$STR(N$总重数)>)> 1
+GiveOnItem <$STR(S$C_炼体穿戴部位)> <$STR(S$前缀)><$STR(S$龙魂等阶<$STR(N$下阶序号)>)>
+SENDMSGNEW 255 0 {<$USERNAME>/FCOLOR=255}{将【<$STR(S$前缀)><$STR(S$龙魂等阶<$STR(N$总重数)>)>】部位淬炼至：/FCOLOR=150}{<$STR(S$前缀)><$STR(S$龙魂等阶<$STR(N$下阶序号)>)>/FCOLOR=58} 1 2
+SendMsg 0 恭喜玩家：{<$USERNAME>|241}将【{<$STR(S$前缀)><$STR(S$龙魂等阶<$STR(N$总重数)>)>|241}】部位淬炼至：{<$STR(S$前缀)><$STR(S$龙魂等阶<$STR(N$下阶序号)>)>|241}
+SENDMSG 9 <font color='#00FF00'>恭喜：<$STR(S$C_选择界面)>部位成功提升!</font>
+MOV S$临时部位名称 <$STR(S$前缀)>
+DEC S$临时部位名称 ·
+Calcvar Human <$STR(S$临时部位名称)> = <$STR(N$下阶序号)>
+Savevar Human <$STR(S$临时部位名称)>
+GOTO @炼体红点
+Goto @刷新竞技排行
+
+break
+
+
+[@炼体红点]
+#IF
+#ACT
+MOV S$C_满级遮挡
+MOV S$C_龙头材料灰 1
+MOV S$C_龙头修炼红点
+MOV S$C_龙头侧边红点
+MOV S$C_龙头材料色 58
+MOV S$C_龙头元宝色 58
+MOV S$C_龙躯材料灰 1
+MOV S$C_龙躯修炼红点
+MOV S$C_龙躯侧边红点
+MOV S$C_龙躯材料色 58
+MOV S$C_龙躯元宝色 58
+MOV S$C_龙骨材料灰 1
+MOV S$C_龙骨修炼红点
+MOV S$C_龙骨侧边红点
+MOV S$C_龙骨材料色 58
+MOV S$C_龙骨元宝色 58
+MOV S$C_龙尾材料灰 1
+MOV S$C_龙尾修炼红点
+MOV S$C_龙尾侧边红点
+MOV S$C_龙尾材料色 58
+MOV S$C_龙尾元宝色 58
+MOV N$总重数 0
+MOV S$当前炼体名称 <$SNECKLACE>
+MOV S$前缀 龙头·
+GOTO @单个炼体判断
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙头 龙头<$STR(N$总重数)> S$C_龙头材料串
+GETVALIDSTRSUPER <$STR(S$C_龙头材料串)> | S$高级龙头材料
+
+#IF
+equal <$STR(S$C_选择界面)> 龙头
+#ACT
+MOV S$C_当前等级 <$STR(N$总重数)>
+INC N$总重数 1
+MOV S$C_下一等级 <$STR(N$总重数)>
+
+#IF
+CHECKITEM 洗髓丹 <$STR(S$高级龙头材料1)>
+#ACT
+MOV S$C_龙头材料灰 0
+MOV S$C_龙头材料色 250
+#IF
+CheckBindMoney 元宝 ? <$STR(S$高级龙头材料2)>
+#ACT
+MOV S$C_龙头元宝色 250
+#IF
+CHECKITEM 洗髓丹 <$STR(S$高级龙头材料1)>
+CheckBindMoney 元宝 ? <$STR(S$高级龙头材料2)>
+#ACT
+MOV S$C_龙头侧边红点 hd
+MOV S$C_龙头修炼红点 hd
+
+#IF
+#ACT
+MOV N$总重数 0
+MOV S$当前炼体名称 <$SBUJUK>
+MOV S$前缀 龙躯·
+GOTO @单个炼体判断
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙躯 龙躯<$STR(N$总重数)> S$C_龙躯材料串
+GETVALIDSTRSUPER <$STR(S$C_龙躯材料串)> | S$高级龙躯材料
+#IF
+equal <$STR(S$C_选择界面)> 龙躯
+#ACT
+MOV S$C_当前等级 <$STR(N$总重数)>
+INC N$总重数 1
+MOV S$C_下一等级 <$STR(N$总重数)>
+#IF
+CHECKITEM 恶魔头颅 <$STR(S$高级龙躯材料1)>
+#ACT
+MOV S$C_龙躯材料灰 0
+MOV S$C_龙躯材料色 250
+#IF
+CheckBindMoney 元宝 ? <$STR(S$高级龙躯材料2)>
+#ACT
+MOV S$C_龙躯元宝色 250
+#IF
+CHECKITEM 恶魔头颅 <$STR(S$高级龙躯材料1)>
+CheckBindMoney 元宝 ? <$STR(S$高级龙躯材料2)>
+#ACT
+MOV S$C_龙躯侧边红点 hd
+MOV S$C_龙躯修炼红点 hd
+
+#IF
+#ACT
+MOV N$总重数 0
+MOV S$当前炼体名称 <$SRIGHTHAND>
+MOV S$前缀 龙骨·
+GOTO @单个炼体判断
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙骨 龙骨<$STR(N$总重数)> S$C_龙骨材料串
+GETVALIDSTRSUPER <$STR(S$C_龙骨材料串)> | S$高级龙骨材料
+#IF
+equal <$STR(S$C_选择界面)> 龙骨
+#ACT
+MOV S$C_当前等级 <$STR(N$总重数)>
+INC N$总重数 1
+MOV S$C_下一等级 <$STR(N$总重数)>
+#IF
+CHECKITEM 龍の魄 <$STR(S$高级龙骨材料1)>
+#ACT
+MOV S$C_龙骨材料灰 0
+MOV S$C_龙骨材料色 250
+#IF
+CheckBindMoney 元宝 ? <$STR(S$高级龙骨材料2)>
+#ACT
+MOV S$C_龙骨元宝色 250
+#IF
+CHECKITEM 龍の魄 <$STR(S$高级龙骨材料1)>
+CheckBindMoney 元宝 ? <$STR(S$高级龙骨材料2)>
+#ACT
+MOV S$C_龙骨侧边红点 hd
+MOV S$C_龙骨修炼红点 hd
+
+#IF
+#ACT
+MOV N$总重数 0
+MOV S$当前炼体名称 <$SCHARM>
+MOV S$前缀 龙尾·
+GOTO @单个炼体判断
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\高级龙魂炼体配置.ini 龙尾 龙尾<$STR(N$总重数)> S$C_龙尾材料串
+GETVALIDSTRSUPER <$STR(S$C_龙尾材料串)> | S$高级龙尾材料
+#IF
+equal <$STR(S$C_选择界面)> 龙尾
+#ACT
+MOV S$C_当前等级 <$STR(N$总重数)>
+INC N$总重数 1
+MOV S$C_下一等级 <$STR(N$总重数)>
+#IF
+CHECKITEM 龍の心 <$STR(S$高级龙尾材料1)>
+#ACT
+MOV S$C_龙尾材料灰 0
+MOV S$C_龙尾材料色 250
+#IF
+CheckBindMoney 元宝 ? <$STR(S$高级龙尾材料2)>
+#ACT
+MOV S$C_龙尾元宝色 250
+#IF
+CHECKITEM 龍の心 <$STR(S$高级龙尾材料1)>
+CheckBindMoney 元宝 ? <$STR(S$高级龙尾材料2)>
+#ACT
+MOV S$C_龙尾侧边红点 hd
+MOV S$C_龙尾修炼红点 hd
+
+#IF
+EQUAL <$STR(S$C_选择界面)> 龙头
+#ACT
+GOTO @高级龙头界面
+break
+#IF
+EQUAL <$STR(S$C_选择界面)> 龙躯
+#ACT
+GOTO @高级龙躯界面
+break
+#IF
+EQUAL <$STR(S$C_选择界面)> 龙骨
+#ACT
+GOTO @高级龙骨界面
+break
+#IF
+EQUAL <$STR(S$C_选择界面)> 龙尾
+#ACT
+GOTO @高级龙尾界面
+break
+
+
+
+[@炼体重数计算]
+#IF
+#ACT
+MOV N$炼体总重数 0
+MOV S$当前炼体名称 <$SNECKLACE>
+MOV S$前缀 龙头·
+GOTO @单个炼体判断
+INC N$炼体总重数 <$STR(N$总重数)>
+MOV S$当前炼体名称 <$SBUJUK>
+MOV S$前缀 龙躯·
+GOTO @单个炼体判断
+INC N$炼体总重数 <$STR(N$总重数)>
+MOV S$当前炼体名称 <$SRIGHTHAND>
+MOV S$前缀 龙骨·
+GOTO @单个炼体判断
+INC N$炼体总重数 <$STR(N$总重数)>
+MOV S$当前炼体名称 <$SCHARM>
+MOV S$前缀 龙尾·
+GOTO @单个炼体判断
+INC N$炼体总重数 <$STR(N$总重数)>
+
+[@单个炼体判断]
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>未修炼
+#ACT
+MOV N$总重数 0
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>一阶
+#ACT
+MOV N$总重数 1
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二阶
+#ACT
+MOV N$总重数 2
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三阶
+#ACT
+MOV N$总重数 3
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四阶
+#ACT
+MOV N$总重数 4
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>五阶
+#ACT
+MOV N$总重数 5
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>六阶
+#ACT
+MOV N$总重数 6
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>七阶
+#ACT
+MOV N$总重数 7
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>八阶
+#ACT
+MOV N$总重数 8
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>九阶
+#ACT
+MOV N$总重数 9
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十阶
+#ACT
+MOV N$总重数 10
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十一阶
+#ACT
+MOV N$总重数 11
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十二阶
+#ACT
+MOV N$总重数 12
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十三阶
+#ACT
+MOV N$总重数 13
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十四阶
+#ACT
+MOV N$总重数 14
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十五阶
+#ACT
+MOV N$总重数 15
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十六阶
+#ACT
+MOV N$总重数 16
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十七阶
+#ACT
+MOV N$总重数 17
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十八阶
+#ACT
+MOV N$总重数 18
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十九阶
+#ACT
+MOV N$总重数 19
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二十阶
+#ACT
+MOV N$总重数 20
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二十一阶
+#ACT
+MOV N$总重数 21
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二十二阶
+#ACT
+MOV N$总重数 22
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二十三阶
+#ACT
+MOV N$总重数 23
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二十四阶
+#ACT
+MOV N$总重数 24
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二十五阶
+#ACT
+MOV N$总重数 25
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二十六阶
+#ACT
+MOV N$总重数 26
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二十七阶
+#ACT
+MOV N$总重数 27
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二十八阶
+#ACT
+MOV N$总重数 28
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二十九阶
+#ACT
+MOV N$总重数 29
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三十阶
+#ACT
+MOV N$总重数 30
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三十一阶
+#ACT
+MOV N$总重数 31
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三十二阶
+#ACT
+MOV N$总重数 32
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三十三阶
+#ACT
+MOV N$总重数 33
+
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三十四阶
+#ACT
+MOV N$总重数 34
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三十五阶
+#ACT
+MOV N$总重数 35
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三十六阶
+#ACT
+MOV N$总重数 36
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三十七阶
+#ACT
+MOV N$总重数 37
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三十八阶
+#ACT
+MOV N$总重数 38
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三十九阶
+#ACT
+MOV N$总重数 39
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四十阶
+#ACT
+MOV N$总重数 40
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四十一阶
+#ACT
+MOV N$总重数 41
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四十二阶
+#ACT
+MOV N$总重数 42
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四十三阶
+#ACT
+MOV N$总重数 43
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四十四阶
+#ACT
+MOV N$总重数 44
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四十五阶
+#ACT
+MOV N$总重数 45
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四十六阶
+#ACT
+MOV N$总重数 46
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四十七阶
+#ACT
+MOV N$总重数 47
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四十八阶
+#ACT
+MOV N$总重数 48
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四十九阶
+#ACT
+MOV N$总重数 49
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>五十阶
+#ACT
+MOV N$总重数 50
+break
+
+[@刷新竞技排行]
+#IF
+#Act
+Mov N$龙魂排序 <$Human(龙躯)>
+Inc N$龙魂排序 <$Human(龙头)>
+Inc N$龙魂排序 <$Human(龙骨)>
+Inc N$龙魂排序 <$Human(龙尾)>
+Calcvar Human 竞技龙魂榜 = <$Str(N$龙魂排序)>
+Savevar Human 竞技龙魂榜
+#Call [\全服活动\竞技排行榜.txt] @竞技龙魂榜排序
+
+
+
+}

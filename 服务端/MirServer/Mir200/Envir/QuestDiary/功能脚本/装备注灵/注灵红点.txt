@@ -1,0 +1,130 @@
+[@注灵红点]
+{
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  注灵材料mc s$注灵材料mc_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  注灵材料xh  s$注灵材料xh_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  注灵元宝xh  s$注灵元宝xh_1
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)>  注灵材料mc s$注灵材料mc_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)>  注灵材料xh  s$注灵材料xh_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)>  注灵元宝xh  s$注灵元宝xh_2
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)>  注灵材料mc s$注灵材料mc_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)>  注灵材料xh  s$注灵材料xh_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)>  注灵元宝xh  s$注灵元宝xh_3
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)>  注灵材料mc s$注灵材料mc_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)>  注灵材料xh  s$注灵材料xh_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)>  注灵元宝xh  s$注灵元宝xh_4
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u68)>  注灵材料mc s$注灵材料mc_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u68)>  注灵材料xh  s$注灵材料xh_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u68)>  注灵元宝xh  s$注灵元宝xh_5
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u69)>  注灵材料mc s$注灵材料mc_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u69)>  注灵材料xh  s$注灵材料xh_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u69)>  注灵元宝xh  s$注灵元宝xh_6
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u70)>  注灵材料mc s$注灵材料mc_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u70)>  注灵材料xh  s$注灵材料xh_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u70)>  注灵元宝xh  s$注灵元宝xh_7
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)>  注灵材料mc s$注灵材料mc_8
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)>  注灵材料xh  s$注灵材料xh_8
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)>  注灵元宝xh  s$注灵元宝xh_8
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)>  注灵材料mc s$注灵材料mc_9
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)>  注灵材料xh  s$注灵材料xh_9
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)>  注灵元宝xh  s$注灵元宝xh_9
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)>  注灵材料mc s$注灵材料mc_10
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)>  注灵材料xh  s$注灵材料xh_10
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)>  注灵元宝xh  s$注灵元宝xh_10
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)>  注灵材料mc s$注灵材料mc_11
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)>  注灵材料xh  s$注灵材料xh_11
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)>  注灵元宝xh  s$注灵元宝xh_11
+MOV S$注灵红点wq
+MOV S$注灵红点yf
+MOV S$注灵红点tk
+MOV S$注灵红点xl
+MOV S$注灵红点xz
+MOV S$注灵红点zs
+MOV S$注灵红点ys
+MOV S$注灵红点zj
+MOV S$注灵红点yj
+MOV S$注灵红点yd
+MOV S$注灵红点xzz
+
+#IF
+CHECKITEM <$Str(s$注灵材料mc_1)> <$Str(s$注灵材料xh_1)>
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh_1)>
+#ACT
+MOV S$注灵红点wq icon_red_01
+BREAK
+#IF
+CHECKITEM <$Str(s$注灵材料mc_2)> <$Str(s$注灵材料xh_2)>
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh_2)>
+#ACT
+MOV S$注灵红点yf icon_red_01
+BREAK
+#IF
+CHECKITEM <$Str(s$注灵材料mc_3)> <$Str(s$注灵材料xh_3)>
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh_3)>
+#ACT
+MOV S$注灵红点tk icon_red_01
+BREAK
+#IF
+CHECKITEM <$Str(s$注灵材料mc_4)> <$Str(s$注灵材料xh_4)>
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh_4)>
+#ACT
+MOV S$注灵红点xl icon_red_01
+BREAK
+#IF
+CHECKITEM <$Str(s$注灵材料mc_5)> <$Str(s$注灵材料xh_5)>
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh_5)>
+#ACT
+MOV S$注灵红点xz icon_red_01
+BREAK
+#IF
+CHECKITEM <$Str(s$注灵材料mc_6)> <$Str(s$注灵材料xh_6)>
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh_6)>
+#ACT
+MOV S$注灵红点zs icon_red_01
+BREAK
+#IF
+CHECKITEM <$Str(s$注灵材料mc_7)> <$Str(s$注灵材料xh_7)>
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh_7)>
+#ACT
+MOV S$注灵红点ys icon_red_01
+BREAK
+#IF
+CHECKITEM <$Str(s$注灵材料mc_8)> <$Str(s$注灵材料xh_8)>
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh_8)>
+#ACT
+MOV S$注灵红点zj icon_red_01
+BREAK
+#IF
+CHECKITEM <$Str(s$注灵材料mc_9)> <$Str(s$注灵材料xh_9)>
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh_9)>
+#ACT
+MOV S$注灵红点yj icon_red_01
+BREAK
+#IF
+CHECKITEM <$Str(s$注灵材料mc_10)> <$Str(s$注灵材料xh_10)>
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh_10)>
+#ACT
+MOV S$注灵红点yd icon_red_01
+BREAK
+#IF
+CHECKITEM <$Str(s$注灵材料mc_11)> <$Str(s$注灵材料xh_11)>
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh_11)>
+#ACT
+MOV S$注灵红点xzz icon_red_01
+BREAK
+
+
+
+
+}

@@ -1,0 +1,39 @@
+[@main]
+
+#IF
+EQUAL <$STR(U91)> 0
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(U91)> 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(U91)> 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(U91)> 小还丹 S$C_任务奖励_药水
+#SAY
+<Img|show=4|y=-30|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}|bg=1|img=custom/hl/newtask/taskui_11.png>
+<Img|id=1|img=custom/hl/newtask/taskui_2.png|x=160|y=180>
+<Button|id=2|x=600|y=2|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=3|x=570|y=-5|width=70|height=70|link=@exit>
+<Text|id=4|outline=1|outlinecolor=0|a=0|x=60|y=80|color=103|size=18|text=尊敬的勇士,非常欢迎您再次踏上玛法大陆.自您上次离开后,玛法>
+<Text|id=5|outline=1|outlinecolor=0|a=0|x=60|y=100|color=103|size=18|text=大陆再次陷入水深火热之中，魔物卷土重来，所有人都期待着英>
+<Text|id=6|outline=1|outlinecolor=0|a=0|x=60|y=120|color=103|size=18|text=雄降临！>
+<ListView|id=12|x=190|y=215|children={101,102,103,104,105,106}|direction=2|bounce=1|margin=1|width=300|height=70>
+<ItemShow|id=101|width=70|height=70|itemid=6|itemcount=<$STR(S$C_任务奖励_经验)>|showtips=1|bgtype=1>
+<ItemShow|id=102|width=70|height=70|itemid=40088|itemcount=<$STR(S$C_任务奖励_药水)>|showtips=1|bgtype=1>
+<ItemShow|id=103|width=70|height=70|itemid=4|itemcount=<$STR(S$C_任务奖励_绑元)>|showtips=1|bgtype=1>
+<Button|x=232|y=300|id=13|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=一路前行|color=103|size=18|link=@主线1>
+<Text|id=14|outline=2|outlinecolor=0|a=0|x=270|y=5|color=103|size=16|text=欢迎归来>
+<Text|id=15|outline=1|outlinecolor=0|a=0|x=170|y=355|color=103|size=16|text=不知兄弟们是否还能再次归来···>
+<COUNTDOWN|id=16|a=0|x=395|y=355|time=5|count=1|size=16|color=224|link=@主线1>
+
+[@主线1]
+
+#IF
+EQUAL <$STR(U91)> 0
+#ACT
+MOV U91 1
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+NEWCOMPLETETASK 1
+NEWDELETETASK 1
+NEWPICKTASK 2 <$STR(U92)>
+KILLMOBAPPOINT 0 284 612 10 鸡
+close

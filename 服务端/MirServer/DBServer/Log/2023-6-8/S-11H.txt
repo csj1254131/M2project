@@ -1,0 +1,1064 @@
+Msg:-------------
+2023-06-08 11:20:59 MainSocket:127.0.0.1,7011
+Msg:-------------
+2023-06-08 11:20:59 DBConnectString:Name=Unnamed;Database=tool_server_4hobwp38781623_1_2;User_Name=996m2;password=www.996m2.com;Server={47.99.99.32,1433};DriverID=MSSQL
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:25:02 TFrmUserSoc.ProcessGateMsg1 ]TRA]TNA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]VbA]TRA]TRA38805466/2/1/1/0   1592
+Msg:-------------
+2023-06-08 11:25:02 查询人物 38805466/2/1/1/0  127.0.0.1
+Msg:-------------
+2023-06-08 11:25:03 TFrmUserSoc.ProcessGateMsg1 ]TRA]RjA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WJA]TRJ]TRA38805466   1592
+Msg:-------------
+2023-06-08 11:25:04 TFrmUserSoc.ProcessGateMsg1 ]TRA]XrA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WRA]TP@]TRA38805466/鐖卞攭   1592
+Msg:-------------
+2023-06-08 11:25:04 TFrmDBSrv.LoadHumanRcd1 38805466-10000000001685695769000003064,127.0.0.1,2,1,0
+Msg:-------------
+2023-06-08 11:25:07:371 >>>SaveData: 38805466, 10000000001685695769000003064
+Msg:-------------
+2023-06-08 11:25:07 >>TDataThread.OnMsg 10000000001685695769000003064
+剩余待处理保存数据：0/0
+DBDataThread Run 0 Error:0 -------------
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:29:34 TFrmUserSoc.ProcessGateMsg1 ]TRA]TNA]TRA]TRA]TRA]TRA]TRH]TRA]TRA]VbA]TRA]TRA38805466/3/1/1/0   2004
+Msg:-------------
+2023-06-08 11:29:34 查询人物 38805466/3/1/1/0  127.0.0.1
+Msg:-------------
+2023-06-08 11:29:35 TFrmUserSoc.ProcessGateMsg1 ]TRA]RjA]TRA]TRA]TRA]TRA]TRH]TRA]TRA]WJA]TRJ]TRA38805466   2004
+Msg:-------------
+2023-06-08 11:29:37 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP@]TRA   2004
+Msg:-------------
+2023-06-08 11:29:37 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:29:39 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRH]TRA   2004
+Msg:-------------
+2023-06-08 11:29:39 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:29:41 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSY]TRA   2004
+Msg:-------------
+2023-06-08 11:29:41 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:29:43 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQi]TRA   2004
+Msg:-------------
+2023-06-08 11:29:43 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:29:45 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQf]TRA   2004
+Msg:-------------
+2023-06-08 11:29:45 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:29:47 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSh]TRA   2004
+Msg:-------------
+2023-06-08 11:29:47 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:29:49 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRo]TRA   2004
+Msg:-------------
+2023-06-08 11:29:49 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:29:51 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQs]TRA   2004
+Msg:-------------
+2023-06-08 11:29:51 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:29:53 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRm]TRA   2004
+Msg:-------------
+2023-06-08 11:29:53 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:29:55 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ]]TRA   2004
+Msg:-------------
+2023-06-08 11:29:55 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:29:57 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRP]TRA   2004
+Msg:-------------
+2023-06-08 11:29:57 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:29:59 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRR]TRA   2004
+Msg:-------------
+2023-06-08 11:29:59 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:30:01 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSx]TRA   2004
+Msg:-------------
+2023-06-08 11:30:01 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:03 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRq]TRA   2004
+Msg:-------------
+2023-06-08 11:30:03 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:05 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRe]TRA   2004
+Msg:-------------
+2023-06-08 11:30:05 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:07 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSf]TRA   2004
+Msg:-------------
+2023-06-08 11:30:07 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:09 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPo]TRA   2004
+Msg:-------------
+2023-06-08 11:30:09 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:11 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPg]TRA   2004
+Msg:-------------
+2023-06-08 11:30:11 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:13 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPL]TRA   2004
+Msg:-------------
+2023-06-08 11:30:13 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:15 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPd]TRA   2004
+Msg:-------------
+2023-06-08 11:30:15 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:17 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPl]TRA   2004
+Msg:-------------
+2023-06-08 11:30:17 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:19 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQm]TRA   2004
+Msg:-------------
+2023-06-08 11:30:19 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:21 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSc]TRA   2004
+Msg:-------------
+2023-06-08 11:30:21 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:23 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPj]TRA   2004
+Msg:-------------
+2023-06-08 11:30:23 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:25 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP{]TRA   2004
+Msg:-------------
+2023-06-08 11:30:25 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:27 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPX]TRA   2004
+Msg:-------------
+2023-06-08 11:30:27 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:29 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQy]TRA   2004
+Msg:-------------
+2023-06-08 11:30:29 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:30:31 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSJ]TRA   2004
+Msg:-------------
+2023-06-08 11:30:31 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:33 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRZ]TRA   2004
+Msg:-------------
+2023-06-08 11:30:33 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:35 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TS<]TRA   2004
+Msg:-------------
+2023-06-08 11:30:35 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:37 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSC]TRA   2004
+Msg:-------------
+2023-06-08 11:30:37 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:39 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSg]TRA   2004
+Msg:-------------
+2023-06-08 11:30:39 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:41 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQn]TRA   2004
+Msg:-------------
+2023-06-08 11:30:41 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:43 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQA]TRA   2004
+Msg:-------------
+2023-06-08 11:30:43 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:45 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRM]TRA   2004
+Msg:-------------
+2023-06-08 11:30:45 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:47 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRd]TRA   2004
+Msg:-------------
+2023-06-08 11:30:47 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:49 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSG]TRA   2004
+Msg:-------------
+2023-06-08 11:30:49 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:51 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQL]TRA   2004
+Msg:-------------
+2023-06-08 11:30:51 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:53 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQD]TRA   2004
+Msg:-------------
+2023-06-08 11:30:53 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:55 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSE]TRA   2004
+Msg:-------------
+2023-06-08 11:30:55 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:57 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPS]TRA   2004
+Msg:-------------
+2023-06-08 11:30:57 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:30:59 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPc]TRA   2004
+Msg:-------------
+2023-06-08 11:30:59 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+DBDataThread Run 16 Error:0 -------------
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:31:01 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRX]TRA   2004
+Msg:-------------
+2023-06-08 11:31:01 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:03 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TS^]TRA   2004
+Msg:-------------
+2023-06-08 11:31:03 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:05 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSS]TRA   2004
+Msg:-------------
+2023-06-08 11:31:05 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:07 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ\]TRA   2004
+Msg:-------------
+2023-06-08 11:31:07 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:09 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPP]TRA   2004
+Msg:-------------
+2023-06-08 11:31:09 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:11 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQN]TRA   2004
+Msg:-------------
+2023-06-08 11:31:11 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:13 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQV]TRA   2004
+Msg:-------------
+2023-06-08 11:31:13 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:15 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSO]TRA   2004
+Msg:-------------
+2023-06-08 11:31:15 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:17 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSy]TRA   2004
+Msg:-------------
+2023-06-08 11:31:17 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:19 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP?]TRA   2004
+Msg:-------------
+2023-06-08 11:31:19 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:21 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQB]TRA   2004
+Msg:-------------
+2023-06-08 11:31:21 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:23 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRn]TRA   2004
+Msg:-------------
+2023-06-08 11:31:23 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:25 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRz]TRA   2004
+Msg:-------------
+2023-06-08 11:31:25 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:27 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPi]TRA   2004
+Msg:-------------
+2023-06-08 11:31:27 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:29 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPv]TRA   2004
+Msg:-------------
+2023-06-08 11:31:29 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:31:31 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPB]TRA   2004
+Msg:-------------
+2023-06-08 11:31:31 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:33 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TS=]TRA   2004
+Msg:-------------
+2023-06-08 11:31:33 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:35 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRI]TRA   2004
+Msg:-------------
+2023-06-08 11:31:35 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:37 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP\]TRA   2004
+Msg:-------------
+2023-06-08 11:31:37 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:39 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TR<]TRA   2004
+Msg:-------------
+2023-06-08 11:31:39 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:41 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPq]TRA   2004
+Msg:-------------
+2023-06-08 11:31:41 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:43 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPQ]TRA   2004
+Msg:-------------
+2023-06-08 11:31:43 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:45 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP=]TRA   2004
+Msg:-------------
+2023-06-08 11:31:45 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:47 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ<]TRA   2004
+Msg:-------------
+2023-06-08 11:31:47 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:49 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSK]TRA   2004
+Msg:-------------
+2023-06-08 11:31:49 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:51 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSs]TRA   2004
+Msg:-------------
+2023-06-08 11:31:51 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:53 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSA]TRA   2004
+Msg:-------------
+2023-06-08 11:31:53 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:55 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPf]TRA   2004
+Msg:-------------
+2023-06-08 11:31:55 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:57 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPs]TRA   2004
+Msg:-------------
+2023-06-08 11:31:57 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:31:59 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSd]TRA   2004
+Msg:-------------
+2023-06-08 11:31:59 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:32:01 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQC]TRA   2004
+Msg:-------------
+2023-06-08 11:32:01 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:03 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TR>]TRA   2004
+Msg:-------------
+2023-06-08 11:32:03 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:05 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPV]TRA   2004
+Msg:-------------
+2023-06-08 11:32:05 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:07 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSj]TRA   2004
+Msg:-------------
+2023-06-08 11:32:07 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:09 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPO]TRA   2004
+Msg:-------------
+2023-06-08 11:32:09 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:11 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQP]TRA   2004
+Msg:-------------
+2023-06-08 11:32:11 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:13 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSB]TRA   2004
+Msg:-------------
+2023-06-08 11:32:13 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:15 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRt]TRA   2004
+Msg:-------------
+2023-06-08 11:32:15 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:17 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQJ]TRA   2004
+Msg:-------------
+2023-06-08 11:32:17 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:19 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRB]TRA   2004
+Msg:-------------
+2023-06-08 11:32:19 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:21 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSM]TRA   2004
+Msg:-------------
+2023-06-08 11:32:21 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:23 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQw]TRA   2004
+Msg:-------------
+2023-06-08 11:32:23 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:25 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ>]TRA   2004
+Msg:-------------
+2023-06-08 11:32:25 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:27 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRV]TRA   2004
+Msg:-------------
+2023-06-08 11:32:27 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:29 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQc]TRA   2004
+Msg:-------------
+2023-06-08 11:32:29 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:32:31 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQv]TRA   2004
+Msg:-------------
+2023-06-08 11:32:31 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:33 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ@]TRA   2004
+Msg:-------------
+2023-06-08 11:32:33 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:35 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRY]TRA   2004
+Msg:-------------
+2023-06-08 11:32:35 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:37 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSP]TRA   2004
+Msg:-------------
+2023-06-08 11:32:37 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:39 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRG]TRA   2004
+Msg:-------------
+2023-06-08 11:32:39 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:41 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPY]TRA   2004
+Msg:-------------
+2023-06-08 11:32:41 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:43 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRj]TRA   2004
+Msg:-------------
+2023-06-08 11:32:43 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:45 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPF]TRA   2004
+Msg:-------------
+2023-06-08 11:32:45 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:47 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSl]TRA   2004
+Msg:-------------
+2023-06-08 11:32:47 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:49 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSt]TRA   2004
+Msg:-------------
+2023-06-08 11:32:49 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:51 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSH]TRA   2004
+Msg:-------------
+2023-06-08 11:32:51 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:53 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TR@]TRA   2004
+Msg:-------------
+2023-06-08 11:32:53 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:55 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQl]TRA   2004
+Msg:-------------
+2023-06-08 11:32:55 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:57 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP_]TRA   2004
+Msg:-------------
+2023-06-08 11:32:57 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:32:59 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSI]TRA   2004
+Msg:-------------
+2023-06-08 11:32:59 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:33:01 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSQ]TRA   2004
+Msg:-------------
+2023-06-08 11:33:01 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:03 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQe]TRA   2004
+Msg:-------------
+2023-06-08 11:33:03 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:05 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQR]TRA   2004
+Msg:-------------
+2023-06-08 11:33:05 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:07 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSZ]TRA   2004
+Msg:-------------
+2023-06-08 11:33:07 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:09 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQg]TRA   2004
+Msg:-------------
+2023-06-08 11:33:09 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:11 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRx]TRA   2004
+Msg:-------------
+2023-06-08 11:33:11 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:13 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TS\]TRA   2004
+Msg:-------------
+2023-06-08 11:33:13 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:15 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRv]TRA   2004
+Msg:-------------
+2023-06-08 11:33:15 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:17 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TR{]TRA   2004
+Msg:-------------
+2023-06-08 11:33:17 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:19 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPW]TRA   2004
+Msg:-------------
+2023-06-08 11:33:19 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:21 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TR]]TRA   2004
+Msg:-------------
+2023-06-08 11:33:21 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:23 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPw]TRA   2004
+Msg:-------------
+2023-06-08 11:33:23 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:25 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSL]TRA   2004
+Msg:-------------
+2023-06-08 11:33:25 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:27 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSF]TRA   2004
+Msg:-------------
+2023-06-08 11:33:27 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:29 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ_]TRA   2004
+Msg:-------------
+2023-06-08 11:33:29 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:33:31 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQx]TRA   2004
+Msg:-------------
+2023-06-08 11:33:31 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:33 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ?]TRA   2004
+Msg:-------------
+2023-06-08 11:33:33 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:35 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRg]TRA   2004
+Msg:-------------
+2023-06-08 11:33:35 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:37 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPA]TRA   2004
+Msg:-------------
+2023-06-08 11:33:37 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:39 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPk]TRA   2004
+Msg:-------------
+2023-06-08 11:33:39 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:41 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRT]TRA   2004
+Msg:-------------
+2023-06-08 11:33:41 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:43 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQO]TRA   2004
+Msg:-------------
+2023-06-08 11:33:43 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:45 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TR`]TRA   2004
+Msg:-------------
+2023-06-08 11:33:45 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:47 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ`]TRA   2004
+Msg:-------------
+2023-06-08 11:33:47 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:49 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQI]TRA   2004
+Msg:-------------
+2023-06-08 11:33:49 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:51 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPU]TRA   2004
+Msg:-------------
+2023-06-08 11:33:51 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:53 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRy]TRA   2004
+Msg:-------------
+2023-06-08 11:33:53 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:55 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQK]TRA   2004
+Msg:-------------
+2023-06-08 11:33:55 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:57 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPN]TRA   2004
+Msg:-------------
+2023-06-08 11:33:57 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:33:59 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQk]TRA   2004
+Msg:-------------
+2023-06-08 11:33:59 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:34:01 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRD]TRA   2004
+Msg:-------------
+2023-06-08 11:34:01 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:03 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPe]TRA   2004
+Msg:-------------
+2023-06-08 11:34:03 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:05 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSp]TRA   2004
+Msg:-------------
+2023-06-08 11:34:05 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:07 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQr]TRA   2004
+Msg:-------------
+2023-06-08 11:34:07 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:09 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TR=]TRA   2004
+Msg:-------------
+2023-06-08 11:34:09 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:11 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPh]TRA   2004
+Msg:-------------
+2023-06-08 11:34:11 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:13 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRQ]TRA   2004
+Msg:-------------
+2023-06-08 11:34:13 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:15 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQt]TRA   2004
+Msg:-------------
+2023-06-08 11:34:15 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:17 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSV]TRA   2004
+Msg:-------------
+2023-06-08 11:34:17 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:19 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSk]TRA   2004
+Msg:-------------
+2023-06-08 11:34:19 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:21 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRE]TRA   2004
+Msg:-------------
+2023-06-08 11:34:21 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:23 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSi]TRA   2004
+Msg:-------------
+2023-06-08 11:34:23 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:25 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSo]TRA   2004
+Msg:-------------
+2023-06-08 11:34:25 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:27 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQG]TRA   2004
+Msg:-------------
+2023-06-08 11:34:27 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:29 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRN]TRA   2004
+Msg:-------------
+2023-06-08 11:34:29 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:34:31 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPz]TRA   2004
+Msg:-------------
+2023-06-08 11:34:31 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:33 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPD]TRA   2004
+Msg:-------------
+2023-06-08 11:34:33 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:35 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSq]TRA   2004
+Msg:-------------
+2023-06-08 11:34:35 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:37 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSN]TRA   2004
+Msg:-------------
+2023-06-08 11:34:37 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:39 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQH]TRA   2004
+Msg:-------------
+2023-06-08 11:34:39 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:41 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ^]TRA   2004
+Msg:-------------
+2023-06-08 11:34:41 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:43 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSn]TRA   2004
+Msg:-------------
+2023-06-08 11:34:43 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:45 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ[]TRA   2004
+Msg:-------------
+2023-06-08 11:34:45 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:47 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSu]TRA   2004
+Msg:-------------
+2023-06-08 11:34:47 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:49 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRb]TRA   2004
+Msg:-------------
+2023-06-08 11:34:49 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:51 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRO]TRA   2004
+Msg:-------------
+2023-06-08 11:34:51 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:53 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRr]TRA   2004
+Msg:-------------
+2023-06-08 11:34:53 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:55 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TR^]TRA   2004
+Msg:-------------
+2023-06-08 11:34:55 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:57 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TS[]TRA   2004
+Msg:-------------
+2023-06-08 11:34:57 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:34:59 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TS@]TRA   2004
+Msg:-------------
+2023-06-08 11:34:59 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:35:01 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPG]TRA   2004
+Msg:-------------
+2023-06-08 11:35:01 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:03 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSw]TRA   2004
+Msg:-------------
+2023-06-08 11:35:03 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:05 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQq]TRA   2004
+Msg:-------------
+2023-06-08 11:35:05 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:07 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TR_]TRA   2004
+Msg:-------------
+2023-06-08 11:35:07 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:07:413 >>>SaveData: 38805466, 10000000001685695769000003064
+Msg:-------------
+2023-06-08 11:35:07 >>TDataThread.OnMsg 10000000001685695769000003064
+Msg:-------------
+2023-06-08 11:35:09 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRw]TRA   2004
+Msg:-------------
+2023-06-08 11:35:09 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:11 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRW]TRA   2004
+Msg:-------------
+2023-06-08 11:35:11 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:13 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSr]TRA   2004
+Msg:-------------
+2023-06-08 11:35:13 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:15 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQZ]TRA   2004
+Msg:-------------
+2023-06-08 11:35:15 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:17 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPb]TRA   2004
+Msg:-------------
+2023-06-08 11:35:17 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:19 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRK]TRA   2004
+Msg:-------------
+2023-06-08 11:35:19 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:21 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRk]TRA   2004
+Msg:-------------
+2023-06-08 11:35:21 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:23 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQp]TRA   2004
+Msg:-------------
+2023-06-08 11:35:23 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:25 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPx]TRA   2004
+Msg:-------------
+2023-06-08 11:35:25 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:27 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPZ]TRA   2004
+Msg:-------------
+2023-06-08 11:35:27 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:29 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPy]TRA   2004
+Msg:-------------
+2023-06-08 11:35:29 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:35:31 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSX]TRA   2004
+Msg:-------------
+2023-06-08 11:35:31 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:33 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPC]TRA   2004
+Msg:-------------
+2023-06-08 11:35:33 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:35 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQh]TRA   2004
+Msg:-------------
+2023-06-08 11:35:35 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:37 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP<]TRA   2004
+Msg:-------------
+2023-06-08 11:35:37 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:39 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPH]TRA   2004
+Msg:-------------
+2023-06-08 11:35:39 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:41 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP]]TRA   2004
+Msg:-------------
+2023-06-08 11:35:41 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:43 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TS?]TRA   2004
+Msg:-------------
+2023-06-08 11:35:43 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:45 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ=]TRA   2004
+Msg:-------------
+2023-06-08 11:35:45 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:47 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPt]TRA   2004
+Msg:-------------
+2023-06-08 11:35:47 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:49 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRC]TRA   2004
+Msg:-------------
+2023-06-08 11:35:49 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:51 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP`]TRA   2004
+Msg:-------------
+2023-06-08 11:35:51 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:53 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSR]TRA   2004
+Msg:-------------
+2023-06-08 11:35:53 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:55 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQW]TRA   2004
+Msg:-------------
+2023-06-08 11:35:55 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:57 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TS{]TRA   2004
+Msg:-------------
+2023-06-08 11:35:57 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:35:59 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPR]TRA   2004
+Msg:-------------
+2023-06-08 11:35:59 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+DBDataThread Run 15 Error:0 -------------
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:36:01 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRi]TRA   2004
+Msg:-------------
+2023-06-08 11:36:01 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:03 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQU]TRA   2004
+Msg:-------------
+2023-06-08 11:36:03 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:05 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQ{]TRA   2004
+Msg:-------------
+2023-06-08 11:36:05 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:07 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQE]TRA   2004
+Msg:-------------
+2023-06-08 11:36:07 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:09 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPM]TRA   2004
+Msg:-------------
+2023-06-08 11:36:09 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:11 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPI]TRA   2004
+Msg:-------------
+2023-06-08 11:36:11 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:13 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TR?]TRA   2004
+Msg:-------------
+2023-06-08 11:36:13 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:15 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP[]TRA   2004
+Msg:-------------
+2023-06-08 11:36:15 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:17 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP^]TRA   2004
+Msg:-------------
+2023-06-08 11:36:17 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:19 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRc]TRA   2004
+Msg:-------------
+2023-06-08 11:36:19 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:21 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQF]TRA   2004
+Msg:-------------
+2023-06-08 11:36:21 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:23 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPr]TRA   2004
+Msg:-------------
+2023-06-08 11:36:23 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:25 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSU]TRA   2004
+Msg:-------------
+2023-06-08 11:36:25 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:27 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TS>]TRA   2004
+Msg:-------------
+2023-06-08 11:36:27 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:29 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQa]TRA   2004
+Msg:-------------
+2023-06-08 11:36:29 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:36:31 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQX]TRA   2004
+Msg:-------------
+2023-06-08 11:36:31 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:33 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQY]TRA   2004
+Msg:-------------
+2023-06-08 11:36:33 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:35 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TR[]TRA   2004
+Msg:-------------
+2023-06-08 11:36:35 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:37 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRL]TRA   2004
+Msg:-------------
+2023-06-08 11:36:37 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:39 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPu]TRA   2004
+Msg:-------------
+2023-06-08 11:36:39 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:41 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQj]TRA   2004
+Msg:-------------
+2023-06-08 11:36:41 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:43 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQS]TRA   2004
+Msg:-------------
+2023-06-08 11:36:43 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:45 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TPa]TRA   2004
+Msg:-------------
+2023-06-08 11:36:45 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:47 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRa]TRA   2004
+Msg:-------------
+2023-06-08 11:36:47 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:49 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSe]TRA   2004
+Msg:-------------
+2023-06-08 11:36:49 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:51 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQo]TRA   2004
+Msg:-------------
+2023-06-08 11:36:51 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:53 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TS]]TRA   2004
+Msg:-------------
+2023-06-08 11:36:53 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:55 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQM]TRA   2004
+Msg:-------------
+2023-06-08 11:36:55 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:36:55 TFrmUserSoc.ProcessGateMsg1 ]TRA]XrA]TRA]TRA]TRA]TRA]TRH]TRA]TRA]WRA]TRU]TRA38805466/鐖卞攭   2004
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:37:09 TFrmUserSoc.ProcessGateMsg1 ]TRA]TNA]TRA]TRA]TRA]TRA]TSY]TRA]TRA]VbA]TRA]TRA38805466/4/1/1/0   856
+Msg:-------------
+2023-06-08 11:37:09 查询人物 38805466/4/1/1/0  127.0.0.1
+Msg:-------------
+2023-06-08 11:37:10 TFrmUserSoc.ProcessGateMsg1 ]TRA]RjA]TRA]TRA]TRA]TRA]TSY]TRA]TRA]WJA]TRJ]TRA38805466   856
+Msg:-------------
+2023-06-08 11:37:11 TFrmUserSoc.ProcessGateMsg1 ]TRA]XrA]TRA]TRA]TRA]TRA]TSY]TRA]TRA]WRA]TP@]TRA38805466/鐖卞攭   856
+Msg:-------------
+2023-06-08 11:37:17 TFrmDBSrv.LoadHumanRcd1 38805466-10000000001685695769000003064,127.0.0.1,3,0,0
+Msg:-------------
+2023-06-08 11:37:17 TFrmDBSrv.LoadHumanRcd1 38805466-10000000001685695769000003064,127.0.0.1,4,1,0
+Msg:-------------
+2023-06-08 11:37:26 MainSocket:127.0.0.1,7011
+Msg:-------------
+2023-06-08 11:37:26 DBConnectString:Name=Unnamed;Database=tool_server_4hobwp38781623_1_2;User_Name=996m2;password=www.996m2.com;Server={47.99.99.32,1433};DriverID=MSSQL
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:38:15 TFrmUserSoc.ProcessGateMsg1 ]TRA]TNA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]VbA]TRA]TRA38805466/2/1/1/0   1000
+Msg:-------------
+2023-06-08 11:38:15 查询人物 38805466/2/1/1/0  127.0.0.1
+Msg:-------------
+2023-06-08 11:38:16 TFrmUserSoc.ProcessGateMsg1 ]TRA]RjA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WJA]TRJ]TRA38805466   1000
+Msg:-------------
+2023-06-08 11:38:18 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TP@]TRA]TRA]TRA]TP@]TRA   1000
+Msg:-------------
+2023-06-08 11:38:18 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:38:20 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TP@]TRA]TRA]TRA]TRH]TRA   1000
+Msg:-------------
+2023-06-08 11:38:20 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:38:22 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TP@]TRA]TRA]TRA]TSY]TRA   1000
+Msg:-------------
+2023-06-08 11:38:22 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:38:24 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TP@]TRA]TRA]TRA]TQi]TRA   1000
+Msg:-------------
+2023-06-08 11:38:24 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:38:26 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TP@]TRA]TRA]TRA]TQf]TRA   1000
+Msg:-------------
+2023-06-08 11:38:26 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:38:28 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TP@]TRA]TRA]TRA]TSh]TRA   1000
+Msg:-------------
+2023-06-08 11:38:28 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:38:30 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TP@]TRA]TRA]TRA]TRo]TRA   1000
+Msg:-------------
+2023-06-08 11:38:30 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:38:32 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TP@]TRA]TRA]TRA]TQs]TRA   1000
+Msg:-------------
+2023-06-08 11:38:32 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-08 11:38:32 TFrmUserSoc.ProcessGateMsg1 ]TRA]XrA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WRA]TRm]TRA38805466/鐖卞攭   1000
+Msg:-------------
+2023-06-08 11:38:32 TFrmDBSrv.LoadHumanRcd1 38805466-10000000001685695769000003064,127.0.0.1,2,1,0
+Msg:-------------
+2023-06-08 11:38:33:565 >>>SaveData: 38805466, 10000000001685695769000003064
+Msg:-------------
+2023-06-08 11:38:33 >>TDataThread.OnMsg 10000000001685695769000003064
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+DBDataThread Run 15 Error:0 -------------
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+DBDataThread Run 0 Error:0 -------------
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:48:33:603 >>>SaveData: 38805466, 10000000001685695769000003064
+Msg:-------------
+2023-06-08 11:48:33 >>TDataThread.OnMsg 10000000001685695769000003064
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+DBDataThread Run 0 Error:0 -------------
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+DBDataThread Run 0 Error:0 -------------
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-08 11:58:33:673 >>>SaveData: 38805466, 10000000001685695769000003064
+Msg:-------------
+2023-06-08 11:58:33 >>TDataThread.OnMsg 10000000001685695769000003064
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0

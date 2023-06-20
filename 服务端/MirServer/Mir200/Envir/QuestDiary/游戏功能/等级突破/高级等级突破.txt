@@ -1,0 +1,180 @@
+[@启动高级等级突破]
+{
+#IF
+CHECKLEVELEX < 200
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级不足200级请去二大陆提升</font>
+break
+#IF
+CHECKLEVELEX > 299
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级已经达到顶峰</font>
+break
+#IF
+#ACT
+GOTO @读取高级突破配置
+Goto @高级等级突破展示
+
+[@高级等级突破展示]
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/tsbj.png>
+<Layout|id=0|children={1}|x=452|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=170|y=8|width=120|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=高级等级使者>
+<RText|id=3|x=100|y=50|color=255|size=18|outline=2|outlinecolor=0|text=当前等级:<<$LEVEL>/FCOLOR=250>级突破需求材料>
+<RText|id=6|x=40|y=80|color=255|size=18|outline=2|outlinecolor=0|text=一、<$STR(N$突破材料2)>W元宝+<$STR(S$突破材料3)>*<$STR(S$突破材料4)>+<$STR(S$突破材料5)>*<$STR(S$突破材料6)>>
+<RText|id=7|x=40|y=110|color=255|size=18|outline=2|outlinecolor=0|text=二、<$STR(S$突破货币2)>火龙币>
+<Button|id=4|children={40}|x=75|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=材料提升|link=@高级材料提升>
+<Img|id=40|img=custom/hl/hl_ui/<$str(S$突破材料红点)>.png|x=95|y=4>
+<Button|id=5|children={50}|x=225|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=火龙币提升|link=@高级火龙币提升>
+<Img|id=50|img=custom/hl/hl_ui/<$str(S$突破货币红点)>.png|x=95|y=4>
+
+[@读取高级突破配置]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\等级突破\高级突破配置.ini 突破等阶 总阶段 S$阶段串
+GETVALIDSTRSUPER <$STR(S$阶段串)> | S$突破阶段
+MOV N$阶段流水号 1
+GOTO @循环读取阶段
+
+[@循环读取阶段]
+#IF
+CHECKLEVELEX > 299
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级已经达到顶峰</font>
+break
+#IF
+#ACT
+MOV S$突破等级串
+MOV S$突破材料串
+MOV S$突破货币串
+#IF
+NOT EQUAL <$str(S$突破阶段<$str(N$阶段流水号)>)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\等级突破\高级突破配置.ini <$str(S$突破阶段<$str(N$阶段流水号)>)> <$str(S$突破阶段<$str(N$阶段流水号)>)>_等级 S$突破等级串
+
+#IF
+CheckContainsText <$str(S$突破等级串)> <$level>
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\等级突破\高级突破配置.ini <$str(S$突破阶段<$str(N$阶段流水号)>)> <$str(S$突破阶段<$str(N$阶段流水号)>)>_材料 S$突破材料串
+ReadConfigFileItem ..\QuestDiary\游戏功能\等级突破\高级突破配置.ini <$str(S$突破阶段<$str(N$阶段流水号)>)> <$str(S$突破阶段<$str(N$阶段流水号)>)>_货币 S$突破货币串
+GETVALIDSTRSUPER <$STR(S$突破材料串)> | S$突破材料
+GETVALIDSTRSUPER <$STR(S$突破货币串)> | S$突破货币
+MOV N$突破材料2 <$STR(S$突破材料2)>
+DIV N$突破材料2 10000
+#ELSEACT
+INC N$阶段流水号 1
+GOTO @循环读取阶段
+
+#IF
+CHECKITEM <$STR(S$突破材料5)> <$STR(S$突破材料6)>
+CHECKITEM <$STR(S$突破材料3)> <$STR(S$突破材料4)>
+CheckBindMoney 元宝 ? <$STR(S$突破材料2)>
+#ACT
+MOV S$突破材料红点 hd
+#ELSEACT
+MOV S$突破材料红点
+
+#IF
+CheckMoney 火龙币 ? <$STR(S$突破货币2)>
+#ACT
+MOV S$突破货币红点 hd
+#ELSEACT
+MOV S$突破货币红点
+
+
+
+[@高级材料提升]
+#IF
+CHECKLEVELEX < 200
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级不足200级请去二大陆提升</font>
+break
+#IF
+CHECKLEVELEX > 299
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级已经达到顶峰</font>
+break
+#IF
+NOT EQUAL S$突破材料串
+#ACT
+GETVALIDSTRSUPER <$STR(S$突破材料串)> | S$突破材料
+GETVALIDSTRSUPER <$STR(S$突破货币串)> | S$突破货币
+#ELSEACT
+break
+#OR
+EQUAL S$突破材料2
+EQUAL S$突破材料4
+EQUAL S$突破材料6
+#ACT
+break
+#IF
+CHECKITEM <$STR(S$突破材料3)> <$STR(S$突破材料4)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'><$STR(S$突破材料3)>不足</font>
+break
+#IF
+CHECKITEM <$STR(S$突破材料5)> <$STR(S$突破材料6)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'><$STR(S$突破材料5)>不足</font>
+break
+#IF
+CheckBindMoney 元宝 ? <$STR(S$突破材料2)>
+#ACT
+ChangeBindMoney 元宝 <$STR(S$突破材料2)>
+take <$STR(S$突破材料3)> <$STR(S$突破材料4)>
+take <$STR(S$突破材料5)> <$STR(S$突破材料6)>
+changelevel + 1
+SENDMSG 9 <font color='#00ff00'>等级提升成功</font>
+GOTO @启动高级等级突破
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足</font>
+break
+
+[@高级火龙币提升]
+#IF
+CHECKLEVELEX < 200
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级不足200级请去二大陆提升</font>
+break
+#IF
+CHECKLEVELEX > 299
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级已经达到顶峰</font>
+break
+#IF
+NOT EQUAL S$突破材料串
+#ACT
+GETVALIDSTRSUPER <$STR(S$突破材料串)> | S$突破材料
+GETVALIDSTRSUPER <$STR(S$突破货币串)> | S$突破货币
+#ELSEACT
+break
+#OR
+EQUAL S$突破材料2
+EQUAL S$突破材料4
+EQUAL S$突破材料6
+#ACT
+break
+
+#IF
+CheckMoney 火龙币 ? <$STR(S$突破货币2)>
+#ACT
+Money 火龙币 - <$STR(S$突破货币2)>
+changelevel + 1
+INC U120 <$STR(S$突破货币2)>
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+SENDMSG 9 <font color='#00ff00'>等级提升成功</font>
+GOTO @启动高级等级突破
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>火龙币不足，请前往充值！</font>
+break
+
+
+
+
+
+
+}

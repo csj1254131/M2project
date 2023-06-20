@@ -1,0 +1,27 @@
+
+[@前期任务自动挂机]
+{
+#IF
+small <$STR(U91)> 19
+#ACT
+DELAYGOTO 10 @新手自动战斗
+break
+
+[@新手自动战斗]
+#IF
+EQUAL N$挂机状态 0
+#ACT
+MOV N$挂机状态 1
+#ELSEACT
+BREAK
+
+
+#IF
+Equal <$CLIENTFLAG> 2
+#act
+StartAutoPlayGame
+MOV S$挂机 <Button|x=-127|y=-374|color=251|mimg=private\main\Skill\1900012709.png|size=16|nimg=private\main\Skill\1900012709.png|pimg=private\main\Skill\1900012709.png|link=@停止挂机>
+DELBUTTON 104 1
+ADDBUTTON 104 1 <$STR(S$挂机)>
+BREAK
+}

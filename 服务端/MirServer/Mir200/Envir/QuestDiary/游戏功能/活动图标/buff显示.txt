@@ -1,0 +1,36 @@
+[@buff显示]
+{
+
+#IF
+NOT EQUAL T3
+#ACT
+Taketime <$STR(T3)> <$YEAR>-<$MONTH>-<$DAY>-<$HOUR>-<$MINUTE>-<$SECOND>
+Mov n$buff时间 3599
+#ELSEACT
+BREAK
+
+
+#IF
+LARGE n$buff时间 <$Timeresult>
+#ACT
+dec n$buff时间 <$Timeresult>
+Mov s$buff <Layout|children={1,2}|width=50|height=50|color=x|x=270|y=3|link=@会员tfis>
+inc s$buff <Img|id=1|img=custom/hl/buff_ui/buff_0.png|width=30|height=30|x=0|y=0|link=@会员tfis>
+inc s$buff <TIMETIPS|id=2|x=-5|y=25|time=<$STR(n$buff时间)>|count=1|size=13|color=250|outline=2|outlinecolor=0|link=@取消会员体验>
+ADDBUTTON 101 101 <$str(s$buff)>
+BREAK
+
+
+#IF
+#ACT
+MOV T3
+DELBUTTON 101 101
+CALCVAR HUMAN 顶戴展示三 =
+SAVEVAR HUMAN 顶戴展示三
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+BREAK
+
+
+
+}

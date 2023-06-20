@@ -1,0 +1,31 @@
+[@移动端回收弹窗]
+{
+
+;透明背景
+<Img|width=3000|height=3000|bg=1|show=4|img=public/alpha_1px.png|bagPos=1|link=@exit>
+;背景
+<Img|a=4|children={0,2,3,5,7}|img=custom/hl/hl_ui/tsbj.png|percentx=50|percenty=50>
+;基础容器
+<Layout|id=0|children={1}|x=450|y=0|width=50|height=50|color=x|link=@exit>
+;关闭按钮
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|text=开通VIP1可激活随身回收功能|color=x|size=18|outline=2|outlinecolor=0|percentx=50|percenty=40>
+<Button|id=3|children={4}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=15|percenty=65|link=@跳转传送回收>
+<Text|id=4|a=4|text=传送|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=5|children={6}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=60|percenty=65|link=@跳转开通会员>
+<Text|id=6|a=4|text=前往购买|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Text|id=7|a=4|text=提示|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=10>
+
+
+[@跳转传送回收]
+#IF
+#ACT
+OPENHYPERLINK 7
+OPENNPCSHOWEX 47 20 5
+close
+[@跳转开通会员]
+#ACT
+OPENHYPERLINK 7
+OPENHYPERLINK 26
+close
+}

@@ -1,0 +1,241 @@
+[@启动狂暴]
+{
+
+
+#IF
+CHECK [200] 0
+#ACT
+MOV S$狂暴状态 未开启
+MOV S$狂暴颜色 249
+
+#IF
+CHECK [200] 1
+#ACT
+MOV S$狂暴状态 已开启
+MOV S$狂暴颜色 250
+
+#IF
+Checkvar Human 狂暴保护 =
+#ACT
+MOV S$狂暴保护 未开启
+
+#IF
+Checkvar Human 狂暴保护 = 已开启
+#ACT
+MOV S$狂暴保护 已开启
+
+
+
+#IF
+#ACT
+MOV S$激活按钮 nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png
+MOV S$默认按钮 nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png
+
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,5a}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=火龙之力>
+<ListView|id=3|children={31}|x=132|y=60|width=3|height=450|bounce=1|direction=1|color=x|margin=2>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=4|x=22.0|y=65.0|<$STR(S$激活按钮)>|color=103|size=18|text=开启狂暴|link=@启动狂暴>
+<Button|id=5|x=22.0|y=105.0|<$STR(S$默认按钮)>|color=160|size=18|text=狂暴介绍|link=@介绍界面>
+<Button|id=5a|x=22.0|y=145.0|<$STR(S$默认按钮)>|color=160|size=18|text=狂暴保护|link=@狂暴保护>
+
+<Text|id=6|x=159.0|y=67.0|color=251|size=18|text=狂暴神技，开启之后气血逆流，杀人于无形。>
+<Img|id=7|children={71,72,73}|x=175.0|y=108.0|img=custom/hl/hl_ui/dt_7.png>
+<RText|id=71|x=22|y=-7.0|color=89|size=18|text=在<【狂暴】/FCOLOR=249>状态下被其他玩家击杀，狂暴状态消失>
+<Img|id=8|children={81,82,83,84,85}|x=175.0|y=148.0|img=custom/hl/hl_ui/dt_7.png>
+<RText|id=81|x=22|y=-7.0|color=89|size=18|text=击杀<【狂暴】/FCOLOR=249>状态的玩家，将获得<1000/FCOLOR=250>火龙币奖励>
+<Img|id=9|children={91,92,93}|x=175.0|y=188.0|img=custom/hl/hl_ui/dt_7.png>
+<RText|id=91|x=22|y=-7.0|color=89|size=18|text=被怪物击杀<【狂暴】/FCOLOR=249>状态不会消失>
+<Img|id=10|children={101,102,103}|x=175.0|y=228.0|img=custom/hl/hl_ui/dt_7.png>
+<RText|id=101|x=22|y=-7.0|color=89|size=18|text=激活狂暴状态，可进入专属打宝地图“<龙族领地/FCOLOR=250>”>
+<Button|id=11|x=267.0|y=308.0|<$STR(S$激活按钮)>|color=103|size=17|outline=2|outlinecolor=0|text=开启狂暴|link=@开启狂暴>
+<Button|id=12|x=506.0|y=308.0|<$STR(S$激活按钮)>|color=103|size=17|outline=2|outlinecolor=0|text=龙族领地|link=@去狂暴之地>
+<Text|id=13|children={131,132,133,134}|x=260|y=348.0|color=103|size=18|text=需要:>
+<Text|id=131|x=46|y=0|color=250|size=18|text=2000>
+<Text|id=132|x=89|y=0|color=103|size=18|text=火龙币>
+<Text|id=133|x=278|y=0|color=103|size=18|text=(免费)>
+<ListView|id=14|children={141}|x=136|y=428|width=617|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=141|img=custom/hl/hl_ui/hl_bg_01.png>
+<Text|id=15|children={151}|x=180|y=453.0|color=103|size=18|text=当前狂暴状态：>
+<Text|id=151|x=125|y=0|color=<$STR(S$狂暴颜色)>|size=18|text=<$STR(S$狂暴状态)>>
+<RText|id=17|children={171}|x=348.0|y=395.0|color=250|size=18|text=当前拥有火龙币:<<$MONEY(火龙币)>/FCOLOR=250>>
+
+
+
+[@介绍界面]
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,5a}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=火龙之力>
+<ListView|id=3|children={31}|x=132|y=60|width=3|height=450|bounce=1|direction=1|color=x|margin=2>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=4|x=22.0|y=65.0|<$STR(S$默认按钮)>|color=160|size=18|text=开启狂暴|link=@启动狂暴>
+<Button|id=5|x=22.0|y=105.0|<$STR(S$激活按钮)>|color=100|size=18|text=狂暴介绍|link=@介绍界面>
+<Button|id=5a|x=22.0|y=145.0|<$STR(S$默认按钮)>|color=160|size=18|text=狂暴保护|link=@狂暴保护>
+<Text|id=6|x=159.0|y=67.0|color=251|size=18|text=开启狂暴>
+<Img|id=7|children={71,72}|x=175.0|y=108.0|img=custom/hl/hl_ui/dt_7.png>
+<RText|id=71|x=22|y=-7.0|color=103|size=18|text=攻魔道提高<100-100/FCOLOR=250>，双防提高<30-30/FCOLOR=250>>
+
+<Img|id=9|children={91,92,93}|x=175.0|y=148.0|img=custom/hl/hl_ui/dt_7.png>
+<RText|id=91|x=22|y=-7.0|color=103|size=18|text=打怪爆率额外提高<15%/FCOLOR=250>本游戏效果绝对真实>
+<Img|id=10|children={101,102}|x=175.0|y=188.0|img=custom/hl/hl_ui/dt_7.png>
+<RText|id=101|x=22|y=-7.0|color=103|size=18|text=装备回收元宝<+20%/FCOLOR=250>>
+<Img|id=11|children={111,112}|x=175.0|y=228.0|img=custom/hl/hl_ui/dt_7.png>
+<RText|id=111|x=22|y=-7.0|color=103|size=18|text=获得称号：<【火龙之力】/FCOLOR=250>>
+<Img|id=12|children={121}|x=175.0|y=268.0|img=custom/hl/hl_ui/dt_7.png>
+<Text|id=121|x=22|y=-7.0|color=103|size=18|text=人物下线或被怪物打死状态不会消失>
+<ListView|id=13|children={131}|x=136|y=428|width=617|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=131|img=custom/hl/hl_ui/hl_bg_01.png>
+<Text|id=14|children={141}|x=180|y=453.0|color=103|size=18|text=当前狂暴状态：>
+<Text|id=141|x=126|y=0|color=<$STR(S$狂暴颜色)>|size=18|text=<$STR(S$狂暴状态)>>
+<Button|id=16|children={161,162,163}|x=605.0|y=440.0|<$STR(S$激活按钮)>|color=103|size=17|outline=2|outlinecolor=0|text=开启狂暴|link=@开启狂暴>
+<Text|id=161|x=-4|y=38.0|color=103|size=18|text=需要:>
+<Text|id=162|x=43.0|y=38.0|color=250|size=18|text=2000>
+<Text|id=163|x=85.0|y=38.0|color=103|size=18|text=火龙币>
+<RText|id=17|children={171}|x=348.0|y=395.0|color=250|size=18|text=当前拥有火龙币:<<$MONEY(火龙币)>/FCOLOR=250>>
+
+
+
+[@狂暴保护]
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,5a}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=火龙之力>
+<ListView|id=3|children={31}|x=132|y=60|width=3|height=450|bounce=1|direction=1|color=x|margin=2>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=4|x=22.0|y=65.0|<$STR(S$默认按钮)>|color=160|size=18|text=开启狂暴|link=@启动狂暴>
+<Button|id=5|x=22.0|y=105.0|<$STR(S$默认按钮)>|color=160|size=18|text=狂暴介绍|link=@介绍界面>
+<Button|id=5a|x=22.0|y=145.0|<$STR(S$激活按钮)>|color=100|size=18|text=狂暴保护|link=@狂暴保护>
+<Text|id=6|x=159.0|y=67.0|color=251|size=18|text=狂暴保护>
+<Img|id=7|children={71,72}|x=175.0|y=108.0|img=custom/hl/hl_ui/dt_7.png>
+<RText|id=71|x=22|y=-7.0|color=103|size=18|text=沙城专属狂暴<【龙的传人】/FCOLOR=250>,死亡不会丢失狂暴...>
+
+
+
+
+
+<Img|id=9|children={91,92,93,91a}|x=175.0|y=148.0|img=custom/hl/hl_ui/dt_7.png>
+<RText|id=91|x=22|y=-7.0|color=103|size=18|text=击杀携带<【龙的传人】/FCOLOR=250>状态的玩家,获得<神龙之力/FCOLOR=250>,对玩家伤害提高1%,>
+<RText|id=91a|x=22|y=13.0|color=103|size=18|text=最高可叠加10层,死亡或者离开攻沙区域神龙之力消失>
+
+<Img|id=10|children={101,102,101a}|x=175.0|y=208.0|img=custom/hl/hl_ui/dt_7.png>
+<RText|id=101|x=22|y=-7.0|color=103|size=18|text=被携带<【龙的传人】/FCOLOR=250>的玩家杀害,获得<庇护之力/FCOLOR=250>,减少来自玩家的1%伤害,>
+<RText|id=101a|x=22|y=13.0|color=103|size=18|text=最高可叠加5层,击杀任意玩家或者离开攻沙区域庇护之力消失>
+
+<Img|id=11|children={111,112}|x=175.0|y=228.0|img=custom/hl/hl_ui/dt_.png>
+
+<Img|id=12|children={121}|x=175.0|y=270.0|img=custom/hl/hl_ui/dt_7.png>
+<Text|id=121|x=22|y=-4.0|color=103|size=18|text=【龙的传人】只限攻沙期间攻城区域有效>
+<ListView|id=13|children={131}|x=136|y=428|width=617|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=131|img=custom/hl/hl_ui/hl_bg_01.png>
+<Text|id=14|children={141}|x=180|y=453.0|color=103|size=18|text=当前保护状态：>
+<Text|id=141|x=126|y=0|color=<$STR(S$狂暴颜色)>|size=18|text=<$STR(S$狂暴保护)>>
+<Button|id=16|children={161,162,163}|x=605.0|y=440.0|<$STR(S$激活按钮)>|color=103|size=17|outline=2|outlinecolor=0|text=开启狂暴保护|link=@开启狂暴保护>
+<Text|id=161|x=-4|y=38.0|color=103|size=18|text=需要:>
+<Text|id=162|x=43.0|y=38.0|color=250|size=18|text=1000>
+<Text|id=163|x=85.0|y=38.0|color=103|size=18|text=火龙币>
+<RText|id=17|children={171}|x=348.0|y=395.0|color=250|size=18|text=当前拥有火龙币:<<$MONEY(火龙币)>/FCOLOR=250>>
+
+[@开启狂暴保护]
+#IF
+Not Checkunderwar 沙巴克
+#Act
+Sendmsg 9 <Font Color='#00ff00'>非攻城期间禁止开启...</Font>
+Close
+Break
+
+#IF
+CHECK [200] 0
+#Act
+Sendmsg 9 <Font Color='#00ff00'>请先开启狂暴之力,再来找我吧...</Font>
+Close
+Break
+
+#IF
+Checkvar Human 狂暴保护 = 已开启
+#ACT
+Sendmsg 9 <Font Color='#00ff00'>你已经开启狂暴保护,不能重复开启...</Font>
+Close
+BREAK
+
+#IF
+Checkmoney 火龙币 < 1000
+#Act
+Sendmsg 9 <Font Color='#00ff00'>你的火龙币不足,请充值...</Font>
+Close
+Break
+
+
+#IF
+CHECKMONEY 火龙币 > 999
+#ACT
+MONEY 火龙币 - 1000
+CALCVAR HUMAN 狂暴保护 = 已开启
+Savevar human 狂暴保护
+INC U120 1000
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+SENDMSGNEW 255 0 大佬玩家[<$USERNAME>]开启了狂暴保护！请小心此人！ 1 10
+Goto @Main
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的火龙币不足，请充值...</font>
+BREAK
+
+
+[@开启狂暴]
+#IF
+CHECK [200] 1
+#ACT
+SENDMSG 9 <font color='#00ff00'>您的火龙之力还在，无需开启。</font>
+BREAK
+
+#IF
+CHECKMONEY 火龙币 > 1999
+#ACT
+MONEY 火龙币 - 2000
+SET [200] 1
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [爆率刷新.txt] @爆率刷新
+CALCVAR HUMAN 顶戴展示二 = kuangbao_1
+SAVEVAR HUMAN 顶戴展示二
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+INC U120 200
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+SENDMSGNEW 255 0 大佬玩家[{<$USERNAME>/FCOLOR=58}]开启了{火龙之力/FCOLOR=250}！请小心此人！ 1 10
+CLOSE
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的火龙币不足，无法开启。</font>
+BREAK
+
+[@去狂暴之地]
+
+#IF
+CHECK [200] 1
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>开启火龙之力方可进入。</font>
+BREAK
+
+#IF
+EQUAL <$MAPTITLE> 盟重省
+#ACT
+OPENNPCSHOWEX 31
+close
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请移步盟重省龙族领地NPC处进入</font>
+BREAK
+
+
+
+}

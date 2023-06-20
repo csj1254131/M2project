@@ -1,0 +1,783 @@
+[@移动端万能商人]
+{
+
+
+#IF
+EQUAL <$STR(U91)> 5
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 历练奖励 奖励装备 S$C_任务奖励_装备
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 历练奖励 奖励装备IDX S$C_任务奖励_展示
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 历练奖励 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 历练奖励 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 历练奖励 小还丹 S$C_任务奖励_药水
+#SAY
+<Img|show=4|y=-30|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}|bg=1|img=custom/hl/newtask/taskui_11.png>
+<Img|id=1|img=custom/hl/newtask/taskui_2.png|x=160|y=180>
+<Button|id=2|x=600|y=2|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=3|x=570|y=-5|width=70|height=70|link=@exit>
+<Text|id=4|outline=1|outlinecolor=0|a=0|x=60|y=80|color=103|size=18|text=恭喜勇士，你现在已经很强大了!请探索玛法大陆，击杀魔物获>
+<Text|id=5|outline=1|outlinecolor=0|a=0|x=60|y=100|color=103|size=18|text=得材料与货币，努力提升转生与官职等阶吧！>
+<ListView|id=12|x=160|y=215|children={101,102,103,104,105,106}|direction=2|bounce=1|margin=1|width=300|height=70>
+<ItemShow|id=101|width=70|height=70|itemid=6|itemcount=<$STR(S$C_任务奖励_经验)>|showtips=1|bgtype=1>
+<ItemShow|id=102|width=70|height=70|itemid=40088|itemcount=<$STR(S$C_任务奖励_药水)>|showtips=1|bgtype=1>
+<ItemShow|id=103|width=70|height=70|itemid=4|itemcount=<$STR(S$C_任务奖励_绑元)>|showtips=1|bgtype=1>
+<ItemShow|id=104|width=70|height=70|itemid=<$STR(S$C_任务奖励_展示)>|itemcount=1|showtips=1|bgtype=1>
+<Button|x=232|y=300|id=13|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=一路前行|color=103|size=18|link=@主线4>
+<Text|id=14|outline=2|outlinecolor=0|a=0|x=265|y=5|color=103|size=18|text=新手历练>
+<COUNTDOWN|id=15|a=0|x=280|y=355|time=5|count=1|size=16|color=224|link=@主线4>
+
+#IF
+EQUAL <$STR(U91)> 9
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 初露锋芒 奖励装备 S$C_任务奖励_装备
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 初露锋芒 奖励装备IDX S$C_任务奖励_展示
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 初露锋芒 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 初露锋芒 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 初露锋芒 小还丹 S$C_任务奖励_药水
+#SAY
+<Img|show=4|y=-30|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}|bg=1|img=custom/hl/newtask/taskui_11.png>
+<Img|id=1|img=custom/hl/newtask/taskui_2.png|x=160|y=180>
+<Button|id=2|x=600|y=2|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=3|x=570|y=-5|width=70|height=70|link=@exit>
+<Text|id=4|outline=1|outlinecolor=0|a=0|x=60|y=80|color=103|size=18|text=恭喜勇士，你现在已经初露锋芒了!请继续猎杀魔物获取转生材>
+<Text|id=5|outline=1|outlinecolor=0|a=0|x=60|y=100|color=103|size=18|text=料与装备，努力提升转生等阶迎接将来的挑战吧！>
+<ListView|id=12|x=160|y=215|children={101,102,103,104,105,106}|direction=2|bounce=1|margin=1|width=300|height=70>
+<ItemShow|id=101|width=70|height=70|itemid=6|itemcount=<$STR(S$C_任务奖励_经验)>|showtips=1|bgtype=1>
+<ItemShow|id=102|width=70|height=70|itemid=40088|itemcount=<$STR(S$C_任务奖励_药水)>|showtips=1|bgtype=1>
+<ItemShow|id=103|width=70|height=70|itemid=4|itemcount=<$STR(S$C_任务奖励_绑元)>|showtips=1|bgtype=1>
+<ItemShow|id=104|width=70|height=70|itemid=<$STR(S$C_任务奖励_展示)>|itemcount=1|showtips=1|bgtype=1>
+<Button|x=232|y=300|id=13|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=一路前行|color=103|size=18|link=@主线6>
+<Text|id=14|outline=2|outlinecolor=0|a=0|x=265|y=5|color=103|size=18|text=初露锋芒>
+<COUNTDOWN|id=15|a=0|x=280|y=355|time=5|count=1|size=16|color=224|link=@主线6>
+
+#IF
+EQUAL <$STR(U91)> 13
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 闻名四方 奖励装备 S$C_任务奖励_装备
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 闻名四方 奖励装备IDX S$C_任务奖励_展示
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 闻名四方 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 闻名四方 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 闻名四方 小还丹 S$C_任务奖励_药水
+#SAY
+<Img|show=4|y=-30|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}|bg=1|img=custom/hl/newtask/taskui_11.png>
+<Img|id=1|img=custom/hl/newtask/taskui_2.png|x=160|y=180>
+<Button|id=2|x=600|y=2|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=3|x=570|y=-5|width=70|height=70|link=@exit>
+<Text|id=4|outline=1|outlinecolor=0|a=0|x=60|y=80|color=103|size=18|text=恭喜勇士，你现在已经闻名四方了!请继续猎杀魔物获取转生材>
+<Text|id=5|outline=1|outlinecolor=0|a=0|x=60|y=100|color=103|size=18|text=料与装备，努力提升转生等阶迎接将来的挑战吧！>
+<ListView|id=12|x=160|y=215|children={101,102,103,104,105,106}|direction=2|bounce=1|margin=1|width=300|height=70>
+<ItemShow|id=101|width=70|height=70|itemid=6|itemcount=<$STR(S$C_任务奖励_经验)>|showtips=1|bgtype=1>
+<ItemShow|id=102|width=70|height=70|itemid=40088|itemcount=<$STR(S$C_任务奖励_药水)>|showtips=1|bgtype=1>
+<ItemShow|id=103|width=70|height=70|itemid=4|itemcount=<$STR(S$C_任务奖励_绑元)>|showtips=1|bgtype=1>
+<ItemShow|id=104|width=70|height=70|itemid=<$STR(S$C_任务奖励_展示)>|itemcount=1|showtips=1|bgtype=1>
+<Button|x=232|y=300|id=13|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=一路前行|color=103|size=18|link=@主线8>
+<Text|id=14|outline=2|outlinecolor=0|a=0|x=265|y=5|color=103|size=18|text=闻名四方>
+<COUNTDOWN|id=15|a=0|x=280|y=355|time=5|count=1|size=16|color=224|link=@主线8>
+
+#IF
+EQUAL <$STR(U91)> 17
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 笑傲江湖 奖励装备 S$C_任务奖励_装备
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 笑傲江湖 奖励装备IDX S$C_任务奖励_展示
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 笑傲江湖 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 笑傲江湖 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 笑傲江湖 小还丹 S$C_任务奖励_药水
+#SAY
+<Img|show=4|y=-30|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}|bg=1|img=custom/hl/newtask/taskui_11.png>
+<Img|id=1|img=custom/hl/newtask/taskui_2.png|x=160|y=180>
+<Button|id=2|x=600|y=2|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=3|x=570|y=-5|width=70|height=70|link=@exit>
+<Text|id=4|outline=1|outlinecolor=0|a=0|x=60|y=80|color=103|size=18|text=恭喜勇士，你现在已经笑傲江湖了!请继续猎杀魔物获取转生材>
+<Text|id=5|outline=1|outlinecolor=0|a=0|x=60|y=100|color=103|size=18|text=料与装备，努力提升转生等阶迎接将来的挑战吧！>
+<ListView|id=12|x=160|y=215|children={101,102,103,104,105,106}|direction=2|bounce=1|margin=1|width=300|height=70>
+<ItemShow|id=101|width=70|height=70|itemid=6|itemcount=<$STR(S$C_任务奖励_经验)>|showtips=1|bgtype=1>
+<ItemShow|id=102|width=70|height=70|itemid=40088|itemcount=<$STR(S$C_任务奖励_药水)>|showtips=1|bgtype=1>
+<ItemShow|id=103|width=70|height=70|itemid=4|itemcount=<$STR(S$C_任务奖励_绑元)>|showtips=1|bgtype=1>
+<ItemShow|id=104|width=70|height=70|itemid=<$STR(S$C_任务奖励_展示)>|itemcount=1|showtips=1|bgtype=1>
+<Button|x=232|y=300|id=13|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=一路前行|color=103|size=18|link=@主线10>
+<Text|id=14|outline=2|outlinecolor=0|a=0|x=265|y=5|color=103|size=18|text=笑傲江湖>
+<COUNTDOWN|id=15|a=0|x=280|y=355|time=5|count=1|size=16|color=224|link=@主线10>
+
+#OR
+EQUAL <$STR(U91)> 5
+EQUAL <$STR(U91)> 9
+EQUAL <$STR(U91)> 13
+EQUAL <$STR(U91)> 17
+#ACT
+break
+
+#IF
+#ACT
+#SAY
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4>
+<Img|a=4|id=10|percentx=50|percenty=50|children={11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,100}|img=custom/hl/hl_ui/hl_bg.png>
+<Img|id=11|img=custom/hl/hl_ui/fg_1.png|x=135|y=60|height=449>
+<Text|id=12|outline=2|outlinecolor=0|a=0|x=347|y=5|color=103|size=20|text=万能商人>
+<Button|id=13|x=770|y=5|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=14|x=765|y=0|width=70|height=70|link=@exit>
+<Button|id=15|children={201}|x=20|y=62|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=快捷功能|color=100|size=18>
+<Button|id=16|children={202}|x=20|y=103|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=转职变性|color=10|size=18|link=@移动端转职变性>
+<Button|id=17|children={203}|x=20|y=145|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=元宝兑换|color=10|size=18|link=@移动端元宝兑换>
+<Text|id=19|outline=1|outlinecolor=0|a=0|x=290|y=90|color=151|size=20|text=10火龙币>
+<Button|x=250|y=120|id=20|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=一键满血|color=103|size=18|link=@移动端一键满血>
+<Button|x=500|y=120|id=21|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=我的仓库|color=103|size=18|link=@移动端打开仓库>
+
+[@主线4]
+
+#IF
+EQUAL <$STR(U91)> 5
+#ACT
+MOV U91 6
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_任务奖励_装备)> 1 0 1 0 1 1 1 1 1
+NEWCOMPLETETASK 4
+NEWDELETETASK 4
+NEWPICKTASK 5 <$STR(N$转生任务材料一)> <$STR(N$转生任务材料二)>
+close
+
+#IF
+CHECKRENEWLEVEL > 0
+#ACT
+MOV U91 7
+MOV U92 0
+NEWCHANGETASK 5
+break
+#ELSEACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\人物转生\转生配置.ini 0转 下级ybsl s$c_第一次价格
+GOTO @新手一转任务引导
+break
+
+[@新手一转任务引导]
+#IF
+checkitem 天精岩【一转】 3
+checkitem 地狱火【一转】 3
+CheckBindMoney 元宝 ? <$STR(s$c_第一次价格)>
+#ACT
+OPENNPCSHOWEX 36
+#ELSEACT
+OPENNPCSHOWEX 22
+break
+
+
+[@主线6]
+
+#IF
+EQUAL <$STR(U91)> 9
+#ACT
+MOV U91 10
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_任务奖励_装备)> 1 0 1 0 1 1 1 1 1
+NEWCOMPLETETASK 6
+NEWDELETETASK 6
+NEWPICKTASK 7 <$STR(N$转生任务材料一)> <$STR(N$转生任务材料二)>
+close
+
+#IF
+CHECKRENEWLEVEL > 1
+#ACT
+MOV U91 11
+NEWCHANGETASK 7
+break
+#ELSEACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=230|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=220|direction=1|bounce=0|margin=10|default=1|x=42|y=20> 
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=开始转生|color=224|size=18|link=@任务访问转生>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=进阶地图|color=103|size=18|link=@55级去进阶地图>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=一转地图|color=103|size=18|link=@55级去一转地图>
+INC S$C_任务界面 <Button|id=14|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速获得|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+[@主线8]
+
+#IF
+EQUAL <$STR(U91)> 13
+#ACT
+MOV U91 14
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_任务奖励_装备)> 1 0 1 0 1 1 1 1 1
+NEWCOMPLETETASK 8
+NEWDELETETASK 8
+NEWPICKTASK 9 <$STR(N$转生任务材料一)> <$STR(N$转生任务材料二)>
+close
+
+#IF
+CHECKRENEWLEVEL > 2
+#ACT
+MOV U91 15
+NEWCHANGETASK 9
+break
+#ELSEACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=25> 
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=开始转生|color=224|size=18|link=@任务访问转生>
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=二转地图|color=103|size=18|link=@70级去蜈蚣洞>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+[@主线10]
+
+#IF
+EQUAL <$STR(U91)> 17
+#ACT
+MOV U91 18
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$C_任务奖励_装备)> 1 0 1 0 1 1 1 1 1
+NEWCOMPLETETASK 10
+NEWDELETETASK 10
+NEWPICKTASK 11 <$STR(N$转生任务材料一)> <$STR(N$转生任务材料二)>
+close
+
+#IF
+CHECKRENEWLEVEL > 3
+#ACT
+MOV U91 19
+NEWCHANGETASK 11
+break
+#ELSEACT
+DELBUTTON 110 50
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
+INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
+INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=20>
+INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=开始转生|color=224|size=18|link=@任务访问转生> 
+INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=三转地图|color=103|size=18|link=@90级去祖玛>
+INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
+ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+break
+
+
+
+[@移动端转职变性]
+
+#IF
+#ACT
+#SAY
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4>
+<Img|a=4|id=10|percentx=50|percenty=50|children={11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,100}|img=custom/hl/hl_ui/hl_bg.png>
+<Img|id=11|img=custom/hl/hl_ui/fg_1.png|x=135|y=60|height=449>
+<Text|id=12|outline=2|outlinecolor=0|a=0|x=347|y=5|color=103|size=20|text=转职变性>
+<Button|id=13|x=770|y=5|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=14|x=765|y=0|width=70|height=70|link=@exit>
+<Button|id=15|children={201}|x=20|y=62|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=快捷功能|color=10|size=18|link=@移动端万能商人>
+<Button|id=16|children={202}|x=20|y=103|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=转职变性|color=100|size=18>
+<Button|id=17|children={203}|x=20|y=145|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=元宝兑换|color=10|size=18|link=@移动端元宝兑换>
+<Text|id=19|outline=1|outlinecolor=0|a=0|x=280|y=90|color=151|size=20|text=9800火龙币>
+<Button|x=250|y=120|id=20|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=变成男人|color=103|size=18|link=@移动端变成男人>
+<Text|id=21|outline=1|outlinecolor=0|a=0|x=530|y=90|color=151|size=20|text=9800火龙币>
+<Button|x=500|y=120|id=22|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=变成女人|color=103|size=18|link=@移动端变成女人>
+<Text|id=23|outline=1|outlinecolor=0|a=0|x=225|y=190|color=151|size=20|text=10000火龙币>
+<Button|x=200|y=220|id=24|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=转为战士|color=103|size=18|link=@移动端变成战士>
+<Text|id=25|outline=1|outlinecolor=0|a=0|x=400|y=190|color=151|size=20|text=10000火龙币>
+<Button|x=375|y=220|id=26|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=转为法师|color=103|size=18|link=@移动端变成法师>
+<Text|id=27|outline=1|outlinecolor=0|a=0|x=570|y=190|color=151|size=20|text=10000火龙币>
+<Button|x=545|y=220|id=28|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=转为道士|color=103|size=18|link=@移动端变成道士>
+
+<Text|id=29|outline=1|outlinecolor=0|a=0|x=210|y=300|color=224|size=18|text=温馨提示：>
+<Text|id=30|outline=1|outlinecolor=0|a=0|x=310|y=300|color=103|size=18|text=变性之后会强制小退，以完成角色外观的切换！>
+
+[@移动端元宝兑换]
+
+#IF
+#ACT
+#SAY
+<Img|show=4|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4>
+<Img|a=4|id=10|percentx=50|percenty=50|children={11,12,13,14,15,16,17,18,19,20,21,22,23,24}|img=custom/hl/hl_ui/hl_bg.png>
+<Img|id=11|img=custom/hl/hl_ui/fg_1.png|x=135|y=60|height=449>
+<Text|id=12|outline=2|outlinecolor=0|a=0|x=347|y=5|color=103|size=20|text=元宝兑换>
+<Button|id=13|x=770|y=5|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=14|x=765|y=0|width=70|height=70|link=@exit>
+<Button|id=15|children={201}|x=20|y=62|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=快捷功能|color=10|size=18|link=@移动端万能商人>
+<Button|id=16|children={202}|x=20|y=103|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=转职变性|color=10|size=18|link=@移动端转职变性>
+<Button|id=17|children={203}|x=20|y=145|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=元宝兑换|color=100|size=18>
+
+<Img|id=19|children={111,112,113,114,115,116}|img=custom/hl/wanneng/bg_02.png|x=210|y=65>
+<ItemShow|id=111|x=20|y=45|width=70|height=70|itemid=40050|itemcount=1|showtips=1|bgtype=1>
+<Button|x=110|y=90|id=112|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|width=80|height=30|text=兑换|color=103|size=18|link=@移动端兑换5W>
+<Text|id=113|outline=1|outlinecolor=0|a=0|x=80|y=8|color=151|size=18|text=5W元宝>
+<Text|id=114|outline=1|outlinecolor=0|a=0|x=100|y=35|color=103|size=18|text=　  消耗\50000元宝>
+
+<Img|id=20|children={121,122,123,124,125,126}|img=custom/hl/wanneng/bg_02.png|x=450|y=65>
+<ItemShow|id=121|x=20|y=45|width=70|height=70|itemid=40051|itemcount=1|showtips=1|bgtype=1>
+<Button|x=110|y=90|id=122|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|width=80|height=30|text=兑换|color=103|size=18|link=@移动端兑换10W>
+<Text|id=123|outline=1|outlinecolor=0|a=0|x=80|y=8|color=151|size=18|text=10W元宝>
+<Text|id=124|outline=1|outlinecolor=0|a=0|x=100|y=35|color=103|size=18|text=　  消耗\100000元宝>
+
+<Img|id=21|children={131,132,133,134,135,136}|img=custom/hl/wanneng/bg_02.png|x=210|y=200>
+<ItemShow|id=131|x=20|y=45|width=70|height=70|itemid=40052|itemcount=1|showtips=1|bgtype=1>
+<Button|x=110|y=90|id=132|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|width=80|height=30|text=兑换|color=103|size=18|link=@移动端兑换20W>
+<Text|id=133|outline=1|outlinecolor=0|a=0|x=80|y=8|color=151|size=18|text=20W元宝>
+<Text|id=134|outline=1|outlinecolor=0|a=0|x=100|y=35|color=103|size=18|text=　  消耗\200000元宝>
+
+<Img|id=22|children={141,142,143,144,145,146}|img=custom/hl/wanneng/bg_02.png|x=450|y=200>
+<ItemShow|id=141|x=20|y=45|width=70|height=70|itemid=40053|itemcount=1|showtips=1|bgtype=1>
+<Button|x=110|y=90|id=142|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|width=80|height=30|text=兑换|color=103|size=18|link=@移动端兑换50W>
+<Text|id=143|outline=1|outlinecolor=0|a=0|x=80|y=8|color=151|size=18|text=50W元宝>
+<Text|id=144|outline=1|outlinecolor=0|a=0|x=100|y=35|color=103|size=18|text=　  消耗\500000元宝>
+
+<Img|id=23|children={151,152,153,154,155,156}|img=custom/hl/wanneng/bg_02.png|x=210|y=335>
+<ItemShow|id=151|x=20|y=45|width=70|height=70|itemid=40054|itemcount=1|showtips=1|bgtype=1>
+<Button|x=110|y=90|id=152|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|width=80|height=30|text=兑换|color=103|size=18|link=@移动端兑换100W>
+<Text|id=153|outline=1|outlinecolor=0|a=0|x=80|y=8|color=151|size=18|text=100W元宝>
+<Text|id=154|outline=1|outlinecolor=0|a=0|x=100|y=35|color=103|size=18|text=　  消耗\1000000元宝>
+
+<Img|id=24|children={161,162,163,164,165,166}|img=custom/hl/wanneng/bg_02.png|x=450|y=335>
+<ItemShow|id=161|x=20|y=45|width=70|height=70|itemid=40055|itemcount=1|showtips=1|bgtype=1>
+<Button|x=110|y=90|id=162|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|width=80|height=30|text=兑换|color=103|size=18|link=@移动端兑换500W>
+<Text|id=163|outline=1|outlinecolor=0|a=0|x=80|y=8|color=151|size=18|text=500W元宝>
+<Text|id=164|outline=1|outlinecolor=0|a=0|x=100|y=35|color=103|size=18|text=　  消耗\5000000元宝>
+
+
+[@移动端一键满血]
+#IF
+CheckHpPer > 95
+CheckMpPer > 95
+#ACT
+SENDMSG 9 <font color='#00FF00'>提示：你当前非常健康，无需此服务！</font>
+break
+
+#IF
+checkmoney 火龙币 ? 10
+#ACT
+money 火龙币 - 10
+AddhpPer + 100
+AddmpPer + 100
+INC U120 10
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+SENDMSG 9 <font color='#00FF00'>提示：已为您恢复至满血状态！</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：费用不足！</font>
+break
+
+
+[@移动端打开仓库]
+#IF
+#ACT
+OPENSTORAGE
+break
+
+[@移动端变成男人]
+#IF
+checkmoney 火龙币 ? 9800
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：费用不足！</font>
+break
+
+#IF
+gender man
+#ACT
+SENDMSG 9 <font color='#FF0000'>提示：别来捣乱！</font>
+break
+#ELSEACT
+money 火龙币 - 9800
+CHANGEGENDER 0
+INC U120 9800
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+GOTO @变性取消天下第一
+SENDMSG 9 <font color='#00FF00'>呵呵，你已经变成一位猛男了!</font>
+break
+
+[@移动端变成女人]
+#IF
+checkmoney 火龙币 ? 9800
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：费用不足！</font>
+break
+
+#IF
+gender woman
+#ACT
+SENDMSG 9 <font color='#FF0000'>提示：别来捣乱！</font>
+break
+#ELSEACT
+money 火龙币 - 9800
+CHANGEGENDER 1
+INC U120 9800
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+GOTO @变性取消天下第一
+SENDMSG 9 <font color='#00FF00'>呵呵，你已经变成一位淑女了!</font>
+break
+
+
+[@移动端变成战士]
+#IF
+CHECKJOB Warrior
+#ACT
+SENDMSG 9 <font color='#FF0000'>提示：你本身就是一名战士呀！</font>
+break
+
+#IF
+checkmoney 火龙币 ? 10000
+#ACT
+KILLSLAVE
+CLEARSKILL
+money 火龙币 - 10000
+CHANGEJOB Warrior
+ADDSKILL 基本剑术
+ADDSKILL 攻杀剑术
+ADDSKILL 刺杀剑术
+ADDSKILL 半月弯刀
+ADDSKILL 野蛮冲撞
+ADDSKILL 烈火剑法
+SKILLLEVEL 基本剑术 = 3
+SKILLLEVEL 攻杀剑术 = 3
+SKILLLEVEL 刺杀剑术 = 3
+SKILLLEVEL 半月弯刀 = 3
+SKILLLEVEL 野蛮冲撞 = 3
+SKILLLEVEL 烈火剑法 = 3
+INC U120 10000
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+GOTO @是否天下第一职业
+SENDMSG 9 <font color='#00FF00'>呵呵，你已经成为一名战士了!</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：费用不足！</font>
+break
+
+[@移动端变成法师]
+#IF
+CHECKJOB Wizard
+#ACT
+SENDMSG 9 <font color='#FF0000'>提示：你本身就是一名法师呀！</font>
+break
+
+#IF
+checkmoney 火龙币 ? 10000
+#ACT
+KILLSLAVE
+CLEARSKILL
+money 火龙币 - 10000
+CHANGEJOB Wizard
+ADDSKILL 大火球
+SKILLLEVEL 大火球 = 3
+ADDSKILL 抗拒火环
+ADDSKILL 地狱火
+ADDSKILL 诱惑之光
+ADDSKILL 瞬息移动
+SKILLLEVEL 抗拒火环 = 3
+SKILLLEVEL 地狱火 = 3
+SKILLLEVEL 诱惑之光 = 3
+SKILLLEVEL 瞬息移动 = 3
+ADDSKILL 雷电术
+ADDSKILL 爆裂火焰
+ADDSKILL 地狱雷光
+SKILLLEVEL 雷电术 = 3
+SKILLLEVEL 爆裂火焰 = 3
+SKILLLEVEL 地狱雷光 = 3
+ADDSKILL 火墙
+ADDSKILL 圣言术
+ADDSKILL 冰咆哮
+SKILLLEVEL 火墙 = 3
+SKILLLEVEL 圣言术 = 3
+SKILLLEVEL 冰咆哮 = 3
+ADDSKILL 疾光电影
+SKILLLEVEL 疾光电影 = 3
+ADDSKILL 魔法盾
+SKILLLEVEL 魔法盾 = 3
+INC U120 10000
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+GOTO @是否天下第一职业
+SENDMSG 9 <font color='#00FF00'>呵呵，你已经成为一名法师了!</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：费用不足！</font>
+break
+
+[@移动端变成道士]
+#IF
+CHECKJOB Taoist
+#ACT
+SENDMSG 9 <font color='#FF0000'>提示：你本身就是一名道士呀！</font>
+break
+
+#IF
+checkmoney 火龙币 ? 10000
+#ACT
+KILLSLAVE
+CLEARSKILL
+money 火龙币 - 10000
+CHANGEJOB Taoist
+ADDSKILL 治愈术
+SKILLLEVEL 治愈术 = 3
+ADDSKILL 精神力战法
+SKILLLEVEL 精神力战法 = 3
+ADDSKILL 施毒术
+SKILLLEVEL 施毒术 = 3
+ADDSKILL 召唤神兽
+SKILLLEVEL 召唤神兽 = 3
+ADDSKILL 灵魂火符
+ADDSKILL 困魔咒
+SKILLLEVEL 灵魂火符 = 3
+SKILLLEVEL 困魔咒 = 3
+ADDSKILL 神圣战甲术
+ADDSKILL 幽灵盾
+ADDSKILL 群体治疗术
+SKILLLEVEL 神圣战甲术 = 3
+SKILLLEVEL 幽灵盾 = 3
+SKILLLEVEL 群体治疗术 = 3
+ADDSKILL 隐身术
+ADDSKILL 集体隐身术
+SKILLLEVEL 隐身术 = 3
+SKILLLEVEL 集体隐身术 = 3
+INC U120 10000
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+GOTO @是否天下第一职业
+SENDMSG 9 <font color='#00FF00'>呵呵，你已经成为一名道士了!</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：费用不足！</font>
+break
+
+
+[@变性取消天下第一]
+
+#IF
+EQUAL A273 <$USERNAME>
+#ACT
+MOV A273
+MOV A275
+CALCVAR HUMAN 顶戴展示八 =
+SAVEVAR HUMAN 顶戴展示八
+OPENHYPERLINK 34
+break
+
+#IF
+EQUAL A274 <$USERNAME>
+#ACT
+MOV A274
+MOV A276
+CALCVAR HUMAN 顶戴展示八 =
+SAVEVAR HUMAN 顶戴展示八
+OPENHYPERLINK 34
+break
+
+#IF
+#ACT
+OPENHYPERLINK 34
+
+[@是否天下第一职业]
+#OR
+EQUAL <$USERNAME> A261
+EQUAL <$USERNAME> A262
+EQUAL <$USERNAME> A263
+EQUAL <$USERNAME> A264
+EQUAL <$USERNAME> A265
+EQUAL <$USERNAME> A266
+#ACT
+#ELSEACT
+break
+
+#IF
+EQUAL <$USERNAME> A261
+#ACT
+MOV A261
+MOV A267
+DEPRIVETITLE 天下第一男战
+CALCVAR HUMAN 顶戴展示九 =
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+sendmsg 9 你改变了职业，天下第一男战士相关效果已消失！
+break
+
+#IF
+EQUAL <$USERNAME> A262
+#ACT
+MOV A262
+MOV A268
+DEPRIVETITLE 天下第一女战
+CALCVAR HUMAN 顶戴展示九 =
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+sendmsg 9 你改变了职业，天下第一女战士相关效果已消失！
+break
+
+#IF
+EQUAL <$USERNAME> A263
+#ACT
+MOV A263
+MOV A269
+DEPRIVETITLE 天下第一男法
+CALCVAR HUMAN 顶戴展示九 =
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+sendmsg 9 你改变了职业，天下第一男法师相关效果已消失！
+break
+
+#IF
+EQUAL <$USERNAME> A264
+#ACT
+MOV A264
+MOV A270
+DEPRIVETITLE 天下第一女法
+CALCVAR HUMAN 顶戴展示九 =
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+sendmsg 9 你改变了职业，天下第一女法师相关效果已消失！
+break
+
+#IF
+EQUAL <$USERNAME> A265
+#ACT
+MOV A265
+MOV A271
+DEPRIVETITLE 天下第一男道
+CALCVAR HUMAN 顶戴展示九 =
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+sendmsg 9 你改变了职业，天下第一男道士相关效果已消失！
+break
+
+#IF
+EQUAL <$USERNAME> A266
+#ACT
+MOV A266
+MOV A272
+DEPRIVETITLE 天下第一女道
+CALCVAR HUMAN 顶戴展示九 =
+SAVEVAR HUMAN 顶戴展示九
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+sendmsg 9 你改变了职业，天下第一女道士相关效果已消失！
+break
+
+[@移动端兑换5W]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：请整理背包，准备2个空位！</font>
+break
+
+#IF
+CHECKMONEY 元宝 ? 50000
+#ACT
+money 元宝 - 50000
+give 50000元宝 1
+SENDMSG 9 <font color='#00FF00'>兑换成功!</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：元宝不足！</font>
+break
+
+[@移动端兑换10W]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：请整理背包，准备2个空位！</font>
+break
+
+#IF
+CHECKMONEY 元宝 ? 100000
+#ACT
+money 元宝 - 100000
+give 10W元宝 1
+SENDMSG 9 <font color='#00FF00'>兑换成功!</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：元宝不足！</font>
+break
+
+[@移动端兑换20W]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：请整理背包，准备2个空位！</font>
+break
+
+#IF
+CHECKMONEY 元宝 ? 200000
+#ACT
+money 元宝 - 200000
+give 20W元宝 1
+SENDMSG 9 <font color='#00FF00'>兑换成功!</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：元宝不足！</font>
+break
+
+[@移动端兑换50W]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：请整理背包，准备2个空位！</font>
+break
+
+#IF
+CHECKMONEY 元宝 ? 500000
+#ACT
+money 元宝 - 500000
+give 50W元宝 1
+SENDMSG 9 <font color='#00FF00'>兑换成功!</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：元宝不足！</font>
+break
+
+[@移动端兑换100W]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：请整理背包，准备2个空位！</font>
+break
+
+#IF
+CHECKMONEY 元宝 ? 1000000
+#ACT
+money 元宝 - 1000000
+give 100W元宝 1
+SENDMSG 9 <font color='#00FF00'>兑换成功!</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：元宝不足！</font>
+break
+
+[@移动端兑换500W]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：请整理背包，准备2个空位！</font>
+break
+
+#IF
+CHECKMONEY 元宝 ? 5000000
+#ACT
+money 元宝 - 5000000
+give 500W元宝 1
+SENDMSG 9 <font color='#00FF00'>兑换成功!</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>提示：元宝不足！</font>
+break
+
+}

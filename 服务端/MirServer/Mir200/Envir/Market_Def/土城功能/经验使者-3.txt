@@ -1,0 +1,20 @@
+[@main]
+#IF
+EQUAL <$HUMAN(B_聚元丹次数)> ??
+#ACT
+VAR Integer HUMAN B_聚元丹次数
+#IF
+EQUAL <$HUMAN(B_高倍总经验值)> ??
+#ACT
+VAR Integer HUMAN B_高倍总经验值
+#IF
+EQUAL <$HUMAN(B_可恢复经验值)> ??
+#ACT
+VAR Integer HUMAN B_可恢复经验值
+#IF
+EQUAL <$HUMAN(B_可杀经验怪数量)> ??
+#ACT
+VAR Integer HUMAN B_可杀经验怪数量
+#IF
+#ACT
+#CALL [\游戏功能\系统功能\经验使者.txt] @启动经验使者

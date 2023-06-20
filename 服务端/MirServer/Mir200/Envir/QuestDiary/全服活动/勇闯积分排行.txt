@@ -1,0 +1,313 @@
+[@启动勇闯炼狱排行]
+{
+
+[@勇闯提醒面板]
+#IF
+EQUAL G231 1
+#ACT
+MOV N$临时炼狱时间 <$STR(G242)>
+DEC N$临时炼狱时间 <$UTCNOW8>
+DEC N$临时炼狱时间 3600
+MOV S$活动提示图标 <Layout|children={1,2,3,4,5,6,7,8}|x=-310|y=-180|width=180|height=200|color=x>
+INC S$活动提示图标 <Button|id=1|x=30|y=30|nimg=custom/hl/hdtb_ui/tiaozhan.png|link=@勇闯炼狱提醒按钮>
+INC S$活动提示图标 <TIMETIPS|id=2|x=35|y=100|time=<$STR(N$临时炼狱时间)>|color=191|size=18|outline=2|outlinecolor=0>
+ADDBUTTON 107 18 <$STR(S$活动提示图标)>
+break
+#IF
+EQUAL G231 2
+#ACT
+MOV S$活动提示图标 <Layout|children={1,2,3,4,5,6,7,8}|x=-310|y=-180|width=180|height=200|color=x>
+INC S$活动提示图标 <Button|id=1|x=30|y=30|nimg=custom/hl/hdtb_ui/tiaozhan.png|link=@勇闯炼狱提醒按钮>
+INC S$活动提示图标 <Text|id=2|x=40|y=100|color=250|size=18|outline=2|outlinecolor=0|text=已开启>
+ADDBUTTON 107 18 <$STR(S$活动提示图标)>
+break
+
+[@更新炼狱面板判断]
+#IF
+EQUAL <$HUMAN(B_勇闯炼狱积分)> ??
+#ACT
+VAR Integer HUMAN B_勇闯炼狱积分
+#IF
+NOT CheckContainsText <$map> ycly
+#ACT
+BREAK
+#IF
+#ACT
+MOV N$剩余炼狱时间 <$STR(G242)>
+DEC N$剩余炼狱时间 <$UTCNOW8>
+#IF
+EQUAL N$炼狱显示面板 0
+#ACT
+GOTO @勇闯任务面板
+#ELSEACT
+GOTO @勇闯积分面板
+
+
+[@勇闯任务面板]
+#IF
+EQUAL <$MAP> ycly1
+#ACT
+MOV N$需要令牌数 5
+MOV N$本层BOSS击杀状态 <$STR(G232)>
+MOV S$层数 [活动]猪王
+MOV N$奖励ID 40703
+#IF
+EQUAL <$MAP> ycly2
+#ACT
+MOV N$需要令牌数 6
+MOV N$本层BOSS击杀状态 <$STR(G233)>
+MOV S$层数 [活动]尸王
+MOV N$奖励ID 40702
+#IF
+EQUAL <$MAP> ycly3
+#ACT
+MOV N$需要令牌数 7
+MOV N$本层BOSS击杀状态 <$STR(G234)>
+MOV S$层数 [活动]牛魔王
+MOV N$奖励ID 40701
+#IF
+EQUAL <$MAP> ycly4
+#ACT
+MOV N$需要令牌数 8
+MOV N$本层BOSS击杀状态 <$STR(G235)>
+MOV S$层数 [活动]双头金刚
+MOV N$奖励ID 40700
+#IF
+EQUAL <$MAP> ycly5
+#ACT
+MOV N$需要令牌数 9
+MOV N$本层BOSS击杀状态 <$STR(G236)>
+MOV S$层数 [活动]双头血魔
+MOV N$奖励ID 40699
+#IF
+EQUAL <$MAP> ycly6
+#ACT
+MOV N$需要令牌数 10
+MOV N$本层BOSS击杀状态 <$STR(G237)>
+MOV S$层数 [活动]侍卫长
+MOV N$奖励ID 40698
+#IF
+EQUAL <$MAP> ycly7
+#ACT
+MOV N$需要令牌数 11
+MOV N$本层BOSS击杀状态 <$STR(G238)>
+MOV S$层数 [活动]神卫长
+MOV N$奖励ID 40697
+#IF
+EQUAL <$MAP> ycly8
+#ACT
+MOV N$需要令牌数 12
+MOV N$本层BOSS击杀状态 <$STR(G239)>
+MOV S$层数 [活动]火龙教主
+MOV N$奖励ID 40696
+#IF
+EQUAL <$MAP> ycly9
+#ACT
+MOV N$需要令牌数 13
+MOV N$本层BOSS击杀状态 <$STR(G240)>
+MOV S$层数 [活动]沃玛教主
+MOV N$奖励ID 40695
+#IF
+EQUAL <$MAP> ycly10
+#ACT
+MOV N$需要令牌数 14
+MOV N$本层BOSS击杀状态 <$STR(G241)>
+MOV S$层数 [活动]阿修罗
+MOV N$奖励ID 40694
+#IF
+#ACT
+DELBUTTON 110 16
+MOV S$勇闯任务面板  <Text|id=1|a=4|x=90|y=13|color=251|size=18|outline=2|outlinecolor=0|text=本层过关条件>
+INC S$勇闯任务面板  <Text|id=2|x=5|color=100|size=18|outline=2|outlinecolor=0|text=击败:>
+INC S$勇闯任务面板  <Text|id=3|x=5|y=45|color=250|size=18|outline=2|outlinecolor=0|text=<$STR(S$层数)>|link=@备用无用>
+INC S$勇闯任务面板  <Text|id=4|x=150|y=45|color=100|size=18|outline=2|outlinecolor=0|text=(<$STR(N$本层BOSS击杀状态)>/1)>
+INC S$勇闯任务面板  <Text|id=5|x=5|y=72|color=100|size=18|outline=2|outlinecolor=0|text=所需炼狱令牌:　　<$STR(N$需要令牌数)>>
+INC S$勇闯任务面板  <Text|id=6|x=30|y=98|color=100|size=18|outline=2|outlinecolor=0|text=进入下一层奖励>
+INC S$勇闯任务面板  <ItemShow|id=7|itemid=2|itemcount=1|showtips=1|bgtype=1|x=30|y=120|scale=0.9>
+INC S$勇闯任务面板  <ItemShow|id=8|itemid=<$STR(N$奖励ID)>|itemcount=1|showtips=1|bgtype=1|x=100|y=120|scale=0.9>
+INC S$勇闯任务面板 <Img|x=225|y=70|img=custom/hl/hdtb_ui/duobaoph.png|link=@显示勇闯炼狱榜单>
+INC S$勇闯任务面板 <Img|x=225|y=130|img=custom/hl/hdtb_ui/duobaotc.png|link=@退出勇闯炼狱>
+INC S$勇闯任务面板 <TIMETIPS|time=<$STR(N$剩余炼狱时间)>|color=191|size=18|outline=2|outlinecolor=0|x=220|y=185>
+GOTO @勇闯条件判定
+#IF
+#ACT
+ADDBUTTON 110 15 <$STR(S$勇闯任务面板)>
+
+
+[@勇闯积分面板]
+#IF
+#ACT
+MOV S$勇闯积分排行面板 <ListView|children={1,2,3,4,5,6,7,8,9,10,11,12}|x=0|y=0|width=200|height=160|margin=0|bounce=0|direction=1|color=x>
+INC S$勇闯积分排行面板 <Layout|id=1|children={110,111}|width=200|height=25|color=x>
+INC S$勇闯积分排行面板 <Text|id=110|a=4|percentx=45|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=勇闯炼狱积分榜>
+;INC S$勇闯积分排行面板 <COUNTDOWN|id=111|a=4|percentx=90|percenty=50|time=10|count=1|size=18|color=249>
+INC S$勇闯积分排行面板 <Img|id=2|img=public/1900000667_1.png|width=200>
+INC S$勇闯积分排行面板 <RText|id=3|color=253|size=18|text=第一名:<$STR(A221)>\　　　积分:<<$STR(G221)>/FCOLOR=250>>
+INC S$勇闯积分排行面板 <RText|id=4|color=243|size=18|text=第二名:<$STR(A222)>\　　　积分:<<$STR(G222)>/FCOLOR=250>>
+INC S$勇闯积分排行面板 <RText|id=5|color=239|size=18|text=第三名:<$STR(A223)>\　　　积分:<<$STR(G223)>/FCOLOR=250>>
+INC S$勇闯积分排行面板 <RText|id=6|color=100|size=18|text=第四名:<$STR(A224)>\　　　积分:<<$STR(G224)>/FCOLOR=250>>
+INC S$勇闯积分排行面板 <RText|id=7|color=100|size=18|text=第五名:<$STR(A225)>\　　　积分:<<$STR(G225)>/FCOLOR=250>>
+INC S$勇闯积分排行面板 <RText|id=8|color=100|size=18|text=第六名:<$STR(A226)>\　　　积分:<<$STR(G226)>/FCOLOR=250>>
+INC S$勇闯积分排行面板 <RText|id=9|color=100|size=18|text=第七名:<$STR(A227)>\　　　积分:<<$STR(G227)>/FCOLOR=250>>
+INC S$勇闯积分排行面板 <RText|id=10|color=100|size=18|text=第八名:<$STR(A228)>\　　　积分:<<$STR(G228)>/FCOLOR=250>>
+INC S$勇闯积分排行面板 <RText|id=11|color=100|size=18|text=第九名:<$STR(A229)>\　　　积分:<<$STR(G229)>/FCOLOR=250>>
+INC S$勇闯积分排行面板 <RText|id=12|color=100|size=18|text=第十名:<$STR(A230)>\　　　积分:<<$STR(G230)>/FCOLOR=250>>
+INC S$勇闯积分排行面板 <Img|x=225|y=70|img=custom/hl/hdtb_ui/tiaozhan.png|width=59|height=59|link=@去勇闯任务面板>
+INC S$勇闯积分排行面板 <Img|x=225|y=130|img=custom/hl/hdtb_ui/duobaotc.png|link=@退出勇闯炼狱>
+INC S$勇闯积分排行面板 <TIMETIPS|time=<$STR(N$剩余炼狱时间)>|color=191|size=18|outline=2|outlinecolor=0|x=220|y=185>
+ADDBUTTON 110 15 <$STR(S$勇闯积分排行面板)>
+
+MOV S$我的积分面板 <ListView|children={1,2,3,4,5,6,7,8,9,10,11,12}|x=0|y=162|width=200|height=25|margin=0|bounce=0|direction=1|color=x>
+INC S$我的积分面板 <Img|id=1|img=public/1900000667_1.png|x=0|y=203|width=260>
+INC S$我的积分面板 <Layout|id=2|children={21,22}|width=200|height=22|color=x>
+INC S$我的积分面板 <RText|id=21|a=4|percentx=50|percenty=50|color=100|size=18|outline=2|outlinecolor=0|text=我的积分:<<$HUMAN(B_勇闯炼狱积分)>/FCOLOR=250>>
+;INC S$我的积分面板 <Button|id=22|a=4|percentx=12|percenty=50|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=返回|color=253|size=16|width=50|height=20|link=@查看通关任务>
+ADDBUTTON 110 16 <$STR(S$我的积分面板)>
+
+[@发放勇闯炼狱奖励]
+#IF
+#ACT
+DELBUTTON 110 15
+DELBUTTON 110 16
+DELBUTTON 107 18
+#CALL [\游戏功能\任务系统\主线流程.txt] @主线开始
+#IF
+CHECKVAR HUMAN B_勇闯炼狱积分 = 0
+#ACT
+BREAK
+
+#IF
+EQUAL A221 <$USERNAME>
+#ACT
+MailGIVE 勇闯炼狱·榜首 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在勇闯炼狱的突出表现系统给你准备了【勇闯炼狱·榜首】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A222 <$USERNAME>
+#ACT
+MailGIVE 勇闯炼狱·二 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在勇闯炼狱的突出表现系统给你准备了【勇闯炼狱·二】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A223 <$USERNAME>
+#ACT
+MailGIVE 勇闯炼狱·三 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在勇闯炼狱的突出表现系统给你准备了【勇闯炼狱·三】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A224 <$USERNAME>
+#ACT
+MailGIVE 勇闯炼狱·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在勇闯炼狱的突出表现系统给你准备了【勇闯炼狱·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A225 <$USERNAME>
+#ACT
+MailGIVE 勇闯炼狱·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在勇闯炼狱的突出表现系统给你准备了【勇闯炼狱·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A226 <$USERNAME>
+#ACT
+MailGIVE 勇闯炼狱·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在勇闯炼狱的突出表现系统给你准备了【勇闯炼狱·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A227 <$USERNAME>
+#ACT
+MailGIVE 勇闯炼狱·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在勇闯炼狱的突出表现系统给你准备了【勇闯炼狱·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A228 <$USERNAME>
+#ACT
+MailGIVE 勇闯炼狱·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在勇闯炼狱的突出表现系统给你准备了【勇闯炼狱·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A229 <$USERNAME>
+#ACT
+MailGIVE 勇闯炼狱·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在勇闯炼狱的突出表现系统给你准备了【勇闯炼狱·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+EQUAL A230 <$USERNAME>
+#ACT
+MailGIVE 勇闯炼狱·参与 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在勇闯炼狱的突出表现系统给你准备了【勇闯炼狱·参与】宝箱作为奖励,请提取
+BREAK
+#IF
+#ACT
+MailGIVE 10000绑定元宝 1 1#3#4#5#6#7#8
+SendMail 1 活动奖励 你好：<$USERNAME>\鉴于你在勇闯炼狱的突出表现系统给你准备了【10000绑定元宝】作为奖励,请提取
+
+[@勇闯条件判定]
+#IF
+EQUAL <$MAP> ycly1
+EQUAL U212 1
+#ACT
+INC S$勇闯任务面板 <Img|x=50|y=160|img=public/word_fubentg_01.png|width=100|height=30|rotate=330>
+BREAK
+#IF
+EQUAL <$MAP> ycly2
+EQUAL U213 1
+#ACT
+INC S$勇闯任务面板 <Img|x=50|y=160|img=public/word_fubentg_01.png|width=100|height=30|rotate=330>
+BREAK
+#IF
+EQUAL <$MAP> ycly3
+EQUAL U214 1
+#ACT
+INC S$勇闯任务面板 <Img|x=50|y=160|img=public/word_fubentg_01.png|width=100|height=30|rotate=330>
+BREAK
+#IF
+EQUAL <$MAP> ycly4
+EQUAL U215 1
+#ACT
+INC S$勇闯任务面板 <Img|x=50|y=160|img=public/word_fubentg_01.png|width=100|height=30|rotate=330>
+BREAK
+#IF
+EQUAL <$MAP> ycly5
+EQUAL U216 1
+#ACT
+INC S$勇闯任务面板 <Img|x=50|y=160|img=public/word_fubentg_01.png|width=100|height=30|rotate=330>
+BREAK
+#IF
+EQUAL <$MAP> ycly6
+EQUAL U217 1
+#ACT
+INC S$勇闯任务面板 <Img|x=50|y=160|img=public/word_fubentg_01.png|width=100|height=30|rotate=330>
+BREAK
+#IF
+EQUAL <$MAP> ycly7
+EQUAL U218 1
+#ACT
+INC S$勇闯任务面板 <Img|x=50|y=160|img=public/word_fubentg_01.png|width=100|height=30|rotate=330>
+BREAK
+#IF
+EQUAL <$MAP> ycly8
+EQUAL U219 1
+#ACT
+INC S$勇闯任务面板 <Img|x=50|y=160|img=public/word_fubentg_01.png|width=100|height=30|rotate=330>
+BREAK
+#IF
+EQUAL <$MAP> ycly9
+EQUAL U220 1
+#ACT
+INC S$勇闯任务面板 <Img|x=50|y=160|img=public/word_fubentg_01.png|width=100|height=30|rotate=330>
+BREAK
+#IF
+EQUAL <$MAP> ycly10
+EQUAL U221 1
+#ACT
+INC S$勇闯任务面板 <Img|x=50|y=160|img=public/word_fubentg_01.png|width=100|height=30|rotate=330>
+BREAK
+}
+
+
+
+
+
+
+
+

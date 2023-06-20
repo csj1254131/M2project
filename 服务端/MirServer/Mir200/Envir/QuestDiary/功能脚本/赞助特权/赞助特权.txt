@@ -1,0 +1,915 @@
+[@赞助特权]
+{
+#IF
+CHECKJOB  Warrior
+#ACT
+Mov s$职业序号 0
+#IF
+CHECKJOB  Wizard
+#ACT
+Mov s$职业序号 1
+#IF
+CHECKJOB  Taoist
+#ACT
+Mov s$职业序号 2
+#IF
+gender man
+#ACT
+Mov s$性别序号 0
+#IF
+gender woman
+#ACT
+Mov s$性别序号 1
+
+#IF
+#ACT
+mov N$B_tuw1 218
+mov N$B_tuh1 123
+mov N$B_tux1 10
+mov N$B_tuy1 20
+mov N$B_tuw2 248
+mov N$B_tuh2 144
+mov N$B_tux2 240
+mov N$B_tuy2 10
+mov N$B_tuw3 218
+mov N$B_tuh3 123
+mov N$B_tux3 500
+mov N$B_tuy3 20
+
+mov N$B_tu_1  1
+mov N$B_tu_2  2
+mov N$B_tu_3  3
+
+mov s$b_tu_4  zxhl_1
+Mov n$u13 <$Str(u13)>
+Inc n$u13 1
+Mov n$B_当前翻页 1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 会员类型  开通货币        s$开通货币
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 会员类型 <$Str(u13)>      s$当前特权
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 会员类型 <$Str(n$u13)>    s$下级特权
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 开通消耗    s$开通消耗
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 开通奖励_1 s$开通奖励_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 开通奖励_2 s$开通奖励_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 开通奖励_3 s$开通奖励_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 开通奖励_4 s$开通奖励_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 开通奖励_5 s$开通奖励_5
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 开通奖励_6_<$Str(s$职业序号)> s$开通奖励_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 开通奖励_7 s$开通奖励_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 开通奖励_8 s$开通奖励_8
+
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_1 s$奖励数量_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_2 s$奖励数量_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_3 s$奖励数量_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_4 s$奖励数量_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_5 s$奖励数量_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_6 s$奖励数量_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_7 s$奖励数量_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_8 s$奖励数量_8
+
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励名称_1 s$奖励名称_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励名称_2 s$奖励名称_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励名称_3 s$奖励名称_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励名称_4 s$奖励名称_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励名称_5 s$奖励名称_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励名称_6_<$Str(s$职业序号)> s$奖励名称_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_7 s$奖励数量_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_8 s$奖励数量_8
+
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_1 s$奖励数量_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_2 s$奖励数量_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_3 s$奖励数量_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_4 s$奖励数量_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_5 s$奖励数量_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_6 s$奖励数量_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_7 s$奖励数量_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 奖励数量_8 s$奖励数量_8
+
+#IF
+EQUAL n$B_当前翻页 3
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 开通奖励_5_<$Str(s$性别序号)> s$开通奖励_5
+
+#IF
+#ACT
+#CALL [\功能脚本\赞助特权\赞助红点.txt] @赞助红点
+Goto @特权状态检测
+
+[@特权状态检测]
+#IF
+LARGE  U13 0
+#ACT
+#ELSEACT
+Goto @赞助特权展示
+BREAK
+
+#IF
+EQUAL U14 1
+#ACT
+Mov n$B_当前翻页 0
+Goto @特权下页
+BREAK
+
+#IF
+EQUAL U15 1
+#ACT
+Mov n$B_当前翻页 1
+Goto @特权下页
+BREAK
+
+#IF
+EQUAL U16 1
+#ACT
+Mov n$B_当前翻页 2
+Goto @特权下页
+BREAK
+
+#IF
+#ACT
+Mov n$B_当前翻页 0
+Goto @特权下页
+
+[@赞助特权展示]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png>
+<Img|a=4|children={0,2,3,10,15}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|a=4|text=赞助特权|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Img|id=3|children={4,5,6,7,8}||img=custom/hl/zhanzhu_ui/zzbj_01.jpg|x=24|y=65>
+;当前特权
+<Img|a=4|id=4|img=custom/hl/zhanzhu_ui/wlzz_<$Str(u13)>.png|percentx=15|percenty=50>
+
+
+#IF
+SMALL u13 3
+#SAY
+<Text|id=5|a=4|text=需要|color=255|size=20|outline=2|outlinecolor=0|percentx=32|percenty=50>
+<Text|id=6|a=4|text=<$Str(s$开通消耗)>  <$STR(s$开通货币)>|color=251|size=20|outline=2|outlinecolor=0|percentx=45|percenty=50>
+<Text|id=7|a=4|text=即可购买<$STR(s$下级特权)>|color=255|size=20|outline=2|outlinecolor=0|percentx=66|percenty=50>
+<Button|a=4|id=8|children={9}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=89|percenty=50|link=@开通特权>
+<Text|a=4|id=9|text=立即开通|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+#ELSESAY
+<Text|id=5|a=4|text=已达到顶级特权|color=251|size=20|outline=2|outlinecolor=0|percentx=50|percenty=50>
+
+#IF
+#SAY
+<$Str(s$特权状态_1)>
+<$Str(s$特权状态_2)>
+<Layout|id=10|children={11,13}|x=24|y=178|width=50|height=50|color=x|width=730|height=40>
+<Button|a=4|id=11|children={12}|nimg=custom/hl/zhanzhu_ui/zzan_1.png|percentx=40|percenty=50>
+<Text|a=4|id=12|text=赞助福利|color=100|size=18|outline=2|outlinecolor=0|percentx=56|percenty=50>
+<Button|a=4|id=13|children={14}|nimg=custom/hl/zhanzhu_ui/zzan_4.png|percentx=55.5|percenty=50|link=@赞助福利>
+<Text|a=4|id=14|text=赞助特权|color=10|size=18|outline=2|outlinecolor=0|percentx=45|percenty=50>
+<Img|a=4|id=15|children={16,17,18,19,20,21,22,23}|img=custom/hl/zhanzhu_ui/zzbj_02.jpg|percentx=50|percenty=68>
+<Img|id=16|x=<$STR(N$B_tux1)>|y=<$STR(N$B_tuy1)>|img=custom/hl/zhanzhu_ui/tu<$str(N$B_tu_1)>.png|width=<$str(N$B_tuw1)>|height=<$str(N$B_tuh1)>|link=@特权_1>
+<Img|id=17|x=<$STR(N$B_tux2)>|y=<$STR(N$B_tuy2)>|img=custom/hl/zhanzhu_ui/tu<$str(N$B_tu_2)>.png|width=<$str(N$B_tuw2)>|height=<$str(N$B_tuh2)>|link=@特权_2>
+<Img|id=18|x=<$STR(N$B_tux3)>|y=<$STR(N$B_tuy3)>|img=custom/hl/zhanzhu_ui/tu<$str(N$B_tu_3)>.png|width=<$str(N$B_tuw3)>|height=<$str(N$B_tuh3)>|link=@特权_3>
+<Img|id=19|x=50|y=165|img=custom/hl/zhanzhu_ui/zxhl_<$str(n$u13)>.png>
+<Button|id=20|x=260|y=170|nimg=custom/hl/zhanzhu_ui/00486.png|width=40|height=20|link=@特权上页>
+<Button|id=21|x=420|y=170|nimg=custom/hl/zhanzhu_ui/00485.png|width=40|height=20|link=@特权下页>
+<Img|id=22|x=310|y=165|img=custom/hl/zhanzhu_ui/fyxs_<$str(n$u13)>.png>
+<Img|a=4|id=23|children={24,31}|img=custom/hl/zhanzhu_ui/wpbj.png|width=660|height=70|percentx=50|percenty=85|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+<ListView|a=4|id=24|children={25,26,27,28,29,30,40,41}|direction=2|bounce=0|margin=2|percentx=50|percenty=50|width=50|height=50|width=430|height=70|color=x>
+<ItemShow|id=25|itemid=<$Str(s$开通奖励_1)>|itemcount=1|showtips=1|bgtype=1|itemcount=<$Str(s$奖励数量_1)>>
+<ItemShow|id=26|itemid=<$Str(s$开通奖励_2)>|itemcount=1|showtips=1|bgtype=1|itemcount=<$Str(s$奖励数量_2)>>
+<ItemShow|id=27|itemid=<$Str(s$开通奖励_3)>|itemcount=1|showtips=1|bgtype=1|itemcount=<$Str(s$奖励数量_3)>>
+<ItemShow|id=28|itemid=<$Str(s$开通奖励_4)>|itemcount=1|showtips=1|bgtype=1|itemcount=<$Str(s$奖励数量_4)>>
+<ItemShow|id=29|itemid=<$Str(s$开通奖励_5)>|itemcount=1|showtips=1|bgtype=1|itemcount=<$Str(s$奖励数量_5)>>
+#IF
+SMALL n$B_当前翻页 3
+#SAY
+<ItemShow|id=30|itemid=<$Str(s$开通奖励_6)>|itemcount=1|showtips=1|bgtype=1|itemcount=<$Str(s$奖励数量_6)>>
+<ItemShow|id=40|itemid=<$Str(s$开通奖励_7)>|itemcount=1|showtips=1|bgtype=1|itemcount=<$Str(s$奖励数量_7)>>
+#OR
+EQUAL n$B_当前翻页 1
+EQUAL n$B_当前翻页 0
+#SAY
+<ItemShow|id=41|itemid=<$Str(s$开通奖励_8)>|itemcount=1|showtips=1|bgtype=1|itemcount=<$Str(s$奖励数量_8)>>
+#ACT
+[@开通特权]
+#IF
+#ACT
+Mov n$开通U13 <$Str(u13)>
+INC n$开通U13 1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 会员类型  开通货币          s$开通货币
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 会员类型 <$Str(n$开通U13)>     s$当前特权
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$当前特权)> 开通消耗 s$开通消耗
+
+#IF
+Not EQUAL s$开通货币
+LARGE s$开通消耗 0
+#ACT
+#ELSEACT
+BREAK
+#IF
+CHECKMONEY <$Str(s$开通货币)> ? <$Str(s$开通消耗)>
+#ACT
+INC U120 <$Str(s$开通消耗)>
+MONEY <$Str(s$开通货币)> - <$Str(s$开通消耗)>
+Inc u13 1
+#CALL [\功能脚本\赞助特权\赞助红点.txt] @赞助红点
+Goto @特权开通提示
+Goto @赞助特权
+BREAK
+#ELSEACT
+OPENHYPERLINK 26
+BREAK
+
+[@特权开通提示]
+#IF
+EQUAL U13 1
+#ACT
+MOV S$C_会员顶戴标识 50689
+#IF
+EQUAL U13 2
+#ACT
+MOV S$C_会员顶戴标识 50690
+#IF
+EQUAL U13 3
+#ACT
+MOV S$C_会员顶戴标识 50691
+
+#IF
+#ACT
+CALCVAR HUMAN 顶戴展示三 = <$STR(S$C_会员顶戴标识)>
+SAVEVAR HUMAN 顶戴展示三
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+
+
+
+#IF
+EQUAL U13  1
+#ACT
+Mov u14 1
+ChangeModeEx 14 210000000
+SetChatPrefix  [钻石会员] 168
+SENDMOVEMSG 0 255 0 120 1 恭喜{<$USERNAME>/FCOLOR=251}成为{钻石会员/FCOLOR=168}，专属防麻痹，打怪爆率<提高5%/FCOLOR=250>，元宝回收<提高20%/FCOLOR=250>，
+SENDMSG 0 恭喜{%s|251>成为{钻石会员|168}，专属防麻痹，打怪爆率{提高5%|250}，元宝回收{提高20%|250}
+#IF
+EQUAL U13  2
+#ACT
+Mov u15 1
+ChangeModeEx 14 210000000
+SetChatPrefix  [武林至尊] 242
+SENDMOVEMSG 0 255 0 120 1 恭喜{<$USERNAME>/FCOLOR=251}成为{武林至尊/FCOLOR=253}，专属防麻痹，打怪爆率<提高10%/FCOLOR=250>，元宝回收<提高50%/FCOLOR=250>，
+SENDMSG 0 恭喜{%s|251}成为{武林至尊|253}，专属防麻痹，打怪爆率{提高10%|250}，元宝回收{提高50%|250}
+#IF
+EQUAL U13  3
+#ACT
+Mov u16 1
+ChangeModeEx 14 210000000
+SetChatPrefix  [最强王者] 243
+SENDMOVEMSG 0 255 0 120 1 恭喜{<$USERNAME>/FCOLOR=251}成为{最强王者/FCOLOR=251}，专属防麻痹，打怪爆率<提高20%/FCOLOR=250>，元宝回收<提高50%/FCOLOR=250>，
+SENDMSG 0 恭喜{%s|251}成为{最强王者|251}，专属防麻痹，打怪爆率{提高20%|250}，元宝回收{提高50%|250}
+
+#IF
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\爆率刷新.txt] @爆率刷新
+
+
+
+[@赞助福利]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png>
+<Img|a=4|children={0,2,3,10,15}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|a=4|text=赞助特权|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Img|id=3|children={4,5,6,7,8}||img=custom/hl/zhanzhu_ui/zzbj_01.jpg|x=24|y=65>
+;当前特权
+<Img|a=4|id=4|img=custom/hl/zhanzhu_ui/wlzz_<$Str(u13)>.png|percentx=15|percenty=50>
+
+
+#IF
+SMALL u13 3
+#SAY
+<Text|id=5|a=4|text=需要|color=255|size=20|outline=2|outlinecolor=0|percentx=32|percenty=50>
+<Text|id=6|a=4|text=<$Str(s$开通消耗)>  <$STR(s$开通货币)>|color=251|size=20|outline=2|outlinecolor=0|percentx=45|percenty=50>
+<Text|id=7|a=4|text=即可购买<$STR(s$下级特权)>|color=255|size=20|outline=2|outlinecolor=0|percentx=66|percenty=50>
+<Button|a=4|id=8|children={9}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=89|percenty=50|link=@开通特权>
+<Text|a=4|id=9|text=立即开通|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+#ELSESAY
+<Text|id=5|a=4|text=已达到顶级特权|color=251|size=20|outline=2|outlinecolor=0|percentx=50|percenty=50>
+
+#IF
+#SAY
+
+<Layout|id=10|children={11,13}|x=24|y=178|width=50|height=50|color=x|width=730|height=40>
+<Button|a=4|id=11|children={12}|nimg=custom/hl/zhanzhu_ui/zzan_2.png|percentx=40|percenty=50|link=@赞助特权>
+<Text|a=4|id=12|text=赞助福利|color=10|size=18|outline=2|outlinecolor=0|percentx=56|percenty=50>
+<Button|a=4|id=13|children={14}|nimg=custom/hl/zhanzhu_ui/zzan_3.png|percentx=55.5|percenty=50>
+<Text|a=4|id=14|text=赞助特权|color=100|size=18|outline=2|outlinecolor=0|percentx=45|percenty=50>
+<Img|a=4|id=15|children={16,21}|img=custom/hl/zhanzhu_ui/zzbj_02.jpg|percentx=50|percenty=68>
+<Img|a=4|id=16|children={17,18,19,20}|img=custom/hl/zhanzhu_ui/btbj_1.jpg|percentx=50|percenty=8>
+<Img|a=4|id=17|img=custom/hl/zhanzhu_ui/bt_1.png|percentx=20|percenty=50>
+<Img|a=4|id=18|img=custom/hl/zhanzhu_ui/bt_2.png|percentx=51|percenty=50>
+<Img|a=4|id=19|img=custom/hl/zhanzhu_ui/bt_3.png|percentx=71|percenty=50>
+<Img|a=4|id=20|img=custom/hl/zhanzhu_ui/bt_4.png|percentx=91|percenty=50>
+<ListView|id=21|children={22,23,24,25,26,27,28,29,30,31,32,1300,33,34,35}|direction=1|bounce=0|margin=0|width=720|height=246|color=x|x=2|y=42>
+<Layout|id=22|children={220,221,222,223,224,225,226,227,228,229}|width=720|height=30|color=x>
+<Text|id=220|text=专属防麻痹|color=255|size=18|outline=2|outlinecolor=0|x=100|y=0>
+<Img|id=221|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Img|id=223|img=custom/hl/zhanzhu_ui/gx_2.png|x=346|y=0>
+<Img|id=224|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Img|id=225|img=custom/hl/zhanzhu_ui/gx_2.png|x=490|y=0>
+<Img|id=226|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Img|id=227|img=custom/hl/zhanzhu_ui/gx_2.png|x=634|y=0>
+<Img|id=228|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+
+;1
+<Layout|id=23|children={230,231,232,233,234,235,236,237,238,239}|width=720|height=30|color=x>
+<Text|id=230|text=专属赞助称号|color=255|size=18|outline=2|outlinecolor=0|x=92|y=0>
+<Img|id=231|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Text|id=233|text=钻石会员|color=255|size=18|outline=2|outlinecolor=0|x=330|y=0>
+<Img|id=234|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Text|id=235|text=武林至尊|color=255|size=18|outline=2|outlinecolor=0|x=474|y=0>
+<Img|id=236|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Text|id=237|text=最强王者|color=255|size=18|outline=2|outlinecolor=0|x=616|y=0>
+<Img|id=238|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+;2
+<Layout|id=24|children={240,241,242,243,244,245,246,247,248,249}|width=720|height=30|color=x>
+<Text|id=240|text=免费进入地图|color=255|size=18|outline=2|outlinecolor=0|x=92|y=0>
+<Img|id=241|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Img|id=243|img=custom/hl/zhanzhu_ui/gx_2.png|x=346|y=0>
+<Img|id=244|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Img|id=245|img=custom/hl/zhanzhu_ui/gx_2.png|x=490|y=0>
+<Img|id=246|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Img|id=247|img=custom/hl/zhanzhu_ui/gx_2.png|x=634|y=0>
+<Img|id=248|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+;3
+<Layout|id=25|children={250,251,252,253,254,255,256,257,258,259}|width=720|height=30|color=x>
+<Text|id=250|text=额外回收比例|color=255|size=18|outline=2|outlinecolor=0|x=92|y=0>
+<Img|id=251|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Text|id=253|text=20%|color=255|size=18|outline=2|outlinecolor=0|x=350|y=0>
+<Img|id=254|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Text|id=255|text=50%|color=255|size=18|outline=2|outlinecolor=0|x=494|y=0>
+<Img|id=256|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Text|id=257|text=50%|color=255|size=18|outline=2|outlinecolor=0|x=636|y=0>
+<Img|id=258|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+
+;4
+<Layout|id=26|children={260,261,262,263,264,265,266,267,268,269}|width=720|height=30|color=x>
+<Text|id=260|text=打怪额外爆率|color=255|size=18|outline=2|outlinecolor=0|x=92|y=0>
+<Img|id=261|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Text|id=263|text=5%|color=255|size=18|outline=2|outlinecolor=0|x=352|y=0>
+<Img|id=264|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Text|id=265|text=10%|color=255|size=18|outline=2|outlinecolor=0|x=494|y=0>
+<Img|id=266|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Text|id=267|text=20%|color=255|size=18|outline=2|outlinecolor=0|x=636|y=0>
+<Img|id=268|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+;5
+<Layout|id=27|children={270,271,272,273,274,275,276,277,278,279}|width=720|height=30|color=x>
+<Text|id=270|text=随身仓库|color=255|size=18|outline=2|outlinecolor=0|x=108|y=0>
+<Img|id=271|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Img|id=273|img=custom/hl/zhanzhu_ui/gx_2.png|x=346|y=0>
+<Img|id=274|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Img|id=275|img=custom/hl/zhanzhu_ui/gx_2.png|x=490|y=0>
+<Img|id=276|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Img|id=277|img=custom/hl/zhanzhu_ui/gx_2.png|x=634|y=0>
+<Img|id=278|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+
+;6
+<Layout|id=28|children={280,281,282,283,284,285,286,287,288,289}|width=720|height=30|color=x>
+<Text|id=280|text=专属聊天标识|color=255|size=18|outline=2|outlinecolor=0|x=96|y=0>
+<Img|id=281|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Img|id=283|img=custom/hl/zhanzhu_ui/gx_2.png|x=346|y=0>
+<Img|id=284|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Img|id=285|img=custom/hl/zhanzhu_ui/gx_2.png|x=490|y=0>
+<Img|id=286|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Img|id=287|img=custom/hl/zhanzhu_ui/gx_2.png|x=634|y=0>
+<Img|id=288|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+
+;7
+<Layout|id=29|children={290,291,292,293,294,295,296,297,298,299}|width=720|height=30|color=x>
+<Text|id=290|text=高级材料回收|color=255|size=18|outline=2|outlinecolor=0|x=96|y=0>
+<Img|id=291|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Img|id=293|img=custom/hl/zhanzhu_ui/gx_1.png|x=346|y=0>
+<Img|id=294|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Img|id=295|img=custom/hl/zhanzhu_ui/gx_1.png|x=490|y=0>
+<Img|id=296|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Text|id=297|text=专属|color=255|size=18|outline=2|outlinecolor=0|x=630|y=0>
+<Img|id=298|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+
+;8
+<Layout|id=30|children={300,301,302,303,304,305,306,307,308,309}|width=720|height=30|color=x>
+<Text|id=300|text=自动使用元宝|color=255|size=18|outline=2|outlinecolor=0|x=96|y=0>
+<Img|id=301|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Img|id=303|img=custom/hl/zhanzhu_ui/gx_1.png|x=346|y=0>
+<Img|id=304|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Img|id=305|img=custom/hl/zhanzhu_ui/gx_1.png|x=490|y=0>
+<Img|id=306|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Text|id=307|text=专属|color=255|size=18|outline=2|outlinecolor=0|x=630|y=0>
+<Img|id=308|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+
+;9
+<Layout|id=31|children={310,311,312,313,314,315,316,317,318,319}|width=720|height=30|color=x>
+<Text|id=310|text=自动使用经验卷|color=255|size=18|outline=2|outlinecolor=0|x=92|y=0>
+<Img|id=311|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Img|id=313|img=custom/hl/zhanzhu_ui/gx_1.png|x=346|y=0>
+<Img|id=314|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Img|id=315|img=custom/hl/zhanzhu_ui/gx_1.png|x=490|y=0>
+<Img|id=316|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Text|id=317|text=专属|color=255|size=18|outline=2|outlinecolor=0|x=630|y=0>
+<Img|id=318|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+
+;10
+<Layout|id=32|children={320,321,322,323,324,325,326,327,328,329}|width=720|height=30|color=x>
+<Text|id=320|text=自动回收|color=255|size=18|outline=2|outlinecolor=0|x=110|y=0>
+<Img|id=321|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Img|id=323|img=custom/hl/zhanzhu_ui/gx_1.png|x=346|y=0>
+<Img|id=324|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Img|id=325|img=custom/hl/zhanzhu_ui/gx_1.png|x=490|y=0>
+<Img|id=326|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Text|id=327|text=专属|color=255|size=18|outline=2|outlinecolor=0|x=630|y=0>
+<Img|id=328|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+
+;14
+<Layout|id=1300|children={1320,1321,1322,1323,1324,1325,1326,1327,1328,1329}|width=720|height=30|color=x>
+<Text|id=1320|text=自动分解|color=255|size=18|outline=2|outlinecolor=0|x=110|y=0>
+<Img|id=1321|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Img|id=1323|img=custom/hl/zhanzhu_ui/gx_1.png|x=346|y=0>
+<Img|id=1324|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Img|id=1325|img=custom/hl/zhanzhu_ui/gx_1.png|x=490|y=0>
+<Img|id=1326|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Text|id=1327|text=专属|color=255|size=18|outline=2|outlinecolor=0|x=630|y=0>
+<Img|id=1328|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+
+;11
+<Layout|id=33|children={330,331,332,333,334,335,336,337,338,339}|width=720|height=30|color=x>
+<Text|id=330|text=专属赞助礼包|color=255|size=18|outline=2|outlinecolor=0|x=96|y=0>
+<Img|id=331|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Text|id=333|text=钻石礼包|color=255|size=18|outline=2|outlinecolor=0|x=330|y=0>
+<Img|id=334|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Text|id=335|text=至尊礼包|color=255|size=18|outline=2|outlinecolor=0|x=474|y=0>
+<Img|id=336|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Text|id=337|text=王者礼包|color=255|size=18|outline=2|outlinecolor=0|x=616|y=0>
+<Img|id=338|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+;12
+<Layout|id=34|children={340,341,342,343,344,345,346,347,348,349}|width=720|height=30|color=x>
+<Text|id=340|text=攻魔道增加|color=255|size=18|outline=2|outlinecolor=0|x=110|y=0>
+<Img|id=341|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Text|id=343|text=5-5|color=255|size=18|outline=2|outlinecolor=0|x=350|y=0>
+<Img|id=344|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Text|id=345|text=66-66|color=255|size=18|outline=2|outlinecolor=0|x=484|y=0>
+<Img|id=346|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Text|id=347|text=66-66|color=255|size=18|outline=2|outlinecolor=0|x=626|y=0>
+<Img|id=348|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+
+;13
+<Layout|id=35|children={350,351,352,353,354,355,356,357,358,359}|width=720|height=30|color=x>
+<Text|id=350|text=无视一切伤害|color=255|size=18|outline=2|outlinecolor=0|x=96|y=0>
+<Img|id=351|img=custom/hl/zhanzhu_ui/xh_1.png|x=292|y=0|width=2|height=28>
+<Img|id=353|img=custom/hl/zhanzhu_ui/gx_1.png|x=346|y=0>
+<Img|id=354|img=custom/hl/zhanzhu_ui/xh_1.png|x=436|y=0|width=2|height=28>
+<Img|id=355|img=custom/hl/zhanzhu_ui/gx_1.png|x=490|y=0>
+<Img|id=356|img=custom/hl/zhanzhu_ui/xh_1.png|x=578|y=0|width=2|height=28>
+<Text|id=357|text=10%|color=255|size=18|outline=2|outlinecolor=0|x=632|y=0>
+<Img|id=358|img=custom/hl/zhanzhu_ui/xh_1.png|x=0|y=28|width=720|height=2>
+
+[@特权上页]
+#IF
+large n$B_当前翻页 1
+#ACT
+DEc  n$B_当前翻页 1
+Mov  n$u13 <$str(n$B_当前翻页)>
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 页签_<$str(n$B_当前翻页)> 1  n$B_tu_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 页签_<$str(n$B_当前翻页)> 2  n$B_tu_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 页签_<$str(n$B_当前翻页)> 3  n$B_tu_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 会员类型 <$Str(n$B_当前翻页)>  s$特权预览
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_1 s$开通奖励_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_2 s$开通奖励_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_3 s$开通奖励_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_4 s$开通奖励_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_5 s$开通奖励_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_6_<$Str(s$职业序号)> s$开通奖励_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_7 s$开通奖励_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_8 s$开通奖励_8
+
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_1 s$奖励数量_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_2 s$奖励数量_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_3 s$奖励数量_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_4 s$奖励数量_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_5 s$奖励数量_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_6 s$奖励数量_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_7 s$奖励数量_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_8 s$奖励数量_8
+Mov s$特权状态_1 <Img|a=4|id=31|img=custom/hl/zhanzhu_ui/jllq_0.png|percentx=92|percenty=50>
+Mov s$特权状态_2
+
+#IF
+EQUAL n$B_当前翻页 3
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$下级特权)> 开通奖励_5_<$Str(s$性别序号)> s$开通奖励_5
+
+
+
+
+#IF
+EQUAL N$B_当前翻页 1
+EQUAL U14 1
+#ACT
+Mov s$特权状态_1 <Button|a=4|id=31|children={32}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=92|percenty=50|link=@钻石特权>
+Mov s$特权状态_2 <Text|id=32|a=4|text=领取|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+Goto  @赞助特权展示
+BREAK
+
+#IF
+EQUAL N$B_当前翻页 2
+EQUAL U15 1
+#ACT
+Mov s$特权状态_1 <Button|a=4|id=31|children={32}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=92|percenty=50|link=@至尊特权>
+Mov s$特权状态_2 <Text|id=32|a=4|text=领取|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+Goto  @赞助特权展示
+BREAK
+
+#IF
+EQUAL N$B_当前翻页 3
+EQUAL U16 1
+#ACT
+Mov s$特权状态_1 <Button|a=4|id=31|children={32}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=92|percenty=50|link=@王者特权>
+Mov s$特权状态_2 <Text|id=32|a=4|text=领取|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+Goto  @赞助特权展示
+BREAK
+
+
+#IF
+EQUAL N$B_当前翻页 1
+EQUAL U14 2
+#ACT
+Mov s$特权状态_1 <Img|a=4|id=31|img=custom/hl/zhanzhu_ui/jllq_1.png|percentx=92|percenty=50>
+Mov s$特权状态_2
+Goto  @赞助特权展示
+BREAK
+#IF
+EQUAL N$B_当前翻页 2
+EQUAL U15 2
+#ACT
+Mov s$特权状态_1 <Img|a=4|id=31|img=custom/hl/zhanzhu_ui/jllq_1.png|percentx=92|percenty=50>
+Mov s$特权状态_2
+Goto  @赞助特权展示
+BREAK
+#IF
+EQUAL N$B_当前翻页 3
+EQUAL U16 2
+#ACT
+Mov s$特权状态_1 <Img|a=4|id=31|img=custom/hl/zhanzhu_ui/jllq_1.png|percentx=92|percenty=50>
+Mov s$特权状态_2
+Goto  @赞助特权展示
+BREAK
+#IF
+#ACT
+Goto  @赞助特权展示
+
+[@特权下页]
+#IF
+small N$B_当前翻页 3
+#ACT
+INc   n$B_当前翻页 1
+
+
+
+
+Mov n$u13 <$str(n$B_当前翻页)>
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 页签_<$str(n$B_当前翻页)> 1  n$B_tu_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 页签_<$str(n$B_当前翻页)> 2  n$B_tu_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 页签_<$str(n$B_当前翻页)> 3  n$B_tu_3
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 会员类型 <$Str(n$B_当前翻页)>  s$特权预览
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_1 s$开通奖励_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_2 s$开通奖励_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_3 s$开通奖励_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_4 s$开通奖励_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_5 s$开通奖励_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_6_<$Str(s$职业序号)> s$开通奖励_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_7 s$开通奖励_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_8 s$开通奖励_8
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_1 s$奖励数量_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_2 s$奖励数量_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_3 s$奖励数量_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_4 s$奖励数量_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_5 s$奖励数量_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_6 s$奖励数量_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_7 s$奖励数量_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 奖励数量_8 s$奖励数量_8
+
+
+#IF
+EQUAL n$B_当前翻页 3
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini <$STR(s$特权预览)> 开通奖励_5_<$Str(s$性别序号)> s$开通奖励_5
+
+
+
+
+#IF
+EQUAL N$B_当前翻页 1
+EQUAL U14 1
+#ACT
+Mov s$特权状态_1 <Button|a=4|id=31|children={32}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=92|percenty=50|link=@钻石特权>
+Mov s$特权状态_2 <Text|id=32|a=4|text=领取|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+Goto  @赞助特权展示
+BREAK
+#IF
+EQUAL N$B_当前翻页 2
+EQUAL U15 1
+#ACT
+Mov s$特权状态_1 <Button|a=4|id=31|children={32}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=92|percenty=50|link=@至尊特权>
+Mov s$特权状态_2 <Text|id=32|a=4|text=领取|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+Goto  @赞助特权展示
+BREAK
+#IF
+EQUAL N$B_当前翻页 3
+EQUAL U16 1
+#ACT
+Mov s$特权状态_1 <Button|a=4|id=31|children={32}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=92|percenty=50|link=@王者特权>
+Mov s$特权状态_2 <Text|id=32|a=4|text=领取|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+Goto  @赞助特权展示
+BREAK
+
+#IF
+EQUAL N$B_当前翻页 1
+EQUAL U14 2
+#ACT
+Mov s$特权状态_1 <Img|a=4|id=31|img=custom/hl/zhanzhu_ui/jllq_1.png|percentx=92|percenty=50>
+Mov s$特权状态_2
+Goto  @赞助特权展示
+BREAK
+
+#IF
+EQUAL N$B_当前翻页 2
+EQUAL U15 2
+#ACT
+Mov s$特权状态_1 <Img|a=4|id=31|img=custom/hl/zhanzhu_ui/jllq_1.png|percentx=92|percenty=50>
+Mov s$特权状态_2
+Goto  @赞助特权展示
+BREAK
+#IF
+EQUAL N$B_当前翻页 3
+EQUAL U16 2
+#ACT
+Mov s$特权状态_1 <Img|a=4|id=31|img=custom/hl/zhanzhu_ui/jllq_1.png|percentx=92|percenty=50>
+Mov s$特权状态_2
+Goto  @赞助特权展示
+BREAK
+
+#IF
+#ACT
+Mov s$特权状态_1 <Img|a=4|id=31|img=custom/hl/zhanzhu_ui/jllq_0.png|percentx=92|percenty=50>
+Mov s$特权状态_2
+Goto  @赞助特权展示
+
+
+[@特权_1]
+#IF
+small N$B_tuw1 248
+#ACT
+INC N$B_tuw1 10
+INC N$B_tuh1 7
+INC N$B_tux1 1
+DEC N$B_tuy1 3
+
+#ELSEACT
+BREAK
+
+#IF
+large N$B_tuw2 218
+#ACT
+DEC N$B_tuw2 10
+DEC N$B_tuh2 7
+INC N$B_tux2 10
+INC N$B_tuy2 3
+
+
+#IF
+large N$B_tuw3 218
+#ACT
+DEC N$B_tuw3 10
+DEC N$B_tuh3 7
+INC N$B_tux3 10
+INC N$B_tuy3 3
+INC N$B_tux2 10
+
+
+#IF
+#ACT
+GOTO @赞助特权展示
+goto  @特权_1
+BREAK
+[@特权_2]
+#IF
+small N$B_tuw2 248
+#ACT
+INC N$B_tuw2 10
+INC N$B_tuh2 7
+DEC N$B_tux2 10
+DEC N$B_tuy2 3
+
+#ELSEACT
+BREAK
+#IF
+large N$B_tuw1 218
+#ACT
+DEC N$B_tuw1 10
+DEC N$B_tuh1 7
+DEC N$B_tux1 1
+INC N$B_tuy1 3
+
+#IF
+large N$B_tuw3 218
+#ACT
+DEC N$B_tuw3 10
+DEC N$B_tuh3 7
+INC N$B_tux3 10
+INC N$B_tuy3 3
+INC N$B_tux2 10
+
+
+#IF
+#ACT
+GOTO @赞助特权展示
+goto  @特权_2
+BREAK
+
+
+
+
+[@特权_3]
+#IF
+small N$B_tuw3 248
+#ACT
+INC N$B_tuw3 10
+INC N$B_tuh3 7
+DEC N$B_tux3 10
+DEC N$B_tuy3 3
+
+#ELSEACT
+BREAK
+
+#IF
+large N$B_tuw1 218
+#ACT
+DEC N$B_tuw1 10
+DEC N$B_tuh1 7
+DEC N$B_tux1 1
+INC N$B_tuy1 3
+DEC N$B_tux2 10
+
+
+
+#IF
+large N$B_tuw2 218
+#ACT
+DEC N$B_tuw2 10
+DEC N$B_tuh2 7
+INC N$B_tuy2 3
+
+#IF
+#ACT
+GOTO @赞助特权展示
+goto  @特权_3
+BREAK
+
+
+[@钻石特权]
+#IF
+EQUAL U14 1
+#ACT
+#ELSEACT
+BREAK
+#IF
+CHECKBAGSIZE 10
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 开通奖励mc_1 s$开通奖励mc_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 开通奖励mc_2 s$开通奖励mc_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 开通奖励mc_3 s$开通奖励mc_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 开通奖励mc_4 s$开通奖励mc_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 开通奖励mc_5 s$开通奖励mc_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 开通奖励mc_6_<$Str(s$职业序号)> s$开通奖励mc_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 开通奖励mc_7 s$开通奖励mc_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 开通奖励mc_8 s$开通奖励mc_8
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 奖励数量_1 s$奖励数量_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 奖励数量_2 s$奖励数量_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 奖励数量_3 s$奖励数量_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 奖励数量_4 s$奖励数量_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 奖励数量_5 s$奖励数量_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 奖励数量_6 s$奖励数量_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 奖励数量_7 s$奖励数量_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 钻石会员 奖励数量_8 s$奖励数量_8
+Mov u14 2
+GiveStateItem <$Str(s$开通奖励mc_1)> <$Str(s$奖励数量_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_2)> <$Str(s$奖励数量_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_3)> <$Str(s$奖励数量_3)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_4)> <$Str(s$奖励数量_4)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_5)> <$Str(s$奖励数量_5)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_6)> <$Str(s$奖励数量_6)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_7)> <$Str(s$奖励数量_7)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_8)> <$Str(s$奖励数量_8)> 0 1 0 1 1 1 1 1
+GOTO @赞助特权
+BREAK
+#IF
+#ACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+[@至尊特权]
+#IF
+EQUAL U15 1
+#ACT
+#ELSEACT
+BREAK
+#IF
+CHECKBAGSIZE 10
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 开通奖励mc_1 s$开通奖励mc_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 开通奖励mc_2 s$开通奖励mc_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 开通奖励mc_3 s$开通奖励mc_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 开通奖励mc_4 s$开通奖励mc_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 开通奖励mc_5 s$开通奖励mc_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 开通奖励mc_6_<$Str(s$职业序号)> s$开通奖励mc_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 开通奖励mc_7 s$开通奖励mc_7
+
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 奖励数量_1 s$奖励数量_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 奖励数量_2 s$奖励数量_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 奖励数量_3 s$奖励数量_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 奖励数量_4 s$奖励数量_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 奖励数量_5 s$奖励数量_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 奖励数量_6 s$奖励数量_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 至尊会员 奖励数量_7 s$奖励数量_7
+Mov u15 2
+GiveStateItem <$Str(s$开通奖励mc_1)> <$Str(s$奖励数量_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_2)> <$Str(s$奖励数量_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_3)> <$Str(s$奖励数量_3)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_4)> <$Str(s$奖励数量_4)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_5)> <$Str(s$奖励数量_5)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_6)> <$Str(s$奖励数量_6)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_7)> <$Str(s$奖励数量_7)> 0 1 0 1 1 1 1 1
+GOTO @赞助特权
+BREAK
+#IF
+#ACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+[@王者特权]
+#IF
+EQUAL U16 1
+#ACT
+#ELSEACT
+BREAK
+#IF
+CHECKBAGSIZE 10
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 最强王者 开通奖励mc_1 s$开通奖励mc_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 最强王者 开通奖励mc_2 s$开通奖励mc_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 最强王者 开通奖励mc_3 s$开通奖励mc_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 最强王者 开通奖励mc_4 s$开通奖励mc_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 最强王者 开通奖励mc_5_<$Str(s$性别序号)> s$开通奖励mc_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 最强王者 奖励数量_1 s$奖励数量_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 最强王者 奖励数量_2 s$奖励数量_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 最强王者 奖励数量_3 s$奖励数量_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 最强王者 奖励数量_4 s$奖励数量_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\赞助特权\特权配置.ini 最强王者 奖励数量_5 s$奖励数量_5
+Mov u16 2
+GiveStateItem <$Str(s$开通奖励mc_1)> <$Str(s$奖励数量_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_2)> <$Str(s$奖励数量_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_3)> <$Str(s$奖励数量_3)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_4)> <$Str(s$奖励数量_4)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$开通奖励mc_5)> <$Str(s$奖励数量_5)> 0 1 0 1 1 1 1 1
+GOTO @赞助特权
+BREAK
+#IF
+#ACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+[@exit]
+#IF
+EQUAL <$HUMAN(日活跃重置)> 已重置
+equal <$HUMAN(活跃度_每日登录)> 0
+#ACT
+CALCVAR HUMAN 活跃度_每日登录 = 1
+SAVEVAR HUMAN 活跃度_每日登录
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_每日登录)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_每日登录)>
+SAVEVAR HUMAN 活跃度_活跃度周
+
+#IF
+EQUAL <$HUMAN(日活跃重置)> 已重置
+equal <$HUMAN(活跃度_会员登录)> 0
+LARGE U13 0
+#ACT
+CALCVAR HUMAN 活跃度_会员登录 = 1
+SAVEVAR HUMAN 活跃度_会员登录
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_会员登录)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_会员登录)>
+SAVEVAR HUMAN 活跃度_活跃度周
+
+
+}

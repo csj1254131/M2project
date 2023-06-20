@@ -1,0 +1,186 @@
+[@每日活跃重置]
+{
+
+#IF
+EQUAL <$HUMAN(活跃度_每日登录)> ??
+#ACT
+VAR Integer HUMAN 活跃度_每日登录
+SAVEVAR HUMAN 活跃度_每日登录
+#IF
+EQUAL <$HUMAN(活跃度_会员登录)> ??
+#ACT
+VAR Integer HUMAN 活跃度_会员登录
+SAVEVAR HUMAN 活跃度_会员登录
+#IF
+EQUAL <$HUMAN(活跃度_装备强化)> ??
+#ACT
+VAR Integer HUMAN 活跃度_装备强化
+SAVEVAR HUMAN 活跃度_装备强化
+#IF
+EQUAL <$HUMAN(活跃度_挑战领主)> ??
+#ACT
+VAR Integer HUMAN 活跃度_挑战领主
+SAVEVAR HUMAN 活跃度_挑战领主
+#IF
+EQUAL <$HUMAN(活跃度_消费元宝)> ??
+#ACT
+VAR Integer HUMAN 活跃度_消费元宝
+SAVEVAR HUMAN 活跃度_消费元宝
+#IF
+EQUAL <$HUMAN(活跃度_元宝任务)> ??
+#ACT
+VAR Integer HUMAN 活跃度_元宝任务
+SAVEVAR HUMAN 活跃度_元宝任务
+#IF
+EQUAL <$HUMAN(活跃度_清理魔物)> ??
+#ACT
+VAR Integer HUMAN 活跃度_清理魔物
+SAVEVAR HUMAN 活跃度_清理魔物
+#IF
+EQUAL <$HUMAN(活跃度_火龙币购物)> ??
+#ACT
+VAR Integer HUMAN 活跃度_火龙币购物
+SAVEVAR HUMAN 活跃度_火龙币购物
+#IF
+EQUAL <$HUMAN(活跃度_每日充值)> ??
+#ACT
+VAR Integer HUMAN 活跃度_每日充值
+SAVEVAR HUMAN 活跃度_每日充值
+#IF
+EQUAL <$HUMAN(活跃度_夺宝奇兵)> ??
+#ACT
+VAR Integer HUMAN 活跃度_夺宝奇兵
+SAVEVAR HUMAN 活跃度_夺宝奇兵
+#IF
+EQUAL <$HUMAN(活跃度_勇闯炼狱)> ??
+#ACT
+VAR Integer HUMAN 活跃度_勇闯炼狱
+SAVEVAR HUMAN 活跃度_勇闯炼狱
+#IF
+EQUAL <$HUMAN(活跃度_世界BOSS)> ??
+#ACT
+VAR Integer HUMAN 活跃度_世界BOSS
+SAVEVAR HUMAN 活跃度_世界BOSS
+#IF
+EQUAL <$HUMAN(活跃度_天降元宝)> ??
+#ACT
+VAR Integer HUMAN 活跃度_天降元宝
+SAVEVAR HUMAN 活跃度_天降元宝
+#IF
+EQUAL <$HUMAN(活跃度_装备注灵)> ??
+#ACT
+VAR Integer HUMAN 活跃度_装备注灵
+SAVEVAR HUMAN 活跃度_装备注灵
+#IF
+EQUAL <$HUMAN(活跃度_锁妖塔)> ??
+#ACT
+VAR Integer HUMAN 活跃度_锁妖塔
+SAVEVAR HUMAN 活跃度_锁妖塔
+#IF
+EQUAL <$HUMAN(活跃度_分解装备)> ??
+#ACT
+VAR Integer HUMAN 活跃度_分解装备
+SAVEVAR HUMAN 活跃度_分解装备
+#IF
+EQUAL <$HUMAN(活跃度_获得声望)> ??
+#ACT
+VAR Integer HUMAN 活跃度_获得声望
+SAVEVAR HUMAN 活跃度_获得声望
+#IF
+EQUAL <$HUMAN(活跃度_声望任务)> ??
+#ACT
+VAR Integer HUMAN 活跃度_声望任务
+SAVEVAR HUMAN 活跃度_声望任务
+#IF
+EQUAL <$HUMAN(活跃度_个人BOSS)> ??
+#ACT
+VAR Integer HUMAN 活跃度_个人BOSS
+SAVEVAR HUMAN 活跃度_个人BOSS
+#IF
+EQUAL <$HUMAN(活跃度_活跃度)> ??
+#ACT
+VAR Integer HUMAN 活跃度_活跃度
+SAVEVAR HUMAN 活跃度_活跃度
+#IF
+EQUAL <$HUMAN(活跃度_活跃度周)> ??
+#ACT
+VAR Integer HUMAN 活跃度_活跃度周
+SAVEVAR HUMAN 活跃度_活跃度周
+#IF
+EQUAL <$HUMAN(日活跃重置)> ??
+#ACT
+VAR Integer HUMAN 日活跃重置
+SAVEVAR HUMAN 日活跃重置
+#IF
+EQUAL <$HUMAN(周活跃重置)> ??
+#ACT
+VAR Integer HUMAN 周活跃重置
+SAVEVAR HUMAN 周活跃重置
+
+#IF
+EQUAL <$HUMAN(日活跃重置)>
+#ACT
+set [437] 0
+set [438] 0
+set [439] 0
+set [440] 0
+set [441] 0
+set [442] 0
+set [443] 0
+set [444] 0
+CALCVAR HUMAN 日活跃重置 = 已重置
+SAVEVAR HUMAN 日活跃重置
+CALCVAR HUMAN 活跃度_活跃度 = 0
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_每日登录 = 0
+SAVEVAR HUMAN 活跃度_每日登录
+CALCVAR HUMAN 活跃度_会员登录 = 0
+SAVEVAR HUMAN 活跃度_会员登录
+CALCVAR HUMAN 活跃度_装备强化 = 0
+SAVEVAR HUMAN 活跃度_装备强化
+CALCVAR HUMAN 活跃度_挑战领主 = 0
+SAVEVAR HUMAN 活跃度_挑战领主
+CALCVAR HUMAN 活跃度_消费元宝 = 0
+SAVEVAR HUMAN 活跃度_消费元宝
+CALCVAR HUMAN 活跃度_元宝任务 = 0
+SAVEVAR HUMAN 活跃度_元宝任务
+CALCVAR HUMAN 活跃度_清理魔物 = 0
+SAVEVAR HUMAN 活跃度_清理魔物
+CALCVAR HUMAN 活跃度_火龙币购物 = 0
+SAVEVAR HUMAN 活跃度_火龙币购物
+CALCVAR HUMAN 活跃度_每日充值 = 0
+SAVEVAR HUMAN 活跃度_每日充值
+CALCVAR HUMAN 活跃度_夺宝奇兵 = 0
+SAVEVAR HUMAN 活跃度_夺宝奇兵
+CALCVAR HUMAN 活跃度_勇闯炼狱 = 0
+SAVEVAR HUMAN 活跃度_勇闯炼狱
+CALCVAR HUMAN 活跃度_世界BOSS = 0
+SAVEVAR HUMAN 活跃度_世界BOSS
+CALCVAR HUMAN 活跃度_天降元宝 = 0
+SAVEVAR HUMAN 活跃度_天降元宝
+CALCVAR HUMAN 活跃度_装备注灵 = 0
+SAVEVAR HUMAN 活跃度_装备注灵
+CALCVAR HUMAN 活跃度_锁妖塔 = 0
+SAVEVAR HUMAN 活跃度_锁妖塔
+CALCVAR HUMAN 活跃度_分解装备 = 0
+SAVEVAR HUMAN 活跃度_分解装备
+CALCVAR HUMAN 活跃度_获得声望 = 0
+SAVEVAR HUMAN 活跃度_获得声望
+CALCVAR HUMAN 活跃度_声望任务 = 0
+SAVEVAR HUMAN 活跃度_声望任务
+CALCVAR HUMAN 活跃度_个人BOSS = 0
+SAVEVAR HUMAN 活跃度_个人BOSS
+GOTO @每日活跃重置新人
+BREAK
+
+
+[@每日活跃重置新人]
+#IF
+ISNEWHUMAN
+#ACT
+BREAK
+#ELSEACT
+SENDMSG 9 <font color='#FF0000'>活跃：每日活跃任务已重置!</font>
+BREAK
+
+}

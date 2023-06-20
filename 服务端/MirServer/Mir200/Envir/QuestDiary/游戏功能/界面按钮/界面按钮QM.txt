@@ -1,0 +1,107 @@
+[@界面按钮QM]
+{
+ #IF
+ Equal <$CLIENTFLAG> 2
+ #ACT
+Goto @移动端按钮
+BREAK
+ #IF
+ Equal <$CLIENTFLAG> 1
+ #ACT
+Goto @PC端按钮
+BREAK
+[@移动端按钮]
+#IF
+#ACT
+ Mov S$Pk值按钮 <Text|x=25.0|y=110.0|color=255|size=16|text=PK　　值：>
+ Inc S$Pk值按钮 <Img|x=174.0|y=110.0|img=custom/hl/shajuan/zt.png|esc=0>
+ Inc S$Pk值按钮 <Text|x=176.0|y=110.0|color=255|size=16|text=<$PKPOINT>>
+ ADDBUTTON 4 3690 <$STR(S$Pk值按钮)> 150 100
+
+
+MOV S$主界面按钮 <Button|x=-130|y=-445|mimg=private/Main/bottom/1900013010.png|color=255|nimg=private/Main/bottom/1900013010.png|link=@角色>
+ADDBUTTON 104 2 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Button|x=-63|y=-445|mimg=private/Main/bottom/1900013011.png|color=255|nimg=private/Main/bottom/1900013011.png|link=@背包>
+ADDBUTTON 104 3 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Button|x=22|y=30|mimg=private/Main/bottom/1900013012.png|color=255|nimg=private/Main/bottom/1900013012.png|link=@技能>
+ADDBUTTON 109 1 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Button|x=92|y=30|mimg=private/Main/bottom/1900013014.png|color=255|nimg=private/Main/bottom/1900013014.png|link=@组队>
+ADDBUTTON 109 2 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Button|x=162|y=30|mimg=private/Main/bottom/1900013013.png|color=255|nimg=private/Main/bottom/1900013013.png|link=@行会>
+ADDBUTTON 109 3 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Button|x=22|y=100|mimg=private/Main/bottom/1900012586.png|color=255|nimg=private/Main/bottom/1900012586.png|link=@拍卖行>
+ADDBUTTON 109 4 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Button|x=22|y=100|mimg=private/Main/bottom/1900013016.png|color=255|nimg=private/Main/bottom/1900013016.png|link=@摆摊>
+ADDBUTTON 109 5 <$STR(S$主界面按钮)>
+
+
+
+MOV  S$主界面按钮   <Img|x=5|y=2|img=public/1900000668.png|width=240|height=33>
+INC   S$主界面按钮   <Img|x=5|y=8|img=item/item_1/000226.png|width=20|height=20>
+INC   S$主界面按钮   <Text|text=$STM(ITEMCOUNT_7)|x=27|y=5|size=16|color=255|outline=2|outlinecolor=0|simplenum=1>
+INC   S$主界面按钮   <Img|x=83|y=6|img=item/item_4/000001.png|width=25|height=25>
+INC   S$主界面按钮   <Text|text=$STM(MONEY_2)|x=108|y=5|size=16|color=255|outline=2|outlinecolor=0|simplenum=1>
+INC   S$主界面按钮   <Img|x=164|y=6|img=item/item_4/000002.png|width=25|height=25>
+INC   S$主界面按钮   <Text|text=$STM(ITEMCOUNT_4)|x=189|y=5|size=16|color=255|outline=2|outlinecolor=0|simplenum=1>
+Inc   S$主界面按钮   <Button|x=245|y=2|nimg=custom/hl/dbsx_ui/btn_qiehuan_01.png|pimg=custom/hl/dbsx_ui/btn_qiehuan_02.png|height=30|width=20|link=@切换>
+Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=5|y=4|link=@火龙币Tiss>
+Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=165|y=4|link=@元宝Tiss>
+ADDBUTTON 101 9 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Img|x=92|y=100|img=custom/hl/hl_ui/<$Str(s$注灵红点)>.png>
+ADDBUTTON 109 8 <$STR(S$主界面按钮)>
+
+
+#IF
+CheckContainsText <$SERVERNAME> 赤影
+#ACT
+MOV S$交易行按钮 <Img|x=330|y=70|img=custom/hl/top/jyh.png|link=@去交易行>
+ADDBUTTON 101 20 <$STR(S$交易行按钮)>
+
+
+
+#IF
+large <$RELEVEL> 3
+#ACT
+MOV S$主界面按钮 <Button|x=22|y=100|mimg=private/main/bottom/1900013018.png|color=255|nimg=private/main/bottom/1900013018.png|link=@退出>
+ADDBUTTON 109 4 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Button|x=92|y=100|nimg=custom/hl/zhuling/zlan.png|link=@注灵>
+ADDBUTTON 109 5  <$STR(S$主界面按钮)>
+#ELSEACT
+MOV S$主界面按钮 <Button|x=92|y=100|mimg=private/main/bottom/1900013018.png|color=255|nimg=private/main/bottom/1900013018.png|link=@退出>
+ADDBUTTON 109 4 <$STR(S$主界面按钮)>
+
+#IF
+#ACT
+MOV S$主界面按钮 <Button|x=162|y=170|nimg=custom/hl/top/16.png|link=@小精灵界面>
+ADDBUTTON 109 62 <$STR(S$主界面按钮)>
+MOV S$拍卖按钮 <Button|x=699|y=5|mimg=custom/hl/hl_ui/js_1.png|color=255|nimg=custom/hl/hl_ui/js_1.png|link=@拍卖行说明>
+ADDBUTTON 29 20 <$STR(S$拍卖按钮)>
+
+ #IF
+ EQUAL <$DEALFTF> 1
+ #act
+ MOV S$主界面按钮 <Button|x=92|y=100|mimg=private/main/bottom/1900013015.png|color=255|nimg=private/main/bottom/1900013015.png|link=@交易>
+ ADDBUTTON 109 5 <$STR(S$主界面按钮)>
+
+
+
+[@PC端按钮]
+#IF
+Equal <$CLIENTFLAG> 1
+#ACT
+MOV  S$主界面按钮  <Img|x=5|y=2|img=public/1900000668.png|width=225|height=33>
+INC   S$主界面按钮   <Img|x=5|y=8|img=item/item_1/000226.png|width=20|height=20>
+INC   S$主界面按钮   <Text|text=$STM(ITEMCOUNT_7)|x=27|y=5|size=16|color=255|outline=2|outlinecolor=0|simplenum=1>
+INC   S$主界面按钮   <Img|x=83|y=6|img=item/item_4/000001.png|width=25|height=25>
+INC   S$主界面按钮   <Text|text=$STM(MONEY_2)|x=108|y=5|size=16|color=255|outline=2|outlinecolor=0|simplenum=1>
+INC   S$主界面按钮   <Img|x=164|y=6|img=item/item_4/000002.png|width=25|height=25>
+INC   S$主界面按钮   <Text|text=$STM(ITEMCOUNT_4)|x=189|y=5|size=16|color=255|outline=2|outlinecolor=0|simplenum=1>
+Inc    S$主界面按钮   <Button|x=230|y=2|nimg=custom/hl/dbsx_ui/btn_qiehuan_01.png|pimg=custom/hl/dbsx_ui/btn_qiehuan_02.png|height=30|width=20|link=@切换>
+Inc    S$主界面按钮 <Layout|width=80|height=30|color=x|x=5|y=4|link=@火龙币Tiss>
+Inc    S$主界面按钮 <Layout|width=80|height=30|color=x|x=165|y=4|link=@元宝Tiss>
+ADDBUTTON 101 9 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Img|x=92|y=100|img=custom/hl/hl_ui/<$Str(s$注灵红点)>.png>
+ADDBUTTON 109 8 <$STR(S$主界面按钮)>
+BREAK
+
+ }

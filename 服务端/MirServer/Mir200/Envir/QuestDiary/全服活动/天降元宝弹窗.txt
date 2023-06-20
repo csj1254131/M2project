@@ -1,0 +1,52 @@
+[@天降元宝弹窗]
+{
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/tsbj.png>
+<Layout|id=0|children={1}|x=452|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=170|y=8|width=120|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=天降元宝>
+<Text|id=3|children={31,32,33}|x=30|y=50|color=251|size=18|outline=2|outlinecolor=0|text=天降元宝>
+<RText|id=31|x=0|y=23|color=250|size=18|outline=2|outlinecolor=0|text=[活动介绍]:<每周二、四、六、下午18:00准时开启/FCOLOR=255>>
+<RText|id=32|x=0|y=48|color=250|size=18|outline=2|outlinecolor=0|text=[活动奖励]:<活动持续30分钟/FCOLOR=255>>
+<RText|id=33|x=0|y=73|color=250|size=18|outline=2|outlinecolor=0|text=[活动奖励]:<大量元宝/FCOLOR=253>>
+<Button|id=4|x=75|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=参加活动|link=@进入天降地图>
+<Button|id=5|x=225|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=放弃|link=@exit>
+
+
+[@进入天降地图]
+#IF
+EQUAL G243 2
+#ACT
+map tjyb
+GOTO @天降提醒面板
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>天降元宝活动尚未开始</font>
+
+
+[@天降提醒面板]
+#IF
+EQUAL G243 1
+#ACT
+MOV N$天降剩余提醒时间 <$STR(G244)>
+DEC N$天降剩余提醒时间 <$UTCNOW8>
+DEC N$天降剩余提醒时间 1800
+MOV S$天降提示图标 <Layout|children={1,2,3,4,5,6,7,8}|x=-310|y=-140|width=180|height=200|color=x>
+INC S$天降提示图标 <Button|id=1|x=30|y=30|nimg=custom/hl/hdtb_ui/tianjiangyuanbao.png|link=@天降元宝提醒按钮>
+INC S$天降提示图标 <TIMETIPS|id=2|x=35|y=100|time=<$STR(N$天降剩余提醒时间)>|color=191|size=18|outline=2|outlinecolor=0>
+ADDBUTTON 107 18 <$STR(S$天降提示图标)>
+break
+#IF
+EQUAL G243 2
+#ACT
+MOV S$天降提示图标 <Layout|children={1,2,3,4,5,6,7,8}|x=-310|y=-140|width=180|height=200|color=x>
+INC S$天降提示图标 <Button|id=1|x=30|y=30|nimg=custom/hl/hdtb_ui/tianjiangyuanbao.png|link=@天降元宝提醒按钮>
+INC S$天降提示图标 <Text|id=2|x=35|y=100|color=250|size=18|outline=2|outlinecolor=0|text=已开启>
+ADDBUTTON 107 18 <$STR(S$天降提示图标)>
+break
+
+
+}

@@ -1,0 +1,279 @@
+[@竞技登陆排序奖励sm]
+{
+#IF
+Large <$HFCOUNT> 5
+#Act
+Break
+
+
+#IF
+Check [651] 0
+Large <$HFCOUNT> 1
+Equal G491 2
+#Act
+Goto @龙魂登陆奖励xx
+
+#IF
+Check [653] 0
+Large <$HFCOUNT> 2
+Equal G491 3
+#Act
+Goto @注灵登陆奖励xx
+
+
+#IF
+Check [650] 0
+Large <$HFCOUNT> 0
+Equal G491 1
+#Act
+Goto @转生登陆奖励xx
+
+
+#IF
+Check [652] 0
+Large <$HFCOUNT> 3
+Equal G491 4
+#Act
+Goto @元神登陆奖励xx
+
+
+
+[@注灵登陆奖励xx]
+#IF
+Equal <$Str(A450)> <$USername>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 100 0#1#2#3#4#5#6#8
+MailGIVE 中品注灵石 500 0#1#2#3#4#5#6#8
+MailGIVE 巅峰之人 1 0#1#2#3#4#5#6#8
+SendMail 173 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A451)> <$USername>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 70 0#1#2#3#4#5#6#8
+MailGIVE 中品注灵石 300 0#1#2#3#4#5#6#8
+SendMail 1 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A452)> <$USername>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 50 0#1#2#3#4#5#6#8
+MailGIVE 中品注灵石 200 0#1#2#3#4#5#6#8
+SendMail 1 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A453)> <$USername>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 30 0#1#2#3#4#5#6#8
+MailGIVE 中品注灵石 100 0#1#2#3#4#5#6#8
+SendMail 1 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A454)> <$USername>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 20 0#1#2#3#4#5#6#8
+MailGIVE 中品注灵石 70 0#1#2#3#4#5#6#8
+SendMail 1 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+#Or
+Equal <$Str(A455)> <$USername>
+Equal <$Str(A456)> <$USername>
+Equal <$Str(A457)> <$USername>
+Equal <$Str(A458)> <$USername>
+Equal <$Str(A459)> <$USername>
+#Act
+Set [653] 1
+MailGIVE 10000绑定元宝 10 0#1#2#3#4#5#6#8
+MailGIVE 中品注灵石 50 0#1#2#3#4#5#6#8
+SendMail 1 注灵榜奖励 你好<$USERNAME>注灵榜奖励已发放,请点提取!
+Break
+
+
+[@元神登陆奖励xx]
+#IF
+Equal <$Str(A470)> <$USername>
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 100 0#1#2#3#4#5#6#8
+MailGIVE 火龙气息 30 0#1#2#3#4#5#6#8
+MailGIVE 唯我独尊 1 0#1#2#3#4#5#6#8
+SendMail 172 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A471)> <$USername>
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 70 0#1#2#3#4#5#6#8
+MailGIVE 火龙气息 20 0#1#2#3#4#5#6#8
+SendMail 1 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A472)> <$USername>
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 50 0#1#2#3#4#5#6#8
+MailGIVE 火龙气息 10 0#1#2#3#4#5#6#8
+SendMail 1 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A473)> <$USername>
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 30 0#1#2#3#4#5#6#8
+MailGIVE 火龙气息 7 0#1#2#3#4#5#6#8
+SendMail 1 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A474)> <$USername>
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 20 0#1#2#3#4#5#6#8
+MailGIVE 火龙气息 5 0#1#2#3#4#5#6#8
+SendMail 1 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+Break
+#Or
+Equal <$Str(A475)> <$USername>
+Equal <$Str(A476)> <$USername>
+Equal <$Str(A477)> <$USername>
+Equal <$Str(A478)> <$USername>
+Equal <$Str(A479)> <$USername>
+#Act
+Set [652] 1
+MailGIVE 10000绑定元宝 10 0#1#2#3#4#5#6#8
+MailGIVE 火龙气息 3 0#1#2#3#4#5#6#8
+SendMail 1 元神榜奖励 你好<$USERNAME>元神榜奖励已发放,请点提取!
+
+
+
+
+
+
+[@龙魂登陆奖励xx]
+#IF
+Equal <$Str(A430)> <$USername>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 100 0#1#2#3#4#5#6#8
+MailGIVE 火龙秘宝 10 0#1#2#3#4#5#6#8
+MailGIVE 超凡入圣 1 0#1#2#3#4#5#6#8
+SendMail 171 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A431)> <$USername>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 70 0#1#2#3#4#5#6#8
+MailGIVE 火龙秘宝 7 0#1#2#3#4#5#6#8
+SendMail 1 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A432)> <$USername>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 50 0#1#2#3#4#5#6#8
+MailGIVE 火龙秘宝 5 0#1#2#3#4#5#6#8
+SendMail 1 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A433)> <$USername>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 30 0#1#2#3#4#5#6#8
+MailGIVE 火龙秘宝 3 0#1#2#3#4#5#6#8
+SendMail 1 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A434)> <$USername>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 20 0#1#2#3#4#5#6#8
+MailGIVE 火龙秘宝 2 0#1#2#3#4#5#6#8
+SendMail 1 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+Break
+#Or
+Equal <$Str(A435)> <$USername>
+Equal <$Str(A436)> <$USername>
+Equal <$Str(A437)> <$USername>
+Equal <$Str(A438)> <$USername>
+Equal <$Str(A439)> <$USername>
+#Act
+Set [651] 1
+MailGIVE 10000绑定元宝 10 0#1#2#3#4#5#6#8
+MailGIVE 火龙秘宝 1 0#1#2#3#4#5#6#8
+SendMail 1 龙魂榜奖励 你好<$USERNAME>龙魂榜奖励已发放,请点提取!
+
+
+
+
+[@转生登陆奖励xx]
+
+#IF
+Equal <$Str(A410)> <$USername>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 100 0#1#2#3#4#5#6#8
+MailGIVE 2亿经验卷 1 0#1#2#3#4#5#6#8
+MailGIVE 傲视群雄 1 0#1#2#3#4#5#6#8
+SendMail 170 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A411)> <$USername>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 70 0#1#2#3#4#5#6#8
+MailGIVE 1亿经验卷 1 0#1#2#3#4#5#6#8
+SendMail 1 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A412)> <$USername>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 50 0#1#2#3#4#5#6#8
+MailGIVE 5000W经验卷 1 0#1#2#3#4#5#6#8
+SendMail 1 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A413)> <$USername>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 30 0#1#2#3#4#5#6#8
+MailGIVE 2000W经验卷 1 0#1#2#3#4#5#6#8
+SendMail 1 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+#IF
+Equal <$Str(A414)> <$USername>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 20 0#1#2#3#4#5#6#8
+MailGIVE 1000W经验卷 1 0#1#2#3#4#5#6#8
+SendMail 1 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+#Or
+Equal <$Str(A415)> <$USername>
+Equal <$Str(A416)> <$USername>
+Equal <$Str(A417)> <$USername>
+Equal <$Str(A418)> <$USername>
+Equal <$Str(A419)> <$USername>
+#Act
+Set [650] 1
+MailGIVE 10000绑定元宝 10 0#1#2#3#4#5#6#8
+MailGIVE 500W经验卷 1 0#1#2#3#4#5#6#8
+SendMail 1 转生榜奖励 你好<$USERNAME>转生榜奖励已发放,请点提取!
+Break
+
+
+
+
+
+
+
+
+
+
+
+}

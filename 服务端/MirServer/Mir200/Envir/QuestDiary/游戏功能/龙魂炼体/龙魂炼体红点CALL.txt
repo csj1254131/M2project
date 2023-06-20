@@ -1,0 +1,579 @@
+[@龙魂炼体整体红点]
+{
+
+#IF
+#ACT
+MOV S$C_变强_龙魂炼体
+MOV S$C_龙头变强材料 58
+MOV S$C_龙头变强元宝 58
+
+MOV S$C_龙躯变强材料 58
+MOV S$C_龙躯变强元宝 58
+
+MOV S$C_龙骨变强材料 58
+MOV S$C_龙骨变强元宝 58
+
+MOV S$C_龙尾变强材料 58
+MOV S$C_龙尾变强元宝 58
+
+#IF
+EQUAL <$SNECKLACE> 龙头·未修炼
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·未修炼
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·一阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·一阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·二阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·二阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·三阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·三阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·四阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·四阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·五阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·五阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·六阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·六阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·七阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·七阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·八阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·八阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·九阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·九阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·十阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·十阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·十一阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·十一阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·十二阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·十二阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·十三阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·十三阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·十四阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·十四阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·十五阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·十五阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·十六阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·十六阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·十七阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·十七阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·十八阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·十八阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·十九阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙头·十九阶
+GOTO @炼体变强_龙躯
+break
+#IF
+EQUAL <$SNECKLACE> 龙头·二十阶
+#ACT
+GOTO @炼体变强_龙躯
+break
+
+[@炼体变强_龙躯]
+
+#IF
+EQUAL <$SBUJUK> 龙躯·未修炼
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·未修炼
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·一阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·一阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·二阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·二阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·三阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·三阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·四阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·四阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·五阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·五阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·六阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·六阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·七阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·七阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·八阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·八阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·九阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·九阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·十阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·十阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·十一阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·十一阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·十二阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·十二阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·十三阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·十三阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·十四阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·十四阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·十五阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·十五阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·十六阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·十六阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·十七阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·十七阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·十八阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·十八阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·十九阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙躯·十九阶
+GOTO @炼体变强_龙骨
+break
+#IF
+EQUAL <$SBUJUK> 龙躯·二十阶
+#ACT
+GOTO @炼体变强_龙骨
+break
+
+
+
+[@炼体变强_龙骨]
+
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·未修炼
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·未修炼
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·一阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·一阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·二阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·二阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·三阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·三阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·四阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·四阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·五阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·五阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·六阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·六阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·七阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·七阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·八阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·八阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·九阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·九阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·十阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·十阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·十一阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·十一阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·十二阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·十二阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·十三阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·十三阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·十四阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·十四阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·十五阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·十五阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·十六阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·十六阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·十七阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·十七阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·十八阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·十八阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·十九阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙骨·十九阶
+GOTO @炼体变强_龙尾
+break
+#IF
+EQUAL <$SRIGHTHAND> 龙骨·二十阶
+#ACT
+GOTO @炼体变强_龙尾
+break
+
+[@炼体变强_龙尾]
+
+#IF
+EQUAL <$SCHARM> 龙尾·未修炼
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·未修炼
+GOTO @炼体变强_归总
+break
+
+#IF
+EQUAL <$SCHARM> 龙尾·一阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·一阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·二阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·二阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·三阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·三阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·四阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·四阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·五阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·五阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·六阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·六阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·七阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·七阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·八阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·八阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·九阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·九阶
+GOTO @炼体变强_归总
+break
+
+#IF
+EQUAL <$SCHARM> 龙尾·十阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·十阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·十一阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·十一阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·十二阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·十二阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·十三阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·十三阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·十四阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·十四阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·十五阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·十五阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·十六阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·十六阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·十七阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·十七阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·十八阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·十八阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·十九阶
+#ACT
+#CALL [\游戏功能\龙魂炼体\龙魂变强.txt] @变强龙尾·十九阶
+GOTO @炼体变强_归总
+break
+#IF
+EQUAL <$SCHARM> 龙尾·二十阶
+#ACT
+GOTO @炼体变强_归总
+break
+
+[@炼体变强_归总]
+
+#IF
+EQUAL <$STR(S$C_龙头变强材料)> 224
+EQUAL <$STR(S$C_龙头变强元宝)> 224
+#ACT
+MOV S$C_变强_龙魂炼体 hd
+
+#IF
+EQUAL <$STR(S$C_龙躯变强材料)> 224
+EQUAL <$STR(S$C_龙躯变强元宝)> 224
+#ACT
+MOV S$C_变强_龙魂炼体 hd
+
+#IF
+EQUAL <$STR(S$C_龙骨变强材料)> 224
+EQUAL <$STR(S$C_龙骨变强元宝)> 224
+#ACT
+MOV S$C_变强_龙魂炼体 hd
+
+#IF
+EQUAL <$STR(S$C_龙尾变强材料)> 224
+EQUAL <$STR(S$C_龙尾变强元宝)> 224
+#ACT
+MOV S$C_变强_龙魂炼体 hd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

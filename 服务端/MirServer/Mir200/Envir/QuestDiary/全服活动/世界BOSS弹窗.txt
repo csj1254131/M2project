@@ -1,0 +1,85 @@
+[@世界BOSS弹窗]
+{
+#IF
+EQUAL <$HUMAN(B_世界BOSS伤害)> ??
+#ACT
+VAR Integer HUMAN B_世界BOSS伤害
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/tsbj.png>
+<Layout|id=0|children={1}|x=452|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=170|y=8|width=120|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=世界BOSS>
+<Text|id=3|children={31,32,33}|x=30|y=50|color=251|size=18|outline=2|outlinecolor=0|text=世界BOSS>
+<RText|id=31|x=0|y=23|color=250|size=18|outline=2|outlinecolor=0|text=[活动介绍]:<每周一、五、日、下午19:00准时开启/FCOLOR=255>>
+<RText|id=32|x=0|y=48|color=250|size=18|outline=2|outlinecolor=0|text=[活动奖励]:<活动持续15分钟/FCOLOR=255>>
+<RText|id=33|x=0|y=73|color=250|size=18|outline=2|outlinecolor=0|text=[活动奖励]:<大量元宝、经验、装备、附件/FCOLOR=253>>
+<Button|id=4|x=75|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=参加活动|link=@进入世界地图>
+<Button|id=5|x=225|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=放弃|link=@exit>
+
+
+[@进入世界地图]
+#IF
+EQUAL G200 2
+#ACT
+map sjboss
+NEWDELETETASK 1
+NEWDELETETASK 2
+NEWDELETETASK 3
+NEWDELETETASK 4
+NEWDELETETASK 5
+NEWDELETETASK 6
+NEWDELETETASK 7
+NEWDELETETASK 8
+NEWDELETETASK 9
+NEWDELETETASK 10
+NEWDELETETASK 11
+NEWDELETETASK 12
+NEWDELETETASK 13
+NEWDELETETASK 26
+NEWDELETETASK 27
+NEWDELETETASK 28
+NEWDELETETASK 29
+NEWDELETETASK 30
+NEWDELETETASK 31
+NEWDELETETASK 32
+NEWDELETETASK 33
+NEWDELETETASK 34
+NEWDELETETASK 35
+NEWDELETETASK 36
+NEWDELETETASK 37
+NEWDELETETASK 38
+NEWDELETETASK 42
+#CALL [\全服活动\世界BOSS弹窗.txt] @世界提醒面板
+#CALL [\全服活动\伤害排行.txt] @排行面板
+MOV n$top 0
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>世界BOSS活动尚未开始</font>
+
+
+[@世界提醒面板]
+#IF
+EQUAL G200 1
+#ACT
+MOV N$世界剩余提醒时间 <$STR(G245)>
+DEC N$世界剩余提醒时间 <$UTCNOW8>
+DEC N$世界剩余提醒时间 900
+MOV S$世界提示图标 <Layout|children={1,2,3,4,5,6,7,8}|x=-310|y=-180|width=180|height=200|color=x>
+INC S$世界提示图标 <Button|id=1|x=30|y=30|nimg=custom/hl/hdtb_ui/shijieboss.png|link=@世界BOSS提醒按钮>
+INC S$世界提示图标 <TIMETIPS|id=2|x=35|y=100|time=<$STR(N$世界剩余提醒时间)>|color=191|size=18|outline=2|outlinecolor=0>
+ADDBUTTON 107 18 <$STR(S$世界提示图标)>
+break
+#IF
+EQUAL G200 2
+#ACT
+MOV S$世界提示图标 <Layout|children={1,2,3,4,5,6,7,8}|x=-310|y=-180|width=180|height=200|color=x>
+INC S$世界提示图标 <Button|id=1|x=30|y=30|nimg=custom/hl/hdtb_ui/shijieboss.png|link=@世界BOSS提醒按钮>
+INC S$世界提示图标 <Text|id=2|x=35|y=100|color=250|size=18|outline=2|outlinecolor=0|text=已开启>
+ADDBUTTON 107 18 <$STR(S$世界提示图标)>
+break
+
+}

@@ -1,0 +1,121 @@
+[@读取活跃配置]
+{
+
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃一档 达标活跃度 S$达标活跃度_档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃一档 奖励一IDX  S$奖励一IDX_档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃一档 奖励一名称 S$奖励一名称_档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃一档 奖励一数量 S$奖励一数量_档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃一档 奖励二IDX  S$奖励二IDX_档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃一档 奖励二名称 S$奖励二名称_档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃一档 奖励二数量 S$奖励二数量_档一
+
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃二档 达标活跃度 S$达标活跃度_档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃二档 奖励一IDX  S$奖励一IDX_档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃二档 奖励一名称 S$奖励一名称_档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃二档 奖励一数量 S$奖励一数量_档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃二档 奖励二IDX  S$奖励二IDX_档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃二档 奖励二名称 S$奖励二名称_档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃二档 奖励二数量 S$奖励二数量_档二
+
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃三档 达标活跃度 S$达标活跃度_档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃三档 奖励一IDX  S$奖励一IDX_档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃三档 奖励一名称 S$奖励一名称_档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃三档 奖励一数量 S$奖励一数量_档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃三档 奖励二IDX  S$奖励二IDX_档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃三档 奖励二名称 S$奖励二名称_档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃三档 奖励二数量 S$奖励二数量_档三
+
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃四档 达标活跃度 S$达标活跃度_档四
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃四档 奖励一IDX  S$奖励一IDX_档四
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃四档 奖励一名称 S$奖励一名称_档四
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃四档 奖励一数量 S$奖励一数量_档四
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃四档 奖励二IDX  S$奖励二IDX_档四
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃四档 奖励二名称 S$奖励二名称_档四
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃四档 奖励二数量 S$奖励二数量_档四
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃四档 奖励三IDX  S$奖励三IDX_档四
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃四档 奖励三名称 S$奖励三名称_档四
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃四档 奖励三数量 S$奖励三数量_档四
+
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃五档 达标活跃度 S$达标活跃度_档五
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃五档 奖励一IDX  S$奖励一IDX_档五
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃五档 奖励一名称 S$奖励一名称_档五
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃五档 奖励一数量 S$奖励一数量_档五
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃五档 奖励二IDX  S$奖励二IDX_档五
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃五档 奖励二名称 S$奖励二名称_档五
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃五档 奖励二数量 S$奖励二数量_档五
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃五档 奖励三IDX  S$奖励三IDX_档五
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃五档 奖励三名称 S$奖励三名称_档五
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 日活跃五档 奖励三数量 S$奖励三数量_档五
+
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃一档 达标活跃度 S$达标活跃度_周档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃一档 奖励一IDX  S$奖励一IDX_周档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃一档 奖励一名称 S$奖励一名称_周档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃一档 奖励一数量 S$奖励一数量_周档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃一档 奖励二IDX  S$奖励二IDX_周档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃一档 奖励二名称 S$奖励二名称_周档一
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃一档 奖励二数量 S$奖励二数量_周档一
+
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃二档 达标活跃度 S$达标活跃度_周档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃二档 奖励一IDX  S$奖励一IDX_周档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃二档 奖励一名称 S$奖励一名称_周档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃二档 奖励一数量 S$奖励一数量_周档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃二档 奖励二IDX  S$奖励二IDX_周档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃二档 奖励二名称 S$奖励二名称_周档二
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃二档 奖励二数量 S$奖励二数量_周档二
+
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃三档 达标活跃度 S$达标活跃度_周档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃三档 奖励一IDX  S$奖励一IDX_周档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃三档 奖励一名称 S$奖励一名称_周档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃三档 奖励一数量 S$奖励一数量_周档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃三档 奖励二IDX  S$奖励二IDX_周档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃三档 奖励二名称 S$奖励二名称_周档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃三档 奖励二数量 S$奖励二数量_周档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃三档 奖励三IDX  S$奖励三IDX_周档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃三档 奖励三名称 S$奖励三名称_周档三
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 周活跃三档 奖励三数量 S$奖励三数量_周档三
+
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 每日登录 S$活跃_每日登录
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 会员登录 S$活跃_会员登录
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 装备强化 S$活跃_装备强化
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 挑战领主 S$活跃_挑战领主
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 消费元宝 S$活跃_消费元宝
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 清理魔物 S$活跃_清理魔物
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 火龙币购物 S$活跃_火龙币购物
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 每日充值 S$活跃_每日充值
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 夺宝奇兵 S$活跃_夺宝奇兵
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 勇闯炼狱 S$活跃_勇闯炼狱
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 世界BOSS S$活跃_世界BOSS
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 天降元宝 S$活跃_天降元宝
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 装备注灵 S$活跃_装备注灵
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 锁妖塔 S$活跃_锁妖塔
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 分解装备 S$活跃_分解装备
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 获得声望 S$活跃_获得声望
+ReadConfigFileItem  ..\QuestDiary\游戏功能\活跃系统\活跃配置.ini 任务活跃度 个人BOSS S$活跃_个人BOSS
+
+
+#IF
+EQUAL <$HUMAN(日活跃重置)> 已重置
+equal <$HUMAN(活跃度_每日登录)> 0
+#ACT
+CALCVAR HUMAN 活跃度_每日登录 = 1
+SAVEVAR HUMAN 活跃度_每日登录
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_每日登录)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_每日登录)>
+SAVEVAR HUMAN 活跃度_活跃度周
+
+#IF
+EQUAL <$HUMAN(日活跃重置)> 已重置
+equal <$HUMAN(活跃度_会员登录)> 0
+LARGE U13 0
+#ACT
+CALCVAR HUMAN 活跃度_会员登录 = 1
+SAVEVAR HUMAN 活跃度_会员登录
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_会员登录)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_会员登录)>
+SAVEVAR HUMAN 活跃度_活跃度周
+
+}

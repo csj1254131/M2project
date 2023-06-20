@@ -1,0 +1,384 @@
+[@高级加官官印]
+{
+#IF
+#ACT
+Mov n$官星_1
+Mov n$官星_2
+Mov n$官星_3
+Mov n$官星_4
+Mov n$官星_5
+Mov n$官星_6
+Mov n$官星_7
+Mov n$官星_8
+Mov n$官星_9
+Mov n$官星_10
+Mov s$官印tx
+Mov n$升印特效 0
+Goto @高级加官官印初始
+[@高级加官官印初始]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 官印        s$官印
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 官印tx     s$官印tx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 官印txsf  s$官印txsf
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 物防xx     s$物防xx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 物防sx     s$物防sx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 物防xx     s$魔防xx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 物防sx     s$魔防sx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 攻击xx     s$攻击xx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 攻击sx     s$攻击sx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 Hp          s$Hp
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 激活_1     s$激活_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 激活_2     s$激活_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 消耗_1     s$消耗_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 消耗_2     s$消耗_2
+Mov n$u29 <$Str(u29)>
+Mov n$u30 <$Str(u30)>
+Mov n$u31 <$Str(u31)>
+Mov n$u32 <$Str(u32)>
+Mov n$u33 <$Str(u33)>
+Mov n$u34 <$Str(u34)>
+Mov n$u35 <$Str(u35)>
+INC n$u29 <$str(s$物防xx)>
+INC n$u30 <$str(s$物防sx)>
+INC n$u31 <$str(s$魔防xx)>
+INC n$u32 <$str(s$魔防sx)>
+INC n$u33 <$str(s$攻击xx)>
+INC n$u34 <$str(s$攻击sx)>
+INC n$u35 <$str(s$Hp)>
+MOV s$u28 <$str(n$u28)>
+
+
+
+
+
+#IF
+LARGE  U27 0
+#ACT
+Mov n$官星_1 1
+#IF
+LARGE  U27 1
+#ACT
+Mov n$官星_2 1
+#IF
+LARGE  U27 2
+#ACT
+Mov n$官星_3 1
+#IF
+LARGE  U27 3
+#ACT
+Mov n$官星_4 1
+#IF
+LARGE  U27 4
+#ACT
+Mov n$官星_5 1
+#IF
+LARGE  U27 5
+#ACT
+Mov n$官星_6 1
+#IF
+LARGE  U27 6
+#ACT
+Mov n$官星_7 1
+#IF
+LARGE  U27 7
+#ACT
+Mov n$官星_8 1
+#IF
+LARGE  U27 8
+#ACT
+Mov n$官星_9 1
+
+
+
+#IF
+#ACT
+MOV n$u27 <$Str(u27)>
+
+#IF
+LARGE  U27 9
+SMALL U28 11
+#ACT
+Mov n$官星_10 1
+Mov n$u28 <$str(u28)>
+inc   n$u28 1
+Mov n$u27 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 激活_1     s$激活_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 激活_2     s$激活_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 官印        s$官印
+
+
+
+
+
+
+#IF
+LARGE  U27 9
+EQUAL U28 11
+#ACT
+Mov n$u28 <$str(u28)>
+Dec  n$u28 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 激活_1     s$激活_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 激活_2     s$激活_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 官印        s$官印
+Mov  s$u28 <$str(n$u28)>
+
+
+
+#IF
+CHECKJOB Warrior
+#ACT
+Mov s$Job 攻击
+#IF
+CHECKJOB Wizard
+#ACT
+Mov s$Job 魔法
+#IF
+CHECKJOB Taoist
+#ACT
+Mov s$Job 道术
+
+#IF
+#ACT
+#CALL [\功能脚本\加官进爵\官职红点.txt] @官职红点
+Goto @高级加官官印展示
+
+[@高级加官官印展示]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png|reload=1|layerid=674>
+<Img|a=4|children={0,2,3,20,21,22,40,41,30,34}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=30|children={31}|x=771|y=55|width=60|height=80|color=x|link=@高级加官进爵>
+<Img|id=31|children={32,33,32a}|img=custom/hl/hl_ui/cbl_2.png|@高级加官进爵>
+<Text|a=4|id=32|text=官|color=10|size=17|outline=2|outlinecolor=0|percentx=40|percenty=25>
+<Text|a=4|id=33|text=职|color=10|size=17|outline=2|outlinecolor=0|percentx=40|percenty=50>
+<Img|id=32a|img=custom/hl/hl_ui/<$Str(s$官职红点)>.png|x=15|y=5>
+
+<Layout|id=34|children={35}|x=771|y=133|width=60|height=80|color=x>
+<Img|id=35|children={36,37,36a}|img=custom/hl/hl_ui/cbl_1.png>
+<Text|a=4|id=36|text=官|color=100|size=17|outline=2|outlinecolor=0|percentx=40|percenty=25>
+<Text|a=4|id=37|text=印|color=100|size=17|outline=2|outlinecolor=0|percentx=40|percenty=50>
+<Img|id=36a|img=custom/hl/hl_ui/<$Str(s$官印红点)>.png|x=15|y=5>
+
+<Text|a=4|id=2|text=官印|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Img|a=4|id=3|children={4,6,7,8,9,10,11,12,13,14,15,17,19,5,1001}|img=custom/hl/jiaguanjinjue_ui/bg_guanzhi_01.jpg|percentx=50|percenty=54>
+<Effect|a=4|id=5|effectid=<$Str(s$官印tx)>|effecttype=0|scale=<$Str(s$官印txsf)>|speed=0.5|percentx=50|percenty=40>
+<Img|a=4|id=11|children={110,111,112}|img=custom/hl/guanyin_ui/jk.png|percentx=42|percenty=31>
+
+<Img|a=4|id=110|img=custom/hl/guanyin_ui/<$Str(n$u28)>.png|percentx=50|percenty=25>
+
+<Img|a=4|id=111|img=custom/hl/guanyin_ui/jx.png|percentx=50|percenty=75>
+<Img|a=4|id=112|img=custom/hl/guanyin_ui/<$Str(S$u29)>.png|percentx=50|percenty=48>
+;<$Str(S$u29)>
+<Text|a=4|id=4|text=<$Str(s$官印)>：<$Str(n$u27)> 星|color=251|size=18|outline=2|outlinecolor=0|percentx=50|percenty=5>
+<Text|a=4|id=6|text=当前属性|color=251|size=18|outline=2|outlinecolor=0|percentx=20|percenty=18>
+
+<Img|a=4|id=8|children={80,81,82,83}|img=custom/hl/zhuansheng_ui/bg_hhzy_01_1.png|percentx=20|percenty=38|width=270|height=130|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+
+<Text|id=80|text=物防：<$Str(u29)>-<$Str(u30)>|color=255|size=18|outline=2|outlinecolor=0|x=95|y=8>
+<Text|id=81|text=魔防：<$Str(u31)>-<$Str(u32)>|color=255|size=18|outline=2|outlinecolor=0|x=95|y=38>
+<Text|id=82|text=<$Str(s$Job)>：<$Str(u33)>-<$Str(u34)>|color=255|size=18|outline=2|outlinecolor=0|x=95|y=68>
+<Text|id=83|text=Hp  ：<$Str(u35)>|color=255|size=18|outline=2|outlinecolor=0|x=95|y=98>
+<Img|a=4|id=9|children={90,91,92,93}|img=custom/hl/zhuansheng_ui/bg_hhzy_01_1.png|percentx=80|percenty=38|width=270|height=130|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+#IF
+SMALL U28 11
+#SAY
+<Text|a=4|id=7|text=下级属性|color=251|size=18|outline=2|outlinecolor=0|percentx=80|percenty=18>
+<Text|id=90|text=物防：<$Str(n$u29)>-<$Str(n$u30)>|color=250|size=18|outline=2|outlinecolor=0|x=95|y=8>
+<Text|id=91|text=魔防：<$Str(n$u31)>-<$Str(n$u32)>|color=250|size=18|outline=2|outlinecolor=0|x=95|y=38>
+<Text|id=92|text=<$Str(s$Job)>：<$Str(n$u33)>-<$Str(n$u34)>|color=250|size=18|outline=2|outlinecolor=0|x=95|y=68>
+<Text|id=93|text=Hp  ：<$Str(n$u35)>|color=250|size=18|outline=2|outlinecolor=0|x=95|y=98>
+<Layout|a=4|id=10|children={100,101,102,103,104,105,106,107,108,109}|width=450|height=32|color=x|percentx=50|percenty=56>
+<Img|id=100|img=custom/hl/guanyin_ui/xx_<$Str(n$官星_1)>.png|>
+<Img|id=101|img=custom/hl/guanyin_ui/xx_<$Str(n$官星_2)>.png|x=45>
+<Img|id=102|img=custom/hl/guanyin_ui/xx_<$Str(n$官星_3)>.png|x=90>
+<Img|id=103|img=custom/hl/guanyin_ui/xx_<$Str(n$官星_4)>.png|x=135>
+<Img|id=104|img=custom/hl/guanyin_ui/xx_<$Str(n$官星_5)>.png|x=180>
+<Img|id=105|img=custom/hl/guanyin_ui/xx_<$Str(n$官星_6)>.png|x=225>
+<Img|id=106|img=custom/hl/guanyin_ui/xx_<$Str(n$官星_7)>.png|x=270>
+<Img|id=107|img=custom/hl/guanyin_ui/xx_<$Str(n$官星_8)>.png|x=315>
+<Img|id=108|img=custom/hl/guanyin_ui/xx_<$Str(n$官星_9)>.png|x=360>
+<Img|id=109|img=custom/hl/guanyin_ui/xx_<$Str(n$官星_10)>.png|x=405>
+<Text|id=1001|text=当前声望：$STM(ITEMCOUNT_15)|size=18|percentx=2|percenty=65|outline=2|outlinecolor=0|color=250>
+#ELSESAY
+<Text|a=4|id=91|text=已晋升为最高官职|color=250|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+
+#IF
+EQUAL N$升印特效 1
+#SAY
+<Effect|a=4|id=40|percentx=20|percenty=0|effecttype=0|effectid=6391|dir=5|scale=1|act=0|speed=1|count=1>
+#IF
+EQUAL U27 0
+EQUAL U28 0
+#ACT
+BREAK
+#SAY
+<RText|a=4|id=12|text=官职达到  <<$Str(s$激活_1)>/FCOLOR=251>  可激活|color=249|size=18|outline=2|outlinecolor=0|percentx=50|percenty=70>
+<Button|a=4|id=15|children={16,16a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=90|link=@高级官印激活>
+<Text|a=4|id=16|text=激活|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Img|id=16a|img=custom/hl/hl_ui/<$Str(s$官印红点)>.png|x=95|y=5>
+#IF
+EQUAL U27 10
+SMALL U28 11
+#ACT
+BREAK
+#SAY
+<RText|a=4|id=12|text=官职达到  <<$Str(s$激活_1)>/FCOLOR=251>  可激活|color=249|size=18|outline=2|outlinecolor=0|percentx=50|percenty=70>
+<Button|a=4|id=15|children={16,16a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=90|link=@高级官印进阶>
+<Text|a=4|id=16|text=进阶|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Img|id=16a|img=custom/hl/hl_ui/<$Str(s$官印红点)>.png|x=95|y=5>
+#IF
+SMALL U28 11
+#SAY
+<Text|a=4|id=12|text=消耗材料：<$str(s$消耗_1)> 元宝|color=255|size=18|outline=2|outlinecolor=0|percentx=40|percenty=75>
+<Img|a=4|id=13|img=custom/hl/hl_ui/icon_add_01.png|percentx=60|percenty=75>
+<Text|a=4|id=14|text=<$str(s$消耗_2)> 声望|color=255|size=18|outline=2|outlinecolor=0|percentx=72|percenty=75>
+<Button|a=4|id=15|children={16,16a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=90|link=@高级官印升星>
+<Text|a=4|id=16|text=升星|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Img|id=16a|img=custom/hl/hl_ui/<$Str(s$官印红点)>.png|x=95|y=5>
+[@高级官印进阶]
+#IF
+CHECKBAGSIZE 1
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留一个背包空位</font>
+BREAK
+
+
+#IF
+LARGE  s$激活_2 0
+#ACT
+#ELSEACT
+BREAK
+
+
+#IF
+LARGE  U23 <$Str(s$激活_2)>
+EQUAL U28 10
+#ACT
+inc  U28 1
+INC u29 <$str(s$物防xx)>
+INC u30 <$str(s$物防sx)>
+INC u31 <$str(s$魔防xx)>
+INC u32 <$str(s$魔防sx)>
+INC u33 <$str(s$攻击xx)>
+INC u34 <$str(s$攻击sx)>
+INC u35 <$str(s$Hp)>
+#CALL [\属性刷新.txt] @属性刷新
+Goto @高级加官官印
+BREAK
+
+
+
+;官阶1
+#IF
+LARGE  U23 <$Str(s$激活_2)>
+EQUAL U27 10
+#ACT
+Mov  U27 1
+inc    U28 1
+INC u29 <$str(s$物防xx)>
+INC u30 <$str(s$物防sx)>
+INC u31 <$str(s$魔防xx)>
+INC u32 <$str(s$魔防sx)>
+INC u33 <$str(s$攻击xx)>
+INC u34 <$str(s$攻击sx)>
+INC u35 <$str(s$Hp)>
+TAKEW <$SBELT> 1
+GiveOnItem 27 <$str(s$官印)> 1
+#CALL [\属性刷新.txt] @属性刷新
+Goto @高级加官官印
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>官职品级不足，无法激活</font>
+
+[@高级官印升星]
+#IF
+LARGE  s$消耗_1 0
+#ACT
+#ELSEACT
+BREAK
+
+#IF
+CheckBindMoney 元宝 ? <$Str(s$消耗_1)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝数量不足，无法升星</font>
+BREAK
+
+#IF
+CHECKMONEY 声望 ? <$Str(s$消耗_2)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>声望不足，无法升星</font>
+BREAK
+
+#IF
+SMALL U27 10
+#ACT
+ChangeBindMoney 元宝   <$Str(s$消耗_1)>
+MONEY 声望 -  <$Str(s$消耗_2)>
+INC u27 1
+INC u29 <$str(s$物防xx)>
+INC u30 <$str(s$物防sx)>
+INC u31 <$str(s$魔防xx)>
+INC u32 <$str(s$魔防sx)>
+INC u33 <$str(s$攻击xx)>
+INC u34 <$str(s$攻击sx)>
+INC u35 <$str(s$Hp)>
+Mov n$升印特效 1
+#CALL [\属性刷新.txt] @属性刷新
+Goto @高级加官官印初始
+BREAK
+
+[@高级官印激活]
+#IF
+LARGE  s$激活_2 0
+#ACT
+#ELSEACT
+BREAK
+
+
+
+;官阶1
+#IF
+LARGE  U23 <$Str(s$激活_2)>
+EQUAL U27 0
+#ACT
+Mov   U27 1
+INC u29 <$str(s$物防xx)>
+INC u30 <$str(s$物防sx)>
+INC u31 <$str(s$魔防xx)>
+INC u32 <$str(s$魔防sx)>
+INC u33 <$str(s$攻击xx)>
+INC u34 <$str(s$攻击sx)>
+INC u35 <$str(s$Hp)>
+GiveOnItem 27 <$str(s$官印)> 1
+#CALL [\属性刷新.txt] @属性刷新
+
+Goto @高级加官官印初始
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>官职品级不足，无法激活</font>
+
+
+
+[@高级检测官印星数]
+#IF
+LARGE S$官印等阶 <$Str(n$官印序号)>
+#ACT
+Mov s$官星_<$Str(n$官星序号)> 1
+INC  n$官印序号 1
+INC  n$官星序号 1
+BREAK
+#IF
+SMALL n$官印序号 10
+#ACT
+INC  n$官印序号 1
+INC  n$官星序号 1
+Goto @高级检测官印星数
+BREAK
+
+#IF
+#ACT
+Goto @高级加官官印
+break
+}

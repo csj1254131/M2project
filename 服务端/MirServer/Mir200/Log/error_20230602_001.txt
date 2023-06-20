@@ -1,0 +1,1965 @@
+[2023-06-02 10:05:14:335] Socket Err:10061
+[2023-06-02 10:05:14:653] ProgramException Except：Access violation at address 000000000040FC25 in module 'M2Server.exe'. Read of address FFFFFFFFFFFFFFFF[000000000040FC25] System._ZN6System7TObject4FreeEv (Line 18023, "System.pas" + 5)
+[00000000011FC0E2] JclDebug._ZN8Jcldebug18JclCreateStackListEbiPvbS0_ (Line 5351, "JclDebug.pas" + 1)
+[00000000011FBFC4] JclDebug._ZN8Jcldebug21DoExceptionStackTraceEPN6System7TObjectEPvbS3_ (Line 5292, "JclDebug.pas" + 20)
+[00000000011FF0D8] JclDebug._ZN8Jcldebug14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 6742, "JclDebug.pas" + 7)
+[00000000011EDCB2] JclHookExcept._ZN13Jclhookexcept13TNotifierItem8DoNotifyEPN6System7TObjectEPvbS4_ (Line 272, "JclHookExcept.pas" + 5)
+[00000000011EDF1B] JclHookExcept._ZN13Jclhookexcept14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 339, "JclHookExcept.pas" + 13)
+[00000000011EE0E1] JclHookExcept._ZN13Jclhookexcept19HookedExceptObjProcEPN6System16TExceptionRecordE (Line 395, "JclHookExcept.pas" + 5)
+[0000000000411817] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20765, "System.pas" + 53)
+[00007FFAADA13CFF] Unknown function at __chkstk
+[00007FFAAD98E456] Unknown function at RtlFindCharInUnicodeString
+[00007FFAADA12CEE] KiUserExceptionDispatcher
+[000000000040FC25] System._ZN6System7TObject4FreeEv (Line 18023, "System.pas" + 5)
+[00000000004121B4] System._ZN6System17_DestroyExceptionEP18TExceptionPointersy (Line 23208, "System.pas" + 25)
+[00000000006A1839] Vcl.ExtCtrls._ZN3Vcl8Extctrls6TTimer7WndProcERN6Winapi8Messages8TMessageE (Line 3182, "Vcl.ExtCtrls.pas" + 6)
+[0000000000411B2B] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20834, "System.pas" + 122)
+[00007FFAADA13D7F] Unknown function at __chkstk
+[00007FFAAD98FD44] RtlUnwindEx
+[0000000000411992] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20804, "System.pas" + 92)
+[00007FFAADA13CFF] Unknown function at __chkstk
+[00007FFAAD98E456] Unknown function at RtlFindCharInUnicodeString
+[00007FFAADA12CEE] KiUserExceptionDispatcher
+[000000000041495B] System._ZN6System16InternalUStrCatNERNS_13UnicodeStringEiPS0_ (Line 30058, "System.pas" + 10)
+[00000000004151DB] System._ZN6System9_UStrCatNERNS_13UnicodeStringEi (Line 31171, "System.pas" + 12)
+[000000000122B86C] M2Share._ZN7M2share11OutErrorLogEN6System13UnicodeStringEPNS0_8Sysutils9ExceptionE (Line 4360, "M2Share.pas" + 8)
+[0000000001409930] svMain._ZN6Svmain8TFrmMain18OnProgramExceptionEPN6System7TObjectEPNS1_8Sysutils9ExceptionE (Line 323, "svMain.pas" + 2)
+[000000000073800F] Vcl.Forms._ZN3Vcl5Forms12TApplication15HandleExceptionEPN6System7TObjectE (Line 11537, "Vcl.Forms.pas" + 16)
+[00000000006A17F1] Vcl.ExtCtrls._ZN3Vcl8Extctrls6TTimer7WndProcERN6Winapi8Messages8TMessageE (Line 3182, "Vcl.ExtCtrls.pas" + 6)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFAACCF8231] Unknown function at DispatchMessageW
+[00007FFAACCF7CF1] Unknown function at DispatchMessageW
+[0000000000737983] Vcl.Forms._ZN3Vcl5Forms12TApplication14ProcessMessageER6tagMSG (Line 11317, "Vcl.Forms.pas" + 23)
+[00000000007379F8] Vcl.Forms._ZN3Vcl5Forms12TApplication13HandleMessageEv (Line 11347, "Vcl.Forms.pas" + 1)
+[0000000000737E4F] Vcl.Forms._ZN3Vcl5Forms12TApplication3RunEv (Line 11486, "Vcl.Forms.pas" + 27)
+[0000000001419402] M2Server._ZN8M2server14initializationEv
+[00007FFAAC0526AD] BaseThreadInitThunk
+[00007FFAAD9CA9F8] RtlUserThreadStart
+
+
+[2023-06-02 10:08:20:067] Socket Err:10061
+[2023-06-02 10:08:20:229] ProgramException Except：Access violation at address 000000000040FC25 in module 'M2Server.exe'. Read of address FFFFFFFFFFFFFFFF[000000000040FC25] System._ZN6System7TObject4FreeEv (Line 18023, "System.pas" + 5)
+[00000000011FC0E2] JclDebug._ZN8Jcldebug18JclCreateStackListEbiPvbS0_ (Line 5351, "JclDebug.pas" + 1)
+[00000000011FBFC4] JclDebug._ZN8Jcldebug21DoExceptionStackTraceEPN6System7TObjectEPvbS3_ (Line 5292, "JclDebug.pas" + 20)
+[00000000011FF0D8] JclDebug._ZN8Jcldebug14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 6742, "JclDebug.pas" + 7)
+[00000000011EDCB2] JclHookExcept._ZN13Jclhookexcept13TNotifierItem8DoNotifyEPN6System7TObjectEPvbS4_ (Line 272, "JclHookExcept.pas" + 5)
+[00000000011EDF1B] JclHookExcept._ZN13Jclhookexcept14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 339, "JclHookExcept.pas" + 13)
+[00000000011EE0E1] JclHookExcept._ZN13Jclhookexcept19HookedExceptObjProcEPN6System16TExceptionRecordE (Line 395, "JclHookExcept.pas" + 5)
+[0000000000411817] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20765, "System.pas" + 53)
+[00007FFAADA13CFF] Unknown function at __chkstk
+[00007FFAAD98E456] Unknown function at RtlFindCharInUnicodeString
+[00007FFAADA12CEE] KiUserExceptionDispatcher
+[000000000040FC25] System._ZN6System7TObject4FreeEv (Line 18023, "System.pas" + 5)
+[00000000004121B4] System._ZN6System17_DestroyExceptionEP18TExceptionPointersy (Line 23208, "System.pas" + 25)
+[00000000006A1839] Vcl.ExtCtrls._ZN3Vcl8Extctrls6TTimer7WndProcERN6Winapi8Messages8TMessageE (Line 3182, "Vcl.ExtCtrls.pas" + 6)
+[0000000000411B2B] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20834, "System.pas" + 122)
+[00007FFAADA13D7F] Unknown function at __chkstk
+[00007FFAAD98FD44] RtlUnwindEx
+[0000000000411992] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20804, "System.pas" + 92)
+[00007FFAADA13CFF] Unknown function at __chkstk
+[00007FFAAD98E456] Unknown function at RtlFindCharInUnicodeString
+[00007FFAADA12CEE] KiUserExceptionDispatcher
+[000000000041495B] System._ZN6System16InternalUStrCatNERNS_13UnicodeStringEiPS0_ (Line 30058, "System.pas" + 10)
+[00000000004151DB] System._ZN6System9_UStrCatNERNS_13UnicodeStringEi (Line 31171, "System.pas" + 12)
+[000000000122B86C] M2Share._ZN7M2share11OutErrorLogEN6System13UnicodeStringEPNS0_8Sysutils9ExceptionE (Line 4360, "M2Share.pas" + 8)
+[0000000001409930] svMain._ZN6Svmain8TFrmMain18OnProgramExceptionEPN6System7TObjectEPNS1_8Sysutils9ExceptionE (Line 323, "svMain.pas" + 2)
+[000000000073800F] Vcl.Forms._ZN3Vcl5Forms12TApplication15HandleExceptionEPN6System7TObjectE (Line 11537, "Vcl.Forms.pas" + 16)
+[00000000006A17F1] Vcl.ExtCtrls._ZN3Vcl8Extctrls6TTimer7WndProcERN6Winapi8Messages8TMessageE (Line 3182, "Vcl.ExtCtrls.pas" + 6)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFAACCF8231] Unknown function at DispatchMessageW
+[00007FFAACCF7CF1] Unknown function at DispatchMessageW
+[0000000000737983] Vcl.Forms._ZN3Vcl5Forms12TApplication14ProcessMessageER6tagMSG (Line 11317, "Vcl.Forms.pas" + 23)
+[00000000007379F8] Vcl.Forms._ZN3Vcl5Forms12TApplication13HandleMessageEv (Line 11347, "Vcl.Forms.pas" + 1)
+[0000000000737E4F] Vcl.Forms._ZN3Vcl5Forms12TApplication3RunEv (Line 11486, "Vcl.Forms.pas" + 27)
+[0000000001419402] M2Server._ZN8M2server14initializationEv
+[00007FFAAC0526AD] BaseThreadInitThunk
+[00007FFAAD9CA9F8] RtlUserThreadStart
+
+
+[2023-06-02 10:13:18:108] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[300859]...
+[2023-06-02 10:13:19:623] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[302375]...
+[2023-06-02 10:13:21:139] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[303890]...
+
+[2023-06-02 10:13:22:655] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[305406]...
+[2023-06-02 10:13:24:171] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[306922]...
+[2023-06-02 10:13:25:685] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[308437]...
+
+[2023-06-02 10:13:27:201] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[309953]...
+[2023-06-02 10:13:28:716] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[311469]...
+[2023-06-02 10:13:30:233] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[312984]...
+[2023-06-02 10:13:31:748] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[314500]...
+
+[2023-06-02 10:13:33:264] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[316015]...
+[2023-06-02 10:13:34:780] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[317531]...
+[2023-06-02 10:13:36:296] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[319047]...
+
+[2023-06-02 10:13:37:810] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[320562]...
+[2023-06-02 10:13:39:326] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[322078]...
+[2023-06-02 10:13:40:842] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[323594]...
+
+[2023-06-02 10:13:42:358] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[325109]...
+[2023-06-02 10:13:43:873] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[326625]...
+[2023-06-02 10:13:45:389] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[328140]...
+[2023-06-02 10:13:46:905] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[329656]...
+
+[2023-06-02 10:13:48:421] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[331172]...
+[2023-06-02 10:13:49:935] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[332687]...
+[2023-06-02 10:13:51:451] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[334203]...
+
+[2023-06-02 10:13:52:967] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[335719]...
+[2023-06-02 10:13:54:483] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[337234]...
+[2023-06-02 10:13:55:998] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[338750]...
+
+[2023-06-02 10:13:57:513] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[340265]...
+[2023-06-02 10:13:59:030] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[341781]...
+[2023-06-02 10:14:00:546] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[343297]...
+
+[2023-06-02 10:14:02:060] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[344812]...
+[2023-06-02 10:14:03:576] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[346328]...
+[2023-06-02 10:14:05:092] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[347844]...
+[2023-06-02 10:14:06:608] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[349359]...
+
+[2023-06-02 10:14:08:124] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[350875]...
+[2023-06-02 10:14:09:638] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[352390]...
+[2023-06-02 10:14:11:154] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[353906]...
+
+[2023-06-02 10:14:12:671] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[355422]...
+[2023-06-02 10:14:14:185] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[356937]...
+[2023-06-02 10:14:15:701] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[358453]...
+
+[2023-06-02 10:14:17:217] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[359969]...
+[2023-06-02 10:14:18:733] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[361484]...
+[2023-06-02 10:14:20:249] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[363000]...
+[2023-06-02 10:14:21:763] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[364515]...
+
+[2023-06-02 10:14:23:279] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[366031]...
+[2023-06-02 10:14:24:795] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[367547]...
+[2023-06-02 10:14:26:310] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[369062]...
+
+[2023-06-02 10:14:27:826] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[370578]...
+[2023-06-02 10:14:29:343] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[372094]...
+[2023-06-02 10:14:30:859] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[373609]...
+
+[2023-06-02 10:14:32:373] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[375125]...
+[2023-06-02 10:14:33:889] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[376640]...
+[2023-06-02 10:14:35:405] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[378156]...
+[2023-06-02 10:14:36:921] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[379672]...
+
+[2023-06-02 10:14:38:436] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[381187]...
+[2023-06-02 10:14:39:952] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[382703]...
+[2023-06-02 10:14:41:468] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[384219]...
+
+[2023-06-02 10:14:42:984] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[385734]...
+[2023-06-02 10:14:44:498] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[387250]...
+[2023-06-02 10:14:46:014] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[388765]...
+
+[2023-06-02 10:14:47:530] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[390281]...
+[2023-06-02 10:14:49:046] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[391797]...
+[2023-06-02 10:14:50:562] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[393312]...
+
+[2023-06-02 10:14:52:077] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[394828]...
+[2023-06-02 10:14:53:593] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[396344]...
+[2023-06-02 10:14:55:109] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[397859]...
+[2023-06-02 10:14:56:623] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[399375]...
+
+[2023-06-02 10:14:58:139] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[400890]...
+[2023-06-02 10:14:59:655] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[402406]...
+[2023-06-02 10:15:01:170] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[403922]...
+
+[2023-06-02 10:15:02:686] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[405437]...
+[2023-06-02 10:15:04:202] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[406953]...
+[2023-06-02 10:15:05:718] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[408469]...
+
+[2023-06-02 10:15:07:232] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[409984]...
+[2023-06-02 10:15:08:749] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[411500]...
+[2023-06-02 10:15:10:265] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[413015]...
+[2023-06-02 10:15:11:779] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[414531]...
+
+[2023-06-02 10:15:13:295] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[416047]...
+[2023-06-02 10:15:14:811] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[417562]...
+[2023-06-02 10:15:16:327] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[419078]...
+
+[2023-06-02 10:15:17:842] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[420594]...
+[2023-06-02 10:15:19:358] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[422109]...
+[2023-06-02 10:15:20:874] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[423625]...
+
+[2023-06-02 10:15:22:390] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[425140]...
+[2023-06-02 10:15:23:904] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[426656]...
+[2023-06-02 10:15:25:420] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[428172]...
+[2023-06-02 10:15:26:937] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[429687]...
+
+[2023-06-02 10:15:28:451] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[431203]...
+[2023-06-02 10:15:29:967] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[432719]...
+[2023-06-02 10:15:31:483] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[434234]...
+
+[2023-06-02 10:15:32:999] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[435750]...
+[2023-06-02 10:15:34:515] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[437265]...
+[2023-06-02 10:15:36:029] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[438781]...
+
+[2023-06-02 10:15:37:545] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[440297]...
+[2023-06-02 10:15:39:062] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[441812]...
+[2023-06-02 10:15:40:576] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[443328]...
+
+[2023-06-02 10:15:42:092] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[444844]...
+[2023-06-02 10:15:43:608] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[446359]...
+[2023-06-02 10:15:45:124] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[447875]...
+[2023-06-02 10:15:46:640] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[449390]...
+
+[2023-06-02 10:15:48:154] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[450906]...
+[2023-06-02 10:15:49:670] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[452422]...
+[2023-06-02 10:15:51:186] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[453937]...
+
+[2023-06-02 10:15:52:701] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[455453]...
+[2023-06-02 10:15:54:217] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[456969]...
+[2023-06-02 10:15:55:733] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[458484]...
+
+[2023-06-02 10:15:57:249] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[460000]...
+[2023-06-02 10:15:58:765] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[461515]...
+[2023-06-02 10:16:00:279] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[463031]...
+[2023-06-02 10:16:01:795] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[464547]...
+
+[2023-06-02 10:16:03:311] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[466062]...
+[2023-06-02 10:16:04:827] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[467578]...
+[2023-06-02 10:16:06:342] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[469094]...
+
+[2023-06-02 10:16:07:858] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[470609]...
+[2023-06-02 10:16:09:374] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[472125]...
+[2023-06-02 10:16:10:890] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[473640]...
+
+[2023-06-02 10:16:12:404] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[475156]...
+[2023-06-02 10:16:13:920] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[476672]...
+[2023-06-02 10:16:15:436] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[478187]...
+[2023-06-02 10:16:16:952] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[479703]...
+
+[2023-06-02 10:16:18:468] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[481219]...
+[2023-06-02 10:16:19:983] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[482734]...
+[2023-06-02 10:16:21:499] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[484250]...
+
+[2023-06-02 10:16:23:015] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[485765]...
+[2023-06-02 10:16:24:529] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[487281]...
+[2023-06-02 10:16:26:045] >>Onrun M2HEART 线程[9999]卡死,准备重启,心跳中断[488797]...
+
+[2023-06-02 10:16:40:117] Socket Err:10061
+
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:16:47:083] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-3804] 当前Thread:8424
+[2023-06-02 10:16:47:083] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:16:47:334] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 10:16:48:053] ---------------------线程耗时监控
+[2023-06-02 10:16:48:424] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 10:16:48:436] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 10:16:48:447] FrontEngine(1059093)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 10:16:48:458] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 10:16:48:469] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 10:16:52:202] [RunDB] Save DB Timed Out...
+
+[2023-06-02 10:22:41:569] Socket Err:10061
+
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:538] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:538] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:538] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:538] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:538] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:539] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:539] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:539] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:539] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:539] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:539] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:22:43:539] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:539] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:22:43:539] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:539] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:22:43:539] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28480] 当前Thread:5292
+[2023-06-02 10:22:43:539] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:22:43:716] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 10:22:43:826] ---------------------线程耗时监控
+[2023-06-02 10:22:44:055] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 10:22:44:067] MainRunThread(16)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 10:22:44:080] FrontEngine(1414718)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 10:22:44:092] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 10:22:44:103] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 10:22:48:624] [RunDB] Save DB Timed Out...
+
+[2023-06-02 10:24:11:124] Socket Err:10061
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:24:12:963] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-26508] 当前Thread:22692
+[2023-06-02 10:24:12:963] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+
+[2023-06-02 10:24:13:180] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 10:24:13:286] ---------------------线程耗时监控
+[2023-06-02 10:24:13:507] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 10:24:13:520] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 10:24:13:542] FrontEngine(1504171)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 10:24:13:554] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 10:24:13:566] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 10:24:18:061] [RunDB] Save DB Timed Out...
+
+[2023-06-02 10:36:21:334] Socket Err:10061
+
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:36:23:378] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28088] 当前Thread:17544
+[2023-06-02 10:36:23:378] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:36:23:572] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 10:36:23:707] ---------------------线程耗时监控
+[2023-06-02 10:36:23:958] Frame-----------------------------------
+00d93299 +59 M2Server.exe uHttpGift 507 +14 TServerGiftList.RequestGiftList
+[2023-06-02 10:36:23:970] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 10:36:23:983] FrontEngine(2234625)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 10:36:23:995] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 10:36:24:006] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 10:36:28:483] [RunDB] Save DB Timed Out...
+
+[2023-06-02 10:51:41:267] Socket Err:10061
+
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:51:43:090] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-2696] 当前Thread:30256
+[2023-06-02 10:51:43:090] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 10:51:43:253] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 10:51:43:422] ---------------------线程耗时监控
+[2023-06-02 10:51:43:681] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 10:51:43:693] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 10:51:43:706] FrontEngine(3154343)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 10:51:43:719] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 10:51:43:742] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 10:51:48:202] [RunDB] Save DB Timed Out...
+
+[2023-06-02 11:21:42:874] 通区 UpdateTongFile.\通区\6月2号\.txt
+[2023-06-02 11:21:42:874] 通区文件不存在..\Envir\QuestDiary\\通区\6月2号\.txt
+
+[2023-06-02 11:23:09:375] Socket Err:10061
+
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:23:11:449] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32588] 当前Thread:31904
+[2023-06-02 11:23:11:449] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:23:11:670] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 11:23:11:730] ---------------------线程耗时监控
+[2023-06-02 11:23:12:006] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 11:23:12:032] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 11:23:12:048] FrontEngine(5042687)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 11:23:12:063] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 11:23:12:078] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 11:23:16:546] [RunDB] Save DB Timed Out...
+
+[2023-06-02 11:26:42:441] Socket Err:10061
+
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:26:44:484] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-31868] 当前Thread:12436
+[2023-06-02 11:26:44:484] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:26:44:694] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 11:26:44:760] ---------------------线程耗时监控
+[2023-06-02 11:26:44:962] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 11:26:44:988] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 11:26:45:014] FrontEngine(5255640)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 11:26:45:038] EnvirThread 0/0(4984)flag:1000000047 -----------------------------------
+00407ead +dd M2Server.exe System  3378 +415 SysFreeMem
+0040940e +0e M2Server.exe System  4950   +3 @FreeMem
+00412ef4 +34 M2Server.exe System 25846   +8 @UStrClr
+0041320f +4f M2Server.exe System 26243  +10 @UStrFromPWCharLen
+[2023-06-02 11:26:45:074] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 11:26:45:090] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 11:26:49:576] [RunDB] Save DB Timed Out...
+
+[2023-06-02 11:51:35:854] Socket Err:10061
+
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:51:38:016] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32732] 当前Thread:26120
+[2023-06-02 11:51:38:016] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 11:51:38:213] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 11:51:38:315] ---------------------线程耗时监控
+[2023-06-02 11:51:38:593] Frame-----------------------------------
+0041848c +2c M2Server.exe System 36471 +9 @DynArraySetLength
+[2023-06-02 11:51:38:628] MainRunThread(0)-----------------------------------
+00410974 +4 M2Server.exe System 19558 +1 TMonitor.Destroy
+[2023-06-02 11:51:38:644] FrontEngine(6749281)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 11:51:38:660] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 11:51:38:676] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 11:51:43:108] [RunDB] Save DB Timed Out...
+
+[2023-06-02 12:21:37:966] 通区 UpdateTongFile.\通区\6月2号\.txt
+[2023-06-02 12:21:37:966] 通区文件不存在..\Envir\QuestDiary\\通区\6月2号\.txt
+
+[2023-06-02 12:51:37:968] 通区 UpdateTongFile.\通区\6月2号\.txt
+[2023-06-02 12:51:37:968] 通区文件不存在..\Envir\QuestDiary\\通区\6月2号\.txt
+
+[2023-06-02 13:21:37:967] 通区 UpdateTongFile.\通区\6月2号\.txt
+[2023-06-02 13:21:37:967] 通区文件不存在..\Envir\QuestDiary\\通区\6月2号\.txt
+
+[2023-06-02 13:34:37:699] Socket Err:10061
+
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:34:40:373] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-5884] 当前Thread:10156
+[2023-06-02 13:34:40:373] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:34:40:548] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 13:34:40:698] ---------------------线程耗时监控
+[2023-06-02 13:34:41:038] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 13:34:41:059] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 13:34:41:098] FrontEngine(12931703)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 13:34:41:109] EnvirThread 0/0(5813)flag:50000004 -----------------------------------
+
+[2023-06-02 13:34:41:145] DbThread(15)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 13:34:41:162] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 13:34:45:499] [RunDB] Save DB Timed Out...
+
+[2023-06-02 13:40:16:246] Socket Err:10061
+
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:40:18:838] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-28200] 当前Thread:22288
+[2023-06-02 13:40:18:838] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:40:19:038] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 13:40:19:148] ---------------------线程耗时监控
+[2023-06-02 13:40:19:585] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 13:40:19:600] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 13:40:19:617] FrontEngine(13270250)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 13:40:19:638] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 13:40:19:665] BoxSellDbThread(15)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 13:40:23:952] [RunDB] Save DB Timed Out...
+
+[2023-06-02 13:49:48:780] Socket Err:10061
+
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:49:50:705] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-29548] 当前Thread:30976
+[2023-06-02 13:49:50:705] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:49:50:887] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 13:49:51:022] ---------------------线程耗时监控
+[2023-06-02 13:49:51:289] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 13:49:51:315] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 13:49:51:331] FrontEngine(13841968)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 13:49:51:346] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 13:49:51:362] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 13:49:55:796] [RunDB] Save DB Timed Out...
+
+[2023-06-02 13:53:56:641] Socket Err:10061
+
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:53:58:606] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-8716] 当前Thread:736
+[2023-06-02 13:53:58:606] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 13:53:58:800] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 13:53:58:892] ---------------------线程耗时监控
+[2023-06-02 13:53:59:139] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 13:53:59:154] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 13:53:59:182] FrontEngine(14089812)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 13:53:59:196] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 13:53:59:223] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 13:54:03:701] [RunDB] Save DB Timed Out...
+
+[2023-06-02 14:13:18:081] Socket Err:10061
+
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:13:20:152] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-19644] 当前Thread:31448
+[2023-06-02 14:13:20:152] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:13:20:296] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 14:13:20:432] ---------------------线程耗时监控
+[2023-06-02 14:13:20:711] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 14:13:20:728] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 14:13:20:744] FrontEngine(15251375)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 14:13:20:760] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 14:13:20:775] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 14:13:25:248] [RunDB] Save DB Timed Out...
+
+[2023-06-02 14:25:46:118] Socket Err:10061
+
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:25:48:742] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-30112] 当前Thread:33296
+[2023-06-02 14:25:48:742] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:25:48:929] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 14:25:49:126] ---------------------线程耗时监控
+[2023-06-02 14:25:49:494] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 14:25:49:521] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 14:25:49:571] FrontEngine(16000171)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 14:25:49:587] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 14:25:49:602] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 14:25:53:842] [RunDB] Save DB Timed Out...
+
+[2023-06-02 14:55:48:722] 通区 UpdateTongFile.\通区\6月2号\.txt
+[2023-06-02 14:55:48:722] 通区文件不存在..\Envir\QuestDiary\\通区\6月2号\.txt
+
+[2023-06-02 14:57:35:204] Socket Err:10061
+
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:57:37:077] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-23900] 当前Thread:10104
+[2023-06-02 14:57:37:077] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 14:57:37:261] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 14:57:37:356] ---------------------线程耗时监控
+[2023-06-02 14:57:37:640] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 14:57:37:657] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 14:57:37:673] FrontEngine(17908312)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 14:57:37:689] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 14:57:37:704] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 14:57:42:171] [RunDB] Save DB Timed Out...
+
+[2023-06-02 15:01:28:548] Socket Err:10061
+
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:01:30:896] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-6892] 当前Thread:33436
+[2023-06-02 15:01:30:896] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:01:31:083] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 15:01:31:219] ---------------------线程耗时监控
+[2023-06-02 15:01:31:590] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 15:01:31:614] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 15:01:31:655] FrontEngine(18142265)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 15:01:31:677] EnvirThread 0/0(5516)flag:50000004 -----------------------------------
+0045df66 +016 M2Server.exe System.Variants   886   +5 @VarClear
+0045df78 +008 M2Server.exe System.Variants   896   +2 @VarClr
+013126a5 +865 M2Server.exe ObjPlay         21860 +107 TPlayObject.FuncNpcCall
+[2023-06-02 15:01:31:697] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 15:01:31:725] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 15:01:35:998] [RunDB] Save DB Timed Out...
+
+[2023-06-02 15:04:22:769] Socket Err:10061
+
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:04:24:652] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-32948] 当前Thread:29648
+[2023-06-02 15:04:24:652] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:04:24:816] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 15:04:24:953] ---------------------线程耗时监控
+[2023-06-02 15:04:25:260] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 15:04:25:276] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 15:04:25:292] FrontEngine(18315921)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 15:04:25:307] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 15:04:25:323] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 15:04:29:765] [RunDB] Save DB Timed Out...
+
+[2023-06-02 15:07:18:499] ---------------------线程耗时监控
+[2023-06-02 15:07:18:515] Frame-----------------------------------
+0073912e +15e M2Server.exe Vcl.Forms 11936 +39 TApplication.Idle
+00737a03 +023 M2Server.exe Vcl.Forms 11347  +1 TApplication.HandleMessage
+00737e4a +0ea M2Server.exe Vcl.Forms 11486 +27 TApplication.Run
+014193fd +13d M2Server.exe M2Server    118 +13 initialization
+[2023-06-02 15:07:18:532] MainRunThread(2016)-----------------------------------
+01225121 +081 M2Server.exe M2Share         2643  +5 SendGameCenterMsg
+014148f2 +3c2 M2Server.exe svMain          2349 +97 TMainRunThread.OnRun
+007ed7d3 +113 M2Server.exe uThreadPools     170 +17 TThreadPool.ThreadProc
+007ed386 +026 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +040 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 15:07:18:550] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 15:07:18:566] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 15:07:44:379] Socket Err:10061
+
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:07:46:594] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-2808] 当前Thread:30504
+[2023-06-02 15:07:46:594] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:07:46:780] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 15:07:46:892] ---------------------线程耗时监控
+[2023-06-02 15:07:47:114] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 15:07:47:138] MainRunThread(0)-----------------------------------
+00410974 +4 M2Server.exe System 19558 +1 TMonitor.Destroy
+[2023-06-02 15:07:47:174] FrontEngine(18517796)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 15:07:47:189] EnvirThread 0/0(5203)flag:1000000061 -----------------------------------
+00a74cec +5c M2Server.exe JsonDataObjects 8085 +29 TJsonOutputWriter.TJsonStringBuilder.Grow
+[2023-06-02 15:07:47:226] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 15:07:47:242] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 15:07:51:686] [RunDB] Save DB Timed Out...
+
+[2023-06-02 15:29:07:940] Socket Err:10061
+
+[2023-06-02 15:29:10:483] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:483] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 15:29:10:483] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:483] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 15:29:10:483] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:483] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 15:29:10:483] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:483] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 15:29:10:483] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:29:10:484] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-31104] 当前Thread:29656
+[2023-06-02 15:29:10:484] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 15:29:10:676] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 15:29:10:896] ---------------------线程耗时监控
+[2023-06-02 15:29:11:290] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 15:29:11:316] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 15:29:11:332] FrontEngine(19801968)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 15:29:11:345] EnvirThread 0/0(47)flag:50000004 -----------------------------------
+
+[2023-06-02 15:29:11:381] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 15:29:11:408] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 15:29:15:577] [RunDB] Save DB Timed Out...
+
+[2023-06-02 15:59:10:077] 通区 UpdateTongFile.\通区\6月2号\.txt
+[2023-06-02 15:59:10:077] 通区文件不存在..\Envir\QuestDiary\\通区\6月2号\.txt
+
+[2023-06-02 16:29:10:250] 通区 UpdateTongFile.\通区\6月2号\.txt
+[2023-06-02 16:29:10:250] 通区文件不存在..\Envir\QuestDiary\\通区\6月2号\.txt
+
+[2023-06-02 16:59:10:365] 通区 UpdateTongFile.\通区\6月2号\.txt
+[2023-06-02 16:59:10:365] 通区文件不存在..\Envir\QuestDiary\\通区\6月2号\.txt
+
+[2023-06-02 17:29:10:269] 通区 UpdateTongFile.\通区\6月2号\.txt
+[2023-06-02 17:29:10:269] 通区文件不存在..\Envir\QuestDiary\\通区\6月2号\.txt
+
+[2023-06-02 17:37:52:198] Socket Err:10061
+
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 17:37:58:015] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-33276] 当前Thread:11232
+[2023-06-02 17:37:58:015] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 17:37:58:244] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 17:37:58:750] ---------------------线程耗时监控
+[2023-06-02 17:37:59:356] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 17:37:59:383] MainRunThread(16)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 17:37:59:411] FrontEngine(27530031)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 17:37:59:439] DbThread(16)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 17:37:59:466] BoxSellDbThread(15)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 17:38:03:146] [RunDB] Save DB Timed Out...
+
+[2023-06-02 17:59:36:206] Socket Err:10061
+
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 17:59:38:638] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-30248] 当前Thread:35468
+[2023-06-02 17:59:38:638] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 17:59:38:847] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 17:59:38:928] ---------------------线程耗时监控
+[2023-06-02 17:59:39:437] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 17:59:39:467] MainRunThread(16)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 17:59:39:496] FrontEngine(28830125)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 17:59:39:524] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 17:59:39:552] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 17:59:43:742] [RunDB] Save DB Timed Out...
+
+[2023-06-02 18:11:48:539] Socket Err:10061
+
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:11:51:339] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-37612] 当前Thread:38236
+[2023-06-02 18:11:51:339] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:11:51:504] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 18:11:51:782] ---------------------线程耗时监控
+[2023-06-02 18:11:52:211] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 18:11:52:236] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 18:11:52:262] FrontEngine(29562890)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 18:11:52:289] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 18:11:52:317] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 18:11:56:451] [RunDB] Save DB Timed Out...
+
+[2023-06-02 18:28:31:329] Socket Err:10061
+
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:28:33:906] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-37608] 当前Thread:32432
+[2023-06-02 18:28:33:906] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:28:34:081] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 18:28:34:236] ---------------------线程耗时监控
+[2023-06-02 18:28:34:582] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 18:28:34:612] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 18:28:34:638] FrontEngine(30565265)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 18:28:34:664] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 18:28:34:687] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 18:28:39:015] [RunDB] Save DB Timed Out...
+
+[2023-06-02 18:33:53:644] Socket Err:10061
+
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:33:55:736] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-34992] 当前Thread:36100
+[2023-06-02 18:33:55:736] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:33:55:905] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 18:33:56:054] ---------------------线程耗时监控
+[2023-06-02 18:33:56:331] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 18:33:56:363] MainRunThread(16)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 18:33:56:393] FrontEngine(30887015)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 18:33:56:409] DbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 18:33:56:424] BoxSellDbThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 18:34:00:841] [RunDB] Save DB Timed Out...
+
+[2023-06-02 18:37:00:278] Socket Err:10061
+
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[城门]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] [Error] UserCastle.Initialize MainDoor.UnitObj = nil
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[左城墙]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] [Error] UserCastle.Initialize LeftWall.UnitObj = nil
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[中城墙]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] [Error] UserCastle.Initialize CenterWall.UnitObj = nil
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[右城墙]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] [Error] UserCastle.Initialize RightWall.UnitObj = nil
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[弓箭手]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:37:02:452] >>>>>RegenMonsterByName ThreadError :[守卫]-0[3-36648] 当前Thread:38688
+[2023-06-02 18:37:02:452] [Error] UserCastle.Initialize Guard -> UnitObj = nil
+[2023-06-02 18:37:02:668] [Exception]TIdHttpBoxTitleThread.Execute Error1 {"code":"40006","data":[],"msg":"domain解析错误"}
+[2023-06-02 18:37:02:809] ---------------------线程耗时监控
+[2023-06-02 18:37:03:042] Frame-----------------------------------
+0140d27f +1d8f M2Server.exe svMain          1063 +401 TFrmMain.StartTimerTimer
+006a19b0 +0020 M2Server.exe Vcl.ExtCtrls    3222   +1 TTimer.Timer
+006a17d8 +0038 M2Server.exe Vcl.ExtCtrls    3180   +4 TTimer.WndProc
+00537353 +0023 M2Server.exe System.Classes 18335   +8 StdWndProc
+0073797e +012e M2Server.exe Vcl.Forms      11317  +23 TApplication.ProcessMessage
+007379f3 +0013 M2Server.exe Vcl.Forms      11347   +1 TApplication.HandleMessage
+00737e4a +00ea M2Server.exe Vcl.Forms      11486  +27 TApplication.Run
+014193fd +013d M2Server.exe M2Server         118  +13 initialization
+[2023-06-02 18:37:03:073] MainRunThread(0)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 18:37:03:120] FrontEngine(31073718)-----------------------------------
+00c85ef9 +449 M2Server.exe RunDB            281  +60 GetDBSockMsg
+00c8837f +0af M2Server.exe RunDB            636   +3 SendDBHumCount
+00d436ac +b8c M2Server.exe FrnEngn          586 +161 TFrontEngine.ProcessGameDate
+00d414e5 +015 M2Server.exe FrnEngn          173   +2 TFrontEngine.Run
+00d41407 +017 M2Server.exe FrnEngn          157   +3 TFrontEngine.Execute
+00531320 +040 M2Server.exe System.Classes 15686  +18 ThreadProc
+00412c8a +03a M2Server.exe System         25373   +9 ThreadWrapper
+[2023-06-02 18:37:03:150] DbThread(15)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+[2023-06-02 18:37:03:165] BoxSellDbThread(15)-----------------------------------
+007ed7ae +ee M2Server.exe uThreadPools     166 +13 TThreadPool.ThreadProc
+007ed386 +26 M2Server.exe uThreadPools      70  +2 TMyThread.Execute
+00531320 +40 M2Server.exe System.Classes 15686 +18 ThreadProc
+00412c8a +3a M2Server.exe System         25373  +9 ThreadWrapper
+
+[2023-06-02 18:37:07:611] [RunDB] Save DB Timed Out...
+
+[2023-06-02 19:07:02:276] 通区 UpdateTongFile.\通区\6月2号\.txt
+[2023-06-02 19:07:02:276] 通区文件不存在..\Envir\QuestDiary\\通区\6月2号\.txt
+

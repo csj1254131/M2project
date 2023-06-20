@@ -1,0 +1,524 @@
+[@启动经验使者]
+{
+#IF
+#ACT
+MOV S$古陵选择层
+MOV S$古陵提示显示
+GOTO @高倍经验初始化
+GOTO @古陵条件检测
+
+[@经验使者界面]
+#IF
+#ACT
+MOV N$剩余聚元丹次数 1
+#IF
+LARGE U13 2
+#ACT
+INC N$剩余聚元丹次数 1
+#IF
+LARGE U13 4
+#ACT
+INC N$剩余聚元丹次数 1
+#IF
+LARGE U13 7
+#ACT
+INC N$剩余聚元丹次数 1
+#IF
+LARGE U13 9
+#ACT
+INC N$剩余聚元丹次数 1
+#IF
+LARGE U13 11
+#ACT
+INC N$剩余聚元丹次数 1
+#IF
+LARGE U13 14
+#ACT
+INC N$剩余聚元丹次数 1
+#IF
+#ACT
+DEC N$剩余聚元丹次数 <$HUMAN(B_聚元丹次数)>
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0a,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0a|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=经验使者>
+<Text|id=3|children={31,32}|x=60|y=70|color=255|size=18|outline=2|outlinecolor=0|text=剩余高倍经验额度(使用>
+<Text|id=31|x=245|y=0|color=255|size=18|outline=2|outlinecolor=0|text=可增加一天的回复额度)>
+<Img|id=32|img=custom/hl/hl_ui/js_1.png|x=450|y=0|link=@去古陵提示>
+<ItemShow|id=4|x=245|y=52|itemid=40881|itemcount=1|showtips=1|bgtype=1|scale=0.6>
+<RText|id=5|children={51}|x=620|y=60|color=255|size=16|outline=2|outlinecolor=0|text=今日剩余次数: <<$STR(N$剩余聚元丹次数)>/FCOLOR=250>>
+<Button|id=51|x=0|y=25|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=103|size=18|text=使用聚元丹|link=@使用聚元丹>
+<Img|id=6|children={61,62,63}|img=custom/hl/jingyan_ui/jysz_01.png|x=70|y=105>
+<RText|id=62|a=4|percentx=50|percenty=45|color=255|size=14|outline=1|outlinecolor=0|text=<$HUMAN(B_可恢复经验值)>/<$HUMAN(B_高倍总经验值)>>
+<PercentImg|id=61|direction=0|x=0|y=2|minValue=<$HUMAN(B_可恢复经验值)>|maxValue=<$HUMAN(B_高倍总经验值)>|img=custom/hl/jingyan_ui/jysz_02.png> 
+
+<ListView|id=7|children={70,71,72,73,74,75,76,77,78,79,80,81,82}|x=70|y=135|width=620|height=320|<$STR(S$古陵选择层)>|margin=10|bounce=0|direction=2|color=x>
+<Img|id=70|children={700,701}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_0)>|link=@选择古陵地图#选择序号=0>
+<Text|id=700|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵试炼(无条件)>
+<Layout|id=701|children={702}|width=196|height=282|color=x>
+<Img|id=702|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_0)>.png|width=196|height=282>
+
+<Img|id=71|children={710,711}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_1)>|link=@选择古陵地图#选择序号=1>
+<RText|id=710|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵一层(<1转/FCOLOR=250>以上进入)>
+<Layout|id=711|children={712}|width=196|height=282|color=x>
+<Img|id=712|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_1)>.png|width=196|height=282>
+
+<Img|id=72|children={720,721}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_2)>|link=@选择古陵地图#选择序号=2>
+<RText|id=720|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵二层(<2转/FCOLOR=250>以上进入)>
+<Layout|id=721|children={722}|width=196|height=282|color=x>
+<Img|id=722|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_2)>.png|width=196|height=282>
+
+<Img|id=73|children={730,731}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_3)>|link=@选择古陵地图#选择序号=3>
+<RText|id=730|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵三层(<3转/FCOLOR=250>以上进入)>
+<Layout|id=731|children={732}|width=196|height=282|color=x>
+<Img|id=732|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_3)>.png|width=196|height=282>
+
+<Img|id=74|children={740,741}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_4)>|link=@选择古陵地图#选择序号=4>
+<RText|id=740|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵四层(<4转/FCOLOR=250>以上进入)>
+<Layout|id=741|children={742}|width=196|height=282|color=x>
+<Img|id=742|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_4)>.png|width=196|height=282>
+
+<Img|id=75|children={750,751}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_5)>|link=@选择古陵地图#选择序号=5>
+<RText|id=750|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵五层(<5转/FCOLOR=250>以上进入)>
+<Layout|id=751|children={752}|width=196|height=282|color=x>
+<Img|id=752|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_5)>.png|width=196|height=282>
+
+<Img|id=76|children={760,761}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_6)>|link=@选择古陵地图#选择序号=6>
+<RText|id=760|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵六层(<6转/FCOLOR=250>以上进入)>
+<Layout|id=761|children={762}|width=196|height=282|color=x>
+<Img|id=762|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_6)>.png|width=196|height=282>
+
+<Img|id=77|children={770,771}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_7)>|link=@选择古陵地图#选择序号=7>
+<RText|id=770|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵七层(<7转/FCOLOR=250>以上进入)>
+<Layout|id=771|children={772}|width=196|height=282|color=x>
+<Img|id=772|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_7)>.png|width=196|height=282>
+
+<Img|id=78|children={780,781}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_8)>|link=@选择古陵地图#选择序号=8>
+<RText|id=780|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵八层(<8转/FCOLOR=250>以上进入)>
+<Layout|id=781|children={782}|width=196|height=282|color=x>
+<Img|id=782|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_8)>.png|width=196|height=282>
+
+<Img|id=79|children={790,791}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_9)>|link=@选择古陵地图#选择序号=9>
+<RText|id=790|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵九层(<9转/FCOLOR=250>以上进入)>
+<Layout|id=791|children={792}|width=196|height=282|color=x>
+<Img|id=792|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_9)>.png|width=196|height=282>
+
+<Img|id=80|children={800,801}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_10)>|link=@选择古陵地图#选择序号=10>
+<RText|id=800|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵十层(<10转/FCOLOR=250>以上进入)>
+<Layout|id=801|children={802}|width=196|height=282|color=x>
+<Img|id=802|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_10)>.png|width=196|height=282>
+<RText|id=8|children={a8}|x=70|y=458|color=255|size=18|outline=2|outlinecolor=0|text=我的等级：<<$RELEVEL>/FCOLOR=254>转 <<$LEVEL>/FCOLOR=250>级>
+<Text|id=a8|x=0|y=20|color=255|size=18|outline=2|outlinecolor=0|text=每日恢复额度：<$STR(N$转生恢复值)>>
+<Button|id=9|x=620|y=463|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=进入古陵|link=@进入古陵>
+<$STR(S$古陵提示显示)>
+
+
+
+[@选择古陵地图]
+#IF
+#ACT
+MOV S$古陵选择状态_0
+MOV S$古陵选择状态_1
+MOV S$古陵选择状态_2
+MOV S$古陵选择状态_3
+MOV S$古陵选择状态_4
+MOV S$古陵选择状态_5
+MOV S$古陵选择状态_6
+MOV S$古陵选择状态_7
+MOV S$古陵选择状态_8
+MOV S$古陵选择状态_9
+MOV S$古陵选择状态_10
+MOV S$古陵选择状态_<$STR(S$选择序号)>  hl_xz_01
+MOV N$选择地图 <$STR(S$选择序号)>
+MOV S$古陵选择层 default=<$STR(N$选择地图)>|reload=1
+GOTO @经验使者界面
+
+[@古陵条件检测]
+#IF
+#ACT
+MOV N$古陵灰显_0 1
+MOV N$古陵灰显_1 1
+MOV N$古陵灰显_2 1
+MOV N$古陵灰显_3 1
+MOV N$古陵灰显_4 1
+MOV N$古陵灰显_5 1
+MOV N$古陵灰显_6 1
+MOV N$古陵灰显_7 1
+MOV N$古陵灰显_8 1
+MOV N$古陵灰显_9 1
+MOV N$古陵灰显_10 1
+#IF
+NOT SMALL <$RELEVEL> 0
+#ACT
+MOV N$古陵灰显_0 0
+MOV N$选择地图 0
+#IF
+LARGE <$RELEVEL> 0
+#ACT
+MOV N$古陵灰显_1 0
+MOV N$选择地图 1
+#IF
+LARGE <$RELEVEL> 1
+#ACT
+MOV N$古陵灰显_2 0
+MOV N$选择地图 2
+#IF
+LARGE <$RELEVEL> 2
+#ACT
+MOV N$古陵灰显_3 0
+MOV N$选择地图 3
+#IF
+LARGE <$RELEVEL> 3
+#ACT
+MOV N$古陵灰显_4 0
+MOV N$选择地图 4
+#IF
+LARGE <$RELEVEL> 4
+#ACT
+MOV N$古陵灰显_5 0
+MOV N$选择地图 5
+#IF
+LARGE <$RELEVEL> 5
+#ACT
+MOV N$古陵灰显_6 0
+MOV N$选择地图 6
+#IF
+LARGE <$RELEVEL> 6
+#ACT
+MOV N$古陵灰显_7 0
+MOV N$选择地图 7
+#IF
+LARGE <$RELEVEL> 7
+#ACT
+MOV N$古陵灰显_8 0
+MOV N$选择地图 8
+#IF
+LARGE <$RELEVEL> 8
+#ACT
+MOV N$古陵灰显_9 0
+MOV N$选择地图 9
+#IF
+LARGE <$RELEVEL> 9
+#ACT
+MOV N$古陵灰显_10 0
+MOV N$选择地图 10
+#IF
+#ACT
+MOV S$古陵选择状态_0
+MOV S$古陵选择状态_1
+MOV S$古陵选择状态_2
+MOV S$古陵选择状态_3
+MOV S$古陵选择状态_4
+MOV S$古陵选择状态_5
+MOV S$古陵选择状态_6
+MOV S$古陵选择状态_7
+MOV S$古陵选择状态_8
+MOV S$古陵选择状态_9
+MOV S$古陵选择状态_10
+MOV S$古陵选择状态_<$STR(N$选择地图)>  hl_xz_01
+#IF
+EQUAL N$选择地图 0
+#ACT
+MOV S$古陵选择状态_0  hl_xz_01
+MOV N$选择地图 0
+#IF
+#ACT
+MOV S$古陵选择层 default=<$STR(N$选择地图)>|reload=1
+GOTO @经验使者界面
+
+[@进入古陵]
+#IF
+SMALL <$RELEVEL> <$STR(N$选择地图)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的转生等级不足,请先提升转生等级。</font>
+BREAK
+#ELSEACT
+map gldt<$STR(N$选择地图)>
+DELAYGOTO 1000 @古陵自动战斗
+SENDMSG 9 <font color='#00ff00'>成功进入高倍练级地图，满级归来有我无敌。</font>
+break
+
+
+[@高倍经验初始化]
+#IF
+SMALL <$RELEVEL> 4
+#ACT
+MOV N$转生恢复值 30000000
+#IF
+LARGE <$RELEVEL> 3
+SMALL <$RELEVEL> 6
+#ACT
+MOV N$转生恢复值 50000000
+#IF
+LARGE <$RELEVEL> 5
+#ACT
+MOV N$转生恢复值 <$RELEVEL>
+MUL N$转生恢复值 20000000
+MOV N$等级恢复值 <$LEVEL>
+MUL N$等级恢复值 10000
+INC N$转生恢复值 <$STR(N$等级恢复值)>
+
+#IF
+LARGE N$转生恢复值 220000000
+#ACT
+MOV N$转生恢复值 220000000
+
+#IF
+#ACT
+MOV N$高倍总经验值 <$STR(N$转生恢复值)>
+MUL N$高倍总经验值 7
+CALCVAR HUMAN B_高倍总经验值 = <$STR(N$高倍总经验值)>
+SAVEVAR HUMAN B_高倍总经验值
+
+[@使用聚元丹]
+#IF
+CHECKITEM 聚元丹 1
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的背包里没有聚元丹！</font>
+BREAK
+#IF
+CHECKVAR HUMAN B_聚元丹次数 < 1
+#ACT
+MOV N$选择地图 0
+MOV N$转生恢复值 <$RELEVEL>
+INC N$转生恢复值 5
+MUL N$转生恢复值 2000000
+MOV N$等级恢复值 <$LEVEL>
+DIV N$等级恢复值 10
+MUL N$转生恢复值 <$STR(N$等级恢复值)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>今日使用聚元丹次数已超过1次！</font>
+BREAK
+#IF
+SMALL N$转生恢复值 30000000
+#ACT
+MOV N$转生恢复值 30000000
+#IF
+LARGE N$转生恢复值 220000000
+#ACT
+MOV N$转生恢复值 220000000
+#IF
+CHECKVAR HUMAN B_可恢复经验值 < <$HUMAN(B_高倍总经验值)>
+#ACT
+MOV N$临时总额度 <$HUMAN(B_可恢复经验值)>
+INC N$临时总额度 <$STR(N$转生恢复值)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>经验已超出总额，使用失败。</font>
+BREAK
+#IF
+SMALL N$临时总额度 <$HUMAN(B_高倍总经验值)>
+#ACT
+TAKE 聚元丹 1
+CALCVAR HUMAN B_可恢复经验值 + <$STR(N$转生恢复值)>
+SAVEVAR HUMAN B_可恢复经验值
+CALCVAR HUMAN B_聚元丹次数 + 1
+SAVEVAR HUMAN B_聚元丹次数
+SENDMSG 9 <font color='#00ff00'>聚元丹使用成功，可使用高倍经验大幅提升</font>
+GOTO @经验使者界面
+BREAK
+#IF
+NOT SMALL N$临时总额度 <$HUMAN(B_高倍总经验值)>
+#ACT
+TAKE 聚元丹 1
+CALCVAR HUMAN B_可恢复经验值 = <$HUMAN(B_高倍总经验值)>
+SAVEVAR HUMAN B_可恢复经验值
+CALCVAR HUMAN B_聚元丹次数 + 1
+SAVEVAR HUMAN B_聚元丹次数
+SENDMSG 9 <font color='#00ff00'>聚元丹使用成功，可使用高倍经验大幅提升</font>
+GOTO @经验使者界面
+BREAK
+
+[@古陵自动战斗]
+#IF
+#ACT
+#CALL [\游戏功能\界面按钮\其它按钮QF.txt] @开始挂机
+
+
+[@去古陵提示]
+#IF
+NOT EQUAL S$古陵提示显示
+#ACT
+MOV S$古陵提示显示
+MOV S$古陵选择层 default=<$STR(N$选择地图)>|reload=1
+GOTO @经验使者界面
+#ELSEACT
+MOV S$古陵提示显示 <Img|id=13|children={131,132,133,134,135,136}|x=80.0|y=100|img=custom/hl/hl_ui/bg_tips_01.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=600|height=200>
+INC S$古陵提示显示 <RText|id=131|x=20|y=5|color=255|size=18|text=(1)有剩余高倍经验额度时，古陵内击杀怪物收益为普通情况下的<二十倍/FCOLOR=250>。>
+INC S$古陵提示显示 <RText|id=132|x=20|y=30|color=255|size=18|text=(2)高倍经验额度耗尽之后，回归为普通经验。>
+INC S$古陵提示显示 <RText|id=133|x=20|y=55|color=255|size=18|text=(3)<每日恢复/FCOLOR=250>一定的高倍经验额度，恢复额度随<转生等级和角色等级/FCOLOR=250>递增。>
+INC S$古陵提示显示 <RText|id=134|x=20|y=80|color=255|size=18|text=(4)高倍经验额度可以<积累/FCOLOR=250>，最多积累到当前每日恢复额度的<7倍/FCOLOR=250>。>
+INC S$古陵提示显示 <RText|id=135|x=20|y=105|color=255|size=18|text=(5)可使用<“聚元丹”/FCOLOR=191>立即恢复当前<一天/FCOLOR=250>的高倍经验额度。>
+INC S$古陵提示显示 <RText|id=136|x=20|y=130|color=255|size=18|text=(6)每日可使用“聚元丹”的次数，随着<尊享VIP等级提升/FCOLOR=250>而增加。>
+INC S$古陵提示显示 <Layout|id=20|x=00|y=00|width=3000|height=3000|color=x|link=@关闭古陵提示>
+MOV S$古陵选择层 default=<$STR(N$选择地图)>|reload=1
+GOTO @经验使者界面
+
+[@关闭古陵提示]
+#IF
+#ACT
+MOV S$古陵提示显示
+MOV S$古陵选择层 default=<$STR(N$选择地图)>|reload=1
+GOTO @经验使者界面
+
+
+[@经验倍数递增]
+#IF
+SMALL N$当前经验卷倍数 2
+#ACT
+BREAK
+#IF
+EQUAL N$当前经验卷倍数 <$STR(S$经验倍数值)>
+#ACT
+INC U248 3600
+MOV T203 <$STR(N$当前经验卷倍数)>倍
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+KILLMONEXPRATE <$STR(N$当前经验卷倍数)>00 <$STR(N$剩余倍数时间)>
+SENDMSG 7 <$STR(N$当前经验卷倍数)>倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#IF
+LARGE N$当前经验卷倍数 <$STR(S$经验倍数值)>
+#ACT
+MOV U248 <$UTCNOW8>
+INC U248 3600
+MOV T203 <$STR(N$当前经验卷倍数)>倍
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+KILLMONEXPRATE <$STR(N$当前经验卷倍数)>00 <$STR(N$剩余倍数时间)>
+SENDMSG 7 <$STR(N$当前经验卷倍数)>倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#ELSEACT
+GiveStateItem <$STR(N$当前经验卷倍数)>倍经验卷 1 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#ff0000'><$STR(N$当前经验卷倍数)>倍经验卷使用失败,其他经验倍数尚未结束！</font>
+
+[@经验猪检测]
+#IF
+EQUAL <$KILLMONNAME> [试炼]经验猪
+#ACT
+MOV N$临时经验值 60000
+MOV N$临时经验值1 60001
+MOV N$古陵击杀 1
+#IF
+EQUAL <$KILLMONNAME> [一转]经验猪
+#ACT
+MOV N$临时经验值 100000
+MOV N$临时经验值1 100001
+MOV N$古陵击杀 1
+#IF
+EQUAL <$KILLMONNAME> [二转]经验猪
+#ACT
+MOV N$临时经验值 160000
+MOV N$临时经验值1 160001
+MOV N$古陵击杀 1
+#IF
+EQUAL <$KILLMONNAME> [三转]经验猪
+#ACT
+MOV N$临时经验值 220000
+MOV N$临时经验值1 220001
+MOV N$古陵击杀 1
+#IF
+EQUAL <$KILLMONNAME> [四转]经验猪
+#ACT
+MOV N$临时经验值 300000
+MOV N$临时经验值1 300001
+MOV N$古陵击杀 1
+#IF
+EQUAL <$KILLMONNAME> [五转]经验猪
+#ACT
+MOV N$临时经验值 380000
+MOV N$临时经验值1 380001
+MOV N$古陵击杀 1
+#IF
+EQUAL <$KILLMONNAME> [六转]经验猪
+#ACT
+MOV N$临时经验值 420000
+MOV N$临时经验值1 420001
+MOV N$古陵击杀 1
+#IF
+EQUAL <$KILLMONNAME> [七转]经验猪
+#ACT
+MOV N$临时经验值 500000
+MOV N$临时经验值1 500001
+MOV N$古陵击杀 1
+#IF
+EQUAL <$KILLMONNAME> [八转]经验猪
+#ACT
+MOV N$临时经验值 600000
+MOV N$临时经验值1 600001
+MOV N$古陵击杀 1
+#IF
+EQUAL <$KILLMONNAME> [九转]经验猪
+#ACT
+MOV N$临时经验值 800000
+MOV N$临时经验值1 800001
+MOV N$古陵击杀 1
+#IF
+EQUAL <$KILLMONNAME> [十转]经验猪
+#ACT
+MOV N$临时经验值 1000000
+MOV N$临时经验值1 1000001
+MOV N$古陵击杀 1
+
+#IF
+EQUAL N$古陵击杀 1
+CHECKVAR HUMAN B_可恢复经验值 > <$STR(N$临时经验值)>
+#ACT
+CALCVAR HUMAN B_可恢复经验值 - <$STR(N$临时经验值)>
+SAVEVAR HUMAN B_可恢复经验值
+CHANGEEXP + <$STR(N$临时经验值)>
+
+#IF
+CheckContainsText <$KILLMONNAME> ]经验猪
+CHECKVAR HUMAN B_可恢复经验值 < <$STR(N$临时经验值1)>
+CHECKVAR HUMAN B_可恢复经验值 > 0
+#ACT
+CALCVAR HUMAN B_可恢复经验值 = 0
+SAVEVAR HUMAN B_可恢复经验值
+CHANGEEXP + <$STR(N$临时经验值)>
+SendCenterMsg 249 0 还剩余%d秒离开本地图. 0 60 @退出古陵地图
+
+#IF
+EQUAL T203
+#ACT
+MOV N$超级猪经验 1
+#ELSEACT
+MOV S$超级猪经验 T203
+DEC S$超级猪经验 倍
+MOV N$超级猪经验 <$str(S$超级猪经验)>
+
+#IF
+CheckContainsText <$KILLMONNAME> [初级]超级经验猪
+SMALL U249 10
+#ACT
+INC U249 1
+MUL N$超级猪经验 888888
+CHANGEEXP + <$str(N$超级猪经验)>
+SENDMSG 7 成功击杀【<$KILLMONNAME>】，今日已击杀<$STR(U249)>/10
+#IF
+CheckContainsText <$KILLMONNAME> [中级]超级经验猪
+SMALL U249 10
+#ACT
+INC U249 1
+MUL N$超级猪经验 2888888
+CHANGEEXP + <$str(N$超级猪经验)>
+SENDMSG 7 成功击杀【<$KILLMONNAME>】，今日已击杀<$STR(U249)>/10
+#IF
+CheckContainsText <$KILLMONNAME> [高级]超级经验猪
+SMALL U249 10
+#ACT
+INC U249 1
+MUL N$超级猪经验 5888888
+CHANGEEXP + <$str(N$超级猪经验)>
+SENDMSG 7 成功击杀【<$KILLMONNAME>】，今日已击杀<$STR(U249)>/10
+#IF
+CheckContainsText <$KILLMONNAME> [顶级]超级经验猪
+SMALL U249 10
+#ACT
+INC U249 1
+MUL N$超级猪经验 8888888
+CHANGEEXP + <$str(N$超级猪经验)>
+SENDMSG 7 成功击杀【<$KILLMONNAME>】，今日已击杀<$STR(U249)>/10
+}

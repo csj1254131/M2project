@@ -1,0 +1,453 @@
+[@每日充值红点]
+{
+#IF
+#ACT
+Mov s$累消红点
+MOV S$活动红点
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+
+
+#IF
+large U36 0
+equal U37 0
+#ACT
+Mov s$连充红点 <Img|id=4c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @等级目标红点
+BREAK
+#IF
+large  U36 1
+equal U38 0
+#ACT
+Mov s$连充红点 <Img|id=4c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @等级目标红点
+BREAK
+#IF
+large U36 2
+equal U39 0
+#ACT
+Mov s$连充红点 <Img|id=4c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @等级目标红点
+BREAK
+#IF
+large U36 3
+equal U40 0
+#ACT
+Mov s$连充红点 <Img|id=4c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @等级目标红点
+BREAK
+#IF
+large U36 4
+equal U41 0
+#ACT
+Mov s$连充红点 <Img|id=4c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @等级目标红点
+BREAK
+#IF
+large U36 5
+equal U42 0
+#ACT
+Mov s$连充红点 <Img|id=4c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @等级目标红点
+BREAK
+#IF
+large U36 6
+equal U43 0
+#ACT
+Mov s$连充红点 <Img|id=4c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @等级目标红点
+BREAK
+#IF
+#ACT
+Mov s$连充红点
+Goto @等级目标红点
+BREAK
+
+
+[@等级目标红点]
+#IF
+equal U45 0
+CHECKLEVELEX > 39
+#ACT
+Mov s$目标红点 <Img|id=5c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @累计登陆红点
+BREAK
+#IF
+equal U46 0
+CHECKLEVELEX > 49
+#ACT
+Mov s$目标红点 <Img|id=5c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @累计登陆红点
+BREAK
+#IF
+large  G2   0
+equal U47 0
+CHECKLEVELEX > 59
+#ACT
+Mov s$目标红点 <Img|id=5c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @累计登陆红点
+BREAK
+#IF
+large  G3   0
+equal U48 0
+CHECKLEVELEX > 69
+#ACT
+Mov s$目标红点 <Img|id=5c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @累计登陆红点
+BREAK
+#IF
+large  G4   0
+equal U49 0
+CHECKLEVELEX > 79
+#ACT
+Mov s$目标红点 <Img|id=5c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @累计登陆红点
+BREAK
+
+#IF
+large  G5   0
+equal U50 0
+CHECKLEVELEX > 99
+#ACT
+Mov s$目标红点 <Img|id=5c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @累计登陆红点
+BREAK
+#IF
+large  G6   0
+equal U51 0
+CHECKRENEWLEVEL > 4
+#ACT
+Mov s$目标红点 <Img|id=5c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @累计登陆红点
+BREAK
+
+#IF
+#ACT
+Mov s$目标红点 
+Goto @累计登陆红点
+BREAK
+[@累计登陆红点]
+#IF
+large  U56 0
+equal U57 0
+#ACT
+Mov s$累登红点 <Img|id=6c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时充值红点
+BREAK
+#IF
+large  U56 1
+equal U58 0
+#ACT
+Mov s$累登红点 <Img|id=6c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时充值红点
+BREAK
+#IF
+large  U56 2
+equal U59 0
+#ACT
+Mov s$累登红点 <Img|id=6c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时充值红点
+BREAK
+#IF
+large  U56 3
+equal U60 0
+#ACT
+Mov s$累登红点 <Img|id=6c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时充值红点
+BREAK
+#IF
+large  U56 4
+equal U61 0
+#ACT
+Mov s$累登红点 <Img|id=6c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时充值红点
+BREAK
+#IF
+large  U56 5
+equal U62 0
+#ACT
+Mov s$累登红点 <Img|id=6c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时充值红点
+BREAK
+#IF
+large  U56 6
+equal U63 0
+#ACT
+Mov s$累登红点 <Img|id=6c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时充值红点
+BREAK
+
+#IF
+#ACT
+Mov s$累登红点 
+Goto @限时充值红点
+BREAK
+
+[@限时特惠红点]
+#or
+EQUAL U114 0
+EQUAL U115 0
+EQUAL U116 0
+#act
+Mov s$特惠红点 <Img|id=7c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时充值红点
+BREAK
+#IF
+#ACT
+Mov s$特惠红点
+Goto @限时充值红点
+BREAK
+
+[@限时充值红点]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累计配置.ini 累计充值 累计金额_1 s$累计金额_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累计配置.ini 累计充值 累计金额_2 s$累计金额_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累计配置.ini 累计充值 累计金额_3 s$累计金额_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累计配置.ini 累计充值 累计金额_4 s$累计金额_4
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累计配置.ini 累计充值 累计金额_5 s$累计金额_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累计配置.ini 累计充值 累计金额_6 s$累计金额_6
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累计配置.ini 累计充值 累计金额_7 s$累计金额_7
+
+#IF
+CHECKMONEY  积分  ? <$Str(s$累计金额_1)>
+equal U121 0
+#ACT
+Mov s$累充红点 <Img|id=1000c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时消费红点
+BREAK
+#IF
+CHECKMONEY  积分  ? <$Str(s$累计金额_2)>
+equal U122 0
+#ACT
+Mov s$累充红点 <Img|id=1000c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时消费红点
+BREAK
+#IF
+CHECKMONEY  积分  ? <$Str(s$累计金额_3)>
+equal U123 0
+#ACT
+Mov s$累充红点 <Img|id=1000c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时消费红点
+BREAK
+#IF
+CHECKMONEY  积分  ? <$Str(s$累计金额_4)>
+equal U124 0
+#ACT
+Mov s$累充红点 <Img|id=1000c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时消费红点
+BREAK
+#IF
+CHECKMONEY  积分  ? <$Str(s$累计金额_5)>
+equal U125 0
+#ACT
+Mov s$累充红点 <Img|id=1000c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时消费红点
+BREAK
+#IF
+CHECKMONEY  积分  ? <$Str(s$累计金额_6)>
+equal U126 0
+#ACT
+Mov s$累充红点 <Img|id=1000c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时消费红点
+BREAK
+#IF
+CHECKMONEY  积分  ? <$Str(s$累计金额_7)>
+equal U127 0
+#ACT
+Mov s$累充红点 <Img|id=1000c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+Goto @限时消费红点
+BREAK
+
+#IF
+#ACT
+Mov s$累充红点
+Goto @限时消费红点
+BREAK
+
+[@限时消费红点]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_1 s$累消金额_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_2 s$累消金额_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_3 s$累消金额_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_4 s$累消金额_4
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_5 s$累消金额_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_6 s$累消金额_6
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_7 s$累消金额_7
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累消配置.ini 累计消费 累消金额_8 s$累消金额_8
+
+
+#IF
+Not  small u120 <$Str(s$累消金额_1)>
+equal U128 0
+#ACT
+Mov s$累消红点 <Img|id=1001c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+
+BREAK
+#IF
+Not  small u120 <$Str(s$累消金额_2)>
+equal U129 0
+#ACT
+Mov s$累消红点 <Img|id=1001c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+
+BREAK
+#IF
+Not  small u120 <$Str(s$累消金额_3)>
+equal U130 0
+#ACT
+Mov s$累消红点 <Img|id=1001c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+
+BREAK
+
+#IF
+Not  small u120 <$Str(s$累消金额_4)>
+equal U131 0
+#ACT
+Mov s$累消红点 <Img|id=1001c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+
+BREAK
+
+#IF
+Not  small u120 <$Str(s$累消金额_5)>
+equal U132 0
+#ACT
+Mov s$累消红点 <Img|id=1001c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+
+BREAK
+
+#IF
+Not  small u120 <$Str(s$累消金额_6)>
+equal U133 0
+#ACT
+Mov s$累消红点 <Img|id=1001c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+#IF
+Not  small u120 <$Str(s$累消金额_7)>
+equal U134 0
+#ACT
+Mov s$累消红点 <Img|id=1001c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+#IF
+Not  small u120 <$Str(s$累消金额_8)>
+equal U135 0
+#ACT
+Mov s$累消红点 <Img|id=1001c|x=95|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+MOV S$活动红点  icon_red_01
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+
+}

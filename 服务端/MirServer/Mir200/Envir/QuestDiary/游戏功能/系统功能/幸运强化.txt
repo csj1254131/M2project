@@ -1,0 +1,592 @@
+[@启动幸运强化]
+{
+#IF
+#ACT
+MOV S$激活按钮 nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png
+MOV S$默认按钮 nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png
+MOV N$成功几率 0
+MOV N$消耗元宝 5000
+MOV N$当前暴击 0
+MOV N$下级暴击 0
+MOV N$当前幸运 0
+MOV N$下级幸运 0
+MOV N$降级幸运 0
+MOV S$幸运提示
+MOV S$转移提示
+MOV S$唯一ID
+MOV S$本级属性显示
+MOV S$下级属性显示
+MOV S$初始ID
+GOTO @强化界面
+
+
+[@强化界面]
+#IF
+#ACT
+GOTO @星星显示
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|layerid=671|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=幸运强化>
+<ListView|id=3|children={31}|x=242|y=60|width=3|height=450|margin=2|bounce=1|direction=1|color=x>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=4|x=22.0|y=65.0|<$STR(S$激活按钮)>|color=103|size=18|text=幸运强化|link=@强化界面>
+<Button|id=5|x=133.0|y=65.0|<$STR(S$默认按钮)>|color=160|size=18|text=幸运转移|link=@转移界面>
+<ListView|id=6|children={61}|x=20|y=106|width=225|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=61|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=7|children={71}|x=25|y=118|width=210|height=380|margin=2|bounce=0|direction=1|color=x>
+<BAGITEMS|id=71|condition=19#0,19#123,20#0,21#0,|select=<$STR(S0)>|count=15|row=5|x=0|y=0|selecttype=1|link=@项链幸运提交背包>
+<Layout|id=8|children={81}|x=248|y=61|width=500|height=445|color=x>
+<Img|id=81|a=4|percentx=50|percenty=50|img=custom/hl/equip_xlqh/xyqh_bg.png>
+<DBItemShow|makeindex=<$STR(S$唯一ID)>|id=18|x=468|y=182>
+<$STR(S$星星显示)>
+<Img|id=12|children={121,122,123,124}|x=295.0|y=320|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png>
+<Img|id=121|x=260.0|y=0|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png>
+<Img|id=122|x=10|y=3|img=custom/hl/equip_xlqh/1900013005.png>
+<Img|id=123|x=270.0|y=3|img=custom/hl/equip_xlqh/1900013006.png>
+<Button|id=124|x=415.0|y=-257.0|nimg=custom/hl/hl_ui/icon_fuhao_02.png|pimg=custom/hl/hl_ui/icon_fuhao_02.png|color=103|size=18|link=@幸运提升提示>
+<$STR(S$本级属性显示)>
+<$STR(S$下级属性显示)>
+<Text|id=15|x=565|y=470|color=250|size=18|text=成功几率 <$STR(N$成功几率)> %>
+<Text|id=16|children={161,162}|x=445|y=440|color=255|size=18|text=消耗：>
+<Img|id=161|x=45.0|y=-7|img=item/item_4/000001.png>
+<Text|id=162|x=90|y=0|color=250|size=18|text=<$STR(N$消耗元宝)>>
+<Button|id=17|x=440.0|y=465.0|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=103|size=18|text=幸运提升|link=@幸运提升>
+<Img|id=9|x=464.0|y=180|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<$STR(S$幸运提示)>
+
+
+
+[@项链幸运提交背包]
+#IF
+#ACT
+SelectBagItems <$STR(S0)>
+MOV S$初始ID <$STR(S0)>
+MOV S$唯一ID <$STR(S0)>
+LINKITEMBYMAKEINDEX <$STR(S$唯一ID)>
+UpDateBoxItem -1
+GETITEMADDVALUE -1 5 N$当前幸运
+
+
+#IF
+#ACT
+MOV N$下级幸运 <$STR(N$当前幸运)>
+INC N$下级幸运 1
+MOV S$本级属性显示 <Text|id=13|children={131,132,133}|x=305|y=360|color=103|size=18|text=幸运=<$STR(N$当前幸运)>>
+MOV S$下级属性显示 <Text|id=14|children={141,142,143}|x=565|y=360|color=250|size=18|text=幸运=<$STR(N$下级幸运)>>
+#IF
+EQUAL N$当前幸运 2
+#ACT
+INC S$下级属性显示 <RText|id=141|x=0|y=24|color=250|size=18|text=获得<1%-10%/FCOLOR=253>暴击几率>
+#IF
+EQUAL N$当前幸运 3
+#ACT
+MOV N$下级幸运 3
+GetNewItemAddValue -1 0 N$当前暴击
+MOV S$下级属性显示 <Text|id=14|children={141,142,143}|x=565|y=360|color=250|size=18|text=幸运=<$STR(N$下级幸运)>>
+INC S$本级属性显示 <Text|id=131|x=0|y=24|color=103|size=18|text=暴击几率=<$STR(N$当前暴击)>%>
+INC S$下级属性显示 <RText|id=141|x=0|y=24|color=250|size=18|text=获得<1%-10%/FCOLOR=253>暴击几率>
+
+#IF
+#ACT
+GOTO @效果展示
+GOTO @星星显示
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|layerid=671|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=幸运强化>
+<ListView|id=3|children={31}|x=242|y=60|width=3|height=445|margin=2|bounce=1|direction=1|color=x>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=4|x=22.0|y=65.0|<$STR(S$激活按钮)>|color=103|size=18|text=幸运强化|link=@强化界面>
+<Button|id=5|x=133.0|y=65.0|<$STR(S$默认按钮)>|color=160|size=18|text=幸运转移|link=@转移界面>
+<ListView|id=6|children={61}|x=20|y=106|width=225|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=61|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=7|children={71}|x=25|y=118|width=210|height=380|margin=2|bounce=0|direction=1|color=x>
+<BAGITEMS|id=71|condition=19#0,19#123,20#0,21#0,|select=<$STR(S0)>|count=15|row=5|x=0|y=0|selecttype=1|link=@项链幸运提交背包>
+<Layout|id=8|children={81}|x=248|y=61|width=500|height=445|color=x>
+<Img|id=81|a=4|percentx=50|percenty=50|img=custom/hl/equip_xlqh/xyqh_bg.png>
+<Img|id=82|x=483.0|y=117|img=public/1900000664.png>
+<DBItemShow|makeindex=<$STR(S$唯一ID)>|id=18|x=468|y=182>
+<$STR(S$星星显示)>
+<Img|id=12|children={121,122,123,124}|x=295.0|y=320|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png>
+<Img|id=121|x=260.0|y=0|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png>
+<Img|id=122|x=10|y=3|img=custom/hl/equip_xlqh/1900013005.png>
+<Img|id=123|x=270.0|y=3|img=custom/hl/equip_xlqh/1900013006.png>
+<Button|id=124|x=415.0|y=-257.0|nimg=custom/hl/hl_ui/icon_fuhao_02.png|pimg=custom/hl/hl_ui/icon_fuhao_02.png|color=103|size=18|link=@幸运提升提示>
+<$STR(S$本级属性显示)>
+<$STR(S$下级属性显示)>
+<Text|id=15|x=565|y=470|color=250|size=18|text=成功几率 100%>
+<Text|id=16|children={161,162}|x=445|y=440|color=255|size=18|text=消耗：>
+<Img|id=161|x=45.0|y=-7|img=item/item_4/000001.png>
+<Text|id=162|x=90|y=0|color=250|size=18|text=<$STR(N$消耗元宝)>>
+<Button|id=17|x=440.0|y=465.0|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=103|size=18|text=幸运提升|link=@幸运提升>
+<Img|id=9|x=464.0|y=180|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<$STR(S$幸运提示)>
+
+[@幸运提升]
+#IF
+#ACT
+MOV S$幸运提升标识 0
+#IF
+EQUAL <$STR(S$唯一ID)> <$STR(S$初始ID)>
+NOT EQUAL <$STR(S$唯一ID)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请先选择您要提升的项链。</font>
+BREAK
+
+#IF
+CheckBindMoney 元宝 ? <$STR(N$消耗元宝)>
+#ACT
+ChangeBindMoney 元宝 <$STR(N$消耗元宝)>
+MOV S$幸运提升标识 1
+MOV N$随机暴击 0
+GOTO @成功赋值
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足，无法再提升。</font>
+BREAK
+
+[@成功赋值]
+#IF
+EQUAL S$幸运提升标识 1
+LARGE N$当前幸运 1
+#ACT
+GOTO @刷新暴击几率
+MOV N$随机暴击 <$STR(N$本次暴击点)>
+
+#IF
+EQUAL S$幸运提升标识 1
+#ACT
+CHANGEITEMADDVALUE -1 5 = <$STR(N$下级幸运)>
+#IF
+LARGE N$随机暴击 0
+#ACT
+SetNewItemValue -1 0 = <$STR(N$随机暴击)>
+
+#IF
+#ACT
+UpDateBoxItem -1
+MOV S0 <$STR(S$唯一ID)>
+SENDMSG 9 <font color='#00ff00'>提升成功。</font>
+GOTO @项链幸运提交背包
+
+
+[@刷新暴击几率]
+#IF
+EQUAL S$幸运提升标识 1
+#ACT
+#ELSEACT
+BREAK
+
+#IF
+RANDOMEX 1 1000
+#ACT
+MOV N$本次暴击点 10
+BREAK
+
+#IF
+RANDOMEX 9 500
+#ACT
+MOV N$本次暴击点 9
+BREAK
+
+#IF
+RANDOMEX 14 500
+#ACT
+MOVR N$本次暴击点 6 8
+BREAK
+
+#IF
+#ACT
+MOVR N$本次暴击点 1 5
+BREAK
+
+[@星星显示]
+#IF
+#ACT
+MOV N$点亮节点 0
+MOV S$星星显示
+MOV N$递增值 32
+MOV N$星坐标X1 445
+MOV N$星坐标Y1 320
+MOV N$星坐标Y2 0
+MOV N$星坐标X2 <$STR(N$递增值)>
+MOV N$星坐标X3 <$STR(N$星坐标X2)>
+INC N$星坐标X3 <$STR(N$递增值)>
+
+MOV S$亮星 img=custom/hl/equip_xlqh/1900000657.png
+MOV S$暗星 img=custom/hl/equip_xlqh/1900000656.png
+
+#IF
+SMALL N$点亮节点 <$STR(N$当前幸运)>
+#ACT
+MOV S$星1 <$STR(S$亮星)>
+INC N$点亮节点 1
+#ELSEACT
+MOV S$星1 <$STR(S$暗星)>
+INC N$点亮节点 1
+
+#IF
+SMALL N$点亮节点 <$STR(N$当前幸运)>
+#ACT
+MOV S$星2 <$STR(S$亮星)>
+INC N$点亮节点 1
+#ELSEACT
+MOV S$星2 <$STR(S$暗星)>
+INC N$点亮节点 1
+
+#IF
+SMALL N$点亮节点 <$STR(N$当前幸运)>
+#ACT
+MOV S$星3 <$STR(S$亮星)>
+INC N$点亮节点 1
+#ELSEACT
+MOV S$星3 <$STR(S$暗星)>
+INC N$点亮节点 1
+
+#IF
+#ACT
+INC S$星星显示 <Img|id=10|children={101,102,103,104,105,106,107,108,109,110,111,112,113,114}|x=<$STR(N$星坐标X1)>|y=<$STR(N$星坐标Y1)>|<$STR(S$星1)>>
+INC S$星星显示 <Img|id=101|x=<$STR(N$星坐标X2)>|y=<$STR(N$星坐标Y2)>|<$STR(S$星2)>>
+INC S$星星显示 <Img|id=102|x=<$STR(N$星坐标X3)>|y=<$STR(N$星坐标Y2)>|<$STR(S$星3)>>
+
+[@效果展示]
+#IF
+#ACT
+MOV N$消耗元宝 0
+MOV N$当前暴击 0
+
+#IF
+EQUAL N$当前幸运 0
+#ACT
+MOV N$消耗元宝 5000
+MOV N$当前暴击 0
+break
+#IF
+EQUAL N$当前幸运 1
+#ACT
+MOV N$消耗元宝 50000
+MOV N$当前暴击 0
+break
+#IF
+EQUAL N$当前幸运 2
+#ACT
+MOV N$消耗元宝 200000
+MOV N$当前暴击 0
+break
+
+#IF
+EQUAL N$当前幸运 3
+#ACT
+MOV N$消耗元宝 100000
+break
+
+[@转移界面]
+#IF
+#ACT
+MOV S$待转ID
+MOV S$被转ID
+MOV N$被选界面状态 0
+MOV N$背包数颜色 249
+MOV N$背包数坐标 80
+MOV N$待转幸运 0
+MOV N$待转暴击 0
+MOV S$待转本级显示
+MOV S$待转下级显示
+MOV S$被转按钮 nimg=custom/hl/equip_xlqh/1900000621.png|pimg=custom/hl/equip_xlqh/1900000621_1.png
+GETBAGITEMCOUNT 幸运转移符 N$背包转移符
+GOTO @幸运转移
+
+[@幸运转移]
+#IF
+EQUAL S$被转ID
+#ACT
+MOV S$被转按钮 nimg=custom/hl/equip_xlqh/1900000621.png|pimg=custom/hl/equip_xlqh/1900000621_1.png
+#IF
+LARGE N$背包转移符 0
+#ACT
+MOV N$背包数颜色 250
+MOV N$背包数坐标 80
+#IF
+LARGE N$背包转移符 9
+#ACT
+MOV N$背包数颜色 250
+MOV N$背包数坐标 70
+#IF
+LARGE N$背包转移符 99
+#ACT
+MOV N$背包数颜色 250
+MOV N$背包数坐标 60
+
+
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|layerid=671|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=幸运转移>
+<ListView|id=3|children={31}|x=242|y=60|width=3|height=445|margin=2|bounce=1|direction=1|color=x>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=4|x=22.0|y=65.0|<$STR(S$默认按钮)>|color=160|size=18|text=幸运强化|link=@强化界面>
+<Button|id=5|x=133.0|y=65.0|<$STR(S$激活按钮)>|color=103|size=18|text=幸运转移|link=@转移界面>
+<ListView|id=6|children={61}|x=20|y=106|width=225|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=61|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=7|children={71}|x=25|y=118|width=210|height=380|margin=2|bounce=0|direction=1|color=x>
+<BAGITEMS|id=71|condition=19#0,19#123,20#0,21#0,|select=<$STR(S0)>|count=15|row=5|x=0|y=0|selecttype=1|link=@背包选择>
+<ListView|id=8|children={81}|x=248|y=61|width=490|height=445|margin=2|bounce=0|direction=1|color=x>
+<Img|id=81|x=0.0|y=0|img=custom/hl/equip_xlqh/1900013001.jpg>
+;<Img|id=82|x=483.0|y=117|img=public/1900000664.png>
+
+<Img|id=9|children={91}|x=300|y=119|img=public/1900000664.png>
+<DBItemShow|makeindex=<$STR(S$待转ID)>|id=91|x=2|y=2>
+<Img|id=10|children={101,102}|x=600|y=119|img=public/1900000664.png>
+<DBItemShow|makeindex=<$STR(S$被转ID)>|id=101|x=2|y=2>
+<Button|id=102|x=83|y=13|<$STR(S$被转按钮)>|color=103|link=@按钮转换>
+
+<Text|id=12|children={121,122,123,124}|x=408|y=370|color=243|size=18|text=消耗：>
+<Img|id=121|x=55|y=-22|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<Text|id=122|x=<$STR(N$背包数坐标)>|y=55|color=<$STR(N$背包数颜色)>|size=18|text=<$STR(N$背包转移符)>>
+<Text|id=123|x=91|y=55|color=103|size=18|text=/1>
+<ItemShow|id=124|itemid=40229|itemcount=1|showtips=1|x=58|y=-20>
+<Button|id=13|x=440|y=452|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=103|text=幸运转移|link=@执行转移>
+
+<Img|id=14|children={141,142,143,144}|x=295.0|y=220|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png>
+<Img|id=141|x=260.0|y=0|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png>
+<Img|id=142|x=10|y=3|img=custom/hl/equip_xlqh/1900013005.png>
+<Img|id=143|x=270.0|y=3|img=custom/hl/equip_xlqh/1900013007.png>
+<Button|id=144|x=415.0|y=-157.0|nimg=custom/hl/hl_ui/icon_fuhao_02.png|pimg=custom/hl/hl_ui/icon_fuhao_02.png|color=103|size=18|link=@幸运转移提示>
+<$STR(S$待转本级显示)>
+<$STR(S$待转下级显示)>
+<$STR(S$转移提示)>
+
+
+[@被转移选择界面]
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|layerid=671|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=幸运转移>
+<ListView|id=3|children={31}|x=242|y=60|width=3|height=445|margin=2|bounce=1|direction=1|color=x>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=4|x=22.0|y=65.0|<$STR(S$默认按钮)>|color=160|size=18|text=幸运强化|link=@强化界面>
+<Button|id=5|x=133.0|y=65.0|<$STR(S$激活按钮)>|color=103|size=18|text=幸运转移|link=@转移界面>
+<ListView|id=6|children={61}|x=20|y=106|width=225|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=61|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=7|children={71}|x=25|y=118|width=210|height=380|margin=2|bounce=0|direction=1|color=x>
+<BAGITEMS|id=71|condition=19#0,19#123,20#0,21#0,|select=<$STR(S0)>|count=15|row=5|x=0|y=0|selecttype=1|link=@背包选择>
+<ListView|id=8|children={81}|x=248|y=61|width=490|height=445|margin=2|bounce=0|direction=1|color=x>
+<Img|id=81|x=0.0|y=0|img=custom/hl/equip_xlqh/1900013001.jpg>
+
+<Img|id=9|children={91}|x=300|y=119|img=public/1900000664.png>
+<DBItemShow|makeindex=<$STR(S$待转ID)>|id=91|x=2|y=2>
+<Img|id=10|children={101,102}|x=600|y=119|img=public/1900000664.png>
+<DBItemShow|makeindex=<$STR(S$被转ID)>|id=101|x=2|y=2>
+<Button|id=102|x=83|y=13|<$STR(S$被转按钮)>|color=103|link=@按钮转换>
+<Layout|id=11|children={111,112}|x=260|y=180|width=500|height=300|color=x|link=@幸运转移>
+<Img|id=111|img=public/1900000677.png|show=4|x=25|y=25|width=420|height=240|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+<BAGITEMS|id=112|condition=19#0,19#123,20#0,21#0,|select=<$STR(S0)>|count=15|row=3|x=55|y=35|selecttype=1|filter1=<$STR(S$待转ID)>|link=@被转选择>
+<Button|id=12|x=710.0|y=63.0|nimg=custom/hl/hl_ui/icon_fuhao_02.png|pimg=custom/hl/hl_ui/icon_fuhao_02.png|color=103|size=18|link=@幸运转移提示1>
+<$STR(S$转移提示)>
+
+[@执行转移]
+#OR
+EQUAL <$STR(S$待转ID)>
+EQUAL <$STR(S$被转ID)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择好待转和被转装备。</font>
+GOTO @幸运转移
+BREAK
+
+
+#IF
+EQUAL <$STR(S$被转ID)> <$STR(S$被转备用ID)>
+EQUAL <$STR(S$待转ID)> <$STR(S$待转备用ID)>
+#ACT
+#ELSEACT
+MOV S$待转ID
+MOV S$被转ID
+SENDMSG 9 <font color='#ff0000'>装备前后ID不匹配。</font>
+GOTO @幸运转移
+BREAK
+
+#IF
+CHECKITEM 幸运转移符
+#ACT
+TAKE 幸运转移符 1
+LINKITEMBYMAKEINDEX <$STR(S$待转ID)>
+GETITEMADDVALUE  -1 5 N$转移幸运
+GetNewItemAddValue -1 0 N$转移暴击
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>缺少转移符。</font>
+GOTO @幸运转移
+BREAK
+
+#IF
+#ACT
+CHANGEITEMADDVALUE -1 5 = 0
+SetNewItemValue -1 0 = 0
+UpDateBoxItem -1
+
+LINKITEMBYMAKEINDEX <$STR(S$被转ID)>
+CHANGEITEMADDVALUE -1 5 = <$STR(N$转移幸运)>
+SetNewItemValue -1 0 = <$STR(N$转移暴击)>
+UpDateBoxItem -1
+MOV S$被转ID
+MOV S$待转ID
+SENDMSG 9 <font color='#00ff00'>转移成功。</font>
+GOTO @转移界面
+
+
+[@按钮转换]
+#IF
+EQUAL S$被转按钮 nimg=custom/hl/equip_xlqh/1900000620.png|pimg=custom/hl/equip_xlqh/1900000620_1.png
+#ACT
+MOV S$被转按钮 nimg=custom/hl/equip_xlqh/1900000621.png|pimg=custom/hl/equip_xlqh/1900000621_1.png
+MOV S$被转ID
+GOTO @幸运转移
+#ELSEACT
+MOV S$被转按钮 nimg=custom/hl/equip_xlqh/1900000620.png|pimg=custom/hl/equip_xlqh/1900000620_1.png
+GOTO @被转移选择界面
+
+[@背包选择]
+#IF
+#ACT
+MOV N$转移幸运 0
+MOV N$待转暴击 0
+MOV S$待转备用ID
+MOV S$待转ID
+MOV S$待转备用ID <$STR(S0)>
+MOV S$待转ID <$STR(S0)>
+LINKITEMBYMAKEINDEX <$STR(S$待转ID)>
+UpDateBoxItem -1
+GETITEMADDVALUE  -1 5 N$转移幸运
+MOV N$待转幸运 <$STR(N$转移幸运)>
+GetNewItemAddValue -1 0 N$待转暴击
+
+
+#IF
+EQUAL <$STR(S$被转ID)> <$STR(S$待转ID)>
+#ACT
+MOV S$被转ID
+MOV S$待转ID
+SENDMSG 9 <font color='#ff0000'>不能选择同一件装备。</font>
+GOTO @幸运转移
+break
+
+#IF
+EQUAL N$转移幸运 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>您选择的项链尚未强化。</font>
+MOV S$待转ID
+GOTO @幸运转移
+BREAK
+
+#IF
+LARGE N$待转幸运 0
+#ACT
+MOV S$待转本级显示 <Text|id=15|children={151,152,153}|x=305|y=260|color=103|size=18|text=幸运=<$STR(N$待转幸运)>>
+INC S$待转本级显示 <Text|id=151|x=0|y=24|color=103|size=18|text=暴击几率=<$STR(N$待转暴击)>%>
+MOV S$待转下级显示 <Text|id=16|children={161,162,163}|x=565|y=260|color=250|size=18|text=幸运=<$STR(N$待转幸运)>>
+INC S$待转下级显示 <Text|id=161|x=0|y=24|color=250|size=18|text=暴击几率=<$STR(N$待转暴击)>%>
+#ELSEACT
+MOV S$待转本级显示
+MOV S$待转下级显示
+
+#IF
+#ACT
+GOTO @被转移选择界面
+
+
+[@被转选择]
+#IF
+#ACT
+SelectBagItems <$STR(S0)>
+MOV S$被转备用ID <$STR(S0)>
+MOV S$被转ID <$STR(S0)>
+
+#IF
+EQUAL <$STR(S$被转ID)> <$STR(S$待转ID)>
+#ACT
+MOV S$被转ID
+SENDMSG 9 <font color='#ff0000'>不能选择同一件装备。</font>
+GOTO @幸运转移
+break
+
+#IF
+#ACT
+LINKITEMBYMAKEINDEX <$STR(S$被转ID)>
+UpDateBoxItem -1
+GETITEMADDVALUE  -1 5 N$被转幸运
+GOTO @幸运转移
+
+
+[@幸运提升提示]
+#IF
+NOT EQUAL S$幸运提示
+#ACT
+MOV S$幸运提示
+GOTO @强化界面
+#ELSEACT
+
+MOV S$幸运提示 <Img|id=19|children={191,192,193,194,195}|x=340.0|y=70|width=365|height=140|img=public/1900000677.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+INC S$幸运提示 <Text|id=191|x=20|y=6|color=103|size=18|text=1、项链幸运最高可提升至3点>
+INC S$幸运提示 <Text|id=192|x=20|y=30|color=103|size=18|text=2、幸运强化100%成功>
+INC S$幸运提示 <Text|id=193|x=20|y=54|color=103|size=18|text=3、幸运3点以上可刷新暴击几率点数>
+INC S$幸运提示 <Text|id=194|x=50|y=78|color=250|size=18|text=暴击几率随机获得，最高10%>
+INC S$幸运提示 <Text|id=195|x=20|y=102|color=103|size=18|text=4、幸运属性可以转移至其他项链>
+INC S$幸运提示 <Layout|id=20|x=260|y=60|width=500|height=430|color=x|link=@关闭幸运提示>
+GOTO @强化界面
+
+[@关闭幸运提示]
+#IF
+#ACT
+MOV S$幸运提示
+GOTO @强化界面
+
+[@幸运转移提示]
+#IF
+NOT EQUAL S$转移提示
+#ACT
+MOV S$转移提示
+GOTO @幸运转移
+#ELSEACT
+MOV S$转移提示 <Img|id=19|children={191,192,193,194,195}|x=340.0|y=70|width=365|height=80|img=public/1900000677.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+INC S$转移提示 <Text|id=191|x=20|y=6|color=103|size=18|text=1、转移需要消耗一张幸运转移符>
+INC S$转移提示 <Text|id=192|x=20|y=30|color=103|size=18|text=2、确认之后覆盖被转移装备的属性>
+INC S$转移提示 <Layout|id=20|x=260|y=60|width=500|height=430|color=x|link=@关闭幸运转移提示>
+GOTO @幸运转移
+
+[@关闭幸运转移提示]
+#IF
+#ACT
+MOV S$转移提示
+GOTO @幸运转移
+
+[@幸运转移提示1]
+#IF
+NOT EQUAL S$转移提示
+#ACT
+MOV S$转移提示
+GOTO @被转移选择界面
+#ELSEACT
+MOV S$转移提示 <Img|id=13|children={131,132,133,134,135}|x=389.0|y=70|img=public/1900000650.png>
+INC S$转移提示 <Text|id=131|x=20|y=6|color=103|size=18|text=1、转移需要消耗一张幸运转移符>
+INC S$转移提示 <Text|id=132|x=20|y=30|color=103|size=18|text=2、确认转移之后将会覆盖被转移装备的属性>
+INC S$转移提示 <Layout|id=20|x=260|y=60|width=500|height=430|color=x|link=@关闭幸运转移提示1>
+GOTO @被转移选择界面
+
+[@关闭幸运转移提示1]
+#IF
+#ACT
+MOV S$转移提示
+GOTO @被转移选择界面
+}

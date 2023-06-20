@@ -1,0 +1,83 @@
+[@启动等级突破]
+{
+#IF
+CHECKLEVELEX > 199
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级已经超过200级请去三大陆提升</font>
+break
+#IF
+CHECKLEVELEX > 299
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级已经达到顶峰</font>
+break
+#IF
+#ACT
+Goto @等级突破展示
+
+[@等级突破展示]
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/tsbj.png>
+<Layout|id=0|children={1}|x=452|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=170|y=8|width=120|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=等级使者>
+<Text|id=3|x=100|y=50|color=255|size=18|outline=2|outlinecolor=0|text=200级以下可以在此处提升等级>
+<RText|id=6|x=40|y=80|color=255|size=18|outline=2|outlinecolor=0|text=一、每升一级需要500W元宝+火龙凭证*1000>
+<RText|id=7|x=40|y=110|color=255|size=18|outline=2|outlinecolor=0|text=二、1000火龙币>
+<Button|id=4|x=75|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=材料提升|link=@材料提升>
+<Button|id=5|x=225|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=火龙币提升|link=@火龙币提升>
+
+
+[@材料提升]
+#IF
+CHECKLEVELEX > 199
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级已经超过200级请去三大陆提升</font>
+break
+#IF
+CHECKLEVELEX > 299
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级已经达到顶峰</font>
+break
+#IF
+CHECKITEM 火龙凭证 1000
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>火龙凭证不足</font>
+break
+#IF
+CheckBindMoney 元宝 ? 5000000
+#ACT
+ChangeBindMoney 元宝 5000000
+take 火龙凭证 1000
+changelevel + 1
+SENDMSG 9 <font color='#00ff00'>等级提升成功</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足</font>
+break
+[@火龙币提升]
+#IF
+CHECKLEVELEX > 199
+#ACT
+SENDMSG 9 <font color='#ff0000'>您的等级已经超过200级请去三大陆提升</font>
+break
+#IF
+CheckMoney 火龙币 ? 1000
+#ACT
+Money 火龙币 - 1000
+changelevel + 1
+INC U120 1000
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+SENDMSG 9 <font color='#00ff00'>等级提升成功</font>
+break
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>火龙币不足，请前往充值！</font>
+break
+
+
+
+
+
+
+}

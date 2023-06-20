@@ -1,0 +1,67 @@
+[@拍卖行说明界面]
+{
+
+
+#IF
+EQUAL <$STR(S$拍卖说明显示)>
+#ACT
+DELBUTTON 29 20
+MOV S$拍卖按钮 <Button|x=699|y=5|mimg=custom/hl/hl_ui/js_1.png|color=255|nimg=custom/hl/hl_ui/js_1.png|link=@拍卖行说明>
+ADDBUTTON 29 20 <$STR(S$拍卖按钮)>
+break
+
+#IF
+EQUAL <$STR(S$拍卖说明显示)> 是
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明k s$拍卖说明k
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明g s$拍卖说明g
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明x s$拍卖说明x
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明y s$拍卖说明y
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_1 s$拍卖说明Ts_1
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_2 s$拍卖说明Ts_2
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_3 s$拍卖说明Ts_3
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_4 s$拍卖说明Ts_4
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_5 s$拍卖说明Ts_5
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_6 s$拍卖说明Ts_6
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_7 s$拍卖说明Ts_7
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_8 s$拍卖说明Ts_8
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_9 s$拍卖说明Ts_9
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_10 s$拍卖说明Ts_10
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_11 s$拍卖说明Ts_11
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_12 s$拍卖说明Ts_12
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_13 s$拍卖说明Ts_13
+ReadConfigFileItem  ..\QuestDiary\游戏功能\系统功能\拍卖行说明配置.ini 拍卖说明Tiss  拍卖说明Ts_14 s$拍卖说明Ts_14
+DELBUTTON 29 20
+MOV S$拍卖按钮 <Button|x=699|y=5|mimg=custom/hl/hl_ui/js_1.png|color=255|nimg=custom/hl/hl_ui/js_1.png|link=@拍卖行说明>
+INC S$拍卖按钮 <Img|id=1001|children={1002,1003,1004,1005,1006,1007,1008,1008,1009,1010,1011,1012,1013,1014,1015}|img=custom/hl/hl_ui/bg_tips_01.png|percentx=<$Str(s$拍卖说明x)>|percenty=<$Str(s$拍卖说明y)>|width=<$Str(s$拍卖说明k)>|height=<$Str(s$拍卖说明g)>|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@拍卖行说明关>
+INC S$拍卖按钮 <RText|id=1002|text=<$Str(s$拍卖说明Ts_1)>|x=5|y=2|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1003|text=<$Str(s$拍卖说明Ts_2)>|x=5|y=22|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1004|text=<$Str(s$拍卖说明Ts_3)>|x=5|y=42|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1005|text=<$Str(s$拍卖说明Ts_4)>|x=5|y=62|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1006|text=<$Str(s$拍卖说明Ts_5)>|x=5|y=82|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1007|text=<$Str(s$拍卖说明Ts_6)>|x=5|y=102|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1008|text=<$Str(s$拍卖说明Ts_7)>|x=5|y=122|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1009|text=<$Str(s$拍卖说明Ts_8)>|x=5|y=142|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1010|text=<$Str(s$拍卖说明Ts_9)>|x=5|y=162|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1011|text=<$Str(s$拍卖说明Ts_10)>|x=5|y=182|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1012|text=<$Str(s$拍卖说明Ts_11)>|x=5|y=202|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1013|text=<$Str(s$拍卖说明Ts_12)>|x=5|y=222|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1014|text=<$Str(s$拍卖说明Ts_13)>|x=5|y=242|size=17|color=255|outline=2|outlinecolor=0>
+INC S$拍卖按钮 <RText|id=1015|text=<$Str(s$拍卖说明Ts_14)>|x=5|y=262|size=17|color=255|outline=2|outlinecolor=0>
+
+ADDBUTTON 29 20 <$STR(S$拍卖按钮)>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

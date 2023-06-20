@@ -1,0 +1,482 @@
+[@移动端盒子展示]
+{
+#IF
+NOT EQUAL <$HUMAN(礼包领取日期)> <$YEAR>-<$MONTH>-<$DAY>
+#ACT
+CALCVAR HUMAN 礼包领取日期 = <$YEAR>-<$MONTH>-<$DAY>
+SAVEVAR HUMAN 礼包领取日期
+CALCVAR HUMAN 礼包申请状态  = 0
+SAVEVAR HUMAN 礼包申请状态
+CALCVAR HUMAN 礼包领取状态  = 0
+SAVEVAR HUMAN 礼包领取状态
+
+#IF
+#ACT
+;Mov s$礼包奖励道具mc_1 <$ARRGIFTITEMNAME[1,0]>
+Mov s$礼包奖励道具Idx_1 <$ARRGIFTITEMIDX[1,0]>
+Mov s$礼包奖励道具sl_1   <$ARRGIFTITECOUNT[1,0]>
+
+
+;Mov s$礼包奖励道具mc_2 <$ARRGIFTITEMNAME[1,1]>
+Mov s$礼包奖励道具Idx_2 <$ARRGIFTITEMIDX[1,1]>
+Mov s$礼包奖励道具sl_2   <$ARRGIFTITECOUNT[1,1]>
+
+;Mov s$礼包奖励道具mc_3 <$ARRGIFTITEMNAME[1,2]>
+Mov s$礼包奖励道具Idx_3 <$ARRGIFTITEMIDX[1,2]>
+Mov s$礼包奖励道具sl_3   <$ARRGIFTITECOUNT[1,2]>
+
+;Mov s$礼包奖励道具mc_4 <$ARRGIFTITEMNAME[1,3]>
+Mov s$礼包奖励道具Idx_4 <$ARRGIFTITEMIDX[1,3]>
+Mov s$礼包奖励道具sl_4   <$ARRGIFTITECOUNT[1,3]>
+
+;Mov s$礼包奖励道具mc_5 <$ARRGIFTITEMNAME[1,4]>
+Mov s$礼包奖励道具Idx_5 <$ARRGIFTITEMIDX[1,4]>
+Mov s$礼包奖励道具sl_5   <$ARRGIFTITECOUNT[1,4]>
+
+;Mov s$礼包奖励道具mc_6 <$ARRGIFTITEMNAME[1,5]>
+Mov s$礼包奖励道具Idx_6 <$ARRGIFTITEMIDX[1,5]>
+Mov s$礼包奖励道具sl_6   <$ARRGIFTITECOUNT[1,5]>
+
+;Mov s$礼包奖励道具mc_7 <$ARRGIFTITEMNAME[1,6]>
+Mov s$礼包奖励道具Idx_7 <$ARRGIFTITEMIDX[1,6]>
+Mov s$礼包奖励道具sl_7   <$ARRGIFTITECOUNT[1,6]>
+
+;Mov s$礼包奖励道具mc_8 <$ARRGIFTITEMNAME[1,7]>
+Mov s$礼包奖励道具Idx_8 <$ARRGIFTITEMIDX[1,7]>
+Mov s$礼包奖励道具sl_8   <$ARRGIFTITECOUNT[1,7]>
+
+;Mov s$礼包奖励道具mc_9 <$ARRGIFTITEMNAME[1,8]>
+Mov s$礼包奖励道具Idx_9 <$ARRGIFTITEMIDX[1,8]>
+Mov s$礼包奖励道具sl_9   <$ARRGIFTITECOUNT[1,8]>
+
+;Mov s$礼包奖励道具mc_10 <$ARRGIFTITEMNAME[1,9]>
+Mov s$礼包奖励道具Idx_10 <$ARRGIFTITEMIDX[1,9]>
+Mov s$礼包奖励道具sl_10   <$ARRGIFTITECOUNT[1,9]>
+
+
+;======================================================
+;Mov s$礼包码奖励道具mc_1 <$ARRGIFTITEMNAME[3,0]>
+Mov s$礼包码奖励道具Idx_1 <$ARRGIFTITEMIDX[3,0]>
+Mov s$礼包码奖励道具sl_1   <$ARRGIFTITECOUNT[3,0]>
+
+;Mov s$礼包码奖励道具mc_2 <$ARRGIFTITEMNAME[3,1]>
+Mov s$礼包码奖励道具Idx_2 <$ARRGIFTITEMIDX[3,1]>
+Mov s$礼包码奖励道具sl_2   <$ARRGIFTITECOUNT[3,1]>
+
+;Mov s$礼包码奖励道具mc_3 <$ARRGIFTITEMNAME[3,2]>
+Mov s$礼包码奖励道具Idx_3 <$ARRGIFTITEMIDX[3,2]>
+Mov s$礼包码奖励道具sl_3   <$ARRGIFTITECOUNT[3,2]>
+
+;Mov s$礼包码奖励道具mc_4 <$ARRGIFTITEMNAME[3,3]>
+Mov s$礼包码奖励道具Idx_4 <$ARRGIFTITEMIDX[3,3]>
+Mov s$礼包码奖励道具sl_4   <$ARRGIFTITECOUNT[3,3]>
+
+;Mov s$礼包码奖励道具mc_5 <$ARRGIFTITEMNAME[3,4]>
+Mov s$礼包码奖励道具Idx_5 <$ARRGIFTITEMIDX[3,4]>
+Mov s$礼包码奖励道具sl_5   <$ARRGIFTITECOUNT[3,4]>
+
+;Mov s$礼包码奖励道具mc_6 <$ARRGIFTITEMNAME[3,5]>
+Mov s$礼包码奖励道具Idx_6 <$ARRGIFTITEMIDX[3,5]>
+Mov s$礼包码奖励道具sl_6   <$ARRGIFTITECOUNT[3,5]>
+
+;Mov s$礼包码奖励道具mc_7 <$ARRGIFTITEMNAME[3,6]>
+Mov s$礼包码奖励道具Idx_7 <$ARRGIFTITEMIDX[3,6]>
+Mov s$礼包码奖励道具sl_7   <$ARRGIFTITECOUNT[3,6]>
+
+;Mov s$礼包码奖励道具mc_8 <$ARRGIFTITEMNAME[3,7]>
+Mov s$礼包码奖励道具Idx_8 <$ARRGIFTITEMIDX[3,7]>
+Mov s$礼包码奖励道具sl_8   <$ARRGIFTITECOUNT[3,7]>
+
+;Mov s$礼包码奖励道具mc_9 <$ARRGIFTITEMNAME[3,8]>
+Mov s$礼包码奖励道具Idx_9 <$ARRGIFTITEMIDX[3,8]>
+Mov s$礼包码奖励道具sl_9   <$ARRGIFTITECOUNT[3,8]>
+
+;Mov s$礼包码奖励道具mc_10 <$ARRGIFTITEMNAME[3,9]>
+Mov s$礼包码奖励道具Idx_10 <$ARRGIFTITEMIDX[3,9]>
+Mov s$礼包码奖励道具sl_10   <$ARRGIFTITECOUNT[3,9]>
+;===========================================
+
+#IF
+#ACT
+MOV s$礼包显示0_1
+MOV s$礼包显示1_1
+MOV s$礼包显示0_2
+MOV s$礼包显示1_2
+MOV s$礼包显示0_3
+MOV s$礼包显示1_3
+MOV s$礼包显示0_4
+MOV s$礼包显示1_4
+MOV s$礼包显示0_5
+MOV s$礼包显示1_5
+MOV s$礼包显示0_6
+MOV s$礼包显示1_6
+MOV s$礼包显示0_7
+MOV s$礼包显示1_7
+MOV s$礼包显示0_8
+MOV s$礼包显示1_8
+MOV s$礼包显示0_9
+MOV s$礼包显示1_9
+MOV s$礼包显示0_10
+MOV s$礼包显示1_10
+#IF
+LARGE s$礼包奖励道具sl_1 0
+#ACT
+MOV n$默认容器 70
+MOV s$礼包显示0_1 <ItemShow|id=15|children={16}|itemid=<$Str(s$礼包奖励道具Idx_1)>|itemcount=<$Str(s$礼包奖励道具sl_1)>|showtips=1|bgtype=1>
+MOV s$礼包显示1_1 <Text|a=4|id=16|text=<$Str(s$礼包奖励道具mc_1)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+
+#IF
+LARGE s$礼包奖励道具sl_2 0
+#ACT
+MOV n$默认容器 170
+MOV s$礼包显示0_2 <ItemShow|id=17|children={18}|itemid=<$Str(s$礼包奖励道具Idx_2)>|itemcount=<$Str(s$礼包奖励道具sl_2)>|showtips=1|bgtype=1>
+MOV s$礼包显示1_2 <Text|a=4|id=18|text=<$Str(s$礼包奖励道具mc_2)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包奖励道具sl_3 0
+#ACT
+MOV n$默认容器 270
+MOV s$礼包显示0_3 <ItemShow|id=19|children={20}|itemid=<$Str(s$礼包奖励道具Idx_3)>|itemcount=<$Str(s$礼包奖励道具sl_3)>|showtips=1|bgtype=1>
+MOV s$礼包显示1_3 <Text|a=4|id=20|text=<$Str(s$礼包奖励道具mc_3)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包奖励道具sl_4 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包显示0_4 <ItemShow|id=21|children={22}|itemid=<$Str(s$礼包奖励道具Idx_4)>|itemcount=<$Str(s$礼包奖励道具sl_4)>|showtips=1|bgtype=1>
+MOV s$礼包显示1_4 <Text|a=4|id=22|text=<$Str(s$礼包奖励道具mc_4)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包奖励道具sl_5 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包显示0_5 <ItemShow|id=23|children={24}|itemid=<$Str(s$礼包奖励道具Idx_5)>|itemcount=<$Str(s$礼包奖励道具sl_5)>|showtips=1|bgtype=1>
+MOV s$礼包显示1_5 <Text|a=4|id=24|text=<$Str(s$礼包奖励道具mc_5)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包奖励道具sl_6 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包显示0_6 <ItemShow|id=25|children={26}|itemid=<$Str(s$礼包奖励道具Idx_6)>|itemcount=<$Str(s$礼包奖励道具sl_6)>|showtips=1|bgtype=1>
+MOV s$礼包显示1_6 <Text|a=4|id=26|text=<$Str(s$礼包奖励道具mc_6)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包奖励道具sl_7 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包显示0_7 <ItemShow|id=27|children={26}|itemid=<$Str(s$礼包奖励道具Idx_7)>|itemcount=<$Str(s$礼包奖励道具sl_7)>|showtips=1|bgtype=1>
+MOV s$礼包显示1_7 <Text|a=4|id=28|text=<$Str(s$礼包奖励道具mc_7)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包奖励道具sl_8 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包显示0_8 <ItemShow|id=29a|children={30a}|itemid=<$Str(s$礼包奖励道具Idx_8)>|itemcount=<$Str(s$礼包奖励道具sl_8)>|showtips=1|bgtype=1>
+MOV s$礼包显示1_8 <Text|a=4|id=30a|text=<$Str(s$礼包奖励道具mc_8)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包奖励道具sl_9 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包显示0_9 <ItemShow|id=31a|children={32a}|itemid=<$Str(s$礼包奖励道具Idx_9)>|itemcount=<$Str(s$礼包奖励道具sl_9)>|showtips=1|bgtype=1>
+MOV s$礼包显示1_9 <Text|a=4|id=32a|text=<$Str(s$礼包奖励道具mc_9)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包奖励道具sl_10 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包显示0_10 <ItemShow|id=33a|children={34a}|itemid=<$Str(s$礼包奖励道具Idx_10)>|itemcount=<$Str(s$礼包奖励道具sl_10)>|showtips=1|bgtype=1>
+MOV s$礼包显示1_10 <Text|a=4|id=34a|text=<$Str(s$礼包奖励道具mc_10)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+#ACT
+Goto @移动端游戏盒子界面
+break
+
+[@移动端游戏盒子界面]
+<Img|img=private/996hz/bg_yd.png|bg=1|move=1|reset=1|show=4>
+<Layout|a=4|children={0}|percentx=106|percenty=5.5|width=50|height=50|color=x|link=@exit>
+<Button|id=0|y=-3|nimg=private/996hz/bg_gb.png|link=@exit>
+<Text|text=996传奇盒子|color=100|size=18|outline=2|outlinecolor=0|x=28|y=12>
+<Layout|a=4|children={1,2,3,4,8,30,31,32,33,43,44}|width=340|height=444|color=x|percentx=49.7|percenty=51.2>
+<ListView|id=4|children={5,6,7}|direction=2|bounce=0|margin=3|width=353|height=35|color=x|x=-3|y=12.5>
+<Button|id=5|nimg=private/996hz/bg_an_0.png|pimg=private/996hz/bg_an_1.png|color=100|size=18|outline=2|outlinecolor=0|text=每日奖励|link=@移动端盒子展示>
+<Button|id=6|nimg=private/996hz/bg_an_1.png|pimg=private/996hz/bg_an_0.png|color=10|size=18|outline=2|outlinecolor=0|text=礼包码|link=@移动端礼包展示>
+<ListView|a=4|id=9|children={15,17,19,21,23,25,27,29a,31a,33a}|direction=2|bounce=0|margin=30|width=<$Str(n$默认容器)>|height=90|color=x|percentx=50.2|percenty=41>
+<Text|id=30|text=1、使用游戏账号登录996传奇盒子|color=100|size=16|outline=2|outlinecolor=0|x=20|y=270>
+<Text|id=31|text=2、奖励通过邮件发放|color=100|size=16|outline=2|outlinecolor=0|x=20|y=300>
+<Text|id=32|text=3、每日仅可领取1次|color=100|size=16|outline=2|outlinecolor=0|x=20|y=330>
+<Button|a=4|id=33|percentx=50|percenty=95|nimg=private/996hz/bg_xz.png|link=@下载手机版>
+<$Str(s$礼包显示0_1)>
+<$Str(s$礼包显示1_1)>
+<$Str(s$礼包显示0_2)>
+<$Str(s$礼包显示1_2)>
+<$Str(s$礼包显示0_3)>
+<$Str(s$礼包显示1_3)>
+<$Str(s$礼包显示0_4)>
+<$Str(s$礼包显示1_4)>
+<$Str(s$礼包显示0_5)>
+<$Str(s$礼包显示1_5)>
+<$Str(s$礼包显示0_6)>
+<$Str(s$礼包显示1_6)>
+<$Str(s$礼包显示0_7)>
+<$Str(s$礼包显示1_7)>
+<$Str(s$礼包显示0_8)>
+<$Str(s$礼包显示1_8)>
+<$Str(s$礼包显示0_9)>
+<$Str(s$礼包显示1_9)>
+<$Str(s$礼包显示0_10)>
+<$Str(s$礼包显示1_10)>
+
+#IF
+EQUAL <$human(礼包领取状态)> 0
+#SAY
+<Button|a=4|id=43|percentx=84|percenty=78|nimg=private/996hz/bg_lq.png|link=@领取移动礼包奖励>
+#OR
+EQUAL <$human(礼包申请状态)> 1
+EQUAL <$human(礼包领取状态)> 1
+#SAY
+<Button|a=4|id=43|percentx=84|percenty=78|nimg=private/996hz/bg_lq.png|grey=1>
+
+#IF
+EQUAL <$human(礼包申请状态)> 1
+#say
+<Text|a=4|id=44|text=奖励发送中，请稍后领取！|size=18|color=249|outline=2|outlinecolor=0|percentx=50|percenty=86>
+
+
+[@领取移动礼包奖励]
+#IF
+NOT EQUAL <$human(礼包申请状态)> 1
+#ACT
+CALCVAR HUMAN 礼包申请状态  = 1
+SAVEVAR HUMAN 礼包申请状态
+POSTGIFTTYPE 1
+Goto @移动端游戏盒子界面
+BREAK
+
+[@移动端礼包展示]
+#IF
+#ACT
+;Mov s$礼包码奖励道具mc_1 <$ARRGIFTITEMNAME[3,0]>
+Mov s$礼包码奖励道具Idx_1 <$ARRGIFTITEMIDX[3,0]>
+Mov s$礼包码奖励道具sl_1   <$ARRGIFTITECOUNT[3,0]>
+
+;Mov s$礼包码奖励道具mc_2 <$ARRGIFTITEMNAME[3,1]>
+Mov s$礼包码奖励道具Idx_2 <$ARRGIFTITEMIDX[3,1]>
+Mov s$礼包码奖励道具sl_2   <$ARRGIFTITECOUNT[3,1]>
+
+;Mov s$礼包码奖励道具mc_3 <$ARRGIFTITEMNAME[3,2]>
+Mov s$礼包码奖励道具Idx_3 <$ARRGIFTITEMIDX[3,2]>
+Mov s$礼包码奖励道具sl_3   <$ARRGIFTITECOUNT[3,2]>
+
+;Mov s$礼包码奖励道具mc_4 <$ARRGIFTITEMNAME[3,3]>
+Mov s$礼包码奖励道具Idx_4 <$ARRGIFTITEMIDX[3,3]>
+Mov s$礼包码奖励道具sl_4   <$ARRGIFTITECOUNT[3,3]>
+
+;Mov s$礼包码奖励道具mc_5 <$ARRGIFTITEMNAME[3,4]>
+Mov s$礼包码奖励道具Idx_5 <$ARRGIFTITEMIDX[3,4]>
+Mov s$礼包码奖励道具sl_5   <$ARRGIFTITECOUNT[3,4]>
+
+;Mov s$礼包码奖励道具mc_6 <$ARRGIFTITEMNAME[3,5]>
+Mov s$礼包码奖励道具Idx_6 <$ARRGIFTITEMIDX[3,5]>
+Mov s$礼包码奖励道具sl_6   <$ARRGIFTITECOUNT[3,5]>
+
+;Mov s$礼包码奖励道具mc_7 <$ARRGIFTITEMNAME[3,6]>
+Mov s$礼包码奖励道具Idx_7 <$ARRGIFTITEMIDX[3,6]>
+Mov s$礼包码奖励道具sl_7   <$ARRGIFTITECOUNT[3,6]>
+
+;Mov s$礼包码奖励道具mc_8 <$ARRGIFTITEMNAME[3,7]>
+Mov s$礼包码奖励道具Idx_8 <$ARRGIFTITEMIDX[3,7]>
+Mov s$礼包码奖励道具sl_8   <$ARRGIFTITECOUNT[3,7]>
+
+;Mov s$礼包码奖励道具mc_9 <$ARRGIFTITEMNAME[3,8]>
+Mov s$礼包码奖励道具Idx_9 <$ARRGIFTITEMIDX[3,8]>
+Mov s$礼包码奖励道具sl_9   <$ARRGIFTITECOUNT[3,8]>
+
+;Mov s$礼包码奖励道具mc_10 <$ARRGIFTITEMNAME[3,9]>
+Mov s$礼包码奖励道具Idx_10 <$ARRGIFTITEMIDX[3,9]>
+Mov s$礼包码奖励道具sl_10   <$ARRGIFTITECOUNT[3,9]>
+MOV s$礼包码显示0_1
+MOV s$礼包码显示1_1
+MOV s$礼包码显示0_2
+MOV s$礼包码显示1_2
+MOV s$礼包码显示0_3
+MOV s$礼包码显示1_3
+MOV s$礼包码显示0_4
+MOV s$礼包码显示1_4
+MOV s$礼包码显示0_5
+MOV s$礼包码显示1_5
+MOV s$礼包码显示0_6
+MOV s$礼包码显示1_6
+MOV s$礼包码显示0_7
+MOV s$礼包码显示1_7
+MOV s$礼包码显示0_8
+MOV s$礼包码显示1_8
+MOV s$礼包码显示0_9
+MOV s$礼包码显示1_9
+MOV s$礼包码显示0_10
+MOV s$礼包码显示1_10
+#IF
+LARGE s$礼包码奖励道具sl_1 0
+#ACT
+MOV n$默认容器 70
+MOV s$礼包码显示0_1 <ItemShow|id=15|children={16}|itemid=<$Str(s$礼包码奖励道具Idx_1)>|itemcount=<$Str(s$礼包码奖励道具sl_1)>|showtips=1|bgtype=1>
+MOV s$礼包码显示1_1 <Text|a=4|id=16|text=<$Str(s$礼包码奖励道具mc_1)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包码奖励道具sl_2 0
+#ACT
+MOV n$默认容器 170
+MOV s$礼包码显示0_2 <ItemShow|id=17|children={18}|itemid=<$Str(s$礼包码奖励道具Idx_2)>|itemcount=<$Str(s$礼包码奖励道具sl_2)>|showtips=1|bgtype=1>
+MOV s$礼包码显示1_2 <Text|a=4|id=18|text=<$Str(s$礼包码奖励道具mc_2)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包码奖励道具sl_3 0
+#ACT
+MOV n$默认容器 270
+MOV s$礼包码显示0_3 <ItemShow|id=19|children={20}|itemid=<$Str(s$礼包码奖励道具Idx_3)>|itemcount=<$Str(s$礼包码奖励道具sl_3)>|showtips=1|bgtype=1>
+MOV s$礼包码显示1_3 <Text|a=4|id=20|text=<$Str(s$礼包码奖励道具mc_3)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包码奖励道具sl_4 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包码显示0_4 <ItemShow|id=21|children={22}|itemid=<$Str(s$礼包码奖励道具Idx_4)>|itemcount=<$Str(s$礼包码奖励道具sl_4)>|showtips=1|bgtype=1>
+MOV s$礼包码显示1_4 <Text|a=4|id=22|text=<$Str(s$礼包码奖励道具mc_4)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包码奖励道具sl_5 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包码显示0_5 <ItemShow|id=23|children={24}|itemid=<$Str(s$礼包码奖励道具Idx_5)>|itemcount=<$Str(s$礼包码奖励道具sl_5)>|showtips=1|bgtype=1>
+MOV s$礼包码显示1_5 <Text|a=4|id=24|text=<$Str(s$礼包码奖励道具mc_5)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包码奖励道具sl_6 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包码显示0_6 <ItemShow|id=25|children={26}|itemid=<$Str(s$礼包码奖励道具Idx_6)>|itemcount=<$Str(s$礼包码奖励道具sl_6)>|showtips=1|bgtype=1>
+MOV s$礼包码显示1_6 <Text|a=4|id=26|text=<$Str(s$礼包码奖励道具mc_6)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包码奖励道具sl_7 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包码显示0_7 <ItemShow|id=27|children={26}|itemid=<$Str(s$礼包码奖励道具Idx_7)>|itemcount=<$Str(s$礼包码奖励道具sl_7)>|showtips=1|bgtype=1>
+MOV s$礼包码显示1_7 <Text|a=4|id=28|text=<$Str(s$礼包码奖励道具mc_7)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包码奖励道具sl_8 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包码显示0_8 <ItemShow|id=29a|children={30a}|itemid=<$Str(s$礼包码奖励道具Idx_8)>|itemcount=<$Str(s$礼包码奖励道具sl_8)>|showtips=1|bgtype=1>
+MOV s$礼包码显示1_8 <Text|a=4|id=30a|text=<$Str(s$礼包码奖励道具mc_8)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包码奖励道具sl_9 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包码显示0_9 <ItemShow|id=31a|children={32a}|itemid=<$Str(s$礼包码奖励道具Idx_9)>|itemcount=<$Str(s$礼包码奖励道具sl_9)>|showtips=1|bgtype=1>
+MOV s$礼包码显示1_9 <Text|a=4|id=32a|text=<$Str(s$礼包码奖励道具mc_9)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+LARGE s$礼包码奖励道具sl_10 0
+#ACT
+MOV n$默认容器 330
+MOV s$礼包码显示0_10 <ItemShow|id=33a|children={34a}|itemid=<$Str(s$礼包码奖励道具Idx_10)>|itemcount=<$Str(s$礼包码奖励道具sl_10)>|showtips=1|bgtype=1>
+MOV s$礼包码显示1_10 <Text|a=4|id=34a|text=<$Str(s$礼包码奖励道具mc_10)>|color=255|size=14|outline=2|outlinecolor=0|percentx=50|percenty=120>
+
+#IF
+#ACT
+Goto @移动端游戏礼包界面
+
+
+
+
+[@移动端游戏礼包界面]
+<Img|img=private/996hz/bg_yd.png|bg=1|move=1|reset=1|show=4>
+<Layout|a=4|children={0}|percentx=106|percenty=5.5|width=50|height=50|color=x|link=@exit>
+<Button|id=0|y=-3|nimg=private/996hz/bg_gb.png|link=@exit>
+<Text|text=996传奇盒子|color=100|size=18|outline=2|outlinecolor=0|x=28|y=12>
+
+<Layout|a=4|children={4,8,31,32,33,41,43}|width=340|height=444|color=x|percentx=49.7|percenty=51.2>
+<ListView|id=4|children={5,6,7}|direction=2|bounce=0|margin=3|width=353|height=35|color=x|x=-3|y=12.5>
+<Button|id=5|nimg=private/996hz/bg_an_1.png|pimg=private/996hz/bg_an_0.png|color=10|size=18|outline=2|outlinecolor=0|text=每日奖励|link=@移动端盒子展示>
+<Button|id=6|nimg=private/996hz/bg_an_0.png|pimg=private/996hz/bg_an_1.png|color=100|size=18|outline=2|outlinecolor=0|text=礼包码|link=@移动端礼包展示>
+
+
+<Text|a=4|id=8|text=1、从996传奇盒子对应游戏详情内获得礼包码|color=100|size=16|outline=2|outlinecolor=0|percentx=50|percenty=65>
+
+<Img|a=4|id=41|children={42}|img=private/996hz/bg_ydsr.png|width=197|height=28|percentx=32|percenty=78>
+<Input|id=42|x=2|y=3|inputid=1|type=0|width=193|height=23|outline=2|outlinecolor=0|color=251|size=17|mincount=1|maxcount=30|errortips=|place=请输入礼包码|placecolor=255>
+<Button|a=4|id=33|percentx=50|percenty=95|nimg=private/996hz/bg_xz.png|link=@下载手机版>
+#IF
+EQUAL <$human(礼包码领取状态)> 0
+#SAY
+<Button|a=4|id=43|submitInput=1|percentx=84|percenty=78|nimg=private/996hz/bg_lq.png|link=@领取移动礼包码奖励>
+
+#OR
+EQUAL <$human(礼包码申请状态)> 1
+EQUAL <$human(礼包码领取状态)> 1
+#SAY
+<Button|a=4|id=43|submitInput=1|percentx=84|percenty=78|nimg=private/996hz/bg_lq.png|grey=1>
+
+
+
+#IF
+#SAY
+<ListView|a=4|id=9|children={15,17,19,21,23,25,27,29a,31a,33a}|direction=2|bounce=0|margin=30|width=<$Str(n$默认容器)>|height=90|color=x|percentx=50.2|percenty=41>
+
+<$Str(s$礼包码显示0_1)>
+<$Str(s$礼包码显示1_1)>
+<$Str(s$礼包码显示0_2)>
+<$Str(s$礼包码显示1_2)>
+<$Str(s$礼包码显示0_3)>
+<$Str(s$礼包码显示1_3)>
+<$Str(s$礼包码显示0_4)>
+<$Str(s$礼包码显示1_4)>
+<$Str(s$礼包码显示0_5)>
+<$Str(s$礼包码显示1_5)>
+<$Str(s$礼包码显示0_6)>
+<$Str(s$礼包码显示1_6)>
+<$Str(s$礼包码显示0_7)>
+<$Str(s$礼包码显示1_7)>
+<$Str(s$礼包码显示0_8)>
+<$Str(s$礼包码显示1_8)>
+<$Str(s$礼包码显示0_9)>
+<$Str(s$礼包码显示1_9)>
+<$Str(s$礼包码显示0_10)>
+<$Str(s$礼包码显示1_10)>
+
+
+
+
+[@领取移动礼包码奖励]
+#IF
+NOT EQUAL <$human(礼包码申请状态)> 1
+#ACT
+CALCVAR HUMAN 礼包码申请状态  = 1
+SAVEVAR HUMAN 礼包码申请状态
+POSTGIFTTYPE 3 <$NPCINPUT(1)>
+Goto @移动端游戏礼包界面
+BREAK
+
+
+
+[@下载手机版]
+#IF
+Equal <$CLIENTFLAG> 1
+#ACT
+OpenWebSite http://land.996box.com/downloadPage/index.html
+break
+#IF
+Equal <$CLIENTFLAG> 2
+#ACT
+OpenWebSite  http://land.996box.com/downloadPage/index.html
+BREAK
+
+
+
+
+}

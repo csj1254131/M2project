@@ -1,0 +1,1038 @@
+[@启动时装柜]
+{
+#IF
+gender man
+#ACT
+MOV N$性别 0
+#ELSEACT
+MOV N$性别 1
+#IF
+#ACT
+MOV S$幻武名
+MOV S$装扮名
+MOV S$足迹名
+MOV S$称号名
+MOV S$部位
+MOV S$显示部位
+MOV S$当前选择
+MOV S$总属性显示
+MOV N$当前物品IDX 0
+MOV N$激活成功 0
+MOV N$头盔内观ID 0
+MOV N$斗笠内观ID 0
+MOV S$属性名1
+MOV S$属性名2
+MOV S$属性名3
+MOV S$属性名1_展示
+MOV S$属性名2_展示
+MOV S$属性名3_展示
+MOV N$当前魔法下 0
+MOV N$当前魔法下 0
+MOV N$当前魔法上 0
+MOV N$当前道术下 0
+MOV N$当前道术上 0
+MOV N$当前攻击下 0
+MOV N$当前攻击上 0
+MOV N$当前防御下 0
+MOV N$当前防御上 0
+MOV N$当前魔御下 0
+MOV N$当前魔御上 0
+MOV N$当前体力下 0
+
+#IF
+LARGE U229 0
+#ACT
+MOV N$武器内观ID <$STR(U229)>
+MOV N$武器特效ID <$STR(U230)>
+#ELSEACT
+MOV N$武器内观ID 0
+MOV N$武器特效ID 0
+
+#IF
+LARGE U233 0
+#ACT
+MOV N$衣服内观ID <$STR(U233)>
+MOV N$衣服特效ID <$STR(U234)>
+#ELSEACT
+MOV N$衣服内观ID 0
+MOV N$衣服特效ID 0
+
+#IF
+#ACT
+GOTO @读取配置
+GOTO @时装柜界面
+
+[@时装柜界面]
+
+#IF
+#ACT
+GOTO @激活检测
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|a=4|percentx=50|percenty=3.8|color=100|size=20|outline=2|outlinecolor=0|text=时装>
+<Layout|id=3|children={31}|x=20|y=60|width=730|height=445|color=x>
+<Img|id=31|img=custom/hl/shizhuanggui_ui/hl_sz_01.jpg>
+<Img|id=4|x=25|y=335|img=custom/hl/shizhuanggui_ui/hl_sz_02.png|link=@总属性>
+<Img|id=5|x=390|y=335|img=custom/hl/shizhuanggui_ui/hl_sz_03.png|link=@激活>
+<Layout|id=13|children={131}|x=20|y=70|width=435|height=30|color=x>
+<Text|id=131|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|color=100|text=<$STR(S$当前选择)>>
+<ListView|id=7|children={71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86}|x=470|y=60|width=280|height=390|direction=1|bounce=0|margin=3|color=x>
+<Layout|id=71|children={711,712}|width=280|height=30|color=x>
+<Img|id=711|a=4|percentx=50|percenty=50|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+<Text|id=712|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|color=100|text=幻武>
+<Layout|id=72|children={721,722,723,724,725}|width=290|height=65|color=x>
+<ItemShow|id=721|children={<$STR(N$幻武特效框_1)>,7212}|itemid=<$STR(N$幻武_1_IDX)>|itemcount=1|showtips=0|bgtype=1|x=0|y=0|grey=<$STR(N$幻武激活_1)>|link=@幻武#幻武名=<$STR(S$幻武_1)>> 
+<Effect|id=7211|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$幻武红点_1)>
+<ItemShow|id=722|children={<$STR(N$幻武特效框_2)>,7222}|itemid=<$STR(N$幻武_2_IDX)>|itemcount=1|showtips=0|bgtype=1|x=70|y=0|grey=<$STR(N$幻武激活_2)>|link=@幻武#幻武名=<$STR(S$幻武_2)>> 
+<Effect|id=7221|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$幻武红点_2)>
+<ItemShow|id=723|children={<$STR(N$幻武特效框_3)>,7232}|itemid=<$STR(N$幻武_3_IDX)>|itemcount=1|showtips=0|bgtype=1|x=140|y=0|grey=<$STR(N$幻武激活_3)>|link=@幻武#幻武名=<$STR(S$幻武_3)>> 
+<Effect|id=7231|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$幻武红点_3)>
+<ItemShow|id=724|children={<$STR(N$幻武特效框_4)>,7242}|itemid=<$STR(N$幻武_4_IDX)>|itemcount=1|showtips=0|bgtype=1|x=210|y=0|grey=<$STR(N$幻武激活_4)>|link=@幻武#幻武名=<$STR(S$幻武_4)>> 
+<Effect|id=7241|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$幻武红点_4)>
+<Layout|id=73|children={731,732,733,734,735}|width=290|height=65|color=x>
+<ItemShow|id=731|children={<$STR(N$幻武特效框_5)>,7312}|itemid=<$STR(N$幻武_5_IDX)>|itemcount=1|showtips=0|bgtype=1|x=0|y=0|grey=<$STR(N$幻武激活_5)>|link=@幻武#幻武名=<$STR(S$幻武_5)>> 
+<Effect|id=7311|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$幻武红点_5)>
+<ItemShow|id=732|children={<$STR(N$幻武特效框_6)>,7322}|itemid=<$STR(N$幻武_6_IDX)>|itemcount=1|showtips=0|bgtype=1|x=70|y=0|grey=<$STR(N$幻武激活_6)>|link=@幻武#幻武名=<$STR(S$幻武_6)>> 
+<Effect|id=7321|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$幻武红点_6)>
+<ItemShow|id=733|children={<$STR(N$幻武特效框_7)>,7332}|itemid=<$STR(N$幻武_7_IDX)>|itemcount=1|showtips=0|bgtype=1|x=140|y=0|grey=<$STR(N$幻武激活_7)>|link=@幻武#幻武名=<$STR(S$幻武_7)>> 
+<Effect|id=7331|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$幻武红点_7)>
+<ItemShow|id=734|children={<$STR(N$幻武特效框_8)>,7342}|itemid=<$STR(N$幻武_8_IDX)>|itemcount=1|showtips=0|bgtype=1|x=210|y=0|grey=<$STR(N$幻武激活_8)>|link=@幻武#幻武名=<$STR(S$幻武_8)>> 
+<Effect|id=7341|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$幻武红点_8)>
+<Layout|id=74|children={741,742}|width=280|height=30|color=x>
+<Img|id=741|a=4|percentx=50|percenty=50|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+<Text|id=742|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|color=100|text=装扮>
+<Layout|id=75|children={751,752,753,754,755}|width=290|height=65|color=x>
+<ItemShow|id=751|children={<$STR(N$装扮特效框_1)>,7512}|itemid=<$STR(N$装扮_1_IDX)>|itemcount=1|showtips=0|bgtype=1|x=0|y=0|grey=<$STR(N$装扮激活_1)>|link=@装扮#装扮名=<$STR(S$装扮_1)>> 
+<Effect|id=7511|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$时装红点_1)>
+<ItemShow|id=752|children={<$STR(N$装扮特效框_2)>,7522}|itemid=<$STR(N$装扮_2_IDX)>|itemcount=1|showtips=0|bgtype=1|x=70|y=0|grey=<$STR(N$装扮激活_2)>|link=@装扮#装扮名=<$STR(S$装扮_2)>> 
+<Effect|id=7521|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$时装红点_2)>
+<ItemShow|id=753|children={<$STR(N$装扮特效框_3)>,7532}|itemid=<$STR(N$装扮_3_IDX)>|itemcount=1|showtips=0|bgtype=1|x=140|y=0|grey=<$STR(N$装扮激活_3)>|link=@装扮#装扮名=<$STR(S$装扮_3)>> 
+<Effect|id=7531|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$时装红点_3)>
+<ItemShow|id=754|children={<$STR(N$装扮特效框_4)>,7542}|itemid=<$STR(N$装扮_4_IDX)>|itemcount=1|showtips=0|bgtype=1|x=210|y=0|grey=<$STR(N$装扮激活_4)>|link=@装扮#装扮名=<$STR(S$装扮_4)>> 
+<Effect|id=7541|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$时装红点_4)>
+<Layout|id=76|children={761,762,763,764,765}|width=290|height=65|color=x>
+<ItemShow|id=761|children={<$STR(N$装扮特效框_5)>,7612}|itemid=<$STR(N$装扮_5_IDX)>|itemcount=1|showtips=0|bgtype=1|x=0|y=0|grey=<$STR(N$装扮激活_5)>|link=@装扮#装扮名=<$STR(S$装扮_5)>> 
+<Effect|id=7611|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$时装红点_5)>
+<ItemShow|id=762|children={<$STR(N$装扮特效框_6)>,7622}|itemid=<$STR(N$装扮_6_IDX)>|itemcount=1|showtips=0|bgtype=1|x=70|y=0|grey=<$STR(N$装扮激活_6)>|link=@装扮#装扮名=<$STR(S$装扮_6)>> 
+<Effect|id=7621|x=29|y=32|effectid=30028|effecttype=0|scale=1.4>
+<$STR(S$时装红点_6)>
+<Layout|id=77|children={771,772}|width=280|height=30|color=x>
+<Img|id=771|a=4|percentx=50|percenty=50|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+<Text|id=772|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|color=100|text=足迹>
+<Layout|id=78|children={781,782,783,784,785}|width=290|height=65|color=x>
+<Text|id=781|a=4|percentx=50|percenty=50|size=20|outline=2|outlinecolor=0|color=250|text=敬请期待>
+<Img|id=9|children={91,92}|x=24|y=410|img=custom/hl/hl_ui/bqb.png>
+<Text|id=91|a=4|percentx=30|percenty=45|size=18|outline=2|outlinecolor=0|color=250|text=<$STR(S$属性名1)>>
+<Text|id=92|a=4|percentx=65|percenty=45|size=18|outline=2|outlinecolor=0|color=250|text=<$STR(S$属性名1_展示)>>
+<Img|id=10|children={101,102}|x=240|y=410|img=custom/hl/hl_ui/bqb.png>
+<Text|id=101|a=4|percentx=30|percenty=45|size=18|outline=2|outlinecolor=0|color=250|text=<$STR(S$属性名2)>>
+<Text|id=102|a=4|percentx=65|percenty=45|size=18|outline=2|outlinecolor=0|color=250|text=<$STR(S$属性名2_展示)>>
+<Img|id=11|children={111,112}|x=24|y=450|img=custom/hl/hl_ui/bqb.png>
+<Text|id=111|a=4|percentx=30|percenty=45|size=18|outline=2|outlinecolor=0|color=250|text=<$STR(S$属性名3)>>
+<Text|id=112|a=4|percentx=65|percenty=45|size=18|outline=2|outlinecolor=0|color=250|text=<$STR(S$属性名3_展示)>>
+<Text|id=12|x=380|y=480|size=16|outline=2|outlinecolor=0|color=250|text=获取途径|link=@时装获取途径>
+<UIModel|id=6|x=235|y=235|scale=1||sex=<$STR(N$性别)>|weaponID=<$STR(N$武器内观ID)>|weaponEffectID=<$STR(N$武器特效ID)>#0#0#0|clothID=<$STR(N$衣服内观ID)>|clothEffectID=<$STR(N$衣服特效ID)>#1#0#0>
+<$STR(S$总属性显示)>
+<Button|id=15|x=590|y=460|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|color=103|size=17|outline=2|outlinecolor=0|text=激活外显|link=@显示剑甲外观>
+<CheckBox|id=16|x=470|y=465|children={161}|checkboxid=6|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U228)>|link=@自动外显>
+<Text|id=161|x=30|y=0|color=250|size=18|text=自动外显|link=@设置自动外显>
+[@时装获取途径]
+#IF
+#ACT
+OPENHYPERLINK 11
+[@设置自动外显]
+#IF
+EQUAL U228 0
+#ACT
+MOV U228 1
+;ChangeItemShape 1 = <$STR(U229)>
+;ChangeDressEffect 1 <$STR(U229)> 1
+;ChangeItemShape 0 = <$STR(U230)>
+;ChangeDressEffect 0 <$STR(U230)> 1
+GOTO @时装柜界面
+#ELSEACT
+MOV U228 0
+MOV U229 0
+MOV U230 0
+MOV U231 0
+MOV U232 0
+MOV U233 0
+MOV U234 0
+MOV U235 0
+ChangeItemShape 1 = 0
+ChangeDressEffect 1 -1
+ChangeItemShape 0 = 0
+ChangeDressEffect 0 -1
+GOTO @时装柜界面
+
+[@自动外显]
+#IF
+EQUAL U228 0
+#ACT
+MOV U228 1
+
+GOTO @时装柜界面
+#ELSEACT
+MOV U228 0
+MOV U229 0
+MOV U230 0
+MOV U231 0
+MOV U232 0
+MOV U233 0
+MOV U234 0
+MOV U235 0
+ChangeItemShape 1 = 0
+ChangeDressEffect 1 -1
+ChangeItemShape 0 = 0
+ChangeDressEffect 0 -1
+GOTO @时装柜界面
+
+[@幻武]
+#IF
+EQUAL S$幻武名 <$STR(S$幻武_1)>
+#ACT
+MOV N$选择序号 1
+#IF
+EQUAL S$幻武名 <$STR(S$幻武_2)>
+#ACT
+MOV N$选择序号 2
+#IF
+EQUAL S$幻武名 <$STR(S$幻武_3)>
+#ACT
+MOV N$选择序号 3
+#IF
+EQUAL S$幻武名 <$STR(S$幻武_4)>
+#ACT
+MOV N$选择序号 4
+#IF
+EQUAL S$幻武名 <$STR(S$幻武_5)>
+#ACT
+MOV N$选择序号 5
+#IF
+EQUAL S$幻武名 <$STR(S$幻武_6)>
+#ACT
+MOV N$选择序号 6
+#IF
+EQUAL S$幻武名 <$STR(S$幻武_7)>
+#ACT
+MOV N$选择序号 7
+#IF
+EQUAL S$幻武名 <$STR(S$幻武_8)>
+#ACT
+MOV N$选择序号 8
+#IF
+LARGE N$选择序号 0
+#ACT
+MOV S$部位 幻武
+MOV N$幻武序号 <$STR(N$选择序号)>
+MOV S$当前选择 <$STR(S$幻武名)>
+GOTO @读取数值
+
+[@装扮]
+#IF
+EQUAL S$装扮名 <$STR(S$装扮_1)>
+#ACT
+MOV N$选择序号 1
+#IF
+EQUAL S$装扮名 <$STR(S$装扮_2)>
+#ACT
+MOV N$选择序号 2
+#IF
+EQUAL S$装扮名 <$STR(S$装扮_3)>
+#ACT
+MOV N$选择序号 3
+#IF
+EQUAL S$装扮名 <$STR(S$装扮_4)>
+#ACT
+MOV N$选择序号 4
+#IF
+EQUAL S$装扮名 <$STR(S$装扮_5)>
+#ACT
+MOV N$选择序号 5
+#IF
+EQUAL S$装扮名 <$STR(S$装扮_6)>
+#ACT
+MOV N$选择序号 6
+
+#IF
+LARGE N$选择序号 0
+#ACT
+MOV S$部位 装扮
+MOV N$装扮序号 <$STR(N$选择序号)>
+GOTO @读取数值
+
+[@读取数值]
+#IF
+#ACT
+MOV N$激活成功 0
+
+#IF
+EQUAL S$部位 装扮
+#ACT
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>防御下 S$<$STR(S$部位)>_<$STR(N$选择序号)>_防御下
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>防御上 S$<$STR(S$部位)>_<$STR(N$选择序号)>_防御上
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>魔御下 S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔御下
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>魔御上 S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔御上
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>体力 S$<$STR(S$部位)>_<$STR(N$选择序号)>_体力
+#ELSEACT
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>魔法下 S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔法下
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>魔法上 S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔法上
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>道术下 S$<$STR(S$部位)>_<$STR(N$选择序号)>_道术下
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>道术上 S$<$STR(S$部位)>_<$STR(N$选择序号)>_道术上
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>攻击下 S$<$STR(S$部位)>_<$STR(N$选择序号)>_攻击下
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>攻击上 S$<$STR(S$部位)>_<$STR(N$选择序号)>_攻击上
+
+
+#IF
+EQUAL S$部位 装扮
+gender man
+#ACT
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>looks_0 S$<$STR(S$部位)>_<$STR(N$选择序号)>_内观ID
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>特效ID_0 S$<$STR(S$部位)>_<$STR(N$选择序号)>_特效ID
+#IF
+EQUAL S$部位 装扮
+gender woman
+#ACT
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>looks_1 S$<$STR(S$部位)>_<$STR(N$选择序号)>_内观ID
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>特效ID_1 S$<$STR(S$部位)>_<$STR(N$选择序号)>_特效ID
+#IF
+NOT EQUAL S$部位 装扮
+#ACT
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>looks S$<$STR(S$部位)>_<$STR(N$选择序号)>_内观ID
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)> <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>)>特效ID S$<$STR(S$部位)>_<$STR(N$选择序号)>_特效ID
+
+#IF
+EQUAL S$部位 装扮
+#ACT
+MOV N$当前内观ID <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_内观ID)>
+MOV N$当前特效ID <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_特效ID)>
+MOV N$当前防御下 <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_防御下)>
+MOV N$当前防御上 <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_防御上)>
+MOV N$当前魔御下 <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔御下)>
+MOV N$当前魔御上 <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔御上)>
+MOV N$当前体力 <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_体力)>
+
+MOV S$属性名1 防御
+MOV S$属性名1_展示  <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_防御下)>-<$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_防御上)>
+MOV S$属性名2 魔御
+MOV S$属性名2_展示  <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔御下)>-<$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔御上)>
+MOV S$属性名3 体力
+MOV S$属性名3_展示  <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_体力)>
+#ELSEACT
+MOV N$当前内观ID <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_内观ID)>
+MOV N$当前特效ID <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_特效ID)>
+MOV N$当前魔法下 <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔法下)>
+MOV N$当前魔法上 <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔法上)>
+MOV N$当前道术下 <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_道术下)>
+MOV N$当前道术上 <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_道术上)>
+MOV N$当前攻击下 <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_攻击下)>
+MOV N$当前攻击上 <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_攻击上)>
+MOV S$属性名1 攻击
+MOV S$属性名1_展示  <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_攻击下)>-<$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_攻击上)>
+MOV S$属性名2 魔法
+MOV S$属性名2_展示  <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔法下)>-<$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_魔法上)>
+MOV S$属性名3 道术
+MOV S$属性名3_展示  <$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_道术下)>-<$STR(S$<$STR(S$部位)>_<$STR(N$选择序号)>_道术上)>
+#IF
+EQUAL S$部位 幻武
+#ACT
+MOV S$当前选择 [幻武]<$STR(S$幻武名)>
+MOV N$武器内观ID <$STR(N$当前内观ID)>
+MOV N$武器特效ID <$STR(N$当前特效ID)>
+#IF
+EQUAL S$部位 装扮
+#ACT
+MOV N$衣服内观ID <$STR(N$当前内观ID)>
+MOV N$衣服特效ID <$STR(N$当前特效ID)>
+
+#IF
+EQUAL S$部位 装扮
+#ACT
+MOV S$当前选择 [时装]<$STR(S$装扮名)>
+
+#IF
+#ACT
+GOTO @时装柜界面
+
+[@激活]
+#IF
+EQUAL S$部位
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择您要激活的部位</font>
+BREAK
+
+#IF
+#ACT
+GOTO @时装柜界面
+MessageBox 是否确认要激活<$STR(S$显示名称)> @确定 @取消
+
+[@确定]
+#IF
+CHECKITEM <$STR(S$当前选择)> 1
+#ACT
+MOV N$使用激活 0
+GOTO @激活时装
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>缺少物品【<$STR(S$当前选择)>】</font>
+BREAK
+
+
+[@取消]
+#ACT
+GOTO @时装柜界面
+
+[@总属性]
+#IF
+#ACT
+MOV S$总属性显示
+INC S$总属性显示 <Layout|id=14|children={141}|width=500|height=400|color=x|link=@关闭总属性>
+INC S$总属性显示 <Img|id=141|children={1411,1412,1413,1414,1415,1416,1417}|a=4|percentx=38|percenty=70|width=200|height=200|img=public/1900000677.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+INC S$总属性显示 <Layout|id=1411|x=0|y=5|children={14111}|width=200|height=30|color=x>
+INC S$总属性显示 <Text|id=14111|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|color=253|text=总属性>
+INC S$总属性显示 <Layout|id=1412|x=0|y=30|children={14121}|width=200|height=30|color=x>
+INC S$总属性显示 <Text|id=14121|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|color=250|text=攻击提升:<$STR(U201)>-<$STR(U202)>>
+INC S$总属性显示 <Layout|id=1413|x=0|y=55|children={14131}|width=200|height=30|color=x>
+INC S$总属性显示 <Text|id=14131|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|color=250|text=魔法提升:<$STR(U203)>-<$STR(U204)>>
+INC S$总属性显示 <Layout|id=1414|x=0|y=80|children={14141}|width=200|height=30|color=x>
+INC S$总属性显示 <Text|id=14141|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|color=250|text=道术提升:<$STR(U205)>-<$STR(U206)>>
+INC S$总属性显示 <Layout|id=1415|x=0|y=105|children={14151}|width=200|height=30|color=x>
+INC S$总属性显示 <Text|id=14151|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|color=250|text=防御提升:<$STR(U207)>-<$STR(U208)>>
+INC S$总属性显示 <Layout|id=1416|x=0|y=130|children={14161}|width=200|height=30|color=x>
+INC S$总属性显示 <Text|id=14161|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|color=250|text=魔御提升:<$STR(U209)>-<$STR(U210)>>
+INC S$总属性显示 <Layout|id=1417|x=0|y=155|children={14171}|width=200|height=30|color=x>
+INC S$总属性显示 <Text|id=14171|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|color=250|text=体力提升:<$STR(U211)>>
+GOTO @时装柜界面
+
+[@关闭总属性]
+#IF
+#ACT
+MOV S$总属性显示
+GOTO @时装柜界面
+
+
+[@激活时装]
+#IF
+EQUAL N$使用激活 1
+EQUAL S$部位 装扮
+#ACT
+GOTO @读取配置
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$激活物品)> <$STR(S$激活物品)>防御下 N$当前防御下
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$激活物品)> <$STR(S$激活物品)>防御上 N$当前防御上
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$激活物品)> <$STR(S$激活物品)>魔御下 N$当前魔御下
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$激活物品)> <$STR(S$激活物品)>魔御上 N$当前魔御上
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$激活物品)> <$STR(S$激活物品)>体力 N$当前体力
+MOV S$当前选择 [时装]<$STR(S$激活物品)>
+
+#IF
+EQUAL N$使用激活 1
+EQUAL S$部位 幻武
+#ACT
+GOTO @读取配置
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$激活物品)> <$STR(S$激活物品)>魔法下 N$当前魔法下
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$激活物品)> <$STR(S$激活物品)>魔法上 N$当前魔法上
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$激活物品)> <$STR(S$激活物品)>道术下 N$当前道术下
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$激活物品)> <$STR(S$激活物品)>道术上 N$当前道术上
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$激活物品)> <$STR(S$激活物品)>攻击下 N$当前攻击下
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$激活物品)> <$STR(S$激活物品)>攻击上 N$当前攻击上
+MOV S$当前选择 [幻武]<$STR(S$激活物品)>
+
+
+#IF
+EQUAL S$部位 幻武
+#ACT
+GOTO @激活幻武
+#IF
+EQUAL S$部位 装扮
+#ACT
+GOTO @激活装饰
+#IF
+#ACT
+GOTO @时装柜界面
+
+[@激活幻武]
+#IF
+EQUAL S$当前选择 [幻武]<$STR(S$幻武_1)>
+CHECK [201] 0
+#ACT
+SET [201] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 [幻武]<$STR(S$幻武_2)>
+CHECK [202] 0
+#ACT
+SET [202] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 [幻武]<$STR(S$幻武_3)>
+CHECK [203] 0
+#ACT
+SET [203] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 [幻武]<$STR(S$幻武_4)>
+CHECK [204] 0
+#ACT
+SET [204] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 [幻武]<$STR(S$幻武_5)>
+CHECK [205] 0
+#ACT
+SET [205] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 [幻武]<$STR(S$幻武_6)>
+CHECK [206] 0
+#ACT
+SET [206] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 [幻武]<$STR(S$幻武_7)>
+CHECK [207] 0
+#ACT
+SET [207] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 [幻武]<$STR(S$幻武_8)>
+CHECK [208] 0
+#ACT
+SET [208] 1
+MOV N$激活成功 1
+#IF
+#ACT
+GOTO @最终激活
+
+[@激活装饰]
+#IF
+#ACT
+MOV S$临时装扮_1 [时装]<$STR(S$装扮_1)>
+MOV S$临时装扮_2 [时装]<$STR(S$装扮_2)>
+MOV S$临时装扮_3 [时装]<$STR(S$装扮_3)>
+MOV S$临时装扮_4 [时装]<$STR(S$装扮_4)>
+MOV S$临时装扮_5 [时装]<$STR(S$装扮_5)>
+MOV S$临时装扮_6 [时装]<$STR(S$装扮_6)>
+
+
+#IF
+EQUAL S$当前选择 <$STR(S$临时装扮_1)>
+CHECK [209] 0
+#ACT
+SET [209] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 <$STR(S$临时装扮_2)>
+CHECK [210] 0
+#ACT
+SET [210] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 <$STR(S$临时装扮_3)>
+CHECK [211] 0
+#ACT
+SET [211] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 <$STR(S$临时装扮_4)>
+CHECK [212] 0
+#ACT
+SET [212] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 <$STR(S$临时装扮_5)>
+CHECK [213] 0
+#ACT
+SET [213] 1
+MOV N$激活成功 1
+#IF
+EQUAL S$当前选择 <$STR(S$临时装扮_6)>
+CHECK [214] 0
+#ACT
+SET [214] 1
+MOV N$激活成功 1
+#IF
+#ACT
+GOTO @最终激活
+
+[@最终激活]
+#IF
+EQUAL N$激活成功 1
+#ACT
+TAKE <$STR(S$当前选择)> 1
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>该部件只能激活一次</font>
+GOTO @返还判断
+GOTO @时装柜界面
+BREAK
+
+#IF
+EQUAL S$部位 装扮
+EQUAL N$激活成功 1
+#ACT
+TAKE <$STR(S$当前选择)> 1
+MOV N$使用激活 0
+MOV N$激活成功 0
+USEBONUSPOINT 10 + <$STR(N$当前防御下)> 1
+USEBONUSPOINT 11 + <$STR(N$当前防御上)> 1
+USEBONUSPOINT 12 + <$STR(N$当前魔御下)> 1
+USEBONUSPOINT 13 + <$STR(N$当前魔御上)> 1
+USEBONUSPOINT 6 + <$STR(N$当前体力)>
+RECALCABILITYS
+INC U207 <$STR(N$当前防御下)>
+INC U208 <$STR(N$当前防御上)>
+INC U209 <$STR(N$当前魔御下)>
+INC U210 <$STR(N$当前魔御上)>
+INC U211 <$STR(N$当前体力)>
+SENDMSG 9 <font color='#00ff00'>【<$STR(S$当前选择)>】激活成功</font>
+BREAK
+
+#IF
+EQUAL N$激活成功 1
+#ACT
+TAKE <$STR(S$当前选择)> 1
+MOV N$使用激活 0
+MOV N$激活成功 0
+USEBONUSPOINT 2 + <$STR(N$当前魔法下)> 1
+USEBONUSPOINT 2 + <$STR(N$当前魔法上)> 2
+USEBONUSPOINT 3 + <$STR(N$当前道术下)> 1
+USEBONUSPOINT 3 + <$STR(N$当前道术上)> 2
+USEBONUSPOINT 1 + <$STR(N$当前攻击下)> 1
+USEBONUSPOINT 1 + <$STR(N$当前攻击上)> 2
+RECALCABILITYS
+INC U201 <$STR(N$当前魔法下)>
+INC U202 <$STR(N$当前魔法上)>
+INC U203 <$STR(N$当前道术下)>
+INC U204 <$STR(N$当前道术上)>
+INC U205 <$STR(N$当前攻击下)>
+INC U206 <$STR(N$当前攻击上)>
+SENDMSG 9 <font color='#00ff00'>【<$STR(S$当前选择)>】激活成功</font>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>该部位已激活</font>
+GOTO @时装柜界面
+BREAK
+
+[@返还判断]
+#IF
+EQUAL N$使用激活 1
+EQUAL S$部位 幻武
+#ACT
+GIVE [幻武]<$STR(S$激活物品)>
+BREAK
+#IF
+EQUAL N$使用激活 1
+EQUAL S$部位 装扮
+#ACT
+GIVE [时装]<$STR(S$激活物品)>
+BREAK
+
+
+
+[@显示剑甲外观]
+#IF
+#ACT
+MOV U228 1
+
+#IF
+NOT EQUAL S$幻武名
+EQUAL N$幻武激活_<$STR(N$幻武序号)> 1
+#ACT
+SENDMSG 9 <font color='#ff0000'>【<$STR(S$幻武名)>】未激活</font>
+
+#IF
+NOT EQUAL S$幻武名
+EQUAL N$幻武激活_<$STR(N$幻武序号)> 0
+#ACT
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$幻武名)> <$STR(S$幻武名)>looks S$幻武looks
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$幻武名)> <$STR(S$幻武名)>特效ID S$幻武内观特效
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$幻武名)> <$STR(S$幻武名)>外观特效ID S$幻武外显ID
+MOV U229 <$STR(S$幻武looks)>
+MOV U230 <$STR(S$幻武内观特效)>
+MOV U231 <$STR(S$幻武外显ID)>
+MOV U232 <$STR(S$幻武外显ID)>
+ChangeItemShape 1 = <$STR(S$幻武外显ID)>
+ChangeDressEffect 1 <$STR(S$幻武外显ID)> 1
+SENDMSG 9 <font color='#00ff00'>【时装武器】外显激活成功</font>
+
+#IF
+NOT EQUAL S$装扮名
+EQUAL N$装扮激活_<$STR(N$装扮序号)> 1
+#ACT
+SENDMSG 9 <font color='#ff0000'>【<$STR(S$装扮名)>】未激活</font>
+
+#IF
+NOT EQUAL S$装扮名
+EQUAL N$装扮激活_<$STR(N$装扮序号)> 0
+gender man
+#ACT
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮名)> <$STR(S$装扮名)>looks_0 S$装扮looks
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮名)> <$STR(S$装扮名)>特效ID_0 S$装扮内观特效
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮名)> <$STR(S$装扮名)>外观特效ID S$装扮外显ID
+MOV U233 <$STR(S$装扮looks)>
+MOV U234 <$STR(S$装扮内观特效)>
+MOV U235 <$STR(S$装扮外显ID)>
+MOV U236 <$STR(S$装扮外显ID)>
+ChangeItemShape 0 = <$STR(S$装扮外显ID)>
+ChangeDressEffect 0 <$STR(S$装扮外显ID)> 1
+SENDMSG 9 <font color='#00ff00'>【时装衣服】外显激活成功</font>
+
+#IF
+NOT EQUAL S$装扮名
+EQUAL N$装扮激活_<$STR(N$装扮序号)> 0
+gender woman
+#ACT
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮名)> <$STR(S$装扮名)>looks_1 S$装扮looks
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮名)> <$STR(S$装扮名)>特效ID_1 S$装扮内观特效
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮名)> <$STR(S$装扮名)>外观特效ID S$装扮外显ID
+MOV U233 <$STR(S$装扮looks)>
+MOV U234 <$STR(S$装扮内观特效)>
+MOV U235 <$STR(S$装扮外显ID)>
+MOV U236 <$STR(S$装扮外显ID)>
+ChangeItemShape 0 = <$STR(S$装扮外显ID)>
+ChangeDressEffect 0 <$STR(S$装扮外显ID)> 1
+SENDMSG 9 <font color='#00ff00'>【时装衣服】外显激活成功</font>
+
+[@激活检测]
+#IF
+#ACT
+MOV N$时装柜位置_1 0
+MOV N$时装柜位置_2 0
+MOV N$时装柜位置_3 0
+MOV N$时装柜位置_4 0
+MOV N$时装柜位置_5 0
+MOV N$时装柜位置_6 0
+MOV N$时装柜位置_7 0
+MOV N$时装柜位置_8 0
+MOV N$时装柜位置_9 0
+MOV N$时装柜位置_10 0
+MOV N$时装柜位置_11 0
+MOV N$时装柜位置_12 0
+MOV N$时装柜位置_13 0
+MOV N$时装柜位置_14 0
+MOV S$幻武红点_1
+MOV S$幻武红点_2
+MOV S$幻武红点_3
+MOV S$幻武红点_4
+MOV S$幻武红点_5
+MOV S$幻武红点_6
+MOV S$幻武红点_7
+MOV S$幻武红点_8
+MOV S$时装红点_1
+MOV S$时装红点_2
+MOV S$时装红点_3
+MOV S$时装红点_4
+MOV S$时装红点_5
+MOV S$时装红点_6
+#IF
+CHECK [201] 0
+#ACT
+MOV N$幻武激活_1 1
+MOV N$幻武特效框_1 7210
+MOV N$时装柜位置_1 1
+#ELSEACT
+MOV N$幻武激活_1 0
+MOV N$幻武特效框_1 7211
+#IF
+CHECK [202] 0
+#ACT
+MOV N$幻武激活_2 1
+MOV N$幻武特效框_2 7220
+MOV N$时装柜位置_2 1
+#ELSEACT
+MOV N$幻武激活_2 0
+MOV N$幻武特效框_2 7221
+#IF
+CHECK [203] 0
+#ACT
+MOV N$幻武激活_3 1
+MOV N$幻武特效框_3 7230
+MOV N$时装柜位置_3 1
+#ELSEACT
+MOV N$幻武激活_3 0
+MOV N$幻武特效框_3 7231
+#IF
+CHECK [204] 0
+#ACT
+MOV N$幻武激活_4 1
+MOV N$幻武特效框_4 7240
+MOV N$时装柜位置_4 1
+#ELSEACT
+MOV N$幻武激活_4 0
+MOV N$幻武特效框_4 7241
+#IF
+CHECK [205] 0
+#ACT
+MOV N$幻武激活_5 1
+MOV N$幻武特效框_5 7310
+MOV N$时装柜位置_5 1
+#ELSEACT
+MOV N$幻武激活_5 0
+MOV N$幻武特效框_5 7311
+#IF
+CHECK [206] 0
+#ACT
+MOV N$幻武激活_6 1
+MOV N$幻武特效框_6 7320
+MOV N$时装柜位置_6 1
+#ELSEACT
+MOV N$幻武激活_6 0
+MOV N$幻武特效框_6 7321
+#IF
+CHECK [207] 0
+#ACT
+MOV N$幻武激活_7 1
+MOV N$幻武特效框_7 7330
+MOV N$时装柜位置_7 1
+#ELSEACT
+MOV N$幻武激活_7 0
+MOV N$幻武特效框_7 7331
+#IF
+CHECK [208] 0
+#ACT
+MOV N$幻武激活_8 1
+MOV N$幻武特效框_8 7340
+MOV N$时装柜位置_8 1
+#ELSEACT
+MOV N$幻武激活_8 0
+MOV N$幻武特效框_8 7341
+;---------------------装扮
+#IF
+CHECK [209] 0
+#ACT
+MOV N$装扮激活_1 1
+MOV N$装扮特效框_1 7510
+MOV N$时装柜位置_9 1
+#ELSEACT
+MOV N$装扮激活_1 0
+MOV N$装扮特效框_1 7511
+#IF
+CHECK [210] 0
+#ACT
+MOV N$装扮激活_2 1
+MOV N$装扮特效框_2 7520
+MOV N$时装柜位置_10 1
+#ELSEACT
+MOV N$装扮激活_2 0
+MOV N$装扮特效框_2 7521
+#IF
+CHECK [211] 0
+#ACT
+MOV N$装扮激活_3 1
+MOV N$装扮特效框_3 7530
+MOV N$时装柜位置_11 1
+#ELSEACT
+MOV N$装扮激活_3 0
+MOV N$装扮特效框_3 7531
+#IF
+CHECK [212] 0
+#ACT
+MOV N$装扮激活_4 1
+MOV N$装扮特效框_4 7540
+MOV N$时装柜位置_12 1
+#ELSEACT
+MOV N$装扮激活_4 0
+MOV N$装扮特效框_4 7541
+#IF
+CHECK [213] 0
+#ACT
+MOV N$装扮激活_5 1
+MOV N$装扮特效框_5 7610
+MOV N$时装柜位置_13 1
+#ELSEACT
+MOV N$装扮激活_5 0
+MOV N$装扮特效框_5 7611
+#IF
+CHECK [214] 0
+#ACT
+MOV N$装扮激活_6 1
+MOV N$装扮特效框_6 7620
+MOV N$时装柜位置_14 1
+#ELSEACT
+MOV N$装扮激活_6 0
+MOV N$装扮特效框_6 7621
+
+#IF
+#ACT
+GOTO @时装柜红点
+
+[@读取配置]
+#IF
+#ACT
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 幻武 幻武_1 S$幻武_1
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 幻武 幻武_2 S$幻武_2
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 幻武 幻武_3 S$幻武_3
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 幻武 幻武_4 S$幻武_4
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 幻武 幻武_5 S$幻武_5
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 幻武 幻武_6 S$幻武_6
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 幻武 幻武_7 S$幻武_7
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 幻武 幻武_8 S$幻武_8
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$幻武_1)> <$STR(S$幻武_1)>IDX N$幻武_1_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$幻武_2)> <$STR(S$幻武_2)>IDX N$幻武_2_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$幻武_3)> <$STR(S$幻武_3)>IDX N$幻武_3_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$幻武_4)> <$STR(S$幻武_4)>IDX N$幻武_4_IDX
+
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$幻武_5)> <$STR(S$幻武_5)>IDX N$幻武_5_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$幻武_6)> <$STR(S$幻武_6)>IDX N$幻武_6_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$幻武_7)> <$STR(S$幻武_7)>IDX N$幻武_7_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$幻武_8)> <$STR(S$幻武_8)>IDX N$幻武_8_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 装扮 装扮_1 S$装扮_1
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 装扮 装扮_2 S$装扮_2
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 装扮 装扮_3 S$装扮_3
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 装扮 装扮_4 S$装扮_4
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 装扮 装扮_5 S$装扮_5
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini 装扮 装扮_6 S$装扮_6
+
+#IF
+gender man
+#ACT
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_1)> <$STR(S$装扮_1)>IDX_0 N$装扮_1_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_2)> <$STR(S$装扮_2)>IDX_0 N$装扮_2_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_3)> <$STR(S$装扮_3)>IDX_0 N$装扮_3_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_4)> <$STR(S$装扮_4)>IDX_0 N$装扮_4_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_5)> <$STR(S$装扮_5)>IDX_0 N$装扮_5_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_6)> <$STR(S$装扮_6)>IDX_0 N$装扮_6_IDX
+#ELSEACT
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_1)> <$STR(S$装扮_1)>IDX_1 N$装扮_1_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_2)> <$STR(S$装扮_2)>IDX_1 N$装扮_2_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_3)> <$STR(S$装扮_3)>IDX_1 N$装扮_3_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_4)> <$STR(S$装扮_4)>IDX_1 N$装扮_4_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_5)> <$STR(S$装扮_5)>IDX_1 N$装扮_5_IDX
+ReadCacheConfigFileItem ..\QuestDiary\游戏功能\系统功能\时装柜.ini <$STR(S$装扮_6)> <$STR(S$装扮_6)>IDX_1 N$装扮_6_IDX
+
+
+[@时装柜红点]
+#IF
+#ACT
+MOV N$时装柜红点 0
+GETBAGITEMCOUNT [幻武]风花雪月 N$幻武数量_1
+GETBAGITEMCOUNT [幻武]开天辟日 N$幻武数量_2
+GETBAGITEMCOUNT [幻武]逐日之星 N$幻武数量_3
+GETBAGITEMCOUNT [幻武]清风月影 N$幻武数量_4
+GETBAGITEMCOUNT [幻武]天下无双 N$幻武数量_5
+GETBAGITEMCOUNT [幻武]逐风破浪 N$幻武数量_6
+GETBAGITEMCOUNT [幻武]凤翥龙翔 N$幻武数量_7
+GETBAGITEMCOUNT [幻武]风华流砂 N$幻武数量_8
+GETBAGITEMCOUNT [时装]岁月鎏金 N$时装数量_1
+GETBAGITEMCOUNT [时装]锦绣年华 N$时装数量_2
+GETBAGITEMCOUNT [时装]风华正茂 N$时装数量_3
+GETBAGITEMCOUNT [时装]大道无极 N$时装数量_4
+GETBAGITEMCOUNT [时装]十方俱灭 N$时装数量_5
+GETBAGITEMCOUNT [时装]恶魔之祸 N$时装数量_6
+#IF
+LARGE N$幻武数量_1 0
+#ACT
+MOV S$幻武红点_1 <Img|id=7212|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$幻武数量_2 0
+#ACT
+MOV S$幻武红点_2 <Img|id=7222|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$幻武数量_3 0
+#ACT
+MOV S$幻武红点_3 <Img|id=7232|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$幻武数量_4 0
+#ACT
+MOV S$幻武红点_4 <Img|id=7242|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$幻武数量_5 0
+#ACT
+MOV S$幻武红点_5 <Img|id=7312|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$幻武数量_6 0
+#ACT
+MOV S$幻武红点_6 <Img|id=7322|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$幻武数量_7 0
+#ACT
+MOV S$幻武红点_7 <Img|id=7332|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$幻武数量_8 0
+#ACT
+MOV S$幻武红点_8 <Img|id=7342|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$时装数量_1 0
+#ACT
+MOV S$时装红点_1 <Img|id=7512|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$时装数量_2 0
+#ACT
+MOV S$时装红点_2 <Img|id=7522|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$时装数量_3 0
+#ACT
+MOV S$时装红点_3 <Img|id=7532|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$时装数量_4 0
+#ACT
+MOV S$时装红点_4 <Img|id=7542|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$时装数量_5 0
+#ACT
+MOV S$时装红点_5 <Img|id=7612|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+#IF
+LARGE N$时装数量_6 0
+#ACT
+MOV S$时装红点_6 <Img|id=7622|x=43|y=6|img=custom/hl/hl_ui/hd.png>
+MOV N$时装柜红点 1
+
+#IF
+EQUAL N$时装柜红点 1
+#ACT
+MOV S$主界面按钮 <Button|children={808}|x=162|y=100|mimg=private/main/bottom/1900012593.png|color=255|nimg=private/main/bottom/1900012593.png|link=@时装衣柜>
+INC S$主界面按钮 <Img|id=808|x=38|y=5|img=custom/hl/hl_ui/hd.png>
+ADDBUTTON 109 9 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Img|x=-25|y=-370|img=custom/hl/hl_ui/hd.png> 
+ADDBUTTON 104 30 <$STR(S$主界面按钮)>
+#ELSEACT
+MOV S$主界面按钮 <Button|children={808}|x=162|y=100|mimg=private/main/bottom/1900012593.png|color=255|nimg=private/main/bottom/1900012593.png|link=@时装衣柜>
+ADDBUTTON 109 9 <$STR(S$主界面按钮)>
+DELBUTTON 104 30
+
+[@时装切换按钮红点]
+#IF
+#ACT
+MOV S$主界面按钮 <Button|children={808}|x=162|y=100|mimg=private/main/bottom/1900012593.png|color=255|nimg=private/main/bottom/1900012593.png|link=@时装衣柜>
+INC S$主界面按钮 <Img|id=808|x=38|y=5|img=custom/hl/hl_ui/hd.png>
+ADDBUTTON 109 9 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Img|x=-25|y=-370|img=custom/hl/hl_ui/hd.png> 
+ADDBUTTON 104 30 <$STR(S$主界面按钮)>
+
+
+
+
+
+
+
+
+
+
+
+}

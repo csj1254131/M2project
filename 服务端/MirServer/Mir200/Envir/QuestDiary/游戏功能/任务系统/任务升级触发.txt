@@ -1,0 +1,156 @@
+[@任务升级触发]
+{
+
+#OR
+CheckContainsText <$MAP> syt
+CheckContainsText <$MAP> ycly
+EQUAL <$MAP> sjBOSS
+EQUAL <$MAP> dbqb
+#ACT
+GOTO @任务在活动地图
+break
+
+#IF
+#ACT
+GOTO @任务在正常地图
+break
+
+[@任务在正常地图]
+
+#IF
+LARGE G100 0
+check [428] 0
+check [429] 0
+EQUAL <$LEVEL> 40
+#ACT
+set [428] 1
+NEWPICKTASK 37
+
+
+#IF
+EQUAL <$STR(U91)> 4
+small <$STR(U92)> 40
+#ACT
+MOV U92 <$LEVEL>
+NEWPICKTASK 4 <$STR(U92)>
+
+#IF
+EQUAL <$STR(U91)> 4
+large <$STR(U92)> 39
+#ACT
+MOV U91 5
+MOV U92 0
+NEWCHANGETASK 4
+
+#IF
+EQUAL <$STR(U91)> 8
+small <$STR(U92)> 55
+#ACT
+MOV U92 <$LEVEL>
+NEWPICKTASK 6 <$STR(U92)>
+
+#IF
+EQUAL <$STR(U91)> 8
+large <$STR(U92)> 54
+#ACT
+MOV U91 9
+MOV U92 0
+NEWCHANGETASK 6
+
+#IF
+EQUAL <$STR(U91)> 12
+small <$STR(U92)> 70
+#ACT
+MOV U92 <$LEVEL>
+NEWPICKTASK 8 <$STR(U92)>
+
+#IF
+EQUAL <$STR(U91)> 12
+large <$STR(U92)> 69
+#ACT
+MOV U91 13
+MOV U92 0
+NEWCHANGETASK 8
+
+#IF
+EQUAL <$STR(U91)> 16
+small <$STR(U92)> 90
+#ACT
+MOV U92 <$LEVEL>
+NEWPICKTASK 10 <$STR(U92)>
+
+#IF
+EQUAL <$STR(U91)> 16
+large <$STR(U92)> 89
+#ACT
+MOV U91 17
+MOV U92 0
+NEWCHANGETASK 10
+
+
+
+[@任务在活动地图]
+
+#IF
+LARGE G100 0
+check [428] 0
+check [429] 0
+EQUAL <$LEVEL> 40
+#ACT
+set [428] 1
+
+#IF
+EQUAL <$STR(U91)> 4
+small <$STR(U92)> 40
+#ACT
+MOV U92 <$LEVEL>
+
+#IF
+EQUAL <$STR(U91)> 4
+large <$STR(U92)> 39
+#ACT
+MOV U91 5
+MOV U92 0
+
+#IF
+EQUAL <$STR(U91)> 8
+small <$STR(U92)> 55
+#ACT
+MOV U92 <$LEVEL>
+
+#IF
+EQUAL <$STR(U91)> 8
+large <$STR(U92)> 54
+#ACT
+MOV U91 9
+MOV U92 0
+
+#IF
+EQUAL <$STR(U91)> 12
+small <$STR(U92)> 70
+#ACT
+MOV U92 <$LEVEL>
+
+#IF
+EQUAL <$STR(U91)> 12
+large <$STR(U92)> 69
+#ACT
+MOV U91 13
+MOV U92 0
+
+#IF
+EQUAL <$STR(U91)> 16
+small <$STR(U92)> 90
+#ACT
+MOV U92 <$LEVEL>
+
+#IF
+EQUAL <$STR(U91)> 16
+large <$STR(U92)> 89
+#ACT
+MOV U91 17
+MOV U92 0
+
+
+
+}

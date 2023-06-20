@@ -1,0 +1,1358 @@
+[@启动分解]
+{
+#IF
+#ACT
+MOV N$自动分解 0
+MOV N$手动一键 0
+MOV S$上次选择ID
+MOV N$宽 665
+MOV N$高 80
+MOV S0
+MOV S$分解总串
+GOTO @读分解配置
+GOTO @分解界面
+
+[@分解界面]
+#IF
+EQUAL N$自动分解 0
+#ACT
+MOV N$分解激活 1
+#SAY
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|move=1|bg=1|reload=1|layerid=667|bagPos=1|x=<$STR(N$宽)>|y=<$STR(N$高)>|img=custom/hl/fenjie_ui/hl_fj_01.png|width=405|height=447>
+<Layout|id=0|children={1}|x=405|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|percentx=50|y=35|color=104|size=18|outline=2|outlinecolor=0|text=背包内可分解的装备>
+<Img|id=3|children={31}|x=28|y=32|img=custom/hl/fenjie_ui/hl_fj_02.png>
+<Img|id=31|x=263|y=0|img=custom/hl/fenjie_ui/hl_fj_04.png>
+<ListView|id=4|children={41}|a=4|percentx=50|y=135|width=350|height=150|margin=2|bounce=0|direction=2|color=x>
+<BAGITEMS|id=41|condition=*|select=<$STR(S0)>|count=10|row=2|filter3=<$STR(S$分解总串)>|selecttype=0|showstar=1|link=@提交背包>
+<Text|id=5|a=4|percentx=50|y=220|color=104|outline=2|outlinecolor=0|size=18|text=分解收益>
+<Img|id=10|children={101}|x=80|y=218|img=custom/hl/fenjie_ui/hl_fj_02.png>
+<Img|id=101|x=170|y=0|img=custom/hl/fenjie_ui/hl_fj_04.png>
+<ListView|id=6|a=4|percentx=50|y=270|children={61,62,63,64}|width=270|height=65|margin=2|bounce=0|direction=2|color=x>
+<ItemShow|id=61|itemid=40048|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=62|itemid=40004|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=63|itemid=40127|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=64|itemid=40221|itemcount=1|showtips=1|bgtype=1>
+<Button|id=7|a=4|percentx=30|y=330|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|color=103|size=18|outline=2|outlinecolor=0|text=确定分解|link=@确定分解>
+<Button|id=11|a=4|percentx=70|y=330|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|color=103|size=18|outline=2|outlinecolor=0|text=一键分解|link=@一键分解>
+
+
+<Text|id=8|x=312|y=360|color=255|size=18|outline=2|outlinecolor=0|text=分解详情|link=@分解详情>
+<Text|id=9|x=30|y=400|children={92}|color=250|outline=2|outlinecolor=0|size=18|text=一键分解，请预留4个空格>
+<Text|id=92|x=288|y=0|color=250|size=18|outline=2|outlinecolor=0|text=前往设置|link=@分解设置>
+<CheckBox|id=16|x=30|y=360|children={161}|checkboxid=6|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U242)>|link=@王者自动分解>
+<Text|id=161|x=30|y=0|color=251|size=18|text=VIP2自动分解|link=@王者自动分解>
+
+
+
+[@一键分解]
+#IF
+NOT EQUAL S0
+#ACT
+GOTO @确定分解
+#ELSEACT
+MOV N$手动一键 1
+GOTO @遍历背包分解
+
+[@提交背包]
+#IF
+#ACT
+SelectBagItems <$STR(S0)>
+MOV S$剩余串 <$STR(S0)>
+GOTO @分解界面
+
+[@确定分解]
+#IF
+CHECKBAGSIZE 4
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留4个背包空格</font>
+BREAK
+
+#IF
+NOT EQUAL S$剩余串
+#ACT
+MOV S$奖励类别
+#IF
+EQUAL S$剩余串
+EQUAL N$分解界面状态 1
+#ACT
+SENDMSG 9 <font color='#ff0000'>没有可以分解的物品！</font>
+BREAK
+
+#IF
+CheckContainsText <$str(S$剩余串)> ,
+#ACT
+GetValidstr <$STR(S$剩余串)> , S$结果串 S$剩余串
+GetItemNameByMakeIndex <$STR(S$结果串)> S$当前装备
+GOTO @分解判定
+MOV S$当前装备
+DELAYGOTO 50 @分割判定
+#ELSEACT
+GOTO @分割判定
+BREAK
+
+
+
+
+[@分割判定]
+#IF
+CheckContainsText <$str(S$剩余串)> ,
+#ACT
+MOV S$当前装备
+DELAYGOTO 1 @确定分解
+#ELSEACT
+MOV S$当前装备
+MOV S$结果串 <$str(S$剩余串)>
+GetItemNameByMakeIndex <$STR(S$结果串)> S$当前装备
+MOV S$剩余串
+GOTO @分解判定
+MOV S0
+#IF
+EQUAL N$分解界面状态 1
+#ACT
+GOTO @启动分解
+
+
+[@分解判定]
+#IF
+#ACT
+MOV S$元宝奖品
+MOV S$经验奖品
+MOV S$炼体奖品
+MOV S$锻造奖品
+MOV S$本次奖品
+;#IF
+;CheckContainsText <$STR(S$逐月装备)> <$STR(S$当前装备)>
+;#ACT
+;MOV S$当前等级 逐月
+;GOTO @去装备分解
+;BREAK
+;#IF
+;CheckContainsText <$STR(S$大地装备)> <$STR(S$当前装备)>
+;#ACT
+;MOV S$当前等级 大地
+;GOTO @去装备分解
+;BREAK
+;#IF
+;CheckContainsText <$STR(S$主宰装备)> <$STR(S$当前装备)>
+;#ACT
+;MOV S$当前等级 主宰
+;GOTO @去装备分解
+;BREAK
+;#IF
+;CheckContainsText <$STR(S$太虚装备)> <$STR(S$当前装备)>
+;#ACT
+;MOV S$当前等级 太虚
+;GOTO @去装备分解
+;BREAK
+#IF
+CheckContainsText <$STR(S$龙吟装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$当前等级 龙吟
+GOTO @去装备分解
+BREAK
+#IF
+CheckContainsText <$STR(S$荣耀装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$当前等级 荣耀
+GOTO @去装备分解
+BREAK
+#IF
+CheckContainsText <$STR(S$永恒装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$当前等级 永恒
+GOTO @去装备分解
+BREAK
+#IF
+CheckContainsText <$STR(S$龙腾装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$当前等级 龙腾
+GOTO @去装备分解
+BREAK
+#IF
+CheckContainsText <$STR(S$盛世装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$当前等级 盛世
+GOTO @去装备分解
+BREAK
+#IF
+CheckContainsText <$STR(S$辉煌装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$当前等级 辉煌
+GOTO @去装备分解
+BREAK
+#IF
+CheckContainsText <$STR(S$火龙装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$当前等级 火龙
+GOTO @去装备分解
+BREAK
+
+
+[@去装备分解]
+#IF
+#ACT
+MOV S$奖励类别
+MOV S$分解结果
+
+;#IF
+;CheckContainsText <$STR(S$逐月装备)> <$STR(S$当前装备)>
+;#ACT
+;MOV S$分解等级 逐月
+;MOV S$分解结果 成功
+;GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 16 S$读取列 |
+;#IF
+;CheckContainsText <$STR(S$大地装备)> <$STR(S$当前装备)>
+;#ACT
+;MOV S$分解等级 大地
+;MOV S$分解结果 成功
+;GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 18 S$读取列 |
+;#IF
+;CheckContainsText <$STR(S$主宰装备)> <$STR(S$当前装备)>
+;#ACT
+;MOV S$分解等级 主宰
+;MOV S$分解结果 成功
+;GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 20 S$读取列 |
+;#IF
+;CheckContainsText <$STR(S$太虚装备)> <$STR(S$当前装备)>
+;#ACT
+;MOV S$分解等级 太虚
+;MOV S$分解结果 成功
+;GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 22 S$读取列 |
+#IF
+CheckContainsText <$STR(S$龙吟装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$分解等级 龙吟
+MOV S$分解结果 成功
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 24 S$读取列 |
+#IF
+CheckContainsText <$STR(S$荣耀装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$分解等级 荣耀
+MOV S$分解结果 成功
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 26 S$读取列 |
+#IF
+CheckContainsText <$STR(S$永恒装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$分解等级 永恒
+MOV S$分解结果 成功
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 28 S$读取列 |
+#IF
+CheckContainsText <$STR(S$龙腾装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$分解等级 龙腾
+MOV S$分解结果 成功
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 30 S$读取列 |
+#IF
+CheckContainsText <$STR(S$盛世装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$分解等级 盛世
+MOV S$分解结果 成功
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 32 S$读取列 |
+#IF
+CheckContainsText <$STR(S$辉煌装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$分解等级 辉煌
+MOV S$分解结果 成功
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 34 S$读取列 |
+#IF
+CheckContainsText <$STR(S$火龙装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$分解等级 火龙
+MOV S$分解结果 成功
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 36 S$读取列 |
+
+#IF
+#ACT
+DelItemByMakeIndex <$STR(S$结果串)>
+
+
+#IF
+EQUAL S$分解结果 成功
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>没有可分解的物品！</font>
+BREAK
+
+#IF
+RANDOMEX <$STR(S$读取列3)> 500
+#ACT
+MOV S$奖励类别 锻造材料
+GOTO @锻造材料奖励
+
+#IF
+RANDOMEX <$STR(S$读取列2)> 100
+#ACT
+MOV S$奖励类别 炼体材料
+GOTO @炼体材料奖励
+
+#IF
+RANDOMEX <$STR(S$读取列1)> 100
+#ACT
+MOV S$奖励类别 元宝
+GOTO @元宝奖励
+
+#IF
+#ACT
+MOV S$奖励类别 经验
+GOTO @经验奖励
+GOTO @分解界面
+
+
+[@经验奖励]
+#IF
+EQUAL S$分解结果 成功
+EQUAL S$奖励类别 经验
+#ACT
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 43 S$经验范围 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 41 S$经验材料几率 |
+MOV N$奖品递减 <$STR(S$经验范围0)>
+GOTO @活跃任务_装备分解
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>物品不足！</font>
+BREAK
+
+;#IF
+;EQUAL S$当前等级 逐月
+;#ACT
+;MOV N$当前范围 <$STR(S$经验范围1)>
+
+;#IF
+;EQUAL S$当前等级 大地
+;#ACT
+;MOV N$当前范围 <$STR(S$经验范围2)>
+
+;#IF
+;EQUAL S$当前等级 主宰
+;#ACT
+;MOV N$当前范围 <$STR(S$经验范围3)>
+
+;#IF
+;EQUAL S$当前等级 太虚
+;#ACT
+;MOV N$当前范围 <$STR(S$经验范围4)>
+
+#IF
+EQUAL S$当前等级 龙吟
+#ACT
+MOV N$当前范围 <$STR(S$经验范围5)>
+
+#IF
+EQUAL S$当前等级 荣耀
+#ACT
+MOV N$当前范围 <$STR(S$经验范围6)>
+
+#IF
+EQUAL S$当前等级 永恒
+#ACT
+MOV N$当前范围 <$STR(S$经验范围7)>
+
+#IF
+EQUAL S$当前等级 龙腾
+#ACT
+MOV N$当前范围 <$STR(S$经验范围8)>
+
+#IF
+EQUAL S$当前等级 盛世
+#ACT
+MOV N$当前范围 <$STR(S$经验范围9)>
+
+#IF
+EQUAL S$当前等级 辉煌
+#ACT
+MOV N$当前范围 <$STR(S$经验范围10)>
+
+#IF
+EQUAL S$当前等级 火龙
+#ACT
+MOV N$当前范围 <$STR(S$经验范围11)>
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$经验材料几率5)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GAMEGOLD + 50000
+MOV S$经验奖品 【50000元宝】
+MOV S$本次奖品 <$STR(S$锻造奖品)><$STR(S$炼体奖品)><$STR(S$元宝奖品)><$STR(S$经验奖品)>
+SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得奖品<$STR(S$本次奖品)>
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$经验材料几率4)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GAMEGOLD + 20000
+MOV S$经验奖品 【20000元宝】
+MOV S$本次奖品 <$STR(S$锻造奖品)><$STR(S$炼体奖品)><$STR(S$元宝奖品)><$STR(S$经验奖品)>
+SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得奖品<$STR(S$本次奖品)>
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$经验材料几率3)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GAMEGOLD + 10000
+MOV S$经验奖品 【10000元宝】
+MOV S$本次奖品 <$STR(S$锻造奖品)><$STR(S$炼体奖品)><$STR(S$元宝奖品)><$STR(S$经验奖品)>
+SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得奖品<$STR(S$本次奖品)>
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$经验材料几率2)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GAMEGOLD + 5000
+MOV S$经验奖品 【5000元宝】
+MOV S$本次奖品 <$STR(S$锻造奖品)><$STR(S$炼体奖品)><$STR(S$元宝奖品)><$STR(S$经验奖品)>
+SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得奖品<$STR(S$本次奖品)>
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$经验材料几率1)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GAMEGOLD + 2000
+MOV S$经验奖品 【2000元宝】
+MOV S$本次奖品 <$STR(S$锻造奖品)><$STR(S$炼体奖品)><$STR(S$元宝奖品)><$STR(S$经验奖品)>
+SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得奖品<$STR(S$本次奖品)>
+BREAK
+
+#IF
+#ACT
+GAMEGOLD + 2000
+MOV S$经验奖品 【2000元宝】
+MOV S$本次奖品 <$STR(S$锻造奖品)><$STR(S$炼体奖品)><$STR(S$元宝奖品)><$STR(S$经验奖品)>
+SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得奖品<$STR(S$本次奖品)>
+BREAK
+
+
+[@元宝奖励]
+#IF
+EQUAL S$分解结果 成功
+EQUAL S$奖励类别 元宝
+#ACT
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 49 S$元宝范围 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 47 S$元宝材料几率 |
+MOV N$奖品递减 <$STR(S$元宝范围0)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>物品不足！</font>
+BREAK
+
+;#IF
+;EQUAL S$当前等级 逐月
+;#ACT
+;MOV N$当前范围 <$STR(S$元宝范围1)>
+
+;#IF
+;EQUAL S$当前等级 大地
+;#ACT
+;MOV N$当前范围 <$STR(S$元宝范围2)>
+
+;#IF
+;EQUAL S$当前等级 主宰
+;#ACT
+;MOV N$当前范围 <$STR(S$元宝范围3)>
+
+;#IF
+;EQUAL S$当前等级 太虚
+;#ACT
+;MOV N$当前范围 <$STR(S$元宝范围4)>
+
+#IF
+EQUAL S$当前等级 龙吟
+#ACT
+MOV N$当前范围 <$STR(S$元宝范围5)>
+
+#IF
+EQUAL S$当前等级 荣耀
+#ACT
+MOV N$当前范围 <$STR(S$元宝范围6)>
+
+#IF
+EQUAL S$当前等级 永恒
+#ACT
+MOV N$当前范围 <$STR(S$元宝范围7)>
+
+#IF
+EQUAL S$当前等级 龙腾
+#ACT
+MOV N$当前范围 <$STR(S$元宝范围8)>
+
+#IF
+EQUAL S$当前等级 盛世
+#ACT
+MOV N$当前范围 <$STR(S$元宝范围9)>
+
+#IF
+EQUAL S$当前等级 辉煌
+#ACT
+MOV N$当前范围 <$STR(S$元宝范围10)>
+
+#IF
+EQUAL S$当前等级 火龙
+#ACT
+MOV N$当前范围 <$STR(S$元宝范围11)>
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$元宝材料几率6)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GAMEGOLD + 50000
+INC S$元宝奖品 【50000元宝】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【50000元宝】
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$元宝材料几率5)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GAMEGOLD + 50000
+INC S$元宝奖品 【50000元宝】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【50000元宝】1个
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$元宝材料几率4)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GAMEGOLD + 20000
+INC S$元宝奖品 【20000元宝】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【20000元宝】1个
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$元宝材料几率3)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GAMEGOLD + 10000
+INC S$元宝奖品 【10000元宝】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【10000元宝】1个
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$元宝材料几率2)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GAMEGOLD + 5000
+INC S$元宝奖品 【5000元宝】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【5000元宝】1个
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$元宝材料几率1)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GAMEGOLD + 2000
+INC S$元宝奖品 【2000元宝】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【2000元宝】1个
+BREAK
+
+#IF
+#ACT
+GAMEGOLD + 2000
+INC S$元宝奖品 【2000元宝】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【2000元宝】1个
+BREAK
+
+[@炼体材料奖励]
+#IF
+EQUAL S$分解结果 成功
+EQUAL S$奖励类别 炼体材料
+#ACT
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 55 S$炼体范围 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 53 S$炼体材料几率 |
+MOV N$奖品递减 <$STR(S$炼体范围0)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>物品不足！</font>
+BREAK
+
+;#IF
+;EQUAL S$当前等级 逐月
+;#ACT
+;MOV N$当前范围 <$STR(S$炼体范围1)>
+
+;#IF
+;EQUAL S$当前等级 大地
+;#ACT
+;MOV N$当前范围 <$STR(S$炼体范围2)>
+
+;#IF
+;EQUAL S$当前等级 主宰
+;#ACT
+;MOV N$当前范围 <$STR(S$炼体范围3)>
+
+;#IF
+;EQUAL S$当前等级 太虚
+;#ACT
+;MOV N$当前范围 <$STR(S$炼体范围4)>
+
+#IF
+EQUAL S$当前等级 龙吟
+#ACT
+MOV N$当前范围 <$STR(S$炼体范围5)>
+
+#IF
+EQUAL S$当前等级 荣耀
+#ACT
+MOV N$当前范围 <$STR(S$炼体范围6)>
+
+#IF
+EQUAL S$当前等级 永恒
+#ACT
+MOV N$当前范围 <$STR(S$炼体范围7)>
+
+#IF
+EQUAL S$当前等级 龙腾
+#ACT
+MOV N$当前范围 <$STR(S$炼体范围8)>
+
+#IF
+EQUAL S$当前等级 盛世
+#ACT
+MOV N$当前范围 <$STR(S$炼体范围9)>
+
+#IF
+EQUAL S$当前等级 辉煌
+#ACT
+MOV N$当前范围 <$STR(S$炼体范围10)>
+
+#IF
+EQUAL S$当前等级 火龙
+#ACT
+MOV N$当前范围 <$STR(S$炼体范围11)>
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$炼体材料几率3)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GIVE 龍の心 1
+INC S$炼体奖品 【龍の心】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【龍の心】1个
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$炼体材料几率2)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GIVE 龍の魄 1
+INC S$炼体奖品 【龍の魄】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【龍の魄】1个
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$炼体材料几率1)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+
+GIVE 恶魔头颅 1
+INC S$炼体奖品 【恶魔头颅】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【恶魔头颅】1个
+BREAK
+
+#IF
+#ACT
+GIVE 洗髓丹 1
+INC S$炼体奖品 【洗髓丹】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【洗髓丹】1个
+BREAK
+
+[@锻造材料奖励]
+#IF
+EQUAL S$分解结果 成功
+EQUAL S$奖励类别 锻造材料
+#ACT
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 61 S$锻造范围 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 59 S$锻造材料几率 |
+MOV N$奖品递减 <$STR(S$锻造范围0)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>物品不足！</font>
+BREAK
+
+;#IF
+;EQUAL S$当前等级 逐月
+;#ACT
+;MOV N$当前范围 <$STR(S$锻造范围1)>
+
+;#IF
+;EQUAL S$当前等级 大地
+;#ACT
+;MOV N$当前范围 <$STR(S$锻造范围2)>
+
+;#IF
+;EQUAL S$当前等级 主宰
+;#ACT
+;MOV N$当前范围 <$STR(S$锻造范围3)>
+
+;#IF
+;EQUAL S$当前等级 太虚
+;#ACT
+;MOV N$当前范围 <$STR(S$锻造范围4)>
+
+#IF
+EQUAL S$当前等级 龙吟
+#ACT
+MOV N$当前范围 <$STR(S$锻造范围5)>
+
+#IF
+EQUAL S$当前等级 荣耀
+#ACT
+MOV N$当前范围 <$STR(S$锻造范围6)>
+
+#IF
+EQUAL S$当前等级 永恒
+#ACT
+MOV N$当前范围 <$STR(S$锻造范围7)>
+
+#IF
+EQUAL S$当前等级 龙腾
+#ACT
+MOV N$当前范围 <$STR(S$锻造范围8)>
+
+#IF
+EQUAL S$当前等级 盛世
+#ACT
+MOV N$当前范围 <$STR(S$锻造范围9)>
+
+#IF
+EQUAL S$当前等级 辉煌
+#ACT
+MOV N$当前范围 <$STR(S$锻造范围10)>
+
+#IF
+EQUAL S$当前等级 火龙
+#ACT
+MOV N$当前范围 <$STR(S$锻造范围11)>
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$锻造材料几率4)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GIVE 烈焰玄铁 1
+INC S$锻造奖品 【烈焰玄铁】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【烈焰玄铁】1个
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$锻造材料几率3)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GIVE 上品注灵石 1
+INC S$锻造奖品 【上品注灵石】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【上品注灵石】1个
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$锻造材料几率2)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GIVE 中品注灵石 1
+INC S$锻造奖品 【中品注灵石】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【中品注灵石】1个
+BREAK
+
+#IF
+#ACT
+DEC N$奖品递减 1
+
+#IF
+RANDOMEX <$STR(S$锻造材料几率1)> 100
+LARGE N$当前范围 <$STR(N$奖品递减)>
+#ACT
+GIVE 觉醒石 1
+INC S$锻造奖品 【觉醒石】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【觉醒石】1个
+BREAK
+
+
+#IF
+#ACT
+GIVE 凡品升星石 1
+INC S$锻造奖品 【凡品升星石】
+;SENDMSG 7 恭喜你分解<$STR(S$当前装备)>获得【凡品升星石】1个
+BREAK
+
+
+
+[@分解详情]
+#IF
+#ACT
+MOV S0
+MOV S$剩余串
+#SAY
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|img=custom/hl/fenjie_ui/hl_fj_01.png|move=1|bg=1|reload=1|layerid=667|bagPos=1|x=<$STR(N$宽)>|y=<$STR(N$高)>|width=405|height=447>
+<Layout|id=0|children={1}|x=405|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=4|a=4|percentx=50|y=37|color=103|outline=2|outlinecolor=0|size=18|text=分解奖品>
+<Img|id=5|children={51}|x=75|y=35|img=custom/hl/fenjie_ui/hl_fj_02.png>
+<Img|id=51|x=170|y=0|img=custom/hl/fenjie_ui/hl_fj_04.png>
+<ListView|id=3|children={31,32,33,34,35,36,37,38,39,40,41}|x=20|y=60|width=370|height=340|margin=0|bounce=0|direction=1|color=x>
+;<Img|id=31|children={311,312}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+;<RText|id=311|x=10|y=5|color=255|size=18|text=逐月套装　<几率获得洗髓丹、凡品升星石/FCOLOR=253>>
+;<Img|id=32|children={321}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+;<RText|id=321|x=10|y=5|color=255|size=18|text=大地套装　<几率获得恶魔头颅、凡品升星石/FCOLOR=253>>
+;<Img|id=33|children={331,332}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+;<RText|id=331|x=10|y=5|color=255|size=18|text=主宰套装　<几率获得恶魔头颅、觉醒石/FCOLOR=253>>
+;<Img|id=34|children={341}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+;<RText|id=341|x=10|y=5|color=255|size=18|text=太虚套装　<几率获得恶魔头颅、觉醒石/FCOLOR=253>>
+<Img|id=35|children={351,352}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+<RText|id=351|x=10|y=5|color=255|size=18|text=龙吟套装　<几率获得龍の魄、觉醒石/FCOLOR=253>>
+<Img|id=36|children={361}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+<RText|id=361|x=10|y=5|color=255|size=18|text=荣耀套装　<几率获得龍の魄、中品注灵石/FCOLOR=253>>
+<Img|id=37|children={371}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+<RText|id=371|x=10|y=5|color=255|size=18|text=永恒套装　<几率获得龍の魄、中品注灵石/FCOLOR=253>>
+<Img|id=38|children={381}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+<RText|id=381|x=10|y=5|color=255|size=18|text=龙腾套装　<几率获得龍の心、中品注灵石/FCOLOR=253>>
+<Img|id=39|children={391}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+<RText|id=391|x=10|y=5|color=255|size=18|text=盛世套装　<几率获得龍の心、上品注灵石/FCOLOR=253>>
+<Img|id=40|children={401}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+<RText|id=401|x=10|y=5|color=255|size=18|text=辉煌套装　<几率获得龍の心、上品注灵石/FCOLOR=253>>
+<Img|id=41|children={411}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+<RText|id=411|x=10|y=5|color=255|size=18|text=火龙套装　<几率获得龍の心、上品注灵石/FCOLOR=253>>
+
+<Text|id=11|x=348|y=400|color=250|outline=2|outlinecolor=0|size=18|text=返回|link=@启动分解>
+
+
+[@分解设置]
+#IF
+#ACT
+MOV S0
+MOV S$剩余串
+#SAY
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|img=custom/hl/fenjie_ui/hl_fj_01.png|move=1|bg=1|reload=1|layerid=1|bagPos=1|x=<$STR(N$宽)>|y=<$STR(N$高)>|width=405|height=447>
+<Layout|id=0|children={1}|x=405|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=4|a=4|percentx=50|y=37|color=103|outline=2|outlinecolor=0|size=18|text=分解设置>
+<Img|id=3|children={31}|x=75|y=35|img=custom/hl/fenjie_ui/hl_fj_02.png>
+<Img|id=31|x=170|y=0|img=custom/hl/fenjie_ui/hl_fj_04.png>
+;<CheckBox|id=5|x=25|y=57|children={51}|checkboxid=1|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U222)>|link=@分解逐月套装>
+;<Text|id=51|x=30|y=0|color=255|size=18|text=逐月套装|link=@设置分解逐月套装>
+;<CheckBox|id=6|x=240|y=57|children={61}|checkboxid=2|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U223)>|link=@分解大地套装>
+;<Text|id=61|x=30|y=0|color=255|size=18|text=大地套装|link=@设置分解大地套装>
+;<CheckBox|id=7|x=25|y=97|children={71}|checkboxid=3|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U224)>|link=@分解主宰套装>
+;<Text|id=71|x=30|y=0|color=255|size=18|text=主宰套装|link=@设置分解主宰套装>
+;<CheckBox|id=8|x=240|y=97|children={81}|checkboxid=4|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U225)>|link=@分解太虚套装>
+;<Text|id=81|x=30|y=0|color=255|size=18|text=太虚套装|link=@设置分解太虚套装>
+<CheckBox|id=9|x=25|y=57|children={91}|checkboxid=5|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U226)>|link=@分解龙吟套装>
+<Text|id=91|x=30|y=0|color=255|size=18|text=龙吟套装|link=@设置分解龙吟套装>
+<CheckBox|id=10|x=240|y=57|children={101}|checkboxid=6|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U227)>|link=@分解荣耀套装>
+<Text|id=101|x=30|y=0|color=255|size=18|text=荣耀套装|link=@设置分解荣耀套装>
+<CheckBox|id=16|x=25|y=97|children={161}|checkboxid=5|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U239)>|link=@分解永恒套装>
+<Text|id=161|x=30|y=0|color=255|size=18|text=永恒套装|link=@设置分解永恒套装>
+<CheckBox|id=17|x=240|y=97|children={171}|checkboxid=6|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U240)>|link=@分解龙腾套装>
+<Text|id=171|x=30|y=0|color=255|size=18|text=龙腾套装|link=@设置分解龙腾套装>
+<CheckBox|id=18|x=25|y=137|children={181}|checkboxid=6|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U241)>|link=@分解盛世套装>
+<Text|id=181|x=30|y=0|color=255|size=18|text=盛世套装|link=@设置分解盛世套装>
+<CheckBox|id=19|x=240|y=137|children={191}|checkboxid=6|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U245)>|link=@分解辉煌套装>
+<Text|id=191|x=30|y=0|color=255|size=18|text=辉煌套装|link=@设置分解辉煌套装>
+<CheckBox|id=20|x=25|y=177|children={201}|checkboxid=6|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U246)>|link=@分解火龙套装>
+<Text|id=201|x=30|y=0|color=255|size=18|text=火龙套装|link=@设置分解火龙套装>
+<Text|id=12|a=4|percentx=50|y=317|color=103|outline=2|outlinecolor=0|size=18|text=特殊设置>
+<Img|id=13|children={131}|x=75|y=315|img=custom/hl/fenjie_ui/hl_fj_02.png>
+<Img|id=131|x=170|y=0|img=custom/hl/fenjie_ui/hl_fj_04.png>
+<CheckBox|id=15|x=25|y=347|children={151}|checkboxid=6|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U238)>|link=@设置强化分解>
+<Text|id=151|x=30|y=0|color=255|size=18|text=分解强化装备|link=@设置强化分解>
+
+<Text|id=11|x=348|y=400|color=250|outline=2|outlinecolor=0|size=18|text=返回|link=@启动分解>
+
+
+[@设置分解逐月套装_废]
+#IF
+EQUAL U222 0
+#ACT
+MOV U222 1
+GOTO @分解设置
+#ELSEACT
+MOV U222 0
+GOTO @分解设置
+[@设置分解大地套装_废]
+#IF
+EQUAL U223 0
+#ACT
+MOV U223 1
+GOTO @分解设置
+#ELSEACT
+MOV U223 0
+GOTO @分解设置
+[@设置分解主宰套装_废]
+#IF
+EQUAL U224 0
+#ACT
+MOV U224 1
+GOTO @分解设置
+#ELSEACT
+MOV U224 0
+GOTO @分解设置
+[@设置分解太虚套装_废]
+#IF
+EQUAL U225 0
+#ACT
+MOV U225 1
+GOTO @分解设置
+#ELSEACT
+MOV U225 0
+GOTO @分解设置
+[@设置分解龙吟套装]
+#IF
+EQUAL U226 0
+#ACT
+MOV U226 1
+GOTO @分解设置
+#ELSEACT
+MOV U226 0
+GOTO @分解设置
+[@设置分解荣耀套装]
+#IF
+EQUAL U227 0
+#ACT
+MOV U227 1
+GOTO @分解设置
+#ELSEACT
+MOV U227 0
+GOTO @分解设置
+[@设置分解永恒套装]
+#IF
+EQUAL U239 0
+#ACT
+MOV U239 1
+GOTO @分解设置
+#ELSEACT
+MOV U239 0
+GOTO @分解设置
+[@设置分解龙腾套装]
+#IF
+EQUAL U240 0
+#ACT
+MOV U240 1
+GOTO @分解设置
+#ELSEACT
+MOV U240 0
+GOTO @分解设置
+[@设置分解盛世套装]
+#IF
+EQUAL U241 0
+#ACT
+MOV U241 1
+GOTO @分解设置
+#ELSEACT
+MOV U241 0
+GOTO @分解设置
+[@设置分解辉煌套装]
+#IF
+EQUAL U245 0
+#ACT
+MOV U245 1
+GOTO @分解设置
+#ELSEACT
+MOV U245 0
+GOTO @分解设置
+[@设置分解火龙套装]
+#IF
+EQUAL U246 0
+#ACT
+MOV U246 1
+GOTO @分解设置
+#ELSEACT
+MOV U246 0
+GOTO @分解设置
+
+
+
+[@分解逐月套装_废]
+#IF
+EQUAL U222 0
+#ACT
+MOV U222 1
+#ELSEACT
+MOV U222 0
+
+[@分解大地套装_废]
+#IF
+EQUAL U223 0
+#ACT
+MOV U223 1
+#ELSEACT
+MOV U223 0
+
+[@分解主宰套装_废]
+#IF
+EQUAL U224 0
+#ACT
+MOV U224 1
+#ELSEACT
+MOV U224 0
+
+[@分解太虚套装_废]
+#IF
+EQUAL U225 0
+#ACT
+MOV U225 1
+#ELSEACT
+MOV U225 0
+
+[@分解龙吟套装]
+#IF
+EQUAL U226 0
+#ACT
+MOV U226 1
+#ELSEACT
+MOV U226 0
+
+[@分解荣耀套装]
+#IF
+EQUAL U227 0
+#ACT
+MOV U227 1
+#ELSEACT
+MOV U227 0
+
+[@分解永恒套装]
+#IF
+EQUAL U239 0
+#ACT
+MOV U239 1
+#ELSEACT
+MOV U239 0
+
+
+[@分解龙腾套装]
+#IF
+EQUAL U240 0
+#ACT
+MOV U240 1
+#ELSEACT
+MOV U240 0
+[@分解盛世套装]
+#IF
+EQUAL U241 0
+#ACT
+MOV U241 1
+#ELSEACT
+MOV U241 0
+[@分解辉煌套装]
+#IF
+EQUAL U245 0
+#ACT
+MOV U245 1
+#ELSEACT
+MOV U245 0
+[@分解火龙套装]
+#IF
+EQUAL U246 0
+#ACT
+MOV U246 1
+#ELSEACT
+MOV U246 0
+
+
+[@自动分解]
+#IF
+EQUAL U200 0
+#ACT
+MOV U200 1
+#ELSEACT
+MOV U200 0
+
+[@设置钻石自动分解]
+#IF
+EQUAL U200 0
+#ACT
+MOV U200 1
+GOTO @分解界面
+#ELSEACT
+MOV U200 0
+GOTO @分解界面
+
+[@设置本职业分解]
+#IF
+EQUAL U13 0
+#ACT
+SENDMSG 9 <font color='#ff0000'>开通钻石会员即可开启自动分解</font>
+GOTO @分解设置
+BREAK
+#IF
+EQUAL U237 0
+#ACT
+MOV U237 1
+GOTO @分解设置
+#ELSEACT
+MOV U237 0
+GOTO @分解设置
+[@设置强化分解]
+#IF
+EQUAL U238 0
+#ACT
+MOV U238 1
+GOTO @分解设置
+#ELSEACT
+MOV U238 0
+GOTO @分解设置
+
+[@王者自动分解]
+#IF
+SMALL U13 2
+#ACT
+SENDMSG 9 <font color='#ff0000'>开通VIP2可开启自动分解</font>
+GOTO @分解界面
+BREAK
+#IF
+EQUAL U242 0
+#ACT
+MOV U242 1
+GOTO @分解界面
+#ELSEACT
+MOV U242 0
+GOTO @分解界面
+
+
+[@遍历背包分解]
+
+
+#IF
+EQUAL S$分解总串
+#ACT
+GOTO @读分解配置
+#IF
+EQUAL N$手动一键 0
+#ACT
+MOV N$自动分解 1
+#IF
+#ACT
+MOV S$上次选择ID
+LoopBagItems @遍历 N$物品唯一ID S$物品的名称
+MOV S$递增物品唯一ID
+MOV S$递增物品名称
+#IF
+NOT EQUAL S$剩余串
+CHECKBAGSIZE 4
+#ACT
+#CALL [\游戏功能\系统功能\分解大师.txt] @确定分解
+#ELSEACT
+;SENDMSG 9 <font color='#ff0000'>请预留4个背包空格</font>
+BREAK
+
+
+
+[@遍历]
+#IF
+EQUAL U238 0
+#ACT
+LinkItemByMakeIndex <$Str(N$物品唯一ID)>
+#if 
+EQUAL U238 0
+CheckItemupgradeCount 0 -1 > 0
+#act
+BREAK
+
+;#IF
+;EQUAL U222 0
+;CheckContainsText <$STR(S$逐月装备)> <$STR(S$物品的名称)>
+;#ACT
+;break
+
+;#IF
+;EQUAL U223 0
+;EQUAL N$跳过90级 0
+;CheckContainsText <$STR(S$大地装备)> <$STR(S$物品的名称)>
+;#ACT
+;break
+
+;#IF
+;EQUAL U224 0
+;CheckContainsText <$STR(S$主宰装备)> <$STR(S$物品的名称)>
+;#ACT
+;break
+
+;#IF
+;EQUAL U225 0
+;CheckContainsText <$STR(S$太虚装备)> <$STR(S$物品的名称)>
+;#ACT
+;break
+
+#IF
+EQUAL U226 0
+CheckContainsText <$STR(S$龙吟装备)> <$STR(S$物品的名称)>
+#ACT
+break
+
+#IF
+EQUAL U227 0
+CheckContainsText <$STR(S$荣耀装备)> <$STR(S$物品的名称)>
+#ACT
+break
+
+#IF
+EQUAL U239 0
+CheckContainsText <$STR(S$永恒装备)> <$STR(S$物品的名称)>
+#ACT
+break
+
+#IF
+EQUAL U240 0
+CheckContainsText <$STR(S$龙腾装备)> <$STR(S$物品的名称)>
+#ACT
+break
+
+#IF
+EQUAL U241 0
+CheckContainsText <$STR(S$盛世装备)> <$STR(S$物品的名称)>
+#ACT
+break
+
+#IF
+EQUAL U245 0
+CheckContainsText <$STR(S$辉煌装备)> <$STR(S$物品的名称)>
+#ACT
+break
+
+#IF
+EQUAL U246 0
+CheckContainsText <$STR(S$火龙装备)> <$STR(S$物品的名称)>
+#ACT
+break
+
+
+#IF
+CheckContainsText <$STR(S$分解总串)> <$STR(S$物品的名称)>
+#ACT
+INC S$递增物品唯一ID <$STR(N$物品唯一ID)>,
+INC S$递增物品名称 <$STR(S$物品的名称)>,
+SelectBagItems <$STR(S$递增物品唯一ID)>
+MOV S$剩余串 <$STR(S$递增物品唯一ID)>
+
+
+
+[@分解弹窗]
+#IF
+#ACT
+#SAY
+<Img|width=3000|height=3000|bg=1|show=4|img=public/alpha_1px.png|bagPos=1|link=@exit>
+<Img|a=4|children={0,2,3,5,7}|img=custom/hl/hl_ui/tsbj.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=450|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|text=开通钻石会员可激活随身分解功能|color=x|size=18|outline=2|outlinecolor=0|percentx=50|percenty=40>
+<Button|id=3|children={4}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=15|percenty=65|link=@传送到分解>
+<Text|id=4|a=4|text=传送|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=5|children={6}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=60|percenty=65|link=@开通钻石分解>
+<Text|id=6|a=4|text=前往购买|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Text|id=7|a=4|text=提示|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=10>
+
+
+[@传送到分解]
+#IF
+#ACT
+OPENHYPERLINK 7
+OPENNPCSHOWEX 35 20 5
+close
+[@开通钻石分解]
+#ACT
+OPENHYPERLINK 7
+OPENHYPERLINK 26
+close
+
+
+[@读分解配置]
+#IF
+#ACT
+MOV S$分解ID串
+;GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$逐月装备 2
+;GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$大地装备 3
+;GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$主宰装备 4
+;GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$太虚装备 5
+GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$龙吟装备 6
+GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$荣耀装备 7
+GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$永恒装备 8
+GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$龙腾装备 9
+GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$盛世装备 10
+GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$辉煌装备 11
+GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$火龙装备 12
+MOV S$分解总串 <$STR(S$龙吟装备)>,<$STR(S$荣耀装备)>,<$STR(S$永恒装备)>,<$STR(S$龙腾装备)>,<$STR(S$盛世装备)>,<$STR(S$辉煌装备)>,<$STR(S$火龙装备)>
+
+
+[@活跃任务_装备分解]
+
+#IF
+equal <$HUMAN(活跃度_分解装备)> 0
+#ACT
+CALCVAR HUMAN 活跃度_分解装备 = 1
+SAVEVAR HUMAN 活跃度_分解装备
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_分解装备)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_分解装备)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【分解装备】任务已完成,活跃度+<$STR(S$活跃_分解装备)>！
+break
+
+
+
+}
+

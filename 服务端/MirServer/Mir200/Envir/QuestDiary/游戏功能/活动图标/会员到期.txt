@@ -1,0 +1,14 @@
+[@会员到期]
+{
+<Img|width=2500|height=2500|bg=1|show=4|img=public/1900000651_1.png>
+<Img|a=4|children={0,1,2,3,5,6,7,13,15}|img=custom/hl/hycz_ui/bj_hycz.png|percentx=50|percenty=50>
+<Layout|a=4|id=13|children={14}|x=820|y=40|width=50|height=50|color=x|link=@exit>
+<Button|id=14|nimg=custom/hl/hycz_ui/bj_hyczgb.png|x=0|y=20|link=@exit>
+<Button|id=15|children={16}|x=480|percenty=70|nimg=custom/hl/hycz_ui/bj_hyczgm.png|link=@跳转会员购买界面>
+
+[@跳转会员购买界面]
+#IF
+#ACT
+#CALL [\功能脚本\赞助特权\赞助特权.txt] @赞助特权
+
+}

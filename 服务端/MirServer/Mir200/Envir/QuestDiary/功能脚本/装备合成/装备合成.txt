@@ -1,0 +1,336 @@
+[@高级装备合成]
+{
+
+#IF
+#ACT
+Mov s$条目红点_1
+Mov s$条目红点_2
+Mov s$条目红点_3
+Mov s$条目红点_4
+MOV S$合成选择 麻痹戒指
+MOV S$回调序号 1
+Mov n$默认读取 1
+Mov n$当前条目 1
+Mov n$默认条目 9
+Goto @特戒装备合成
+
+
+[@特戒装备合成]
+#IF
+#ACT
+MOV s$条目_1Tp 115_2
+MOV s$条目_2Tp 115_2
+MOV s$条目_3Tp 115_2
+MOV s$条目_<$STR(S$回调序号)>Tp 115_1
+Mov s$条目_1Ys 10
+Mov s$条目_2Ys 10
+Mov s$条目_3Ys 10
+Mov s$条目_<$STR(S$回调序号)>Ys 100
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\新合成配置.ini 特戒合成 <$STR(S$合成选择)> s$消耗材料串
+GETVALIDSTRSUPER <$STR(s$消耗材料串)> | s$消耗材料_
+GETBAGITEMCOUNT <$STR(S$合成选择)>① N$散特戒数量1
+GETBAGITEMCOUNT <$STR(S$合成选择)>② N$散特戒数量2
+GETBAGITEMCOUNT <$STR(S$合成选择)>③ N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>④ N$散特戒数量4
+GETBAGITEMCOUNT <$STR(S$合成选择)>⑤ N$散特戒数量5
+GETBAGITEMCOUNT <$STR(S$合成选择)>⑥ N$散特戒数量6
+GETBAGITEMCOUNT <$STR(S$合成选择)>⑦ N$散特戒数量7
+GETBAGITEMCOUNT <$STR(S$合成选择)>⑧ N$散特戒数量8
+GETBAGITEMCOUNT <$STR(S$合成选择)>⑨ N$散特戒数量9
+#CALL [\功能脚本\装备合成\合成红点.txt] @麻痹红点判断
+#CALL [\功能脚本\装备合成\合成红点.txt] @护身红点判断
+#CALL [\功能脚本\装备合成\合成红点.txt] @复活红点判断
+MOV s$合成红点_1 <$STR(S$<$STR(S$合成选择)>红点_1)>
+MOV s$合成红点_2 <$STR(S$<$STR(S$合成选择)>红点_2)>
+MOV s$合成红点_3 <$STR(S$<$STR(S$合成选择)>红点_3)>
+MOV s$合成红点_4 <$STR(S$<$STR(S$合成选择)>红点_4)>
+MOV s$合成红点_5 <$STR(S$<$STR(S$合成选择)>红点_5)>
+MOV s$合成红点_6 <$STR(S$<$STR(S$合成选择)>红点_6)>
+MOV s$合成红点_7 <$STR(S$<$STR(S$合成选择)>红点_7)>
+MOV s$合成红点_8 <$STR(S$<$STR(S$合成选择)>红点_8)>
+MOV s$合成红点_9 <$STR(S$<$STR(S$合成选择)>红点_9)>
+#IF
+#ACT
+Goto @装备合成展示
+BREAK
+
+
+
+[@装备合成展示]
+<Img|show=4|bg=1|img=custom/rxggui/bg_main_6.png|width=3000|height=3000|layerid=668|loadDelay=1|loadCount=50|loadStep=5>
+<Img|a=4|children={0,2,3,13,0a}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Text|id=0a|a=4|text=合成升级|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Layout|id=0|children={1}|width=50|height=42|x=770|y=4|color=x|link=@exit>
+<Button|id=1|x=0|y=0|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Img|id=2|img=custom/hl/hl_ui/fg_1.png|x=142|y=60|height=449>
+
+<Layout|id=3|children={5,7,9,11,13a,15a,17a,19a,21a}|width=120|height=380|color=x|x=20|y=65>
+<Button|id=5|x=3|y=0|children={6,6a}|nimg=custom/hl/hl_ui/<$Str(s$条目_1Tp)>.png|link=@特戒装备合成#合成选择=麻痹戒指#回调序号=1>
+<Text|a=4|id=6|percentx=50|percenty=50|text=麻痹合成|color=<$Str(s$条目_1Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=6a|img=custom/hl/hl_ui/<$str(s$条目红点_1)>.png|x=95|y=5>
+
+<Button|id=7|x=3|y=40|children={8,8a}|nimg=custom/hl/hl_ui/<$Str(s$条目_2Tp)>.png|link=@特戒装备合成#合成选择=护身戒指#回调序号=2>
+<Text|a=4|id=8|percentx=50|percenty=50|text=护身合成|color=<$Str(s$条目_2Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=8a|img=custom/hl/hl_ui/<$str(s$条目红点_2)>.png|x=95|y=5>
+
+<Button|id=9|x=3|y=80|children={10,10a}|nimg=custom/hl/hl_ui/<$Str(s$条目_3Tp)>.png|link=@特戒装备合成#合成选择=复活戒指#回调序号=3>
+<Text|a=4|id=10|percentx=50|percenty=50|text=复活合成|color=<$Str(s$条目_3Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=10a|img=custom/hl/hl_ui/<$str(s$条目红点_3)>.png|x=95|y=5>
+
+
+<ListView|id=13|width=600|height=445|color=250|x=150|y=62|children={14,17,20,23,26,29,32,35,38,41}|direction=1|bounce=0|margin=4|color=x>
+<Layout|id=14|children={15,16}|width=606|height=170|color=x>
+;1
+<Img|id=15|children={150,152,154,155,156,157}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=150|children={151}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=151|percentx=50|percenty=50|text=<$STR(s$消耗材料_5)>|color=249|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=152|children={153}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=153|percentx=47.5|percenty=50|text=材料：<<$STR(s$消耗材料_1)>/FCOLOR=255> (<$STR(N$散特戒数量1)>/<$STR(s$消耗材料_2)>)|color=255|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=154|itemid=<$STR(s$消耗材料_4)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=155|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=156|percentx=55|percenty=58|text=<$STR(s$消耗材料_3)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=157|children={158,158a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@去特戒合成#最终合成名=<$STR(s$消耗材料_5)>#最终材料名=<$STR(s$消耗材料_1)>#最终材料数=<$STR(s$消耗材料_2)>#最终元宝数=<$STR(s$消耗材料_3)>>
+<Text|a=4|id=158|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=158a|img=custom/hl/hl_ui/<$str(s$合成红点_1)>.png|x=85|y=5>
+
+;2
+<Img|id=16|children={160,162,164,165,166,167}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=160|children={161}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=161|percentx=50|percenty=50|text=<$STR(s$消耗材料_9)>|color=249|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=162|children={163}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=163|percentx=47.5|percenty=50|text=材料：<<$STR(s$消耗材料_5)>/FCOLOR=255> (<$STR(N$散特戒数量2)>/<$STR(s$消耗材料_6)>)|color=255|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=164|itemid=<$STR(s$消耗材料_8)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=165|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=166|percentx=55|percenty=58|text=<$STR(s$消耗材料_7)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=167|children={168,168a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@去特戒合成#最终合成名=<$STR(s$消耗材料_9)>#最终材料名=<$STR(s$消耗材料_5)>#最终材料数=<$STR(s$消耗材料_6)>#最终元宝数=<$STR(s$消耗材料_7)>>
+<Text|a=4|id=168|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=168a|img=custom/hl/hl_ui/<$str(s$合成红点_2)>.png|x=85|y=5>
+<Layout|id=17|children={18,19}|width=606|height=170|color=x|link=@触发>
+;3
+<Img|id=18|children={180,182,184,185,186,187}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=180|children={181}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=181|percentx=50|percenty=50|text=<$STR(s$消耗材料_13)>|color=249|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=182|children={183}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=183|percentx=47.5|percenty=50|text=材料：<<$STR(s$消耗材料_9)>/FCOLOR=255> (<$STR(N$散特戒数量3)>/<$STR(s$消耗材料_10)>)|color=255|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=184|itemid=<$STR(s$消耗材料_12)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=185|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=186|percentx=55|percenty=58|text=<$STR(s$消耗材料_11)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=187|children={188,188a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@去特戒合成#最终合成名=<$STR(s$消耗材料_13)>#最终材料名=<$STR(s$消耗材料_9)>#最终材料数=<$STR(s$消耗材料_10)>#最终元宝数=<$STR(s$消耗材料_11)>>
+<Text|a=4|id=188|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=188a|img=custom/hl/hl_ui/<$str(s$合成红点_3)>.png|x=85|y=5>
+;4
+<Img|id=19|children={190,192,194,195,196,197}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=190|children={191}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=191|percentx=50|percenty=50|text=<$STR(s$消耗材料_17)>|color=249|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=192|children={193}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=193|percentx=47.5|percenty=50|text=材料：<<$STR(s$消耗材料_13)>/FCOLOR=255> (<$STR(N$散特戒数量4)>/<$STR(s$消耗材料_14)>)|color=255|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=194|itemid=<$STR(s$消耗材料_16)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=195|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=196|percentx=55|percenty=58|text=<$STR(s$消耗材料_15)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=197|children={198,198a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@去特戒合成#最终合成名=<$STR(s$消耗材料_17)>#最终材料名=<$STR(s$消耗材料_13)>#最终材料数=<$STR(s$消耗材料_14)>#最终元宝数=<$STR(s$消耗材料_15)>>
+<Text|a=4|id=198|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=198a|img=custom/hl/hl_ui/<$str(s$合成红点_4)>.png|x=85|y=5>
+<Layout|id=20|children={21,22}|width=606|height=170|color=x|link=@触发>
+;5
+<Img|id=21|children={210,212,214,215,216,217}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=210|children={211}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=211|percentx=50|percenty=50|text=<$STR(s$消耗材料_21)>|color=249|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=212|children={213}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=213|percentx=47.5|percenty=50|text=材料：<<$STR(s$消耗材料_17)>/FCOLOR=255> (<$STR(N$散特戒数量5)>/<$STR(s$消耗材料_18)>)|color=255|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=214|itemid=<$STR(s$消耗材料_20)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=215|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=216|percentx=55|percenty=58|text=<$STR(s$消耗材料_19)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=217|children={218,218a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@去特戒合成#最终合成名=<$STR(s$消耗材料_21)>#最终材料名=<$STR(s$消耗材料_17)>#最终材料数=<$STR(s$消耗材料_18)>#最终元宝数=<$STR(s$消耗材料_19)>>
+<Text|a=4|id=218|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=218a|img=custom/hl/hl_ui/<$str(s$合成红点_5)>.png|x=85|y=5>
+;6
+#IF
+large n$默认条目 5
+#SAY
+<Img|id=22|children={220,222,224,225,226,227}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=220|children={221}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=221|percentx=50|percenty=50|text=<$STR(s$消耗材料_25)>|color=249|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=222|children={223}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=223|percentx=47.5|percenty=50|text=材料：<<$STR(s$消耗材料_21)>/FCOLOR=255> (<$STR(N$散特戒数量6)>/<$STR(s$消耗材料_22)>)|color=255|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=224|itemid=<$STR(s$消耗材料_24)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=225|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=226|percentx=55|percenty=58|text=<$STR(s$消耗材料_23)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=227|children={228,228a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@去特戒合成#最终合成名=<$STR(s$消耗材料_25)>#最终材料名=<$STR(s$消耗材料_21)>#最终材料数=<$STR(s$消耗材料_22)>#最终元宝数=<$STR(s$消耗材料_23)>>
+<Text|a=4|id=228|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=228a|img=custom/hl/hl_ui/<$str(s$合成红点_6)>.png|x=85|y=5>
+<Layout|id=23|children={24,25}|width=606|height=170|color=x|link=@触发>
+;7
+<Img|id=24|children={240,242,244,245,246,247}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=240|children={241}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=241|percentx=50|percenty=50|text=<$STR(s$消耗材料_29)>|color=249|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=242|children={243}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=243|percentx=47.5|percenty=50|text=材料：<<$STR(s$消耗材料_25)>/FCOLOR=255> (<$STR(N$散特戒数量7)>/<$STR(s$消耗材料_26)>)|color=255|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=244|itemid=<$STR(s$消耗材料_28)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=245|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=246|percentx=55|percenty=58|text=<$STR(s$消耗材料_27)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=247|children={248,248a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@去特戒合成#最终合成名=<$STR(s$消耗材料_29)>#最终材料名=<$STR(s$消耗材料_25)>#最终材料数=<$STR(s$消耗材料_26)>#最终元宝数=<$STR(s$消耗材料_27)>>
+<Text|a=4|id=248|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=248a|img=custom/hl/hl_ui/<$str(s$合成红点_7)>.png|x=85|y=5>
+;8
+<Img|id=25|children={250,252,254,255,256,257}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=250|children={251}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=251|percentx=50|percenty=50|text=<$STR(s$消耗材料_33)>|color=249|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=252|children={253}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=253|percentx=47.5|percenty=50|text=材料：<<$STR(s$消耗材料_29)>/FCOLOR=255> (<$STR(N$散特戒数量8)>/<$STR(s$消耗材料_30)>)|color=255|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=254|itemid=<$STR(s$消耗材料_32)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=255|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=256|percentx=55|percenty=58|text=<$STR(s$消耗材料_31)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=257|children={258,258a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@去特戒合成#最终合成名=<$STR(s$消耗材料_33)>#最终材料名=<$STR(s$消耗材料_29)>#最终材料数=<$STR(s$消耗材料_30)>#最终元宝数=<$STR(s$消耗材料_31)>>
+<Text|a=4|id=258|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=258a|img=custom/hl/hl_ui/<$str(s$合成红点_8)>.png|x=85|y=5>
+<Layout|id=26|children={27,28}|width=606|height=170|color=x|link=@触发>
+;7
+#IF
+large n$默认条目 8
+
+#SAY
+<Img|id=27|children={270,272,274,275,276,277}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=270|children={271}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=271|percentx=50|percenty=50|text=<$STR(s$消耗材料_37)>|color=249|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=272|children={273}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=273|percentx=47.5|percenty=50|text=材料：<<$STR(s$消耗材料_33)>/FCOLOR=255> (<$STR(N$散特戒数量9)>/<$STR(s$消耗材料_34)>)|color=255|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=274|itemid=<$STR(s$消耗材料_36)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=275|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=276|percentx=55|percenty=58|text=<$STR(s$消耗材料_35)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=277|children={278,278a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@去特戒合成#最终合成名=<$STR(s$消耗材料_37)>#最终材料名=<$STR(s$消耗材料_33)>#最终材料数=<$STR(s$消耗材料_34)>#最终元宝数=<$STR(s$消耗材料_35)>>
+<Text|a=4|id=278|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=278a|img=custom/hl/hl_ui/<$str(s$合成红点_9)>.png|x=85|y=5>
+
+#IF
+large n$默认条目 9
+#SAY
+;8
+<Img|id=28|children={280,282,284,285,286,287}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=280|children={281}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=281|percentx=50|percenty=50|text=<$STR(S$合成预览mc_10)>|color=<$STR(S$合成预览ys_10)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=282|children={283}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=283|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_10)>/FCOLOR=255> (<$STR(n$消耗材料sl_10)>/<$STR(S$消耗材料sl_10)>)|color=<$STR(S$消耗材料ys_10)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=284|itemid=<$STR(S$合成预览idx_10)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=285|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=286|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_10)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=287|children={288,288a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_10)>>
+<Text|a=4|id=288|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=288a|img=custom/hl/hl_ui/<$str(s$合成红点_10)>.png|x=85|y=5>
+#IF
+large n$默认条目 10
+#SAY
+<Layout|id=29|children={30,31}|width=606|height=170|color=x|link=@触发>
+;9
+<Img|id=30|children={300,302,304,305,306,307}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=300|children={301}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=301|percentx=50|percenty=50|text=<$STR(S$合成预览mc_11)>|color=<$STR(S$合成预览ys_11)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=302|children={303}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=303|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_11)>/FCOLOR=255> (<$STR(n$消耗材料sl_11)>/<$STR(S$消耗材料sl_11)>)|color=<$STR(S$消耗材料ys_11)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=304|itemid=<$STR(S$合成预览idx_11)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=305|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=306|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_11)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=307|children={308,308a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_11)>>
+<Text|a=4|id=308|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=308a|img=custom/hl/hl_ui/<$str(s$合成红点_11)>.png|x=85|y=5>
+;10
+<Img|id=31|children={310,312,314,315,316,317}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=310|children={311}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=311|percentx=50|percenty=50|text=<$STR(S$合成预览mc_12)>|color=<$STR(S$合成预览ys_12)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=312|children={313}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=313|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_12)>/FCOLOR=255> (<$STR(n$消耗材料sl_12)>/<$STR(S$消耗材料sl_12)>)|color=<$STR(S$消耗材料ys_12)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=314|itemid=<$STR(S$合成预览idx_12)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=315|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=316|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_12)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=317|children={318,318a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_12)>>
+<Text|a=4|id=318|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=318a|img=custom/hl/hl_ui/<$str(s$合成红点_12)>.png|x=85|y=5>
+<Layout|id=32|children={33,34}|width=606|height=170|color=x|link=@触发>
+
+;11
+<Img|id=33|children={330,332,334,335,336,337}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=330|children={331}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=331|percentx=50|percenty=50|text=<$STR(S$合成预览mc_13)>|color=<$STR(S$合成预览ys_13)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=332|children={333}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=333|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_13)>/FCOLOR=255> (<$STR(n$消耗材料sl_13)>/<$STR(S$消耗材料sl_13)>)|color=<$STR(S$消耗材料ys_13)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=334|itemid=<$STR(S$合成预览idx_13)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=335|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=336|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_13)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=337|children={338,338a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_13)>>
+<Text|a=4|id=338|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=338a|img=custom/hl/hl_ui/<$str(s$合成红点_13)>.png|x=85|y=5>
+;12
+<Img|id=34|children={340,342,344,345,346,347}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=340|children={341}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=341|percentx=50|percenty=50|text=<$STR(S$合成预览mc_14)>|color=<$STR(S$合成预览ys_14)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=342|children={343}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=343|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_14)>/FCOLOR=255> (<$STR(n$消耗材料sl_14)>/<$STR(S$消耗材料sl_14)>)|color=<$STR(S$消耗材料ys_14)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=344|itemid=<$STR(S$合成预览idx_14)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=345|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=346|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_14)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=347|children={348,348a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_14)>>
+<Text|a=4|id=348|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=348a|img=custom/hl/hl_ui/<$str(s$合成红点_14)>.png|x=85|y=5>
+<Layout|id=35|children={36,37}|width=606|height=170|color=x|link=@触发>
+;13
+<Img|id=36|children={360,362,364,365,366,367}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172>
+<Layout|a=4|id=360|children={361}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=361|percentx=50|percenty=50|text=<$STR(S$合成预览mc_15)>|color=<$STR(S$合成预览ys_15)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=362|children={363}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=363|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_15)>/FCOLOR=255> (<$STR(n$消耗材料sl_15)>/<$STR(S$消耗材料sl_15)>)|color=<$STR(S$消耗材料ys_15)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=364|itemid=<$STR(S$合成预览idx_15)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=365|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=366|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_15)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=367|children={368,368a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_15)>>
+<Text|a=4|id=368|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=368a|img=custom/hl/hl_ui/<$str(s$合成红点_15)>.png|x=85|y=5>
+
+
+;14
+<Img|id=37|children={370,372,374,375,376,377}|img=custom/hl/hl_ui/hcxk.png|width=298|height=172|x=302>
+<Layout|a=4|id=370|children={371}|width=280|height=32|color=x|percentx=50|percenty=14>
+<Text|a=4|id=371|percentx=50|percenty=50|text=<$STR(S$合成预览mc_16)>|color=<$STR(S$合成预览ys_16)>|size=18|outline=2|outlinecolor=0>
+<Layout|a=4|id=372|children={373}|width=280|height=32|color=x|percentx=50|percenty=35>
+<RText|a=4|id=373|percentx=47.5|percenty=50|text=材料：<<$STR(S$消耗材料mc_16)>/FCOLOR=255> (<$STR(n$消耗材料sl_16)>/<$STR(S$消耗材料sl_16)>)|color=<$STR(S$消耗材料ys_16)>|size=18|outline=2|outlinecolor=0>
+<ItemShow|id=374|itemid=<$STR(S$合成预览idx_16)>|itemcount=1|showtips=1|bgtype=1|percentx=6|percenty=50>
+<Img|a=4|id=375|img=custom/hl/hl_ui/yb.png|percentx=40|percenty=58>
+<Text|a=4|id=376|percentx=55|percenty=58|text=<$STR(S$消耗货币sl_16)>|color=255|size=18|outline=2|outlinecolor=0>
+<Button|a=4|id=377|children={378,378a}|percentx=50|percenty=80|nimg=custom/hl/hl_ui/an_01.png|pimg=ccustom/hl/hl_ui/an_02.png|link=@<$STR(s$合成预览mc_16)>>
+<Text|a=4|id=378|percentx=50|percenty=50|text=合成|color=100|size=18|outline=2|outlinecolor=0>
+<Img|id=378a|img=custom/hl/hl_ui/<$str(s$合成红点_16)>.png|x=85|y=5>
+
+
+[@去特戒合成]
+#ACT
+#IF
+Not EQUAL s$最终材料名
+#ACT
+#ELSEACT
+BREAK
+
+#IF
+CHECKBAGSIZE 1
+#ACT
+#Elseact
+SENDMSG 9 <font color='#ff0000'>背包空格不足</font>
+BREAK
+
+#IF
+CheckBindMoney 元宝 ? <$Str(s$最终元宝数)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝数量不足</font>
+BREAK
+
+#IF
+CHECKITEM <$STR(s$最终材料名)> <$Str(s$最终材料数)>
+#ACT
+ChangeBindMoney 元宝 <$Str(s$最终元宝数)>
+Take <$STR(s$最终材料名)> <$Str(s$最终材料数)>
+Give <$STR(s$最终合成名)> 1
+Goto @特戒装备合成
+#Elseact
+SENDMSG 9 <font color='#ff0000'>合成材料不足</font>
+BREAK
+
+
+}

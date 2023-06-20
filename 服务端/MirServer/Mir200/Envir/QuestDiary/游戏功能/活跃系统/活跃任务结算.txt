@@ -1,0 +1,64 @@
+[@活跃任务结算]
+{
+
+#IF
+EQUAL <$STR(S$C_活跃装备强化完成)> 完成
+equal <$HUMAN(活跃度_装备强化)> 0
+#ACT
+MOV S$C_活跃装备强化完成
+CALCVAR HUMAN 活跃度_装备强化 = 1
+SAVEVAR HUMAN 活跃度_装备强化
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_装备强化)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_装备强化)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【装备强化】任务已完成！
+break
+
+
+#IF
+EQUAL <$STR(S$C_活跃装备注灵完成)> 完成
+equal <$HUMAN(活跃度_装备注灵)> 0
+#ACT
+MOV S$C_活跃装备注灵完成
+CALCVAR HUMAN 活跃度_装备注灵 = 1
+SAVEVAR HUMAN 活跃度_装备注灵
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_装备注灵)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_装备注灵)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【装备注灵】任务已完成！
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,229 @@
+[@开关图标]
+{
+#IF
+Equal n$top 0
+#ACT
+MOV n$topx -640
+MOV n$topz -80
+MOV n$top 1
+MOV N$福利红点状态 0
+Goto @关闭顶部图标
+BREAK
+
+#IF
+Equal n$top 1
+#ACT
+MOV n$top 0
+Goto @打开顶部图标
+BREAK
+
+[@关闭顶部图标]
+#IF
+EQUAL n$topxz 180
+EQUAL <$CLIENTFLAG> 2
+#ACT
+MOV N$X 180
+MOV N$Y 0
+DELBUTTON 102 1
+DELBUTTON 102 3
+mov S$图标1 <Layout|children={1,2,3,4,5,6,7}|width=300|height=80|x=-500|y=5|color=x>
+inc S$图标1 <Layout|id=1|children={10}|width=50|height=50|x=270|link=@开关>
+inc S$图标1 <Button|id=10|a=4|x=15|y=15|nimg=custom/hl/top/0.png|rotate=<$STR(n$topxz)>>
+inc S$图标1 <Button|id=2|children={20}|x=180|nimg=custom/hl/top/1.png|link=@会员>
+Goto @gbanbw
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+#IF
+EQUAL n$topxz 180
+EQUAL <$CLIENTFLAG> 1
+#ACT
+MOV N$X 180
+MOV N$Y 0
+DELBUTTON 102 1
+mov S$图标1 <Layout|children={1,2,3,4,5,6,7}|width=300|height=80|x=-460|y=5|color=x>
+inc S$图标1 <Layout|id=1|children={10}|width=50|height=50|x=270|link=@开关>
+inc S$图标1 <Button|id=10|a=4|x=15|y=15|nimg=custom/hl/top/0.png|rotate=<$STR(n$topxz)>>
+inc S$图标1 <Button|id=2|children={20}|x=180|nimg=custom/hl/top/1.png|link=@会员>
+Goto @gbanbw
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+
+
+
+
+
+#IF
+small n$topxz 180
+#ACT
+inc   n$topxz 60
+inc   S$图标1 <Button|id=10|a=4|x=15|y=15|nimg=custom/hl/top/0.png|rotate=<$STR(n$topxz)>>
+addbutton 102 1 <$STR(S$图标1)>
+DELAYGOTO 1 @关闭顶部图标
+BREAK
+
+
+[@打开顶部图标]
+#IF
+equal n$topxz 0
+#ACT
+INC   S$图标1 <Button|id=4|x=20|nimg=custom/hl/top/7.png|link=@狂暴>
+INC   S$图标1 <Button|id=5|x=-60|nimg=custom/hl/top/11.png|link=@调用沙捐>
+INC   S$图标1 <Button|id=6|children={600}|x=-140|nimg=custom/hl/top/9.png|link=@我要变强>
+Goto @执行活动按钮
+addbutton 102 1 <$STR(S$图标1)>
+BREAK
+
+
+#IF
+large n$topxz 0
+#ACT
+DEC  n$topxz 60
+inc  S$图标1 <Button|id=10|a=4|x=15|y=15|nimg=custom/hl/top/0.png|rotate=<$STR(n$topxz)>>
+addbutton 102 1 <$STR(S$图标1)>
+DELAYGOTO 1 @打开顶部图标
+BREAK
+
+[@执行活动按钮]
+#IF
+EQUAL <$CLIENTFLAG> 2
+#ACT
+MOV S$图标2 <Layout|children={1,2,3a,40-a,4,5,6,40-b,7a,7c,8a}|width=300|height=80|x=-500|y=90|color=x>
+INC S$图标2 <Button|id=2|x=180|nimg=custom/hl/top/2.png|link=@介绍>
+INC S$图标2 <Button|id=3a|x=100|nimg=custom/hl/top/8.png|link=@日常活动>
+INC S$图标2 <Button|id=40-a|x=20|nimg=custom/hl/top/12.png|link=@火龙盛典>
+INC S$图标2 <Button|id=7a|x=-60|nimg=custom/hl/top/14.png|link=@灵符捐献榜>
+INC S$图标2 <Button|id=7c|x=-140|nimg=custom/hl/top/21.png|link=@充值活动>
+;addbutton 102 2 <$STR(S$图标2)>
+#IF
+EQUAL <$CLIENTFLAG> 1
+#ACT
+MOV S$图标2 <Layout|children={1,2,3a,40-a,4,5,6,40-b,7a,7c,8a}|width=300|height=80|x=-460|y=90|color=x>
+INC S$图标2 <Button|id=2|x=180|nimg=custom/hl/top/2.png|link=@介绍>
+INC S$图标2 <Button|id=3a|x=100|nimg=custom/hl/top/8.png|link=@日常活动>
+INC S$图标2 <Button|id=40-a|x=20|nimg=custom/hl/top/12.png|link=@火龙盛典>
+INC S$图标2 <Button|id=7a|x=-60|nimg=custom/hl/top/14.png|link=@灵符捐献榜>
+INC S$图标2 <Button|id=7c|x=-140|nimg=custom/hl/top/21.png|link=@充值活动>
+;addbutton 102 2 <$STR(S$图标2)>
+
+#IF
+equal T202
+#ACT
+MOV S$图标3 <Layout|children={1c}|width=300|height=80|x=-500|y=180|color=x>
+inc    S$图标3 <Button|id=1c|children={2c}|x=180|nimg=custom/hl/top/17.png|link=@Q群礼包>
+INC   S$图标3 <Img|id=2c|x=55|y=5|img=custom/hl/hl_ui/hd.png>
+addbutton 102 3 <$STR(S$图标3)>
+
+
+
+#IF
+Not EQUAL s$赞助红点
+#ACT
+INC S$图标1 <Img|id=20|x=55|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+
+#IF
+LARGE G100 0
+#ACT
+INC   S$图标1 <Button|id=7|children={60}|x=-220|nimg=custom/hl/top/4.png|link=@开服活动>
+INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+
+#IF
+NOT EQUAL S$福利红点_1 hd
+NOT EQUAL S$福利红点_2 hd
+#ACT
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+
+#OR
+EQUAL S$福利红点_1 hd
+EQUAL S$福利红点_2 hd
+#ACT
+INC   S$图标1 <Button|id=3|children={30}|x=100|nimg=custom/hl/top/10.png|link=@福利>
+INC   S$图标1 <Img|id=30|x=55|y=5|img=custom/hl/hl_ui/hd.png>
+addbutton 102 1 <$STR(S$图标1)>
+#ELSEACT
+INC   S$图标1 <Button|id=3|children={30}|x=100|nimg=custom/hl/top/10.png|link=@福利>
+DEC   S$图标1 <Img|id=30|x=55|y=5|img=custom/hl/hl_ui/hd.png>
+addbutton 102 1 <$STR(S$图标1)>
+
+
+#IF
+equal   G499 0
+large   <$HFCOUNT> 0
+#ACT
+Inc S$图标2 <Button|id=40-b|x=-220|nimg=custom/hl/top/13.png|link=@全服晋级排行>
+
+#IF
+equal   G499 0
+large   <$HFCOUNT> 0
+small    U119 2
+#ACT
+Inc S$图标2 <Button|id=1|children={10,11}|x=-300|nimg=custom/hl/top/3.png|link=@首冲>
+
+#IF
+small  <$HFCOUNT> 1
+small   G499 1
+small   U119 2
+#ACT
+Inc S$图标2 <Button|id=1|children={10,11}|x=-220|nimg=custom/hl/top/3.png|link=@首冲>
+
+#IF
+EQUAL U119 0
+#ACT
+#CALL [\功能脚本\首冲相关\首冲推荐.txt] @首冲推荐
+
+#IF
+EQUAL U119 1
+#ACT
+INC   S$图标2 <Img|id=10|x=55|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+
+#IF
+#ACT
+addbutton 102 2 <$STR(S$图标2)>
+
+[@gbanbw]
+#IF
+Not EQUAL s$赞助红点
+#ACT
+INC S$图标1 <Img|id=20|x=55|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+#IF
+EQUAL U119 1
+EQUAL <$CLIENTFLAG> 2
+#ACT
+MOV S$图标2 <Layout|children={1,2,3,4,5,6}|width=300|height=80|x=-500|y=90|color=x>
+INC S$图标2 <Button|id=1|children={10,11}|x=180|nimg=custom/hl/top/3.png|link=@首冲>
+INC S$图标2 <Img|id=10|x=55|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+addbutton 102 2 <$STR(S$图标2)>
+BREAK
+#IF
+EQUAL U119 0
+EQUAL <$CLIENTFLAG> 2
+#ACT
+MOV S$图标2 <Layout|children={1,2,3,4,5,6}|width=300|height=80|x=-500|y=90|color=x>
+INC S$图标2 <Button|id=1|children={10,11}|x=180|nimg=custom/hl/top/3.png|link=@首冲>
+addbutton 102 2 <$STR(S$图标2)>
+#CALL [\功能脚本\首冲相关\首冲推荐.txt] @首冲推荐
+BREAK
+#IF
+EQUAL U119 1
+EQUAL <$CLIENTFLAG> 1
+#ACT
+MOV S$图标2 <Layout|children={1,2,3,4,5,6}|width=300|height=80|x=-460|y=90|color=x>
+INC S$图标2 <Button|id=1|children={10,11}|x=180|nimg=custom/hl/top/3.png|link=@首冲>
+INC S$图标2 <Img|id=10|x=55|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+addbutton 102 2 <$STR(S$图标2)>
+BREAK
+#IF
+EQUAL U119 0
+EQUAL <$CLIENTFLAG> 1
+#ACT
+MOV S$图标2 <Layout|children={1,2,3,4,5,6}|width=300|height=80|x=-460|y=90|color=x>
+INC S$图标2 <Button|id=1|children={10,11}|x=180|nimg=custom/hl/top/3.png|link=@首冲>
+addbutton 102 2 <$STR(S$图标2)>
+#CALL [\功能脚本\首冲相关\首冲推荐.txt] @首冲推荐
+BREAK
+#IF
+#ACT
+DELBUTTON 102 2
+BREAK
+}

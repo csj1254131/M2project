@@ -1,0 +1,531 @@
+[@累计登陆]
+{
+
+#IF
+CHECKJOB  Warrior
+#ACT
+Mov s$职业序号 0
+#IF
+CHECKJOB  Wizard
+#ACT
+Mov s$职业序号 1
+#IF
+CHECKJOB  Taoist
+#ACT
+Mov s$职业序号 2
+
+
+#IF
+#ACT
+Mov s$连登未达成
+Mov s$连登已达成
+
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx1_1 s$登陆奖励idx1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx1_2 s$登陆奖励idx1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx1_3 s$登陆奖励idx1_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl1_1 s$登陆奖励sl1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl1_2 s$登陆奖励sl1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl1_3 s$登陆奖励sl1_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx2_1 s$登陆奖励idx2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx2_2 s$登陆奖励idx2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx2_3 s$登陆奖励idx2_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl2_1 s$登陆奖励sl2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl2_2 s$登陆奖励sl2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl2_3 s$登陆奖励sl2_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx3_1 s$登陆奖励idx3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx3_2 s$登陆奖励idx3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx3_3 s$登陆奖励idx3_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl3_1 s$登陆奖励sl3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl3_2 s$登陆奖励sl3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl3_3 s$登陆奖励sl3_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx4_1 s$登陆奖励idx4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx4_2 s$登陆奖励idx4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx4_3 s$登陆奖励idx4_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl4_1 s$登陆奖励sl4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl4_2 s$登陆奖励sl4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl4_3 s$登陆奖励sl4_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx5_1 s$登陆奖励idx5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx5_2 s$登陆奖励idx5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx5_3 s$登陆奖励idx5_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl5_1 s$登陆奖励sl5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl5_2 s$登陆奖励sl5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl5_3 s$登陆奖励sl5_3
+
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx6_1 s$登陆奖励idx6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx6_2 s$登陆奖励idx6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx6_3 s$登陆奖励idx6_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl6_1 s$登陆奖励sl6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl6_2 s$登陆奖励sl6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl6_3 s$登陆奖励sl6_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx7_1 s$登陆奖励idx7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx7_2 s$登陆奖励idx7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励idx7_3 s$登陆奖励idx7_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl7_1 s$登陆奖励sl7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl7_2 s$登陆奖励sl7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl7_3 s$登陆奖励sl7_3
+
+#IF
+large  U56 0
+equal U57 0
+#ACT
+Mov s$登陆第1日执行_1 <Button|id=15|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|link=@登陆第1日领奖>
+Mov s$登陆第1日执行_2 <Text|a=4|id=16|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=85|percenty=50>
+#ELSEACT
+Mov s$登陆第1日执行_1 <Img|id=15|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+Mov s$登陆第1日执行_2
+
+
+#IF
+large  U56 1
+equal U58 0
+#ACT
+Mov s$登陆第2日执行_1 <Button|id=25|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|link=@登陆第2日领奖>
+Mov s$登陆第2日执行_2 <Text|a=4|id=26|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=85|percenty=50>
+#ELSEACT
+Mov s$登陆第2日执行_1 <Img|id=25|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+Mov s$登陆第2日执行_2
+
+#IF
+large  U56 2
+equal U59 0
+#ACT
+Mov s$登陆第3日执行_1 <Button|id=35|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|link=@登陆第3日领奖>
+Mov s$登陆第3日执行_2 <Text|a=4|id=36|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=85|percenty=50>
+#ELSEACT
+Mov s$登陆第3日执行_1 <Img|id=35|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+Mov s$登陆第3日执行_2
+
+#IF
+large  U56 3
+equal U60 0
+#ACT
+Mov s$登陆第4日执行_1 <Button|id=45|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|link=@登陆第4日领奖>
+Mov s$登陆第4日执行_2 <Text|a=4|id=46|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=85|percenty=50>
+#ELSEACT
+Mov s$登陆第4日执行_1 <Img|id=45|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+Mov s$登陆第4日执行_2
+
+#IF
+large  U56 4
+equal U61 0
+#ACT
+Mov s$登陆第5日执行_1 <Button|id=55|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|link=@登陆第5日领奖>
+Mov s$登陆第5日执行_2 <Text|a=4|id=56|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=85|percenty=50>
+#ELSEACT
+Mov s$登陆第5日执行_1 <Img|id=55|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+Mov s$登陆第5日执行_2
+
+#IF
+large  U56 5
+equal U62 0
+#ACT
+Mov s$登陆第6日执行_1 <Button|id=65|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|link=@登陆第6日领奖>
+Mov s$登陆第6日执行_2 <Text|a=4|id=66|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=85|percenty=50>
+#ELSEACT
+Mov s$登陆第6日执行_1 <Img|id=65|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+Mov s$登陆第6日执行_2
+
+#IF
+large  U56 6
+equal U63 0
+#ACT
+Mov s$登陆第7日执行_1 <Button|id=75|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|link=@登陆第7日领奖>
+Mov s$登陆第7日执行_2 <Text|a=4|id=76|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=85|percenty=50>
+#ELSEACT
+Mov s$登陆第7日执行_1 <Img|id=75|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+Mov s$登陆第7日执行_2
+
+
+
+#IF
+equal U57 1
+#ACT
+Mov s$登陆第1日执行_1 <Img|id=15|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$登陆第1日执行_2 
+Inc   s$连登已达成 10,
+#ELSEACT
+Inc  s$连登未达成 10,
+#IF
+equal U58 1
+#ACT
+Mov s$登陆第2日执行_1 <Img|id=25|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$登陆第2日执行_2 
+Inc   s$连登已达成 20,
+#ELSEACT
+Inc  s$连登未达成 20,
+#IF
+equal U59 1
+#ACT
+Mov s$登陆第3日执行_1 <Img|id=35|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$登陆第3日执行_2 
+Inc   s$连登已达成 30,
+#ELSEACT
+Inc  s$连登未达成 30,
+#IF
+equal U60 1
+#ACT
+Mov s$登陆第4日执行_1 <Img|id=45|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$登陆第4日执行_2 
+Inc   s$连登已达成 40,
+#ELSEACT
+Inc   s$连登未达成 40,
+#IF
+equal U61 1
+#ACT
+Mov s$登陆第5日执行_1 <Img|id=55|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$登陆第5日执行_2 
+Inc   s$连登已达成 50,
+#ELSEACT
+Inc  s$连登未达成 50,
+#IF
+equal U62 1
+#ACT
+Mov s$登陆第6日执行_1 <Img|id=65|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$登陆第6日执行_2 
+Inc   s$连登已达成 60,
+#ELSEACT
+Inc  s$连登未达成 60,
+#IF
+equal U63 1
+#ACT
+Mov s$登陆第7日执行_1 <Img|id=75|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$登陆第7日执行_2 
+Inc   s$连登已达成 70,
+#ELSEACT
+Inc  s$连登未达成 70,
+#IF
+#ACT
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+Goto @累计登陆展示
+
+
+[@累计登陆展示]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png|reload=1|loadDelay=1|loadCount=25|loadStep=5>
+<Img|a=4|children={0,2,8}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|a=4|id=2|text=开服活动|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Img|a=4|id=8|children={3,9,1002}|img=custom/hl/kqhd_ui/djmb.jpg|percentx=50|percenty=54>
+
+<Layout|id=3|children={4,5,6,7,1000,1001}|width=115|height=165|x=3.5|y=5|color=x>
+<Button|id=4|children={4a,4c}|nimg=custom/hl/hl_ui/115_2.png|link=@跳转每日充值>
+<Text|a=4|id=4a|text=连续充值|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=5|children={5a,5c}|nimg=custom/hl/hl_ui/115_2.png|y=41|link=@跳转等级目标>
+<Text|a=4|id=5a|text=等级目标|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=6|children={6a,6c}|nimg=custom/hl/hl_ui/115_1.png|y=82|link=@累计登陆>
+<Text|a=4|id=6a|text=累计登陆|x=30|y=20|size=18|color=100|outline=2|outlinecolor=0|percentx=50|percenty=50>
+;<Button|id=7|children={7a,7c}|nimg=custom/hl/hl_ui/115_2.png|y=123|link=@跳转每日限购>
+;<Text|a=4|id=7a|text=限时特惠|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=1000|children={1000a,1000c}|nimg=custom/hl/hl_ui/115_2.png|x=0|y=123|link=@跳转累计充值>
+<Text|a=4|id=1000a|text=限时充值|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$累充红点)>
+
+<Button|id=1001|children={1001a,1001c}|nimg=custom/hl/hl_ui/115_2.png|x=0|y=163|link=@跳转累计消费>
+<Text|a=4|id=1001a|text=限时消费|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$累消红点)>
+<$Str(s$连充红点)>
+<$Str(s$目标红点)>
+<$Str(s$累登红点)>
+<$Str(s$特惠红点)>
+
+
+<Img|a=4|id=1002|img=custom/hl/kqhd_ui/banner3_1.jpg|percentx=58.5|percenty=11>
+<ListView|id=9|children={<$str(s$连登未达成)><$str(s$连登已达成)>}|direction=1|bounce=0|margin=2|width=605|height=348|x=128|y=102|color=x>
+<Layout|id=10|children={11,12,13,100,101,102,103,104,15,16}|width=605|height=101|color=x>
+<Img|id=11|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=12|text=累计登陆|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=13|text=第1天|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=100|itemid=<$Str(s$登陆奖励idx1_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$登陆奖励sl1_1)>>
+<ItemShow|id=101|itemid=<$Str(s$登陆奖励idx1_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$登陆奖励sl1_2)>>
+<ItemShow|id=102|itemid=<$Str(s$登陆奖励idx1_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$登陆奖励sl1_3)>>
+
+
+<$Str(s$登陆第1日执行_1)>
+<$Str(s$登陆第1日执行_2)>
+<Layout|id=20|children={21,22,23,200,201,202,203,204,25,26}|width=605|height=101|color=x>
+<Img|id=21|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=22|text=累计登陆|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=23|text=第2天|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=200|itemid=<$Str(s$登陆奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$登陆奖励sl2_1)>>
+<ItemShow|id=201|itemid=<$Str(s$登陆奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$登陆奖励sl2_2)>>
+<ItemShow|id=202|itemid=<$Str(s$登陆奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$登陆奖励sl2_3)>>
+
+<$Str(s$登陆第2日执行_1)>
+<$Str(s$登陆第2日执行_2)>
+
+<Layout|id=30|children={31,32,33,300,301,302,303,304,35,36}|width=605|height=101|color=x>
+<Img|id=31|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=32|text=累计登陆|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=33|text=第3天|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=300|itemid=<$Str(s$登陆奖励idx3_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$登陆奖励sl3_1)>>
+<ItemShow|id=301|itemid=<$Str(s$登陆奖励idx3_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$登陆奖励sl3_2)>>
+<ItemShow|id=302|itemid=<$Str(s$登陆奖励idx3_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$登陆奖励sl3_3)>>
+
+<$Str(s$登陆第3日执行_1)>
+<$Str(s$登陆第3日执行_2)>
+
+<Layout|id=40|children={41,42,43,400,401,402,403,404,45,46}|width=605|height=101|color=x>
+<Img|id=41|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+
+<Text|a=4|id=42|text=累计登陆|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=43|text=第4天|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=400|itemid=<$Str(s$登陆奖励idx4_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$登陆奖励sl4_1)>>
+<ItemShow|id=401|itemid=<$Str(s$登陆奖励idx4_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$登陆奖励sl4_2)>>
+<ItemShow|id=402|itemid=<$Str(s$登陆奖励idx4_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$登陆奖励sl4_3)>>
+
+<$Str(s$登陆第4日执行_1)>
+<$Str(s$登陆第4日执行_2)>
+
+<Layout|id=50|children={51,52,53,500,501,502,503,504,55,56}|width=605|height=101|color=x>
+<Img|id=51|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=52|text=累计登陆|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=53|text=第5天|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=500|itemid=<$Str(s$登陆奖励idx5_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$登陆奖励sl5_1)>>
+<ItemShow|id=501|itemid=<$Str(s$登陆奖励idx5_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$登陆奖励sl5_2)>>
+<ItemShow|id=502|itemid=<$Str(s$登陆奖励idx5_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$登陆奖励sl5_3)>>
+
+<$Str(s$登陆第5日执行_1)>
+<$Str(s$登陆第5日执行_2)>
+
+<Layout|id=60|children={61,62,63,600,601,602,603,604,65,66}|width=605|height=101|color=x>
+<Img|id=61|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=62|text=累计登陆|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=63|text=第6天|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=600|itemid=<$Str(s$登陆奖励idx6_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$登陆奖励sl6_1)>>
+<ItemShow|id=601|itemid=<$Str(s$登陆奖励idx6_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$登陆奖励sl6_2)>>
+<ItemShow|id=602|itemid=<$Str(s$登陆奖励idx6_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$登陆奖励sl6_3)>>
+
+<$Str(s$登陆第6日执行_1)>
+<$Str(s$登陆第6日执行_2)>
+
+<Layout|id=70|children={71,72,73,700,701,702,703,704,75,76}|width=605|height=101|color=x>
+<Img|id=71|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=72|text=累计登陆|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=73|text=第7天|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=700|itemid=<$Str(s$登陆奖励idx7_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$登陆奖励sl7_1)>>
+<ItemShow|id=701|itemid=<$Str(s$登陆奖励idx7_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$登陆奖励sl7_2)>>
+<ItemShow|id=702|itemid=<$Str(s$登陆奖励idx7_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$登陆奖励sl7_3)>>
+
+<$Str(s$登陆第7日执行_1)>
+<$Str(s$登陆第7日执行_2)>
+
+[@登陆第1日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U56 0
+equal U57 0
+#ACT
+Mov U57 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc1_1 s$登陆奖励mc1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc1_2 s$登陆奖励mc1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc1_3 s$登陆奖励mc1_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl1_1 s$登陆奖励sl1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl1_2 s$登陆奖励sl1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl1_3 s$登陆奖励sl1_3
+
+GiveStateItem <$Str(s$登陆奖励mc1_1)> <$str(s$登陆奖励sl1_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc1_2)> <$str(s$登陆奖励sl1_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc1_3)> <$str(s$登陆奖励sl1_3)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 玩家{<$USERNAME>/FCOLOR=251}领取了{累计登陆1天/FCOLOR=249}的奖励！ 1 2
+Goto @累计登陆
+Break
+[@登陆第2日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U56 1
+equal U58 0
+#ACT
+Mov U58 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc2_1 s$登陆奖励mc2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc2_2 s$登陆奖励mc2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc2_3 s$登陆奖励mc2_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl2_1 s$登陆奖励sl2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl2_2 s$登陆奖励sl2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl2_3 s$登陆奖励sl2_3
+
+GiveStateItem <$Str(s$登陆奖励mc2_1)> <$str(s$登陆奖励sl2_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc2_2)> <$str(s$登陆奖励sl2_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc2_3)> <$str(s$登陆奖励sl2_3)> 0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 玩家{<$USERNAME>/FCOLOR=251}领取了{累计登陆2天/FCOLOR=249}的奖励！ 1 2
+Goto @累计登陆
+Break
+[@登陆第3日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U56 2
+equal U59 0
+#ACT
+Mov U59 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc3_1 s$登陆奖励mc3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc3_2 s$登陆奖励mc3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc3_3 s$登陆奖励mc3_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl3_1 s$登陆奖励sl3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl3_2 s$登陆奖励sl3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl3_3 s$登陆奖励sl3_3
+
+GiveStateItem <$Str(s$登陆奖励mc3_1)> <$str(s$登陆奖励sl3_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc3_2)> <$str(s$登陆奖励sl3_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc3_3)> <$str(s$登陆奖励sl3_3)> 0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 玩家{<$USERNAME>/FCOLOR=251}领取了{累计登陆3天/FCOLOR=249}的奖励！ 1 2
+Goto @累计登陆
+Break
+[@登陆第4日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U56 3
+equal U60 0
+#ACT
+Mov U60 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc4_1 s$登陆奖励mc4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc4_2 s$登陆奖励mc4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc4_3 s$登陆奖励mc4_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl4_1 s$登陆奖励sl4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl4_2 s$登陆奖励sl4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl4_3 s$登陆奖励sl4_3
+
+GiveStateItem <$Str(s$登陆奖励mc4_1)> <$str(s$登陆奖励sl4_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc4_2)> <$str(s$登陆奖励sl4_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc4_3)> <$str(s$登陆奖励sl4_3)> 0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 玩家{<$USERNAME>/FCOLOR=251}领取了{累计登陆4天/FCOLOR=249}的奖励！ 1 2
+Goto @累计登陆
+Break
+[@登陆第5日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U56 4
+equal U61 0
+#ACT
+Mov U61 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc5_1 s$登陆奖励mc5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc5_2 s$登陆奖励mc5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc5_3 s$登陆奖励mc5_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl5_1 s$登陆奖励sl5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl5_2 s$登陆奖励sl5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl5_3 s$登陆奖励sl5_3
+
+GiveStateItem <$Str(s$登陆奖励mc5_1)> <$str(s$登陆奖励sl5_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc5_2)> <$str(s$登陆奖励sl5_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc5_3)> <$str(s$登陆奖励sl5_3)> 0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 玩家{<$USERNAME>/FCOLOR=251}领取了{累计登陆5天/FCOLOR=249}的奖励！ 1 2
+Goto @累计登陆
+Break
+[@登陆第6日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U56 5
+equal U62 0
+#ACT
+Mov U62 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc6_1 s$登陆奖励mc6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc6_2 s$登陆奖励mc6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc6_3 s$登陆奖励mc6_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl6_1 s$登陆奖励sl6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl6_2 s$登陆奖励sl6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl6_3 s$登陆奖励sl6_3
+
+GiveStateItem <$Str(s$登陆奖励mc6_1)> <$str(s$登陆奖励sl6_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc6_2)> <$str(s$登陆奖励sl6_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc6_3)> <$str(s$登陆奖励sl6_3)> 0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 玩家{<$USERNAME>/FCOLOR=251}领取了{累计登陆6天/FCOLOR=249}的奖励！ 1 2
+Goto @累计登陆
+Break
+[@登陆第7日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U56 6
+equal U63 0
+#ACT
+Mov U63 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc7_1 s$登陆奖励mc7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc7_2 s$登陆奖励mc7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励mc7_3 s$登陆奖励mc7_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl7_1 s$登陆奖励sl7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl7_2 s$登陆奖励sl7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\累登配置.ini 登陆奖励 登陆奖励sl7_3 s$登陆奖励sl7_3
+
+GiveStateItem <$Str(s$登陆奖励mc7_1)> <$str(s$登陆奖励sl7_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc7_2)> <$str(s$登陆奖励sl7_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$登陆奖励mc7_3)> <$str(s$登陆奖励sl7_3)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 玩家{<$USERNAME>/FCOLOR=251}领取了{累计登陆7天/FCOLOR=249}的奖励！ 1 2
+Goto @累计登陆
+Break
+[@跳转每日充值]
+#ACT
+#CALL [\功能脚本\开区活动\每日充值.txt] @每日充值
+
+[@跳转等级目标]
+#ACT
+#CALL [\功能脚本\开区活动\等级目标.txt] @等级目标
+[@跳转累计登陆]
+#ACT
+#CALL [\功能脚本\开区活动\累计登陆.txt] @累计登陆
+
+[@跳转每日限购]
+#ACT
+#CALL [\功能脚本\开区活动\每日限购.txt] @每日限购
+
+[@跳转累计充值]
+#ACT
+#CALL [\功能脚本\开区活动\累计充值.txt] @累计充值
+
+[@跳转累计消费]
+#ACT
+#CALL [\功能脚本\开区活动\累计消费.txt] @累计消费
+}

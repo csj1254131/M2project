@@ -1,0 +1,548 @@
+[@每日充值]
+{
+
+#IF
+EQUAL <$STR(S$C_冲级支线跳转)> 开
+#ACT
+#CALL [\功能脚本\开区活动\等级目标.txt] @等级目标
+break
+
+
+
+#IF
+CHECKJOB  Warrior
+#ACT
+Mov s$职业序号 0
+#IF
+CHECKJOB  Wizard
+#ACT
+Mov s$职业序号 1
+#IF
+CHECKJOB  Taoist
+#ACT
+Mov s$职业序号 2
+
+
+#IF
+#ACT
+Mov s$连充未达成
+Mov s$连充已达成
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值金额_1 s$充值金额_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值金额_2 s$充值金额_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值金额_3 s$充值金额_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值金额_4 s$充值金额_4
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值金额_5 s$充值金额_5
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值金额_6 s$充值金额_6
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值金额_7 s$充值金额_7
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx1_1 s$充值奖励idx1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx1_2 s$充值奖励idx1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx1_3 s$充值奖励idx1_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl1_1 s$充值奖励sl1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl1_2 s$充值奖励sl1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl1_3 s$充值奖励sl1_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx2_1 s$充值奖励idx2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx2_2 s$充值奖励idx2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx2_3 s$充值奖励idx2_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl2_1 s$充值奖励sl2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl2_2 s$充值奖励sl2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl2_3 s$充值奖励sl2_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx3_1 s$充值奖励idx3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx3_2 s$充值奖励idx3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx3_3 s$充值奖励idx3_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl3_1 s$充值奖励sl3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl3_2 s$充值奖励sl3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl3_3 s$充值奖励sl3_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx4_1 s$充值奖励idx4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx4_2_<$Str(s$职业序号)> s$充值奖励idx4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx4_3 s$充值奖励idx4_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl4_1 s$充值奖励sl4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl4_2 s$充值奖励sl4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl4_3 s$充值奖励sl4_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx5_1 s$充值奖励idx5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx5_2 s$充值奖励idx5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx5_3 s$充值奖励idx5_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl5_1 s$充值奖励sl5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl5_2 s$充值奖励sl5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl5_3 s$充值奖励sl5_3
+
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx6_1 s$充值奖励idx6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx6_2 s$充值奖励idx6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx6_3 s$充值奖励idx6_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl6_1 s$充值奖励sl6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl6_2 s$充值奖励sl6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl6_3 s$充值奖励sl6_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx7_1 s$充值奖励idx7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx7_2 s$充值奖励idx7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励idx7_3 s$充值奖励idx7_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl7_1 s$充值奖励sl7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl7_2 s$充值奖励sl7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl7_3 s$充值奖励sl7_3
+
+#IF
+large U36 0
+equal U37 0
+#ACT
+Mov s$第1日执行_1 <Button|id=15|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@第1日领奖>
+#ELSEACT
+Mov s$第1日执行_1 <Img|id=15|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+
+
+
+#IF
+large U36 1
+equal U38 0
+#ACT
+Mov s$第2日执行_1 <Button|id=25|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@第2日领奖>
+#ELSEACT
+Mov s$第2日执行_1 <Img|id=25|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+#IF
+large U36 2
+equal U39 0
+#ACT
+Mov s$第3日执行_1 <Button|id=35|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@第3日领奖>
+#ELSEACT
+Mov s$第3日执行_1 <Img|id=35|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+
+#IF
+large U36 3
+equal U40 0
+#ACT
+Mov s$第4日执行_1 <Button|id=45|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@第4日领奖>
+#ELSEACT
+Mov s$第4日执行_1 <Img|id=45|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+
+#IF
+large U36 4
+equal U41 0
+#ACT
+Mov s$第5日执行_1 <Button|id=55|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@第5日领奖>
+#ELSEACT
+Mov s$第5日执行_1 <Img|id=55|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+
+#IF
+large U36 5
+equal U42 0
+#ACT
+Mov s$第6日执行_1 <Button|id=65|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@第6日领奖>
+#ELSEACT
+Mov s$第6日执行_1 <Img|id=65|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+
+#IF
+large U36 6
+equal U43 0
+#ACT
+Mov s$第7日执行_1 <Button|id=75|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=460|y=30|text=领取|size=18|color=100|outline=2|outlinecolor=0|link=@第7日领奖>
+#ELSEACT
+Mov s$第7日执行_1 <Img|id=75|img=custom/hl/hl_ui/word_qiri_01.png|x=480|y=20>
+
+
+
+
+#IF
+equal U37 1
+#ACT
+Mov s$第1日执行_1 <Img|id=15|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$第1日执行_2 
+Inc   s$连充已达成 10,
+#ELSEACT
+Inc  s$连充未达成 10,
+#IF
+equal U38 1
+#ACT
+Mov s$第2日执行_1 <Img|id=25|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$第2日执行_2 
+Inc   s$连充已达成 20,
+#ELSEACT
+Inc  s$连充未达成 20,
+#IF
+equal U39 1
+#ACT
+Mov s$第3日执行_1 <Img|id=35|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$第3日执行_2 
+Inc   s$连充已达成 30,
+#ELSEACT
+Inc  s$连充未达成 30,
+#IF
+equal U40 1
+#ACT
+Mov s$第4日执行_1 <Img|id=45|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$第4日执行_2 
+Inc   s$连充已达成 40,
+#ELSEACT
+Inc   s$连充未达成 40,
+#IF
+equal U41 1
+#ACT
+Mov s$第5日执行_1 <Img|id=55|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$第5日执行_2 
+Inc   s$连充已达成 50,
+#ELSEACT
+Inc  s$连充未达成 50,
+#IF
+equal U42 1
+#ACT
+Mov s$第6日执行_1 <Img|id=65|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$第6日执行_2 
+Inc   s$连充已达成 60,
+#ELSEACT
+Inc  s$连充未达成 60,
+#IF
+equal U43 1
+#ACT
+Mov s$第7日执行_1 <Img|id=75|img=custom/hl/hl_ui/word_qiri_02.png|x=480|y=20>
+Mov s$第7日执行_2 
+Inc   s$连充已达成 70,
+#ELSEACT
+Inc  s$连充未达成 70,
+#IF
+#ACT
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+Goto @每日充值展示
+
+
+[@每日充值展示]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png|reload=1|loadDelay=1|loadCount=25|loadStep=5>
+<Img|a=4|children={0,2,8}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|a=4|id=2|text=开服活动|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Img|a=4|id=8|children={3,9,1002}|img=custom/hl/kqhd_ui/djmb.jpg|percentx=50|percenty=54>
+
+<Img|a=4|id=1002|img=custom/hl/kqhd_ui/banner2_1.png|percentx=58.5|percenty=11>
+
+<Layout|id=3|children={4,5,6,7,1000,1001}|width=115|height=165|x=3.5|y=5|color=x>
+<Button|id=4|children={4a,4c}|nimg=custom/hl/hl_ui/115_1.png|link=@每日充值>
+<Text|a=4|id=4a|text=连续充值|x=30|y=20|size=18|color=100|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$连充红点)>
+
+<Button|id=5|children={5a,5c}|nimg=custom/hl/hl_ui/115_2.png|y=41|link=@跳转等级目标>
+<Text|a=4|id=5a|text=等级目标|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$目标红点)>
+
+<Button|id=6|children={6a,6c}|nimg=custom/hl/hl_ui/115_2.png|y=82|link=@跳转累计登陆>
+<Text|a=4|id=6a|text=累计登陆|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$累登红点)>
+
+;<Button|id=7|children={7a,7c}|nimg=custom/hl/hl_ui/115_2.png|y=123|link=@跳转每日限购>
+;<Text|a=4|id=7a|text=限时特惠|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+;<$Str(s$特惠红点)>
+
+<Button|id=1000|children={1000a,1000c}|nimg=custom/hl/hl_ui/115_2.png|x=0|y=123|link=@跳转累计充值>
+<Text|a=4|id=1000a|text=限时充值|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$累充红点)>
+
+<Button|id=1001|children={1001a,1001c}|nimg=custom/hl/hl_ui/115_2.png|x=0|y=163|link=@跳转累计消费>
+<Text|a=4|id=1001a|text=限时消费|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$累消红点)>
+
+<ListView|id=9|children={<$str(s$连充未达成)><$str(s$连充已达成)>}|direction=1|bounce=0|margin=2|width=605|height=348|x=128|y=102|color=x>
+<Layout|id=10|children={11,12,13,100,101,102,103,104,15,16}|width=605|height=101|color=x>
+<Img|id=11|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=12|text=第1日充值|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=13|text=<$Str(s$充值金额_1)>元|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=100|itemid=<$Str(s$充值奖励idx1_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$充值奖励sl1_1)>>
+<ItemShow|id=101|itemid=<$Str(s$充值奖励idx1_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$充值奖励sl1_2)>>
+<ItemShow|id=102|itemid=<$Str(s$充值奖励idx1_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$充值奖励sl1_3)>>
+
+
+<$Str(s$第1日执行_1)>
+
+<Layout|id=20|children={21,22,23,200,201,202,203,204,25}|width=605|height=101|color=x>
+<Img|id=21|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=22|text=第2日充值|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=23|text=<$Str(s$充值金额_2)>元|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=200|itemid=<$Str(s$充值奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$充值奖励sl2_1)>>
+<ItemShow|id=201|itemid=<$Str(s$充值奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$充值奖励sl2_2)>>
+<ItemShow|id=202|itemid=<$Str(s$充值奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$充值奖励sl2_3)>>
+
+<$Str(s$第2日执行_1)>
+
+
+<Layout|id=30|children={31,32,33,300,301,302,303,304,35}|width=605|height=101|color=x>
+<Img|id=31|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=32|text=第3日充值|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=33|text=<$Str(s$充值金额_3)>元|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=300|itemid=<$Str(s$充值奖励idx3_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$充值奖励sl3_1)>>
+<ItemShow|id=301|itemid=<$Str(s$充值奖励idx3_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$充值奖励sl3_2)>>
+<ItemShow|id=302|itemid=<$Str(s$充值奖励idx3_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$充值奖励sl3_3)>>
+
+<$Str(s$第3日执行_1)>
+
+
+<Layout|id=40|children={41,42,43,400,401,402,403,404,45}|width=605|height=101|color=x>
+<Img|id=41|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+
+<Text|a=4|id=42|text=第4日充值|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=43|text=<$Str(s$充值金额_4)>元|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=400|itemid=<$Str(s$充值奖励idx4_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$充值奖励sl4_1)>>
+<ItemShow|id=401|itemid=<$Str(s$充值奖励idx4_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$充值奖励sl4_2)>>
+<ItemShow|id=402|itemid=<$Str(s$充值奖励idx4_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$充值奖励sl4_3)>>
+
+<$Str(s$第4日执行_1)>
+
+
+<Layout|id=50|children={51,52,53,500,501,502,503,504,55}|width=605|height=101|color=x>
+<Img|id=51|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=52|text=第5日充值|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=53|text=<$Str(s$充值金额_5)>元|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=500|itemid=<$Str(s$充值奖励idx5_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$充值奖励sl5_1)>>
+<ItemShow|id=501|itemid=<$Str(s$充值奖励idx5_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$充值奖励sl5_2)>>
+<ItemShow|id=502|itemid=<$Str(s$充值奖励idx5_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$充值奖励sl5_3)>>
+
+<$Str(s$第5日执行_1)>
+
+
+<Layout|id=60|children={61,62,63,600,601,602,603,604,65}|width=605|height=101|color=x>
+<Img|id=61|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=62|text=第6日充值|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=63|text=<$Str(s$充值金额_6)>元|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=600|itemid=<$Str(s$充值奖励idx6_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$充值奖励sl6_1)>>
+<ItemShow|id=601|itemid=<$Str(s$充值奖励idx6_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$充值奖励sl6_2)>>
+<ItemShow|id=602|itemid=<$Str(s$充值奖励idx6_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$充值奖励sl6_3)>>
+
+<$Str(s$第6日执行_1)>
+
+
+<Layout|id=70|children={71,72,73,700,701,702,703,704,75}|width=605|height=101|color=x>
+<Img|id=71|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=72|text=第7日充值|x=30|y=20|size=18|color=251|outline=2|outlinecolor=0|percentx=13|percenty=25>
+<Text|a=4|id=73|text=<$Str(s$充值金额_7)>元|size=18|color=250|outline=2|outlinecolor=0|percentx=13|percenty=60>
+<ItemShow|id=700|itemid=<$Str(s$充值奖励idx7_1)>|itemcount=1|showtips=1|bgtype=1|x=160|y=17|itemcount=<$Str(s$充值奖励sl7_1)>>
+<ItemShow|id=701|itemid=<$Str(s$充值奖励idx7_2)>|itemcount=1|showtips=1|bgtype=1|x=230|y=17|itemcount=<$Str(s$充值奖励sl7_2)>>
+<ItemShow|id=702|itemid=<$Str(s$充值奖励idx7_3)>|itemcount=1|showtips=1|bgtype=1|x=300|y=17|itemcount=<$Str(s$充值奖励sl7_3)>>
+
+<$Str(s$第7日执行_1)>
+
+[@第1日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large U36 0
+equal U37 0
+#ACT
+Mov U37 1
+MONEY 充值点 = 0
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc1_1 s$充值奖励mc1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc1_2 s$充值奖励mc1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc1_3 s$充值奖励mc1_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl1_1 s$充值奖励sl1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl1_2 s$充值奖励sl1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl1_3 s$充值奖励sl1_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 连充公告 s$连充公告
+GiveStateItem <$Str(s$充值奖励mc1_1)> <$str(s$充值奖励sl1_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc1_2)> <$str(s$充值奖励sl1_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc1_3)> <$str(s$充值奖励sl1_3)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @每日充值
+Break
+[@第2日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U36 0
+equal U38 0
+#ACT
+MONEY 充值点 = 0
+Mov U38 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc2_1 s$充值奖励mc2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc2_2 s$充值奖励mc2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc2_3 s$充值奖励mc2_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl2_1 s$充值奖励sl2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl2_2 s$充值奖励sl2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl2_3 s$充值奖励sl2_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 连充公告 s$连充公告
+GiveStateItem <$Str(s$充值奖励mc2_1)> <$str(s$充值奖励sl2_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc2_2)> <$str(s$充值奖励sl2_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc2_3)> <$str(s$充值奖励sl2_3)> 0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @每日充值
+Break
+[@第3日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U36 0
+equal U39 0
+#ACT
+MONEY 充值点 = 0
+Mov U39 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc3_1 s$充值奖励mc3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc3_2 s$充值奖励mc3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc3_3 s$充值奖励mc3_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl3_1 s$充值奖励sl3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl3_2 s$充值奖励sl3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl3_3 s$充值奖励sl3_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 连充公告 s$连充公告
+GiveStateItem <$Str(s$充值奖励mc3_1)> <$str(s$充值奖励sl3_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc3_2)> <$str(s$充值奖励sl3_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc3_3)> <$str(s$充值奖励sl3_3)> 0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @每日充值
+Break
+[@第4日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U36 0
+equal U40 0
+#ACT
+MONEY 充值点 = 0
+Mov U40 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc4_1 s$充值奖励mc4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc4_2_<$Str(s$职业序号)> s$充值奖励mc4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc4_3 s$充值奖励mc4_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl4_1 s$充值奖励sl4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl4_2 s$充值奖励sl4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl4_3 s$充值奖励sl4_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 连充公告 s$连充公告
+GiveStateItem <$Str(s$充值奖励mc4_1)> <$str(s$充值奖励sl4_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc4_2)> <$str(s$充值奖励sl4_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc4_3)> <$str(s$充值奖励sl4_3)> 0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @每日充值
+Break
+[@第5日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U36 0
+equal U41 0
+#ACT
+MONEY 充值点 = 0
+Mov U41 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc5_1 s$充值奖励mc5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc5_2 s$充值奖励mc5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc5_3 s$充值奖励mc5_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl5_1 s$充值奖励sl5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl5_2 s$充值奖励sl5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl5_3 s$充值奖励sl5_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 连充公告 s$连充公告
+GiveStateItem <$Str(s$充值奖励mc5_1)> <$str(s$充值奖励sl5_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc5_2)> <$str(s$充值奖励sl5_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc5_3)> <$str(s$充值奖励sl5_3)> 0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @每日充值
+Break
+[@第6日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U36 0
+equal U42 0
+#ACT
+MONEY 充值点 = 0
+Mov U42 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc6_1 s$充值奖励mc6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc6_2 s$充值奖励mc6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc6_3 s$充值奖励mc6_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl6_1 s$充值奖励sl6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl6_2 s$充值奖励sl6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl6_3 s$充值奖励sl6_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 连充公告 s$连充公告
+GiveStateItem <$Str(s$充值奖励mc6_1)> <$str(s$充值奖励sl6_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc6_2)> <$str(s$充值奖励sl6_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc6_3)> <$str(s$充值奖励sl6_3)> 0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @每日充值
+Break
+[@第7日领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  U36 0
+equal U43 0
+#ACT
+MONEY 充值点 = 0
+Mov U43 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc7_1 s$充值奖励mc7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc7_2 s$充值奖励mc7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励mc7_3 s$充值奖励mc7_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl7_1 s$充值奖励sl7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl7_2 s$充值奖励sl7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 充值奖励sl7_3 s$充值奖励sl7_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 连充公告 s$连充公告
+GiveStateItem <$Str(s$充值奖励mc7_1)> <$str(s$充值奖励sl7_1)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc7_2)> <$str(s$充值奖励sl7_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$充值奖励mc7_3)> <$str(s$充值奖励sl7_3)> 0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$连充公告)> 1 2
+Goto @每日充值
+Break
+
+[@跳转每日充值]
+#ACT
+#CALL [\功能脚本\开区活动\每日充值.txt] @每日充值
+
+[@跳转等级目标]
+#ACT
+#CALL [\功能脚本\开区活动\等级目标.txt] @等级目标
+[@跳转累计登陆]
+#ACT
+#CALL [\功能脚本\开区活动\累计登陆.txt] @累计登陆
+
+[@跳转每日限购]
+#ACT
+#CALL [\功能脚本\开区活动\每日限购.txt] @每日限购
+
+[@跳转累计充值]
+#ACT
+#CALL [\功能脚本\开区活动\累计充值.txt] @累计充值
+
+[@跳转累计消费]
+#ACT
+#CALL [\功能脚本\开区活动\累计消费.txt] @累计消费
+}

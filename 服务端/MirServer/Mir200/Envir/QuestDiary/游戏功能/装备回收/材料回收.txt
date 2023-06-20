@@ -1,0 +1,243 @@
+[@材料回收]
+{
+#IF
+#ACT
+
+MOV N$N0 0
+MOV N$N1 0
+MOV N$N2 0
+MOV N$B_拾取元宝 0
+MOV N$B_拾取绑元 0
+MOV N$B_拾取经验 0
+
+#IF
+EQUAL U110 1
+#ACT
+GETBAGITEMCOUNT 2元宝 N$N0
+TAKE  2元宝 <$STR(N$N0)>
+MUL N$B_拾取元宝 <$STR(N$N0)> 2
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+GETBAGITEMCOUNT 5元宝 N$N0
+TAKE  5元宝 <$STR(N$N0)>
+MUL N$B_拾取元宝 <$STR(N$N0)> 5
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+GETBAGITEMCOUNT 10元宝 N$N0
+TAKE  10元宝 <$STR(N$N0)>
+MUL N$B_拾取元宝 <$STR(N$N0)> 10
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+GETBAGITEMCOUNT 20元宝 N$N0
+TAKE  20元宝 <$STR(N$N0)>
+MUL N$B_拾取元宝 <$STR(N$N0)> 20
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+
+GETBAGITEMCOUNT 50元宝 N$N0
+TAKE  50元宝 <$STR(N$N0)>
+MUL   N$B_拾取元宝 <$STR(N$N0)> 50
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+
+
+GETBAGITEMCOUNT 100元宝 N$N0
+TAKE  100元宝 <$STR(N$N0)>
+MUL   N$B_拾取元宝 <$STR(N$N0)> 100
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+
+GETBAGITEMCOUNT 200元宝 N$N0
+TAKE  200元宝 <$STR(N$N0)>
+MUL   N$B_拾取元宝 <$STR(N$N0)> 200
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+
+
+GETBAGITEMCOUNT 500元宝 N$N0
+TAKE  500元宝 <$STR(N$N0)>
+MUL   N$B_拾取元宝 <$STR(N$N0)> 500
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+
+GETBAGITEMCOUNT 1000元宝 N$N0
+TAKE  1000元宝 <$STR(N$N0)>
+MUL   N$B_拾取元宝 <$STR(N$N0)> 1000
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+
+GETBAGITEMCOUNT 2000元宝 N$N0
+TAKE  2000元宝 <$STR(N$N0)>
+MUL   N$B_拾取元宝 <$STR(N$N0)> 2000
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+
+GETBAGITEMCOUNT 5000元宝 N$N0
+TAKE  5000元宝 <$STR(N$N0)>
+MUL   N$B_拾取元宝 <$STR(N$N0)> 5000
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+
+GETBAGITEMCOUNT 10000元宝 N$N0
+TAKE  10000元宝 <$STR(N$N0)>
+MUL   N$B_拾取元宝 <$STR(N$N0)> 10000
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+GETBAGITEMCOUNT 20000元宝 N$N0
+TAKE  20000元宝 <$STR(N$N0)>
+MUL   N$B_拾取元宝 <$STR(N$N0)> 20000
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+GETBAGITEMCOUNT 50000元宝 N$N0
+TAKE  50000元宝 <$STR(N$N0)>
+MUL   N$B_拾取元宝 <$STR(N$N0)> 50000
+MONEY 元宝 + <$STR(N$B_拾取元宝)>
+
+
+GETBAGITEMCOUNT 2绑定元宝 N$N2
+TAKE  2绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 2
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+GETBAGITEMCOUNT 5绑定元宝 N$N2
+TAKE  5绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 5
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+
+GETBAGITEMCOUNT 10绑定元宝 N$N2
+TAKE  10绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 10
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+GETBAGITEMCOUNT 20绑定元宝 N$N2
+TAKE  20绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 20
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+GETBAGITEMCOUNT 50绑定元宝 N$N2
+TAKE  50绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 50
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+
+GETBAGITEMCOUNT 100绑定元宝 N$N2
+TAKE  100绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 100
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+GETBAGITEMCOUNT 200绑定元宝 N$N2
+TAKE  200绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 200
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+GETBAGITEMCOUNT 500绑定元宝 N$N2
+TAKE  500绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 500
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+GETBAGITEMCOUNT 1000绑定元宝 N$N2
+TAKE  1000绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 1000
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+GETBAGITEMCOUNT 2000绑定元宝 N$N2
+TAKE  2000绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 2000
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+GETBAGITEMCOUNT 5000绑定元宝 N$N2
+TAKE  5000绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 5000
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+GETBAGITEMCOUNT 10000绑定元宝 N$N2
+TAKE  10000绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 10000
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+GETBAGITEMCOUNT 20000绑定元宝 N$N2
+TAKE  20000绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 20000
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+GETBAGITEMCOUNT 50000绑定元宝 N$N2
+TAKE  50000绑定元宝 <$STR(N$N2)>
+MUL   N$B_拾取绑元 <$STR(N$N2)> 50000
+MONEY 绑定元宝 + <$STR(N$B_拾取绑元)>
+
+
+#IF
+EQUAL U111 1
+#ACT
+GOTO  @自动使用经验卷_1
+;BREAK
+
+#IF
+EQUAL U112 1
+#ACT
+DELAYGOTO 1 @自动使用经验卷_2
+;BREAK
+
+
+
+[@自动使用经验卷_1]
+#IF
+#ACT
+GETBAGITEMCOUNT 10W经验卷 n$n1
+TAKE  10W经验卷 <$STR(N$N1)>
+MUL   N$B_拾取经验 <$STR(N$N1)> 100000
+CHANGEEXP + <$STR(N$B_拾取经验)>
+
+
+GETBAGITEMCOUNT 20W经验卷 n$n1
+TAKE  20W经验卷 <$STR(N$N1)>
+MUL   N$B_拾取经验 <$STR(N$N1)> 200000
+CHANGEEXP + <$STR(N$B_拾取经验)>
+
+GETBAGITEMCOUNT 50W经验卷 n$n1
+TAKE  50W经验卷 <$STR(N$N1)>
+MUL   N$B_拾取经验 <$STR(N$N1)> 500000
+CHANGEEXP + <$STR(N$B_拾取经验)>
+
+GETBAGITEMCOUNT 100W经验卷 n$n1
+TAKE  100W经验卷 <$STR(N$N1)>
+MUL   N$B_拾取经验 <$STR(N$N1)> 1000000
+CHANGEEXP + <$STR(N$B_拾取经验)>
+
+GETBAGITEMCOUNT 200W经验卷 n$n1
+TAKE  200W经验卷 <$STR(N$N1)>
+MUL   N$B_拾取经验 <$STR(N$N1)> 2000000
+CHANGEEXP + <$STR(N$B_拾取经验)>
+
+GETBAGITEMCOUNT 500W经验卷 n$n1
+TAKE  500W经验卷 <$STR(N$N1)>
+MUL   N$B_拾取经验 <$STR(N$N1)> 5000000
+CHANGEEXP + <$STR(N$B_拾取经验)>
+
+GETBAGITEMCOUNT 1000W经验卷 n$n1
+TAKE  1000W经验卷 <$STR(N$N1)>
+MUL   N$B_拾取经验 <$STR(N$N1)> 10000000
+CHANGEEXP + <$STR(N$B_拾取经验)>
+
+
+
+
+[@自动使用经验卷_2]
+#IF
+#ACT
+GETBAGITEMCOUNT 2000W经验卷 n$n1
+TAKE  2000W经验卷 <$STR(N$N1)>
+MUL   N$B_拾取经验 <$STR(N$N1)> 20000000
+CHANGEEXP + <$STR(N$B_拾取经验)>
+
+GETBAGITEMCOUNT 5000W经验卷 n$n1
+TAKE  5000W经验卷 <$STR(N$N1)>
+MUL   N$B_拾取经验 <$STR(N$N1)> 50000000
+CHANGEEXP + <$STR(N$B_拾取经验)>
+
+
+}
+
+
+

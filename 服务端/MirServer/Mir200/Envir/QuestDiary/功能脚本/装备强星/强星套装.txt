@@ -1,0 +1,158 @@
+[@强星套装]
+{
+#IF
+LARGE <$Starcount0> 35
+LARGE <$Starcount1> 35
+LARGE <$Starcount2> 35
+LARGE <$Starcount3> 35
+LARGE <$Starcount4> 35
+LARGE <$Starcount5> 35
+LARGE <$Starcount6> 35
+LARGE <$Starcount7> 35
+LARGE <$Starcount8> 35
+LARGE <$Starcount10> 35
+LARGE <$Starcount11> 35
+#ACT
+MOV S$星星内观特效 6355
+MOV S$星星外观特效 50700
+MOV S$星星BULL 1500
+MOV S$锁链 12
+MOV S$锁链加成 15
+Goto @执行套装赋值
+BREAK
+#IF
+LARGE <$Starcount0> 29
+LARGE <$Starcount1> 29
+LARGE <$Starcount2> 29
+LARGE <$Starcount3> 29
+LARGE <$Starcount4> 29
+LARGE <$Starcount5> 29
+LARGE <$Starcount6> 29
+LARGE <$Starcount7> 29
+LARGE <$Starcount8> 29
+LARGE <$Starcount10> 29
+LARGE <$Starcount11> 29
+#ACT
+MOV S$星星内观特效 6354
+MOV S$星星外观特效 50699
+MOV S$星星BULL 1000
+MOV S$锁链 11
+mov  S$锁链加成 10
+Goto @执行套装赋值
+BREAK
+#IF
+LARGE <$Starcount0> 24
+LARGE <$Starcount1> 24
+LARGE <$Starcount2> 24
+LARGE <$Starcount3> 24
+LARGE <$Starcount4> 24
+LARGE <$Starcount5> 24
+LARGE <$Starcount6> 24
+LARGE <$Starcount7> 24
+LARGE <$Starcount8> 24
+LARGE <$Starcount10> 24
+LARGE <$Starcount11> 24
+#ACT
+MOV S$星星内观特效 6353
+MOV S$星星外观特效 50698
+MOV S$星星BULL 800
+MOV S$锁链 10
+mov  S$锁链加成 8
+Goto @执行套装赋值
+BREAK
+#IF
+LARGE <$Starcount0> 18
+LARGE <$Starcount1> 18
+LARGE <$Starcount2> 18
+LARGE <$Starcount3> 18
+LARGE <$Starcount4> 18
+LARGE <$Starcount5> 18
+LARGE <$Starcount6> 18
+LARGE <$Starcount7> 18
+LARGE <$Starcount8> 18
+LARGE <$Starcount10> 18
+LARGE <$Starcount11> 18
+#ACT
+MOV S$星星内观特效 6352
+MOV S$星星外观特效 50697
+MOV S$星星BULL 600
+MOV S$锁链 9
+mov  S$锁链加成 6
+Goto @执行套装赋值
+BREAK
+
+#IF
+LARGE <$Starcount0> 12
+LARGE <$Starcount1> 12
+LARGE <$Starcount2> 12
+LARGE <$Starcount3> 12
+LARGE <$Starcount4> 12
+LARGE <$Starcount5> 12
+LARGE <$Starcount6> 12
+LARGE <$Starcount7> 12
+LARGE <$Starcount8> 12
+LARGE <$Starcount10> 12
+LARGE <$Starcount11> 12
+#ACT
+MOV S$星星内观特效 6351
+MOV S$星星外观特效 50696
+MOV S$星星BULL 400
+MOV S$锁链 8
+mov  S$锁链加成 4
+Goto @执行套装赋值
+BREAK
+
+#IF
+LARGE <$Starcount0> 6
+LARGE <$Starcount1> 6
+LARGE <$Starcount2> 6
+LARGE <$Starcount3> 6
+LARGE <$Starcount4> 6
+LARGE <$Starcount5> 6
+LARGE <$Starcount6> 6
+LARGE <$Starcount7> 6
+LARGE <$Starcount8> 6
+LARGE <$Starcount10> 6
+LARGE <$Starcount11> 6
+#ACT
+MOV S$星星内观特效 6350
+MOV S$星星外观特效 50695
+MOV S$星星BULL 200
+MOV S$锁链 7
+mov  S$锁链加成 2
+Goto @执行套装赋值
+BREAK
+
+#IF
+#ACT
+UpdateEquipEffect 0 1
+CLEARPLAYEFFECT <$STR(S$星星外观特效)>
+MOV N$锁链  0
+MOV N$锁链加成  0
+MOV N$星星BULL 0
+#call [\元素刷新.txt] @元素刷新
+BREAK
+
+[@执行套装赋值]
+#IF
+#ACT
+UpdateEquipEffect <$STR(S$星星内观特效)> 1
+PLAYEFFECT <$STR(S$星星外观特效)> 0 10 0 1
+MOV n$星星BULL <$STR(S$星星BULL)>
+MOV N$锁链 <$STR(S$锁链)>
+mov  n$锁链加成 <$STR(S$锁链加成)>
+#call [\元素刷新.txt] @元素刷新
+BREAK
+}
+[@执行套装赋值1]
+{
+#IF
+#ACT
+UpdateEquipEffect 0 1
+CLEARPLAYEFFECT <$STR(S$星星外观特效)>
+MOV N$锁链  0
+MOV N$锁链加成  0
+MOV N$星星BULL 0
+#call [\元素刷新.txt] @元素刷新
+BREAK
+}

@@ -1,0 +1,653 @@
+[@启动状态按钮]
+{
+#IF
+#ACT
+MOV N$状态流水号 20
+MOV N$捐献状态 0
+MOV N$转生状态 0
+MOV N$加官进爵状态 0
+MOV S$钻石会员状态
+MOV S$武林至尊状态
+MOV S$最强王者状态
+MOV S$个人捐献状态
+MOV S$火龙之力状态
+MOV S$转生状态
+MOV S$加官进爵状态
+MOV S$元神嗜血状态
+MOV S$元神穿扬状态
+MOV S$元神强化状态
+MOV S$元神精准状态
+MOV S$元神强身状态
+MOV S$火龙元神状态
+
+MOV N$会员显示 0
+MOV S$属性名称1
+MOV N$属性值1 0
+MOV S$属性名称2
+MOV N$属性值2 0
+MOV S$属性名称3
+MOV N$属性值3 0
+MOV S$属性名称4
+MOV N$属性值4 0
+
+
+#IF
+EQUAL U13 1
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 打怪爆率
+MOV N$属性值1 5
+#IF
+EQUAL U13 2
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 10
+MOV S$属性名称2 双防增加
+MOV N$属性值2 10
+MOV S$属性名称3 打怪爆率
+MOV N$属性值3 10
+#IF
+EQUAL U13 3
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 20
+MOV S$属性名称2 双防增加
+MOV N$属性值2 20
+MOV S$属性名称3 打怪爆率
+MOV N$属性值3 15
+#IF
+EQUAL U13 4
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 40
+MOV S$属性名称2 双防增加
+MOV N$属性值2 40
+MOV S$属性名称3 打怪爆率
+MOV N$属性值3 15
+#IF
+EQUAL U13 5
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 60
+MOV S$属性名称2 双防增加
+MOV N$属性值2 60
+MOV S$属性名称3 打怪爆率
+MOV N$属性值3 15
+#IF
+EQUAL U13 6
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 80
+MOV S$属性名称2 双防增加
+MOV N$属性值2 80
+MOV S$属性名称3 打怪爆率
+MOV N$属性值3 25
+MOV S$属性名称4 对怪增伤
+MOV N$属性值4 10
+#IF
+EQUAL U13 7
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 110
+MOV S$属性名称2 双防增加
+MOV N$属性值2 110
+MOV S$属性名称3 打怪爆率
+MOV N$属性值3 30
+MOV S$属性名称4 对怪增伤
+MOV N$属性值4 15
+#IF
+EQUAL U13 8
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 140
+MOV S$属性名称2 双防增加
+MOV N$属性值2 140
+MOV S$属性名称3 打怪爆率
+MOV N$属性值3 35
+MOV S$属性名称4 对怪增伤
+MOV N$属性值4 15
+#IF
+EQUAL U13 9
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 180
+MOV S$属性名称2 双防增加
+MOV N$属性值2 180
+MOV S$属性名称3 打怪爆率
+MOV N$属性值3 40
+MOV S$属性名称4 对怪增伤
+MOV N$属性值4 20
+#IF
+EQUAL U13 10
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 230
+MOV S$属性名称2 双防增加
+MOV N$属性值2 230
+MOV S$属性名称3 无视伤害
+MOV N$属性值3 5
+MOV S$属性名称4 对怪增伤
+MOV N$属性值4 20
+#IF
+EQUAL U13 11
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 310
+MOV S$属性名称2 双防增加
+MOV N$属性值2 310
+MOV S$属性名称3 无视伤害
+MOV N$属性值3 5
+MOV S$属性名称4 对怪增伤
+MOV N$属性值4 25
+#IF
+EQUAL U13 12
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 410
+MOV S$属性名称2 双防增加
+MOV N$属性值2 410
+MOV S$属性名称3 无视伤害
+MOV N$属性值3 5
+MOV S$属性名称4 对怪增伤
+MOV N$属性值4 25
+#IF
+EQUAL U13 13
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 560
+MOV S$属性名称2 双防增加
+MOV N$属性值2 560
+MOV S$属性名称3 无视伤害
+MOV N$属性值3 5
+MOV S$属性名称4 对怪增伤
+MOV N$属性值4 30
+#IF
+EQUAL U13 14
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 760
+MOV S$属性名称2 双防增加
+MOV N$属性值2 760
+MOV S$属性名称3 无视伤害
+MOV N$属性值3 5
+MOV S$属性名称4 对怪增伤
+MOV N$属性值4 30
+#IF
+EQUAL U13 15
+#ACT
+MOV N$会员显示 1
+MOV S$属性名称1 攻魔道
+MOV N$属性值1 1060
+MOV S$属性名称2 双防增加
+MOV N$属性值2 1060
+MOV S$属性名称3 无视伤害
+MOV N$属性值3 10
+MOV S$属性名称4 对怪增伤
+MOV N$属性值4 50
+
+#IF
+EQUAL N$会员显示 1
+#ACT
+INC N$状态流水号 1
+MOV S$最强王者状态 <Layout|id=<$STR(N$状态流水号)>|children={<$STR(N$状态流水号)>0,<$STR(N$状态流水号)>1}|width=360|height=70|color=x>
+INC S$最强王者状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>01}|img=custom/hl/equip_xlqh/xyqh_dj.png|x=10|y=1>
+INC S$最强王者状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/vip<$STR(U13)>.png>
+INC S$最强王者状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
+INC S$最强王者状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
+INC S$最强王者状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=VIP<$STR(U13)>>
+INC S$最强王者状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+INC S$最强王者状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
+INC S$最强王者状态 <Layout|id=<$STR(N$状态流水号)>13|children={<$STR(N$状态流水号)>131}|width=150|height=22|color=x|y=42>
+INC S$最强王者状态 <Layout|id=<$STR(N$状态流水号)>14|children={<$STR(N$状态流水号)>141}|width=150|height=22|color=x|x=150|y=21>
+INC S$最强王者状态 <Layout|id=<$STR(N$状态流水号)>15|children={<$STR(N$状态流水号)>151}|width=150|height=22|color=x|x=150|y=42>
+
+#IF
+EQUAL N$会员显示 1
+EQUAL S$属性名称1 打怪爆率
+#ACT
+INC S$最强王者状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=<$STR(S$属性名称1)>:<$STR(N$属性值1)>%>
+#IF
+EQUAL N$会员显示 1
+NOT EQUAL S$属性名称1 打怪爆率
+#ACT
+INC S$最强王者状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=<$STR(S$属性名称1)>:<$STR(N$属性值1)>-<$STR(N$属性值1)>>
+
+#IF
+EQUAL N$会员显示 1
+NOT EQUAL S$属性名称2
+#ACT
+INC S$最强王者状态 <Text|id=<$STR(N$状态流水号)>131|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=<$STR(S$属性名称2)>:<$STR(N$属性值2)>-<$STR(N$属性值2)>>
+
+#IF
+EQUAL N$会员显示 1
+NOT EQUAL S$属性名称3
+#ACT
+INC S$最强王者状态 <Text|id=<$STR(N$状态流水号)>141|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=<$STR(S$属性名称3)>:<$STR(N$属性值3)>%>
+#IF
+EQUAL N$会员显示 1
+NOT EQUAL S$属性名称4
+#ACT
+INC S$最强王者状态 <Text|id=<$STR(N$状态流水号)>151|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=<$STR(S$属性名称4)>:<$STR(N$属性值4)>%>
+
+
+#IF
+EQUAL A201 <$USERNAME>
+#ACT
+MOV N$捐献攻击 100
+MOV N$捐献减伤 10
+MOV N$捐献增伤 5
+MOV N$捐献状态 1
+#IF
+EQUAL A202 <$USERNAME>
+#ACT
+MOV N$捐献攻击 70
+MOV N$捐献减伤 8
+MOV N$捐献增伤 4
+MOV N$捐献状态 1
+#IF
+EQUAL A203 <$USERNAME>
+#ACT
+MOV N$捐献攻击 50
+MOV N$捐献减伤 6
+MOV N$捐献增伤 3
+MOV N$捐献状态 1
+#IF
+EQUAL A204 <$USERNAME>
+#ACT
+MOV N$捐献攻击 20
+MOV N$捐献减伤 4
+MOV N$捐献增伤 2
+MOV N$捐献状态 1
+#IF
+EQUAL A205 <$USERNAME>
+#ACT
+MOV N$捐献攻击 10
+MOV N$捐献减伤 3
+MOV N$捐献增伤 2
+MOV N$捐献状态 1
+#OR
+EQUAL A206 <$USERNAME>
+EQUAL A207 <$USERNAME>
+EQUAL A208 <$USERNAME>
+EQUAL A209 <$USERNAME>
+EQUAL A210 <$USERNAME>
+#ACT
+MOV N$捐献攻击 5
+MOV N$捐献减伤 2
+MOV N$捐献增伤 1
+MOV N$捐献状态 1
+#IF
+NOT EQUAL A201 <$USERNAME>
+NOT EQUAL A202 <$USERNAME>
+NOT EQUAL A203 <$USERNAME>
+NOT EQUAL A204 <$USERNAME>
+NOT EQUAL A205 <$USERNAME>
+NOT EQUAL A206 <$USERNAME>
+NOT EQUAL A207 <$USERNAME>
+NOT EQUAL A208 <$USERNAME>
+NOT EQUAL A209 <$USERNAME>
+NOT EQUAL A210 <$USERNAME>
+CHECKVAR HUMAN 捐献灵符 > 0
+CHECKVAR HUMAN 捐献灵符 < 200
+#ACT
+MOV N$捐献攻击 1
+MOV N$捐献减伤 1
+MOV N$捐献状态 1
+#IF
+EQUAL N$捐献状态 1
+#ACT
+INC N$状态流水号 1
+MOV S$个人捐献状态 <Layout|id=<$STR(N$状态流水号)>|children={<$STR(N$状态流水号)>0,<$STR(N$状态流水号)>1}|width=360|height=70|color=x>
+INC S$个人捐献状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>01}|img=custom/hl/equip_xlqh/xyqh_dj.png|x=10|y=1>
+INC S$个人捐献状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/buff_5.png>
+INC S$个人捐献状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
+INC S$个人捐献状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
+INC S$个人捐献状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=个人捐献>
+INC S$个人捐献状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+INC S$个人捐献状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
+INC S$个人捐献状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=攻魔道:<$STR(N$捐献攻击)>-<$STR(N$捐献攻击)>>
+INC S$个人捐献状态 <Layout|id=<$STR(N$状态流水号)>13|children={<$STR(N$状态流水号)>131}|width=150|height=22|color=x|y=42>
+INC S$个人捐献状态 <Text|id=<$STR(N$状态流水号)>131|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=捐献减伤:<$STR(N$捐献减伤)>%>
+#IF
+EQUAL N$捐献状态 1
+LARGE N$捐献增伤 0
+#ACT
+INC S$个人捐献状态 <Layout|id=<$STR(N$状态流水号)>14|children={<$STR(N$状态流水号)>141}|width=150|height=22|color=x|x=150|y=21>
+INC S$个人捐献状态 <Text|id=<$STR(N$状态流水号)>141|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=捐献增伤:<$STR(N$捐献增伤)>%>
+
+#IF
+CHECK [200] 1
+#ACT
+INC N$状态流水号 1
+MOV S$火龙之力状态 <Layout|id=<$STR(N$状态流水号)>|children={<$STR(N$状态流水号)>0,<$STR(N$状态流水号)>1}|width=360|height=70|color=x>
+INC S$火龙之力状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>01}|img=custom/hl/equip_xlqh/xyqh_dj.png|x=10|y=1>
+INC S$火龙之力状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/buff_6.png>
+INC S$火龙之力状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
+INC S$火龙之力状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
+INC S$火龙之力状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=火龙之力>
+INC S$火龙之力状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+INC S$火龙之力状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
+INC S$火龙之力状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=攻魔道:100-100>
+INC S$火龙之力状态 <Layout|id=<$STR(N$状态流水号)>13|children={<$STR(N$状态流水号)>131}|width=150|height=22|color=x|y=42>
+INC S$火龙之力状态 <Text|id=<$STR(N$状态流水号)>131|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=打怪爆率:15%>
+INC S$火龙之力状态 <Layout|id=<$STR(N$状态流水号)>14|children={<$STR(N$状态流水号)>141}|width=150|height=22|color=x|x=150|y=21>
+INC S$火龙之力状态 <Text|id=<$STR(N$状态流水号)>141|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=双防:30-30>
+INC S$火龙之力状态 <Layout|id=<$STR(N$状态流水号)>15|children={<$STR(N$状态流水号)>151}|width=150|height=22|color=x|x=150|y=42>
+INC S$火龙之力状态 <Text|id=<$STR(N$状态流水号)>151|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=装备回收:20%>
+#IF
+EQUAL <$RELEVEL> 1
+#ACT
+MOV N$转生血量_状态 100
+MOV N$转生蓝量_状态 50
+MOV N$转生攻击_下 0
+MOV N$转生攻击_上 10
+MOV N$转生状态 1
+#IF
+EQUAL <$RELEVEL> 2
+#ACT
+MOV N$转生血量_状态 300
+MOV N$转生蓝量_状态 150
+MOV N$转生攻击_下 5
+MOV N$转生攻击_上 20
+MOV N$转生状态 1
+#IF
+EQUAL <$RELEVEL> 3
+#ACT
+MOV N$转生血量_状态 400
+MOV N$转生蓝量_状态 200
+MOV N$转生攻击_下 10
+MOV N$转生攻击_上 30
+MOV N$转生状态 1
+#IF
+EQUAL <$RELEVEL> 4
+#ACT
+MOV N$转生血量_状态 500
+MOV N$转生蓝量_状态 250
+MOV N$转生攻击_下 20
+MOV N$转生攻击_上 40
+MOV N$转生状态 1
+#IF
+EQUAL <$RELEVEL> 5
+#ACT
+MOV N$转生血量_状态 600
+MOV N$转生蓝量_状态 300
+MOV N$转生攻击_下 30
+MOV N$转生攻击_上 50
+MOV N$转生状态 1
+#IF
+EQUAL <$RELEVEL> 6
+#ACT
+MOV N$转生血量_状态 700
+MOV N$转生蓝量_状态 350
+MOV N$转生攻击_下 40
+MOV N$转生攻击_上 60
+MOV N$转生状态 1
+#IF
+EQUAL <$RELEVEL> 7
+#ACT
+MOV N$转生血量_状态 800
+MOV N$转生蓝量_状态 400
+MOV N$转生攻击_下 50
+MOV N$转生攻击_上 70
+MOV N$转生状态 1
+#IF
+EQUAL <$RELEVEL> 8
+#ACT
+MOV N$转生血量_状态 900
+MOV N$转生蓝量_状态 450
+MOV N$转生攻击_下 60
+MOV N$转生攻击_上 80
+MOV N$转生状态 1
+#IF
+EQUAL <$RELEVEL> 9
+#ACT
+MOV N$转生血量_状态 1000
+MOV N$转生蓝量_状态 500
+MOV N$转生攻击_下 70
+MOV N$转生攻击_上 90
+MOV N$转生状态 1
+#IF
+EQUAL <$RELEVEL> 10
+#ACT
+MOV N$转生血量_状态 1200
+MOV N$转生蓝量_状态 600
+MOV N$转生攻击_下 80
+MOV N$转生攻击_上 100
+MOV N$转生状态 1
+
+#IF
+EQUAL N$转生状态 1
+#ACT
+INC N$状态流水号 1
+MOV S$转生状态 <Layout|id=<$STR(N$状态流水号)>|children={<$STR(N$状态流水号)>0,<$STR(N$状态流水号)>1}|width=360|height=70|color=x>
+INC S$转生状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>01}|img=custom/hl/equip_xlqh/xyqh_dj.png|x=10|y=1>
+INC S$转生状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/buff_7.png>
+INC S$转生状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
+INC S$转生状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
+INC S$转生状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=转生>
+INC S$转生状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+INC S$转生状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
+INC S$转生状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=转生血量:<$STR(N$转生血量_状态)>>
+INC S$转生状态 <Layout|id=<$STR(N$状态流水号)>13|children={<$STR(N$状态流水号)>131}|width=150|height=22|color=x|y=42>
+INC S$转生状态 <Text|id=<$STR(N$状态流水号)>131|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=转生蓝量:<$STR(N$转生蓝量_状态)>>
+INC S$转生状态 <Layout|id=<$STR(N$状态流水号)>14|children={<$STR(N$状态流水号)>141}|width=150|height=22|color=x|x=150|y=21>
+INC S$转生状态 <Text|id=<$STR(N$状态流水号)>141|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=攻击增加:<$STR(N$转生攻击_下)>-<$STR(N$转生攻击_上)>>
+
+
+#IF
+EQUAL U23 1
+#ACT
+MOV N$加官进爵攻击_下 1
+MOV N$加官进爵攻击_上 3
+MOV N$加官进爵爆率 1
+MOV N$加官进爵状态 1
+#IF
+EQUAL U23 2
+#ACT
+MOV N$加官进爵攻击_下 2
+MOV N$加官进爵攻击_上 5
+MOV N$加官进爵爆率 2
+MOV N$加官进爵状态 1
+#IF
+EQUAL U23 3
+#ACT
+MOV N$加官进爵攻击_下 3
+MOV N$加官进爵攻击_上 7
+MOV N$加官进爵爆率 3
+MOV N$加官进爵状态 1
+#IF
+EQUAL U23 4
+#ACT
+MOV N$加官进爵攻击_下 4
+MOV N$加官进爵攻击_上 10
+MOV N$加官进爵爆率 5
+MOV N$加官进爵状态 1
+#IF
+EQUAL U23 5
+#ACT
+MOV N$加官进爵攻击_下 5
+MOV N$加官进爵攻击_上 15
+MOV N$加官进爵爆率 7
+MOV N$加官进爵状态 1
+#IF
+EQUAL U23 6
+#ACT
+MOV N$加官进爵攻击_下 6
+MOV N$加官进爵攻击_上 20
+MOV N$加官进爵爆率 9
+MOV N$加官进爵状态 1
+#IF
+EQUAL U23 7
+#ACT
+MOV N$加官进爵攻击_下 7
+MOV N$加官进爵攻击_上 25
+MOV N$加官进爵爆率 11
+MOV N$加官进爵状态 1
+#IF
+EQUAL U23 8
+#ACT
+MOV N$加官进爵攻击_下 8
+MOV N$加官进爵攻击_上 30
+MOV N$加官进爵爆率 13
+MOV N$加官进爵状态 1
+#IF
+EQUAL U23 9
+#ACT
+MOV N$加官进爵攻击_下 9
+MOV N$加官进爵攻击_上 35
+MOV N$加官进爵爆率 15
+MOV N$加官进爵状态 1
+#IF
+EQUAL U23 10
+#ACT
+MOV N$加官进爵攻击_下 11
+MOV N$加官进爵攻击_上 40
+MOV N$加官进爵爆率 17
+MOV N$加官进爵状态 1
+#IF
+EQUAL U23 11
+#ACT
+MOV N$加官进爵攻击_下 13
+MOV N$加官进爵攻击_上 50
+MOV N$加官进爵爆率 20
+MOV N$加官进爵状态 1
+#IF
+EQUAL N$加官进爵状态 1
+#ACT
+INC N$状态流水号 1
+MOV S$加官进爵状态 <Layout|id=<$STR(N$状态流水号)>|children={<$STR(N$状态流水号)>0,<$STR(N$状态流水号)>1}|width=360|height=70|color=x>
+INC S$加官进爵状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>01}|img=custom/hl/equip_xlqh/xyqh_dj.png|x=10|y=1>
+INC S$加官进爵状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/buff_8.png>
+INC S$加官进爵状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
+INC S$加官进爵状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
+INC S$加官进爵状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=加官进爵>
+INC S$加官进爵状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+INC S$加官进爵状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
+INC S$加官进爵状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=攻魔道:<$STR(N$加官进爵攻击_下)>-<$STR(N$加官进爵攻击_上)>>
+INC S$加官进爵状态 <Layout|id=<$STR(N$状态流水号)>13|children={<$STR(N$状态流水号)>131}|width=150|height=22|color=x|y=42>
+INC S$加官进爵状态 <Text|id=<$STR(N$状态流水号)>131|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=打怪爆率:<$STR(N$加官进爵爆率)>%>
+
+#IF
+LARGE U1 0
+#ACT
+INC N$状态流水号 1
+MOV S$元神嗜血状态 <Layout|id=<$STR(N$状态流水号)>|children={<$STR(N$状态流水号)>0,<$STR(N$状态流水号)>1}|width=360|height=70|color=x>
+INC S$元神嗜血状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>01}|img=custom/hl/equip_xlqh/xyqh_dj.png|x=10|y=1>
+INC S$元神嗜血状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/buff_13.png>
+INC S$元神嗜血状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
+INC S$元神嗜血状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
+INC S$元神嗜血状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=嗜血>
+INC S$元神嗜血状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+INC S$元神嗜血状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
+INC S$元神嗜血状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=攻击吸血:<$STR(U1)>%>
+
+#IF
+LARGE U2 0
+#ACT
+INC N$状态流水号 1
+MOV S$元神穿扬状态 <Layout|id=<$STR(N$状态流水号)>|children={<$STR(N$状态流水号)>0,<$STR(N$状态流水号)>1}|width=360|height=70|color=x>
+INC S$元神穿扬状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>01}|img=custom/hl/equip_xlqh/xyqh_dj.png|x=10|y=1>
+INC S$元神穿扬状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/buff_9.png>
+INC S$元神穿扬状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
+INC S$元神穿扬状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
+INC S$元神穿扬状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=穿扬>
+INC S$元神穿扬状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+INC S$元神穿扬状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
+INC S$元神穿扬状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=忽视防御:<$STR(U2)>%>
+
+#IF
+LARGE U3 0
+#ACT
+INC N$状态流水号 1
+MOV S$元神强化状态 <Layout|id=<$STR(N$状态流水号)>|children={<$STR(N$状态流水号)>0,<$STR(N$状态流水号)>1}|width=360|height=70|color=x>
+INC S$元神强化状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>01}|img=custom/hl/equip_xlqh/xyqh_dj.png|x=10|y=1>
+INC S$元神强化状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/buff_11.png>
+INC S$元神强化状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
+INC S$元神强化状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
+INC S$元神强化状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=强化>
+INC S$元神强化状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+INC S$元神强化状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
+INC S$元神强化状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=伤害加成:<$STR(U3)>%>
+
+#IF
+LARGE U4 0
+#ACT
+INC N$状态流水号 1
+MOV S$元神精准状态 <Layout|id=<$STR(N$状态流水号)>|children={<$STR(N$状态流水号)>0,<$STR(N$状态流水号)>1}|width=360|height=70|color=x>
+INC S$元神精准状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>01}|img=custom/hl/equip_xlqh/xyqh_dj.png|x=10|y=1>
+INC S$元神精准状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/buff_10.png>
+INC S$元神精准状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
+INC S$元神精准状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
+INC S$元神精准状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=精准>
+INC S$元神精准状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+INC S$元神精准状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
+INC S$元神精准状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=暴击几率:<$STR(U4)>%>
+#IF
+LARGE U5 0
+#ACT
+INC N$状态流水号 1
+MOV S$元神强身状态 <Layout|id=<$STR(N$状态流水号)>|children={<$STR(N$状态流水号)>0,<$STR(N$状态流水号)>1}|width=360|height=70|color=x>
+INC S$元神强身状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>01}|img=custom/hl/equip_xlqh/xyqh_dj.png|x=10|y=1>
+INC S$元神强身状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/buff_12.png>
+INC S$元神强身状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
+INC S$元神强身状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
+INC S$元神强身状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=强身>
+INC S$元神强身状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+INC S$元神强身状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
+INC S$元神强身状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=血量加成:<$STR(U5)>%>
+#IF
+LARGE U17 0
+#ACT
+INC N$状态流水号 1
+MOV S$火龙元神状态 <Layout|id=<$STR(N$状态流水号)>|children={<$STR(N$状态流水号)>0,<$STR(N$状态流水号)>1}|width=360|height=70|color=x>
+INC S$火龙元神状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>01}|img=custom/hl/equip_xlqh/xyqh_dj.png|x=10|y=1>
+INC S$火龙元神状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/buff_14.png>
+INC S$火龙元神状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
+INC S$火龙元神状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
+INC S$火龙元神状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=火龙元神>
+INC S$火龙元神状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
+INC S$火龙元神状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
+INC S$火龙元神状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=攻魔道:0-<$STR(U17)>>
+INC S$火龙元神状态 <Layout|id=<$STR(N$状态流水号)>13|children={<$STR(N$状态流水号)>131}|width=150|height=22|color=x|y=42>
+INC S$火龙元神状态 <Text|id=<$STR(N$状态流水号)>131|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=增加血量:<$STR(U18)>>
+INC S$火龙元神状态 <Layout|id=<$STR(N$状态流水号)>14|children={<$STR(N$状态流水号)>141}|width=150|height=22|color=x|x=150|y=21>
+INC S$火龙元神状态 <Text|id=<$STR(N$状态流水号)>141|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=增加蓝量:<$STR(U18)>>
+INC S$火龙元神状态 <Layout|id=<$STR(N$状态流水号)>15|children={<$STR(N$状态流水号)>151}|width=150|height=22|color=x|x=150|y=42>
+INC S$火龙元神状态 <Text|id=<$STR(N$状态流水号)>151|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=防御魔御:0-<$STR(U17)>>
+
+#IF
+#ACT
+#SAY
+<Img|children={0,2,3,4,5,6,7,8,9}|show=4|bg=1|width=648|height=282|scale9l=10|scale9r=10|scale9t=10|scale9b=10|img=custom/hl/buff_ui/buff_bg.png>
+<Layout|id=0|a=4|percentx=50|percenty=50|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|color=x|link=@exit>
+<Img|id=3|img=public/1900000667_1.png|a=4|percentx=50|percenty=5|width=380>
+<Img|id=4|img=public/1900000667_1.png|a=4|percentx=50|percenty=95|width=380>
+<ListView|id=2|children={21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40}|a=4|percentx=50|percenty=50|width=380|height=240|margin=2|bounce=0|direction=1|color=x>
+<$str(S$钻石会员状态)>
+<$str(S$武林至尊状态)>
+<$str(S$最强王者状态)>
+<$str(S$个人捐献状态)>
+<$str(S$火龙之力状态)>
+<$str(S$转生状态)>
+<$str(S$加官进爵状态)>
+<$str(S$元神嗜血状态)>
+<$str(S$元神穿扬状态)>
+<$str(S$元神强化状态)>
+<$str(S$元神精准状态)>
+<$str(S$元神强身状态)>
+<$str(S$火龙元神状态)>
+
+}

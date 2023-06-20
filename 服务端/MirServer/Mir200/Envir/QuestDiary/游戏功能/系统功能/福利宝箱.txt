@@ -1,0 +1,306 @@
+[@启动福利宝箱]
+{
+#IF
+equal N$开启福利宝箱 0
+#ACT
+BREAK
+#IF
+NOT INSAFEZONE
+#ACT
+GiveStateItem 火龙秘宝 1 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#ff0000'>请移步安全区开启！</font>
+close
+OPENHYPERLINK 7
+BREAK
+#IF
+#ACT
+GETBAGITEMCOUNT 火龙秘宝 N1
+MOV N$临时拥有数 <$STR(N1)>
+MOV N$秘宝宝箱数量 1
+MOV S$宝箱选择显示
+MOV N$秘宝开启成功 0
+MOV T201 火龙秘宝
+MOV N$打开火龙秘宝 1
+GOTO @清空选择项
+GOTO @福利宝箱界面显示
+
+[@福利宝箱界面显示]
+#IF
+LARGE N$临时拥有数 1
+#ACT
+MOV S$宝箱选择显示 <Img|id=6|children={621,622,623,624,625}|x=120.0|y=165.0|img=public/1900000678.png|width=90>
+INC S$宝箱选择显示 <Button|id=621|x=-20|y=-4|submitInput=3|nimg=public/1900000620_1.png|pimg=public/1900000620.png|color=103|size=18|link=@秘宝减灵符>
+INC S$宝箱选择显示 <Button|id=622|x=68|y=-2|submitInput=3|nimg=public/1900000621_1.png|pimg=public/1900000621.png|color=103|size=18|link=@秘宝加灵符>
+INC S$宝箱选择显示 <Layout|id=623|x=-16|y=-1|submitInput=3|width=30|height=30|color=x|link=@秘宝减灵符>
+INC S$宝箱选择显示 <Layout|id=624|x=121|y=-1|submitInput=3|width=30|height=30|color=x|link=@秘宝加灵符>
+INC S$宝箱选择显示 <Input|id=625|inputid=3|type=1|x=17|y=0|width=60|height=32|color=254|size=18|mincount=6|maxcount=12|errortips=3|text=<$STR(N$秘宝宝箱数量)>|submitInput=3|reload=1|link=@秘宝自行输入>
+MOV S$宝箱领取显示 <Button|id=5|a=4|percentx=65|percenty=83|submitInput=3|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=领取奖励|link=@领取福利宝箱奖励>
+#ELSEACT
+MOV S$宝箱选择显示
+MOV S$宝箱领取显示 <Button|id=5|a=4|percentx=50|percenty=83|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=领取奖励|link=@领取福利宝箱奖励>
+
+#IF
+#ACT
+#SAY
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|img=custom/hl/hl_ui/tsbj.png|show=5|bg=1|layerid=679>
+<Layout|id=0|children={1}|x=452|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=170|y=8|width=120|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=火龙秘宝>
+<Text|id=3|a=4|percentx=50|percenty=30|color=250|size=18|outline=2|outlinecolor=0|text=请任选其中一件作为奖品>
+<ListView|id=4|children={41,42,43,44}|a=4|percentx=50|percenty=55|width=330|height=75|margin=10|bounce=0|direction=2|color=x>
+<Img|id=41|children={410,411}|img=custom/hl/equal_hc/hlhc_06.png|width=75|height=75>
+<ItemShow|id=410|x=3|y=3|itemid=40001|itemcount=30|showtips=1|link=@选择福利宝箱1>
+<Img|id=411|img=custom/hl/hl_ui/<$str(S$宝箱选择1)>.png|width=75|height=75>
+<Img|id=42|children={420,421}|img=custom/hl/equal_hc/hlhc_06.png|width=75|height=75>
+<ItemShow|id=420|x=3|y=3|itemid=40002|itemcount=30|showtips=1|link=@选择福利宝箱2>
+<Img|id=421|img=custom/hl/hl_ui/<$str(S$宝箱选择2)>.png|width=75|height=75>
+<Img|id=43|children={430,431}|img=custom/hl/equal_hc/hlhc_06.png|width=75|height=75>
+<ItemShow|id=430|x=3|y=3|itemid=40003|itemcount=30|showtips=1|link=@选择福利宝箱3>
+<Img|id=431|img=custom/hl/hl_ui/<$str(S$宝箱选择3)>.png|width=75|height=75>
+<Img|id=44|children={440,441}|img=custom/hl/equal_hc/hlhc_06.png|width=75|height=75>
+<ItemShow|id=440|x=3|y=3|itemid=40004|itemcount=30|showtips=1|link=@选择福利宝箱4>
+<Img|id=441|img=custom/hl/hl_ui/<$str(S$宝箱选择4)>.png|width=75|height=75>
+;<Button|id=5|a=4|percentx=50|percenty=83|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=领取奖励|link=@领取福利宝箱奖励>
+<$str(S$宝箱领取显示)>
+<$str(S$宝箱选择显示)>
+
+
+[@秘宝自行输入]
+#IF
+#ACT
+GETBAGITEMCOUNT 火龙秘宝 N1
+MOV N$临时拥有数 <$STR(N1)>
+#IF
+LARGE <$NPCINPUT(3)> <$STR(N$临时拥有数)>
+#ACT
+MOV N$秘宝宝箱数量 <$STR(N$临时拥有数)>
+INC N$秘宝宝箱数量 1
+GOTO @福利宝箱界面显示
+BREAK
+#IF
+SMALL <$NPCINPUT(3)> 2
+#ACT
+MOV N$秘宝宝箱数量 1
+GOTO @福利宝箱界面显示
+BREAK
+[@秘宝减灵符]
+#IF
+SMALL <$NPCINPUT(3)> 2
+#ACT
+MOV N$秘宝宝箱数量 <$NPCINPUT(3)>
+SENDMSG 9 <font color='#ff0000'>开启宝箱个数不能少于1</font>
+GOTO @福利宝箱界面显示
+BREAK
+#ELSEACT
+MOV N$临时输入值 <$NPCINPUT(3)>
+DEC N$临时输入值 1
+MOV N$秘宝宝箱数量 <$STR(N$临时输入值)>
+GOTO @福利宝箱界面显示
+[@秘宝加灵符]
+#IF
+#ACT
+GETBAGITEMCOUNT 火龙秘宝 N1
+MOV N$临时拥有数 <$STR(N1)>
+#IF
+NOT LARGE <$NPCINPUT(3)> <$STR(N$临时拥有数)>
+#ACT
+MOV N$临时输入值 <$NPCINPUT(3)>
+INC N$临时输入值 1
+MOV N$秘宝宝箱数量 <$STR(N$临时输入值)>
+GOTO @福利宝箱界面显示
+#ELSEACT
+MOV N$秘宝宝箱数量 <$NPCINPUT(3)>
+SENDMSG 9 <font color='#ff0000'>背包的宝箱数量不足！</font>
+GOTO @福利宝箱界面显示
+BREAK
+
+[@选择福利宝箱1]
+#IF
+#ACT
+GOTO @清空选择项
+MOV S$宝箱选择1 hl_xz_01
+GOTO @福利宝箱界面显示
+[@选择福利宝箱2]
+#IF
+#ACT
+GOTO @清空选择项
+MOV S$宝箱选择2 hl_xz_01
+GOTO @福利宝箱界面显示
+[@选择福利宝箱3]
+#IF
+#ACT
+GOTO @清空选择项
+MOV S$宝箱选择3 hl_xz_01
+GOTO @福利宝箱界面显示
+[@选择福利宝箱4]
+#IF
+#ACT
+GOTO @清空选择项
+MOV S$宝箱选择4 hl_xz_01
+GOTO @福利宝箱界面显示
+
+[@领取福利宝箱奖励]
+#IF
+equal N$开启福利宝箱 0
+#ACT
+BREAK
+#ELSEACT
+MOV N$开启福利宝箱 0
+
+#IF
+EQUAL S$宝箱选择1
+EQUAL S$宝箱选择2
+EQUAL S$宝箱选择3
+EQUAL S$宝箱选择4
+#ACT
+MOV N$开启福利宝箱 1
+SENDMSG 9 <font color='#00ff00'>尚未选择您的奖品！</font>
+BREAK
+
+#IF
+#ACT
+MOV N$秘宝开启成功 1
+GETBAGITEMCOUNT 火龙秘宝 N1
+#IF
+EQUAL N1 0
+EQUAL N$秘宝开启成功 1
+#ACT
+GOTO @秘宝宝箱单个开启
+BREAK
+#IF
+EQUAL <$NPCINPUT(3)> 1
+EQUAL N$秘宝开启成功 1
+#ACT
+GOTO @秘宝宝箱单个开启
+BREAK
+
+#IF
+SMALL <$NPCINPUT(3)> <$STR(N1)>
+#ACT
+MOV N$临时拥有数 <$NPCINPUT(3)>
+MOV N$秘宝宝箱数量 <$NPCINPUT(3)>
+DEC N$秘宝宝箱数量 1
+INC N$临时拥有数
+MOV N$宝箱给出数量 <$STR(N$临时拥有数)>
+#IF
+LARGE <$NPCINPUT(3)> <$STR(N1)>
+#ACT
+MOV N$宝箱给出数量 <$STR(N1)>
+INC N$宝箱给出数量 1
+#IF
+SMALL <$NPCINPUT(3)> 1
+#ACT
+MOV N$秘宝宝箱数量 0
+
+#IF
+EQUAL S$宝箱选择1 hl_xz_01
+#ACT
+MOV N$打开火龙秘宝 0
+close
+take 火龙秘宝 <$STR(N$秘宝宝箱数量)>
+MUL N$宝箱给出数量 30
+MOV N$秘宝开启成功 0
+GiveStateItem 洗髓丹 <$STR(N$宝箱给出数量)> 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#00ff00'>奖励领取成功！</font>
+OPENHYPERLINK 7
+BREAK
+#IF
+EQUAL S$宝箱选择2 hl_xz_01
+#ACT
+MOV N$打开火龙秘宝 0
+close
+take 火龙秘宝 <$STR(N$秘宝宝箱数量)>
+MUL N$宝箱给出数量 30
+MOV N$秘宝开启成功 0
+MOV T201
+GiveStateItem 恶魔头颅 <$STR(N$宝箱给出数量)> 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#00ff00'>奖励领取成功！</font>
+OPENHYPERLINK 7
+BREAK
+#IF
+EQUAL S$宝箱选择3 hl_xz_01
+#ACT
+MOV N$打开火龙秘宝 0
+close
+take 火龙秘宝 <$STR(N$秘宝宝箱数量)>
+MUL N$宝箱给出数量 30
+MOV N$秘宝开启成功 0
+MOV T201
+GiveStateItem 龍の魄 <$STR(N$宝箱给出数量)> 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#00ff00'>奖励领取成功！</font>
+OPENHYPERLINK 7
+BREAK
+#IF
+EQUAL S$宝箱选择4 hl_xz_01
+#ACT
+MOV N$打开火龙秘宝 0
+close
+take 火龙秘宝 <$STR(N$秘宝宝箱数量)>
+MUL N$宝箱给出数量 30
+MOV N$秘宝开启成功 0
+MOV T201
+GiveStateItem 龍の心 <$STR(N$宝箱给出数量)> 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#00ff00'>奖励领取成功！</font>
+OPENHYPERLINK 7
+BREAK
+
+[@秘宝宝箱单个开启]
+#IF
+EQUAL N$秘宝开启成功 0
+#ACT
+BREAK
+#IF
+EQUAL S$宝箱选择1 hl_xz_01
+#ACT
+MOV N$打开火龙秘宝 0
+MOV N$秘宝开启成功 0
+close
+MOV T201
+GiveStateItem 洗髓丹 30 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#00ff00'>奖励领取成功！</font>
+OPENHYPERLINK 7
+BREAK
+#IF
+EQUAL S$宝箱选择2 hl_xz_01
+#ACT
+MOV N$打开火龙秘宝 0
+MOV N$秘宝开启成功 0
+close
+MOV T201
+GiveStateItem 恶魔头颅 30 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#00ff00'>奖励领取成功！</font>
+OPENHYPERLINK 7
+BREAK
+#IF
+EQUAL S$宝箱选择3 hl_xz_01
+#ACT
+MOV N$打开火龙秘宝 0
+MOV N$秘宝开启成功 0
+close
+MOV T201
+GiveStateItem 龍の魄 30 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#00ff00'>奖励领取成功！</font>
+OPENHYPERLINK 7
+BREAK
+#IF
+EQUAL S$宝箱选择4 hl_xz_01
+#ACT
+MOV N$打开火龙秘宝 0
+MOV N$秘宝开启成功 0
+close
+MOV T201
+GiveStateItem 龍の心 30 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#00ff00'>奖励领取成功！</font>
+OPENHYPERLINK 7
+BREAK
+
+[@清空选择项]
+#IF
+#ACT
+MOV S$宝箱选择1
+MOV S$宝箱选择2
+MOV S$宝箱选择3
+MOV S$宝箱选择4
+
+}

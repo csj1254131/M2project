@@ -1,0 +1,69 @@
+[@启动行会召集]
+{
+
+#OR
+CheckContainsText <$MAPTITLE> 会员
+CheckContainsText <$MAP> hydt
+CheckContainsText <$MAPTITLE> 转
+CheckContainsText <$MAPTITLE> 级
+#ACT
+GIVE 行会召集令 1
+MESSAGEBOX 该地图禁止使用行会召集令
+BREAK
+#IF
+HAVEGUILD
+ISGUILDMASTER
+#ACT
+MOV N$行会集合 1
+GETGUILDINFO <$USERNAME> A231
+MOV A232 <$map>
+MOV A233 <$X>
+MOV A234 <$Y>
+sendmsg 7 一支穿云箭，千军万马来相见。行会召集已发出！
+GOTOLABEL 1 @行会召集
+#ELSEACT
+GIVE 行会召集令 1
+SENDMSG 9 <font color='#ff0000'>你不是掌门无法使用此物品</font>
+break
+
+[@行会召集]
+#IF
+#ACT
+GETGUILDINFO <$USERNAME> S$我的行会名
+#IF
+NOT ISGUILDMASTER
+EQUAL S$我的行会名 <$STR(A231)>
+#ACT
+MOV S$行会名 <$STR(A231)>
+MOV S$地图名 <$STR(A232)>
+MOV S$坐标X <$STR(A233)>
+MOV S$坐标Y <$STR(A234)>
+AddbutShow 52 协助掌门 @协助掌门
+AddbutShow 53 放弃掌门 @放弃掌门
+
+
+
+[@协助掌门]
+#IF
+#ACT
+GETGUILDINFO <$USERNAME> S$我的行会名
+
+#IF
+EQUAL S$我的行会名 <$STR(S$行会名)>
+#ACT
+MAPMOVE <$STR(S$地图名)> <$STR(S$坐标X)> <$STR(S$坐标Y)>
+DelbutShow 52
+DelbutShow 53
+#ELSEACT
+DelbutShow 52
+DelbutShow 53
+
+[@放弃掌门]
+#ACT
+DelbutShow 52
+DelbutShow 53
+
+
+
+
+}

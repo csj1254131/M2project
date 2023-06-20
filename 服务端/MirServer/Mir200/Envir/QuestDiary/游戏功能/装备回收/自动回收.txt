@@ -1,0 +1,218 @@
+[@自动回收]
+{
+#IF
+EQUAL U113 1
+#ACT
+Mov s$回收名称
+Mov n$回收结算 0
+Mov n$回收加成 0
+Mov s$递增回收标识
+Mov s$递增回收名称
+Mov s$对比回收标识
+Mov s$对比回收名称
+Mov n$回收元宝结算 0
+Mov n$回收经验结算 0
+Mov n$极品回收状态 0
+#ELSEACT
+BREAK
+#IF
+#ACT
+LoopBagItems @获取自动回收物品1 s$回收标识 s$回收名称
+SelectBagItems <$STR(S$递增回收标识)>
+Goto @执行自动快速回收1
+BREAK
+
+
+
+
+[@获取自动回收物品1]
+#IF
+EQUAL U155 1
+#ACT
+Mov s$检测文件 战士列表
+Goto @执行遍历列表回收
+#IF
+EQUAL U156 1
+#ACT
+Mov s$检测文件 法师列表
+Goto @执行遍历列表回收
+#IF
+EQUAL U157 1
+#ACT
+Mov s$检测文件 道士列表
+Goto @执行遍历列表回收
+#IF
+EQUAL U155 0
+EQUAL U156 0
+EQUAL U157 0
+#ACT
+Mov s$检测文件 回收列表
+Goto @执行遍历列表回收1
+BREAK
+
+[@执行遍历列表回收1]
+;检测物品是否在列表
+#IF
+CHECKTEXTLIST  ..\QuestDiary\游戏功能\装备回收\<$Str(s$检测文件)>.txt s$回收名称
+#ACT
+LINKITEMBYMAKEINDEX  <$str(s$回收标识)>
+#ELSEACT
+BREAK
+
+#IF
+EQUAL U152 1
+#ACT
+Mov n$极品回收状态 0
+Goto @忽略极品装备1
+break
+
+#or
+CheckItemupgradeCount 0 -1 > 0
+CHECKITEMADDVALUE -1 0   > 0
+CHECKITEMADDVALUE -1 1   > 0
+CHECKITEMADDVALUE -1 2   > 0
+CHECKITEMADDVALUE -1 3   > 0
+CHECKITEMADDVALUE -1 4   > 0
+CHECKITEMADDVALUE -1 5   > 0
+CHECKITEMADDVALUE -1 6   > 0
+CHECKITEMADDVALUE -1 7   > 0
+CHECKITEMADDVALUE -1 8   > 0
+CHECKITEMADDVALUE -1 9   > 0
+CHECKITEMADDVALUE -1 10 > 0
+CHECKITEMADDVALUE -1 11 > 0
+CHECKITEMADDVALUE -1 12 > 0
+CHECKITEMADDVALUE -1 13 > 0
+#act
+Mov n$极品回收状态 1
+BREAK
+
+#IF
+#ACT
+Goto @忽略极品装备1
+break
+
+[@忽略极品装备1]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\装备回收\回收价格.ini <$STR(s$回收名称)> 分类 s$回收分类
+ReadConfigFileItem ..\QuestDiary\游戏功能\装备回收\回收价格.ini <$STR(s$回收名称)> 元宝 s$回收元宝
+ReadConfigFileItem ..\QuestDiary\游戏功能\装备回收\回收价格.ini <$STR(s$回收名称)> 经验 s$回收经验
+
+
+#IF
+CheckContainsText <$STR(T99)> <$str(s$回收分类)>
+CHECKTEXTLIST  ..\QuestDiary\游戏功能\装备回收\叠加列表.txt s$回收名称
+#ACT
+GETBAGITEMCOUNT <$Str(s$回收名称)> N$叠加数量
+MUL N$叠加元宝 <$STR(N$叠加数量)> <$STR(s$回收元宝)>
+MUL N$叠加经验 <$STR(N$叠加数量)> <$STR(s$回收经验)>
+MOV s$回收元宝 <$STR(N$叠加元宝)>
+MOV s$回收经验 <$STR(N$叠加经验)>
+
+;检测分类是否在字符串中
+#IF
+CheckContainsText <$STR(T99)> <$str(s$回收分类)>
+#ACT
+Inc s$递增回收标识 <$STR(s$回收标识)>,
+Inc s$对比回收标识 <$STR(s$回收标识)>,
+Inc s$对比回收名称 <$STR(s$回收名称)>|
+Inc n$回收元宝结算 <$str(s$回收元宝)>
+Inc n$回收经验结算 <$str(s$回收经验)>
+;SelectBagItems <$STR(S$递增回收标识)>
+BREAK
+#ELSEACT
+BREAK
+
+
+[@执行自动快速回收1]
+#IF
+LARGE U13 0
+#ACT
+Mov n$回收加成 10
+#IF
+LARGE U13 2
+#ACT
+Mov n$回收加成 15
+#IF
+LARGE U13 4
+#ACT
+Mov n$回收加成 20
+#IF
+LARGE U13 5
+#ACT
+Mov n$回收加成 25
+#IF
+LARGE U13 6
+#ACT
+Mov n$回收加成 30
+#IF
+LARGE U13 7
+#ACT
+Mov n$回收加成 35
+#IF
+LARGE U13 8
+#ACT
+Mov n$回收加成 40
+#IF
+LARGE U13 9
+#ACT
+Mov n$回收加成 45
+#IF
+LARGE U13 10
+#ACT
+Mov n$回收加成 50
+#IF
+LARGE U13 11
+#ACT
+Mov n$回收加成 55
+#IF
+LARGE U13 12
+#ACT
+Mov n$回收加成 60
+#IF
+LARGE U13 13
+#ACT
+Mov n$回收加成 65
+#IF
+LARGE U13 14
+#ACT
+Mov n$回收加成 70
+
+
+#IF
+check [200] 1
+#ACT
+INC n$回收加成 20
+
+#IF
+LARGE s$回收元宝 0
+EQUAL s$对比回收标识 <$STR(S$递增回收标识)>
+#ACT
+TakeBagItem <$STR(s$对比回收名称)> 46 n$回收记录 <$STR(n$极品回收状态)>
+CalcPer <$STR(n$回收元宝结算)> <$str(n$回收加成)> N0
+Inc n$回收元宝结算 <$str(N0)>
+MONEY 元宝 + <$str(n$回收元宝结算)>
+CHANGEEXP + <$str(n$回收经验结算)>
+Mov n$回收提示_1 <$Str(n$回收元宝结算)>
+Mov n$回收提示_2 <$Str(n$回收经验结算)>
+MOV n$回收元宝结算
+MOV n$回收经验结算
+MOV s$回收分类
+MOV s$回收元宝
+MOV s$回收经验
+MOV n$回收结算 1
+MOV n$回收加成 0
+MOV n$极品回收状态 0
+MOV n0 0
+Mov S$递增回收标识
+SelectBagItems <$STR(S$递增回收标识)>
+Goto @自动结算分解
+break
+
+[@自动结算分解]
+#IF
+EQUAL U242 1
+LARGE U13 0
+#ACT
+#CALL [\游戏功能\系统功能\分解大师.txt] @遍历背包分解
+}

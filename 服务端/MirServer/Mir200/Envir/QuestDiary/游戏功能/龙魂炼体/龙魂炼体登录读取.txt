@@ -1,0 +1,54 @@
+[@龙魂炼体登录读取]
+{
+
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 龙头材料 S$C_龙头材料名
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 龙躯材料 S$C_龙躯材料名
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 龙骨材料 S$C_龙骨材料名
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 龙尾材料 S$C_龙尾材料名
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 1阶材料 N$C_红点数量1阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 1阶元宝 N$C_红点价格1阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 2阶材料 N$C_红点数量2阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 2阶元宝 N$C_红点价格2阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 3阶材料 N$C_红点数量3阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 3阶元宝 N$C_红点价格3阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 4阶材料 N$C_红点数量4阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 4阶元宝 N$C_红点价格4阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 5阶材料 N$C_红点数量5阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 5阶元宝 N$C_红点价格5阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 6阶材料 N$C_红点数量6阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 6阶元宝 N$C_红点价格6阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 7阶材料 N$C_红点数量7阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 7阶元宝 N$C_红点价格7阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 8阶材料 N$C_红点数量8阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 8阶元宝 N$C_红点价格8阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 9阶材料 N$C_红点数量9阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 9阶元宝 N$C_红点价格9阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 10阶材料 N$C_红点数量10阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 10阶元宝 N$C_红点价格10阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 11阶材料 N$C_红点数量11阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 11阶元宝 N$C_红点价格11阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 12阶材料 N$C_红点数量12阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 12阶元宝 N$C_红点价格12阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 13阶材料 N$C_红点数量13阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 13阶元宝 N$C_红点价格13阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 14阶材料 N$C_红点数量14阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 14阶元宝 N$C_红点价格14阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 15阶材料 N$C_红点数量15阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 15阶元宝 N$C_红点价格15阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 16阶材料 N$C_红点数量16阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 16阶元宝 N$C_红点价格16阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 17阶材料 N$C_红点数量17阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 17阶元宝 N$C_红点价格17阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 18阶材料 N$C_红点数量18阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 18阶元宝 N$C_红点价格18阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 19阶材料 N$C_红点数量19阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 19阶元宝 N$C_红点价格19阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 20阶材料 N$C_红点数量20阶
+ReadConfigFileItem  ..\QuestDiary\游戏功能\龙魂炼体\龙魂炼体配置.ini 炼体材料与费用 20阶元宝 N$C_红点价格20阶
+break
+
+
+
+}

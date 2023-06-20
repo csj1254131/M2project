@@ -1,0 +1,773 @@
+[@等级目标]
+{
+#IF
+#ACT
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto  @等级目标读取
+
+[@等级目标读取]
+#IF
+#ACT
+Mov n$目标途径 0
+Mov s$等级未达成
+Mov s$等级已达成
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx1_1 s$等级目标idx1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx1_2 s$等级目标idx1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx1_3 s$等级目标idx1_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl1_1   s$等级目标sl1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl1_2   s$等级目标sl1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl1_3   s$等级目标sl1_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx2_1 s$等级目标idx2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx2_2 s$等级目标idx2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx2_3 s$等级目标idx2_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl2_1   s$等级目标sl2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl2_2   s$等级目标sl2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl2_3   s$等级目标sl2_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx3_1 s$等级目标idx3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx3_2 s$等级目标idx3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx3_3 s$等级目标idx3_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl3_1   s$等级目标sl3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl3_2   s$等级目标sl3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl3_3   s$等级目标sl3_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx4_1 s$等级目标idx4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx4_2 s$等级目标idx4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx4_3 s$等级目标idx4_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl4_1   s$等级目标sl4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl4_2   s$等级目标sl4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl4_3   s$等级目标sl4_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx5_1 s$等级目标idx5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx5_2 s$等级目标idx5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx5_3 s$等级目标idx5_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl5_1   s$等级目标sl5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl5_2   s$等级目标sl5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl5_3   s$等级目标sl5_3
+
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx6_1 s$等级目标idx6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx6_2 s$等级目标idx6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx6_3 s$等级目标idx6_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl6_1   s$等级目标sl6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl6_2   s$等级目标sl6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl6_3   s$等级目标sl6_3
+
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx7_1 s$等级目标idx7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx7_2 s$等级目标idx7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx7_3 s$等级目标idx7_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl7_1   s$等级目标sl7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl7_2   s$等级目标sl7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl7_3   s$等级目标sl7_3
+
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx8_1 s$等级目标idx8_1
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx8_2 s$等级目标idx8_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx8_3 s$等级目标idx8_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl8_1   s$等级目标sl8_1
+
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx9_1 s$等级目标idx9_1
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx9_2 s$等级目标idx9_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx9_3 s$等级目标idx9_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl9_1   s$等级目标sl9_1
+
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx10_1 s$等级目标idx10_1
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx10_2 s$等级目标idx10_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标idx10_3 s$等级目标idx10_3
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl10_1   s$等级目标sl10_1
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 开放日期 s$开放日期
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 开放时间 n$开放时间
+
+
+
+;===============================================================================================
+#IF
+equal U45 0
+CHECKLEVELEX > 39
+#ACT
+Mov s$80级执行_1 <Button|id=28|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=490|y=30|link=@80级领奖>
+Mov s$80级执行_2 <Text|a=4|id=29|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=90|percenty=50>
+#ELSEACT
+Mov s$80级执行_1 <Img|id=28|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+Mov s$80级执行_2
+#IF
+equal U46 0
+CHECKLEVELEX > 49
+#ACT
+Mov s$90级执行_1 <Button|id=38|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=490|y=30|link=@90级领奖>
+Mov s$90级执行_2 <Text|a=4|id=39|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=90|percenty=50>
+#ELSEACT
+Mov s$90级执行_1 <Img|id=38|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+Mov s$90级执行_2
+#IF
+large  G2   0
+equal U47 0
+CHECKLEVELEX > 59
+#ACT
+Mov s$100级执行_1 <Button|id=48|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=490|y=30|link=@100级领奖>
+Mov s$100级执行_2 <Text|a=4|id=49|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=90|percenty=50>
+#ELSEACT
+Mov s$100级执行_1 <Img|id=48|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+Mov s$100级执行_2
+#IF
+large  G3   0
+equal U48 0
+CHECKLEVELEX > 69
+#ACT
+Mov s$110级执行_1 <Button|id=58|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=490|y=30|link=@110级领奖>
+Mov s$110级执行_2 <Text|a=4|id=59|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=90|percenty=50>
+#ELSEACT
+Mov s$110级执行_1 <Img|id=58|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+Mov s$110级执行_2
+#IF
+large  G4   0
+equal U49 0
+CHECKLEVELEX > 79
+#ACT
+Mov s$120级执行_1 <Button|id=68|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=490|y=30|link=@120级领奖>
+Mov s$120级执行_2 <Text|a=4|id=69|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=90|percenty=50>
+#ELSEACT
+Mov s$120级执行_1 <Img|id=68|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+Mov s$120级执行_2
+
+#IF
+large  G5   0
+equal U50 0
+CHECKLEVELEX > 99
+#ACT
+Mov s$80级1转执行_1 <Button|id=78|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=490|y=30|link=@80级1转领奖>
+Mov s$80级1转执行_2 <Text|a=4|id=79|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=90|percenty=50>
+#ELSEACT
+Mov s$80级1转级执行_1 <Img|id=78|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+Mov s$80级1转级执行_2
+
+#IF
+large  G6   0
+equal U51 0
+CHECKRENEWLEVEL > 4
+#ACT
+Mov s$90级2转执行_1 <Button|id=88|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|x=490|y=30|link=@90级2转领奖>
+Mov s$90级2转执行_2 <Text|a=4|id=89|text=领取|size=18|color=100|outline=2|outlinecolor=0|percentx=90|percenty=50>
+#ELSEACT
+Mov s$90级2转级执行_1 <Img|id=88|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+Mov s$90级2转级执行_2
+
+
+;===============================================================================================
+#IF
+equal U45 1
+#ACT
+Mov s$80级执行_1 <Img|id=28|img=custom/hl/hl_ui/word_qiri_02.png|x=500|y=20>
+Mov s$80级执行_2
+Inc   s$等级已达成 20,
+#ELSEACT
+Inc   s$等级未达成 20,
+#IF
+equal U46 1
+#ACT
+Mov s$90级执行_1 <Img|id=38|img=custom/hl/hl_ui/word_qiri_02.png|x=500|y=20>
+Mov s$90级执行_2
+Inc   s$等级已达成 30,
+#ELSEACT
+Inc   s$等级未达成 30,
+#IF
+equal U47 1
+#ACT
+Mov s$100级执行_1 <Img|id=48|img=custom/hl/hl_ui/word_qiri_02.png|x=500|y=20>
+Mov s$100级执行_2
+Inc   s$等级已达成 40,
+#ELSEACT
+Inc   s$等级未达成 40,
+#IF
+equal U48 1
+#ACT
+Mov s$110级执行_1 <Img|id=58|img=custom/hl/hl_ui/word_qiri_02.png|x=500|y=20>
+Mov s$110级执行_2
+Inc   s$等级已达成 50,
+#ELSEACT
+Inc   s$等级未达成 50,
+
+
+#IF
+equal U49 1
+#ACT
+Mov s$120级执行_1 <Img|id=68|img=custom/hl/hl_ui/word_qiri_02.png|x=500|y=20>
+Mov s$120级执行_2
+Inc   s$等级已达成 60,
+#ELSEACT
+Inc   s$等级未达成 60,
+
+#IF
+equal U50 1
+#ACT
+Mov s$80级1转执行_1 <Img|id=78|img=custom/hl/hl_ui/word_qiri_02.png|x=500|y=20>
+Mov s$80级1转执行_2
+Inc   s$等级已达成 70,
+#ELSEACT
+Inc   s$等级未达成 70,
+
+#IF
+equal U51 1
+#ACT
+Mov s$90级2转执行_1 <Img|id=88|img=custom/hl/hl_ui/word_qiri_02.png|x=500|y=20>
+Mov s$90级2转执行_2
+Inc   s$等级已达成 80,
+#ELSEACT
+Inc   s$等级未达成 80,
+
+
+
+
+
+#IF
+#ACT
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+Goto @等级目标展示
+[@等级目标展示]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png|<$Str(s$目标刷新)>>
+<Img|a=4|children={0,8,2,200,210}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|a=4|id=2|text=开服活动|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Img|a=4|id=8|children={3,9a,10}|img=custom/hl/kqhd_ui/djmb.jpg|percentx=50|percenty=54>
+<Layout|id=3|children={4,5,6,7,1000,1001}|width=115|height=165|x=3.5|y=5|color=x>
+<Button|id=4|children={4a,4c}|nimg=custom/hl/hl_ui/115_2.png|link=@跳转每日充值>
+<Text|a=4|id=4a|text=连续充值|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=5|children={5a,5c}|nimg=custom/hl/hl_ui/115_1.png|y=41|link=@等级目标>
+<Text|a=4|id=5a|text=等级目标|x=30|y=20|size=18|color=100|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=6|children={6a,6c}|nimg=custom/hl/hl_ui/115_2.png|y=82|link=@跳转累计登陆>
+<Text|a=4|id=6a|text=累计登陆|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+;<Button|id=7|children={7a,7c}|nimg=custom/hl/hl_ui/115_2.png|y=123|link=@跳转每日限购>
+;<Text|a=4|id=7a|text=限时特惠|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=1000|children={1000a,1000c}|nimg=custom/hl/hl_ui/115_2.png|x=0|y=123|link=@跳转累计充值>
+<Text|a=4|id=1000a|text=限时充值|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$累充红点)>
+
+<Button|id=1001|children={1001a,1001c}|nimg=custom/hl/hl_ui/115_2.png|x=0|y=163|link=@跳转累计消费>
+<Text|a=4|id=1001a|text=限时消费|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<$Str(s$累消红点)>
+
+
+<Layout|id=9a|children={90a,91a,92a,93a}|width=610|height=96|color=x|x=125>
+<Text|id=90a|text=剩余时间：|x=20|y=20|size=16|color=255|outline=2|outlinecolor=0>
+<TIMETIPS|id=91a|time=<$str(G100)>|color=250|size=16|outline=2|outlinecolor=0|x=105|y=20>
+<Text|id=92a|text=活动说明： 活动期间，玩家等级达到目标要求，可以获得大量奖励！|x=20|y=50|size=16|color=x|outline=2|outlinecolor=0>
+;<Button|id=93a|nimg=custom/hl/kqhd_ui/tstj.png|x=525|y=18|link=@跳转目标途径>
+<$Str(s$连充红点)>
+<$Str(s$目标红点)>
+<$Str(s$累登红点)>
+<$Str(s$特惠红点)>
+
+#IF
+EQUAL N$目标途径 1
+#SAY
+<Img|a=4|id=200|children={202}|img=custom/hl/hl_ui/hqtj.png|percentx=74.5|percenty=54>
+<Img|a=4|id=202|children={203,204,205,206,207,208,209}|img=custom/hl/hl_ui/hqtj_1.jpg|percentx=50|percenty=50|width=334|height=422>
+<Text|a=4|id=203|text=获取途径|color=251|size=18|outline=2|outlinecolor=0|percentx=50|percenty=5>
+<Text|a=4|id=204|text=转生材料高爆地图|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=15>
+<Button|a=4|id=205|children={205a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=30|link=@转生传送_1>
+<Text|a=4|id=205a|text=<$Str(s$地图mc_1)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|a=4|id=206|children={206a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=40|link=@转生传送_2>
+<Text|a=4|id=206a|text=<$Str(s$地图mc_2)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|a=4|id=207|children={207a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=50|link=@转生传送_3>
+<Text|a=4|id=207a|text=<$Str(s$地图mc_3)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Text|a=4|id=209|text=点击按钮直接前往|color=250|size=18|outline=2|outlinecolor=0|percentx=50|percenty=80>
+<Button|a=4|id=210|children={211,212}|nimg=custom/hl/hl_ui/1900012110.png|percentx=48.9|percenty=18|link=@跳转目标途径>
+<Text|a=4|id=211|text=关|color=100|size=18|outline=2|outlinecolor=0|percentx=55|percenty=25>
+<Text|a=4|id=212|text=闭|color=100|size=18|outline=2|outlinecolor=0|percentx=55|percenty=65>
+
+#IF
+#SAY
+<ListView|id=10|children={<$Str(s$等级未达成)><$Str(s$等级已达成)>}|direction=1|bounce=0|margin=2|width=605|height=345|x=128|y=102|color=x>
+
+<Layout|id=20|children={21,22,23,24,25,26,27,28,29}|width=605|height=101|color=x>
+<Img|id=21|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+
+<Text|a=4|id=22|text=等级达到40级|size=18|color=251|outline=2|outlinecolor=0|percentx=12|percenty=45>
+<ItemShow|id=23|itemid=<$Str(s$等级目标idx1_1)>|itemcount=1|showtips=1|bgtype=1|x=140|y=17|itemcount=<$Str(s$等级目标sl1_1)>>
+<ItemShow|id=24|itemid=<$Str(s$等级目标idx1_2)>|itemcount=1|showtips=1|bgtype=1|x=210|y=17|itemcount=<$Str(s$等级目标sl1_2)>>
+<ItemShow|id=25|itemid=<$Str(s$等级目标idx1_3)>|itemcount=1|showtips=1|bgtype=1|x=280|y=17|itemcount=<$Str(s$等级目标sl1_3)>>
+<Text|a=4|id=26|text=不限额|size=18|color=100|outline=2|outlinecolor=0|percentx=67|percenty=50>
+;<Text|id=27|text=不限额|size=18|color=250|outline=2|outlinecolor=0|x=450|y=37>
+<$Str(s$80级执行_1)>
+<$Str(s$80级执行_2)>
+
+<Layout|id=30|children={31,32,33,34,35,36,37,38,39}|width=605|height=101|color=x>
+<Img|id=31|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=32|text=等级达到50级|size=18|color=251|outline=2|outlinecolor=0|percentx=12|percenty=45>
+<ItemShow|id=33|itemid=<$Str(s$等级目标idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=140|y=17|itemcount=<$Str(s$等级目标sl2_1)>>
+<ItemShow|id=34|itemid=<$Str(s$等级目标idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=210|y=17|itemcount=<$Str(s$等级目标sl2_2)>>
+<ItemShow|id=35|itemid=<$Str(s$等级目标idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=280|y=17|itemcount=<$Str(s$等级目标sl2_3)>>
+<Text|a=4|id=36|text=不限额|size=18|color=100|outline=2|outlinecolor=0|percentx=67|percenty=50>
+;<Text|id=37|text=不限额|size=18|color=250|outline=2|outlinecolor=0|x=450|y=37>
+<Img|id=38|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+<$Str(s$90级执行_1)>
+<$Str(s$90级执行_2)>
+
+
+<Layout|id=40|children={41,42,43,44,45,46,47,48,49}|width=605|height=101|color=x>
+<Img|id=41|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=42|text=等级达到60级|size=18|color=251|outline=2|outlinecolor=0|percentx=12|percenty=45>
+<ItemShow|id=43|itemid=<$Str(s$等级目标idx3_1)>|itemcount=1|showtips=1|bgtype=1|x=140|y=17|itemcount=<$Str(s$等级目标sl3_1)>>
+<ItemShow|id=44|itemid=<$Str(s$等级目标idx3_2)>|itemcount=1|showtips=1|bgtype=1|x=210|y=17|itemcount=<$Str(s$等级目标sl3_2)>>
+<ItemShow|id=45|itemid=<$Str(s$等级目标idx3_3)>|itemcount=1|showtips=1|bgtype=1|x=280|y=17|itemcount=<$Str(s$等级目标sl3_3)>>
+<Text|a=4|id=46|text=剩余名额：|size=18|color=100|outline=2|outlinecolor=0|percentx=67|percenty=50>
+<Text|id=47|text=<$Str(G2)>|size=18|color=250|outline=2|outlinecolor=0|x=450|y=37>
+<Img|id=48|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+<$Str(s$100级执行_1)>
+<$Str(s$100级执行_2)>
+
+<Layout|id=50|children={51,52,53,54,55,56,57,58,59}|width=605|height=101|color=x>
+<Img|id=51|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=52|text=等级达到70级|size=18|color=251|outline=2|outlinecolor=0|percentx=12|percenty=45>
+<ItemShow|id=53|itemid=<$Str(s$等级目标idx4_1)>|itemcount=1|showtips=1|bgtype=1|x=140|y=17|itemcount=<$Str(s$等级目标sl4_1)>>
+<ItemShow|id=54|itemid=<$Str(s$等级目标idx4_2)>|itemcount=1|showtips=1|bgtype=1|x=210|y=17|itemcount=<$Str(s$等级目标sl4_2)>>
+<ItemShow|id=55|itemid=<$Str(s$等级目标idx4_3)>|itemcount=1|showtips=1|bgtype=1|x=280|y=17|itemcount=<$Str(s$等级目标sl4_3)>>
+<Text|a=4|id=56|text=剩余名额：|size=18|color=100|outline=2|outlinecolor=0|percentx=67|percenty=50>
+<Text|id=57|text=<$Str(G3)>|size=18|color=250|outline=2|outlinecolor=0|x=450|y=37>
+<Img|id=58|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+<$Str(s$110级执行_1)>
+<$Str(s$110级执行_2)>
+
+<Layout|id=60|children={61,62,63,64,65,66,67,68,69}|width=605|height=101|color=x>
+<Img|id=61|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=62|text=等级达到80级|size=18|color=251|outline=2|outlinecolor=0|percentx=12|percenty=45>
+<ItemShow|id=63|itemid=<$Str(s$等级目标idx5_1)>|itemcount=1|showtips=1|bgtype=1|x=140|y=17|itemcount=<$Str(s$等级目标sl5_1)>>
+<ItemShow|id=64|itemid=<$Str(s$等级目标idx5_2)>|itemcount=1|showtips=1|bgtype=1|x=210|y=17|itemcount=<$Str(s$等级目标sl5_2)>>
+<ItemShow|id=65|itemid=<$Str(s$等级目标idx5_3)>|itemcount=1|showtips=1|bgtype=1|x=280|y=17|itemcount=<$Str(s$等级目标sl5_3)>>
+<Text|a=4|id=66|text=剩余名额：|size=18|color=100|outline=2|outlinecolor=0|percentx=67|percenty=50>
+<Text|id=67|text=<$Str(G4)>|size=18|color=250|outline=2|outlinecolor=0|x=450|y=37>
+<Img|id=68|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+<$Str(s$120级执行_1)>
+<$Str(s$120级执行_2)>
+;--------------------------------
+<Layout|id=70|children={71,72,73,74,75,76,77,78,79}|width=605|height=101|color=x>
+<Img|id=71|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+
+<Text|a=4|id=72|text=等级达到100级|size=18|color=251|outline=2|outlinecolor=0|percentx=12|percenty=45>
+<ItemShow|id=73|itemid=<$Str(s$等级目标idx6_1)>|itemcount=1|showtips=1|bgtype=1|x=140|y=17|itemcount=<$Str(s$等级目标sl6_1)>>
+<ItemShow|id=74|itemid=<$Str(s$等级目标idx6_2)>|itemcount=1|showtips=1|bgtype=1|x=210|y=17|itemcount=<$Str(s$等级目标sl6_2)>>
+<ItemShow|id=75|itemid=<$Str(s$等级目标idx6_3)>|itemcount=1|showtips=1|bgtype=1|x=280|y=17|itemcount=<$Str(s$等级目标sl6_3)>>
+<Text|a=4|id=76|text=剩余名额：|size=18|color=100|outline=2|outlinecolor=0|percentx=67|percenty=50>
+<Text|id=77|text=<$Str(G5)>|size=18|color=250|outline=2|outlinecolor=0|x=450|y=37>
+<Img|id=78|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+<$Str(s$80级1转执行_1)>
+<$Str(s$80级1转执行_2)>
+
+<Layout|id=80|children={81,82,83,84,85,86,87,88,89}|width=605|height=101|color=x>
+<Img|id=81|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|a=4|id=82|text=转生达到5转|size=18|color=251|outline=2|outlinecolor=0|percentx=12|percenty=45>
+<ItemShow|id=83|itemid=<$Str(s$等级目标idx7_1)>|itemcount=1|showtips=1|bgtype=1|x=140|y=17|itemcount=<$Str(s$等级目标sl7_1)>>
+<ItemShow|id=84|itemid=<$Str(s$等级目标idx7_2)>|itemcount=1|showtips=1|bgtype=1|x=210|y=17|itemcount=<$Str(s$等级目标sl7_2)>>
+<ItemShow|id=85|itemid=<$Str(s$等级目标idx7_3)>|itemcount=1|showtips=1|bgtype=1|x=280|y=17|itemcount=<$Str(s$等级目标sl7_3)>>
+<Text|a=4|id=86|text=剩余名额：|size=18|color=100|outline=2|outlinecolor=0|percentx=67|percenty=50>
+<Text|id=87|text=<$Str(G6)>|size=18|color=250|outline=2|outlinecolor=0|x=450|y=37>
+<Img|id=88|img=custom/hl/hl_ui/word_qiri_01.png|x=500|y=20>
+<$Str(s$90级2转执行_1)>
+<$Str(s$90级2转执行_2)>
+
+
+#IF
+EQUAL <$STR(S$C_冲级支线跳转)> 开
+#ACT
+MOV S$C_冲级支线跳转
+Navigation 0 28 点此领取
+break
+
+
+[@跳转目标途径]
+#IF
+EQUAL N$目标途径 0
+#ACT
+Mov N$目标途径 1
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=20|loadStep=5
+Goto @等级目标展示
+Break
+#IF
+#ACT
+Mov N$目标途径 0
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级目标展示
+Break
+[@跳转每日充值]
+#ACT
+#CALL [\功能脚本\开区活动\每日充值.txt] @每日充值
+
+[@跳转等级排行]
+#ACT
+#CALL [\功能脚本\开区活动\等级排行.txt] @等级排行
+
+[@跳转装备首爆]
+#ACT
+#CALL [\功能脚本\开区活动\装备首爆.txt] @装备首爆
+
+[@80级领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+equal U45 0
+CHECKLEVELEX > 39
+#ACT
+Mov U45 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc1_1 s$等级目标mc1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl1_1 s$等级目标sl1_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc1_2 s$等级目标mc1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl1_2 s$等级目标sl1_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc1_3 s$等级目标mc1_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl1_3 s$等级目标sl1_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 公告提示 s$公告提示
+GiveStateItem <$Str(s$等级目标mc1_1)>  <$STR(s$等级目标sl1_1)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc1_2)>  <$STR(s$等级目标sl1_2)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc1_3)>  <$STR(s$等级目标sl1_3)>  0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$公告提示)> 1 2
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级目标读取
+DELAYGOTO 100 @冲级奖励支线完成
+Break
+#IF
+#ACT
+SENDMSG 9 <font color='#ff0000'>等级不足</font>
+
+[@冲级奖励支线完成]
+#IF
+check [428] 1
+check [429] 0
+#ACT
+set [429] 1
+NEWCHANGETASK 37
+close
+Break
+
+
+[@90级领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+equal U46 0
+CHECKLEVELEX > 49
+#ACT
+Mov U46 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc2_1 s$等级目标mc2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl2_1 s$等级目标sl2_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc2_2 s$等级目标mc2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl2_2 s$等级目标sl2_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc2_3 s$等级目标mc2_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl2_3 s$等级目标sl2_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 公告提示 s$公告提示
+GiveStateItem <$Str(s$等级目标mc2_1)>  <$STR(s$等级目标sl2_1)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc2_2)>  <$STR(s$等级目标sl2_2)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc2_3)>  <$STR(s$等级目标sl2_3)>  0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$公告提示)> 1 2
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级目标读取
+Break
+[@100级领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  G2   0
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>剩余名额不足</font>
+BREAK
+#IF
+equal U47 0
+CHECKLEVELEX > 59
+#ACT
+Mov U47 1
+DEC G2 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc3_1 s$等级目标mc3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl3_1 s$等级目标sl3_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc3_2 s$等级目标mc3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl3_2 s$等级目标sl3_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc3_3 s$等级目标mc3_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl3_3 s$等级目标sl3_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 公告提示 s$公告提示
+GiveStateItem <$Str(s$等级目标mc3_1)>  <$STR(s$等级目标sl3_1)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc3_2)>  <$STR(s$等级目标sl3_2)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc3_3)>  <$STR(s$等级目标sl3_3)>  0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$公告提示)> 1 2
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级目标读取
+Break
+[@110级领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  G3   0
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>剩余名额不足</font>
+BREAK
+#IF
+equal U48 0
+CHECKLEVELEX > 69
+#ACT
+Mov U48 1
+DEC G3 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc4_1 s$等级目标mc4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl4_1 s$等级目标sl4_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc4_2 s$等级目标mc4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl4_2 s$等级目标sl4_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc4_3 s$等级目标mc4_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl4_3 s$等级目标sl4_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 公告提示 s$公告提示
+GiveStateItem <$Str(s$等级目标mc4_1)>  <$STR(s$等级目标sl4_1)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc4_2)>  <$STR(s$等级目标sl4_2)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc4_3)>  <$STR(s$等级目标sl4_3)>  0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$公告提示)> 1 2
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级目标读取
+Break
+[@120级领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  G4   0
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>剩余名额不足</font>
+BREAK
+#IF
+equal U49 0
+CHECKLEVELEX > 79
+#ACT
+Mov U49 1
+DEC G4 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc5_1 s$等级目标mc5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl5_1 s$等级目标sl5_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc5_2 s$等级目标mc5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl5_2 s$等级目标sl5_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc5_3 s$等级目标mc5_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl5_3 s$等级目标sl5_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 公告提示 s$公告提示
+GiveStateItem <$Str(s$等级目标mc5_1)>  <$STR(s$等级目标sl5_1)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc5_2)>  <$STR(s$等级目标sl5_2)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc5_3)>  <$STR(s$等级目标sl5_3)>  0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$公告提示)> 1 2
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级目标读取
+Break
+[@80级1转领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  G5   0
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>剩余名额不足</font>
+BREAK
+#IF
+equal U50 0
+CHECKLEVELEX > 99
+#ACT
+Mov U50 1
+DEC G5 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc6_1 s$等级目标mc6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl6_1 s$等级目标sl6_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc6_2 s$等级目标mc6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl6_2 s$等级目标sl6_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc6_3 s$等级目标mc6_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl6_3 s$等级目标sl6_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 公告提示 s$公告提示
+GiveStateItem <$Str(s$等级目标mc6_1)>  <$STR(s$等级目标sl6_1)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc6_2)>  <$STR(s$等级目标sl6_2)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc6_3)>  <$STR(s$等级目标sl6_3)>  0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$公告提示)> 1 2
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级目标读取
+Break
+[@90级2转领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  G6   0
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>剩余名额不足</font>
+BREAK
+#IF
+equal U51 0
+CHECKRENEWLEVEL > 3
+#ACT
+Mov U51 1
+DEC G6 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc7_1 s$等级目标mc7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl7_1 s$等级目标sl7_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc7_2 s$等级目标mc7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl7_2 s$等级目标sl7_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc7_3 s$等级目标mc7_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl7_3 s$等级目标sl7_3
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 公告提示 s$公告提示
+GiveStateItem <$Str(s$等级目标mc7_1)>  <$STR(s$等级目标sl7_1)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc7_2)>  <$STR(s$等级目标sl7_2)>  0 1 0 1 1 1 1 1
+GiveStateItem <$Str(s$等级目标mc7_3)>  <$STR(s$等级目标sl7_3)>  0 1 0 1 1 1 1 1
+SENDMSGNEW  255 0 <$Str(s$公告提示)> 1 2
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级目标读取
+Break
+[@100级3转领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  G7   0
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>剩余名额不足</font>
+BREAK
+#IF
+equal U52 0
+CHECKRENEWLEVEL > 4
+#ACT
+Mov U52 1
+DEC G7 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc8_1 s$等级目标mc8_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl8_1 s$等级目标sl8_1
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc8_2 s$等级目标mc8_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc8_3 s$等级目标mc8_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 公告提示 s$公告提示
+GiveStateItem <$Str(s$等级目标mc8_1)>  <$STR(s$等级目标sl8_1)>  0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$公告提示)> 1 2
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级目标读取
+Break
+[@110级4转领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  G8   0
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>剩余名额不足</font>
+BREAK
+#IF
+equal U53 0
+CHECKRENEWLEVEL > 5
+#ACT
+Mov U53 1
+DEC G8 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc9_1 s$等级目标mc9_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl9_1 s$等级目标sl9_1
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc9_2 s$等级目标mc9_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc9_3 s$等级目标mc9_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 公告提示 s$公告提示
+GiveStateItem <$Str(s$等级目标mc9_1)>  <$STR(s$等级目标sl9_1)>  0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$公告提示)> 1 2
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级目标读取
+Break
+[@120级5转领奖]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留9个背包空格</font>
+BREAK
+
+#IF
+large  G9   0
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>剩余名额不足</font>
+BREAK
+#IF
+equal U54 0
+CHECKRENEWLEVEL > 6
+#ACT
+Mov U54 1
+DEC G9 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc10_1 s$等级目标mc10_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标sl10_1 s$等级目标sl10_1
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc10_2 s$等级目标mc10_2
+;ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 等级目标mc10_3 s$等级目标mc10_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 等级目标 公告提示 s$公告提示
+GiveStateItem <$Str(s$等级目标mc10_1)> <$STR(s$等级目标sl10_1)>  0 1 0 1 1 1 1 1
+
+SENDMSGNEW  255 0 <$Str(s$公告提示)> 1 2
+Mov s$目标刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级目标读取
+Break
+
+[@跳转每日充值]
+#ACT
+#CALL [\功能脚本\开区活动\每日充值.txt] @每日充值
+
+[@跳转等级目标]
+#ACT
+#CALL [\功能脚本\开区活动\等级目标.txt] @等级目标
+[@跳转累计登陆]
+#ACT
+#CALL [\功能脚本\开区活动\累计登陆.txt] @累计登陆
+
+[@跳转每日限购]
+#ACT
+#CALL [\功能脚本\开区活动\每日限购.txt] @每日限购
+
+[@跳转累计充值]
+#ACT
+#CALL [\功能脚本\开区活动\累计充值.txt] @累计充值
+
+[@跳转累计消费]
+#ACT
+#CALL [\功能脚本\开区活动\累计消费.txt] @累计消费
+}

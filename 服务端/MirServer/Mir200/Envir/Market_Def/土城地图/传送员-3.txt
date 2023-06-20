@@ -1,0 +1,363 @@
+[@MAIN]
+
+#IF
+EQUAL <$STR(U91)> 3
+#ACT
+GOTO @新手发技能了
+break
+#IF
+#ACT
+MOV S$激活按钮 nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|color=103
+MOV S$默认按钮 nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|color=160
+MOV S$按钮状态_1 <$STR(S$激活按钮)>
+MOV S$按钮状态_2 <$STR(S$默认按钮)>
+MOV S$按钮状态_3 <$STR(S$默认按钮)>
+MOV S$按钮状态_4 <$STR(S$默认按钮)>
+MOV S$按钮状态_5 <$STR(S$默认按钮)>
+MOV S$按钮状态_6 <$STR(S$默认按钮)>
+MOV S$小地图编号 000100
+MOV S$地图名称  比奇城
+MOV S$地图编号 0
+GOTO @显示地图界面
+
+[@显示地图界面]
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=300|y=5|width=170|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=100|size=20|outline=2|outlinecolor=0|text=<$STR(S$地图名称)>>
+<ListView|id=8|children={81}|x=132|y=60|width=3|height=450|margin=2|bounce=1|direction=1|color=x>
+<Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=9|x=22.0|y=65.0|<$STR(S$按钮状态_1)>|size=18|text=比奇城|link=@MAIN>
+<Button|id=10|x=22.0|y=105.0|<$STR(S$按钮状态_2)>|size=18|text=皇宫门口|link=@传送皇宫门口>
+<Button|id=11|x=22.0|y=145.0|<$STR(S$按钮状态_3)>|size=18|text=毒蛇山谷|link=@传送毒蛇山谷>
+<Button|id=15|x=22.0|y=185.0|<$STR(S$按钮状态_4)>|size=18|text=白日门|link=@传送白日门>
+<Button|id=16|x=22.0|y=225.0|<$STR(S$按钮状态_5)>|size=18|text=封魔谷|link=@传送封魔谷>
+<Button|id=17|x=22.0|y=265.0|<$STR(S$按钮状态_6)>|size=18|text=苍月岛|link=@传送苍月岛>
+<Layout|id=3|children={31,9}|x=20|y=62|width=730|height=445>
+<Img|id=31|img=custom/hl/dtcs_ui/map_ui_bg.jpg|width=730|height=445>
+<Text|id=4|x=150|y=68|color=251|size=18|outline=2|outlinecolor=0|text=地图介绍>
+<Img|id=5|children={51}|x=150|y=98|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=51|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=玛法森林的奇迹之城>
+<Img|id=6|children={61}|x=150|y=148|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=61|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=六大主城之一，豪侠壮士的栖息之所。>
+<Img|id=7|children={71}|x=150|y=198|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=71|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=怪物难度低，适合新人玩家起步发育。>
+<Layout|id=12|children={121}|x=490|y=79|width=230|height=30|color=x>
+<Text|id=121|a=4|percentx=50|percenty=50||color=251|size=18|outline=2|outlinecolor=0|text=<$STR(S$地图名称)>>
+<Img|id=13|children={131}|x=480|y=117|img=custom/hl/dtcs_ui/<$STR(S$小地图编号)>.png|width=253|height=207>
+<Img|id=131|img=custom/hl/hl_ui/hl_xz_01.png|width=253|height=208>
+<Button|id=14|x=535|y=380|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=进入地图|link=@进入地图>
+
+[@传送毒蛇山谷]
+#IF
+#ACT
+MOV S$按钮状态_1 <$STR(S$默认按钮)>
+MOV S$按钮状态_2 <$STR(S$默认按钮)>
+MOV S$按钮状态_3 <$STR(S$激活按钮)>
+MOV S$按钮状态_4 <$STR(S$默认按钮)>
+MOV S$按钮状态_5 <$STR(S$默认按钮)>
+MOV S$按钮状态_6 <$STR(S$默认按钮)>
+MOV S$小地图编号 000104
+MOV S$地图名称  毒蛇山谷
+MOV S$地图编号 2
+GOTO @显示地图界面
+
+[@传送白日门]
+#IF
+#ACT
+MOV S$按钮状态_1 <$STR(S$默认按钮)>
+MOV S$按钮状态_2 <$STR(S$默认按钮)>
+MOV S$按钮状态_3 <$STR(S$默认按钮)>
+MOV S$按钮状态_4 <$STR(S$激活按钮)>
+MOV S$按钮状态_5 <$STR(S$默认按钮)>
+MOV S$按钮状态_6 <$STR(S$默认按钮)>
+MOV S$小地图编号 000102
+MOV S$地图名称  白日门
+MOV S$地图编号 11
+GOTO @显示地图界面
+
+[@传送封魔谷]
+#IF
+#ACT
+MOV S$按钮状态_1 <$STR(S$默认按钮)>
+MOV S$按钮状态_2 <$STR(S$默认按钮)>
+MOV S$按钮状态_3 <$STR(S$默认按钮)>
+MOV S$按钮状态_4 <$STR(S$默认按钮)>
+MOV S$按钮状态_5 <$STR(S$激活按钮)>
+MOV S$按钮状态_6 <$STR(S$默认按钮)>
+MOV S$小地图编号 000120
+MOV S$地图名称  封魔谷
+MOV S$地图编号 4
+GOTO @显示地图界面
+
+[@传送苍月岛]
+#IF
+#ACT
+MOV S$按钮状态_1 <$STR(S$默认按钮)>
+MOV S$按钮状态_2 <$STR(S$默认按钮)>
+MOV S$按钮状态_3 <$STR(S$默认按钮)>
+MOV S$按钮状态_4 <$STR(S$默认按钮)>
+MOV S$按钮状态_5 <$STR(S$默认按钮)>
+MOV S$按钮状态_6 <$STR(S$激活按钮)>
+MOV S$小地图编号 000160
+MOV S$地图名称  苍月岛
+MOV S$地图编号 5
+GOTO @显示地图界面
+
+
+
+[@新手发技能了]
+
+#IF
+CHECKJOB Warrior
+#ACT
+MOV S$C_职业标签 战士
+#IF
+CHECKJOB Wizard
+#ACT
+MOV S$C_职业标签 法师
+#IF
+CHECKJOB Taoist
+#ACT
+MOV S$C_职业标签 道士
+
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 新手技能 奖励装备 S$C_任务奖励_装备
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 新手技能 经验 S$C_任务奖励_经验
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 新手技能 绑元 S$C_任务奖励_绑元
+ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini 新手技能 小还丹 S$C_任务奖励_药水
+#SAY
+<Img|show=4|y=-30|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}|bg=1|img=custom/hl/newtask/taskui_11.png>
+<Img|id=1|img=custom/hl/newtask/taskui_2.png|x=160|y=180>
+<Button|id=2|x=600|y=2|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=3|x=570|y=-5|width=70|height=70|link=@exit>
+<Text|id=4|outline=1|outlinecolor=0|a=0|x=60|y=80|color=103|size=18|text=勇士，现在传送您去历练!>
+;<Text|id=5|outline=1|outlinecolor=0|a=0|x=60|y=100|color=103|size=18|text=装备，我们现在就出发吧?>
+<ListView|id=12|x=190|y=215|children={101,102,103,104,105,106}|direction=2|bounce=1|margin=1|width=300|height=70>
+<ItemShow|id=101|width=70|height=70|itemid=6|itemcount=<$STR(S$C_任务奖励_经验)>|showtips=1|bgtype=1>
+<ItemShow|id=102|width=70|height=70|itemid=40088|itemcount=<$STR(S$C_任务奖励_药水)>|showtips=1|bgtype=1>
+<ItemShow|id=103|width=70|height=70|itemid=4|itemcount=<$STR(S$C_任务奖励_绑元)>|showtips=1|bgtype=1>
+<Button|x=232|y=300|id=13|width=120|height=40|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=一路前行|color=103|size=18|link=@主线3>
+<Text|id=14|outline=2|outlinecolor=0|a=0|x=265|y=5|color=103|size=18|text=新手历练>
+<COUNTDOWN|id=15|a=0|x=280|y=355|time=5|count=1|size=16|color=224|link=@主线3>
+
+[@主线3]
+
+#IF
+EQUAL <$STR(U91)> 3
+CHECKJOB Warrior
+#ACT
+MOV U91 4
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+ADDSKILL 基本剑术
+ADDSKILL 攻杀剑术
+ADDSKILL 刺杀剑术
+ADDSKILL 半月弯刀
+ADDSKILL 野蛮冲撞
+ADDSKILL 烈火剑法
+SKILLLEVEL 基本剑术 = 3
+SKILLLEVEL 攻杀剑术 = 3
+SKILLLEVEL 刺杀剑术 = 3
+SKILLLEVEL 半月弯刀 = 3
+SKILLLEVEL 野蛮冲撞 = 3
+SKILLLEVEL 烈火剑法 = 3
+NEWCOMPLETETASK 3
+NEWDELETETASK 3
+MOV U92 <$LEVEL>
+NEWPICKTASK 4 <$STR(U92)>
+set [426] 1
+NEWPICKTASK 36
+OPENNPCSHOWEX 21
+close
+
+#IF
+EQUAL <$STR(U91)> 3
+CHECKJOB Wizard
+#ACT
+MOV U91 4
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+ADDSKILL 大火球
+SKILLLEVEL 大火球 = 3
+ADDSKILL 抗拒火环
+ADDSKILL 地狱火
+ADDSKILL 诱惑之光
+ADDSKILL 瞬息移动
+SKILLLEVEL 抗拒火环 = 3
+SKILLLEVEL 地狱火 = 3
+SKILLLEVEL 诱惑之光 = 3
+SKILLLEVEL 瞬息移动 = 3
+ADDSKILL 雷电术
+ADDSKILL 爆裂火焰
+ADDSKILL 地狱雷光
+SKILLLEVEL 雷电术 = 3
+SKILLLEVEL 爆裂火焰 = 3
+SKILLLEVEL 地狱雷光 = 3
+ADDSKILL 火墙
+ADDSKILL 圣言术
+ADDSKILL 冰咆哮
+SKILLLEVEL 火墙 = 3
+SKILLLEVEL 圣言术 = 3
+SKILLLEVEL 冰咆哮 = 3
+ADDSKILL 疾光电影
+SKILLLEVEL 疾光电影 = 3
+ADDSKILL 魔法盾
+SKILLLEVEL 魔法盾 = 3
+NEWCOMPLETETASK 3
+NEWDELETETASK 3
+MOV U92 <$LEVEL>
+NEWPICKTASK 4 <$STR(U92)>
+set [426] 1
+NEWPICKTASK 36
+OPENNPCSHOWEX 21
+close
+
+#IF
+EQUAL <$STR(U91)> 3
+CHECKJOB Taoist
+#ACT
+MOV U91 4
+money 经验 + <$STR(S$C_任务奖励_经验)>
+money 绑定元宝 + <$STR(S$C_任务奖励_绑元)>
+GiveStateItem 小还丹 <$STR(S$C_任务奖励_药水)> 0 1 0 1 1 1 1 1
+ADDSKILL 治愈术
+SKILLLEVEL 治愈术 = 3
+ADDSKILL 精神力战法
+SKILLLEVEL 精神力战法 = 3
+ADDSKILL 施毒术
+SKILLLEVEL 施毒术 = 3
+ADDSKILL 召唤神兽
+SKILLLEVEL 召唤神兽 = 3
+ADDSKILL 灵魂火符
+ADDSKILL 困魔咒
+SKILLLEVEL 灵魂火符 = 3
+SKILLLEVEL 困魔咒 = 3
+ADDSKILL 神圣战甲术
+ADDSKILL 幽灵盾
+ADDSKILL 群体治疗术
+SKILLLEVEL 神圣战甲术 = 3
+SKILLLEVEL 幽灵盾 = 3
+SKILLLEVEL 群体治疗术 = 3
+ADDSKILL 隐身术
+ADDSKILL 集体隐身术
+SKILLLEVEL 隐身术 = 3
+SKILLLEVEL 集体隐身术 = 3
+NEWCOMPLETETASK 3
+NEWDELETETASK 3
+MOV U92 <$LEVEL>
+NEWPICKTASK 4 <$STR(U92)>
+set [426] 1
+NEWPICKTASK 36
+OPENNPCSHOWEX 21
+close
+
+
+#IF
+LARGE <$HUMAN(B_累计签到天数)> 0
+check [426] 1
+check [427] 0
+#ACT
+set [427] 1
+NEWCHANGETASK 36
+
+
+#IF
+LARGE <$LEVEL> 39
+#ACT
+MOV U91 5
+MOV U92 0
+NEWCHANGETASK 4
+
+
+[@进入地图]
+#IF
+EQUAL S$地图名称 比奇城
+#ACT
+mapmove 0 332 266
+BREAK
+#IF
+EQUAL S$地图名称 毒蛇山谷
+#ACT
+mapmove <$STR(S$地图编号)> 505 486
+BREAK
+#IF
+EQUAL S$地图名称 白日门
+#ACT
+mapmove <$STR(S$地图编号)> 179 322
+BREAK
+#IF
+EQUAL S$地图名称 封魔谷
+#ACT
+mapmove <$STR(S$地图编号)> 238 200
+BREAK
+#IF
+EQUAL S$地图名称 苍月岛
+#ACT
+mapmove <$STR(S$地图编号)> 140 336
+BREAK
+
+[@传送皇宫门口]
+#IF
+#ACT
+MOV S$小地图编号 000100
+MOV S$地图名称  皇宫门口
+MOV S$地图编号 0
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=300|y=5|width=170|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=100|size=20|outline=2|outlinecolor=0|text=<$STR(S$地图名称)>>
+<ListView|id=8|children={81}|x=132|y=60|width=3|height=450|margin=2|bounce=1|direction=1|color=x>
+<Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
+<Button|id=9|x=22.0|y=65.0|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|color=160|size=18|text=比奇城|link=@MAIN>
+<Button|id=10|x=22.0|y=105.0|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|color=103|size=18|text=皇宫门口|link=@传送皇宫门口>
+<Button|id=11|x=22.0|y=145.0|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|color=160|size=18|text=毒蛇山谷|link=@传送毒蛇山谷>
+<Button|id=15|x=22.0|y=185.0|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|color=160|size=18|text=白日门|link=@传送白日门>
+<Button|id=16|x=22.0|y=225.0|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|color=160|size=18|text=封魔谷|link=@传送封魔谷>
+<Button|id=17|x=22.0|y=265.0|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|color=160|size=18|text=苍月岛|link=@传送苍月岛>
+<Layout|id=3|children={31,9}|x=20|y=62|width=730|height=445>
+<Img|id=31|img=custom/hl/dtcs_ui/map_ui_bg.jpg|width=730|height=445>
+
+<Text|id=4|x=150|y=68|color=251|size=18|outline=2|outlinecolor=0|text=地图介绍>
+<Img|id=5|children={51}|x=150|y=98|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=51|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=三职业攻击榜>
+<Img|id=6|children={61}|x=150|y=148|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=61|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=皇宫门口塑造了六尊天下第一雕像>
+<Img|id=7|children={71}|x=150|y=198|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=71|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=全服攻、魔、道最高者即可申请>
+
+<Layout|id=12|children={121}|x=490|y=79|width=230|height=30|color=x>
+<Text|id=121|a=4|percentx=50|percenty=50||color=251|size=18|outline=2|outlinecolor=0|text=<$STR(S$地图名称)>>
+<Img|id=13|children={131}|x=480|y=117|img=custom/hl/dtcs_ui/<$STR(S$小地图编号)>.png|width=253|height=207>
+<Img|id=131|img=custom/hl/hl_ui/hl_xz_01.png|width=253|height=208>
+<Button|id=14|x=535|y=380|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=皇宫门口|link=@进入皇宫门口>
+
+
+[@进入皇宫门口]
+#IF
+#ACT
+mapmove 0 340 195
+
+
+
+
+
+
+
+
+
+
+
+
+

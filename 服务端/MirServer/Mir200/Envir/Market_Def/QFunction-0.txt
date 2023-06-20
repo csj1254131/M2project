@@ -1,0 +1,6038 @@
+;此脚为功能脚本，用于实现各种与脚本有关的功能
+(@@InPutInteger @@InPutString @@useitemname @@OffLineMsg @@dealgold)
+
+[@开启盒子]
+#IF
+#ACT
+#CALL [\游戏盒子\移动游戏盒子.txt] @移动端盒子展示
+BREAK
+;验证成功
+[@GiftStatusOk]
+#IF
+EQUAL <$human(礼包申请状态)> 1
+#ACT
+CALCVAR HUMAN 礼包申请状态  = 0
+SAVEVAR HUMAN 礼包申请状态
+CALCVAR HUMAN 礼包领取状态  = 1
+SAVEVAR HUMAN 礼包领取状态
+#CALL [\游戏盒子\移动游戏盒子.txt] @移动端盒子展示
+
+#IF
+EQUAL <$human(礼包码申请状态)> 1
+#ACT
+CALCVAR HUMAN 礼包码申请状态  = 0
+SAVEVAR HUMAN 礼包码申请状态
+CALCVAR HUMAN 礼包码领取状态  = 1
+SAVEVAR HUMAN 礼包码领取状态
+#CALL [\游戏盒子\移动游戏盒子.txt] @移动端礼包展示
+
+#OR
+EQUAL <$human(礼包领取状态)> 0
+EQUAL <$human(礼包码领取状态)> 0
+#ACT
+#ELSEACT
+DEC s$游戏盒子 <Img|id=1|img=public/btn_npcfh_04.png|x=50|y=5>
+ADDBUTTON 101 1 <$Str(s$游戏盒子)>
+
+#IF
+#ACT
+MESSAGEBOX 奖励已发送，请点击邮件领取奖励！
+break
+
+;验证失败
+[@GiftStatusFail]
+#IF
+EQUAL <$human(礼包申请状态)> 1
+#ACT
+CALCVAR HUMAN 礼包申请状态  = 0
+SAVEVAR HUMAN 礼包申请状态
+#CALL [\游戏盒子\移动游戏盒子.txt] @移动端盒子展示
+
+#IF
+EQUAL <$human(礼包码申请状态)> 1
+#ACT
+CALCVAR HUMAN 礼包码申请状态  = 0
+SAVEVAR HUMAN 礼包码申请状态
+#CALL [\游戏盒子\移动游戏盒子.txt] @移动端礼包展示
+
+
+#If
+EQUAL <$USERGIFTSTATUS> 3
+#Act
+MESSAGEBOX 奖励发送失败，请重新领取！
+break
+
+#If
+EQUAL <$USERGIFTSTATUS> 6
+#Act
+MESSAGEBOX 已领取过该礼包！
+break
+
+#If
+EQUAL <$USERGIFTSTATUS> 7
+#Act
+MESSAGEBOX 礼包码填写错误，请重新填写！
+break
+
+#IF
+EQUAL <$USERGIFTSTATUS> 8
+#ACT
+MESSAGEBOX 无法使用该礼包码！
+break
+
+#If
+EQUAL <$USERGIFTSTATUS> 9
+#Act
+MESSAGEBOX 未从盒子登录，无法领取该礼包
+break
+
+
+;面板关闭触发
+[@CloseLayer1]
+#IF
+#ACT
+Mov N$回收激活 0
+Mov S$递增回收标识
+SelectBagItems <$STR(S$递增回收标识)>
+
+[@CloseLayer2]
+#IF
+#ACT
+MOV S$递增物品唯一ID
+SelectBagItems <$STR(S$递增物品唯一ID)>
+
+[@CloseLayer3]
+#IF
+#ACT
+Mov N$vip面板 0
+
+#IF
+EQUAL <$HUMAN(日活跃重置)> 已重置
+equal <$HUMAN(活跃度_会员登录)> 0
+LARGE U13 0
+#ACT
+CALCVAR HUMAN 活跃度_会员登录 = 1
+SAVEVAR HUMAN 活跃度_会员登录
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_会员登录)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_会员登录)>
+SAVEVAR HUMAN 活跃度_活跃度周
+BREAK
+
+[@CloseLayer4]
+#IF
+#Act
+#Call [\全服活动\竞技排行榜.txt] @竞技注灵榜排序
+#Call [\游戏功能\活跃系统\活跃任务结算.txt] @活跃任务结算
+
+
+
+[@比奇新手泡点]
+#IF
+small <$LEVEL> 35
+#ACT
+money 经验 + 5000
+break
+
+
+[@exitQF]
+#IF
+#ACT
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+OPENHYPERLINK 5 2
+break
+
+;====================================================================200类触发
+[@StdModeFunc301]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc302]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc303]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc304]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc305]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc306]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc307]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc308]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc309]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc310]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc311]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+
+[@取消首冲推荐]
+#IF
+#ACT
+#CALL [\游戏功能\活动图标\活动图标QM.txt] @活动图标QM
+[@取消会员体验]
+#ACT
+MOV T3
+DELBUTTON 101 101
+CALCVAR HUMAN 顶戴展示三 =
+SAVEVAR HUMAN 顶戴展示三
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+
+
+#IF
+SMALL U13 1
+#ACT
+#CALL [\游戏功能\活动图标\会员到期.txt] @会员到期
+
+;====================================================================转生丹
+[@StdModeFunc1415]
+#IF
+CHECKRENEWLEVEL = 15
+#ACT
+STOP
+BREAK
+
+#IF
+#ACT
+Mov n$RELEVEL <$RELEVEL>
+Mov n$直升等级 15
+dec n$直升等级 <$Str(n$RELEVEL)>
+RENEWLEVEL <$Str(n$直升等级)> 0 0
+Mov u21 140
+Mov u22 360
+Goto @直升属性赋值
+#IF
+CHECKLEVELEX < 241
+#ACT
+CHANGELEVEL = 240
+BREAK
+
+[@直升属性赋值]
+#IF
+CHECKJOB Warrior
+#ACT
+Mov u19 4200
+Mov u20 500
+#CALL [\属性刷新.txt] @属性刷新
+BREAK
+#IF
+#ACT
+Mov u19 1600
+Mov u20 5000
+#CALL [\属性刷新.txt] @属性刷新
+BREAK
+
+;====================================================================箱子
+[@StdModeFunc1262]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留5个背包空格</font>
+STOP
+BREAK
+;====================================================================声望
+[@StdModeFunc1232]
+#ACT
+MONEY 声望 + 100
+[@StdModeFunc1233]
+#ACT
+MONEY 声望 + 1000
+;====================================================================会员体验卡
+[@StdModeFunc1217]
+#IF
+#ACT
+CONFERTITLE 钻石会员
+CALCVAR HUMAN 顶戴展示三 = 50689
+SAVEVAR HUMAN 顶戴展示三
+Mov T3 <$YEAR>-<$MONTH>-<$DAY>-<$HOUR>-<$MINUTE>-<$SECOND>
+;#CALL [\游戏功能\活动图标\buff显示.txt] @buff显示
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+
+
+[@StdModeFunc1218]
+#IF
+#ACT
+CONFERTITLE 武林会员
+[@StdModeFunc1219]
+#IF
+#ACT
+CONFERTITLE 王者会员
+
+;改名
+
+[@StdModeFunc1230]
+#IF
+Checkitem 角色改名卡 1
+#ACT
+Stop
+#SAY
+<Img|ax=0|width=550|scale9r=80|scale9t=70|esc=1|bg=1|loadDelay=1|scale9b=20|scale9l=80|move=0|reset=1|img=custom/hl/hl_ui/tsbj.png|show=0>
+<Layout|x=545|y=0|width=80|height=80|link=@exit>
+<Button|x=550.0|y=0.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|x=15.0|y=55.0|color=147|size=18|text=名称长度要求2-10个汉字>
+<Img|ax=0|x=173.0|y=106.0|width=180|img=custom/hl/shajuan/1900000668.png|esc=0>
+<Input|x=173.0|y=106.0|inputid=6|type=0|width=180|height=31|color=255|size=18|mincount=4|maxcount=20|place=请输入新的名称|placecolor=159>
+<Button|ax=0|x=90.0|y=161.0|submitInput=6|width=160|pimg=custom/hl/hl_ui/140_1.png|nimg=custom/hl/hl_ui/140_2.png|size=18|color=103|text=查询名称是否可用|link=@查询角色名>
+<Button|ax=0|x=301.0|y=161.0|submitInput=6|width=160|pimg=custom/hl/hl_ui/140_1.png|nimg=custom/hl/hl_ui/140_2.png|size=18|color=253|text=确定修改角色名|link=@修改角色名>
+
+
+
+[@查询角色名]
+#IF
+Equal <$NPCINPUT(6)>
+#Act
+messagebox 请输入一个正确的名称
+BREAK
+
+
+#IF
+#ACT
+QUERYHUMNAMEEXIST <$NPCINPUT(6)>
+
+[@修改角色名]
+#IF
+Equal <$NPCINPUT(6)>
+#Act
+messagebox 请输入一个正确的名称
+BREAK
+
+#IF
+#ACT
+close
+CHANGEHUMNAME <$NPCINPUT(6)>
+
+
+;红名
+[@StdModeFunc107]
+#IF
+Checkitem 红名清洗卡 1
+CHECKPKPOINTEX < 100
+#act
+Stop
+messagebox 你没有红名...
+BREAK 
+
+#IF
+Checkitem 红名清洗卡 1
+CHECKPKPOINTEX > 100
+#act
+CHANGEPKPOINT - 100
+Goto @追加Pk值
+sendmsg 6 你的PK点数已经减少100点。
+BREAK
+
+
+
+
+
+
+[@QueryingHumName]
+#Act
+SENDMSG 9 <font color='#00ff00'>正在查询请稍后。。。</font>
+
+
+[@QueryHumNameOK]
+#Act
+messagebox 查询成功，该名称可以使用
+
+
+[@ChangeingHumName]
+#Act
+SENDMSG 9 <font color='#00ff00'>正在修改请稍后。。。</font>
+
+[@ChangeHumNameOK]
+#ACT
+take 角色改名卡 1
+SENDMSG 9 <font color='#00ff00'>你的名字修改成功，旧名称：<$USERNAME>　新名称：<$USERNEWNAME>！</font>
+#CALL [\游戏功能\系统功能\改名重置.txt] @改名重置
+
+
+
+
+[@NameLengthFail]
+#Act
+messagebox 名字长度太短或不允许超过20个字符！
+
+
+[@HumNameFilter]
+#Act
+messagebox 该名字存在非法字符！
+
+
+[@HumNameExists]
+#Act
+messagebox 该名字已经被其他玩家占用，请选择其他名字
+
+
+[@ChangeHumNameFail]
+#Act
+messagebox 改名失败！
+
+
+;====================================================================升级触发
+[@PlayLevelUp]
+#or
+large <$LEVEL> <$Str(G419)>
+large <$RELEVEL> <$Str(A419)>
+#Act
+#Call [\全服活动\竞技排行榜.txt] @竞技等级榜排序
+
+#IF
+EQUAL <$RELEVEL> 4
+#ACT
+MOV S$主界面按钮 <Button|x=22|y=100|mimg=private/main/bottom/1900013018.png|color=255|nimg=private/main/bottom/1900013018.png|link=@退出>
+ADDBUTTON 109 4 <$STR(S$主界面按钮)>
+MOV S$主界面按钮 <Button|x=92|y=100|nimg=custom/hl/zhuling/zlan.png|link=@注灵>
+ADDBUTTON 109 5  <$STR(S$主界面按钮)>
+
+#IF
+#ACT
+#CALL [\游戏功能\任务系统\任务升级触发.txt] @任务升级触发
+
+
+#IF
+checkjob Warrior
+CHECKLEVELEX = 30
+#ACT
+INC   S$界面绘制 <Effect|effectid=50703|effecttype=0|scale=1|scale=0.7|x=-238|y=-110>
+INC   S$界面绘制 <Effect|effectid=50704|effecttype=0|scale=1|scale=0.7|x=-238|y=-110>
+ADDBUTTON 108 108 <$STR(S$界面绘制)>
+
+#IF
+CHECKLEVELEX = 35
+#ACT
+Mov T5 <$YEAR>-<$MONTH>-<$DAY>
+Mov T6 <$HOUR>-<$MINUTE>-<$SECOND>
+#CALL [\游戏功能\活动图标\活动图标QM.txt] @活动图标QM
+#CALL [\功能脚本\首冲相关\首冲推荐.txt] @首冲推荐
+#CALL [\功能脚本\红点系统\红点系统.txt] @红点显示
+#IF
+CHECKLEVELEX = 40
+#ACT
+#CALL [\功能脚本\红点系统\红点系统.txt] @红点显示
+#IF
+CHECKLEVELEX = 50
+#ACT
+#CALL [\功能脚本\红点系统\红点系统.txt] @红点显示
+#IF
+CHECKLEVELEX = 60
+#ACT
+#CALL [\功能脚本\红点系统\红点系统.txt] @红点显示
+#IF
+CHECKLEVELEX = 70
+#ACT
+#CALL [\功能脚本\红点系统\红点系统.txt] @红点显示
+#IF
+CHECKLEVELEX = 80
+#ACT
+#CALL [\功能脚本\红点系统\红点系统.txt] @红点显示
+#IF
+CHECKLEVELEX = 100
+#ACT
+#CALL [\功能脚本\红点系统\红点系统.txt] @红点显示
+
+#IF
+CHECKRENEWLEVEL = 4
+#ACT
+#CALL [\功能脚本\红点系统\红点系统.txt] @红点显示
+
+
+#IF
+EQUAL U119 0
+#ACT
+GOTO @首充恶心界面
+
+[@首充恶心界面]
+#OR
+EQUAL <$LEVEL> 51
+EQUAL <$LEVEL> 73
+EQUAL <$LEVEL> 91
+#ACT
+#CALL [\功能脚本\首冲相关\首冲相关.txt] @首冲相关
+break
+;====================================================================31类触发
+[@StdModeFunc204]
+#IF
+CHECKLEVELEX < 121
+#ACT
+CHANGELEVEL + 1
+BREAK
+#IF
+#ACT
+CHANGEEXP + 5000000
+BREAK
+
+[@StdModeFunc1221]
+#IF
+#ACT
+MONEY 绑定元宝 + 8888
+[@StdModeFunc1222]
+#IF
+#ACT
+MONEY 绑定元宝 + 28888
+[@StdModeFunc1223]
+#IF
+#ACT
+MONEY 绑定元宝 + 58888
+[@StdModeFunc1224]
+#IF
+#ACT
+MONEY 绑定元宝 + 88888
+
+[@StdModeFunc1301]
+#IF
+#ACT
+CHANGEEXP + 100000
+[@StdModeFunc1302]
+#IF
+#ACT
+CHANGEEXP + 200000
+[@StdModeFunc1303]
+#IF
+#ACT
+CHANGEEXP + 500000
+[@StdModeFunc1304]
+#IF
+#ACT
+CHANGEEXP + 1000000
+[@StdModeFunc1305]
+#IF
+#ACT
+CHANGEEXP + 2000000
+[@StdModeFunc1306]
+#IF
+#ACT
+CHANGEEXP + 5000000
+
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1307]
+#IF
+#ACT
+CHANGEEXP + 10000000
+[@StdModeFunc1308]
+#IF
+#ACT
+CHANGEEXP + 20000000
+[@StdModeFunc1309]
+#IF
+#ACT
+CHANGEEXP + 50000000
+[@StdModeFunc1310]
+#IF
+#ACT
+CHANGEEXP + 100000000
+[@StdModeFunc1311]
+#IF
+#ACT
+CHANGEEXP + 200000000
+[@StdModeFunc1312]
+#IF
+#ACT
+CHANGEEXP + 500000000
+[@StdModeFunc1313]
+#IF
+#ACT
+CHANGEEXP + 1000000000
+[@StdModeFunc1401]
+#IF
+#ACT
+CHANGEEXP + 2000000000
+[@StdModeFunc1402]
+#IF
+#ACT
+CHANGEEXP + 4000000000
+
+[@StdModeFunc1225]
+#IF
+#ACT
+KILLMONEXPRATE 200 3600
+SENDMSG 6 您当前杀怪经验倍数为<$KILLMONEXPRATE>倍，有效时间<$KILLMONEXPRATETIME>秒。
+
+[@StdModeFunc1226]
+#IF
+#ACT
+KILLMONEXPRATE 300 3600
+SENDMSG 6 您当前杀怪经验倍数为<$KILLMONEXPRATE>倍，有效时间<$KILLMONEXPRATETIME>秒。
+
+[@StdModeFunc1227]
+#IF
+#ACT
+KILLMONEXPRATE 400 3600
+SENDMSG 6 您当前杀怪经验倍数为<$KILLMONEXPRATE>倍，有效时间<$KILLMONEXPRATETIME>秒。
+
+[@StdModeFunc1228]
+#IF
+#ACT
+KILLMONEXPRATE 500 3600
+SENDMSG 6 您当前杀怪经验倍数为<$KILLMONEXPRATE>倍，有效时间<$KILLMONEXPRATETIME>秒。
+
+[@StdModeFunc1229]
+#IF
+#ACT
+KILLMONEXPRATE 1000 3600
+SENDMSG 6 您当前杀怪经验倍数为<$KILLMONEXPRATE>倍，有效时间<$KILLMONEXPRATETIME>秒。
+
+[@StdModeFunc1261]
+#if
+SMALL U6 9112
+#act
+INC U6 88
+#elseact
+MOV U6 10000
+#if
+SMALL U7 9112
+#act
+INC U7 88
+#elseact
+MOV U7 10000
+#if
+SMALL U8 9112
+#act
+INC U8 88
+#elseact
+MOV U8 10000
+#if
+SMALL U9 9112
+#act
+INC U9 88
+#elseact
+MOV U9 10000
+#if
+SMALL U10 9112
+#act
+INC U10 88
+#elseact
+MOV U10 10000
+#If
+#ACT
+SENDMSG 7 元神保险祝福值已提升88！
+break
+
+[@StdModeFunc94]
+#if
+SMALL U6 9112
+#act
+INC U6 888
+#elseact
+MOV U6 10000
+#if
+SMALL U7 9112
+#act
+INC U7 888
+#elseact
+MOV U7 10000
+#if
+SMALL U8 9112
+#act
+INC U8 888
+#elseact
+MOV U8 10000
+#if
+SMALL U9 9112
+#act
+INC U9 888
+#elseact
+MOV U9 10000
+#if
+SMALL U10 9112
+#act
+INC U10 888
+#elseact
+MOV U10 10000
+#If
+#ACT
+SENDMSG 7 元神保险祝福值已提升888！
+break
+
+[@StdModeFunc95]
+#if
+SMALL U6 7112
+#act
+INC U6 2888
+#elseact
+MOV U6 10000
+#if
+SMALL U7 7112
+#act
+INC U7 2888
+#elseact
+MOV U7 10000
+#if
+SMALL U8 7112
+#act
+INC U8 2888
+#elseact
+MOV U8 10000
+#if
+SMALL U9 7112
+#act
+INC U9 2888
+#elseact
+MOV U9 10000
+#if
+SMALL U10 7112
+#act
+INC U10 2888
+#elseact
+MOV U10 10000
+#If
+#ACT
+SENDMSG 7 元神保险祝福值已提升2888！
+break
+
+
+[@关闭地图]
+#ACT
+OPENHYPERLINK 24 2
+[@帮助]
+#ACT
+#CALL [\游戏功能\界面按钮\帮助按钮QF.txt] @帮助按钮QF
+[@Q群礼包]
+#ACT
+#CALL [\功能脚本\Q群礼包\Q群礼包.txt] @Q群MAIN
+
+[@微信礼包]
+#ACT
+#CALL [\功能脚本\Q群礼包\微信验证.txt] @微信MAIN
+[@关闭经验特效]
+#IF
+EQUAL U136 0
+#ACT
+MOV U136 1
+Mov S$经验特效 <CheckBox|checkboxid=1|nimg=public/1900000550.png|pimg=public/1900000551.png|default=0|submit=1|x=30|y=265|link=@关闭经验特效>
+Inc   S$经验特效 <Text|text=经验提示|x=80|y=267|size=16|color=158|outline=1|outlinecolor=0>
+ADDBUTTON 22 1  <$STR(S$经验特效)>
+BREAK
+#IF
+EQUAL U136 1
+#ACT
+MOV U136 0
+Mov S$经验特效 <CheckBox|checkboxid=1|nimg=public/1900000550.png|pimg=public/1900000551.png|default=1|submit=1|x=30|y=265|link=@关闭经验特效>
+Inc   S$经验特效 <Text|text=经验提示|x=80|y=267|size=16|color=158|outline=1|outlinecolor=0>
+ADDBUTTON 22 1  <$STR(S$经验特效)>
+BREAK
+;==========================================================货币改变触发
+[@MoneyChange18]
+;充值积分
+#IF
+#ACT
+#CALL [\功能脚本\vip特权\vip检测.txt] @vip检测
+
+[@MoneyChange11]
+#IF
+NOT EQUAL T4 <$YEAR>-<$MONTH>-<$DAY>
+SMALL U36 7
+CHECKMONEY 充值点 ? 98
+#ACT
+MOV T4 <$YEAR>-<$MONTH>-<$DAY>
+INC    U36  1
+MOV U237 1
+
+#IF
+EQUAL U119 0
+#ACT
+INC   S$图标2 <Img|id=10|x=55|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+addbutton 102 2 <$STR(S$图标2)>
+MOV U119 1
+
+
+
+#IF
+EQUAL <$HUMAN(活跃度_每日充值)> 0
+#ACT
+MOV N$活跃_充值前 <$OLDMONEY>
+MOV N$活跃_充值后 <$CURRMONEY>
+
+#IF
+large <$STR(N$活跃_充值后)> <$STR(N$活跃_充值前)>
+EQUAL <$HUMAN(活跃度_每日充值)> 0
+#ACT
+CALCVAR HUMAN 活跃度_每日充值 = 1
+SAVEVAR HUMAN 活跃度_每日充值
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_每日充值)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_每日充值)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【每日充值】任务已完成！
+break
+
+
+[@MoneyChange2]
+
+#IF
+small <$HUMAN(活跃度_消费元宝)> 100000
+#ACT
+MOV N$活跃_元宝前 <$OLDMONEY>
+MOV N$活跃_元宝后 <$CURRMONEY>
+
+#IF
+large <$STR(N$活跃_绑元前)> <$STR(N$活跃_绑元后)>
+small <$HUMAN(活跃度_消费元宝)> 100000
+#ACT
+DEC N$活跃_绑元前 <$STR(N$活跃_绑元后)>
+CALCVAR HUMAN 活跃度_消费元宝 + <$STR(N$活跃_绑元前)>
+SAVEVAR HUMAN 活跃度_消费元宝
+
+#IF
+large <$HUMAN(活跃度_消费元宝)> 99999
+equal <$HUMAN(活跃度_元宝任务)> 0
+#ACT
+CALCVAR HUMAN 活跃度_消费元宝 = 100000
+SAVEVAR HUMAN 活跃度_消费元宝
+CALCVAR HUMAN 活跃度_元宝任务 = 1
+SAVEVAR HUMAN 活跃度_元宝任务
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_消费元宝)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_消费元宝)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【消费元宝】任务已完成！
+break
+
+
+[@MoneyChange4]
+
+#IF
+small <$HUMAN(活跃度_消费元宝)> 100000
+#ACT
+MOV N$活跃_绑元前 <$OLDMONEY>
+MOV N$活跃_绑元后 <$CURRMONEY>
+
+#IF
+large <$STR(N$活跃_绑元前)> <$STR(N$活跃_绑元后)>
+small <$HUMAN(活跃度_消费元宝)> 100000
+#ACT
+DEC N$活跃_绑元前 <$STR(N$活跃_绑元后)>
+CALCVAR HUMAN 活跃度_消费元宝 + <$STR(N$活跃_绑元前)>
+SAVEVAR HUMAN 活跃度_消费元宝
+
+#IF
+large <$HUMAN(活跃度_消费元宝)> 99999
+equal <$HUMAN(活跃度_元宝任务)> 0
+#ACT
+CALCVAR HUMAN 活跃度_消费元宝 = 100000
+SAVEVAR HUMAN 活跃度_消费元宝
+CALCVAR HUMAN 活跃度_元宝任务 = 1
+SAVEVAR HUMAN 活跃度_元宝任务
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_消费元宝)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_消费元宝)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【消费元宝】任务已完成！
+break
+
+
+[@MoneyChange7] 
+
+#IF
+EQUAL <$HUMAN(活跃度_火龙币购物)> 0
+#ACT
+MOV N$活跃_绑龙币前 <$OLDMONEY>
+MOV N$活跃_绑龙币后 <$CURRMONEY>
+
+
+#IF
+large <$STR(N$活跃_绑龙币前)> <$STR(N$活跃_绑龙币后)>
+EQUAL <$HUMAN(活跃度_火龙币购物)> 0
+#ACT
+CALCVAR HUMAN 活跃度_火龙币购物 = 1
+SAVEVAR HUMAN 活跃度_火龙币购物
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_火龙币购物)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_火龙币购物)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【火龙币购物】任务已完成！
+break
+
+[@MoneyChange15]
+
+#IF
+small <$HUMAN(活跃度_获得声望)> 500
+#ACT
+MOV N$活跃_声望前 <$OLDMONEY>
+MOV N$活跃_声望后 <$CURRMONEY>
+
+#IF
+large <$STR(N$活跃_声望后)> <$STR(N$活跃_声望前)>
+small <$HUMAN(活跃度_获得声望)> 500
+#ACT
+DEC N$活跃_声望后 <$STR(N$活跃_声望前)>
+CALCVAR HUMAN 活跃度_获得声望 + <$STR(N$活跃_声望后)>
+SAVEVAR HUMAN 活跃度_获得声望
+
+#IF
+large <$HUMAN(活跃度_获得声望)> 499
+equal <$HUMAN(活跃度_声望任务)> 0
+#ACT
+CALCVAR HUMAN 活跃度_获得声望 = 500
+SAVEVAR HUMAN 活跃度_获得声望
+CALCVAR HUMAN 活跃度_声望任务 = 1
+SAVEVAR HUMAN 活跃度_声望任务
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_获得声望)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_获得声望)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【获得声望】任务已完成！
+break
+
+[@TakeOnEx]
+#IF
+EQUAL <$CURRTAKETEMPOS> 1
+EQUAL U228 1
+#ACT
+ChangeItemShape 1 = <$STR(U231)>
+ChangeDressEffect 1 <$STR(U231)> 1
+
+#IF
+EQUAL <$CURRTAKETEMPOS> 0
+EQUAL U228 1
+#ACT
+ChangeItemShape 0 = <$STR(U235)>
+ChangeDressEffect 0 <$STR(U235)> 1
+
+#IF
+LARGE <$Starcount<$CURRTAKETEMPOS>> 6
+#ACT
+#CALL [\功能脚本\装备强星\强星套装.txt] @强星套装
+
+
+
+[@TakeOffEx]
+
+#IF
+#act 
+#CALL [\功能脚本\装备强星\强星套装.txt] @执行套装赋值1
+
+
+[@爆稀有装备检测]
+#OR
+equal <$CURRTEMNAME> 神器图纸
+#act
+goto @爆出稀有装备条件检测
+break
+
+
+[@爆出稀有装备条件检测]
+#if
+CHECKMONEY VIP经验 ? 58
+#act
+;VIP经验 ? 58，则允许此物品掉落
+ALLOWDROP 1
+break
+#elseact
+;小于10，不允许掉落
+ALLOWDROP 0 
+;----------------------------------------------------
+[@爆稀有装备检测1]
+#OR
+equal <$CURRTEMNAME> 魔龙之心
+#act
+goto @爆出稀有装备条件检测1
+break
+
+
+[@爆出稀有装备条件检测1]
+#if
+CHECKMONEY VIP经验 ? 228
+#act
+;VIP经验 ? 228，则允许此物品掉落
+ALLOWDROP 1
+break
+#elseact
+;小于101，不允许掉落
+ALLOWDROP 0 
+;----------------------------------------------------
+[@爆稀有装备检测2]
+#OR
+equal <$CURRTEMNAME> 火龙精魄
+#act
+goto @爆出稀有装备条件检测2
+break
+
+
+[@爆出稀有装备条件检测2]
+#if
+CHECKMONEY VIP经验 ? 500
+#act
+;VIP经验 ? 500，则允许此物品掉落
+ALLOWDROP 1
+break
+#elseact
+;小于500，不允许掉落
+ALLOWDROP 0 
+;----------------------------------------------------
+[@爆稀有装备检测4]
+
+#OR
+equal <$CURRTEMNAME> 【残】神器掉落组
+#act
+goto @爆出稀有装备条件检测4
+break
+
+
+[@爆出稀有装备条件检测4]
+#if
+CHECKMONEY VIP经验 ? 700
+#act
+;VIP经验 ? 700，则允许此物品掉落
+ALLOWDROP 1
+break
+#elseact
+;小于700，不允许掉落
+ALLOWDROP 0 
+;----------------------------------------------------
+[@爆稀有装备检测5]
+
+#OR
+equal <$CURRTEMNAME> 【残】热血神器掉落组
+#act
+goto @爆出稀有装备条件检测5
+break
+
+
+[@爆出稀有装备条件检测5]
+#if
+CHECKMONEY VIP经验 ? 1200
+#act
+;VIP经验 ? 1200，则允许此物品掉落
+ALLOWDROP 1
+break
+#elseact
+;小于1200，不允许掉落
+ALLOWDROP 0 
+;----------------------------------------------------
+
+[@爆出火龙气息条件检测]
+#if
+CHECKMONEY VIP经验 ? 100
+#act
+;VIP经验 ? 100，则允许此物品掉落
+ALLOWDROP 1
+break
+#elseact
+;小于100，不允许掉落
+ALLOWDROP 0 
+;----------------------------------------------------
+
+;每日登录
+[@SetDay]
+#IF
+Not EQUAL T10 <$YEAR>-<$MONTH>-<$DAY>
+#ACT
+MOV T10 <$YEAR>-<$MONTH>-<$DAY>
+Inc u56 1
+
+#IF
+EQUAL U119 0
+large <$LEVEL> 29
+#ACT
+Delaygoto 3000 @延迟SetDay
+
+[@延迟SetDay]
+#IF
+EQUAL U119 0
+#ACT
+#CALL [\功能脚本\首冲相关\首冲相关.txt] @首冲相关
+break
+
+;----------------------------------------------------
+[@StdModeFunc33]
+#IF
+#ACT
+mapmove 3 330 330 2
+
+[@PickUpItem40827]
+#OR
+EQUAL <$STR(U91)> 6
+EQUAL <$STR(U91)> 10
+EQUAL <$STR(U91)> 14
+EQUAL <$STR(U91)> 18
+EQUAL <$STR(U91)> 20
+#ACT
+MOV S$C_来自任务 是的
+#CALL [\游戏功能\任务系统\任务材料.txt] @任务材料检测
+
+#IF
+check [422] 0
+#ACT
+#CALL [\游戏功能\任务系统\材料支线.txt] @材料支线
+
+[@PickUpItem40005]
+#IF
+check [420] 0
+#ACT
+#CALL [\游戏功能\任务系统\材料支线.txt] @材料支线
+[@PickUpItem40001]
+#IF
+check [424] 0
+#ACT
+#CALL [\游戏功能\任务系统\材料支线.txt] @材料支线
+[@PickUpItem40002]
+#IF
+check [424] 0
+#ACT
+#CALL [\游戏功能\任务系统\材料支线.txt] @材料支线
+[@PickUpItem40003]
+#IF
+check [424] 0
+#ACT
+#CALL [\游戏功能\任务系统\材料支线.txt] @材料支线
+[@PickUpItem40004]
+#IF
+check [424] 0
+#ACT
+#CALL [\游戏功能\任务系统\材料支线.txt] @材料支线
+[@PickUpItem40220]
+#IF
+CHECKRENEWLEVEL > 3
+EQUAL S$注灵红点
+#ACT
+#CALL [\游戏功能\读取背包\读取背包.txt] @背包检测
+[@PickUpItem40221]
+#IF
+CHECKRENEWLEVEL > 3
+EQUAL S$注灵红点
+#ACT
+#CALL [\游戏功能\读取背包\读取背包.txt] @背包检测
+[@PickUpItem40222]
+#IF
+CHECKRENEWLEVEL > 3
+EQUAL S$注灵红点
+#ACT
+#CALL [\游戏功能\读取背包\读取背包.txt] @背包检测
+
+[@AddBag]
+#IF
+check [416] 0
+#ACT
+#CALL [\游戏功能\任务系统\材料支线.txt] @材料支线
+
+#IF
+EQUAL U242 1
+NOT CHECKBAGSIZE 5
+LARGE U13 0
+#ACT
+#CALL [\游戏功能\系统功能\分解大师.txt] @遍历背包分解
+
+#IF
+EQUAL <$NEWBAGITEMNAME> 傲视群雄
+#Act
+CONFERTITLE 傲视群雄
+Take 傲视群雄 1
+#CALL [\顶戴刷新.txt] @顶戴刷新
+SENDMSG 6 恭喜你获得了【傲视群雄】称号...
+CALCVAR HUMAN 顶戴展示六A = 50713
+SAVEVAR HUMAN 顶戴展示六A
+GOTO @给顶戴_全服榜单
+
+#IF
+EQUAL <$NEWBAGITEMNAME> 超凡入圣
+#Act
+CONFERTITLE 超凡入圣
+Take 超凡入圣 1
+#CALL [\顶戴刷新.txt] @顶戴刷新
+SENDMSG 6 恭喜你获得了【超凡入圣】称号...
+CALCVAR HUMAN 顶戴展示七A = 50714
+SAVEVAR HUMAN 顶戴展示七A
+GOTO @给顶戴_全服榜单
+
+#IF
+EQUAL <$NEWBAGITEMNAME> 巅峰之人
+#Act
+CONFERTITLE 巅峰之人
+Take 巅峰之人 1
+#CALL [\顶戴刷新.txt] @顶戴刷新
+SENDMSG 6 恭喜你获得了【巅峰之人】称号...
+CALCVAR HUMAN 顶戴展示九A = 50716
+SAVEVAR HUMAN 顶戴展示九A
+GOTO @给顶戴_全服榜单
+
+#IF
+EQUAL <$NEWBAGITEMNAME> 唯我独尊
+#Act
+CONFERTITLE 唯我独尊
+take 唯我独尊 1
+#CALL [\顶戴刷新.txt] @顶戴刷新
+SENDMSG 6 恭喜你获得了【唯我独尊】称号...
+CALCVAR HUMAN 顶戴展示八A = 50717
+SAVEVAR HUMAN 顶戴展示八A
+GOTO @给顶戴_全服榜单
+
+[@DropItem40220]
+#IF
+#ACT
+DELAYGOTO 1 @读取背包检测
+BREAK
+[@DropItem40221]
+#IF
+#ACT
+DELAYGOTO 1 @读取背包检测
+BREAK
+[@DropItem40222]
+#IF
+#ACT
+DELAYGOTO 1 @读取背包检测
+BREAK
+
+[@读取背包检测]
+#act
+#CALL [\游戏功能\读取背包\读取背包.txt] @背包检测
+BREAK
+
+[@管理模式]
+#ACT
+#CALL [\游戏登陆\管理功能.txt] @管理后台
+
+[@KillMon]
+#IF
+EQUAL U136 0
+#ACT
+MOV S$经验特效 <Effect|x=115|y=370|effectid=32000|effecttype=0|scale=1|scale=1|count=1>
+ADDBUTTON 106 1  <$STR(S$经验特效)>
+#IF
+EQUAL <$MAPTITLE> 比奇省
+EQUAL <$KILLMONNAME> 鸡
+#ACT
+MonGenEx 0 284 612 鸡7 5 1 0 255
+
+#IF
+#ACT
+MOV N$古陵击杀 0
+#IF
+CheckContainsText <$KILLMONNAME> 经验猪
+#ACT
+#CALL [\游戏功能\系统功能\经验使者.txt] @经验猪检测
+
+#IF
+equal <$HUMAN(活跃度_挑战领主)> 0
+CheckContainsText A400 <$KILLMONNAME>
+#ACT
+CALCVAR HUMAN 活跃度_挑战领主 = 1
+SAVEVAR HUMAN 活跃度_挑战领主
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_挑战领主)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_挑战领主)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【挑战领主】任务已完成！
+
+#IF
+equal <$HUMAN(活跃度_挑战领主)> 0
+CheckContainsText <$KILLMONNAME> 领主
+#ACT
+CALCVAR HUMAN 活跃度_挑战领主 = 1
+SAVEVAR HUMAN 活跃度_挑战领主
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_挑战领主)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_挑战领主)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【挑战领主】任务已完成！
+
+#IF
+small <$HUMAN(活跃度_清理魔物)> 200
+#ACT
+CALCVAR HUMAN 活跃度_清理魔物 + 1
+SAVEVAR HUMAN 活跃度_清理魔物
+
+#IF
+EQUAL <$HUMAN(活跃度_清理魔物)> 200
+#ACT
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_清理魔物)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_清理魔物)>
+SAVEVAR HUMAN 活跃度_活跃度周
+CALCVAR HUMAN 活跃度_清理魔物 + 1
+SAVEVAR HUMAN 活跃度_清理魔物
+sendmsg 9 活跃-【清理魔物】任务已完成！
+
+#IF
+#ACT
+INC U170 1
+
+#IF
+CheckKillMonName 鸡7
+#ACT
+#CALL [\游戏功能\任务系统\任务杀怪.txt] @任务杀怪触发
+BREAK
+#IF
+CheckContainsText <$str(A352)> <$KILLMONNAME>
+#ACT
+Inc U171 1
+#CALL [\游戏功能\系统功能\BOSS状态.txt] @BOSS击杀触发
+BREAK
+#IF
+CheckContainsText <$map> syt
+#ACT
+#CALL [\全服活动\妖塔击杀判断.txt] @妖塔击杀BOSS
+
+
+;=====================主线============================
+
+[@ClickNewTask]
+#IF
+#ACT
+#CALL [\游戏功能\任务系统\任务点击触发.txt] @点击任务面板
+
+
+;=====================主线============================
+
+
+
+[@EnterMap]
+#IF
+NOT CheckContainsText <$map> xssl
+#ACT
+CLEARDELAYGOTO 1
+
+#OR
+ISONMAP sjboss
+ISONMAP dbqb
+ISONMAP 0150
+#ACT
+SETSPRITEMODE 2
+RELEASESPRITE
+sendmsg 6 当前地图不允许携带拾取小精灵，小精灵已收回。
+
+#IF
+ISONMAP EM000
+#ACT
+setautogetexp 1 5000 0 EM000 0 9999999 150
+
+#IF
+NOT CheckContainsText <$map> syt
+NOT ISONMAP ycly1
+NOT ISONMAP ycly2
+NOT ISONMAP ycly3
+NOT ISONMAP ycly4
+NOT ISONMAP ycly5
+NOT ISONMAP ycly6
+NOT ISONMAP ycly7
+NOT ISONMAP ycly8
+NOT ISONMAP ycly9
+NOT ISONMAP ycly10
+NOT ISONMAP sjBOSS
+NOT ISONMAP dbqb
+#ACT
+#CALL [\游戏功能\任务系统\主线流程.txt] @主线开始
+DELBUTTON 110 60
+
+#IF
+EQUAL G200 2
+NOT ISONMAP sjBOSS
+#ACT
+#CALL [\游戏功能\任务系统\主线流程.txt] @主线开始
+DELBUTTON 110 15
+DELBUTTON 110 16
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+
+#IF
+EQUAL G250 2
+NOT ISONMAP dbqb
+#ACT
+DELBUTTON 110 17
+#CALL [\游戏功能\任务系统\主线流程.txt] @主线开始
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+
+#IF
+EQUAL G231 2
+NOT ISONMAP ycly1
+NOT ISONMAP ycly2
+NOT ISONMAP ycly3
+NOT ISONMAP ycly4
+NOT ISONMAP ycly5
+NOT ISONMAP ycly6
+NOT ISONMAP ycly7
+NOT ISONMAP ycly8
+NOT ISONMAP ycly9
+NOT ISONMAP ycly10
+#ACT
+DELBUTTON 110 15
+DELBUTTON 110 16
+#CALL [\游戏功能\任务系统\主线流程.txt] @主线开始
+MOV n$top 1
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+
+
+[@删除背包满]
+#IF
+#ACT
+DELBUTTON 108 101
+BREAK
+[@会员自动回收]
+#IF
+check [414] 0
+check [415] 0
+#ACT
+set [414] 1
+NEWPICKTASK 27
+sendmsg 9 背包满了，请打开背包使用在线回收！
+
+#IF
+#ACT
+ADDBUTTON 108 101 <Effect|effectid=5038|effecttype=0|scale=0.8|x=230|y=-95>
+#IF
+large U13 0
+#ACT
+#CALL [\游戏功能\装备回收\材料回收.txt] @材料回收
+#CALL [\游戏功能\装备回收\自动回收.txt] @自动回收
+BREAK
+
+[@KillPlay]
+#IF
+#Act
+Goto @追加Pk值
+
+#IF
+Checkunderwar 沙巴克
+CheckInWarArea
+Checkvar Human 狂暴保护 = 已开启
+Checkvar Human 神龙之力 < 10
+#ACT
+SET [597] 1
+SET [598] 0
+Calcvar Human 庇护之力 = 0
+Savevar Human 庇护之力
+Calcvar Human 神龙之力 + 1
+Savevar Human 神龙之力
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+SENDMSG 6 提示:你当前神龙之力层数为：<$Human(神龙之力)>！
+SENDMSG 1 提示:玩家【<$USERNAME>】开启了【狂暴保护】,神龙之力增加1%！
+
+#IF
+EQUAL G250 2
+ISONMAP dbqb
+#ACT
+CALCVAR HUMAN B_夺宝奇兵积分 + 50
+SAVEVAR HUMAN B_夺宝奇兵积分
+#CALL [\全服活动\夺宝奇兵排行.txt] @启动夺宝奇兵排行
+SENDMSG 7 恭喜您！在夺宝奇兵活动中成功击杀玩家【<$KILLMONNAME>】，获得积分+50
+
+#OR
+EQUAL ycly1 <$map>
+EQUAL ycly2 <$map>
+EQUAL ycly3 <$map>
+EQUAL ycly4 <$map>
+EQUAL ycly5 <$map>
+EQUAL ycly6 <$map>
+EQUAL ycly7 <$map>
+EQUAL ycly8 <$map>
+EQUAL ycly9 <$map>
+EQUAL ycly10 <$map>
+#ACT
+MOV N$炼狱杀人 1
+
+#IF
+EQUAL G231 2
+EQUAL N$炼狱杀人 1
+#ACT
+MOV N$炼狱杀人 0
+CALCVAR HUMAN B_勇闯炼狱积分 + 5
+SAVEVAR HUMAN B_勇闯炼狱积分
+SENDMSG 7 恭喜您！成功击杀玩家【<$KILLMONNAME>】，获得积分+5.
+GMEXECUTE 开始提问 @开始勇闯炼狱排行
+
+
+
+;=======================================================按钮相关
+[@主界按钮设置]
+#ACT
+#CALL [\游戏功能\界面按钮\界面按钮QF.txt] @界面按钮QF
+[@自动挂机]
+#ACT
+#CALL [\游戏功能\界面按钮\其它按钮QF.txt] @开始挂机
+
+[@首冲]
+#ACT
+#CALL [\功能脚本\首冲相关\首冲相关.txt] @首冲相关
+
+[@开关]
+#ACT
+#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
+
+[@会员]
+#ACT
+#CALL [\功能脚本\vip特权\vip特权.txt] @vip特权
+
+[@介绍]
+#ACT
+#CALL [\游戏功能\系统功能\成长之路.txt] @启动成长
+
+[@刷新]
+#ACT
+REFRESHBAG
+[@开服活动]
+#ACT
+#CALL [\功能脚本\开区活动\每日充值.txt] @每日充值
+
+
+[@狂暴]
+#ACT
+#CALL [\游戏功能\系统功能\狂暴.txt] @启动狂暴
+
+[@我要变强]
+#ACT
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+[@福利]
+#ACT
+#CALL [\游戏功能\系统功能\福利大厅.txt] @启动福利大厅
+
+[@调用沙捐]
+#ACT
+#CALL [\功能脚本\沙城捐献\沙城捐献.txt] @全沙城捐献
+[@灵符捐献榜]
+#ACT
+#CALL [\游戏功能\系统功能\捐献.txt] @启动捐献
+[@充值活动]
+#CALL [\游戏功能\充值福利\连续充值福利.txt] @启动连续福利
+
+[@PlayDie]
+#IF
+#Act
+#SAY
+<Img|children={0,2,3,5,6}|a=1|x=737.0|y=201.0|width=314|height=167|scale9t=20|scale9l=20|scale9r=20|reset=1|bg=1|img=custom/hl/shajuan/hl_bg2.png|move=0|scale9b=20>
+<Layout|id=0|width=348|height=200>
+<Text|id=2|x=129.0|y=15.0|size=18|color=1001|text=死亡复活>
+<Text|id=3|a=4|x=168.0|y=64.0|color=1006|size=16|text=你被 <$CURRRTARGETNAME> 杀死了！>
+<COUNTDOWN|id=5|x=146.0|y=78.0|time=30|count=1|size=16|color=249|link=@免费复活>
+<Button|id=6|ax=0|ay=1|x=115.0|y=109.0|width=95|height=32|color=1020|pimg=custom/hl/hl_ui/115_1.png|nimg=custom/hl/hl_ui/115_2.png|size=17|text=免费复活|link=@免费复活>
+
+
+#IF
+Checkunderwar 沙巴克
+CheckInWarArea
+KILLBYHUM
+Not Checkvar Human 狂暴保护 =
+Checkvar Human 庇护之力 < 5
+#ACT
+Set [598] 1
+Set [597] 0
+Calcvar Human 庇护之力 + 1
+Savevar Human 庇护之力
+Calcvar Human 神龙之力 = 0
+Savevar Human 神龙之力
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+SENDMSG 1 提示:玩家【<$USERNAME>】开启了【狂暴保护】,庇护之力增加1%！
+SENDMSG 6 提示:你当前庇护之力层数为：<$Human(庇护之力)>！
+BREAK
+
+#IF
+Checkunderwar 沙巴克
+CheckInWarArea
+KILLBYHUM
+Not Checkvar Human 狂暴保护 =
+Checkvar Human 庇护之力 = 5
+#ACT
+Set [598] 1
+Set [597] 0
+SENDMSG 6 提示:你当前庇护之力层数为：<$Human(庇护之力)>！
+BREAK
+
+
+#IF
+KILLBYHUM
+CHECK [200] 1
+NOT CheckContainsText <$map> ycly
+#ACT
+Set [598] 0
+Set [597] 0
+SET [200] 0
+SetIcon 0 -1
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [元素刷新.txt] @元素刷新
+#CALL [爆率刷新.txt] @爆率刷新
+CALCVAR HUMAN 顶戴展示二 =
+SAVEVAR HUMAN 顶戴展示二
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+<$CURRRTARGETNAME>.MailGIVE 火龙币 1000 0#1#2#3#4#5#6#7#8
+<$CURRRTARGETNAME>.SendMail 1 击杀奖励 你好:<$USERNAME>\你击杀了火龙之力玩家【<$CURRRTARGETNAME>】，获得火龙币1000奖励。请提取
+
+
+#IF
+KILLBYHUM
+ISONMAP dbqb
+EQUAL G250 2
+#ACT
+CALCVAR HUMAN B_夺宝奇兵积分 - 25
+SAVEVAR HUMAN B_夺宝奇兵积分
+SENDMSG 7 你在夺宝奇兵活动中被玩家【<$CURRRTARGETNAME>】击杀，积分-25
+
+#IF
+EQUAL N$队伍集合 1
+#act
+MOV N$队伍集合 0
+GOTOLABEL 0 @放弃队长
+
+#IF
+KILLBYHUM
+#ACT
+SendMail 1 死亡提醒 你好:<$USERNAME>\你在【<<$MAPTITLE>/FCOLOR=250>】被玩家【<<$CURRRTARGETNAME>/FCOLOR=249>】无情击杀
+#ELSEACT
+SendMail 1 死亡提醒 你好:<$USERNAME>\你在【<<$MAPTITLE>/FCOLOR=250>】被怪物【<<$CURRRTARGETNAME>/FCOLOR=249>】无情击杀
+
+
+[@免费复活]
+#IF
+CheckInWarArea
+Iscastleguild
+#Act
+REALIVE
+AddhpPer - 90
+AddmpPer - 90
+Mapmove 3 644 290 3
+Break
+#IF
+Checkunderwar 沙巴克
+Iscastleguild
+Isonmap 0150
+#Act
+REALIVE
+AddhpPer - 90
+AddmpPer - 90
+Mapmove 3 644 290 3
+Break
+#IF
+#Act
+REALIVE
+AddhpPer - 90
+AddmpPer - 90
+Mapmove 3 334 329 2
+#IF
+LARGE U247 0
+#ACT
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @召唤精灵
+;----------------------------------------------------
+
+[@STDMODEFUNC9]
+#IF
+gender woman
+#ACT
+HAIRSTYLE 1
+SENDMSG 7 发型已经变更!
+BREAK
+#IF
+gender man
+#ACT
+HAIRSTYLE 1
+SENDMSG 7 发型已经变更!
+BREAK
+
+[@STDMODEFUNC10]
+#IF
+gender woman
+#ACT
+HAIRSTYLE 0
+SENDMSG 7 发型已经变更!
+BREAK
+#IF
+gender man
+#ACT
+HAIRSTYLE 0
+SENDMSG 7 发型已经变更!
+BREAK
+
+[@STDMODEFUNC11]
+#IF
+#ACT
+KILLMONEXPRATE 200 7200
+Gmexecute showeffect 76
+SENDMSG 0 玩家「<$USERNAME>」使用双倍卷轴，获得了2小时双倍时间。
+
+
+[@STDMODEFUNC12]
+#IF
+#ACT
+KILLMONEXPRATE 200 3600
+Gmexecute showeffect 76
+SENDMSG 0 玩家「<$USERNAME>」使用双倍宝典(小)，获得了1小时双倍时间。
+
+
+[@STDMODEFUNC13]
+#IF
+#ACT
+KILLMONEXPRATE 200 10800
+Gmexecute showeffect 76
+SENDMSG 0 玩家「<$USERNAME>」使用双倍宝典(中)，获得了3小时双倍时间。
+
+
+[@STDMODEFUNC14]
+#IF
+#ACT
+KILLMONEXPRATE 200 21600
+Gmexecute showeffect 76
+SENDMSG 0 玩家「<$USERNAME>」使用双倍宝典(大)，获得了6小时双倍时间。
+
+
+
+[@StdModeFunc29]
+#IF
+#ACT
+mapmove 0 326 272
+
+[@StdModeFunc33]
+#IF
+#ACT
+mapmove 3 536 609 2
+
+[@STDMODEFUNC205]
+#IF
+EQUAL <$WEAPON>
+#ACT
+GIVE 高级祝福油 1
+sendmsg 6 请佩戴武器再使用。
+BREAK
+
+#IF
+CheckItemAddValue 1 5 > 5
+#ACT
+GIVE 高级祝福油 1
+sendmsg 6 您的武器幸运值已满。
+BREAK
+
+#IF
+CheckItemAddValue 1 5 < 5
+RANDOMEX 30 100
+#ACT
+CHANGEITEMADDVALUE 1 5 + 1
+sendmsg 7 您的武器受到祝福幸运值+1
+BREAK
+#ELSEACT
+sendmsg 6 高级祝福油无效.
+BREAK
+#IF
+CheckItemAddValue 1 5 > 4
+RANDOMEX 1 1000
+#ACT
+CHANGEITEMADDVALUE 1 5 + 1
+sendmsg 7 您的武器受到祝福幸运值+1
+BREAK
+#ELSEACT
+sendmsg 6 高级祝福油无效.
+BREAK
+[@STDMODEFUNC200]
+#IF
+EQUAL <$WEAPON>
+#ACT
+GIVE 超级祝福油 1
+sendmsg 6 请佩戴武器再使用。
+BREAK
+#IF
+CheckItemAddValue 1 5 < 6
+#ACT
+CHANGEITEMADDVALUE 1 5 + 1
+sendmsg 7 您的武器受到祝福幸运值+1
+#ELSEACT
+GIVE 超级祝福油 1
+sendmsg 6 您的武器幸运值已满。
+
+
+;====================铭文相关==========================
+
+[@StruckDamage]
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 26
+<$CURRRTARGETNAME>.CheckContainsText <$STR(T90)> 穿火印
+RANDOM 3
+#ACT 
+ChangeDamageValue 1 + 50
+SENDMSG 9 【<$CURRRTARGETNAME>】的【穿火印】生效。你额外承受了50%伤害！
+
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 45
+<$CURRRTARGETNAME>.CheckContainsText <$STR(T90)> 天火印
+RANDOM 10
+#ACT 
+ChangeDamageValue 1 + 100
+SENDMSG 9 【<$CURRRTARGETNAME>】的【天火印】生效。你额外承受了100%伤害！
+
+#IF
+EQUAL T90
+#ACT
+BREAK
+#OR
+CheckContainsText <$STR(T90)> 护身印
+CheckContainsText <$STR(T90)> 不死印
+CheckContainsText <$STR(T90)> 神佑印
+CheckContainsText <$STR(T90)> 守护印
+CheckContainsText <$STR(T90)> 神盾印
+CheckContainsText <$STR(T90)> 物抗印【开天斩】
+CheckContainsText <$STR(T90)> 物抗印【烈火剑法】
+CheckContainsText <$STR(T90)> 物抗印【逐日剑法】
+CheckContainsText <$STR(T90)> 魔抗印【火墙】
+CheckContainsText <$STR(T90)> 魔抗印【流星火雨】
+CheckContainsText <$STR(T90)> 魔抗印【灭天火】
+CheckContainsText <$STR(T90)> 道抗印【灵魂火符】
+CheckContainsText <$STR(T90)> 道抗印【噬血术】
+CheckContainsText <$STR(T90)> 反击印
+CheckContainsText <$STR(T90)> 道抗印【召唤兽】
+#ACT
+#ELSEACT
+BREAK
+
+
+#IF
+CheckHpPer < 40
+checkHumanState 2
+CheckContainsText <$STR(T90)> 护身印
+large <$UTCNOW8> <$HUMAN(C_护身印CD)>
+#ACT
+AddhpPer + 20
+CALCVAR HUMAN C_护身印CD = <$UTCNOW8>
+CALCVAR HUMAN C_护身印CD + 80
+SAVEVAR HUMAN C_护身印CD
+SENDMSG 9 【护身印】生效。你恢复了20%血量！
+
+#IF
+checkHumanState 2
+CheckContainsText <$STR(T90)> 不死印
+large <$DAMAGEVALUE> <$HP>
+RANDOM 5
+#ACT
+ChangeDamageValue 0 = 0
+SENDMSG 9 【不死印】生效。抵挡了致命伤害一次！
+
+#IF
+checkHumanState 1
+CheckContainsText <$STR(T90)> 神佑印
+large <$DAMAGEVALUE> <$HP>
+RANDOM 5
+#ACT
+AddhpPer + 30
+ChangeDamageValue 0 = 0
+SENDMSG 9 【神佑印】生效。抵挡了致命伤害一次，并且恢复30%HP！
+
+#IF
+checkHumanState 1
+CheckContainsText <$STR(T90)> 守护印
+check [412] 0
+large <$UTCNOW8> <$HUMAN(C_守护印CD)>
+#ACT
+set [412] 1
+MOV N$C_三刀甲 3
+CALCVAR HUMAN C_守护印CD = <$UTCNOW8>
+CALCVAR HUMAN C_守护印CD + 30
+SAVEVAR HUMAN C_守护印CD
+
+#IF
+check [412] 1
+NOT EQUAL <$STR(N$C_三刀甲)> 0
+#ACT
+DEC N$C_三刀甲 1
+ChangeDamageValue 0 = 0
+sendmsg 9 三刀甲生效
+
+#IF
+check [412] 1
+EQUAL <$STR(N$C_三刀甲)> 0
+#ACT
+set [412] 0
+
+#IF
+checkHumanState 1
+CheckContainsText <$STR(T90)> 神盾印
+#ACT
+ChangeDamageValue 1 = 95
+
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 66
+CheckContainsText <$STR(T90)> 物抗印【开天斩】
+RANDOM 3
+#ACT 
+ChangeDamageValue 0 = 0
+SENDMSG 9 你的物抗印【开天斩】生效。免疫了此次伤害！
+
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 26
+CheckContainsText <$STR(T90)> 物抗印【烈火剑法】
+RANDOM 3
+#ACT 
+ChangeDamageValue 0 = 0
+SENDMSG 9 你的物抗印【烈火剑法】生效。免疫了此次伤害！
+
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 56
+CheckContainsText <$STR(T90)> 物抗印【逐日剑法】
+RANDOM 3
+#ACT 
+ChangeDamageValue 0 = 0
+SENDMSG 9 你的物抗印【逐日剑法】生效。免疫了此次伤害！
+
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 22
+CheckContainsText <$STR(T90)> 魔抗印【火墙】
+RANDOM 3
+#ACT 
+ChangeDamageValue 0 = 0
+
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 58
+CheckContainsText <$STR(T90)> 魔抗印【流星火雨】
+RANDOM 3
+#ACT 
+ChangeDamageValue 0 = 0
+
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 45
+CheckContainsText <$STR(T90)> 魔抗印【灭天火】
+RANDOM 3
+#ACT 
+ChangeDamageValue 0 = 0
+
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 13
+CheckContainsText <$STR(T90)> 道抗印【灵魂火符】
+RANDOM 3
+#ACT 
+ChangeDamageValue 0 = 0
+
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 57
+CheckContainsText <$STR(T90)> 道抗印【噬血术】
+RANDOM 3
+#ACT 
+ChangeDamageValue 0 = 0
+sendmsg 9 噬血术抵抗:<$CURRRUSEMAGICID>
+
+
+#IF
+checkHumanState 1
+CheckContainsText <$STR(T90)> 反击印
+#ACT
+MOV N$C_反击阈值 <$HP>
+DIV N$C_反击阈值 3
+
+#IF
+LARGE <$DAMAGEVALUE> <$STR(N$C_反击阈值)>
+CheckContainsText <$STR(T90)> 反击印
+checkHumanState 1
+#ACT
+MOV N$C_反击铭文 <$DAMAGEVALUE>
+DIV N$C_反击铭文 3
+SetHumVar <$CURRRTARGETNAME> N$C_反击铭文 <$STR(N$C_反击铭文)>
+<$CURRRTARGETNAME>.HUMANHP - <$STR(N$C_反击铭文)>
+sendmsg 9 反弹伤害：<$STR(N$C_反击铭文)>
+
+
+#OR
+EQUAL <$CURRRTARGETNAME> 月灵
+EQUAL <$CURRRTARGETNAME> 月灵8
+EQUAL <$CURRRTARGETNAME> 白虎
+EQUAL <$CURRRTARGETNAME> 白虎8
+#ACT
+GOTO @道抗召唤兽
+
+[@道抗召唤兽]
+#IF
+CheckContainsText <$STR(T90)> 道抗印【召唤兽】
+#ACT
+ChangeDamageValue 1 = 80
+
+
+[@MagTagFuncEx26]
+#IF
+<$CURRRTARGETNAME>.CheckContainsText <$STR(T90)> 烈阳印
+#ACT
+CALCVAR HUMAN C_烈阳印状态 = <$UTCNOW8>
+SAVEVAR HUMAN C_烈阳印状态
+SetOnTimer 161 1
+sendmsg 9 【<$CURRRTARGETNAME>】的烈阳印对你生效，每秒掉血3%，持续5秒！
+
+[@MagTagFuncEx44]
+#IF
+<$CURRRTARGETNAME>.CheckContainsText <$STR(T90)> 玄冥印
+#ACT
+CALCVAR HUMAN C_玄冥印状态 = <$UTCNOW8>
+SAVEVAR HUMAN C_玄冥印状态
+SetOnTimer 162 1
+sendmsg 9 【<$CURRRTARGETNAME>】的玄冥印对你生效，每秒掉血2%，掉蓝2%，持续5秒！
+
+[@MagTagFuncEx45]
+
+#IF
+<$CURRRTARGETNAME>.CheckContainsText <$STR(T90)> 龙炎印
+#ACT
+CALCVAR HUMAN C_龙炎印状态 = <$UTCNOW8>
+SAVEVAR HUMAN C_龙炎印状态
+SetOnTimer 163 1
+sendmsg 9 【<$CURRRTARGETNAME>】的龙炎印对你生效，每秒掉血3%，持续5秒！
+
+[@MagTagFuncEx57]
+#IF
+<$CURRRTARGETNAME>.CheckContainsText <$STR(T90)> 撕裂印
+#ACT
+CALCVAR HUMAN C_撕裂印状态 = <$UTCNOW8>
+SAVEVAR HUMAN C_撕裂印状态
+SetOnTimer 164 1
+sendmsg 9 【<$CURRRTARGETNAME>】的撕裂印对你生效，每秒掉血3%，持续5秒！
+
+[@MagTagFuncEx58]
+
+#IF
+<$CURRRTARGETNAME>.CheckContainsText <$STR(T90)> 焚天印
+#ACT
+GetHumVar <$CURRRTARGETNAME> N$C_焚天威力 <$MAXMC>
+DIV N$C_焚天威力 30
+MAKEPOSION 0 5 <$STR(N$C_焚天威力)>
+;sendmsg 9 【<$CURRRTARGETNAME>】的焚天印对你生效，你中了毒火，每秒掉血<$STR(N$C_焚天威力)>点，持续5秒！
+break
+
+
+[@MagTagFuncEx33]
+
+#IF
+RANDOM 5
+<$CURRRTARGETNAME>.CheckContainsText <$STR(T90)> 冰霜印
+#ACT
+ChangeHumAbility 4 - 10 3
+sendmsg 9 【<$CURRRTARGETNAME>】的冰霜印对你生效，你的魔御减少10点，持续3秒！
+
+
+[@MagSelfFunc55]
+
+#IF
+CheckContainsText <$STR(T90)> 月灵印
+NOT CheckContainsText <$STR(T90)> 月神印
+NOT CheckContainsText <$STR(T90)> 月光印
+small <$SLAVECOUNT> 2
+#ACT
+RECALLMOB 月灵 5 60000
+break
+
+#IF
+NOT CheckContainsText <$STR(T90)> 月灵印
+CheckContainsText <$STR(T90)> 月光印
+small <$SLAVECOUNT> 1
+#ACT
+RECALLMOB 月灵 5 60000
+GOTO @月光印属性提升_月灵
+break
+
+#IF
+CheckContainsText <$STR(T90)> 月灵印
+CheckContainsText <$STR(T90)> 月光印
+small <$SLAVECOUNT> 1
+#ACT
+RECALLMOB 月灵 5 60000
+GOTO @月光印属性提升_月灵
+break
+
+#IF
+CheckContainsText <$STR(T90)> 月灵印
+CheckContainsText <$STR(T90)> 月光印
+small <$SLAVECOUNT> 2
+CHECKSLAVENAME 月灵
+#ACT
+RECALLMOB 月灵8 5 60000
+GOTO @月光印属性提升_月灵八
+break
+
+#IF
+NOT CheckContainsText <$STR(T90)> 月灵印
+CheckContainsText <$STR(T90)> 月神印
+small <$SLAVECOUNT> 1
+#ACT
+RECALLMOB 月灵 5 60000
+GOTO @月神印属性提升_月灵
+break
+
+#IF
+CheckContainsText <$STR(T90)> 月灵印
+CheckContainsText <$STR(T90)> 月神印
+small <$SLAVECOUNT> 1
+#ACT
+RECALLMOB 月灵 5 60000
+GOTO @月神印属性提升_月灵
+break
+
+#IF
+CheckContainsText <$STR(T90)> 月灵印
+CheckContainsText <$STR(T90)> 月神印
+small <$SLAVECOUNT> 2
+CHECKSLAVENAME 月灵
+#ACT
+RECALLMOB 月灵8 5 60000
+GOTO @月神印属性提升_月灵八
+break
+
+
+[@月神印属性提升_月灵]
+
+#IF
+CheckContainsText <$STR(T90)> 月神印
+#ACT
+MOV N$C_人物道术 <$MAXSC>
+DIV N$C_人物道术 3
+CHANGEMOBABILITY 月灵 6 + <$STR(N$C_人物道术)> 65000
+CHANGEMOBABILITY 月灵 14 + 10 65000
+sendmsg 9 【月神印】生效，你的月灵攻击提升：<$STR(N$C_人物道术)>，攻速提升10%！
+
+[@月神印属性提升_月灵八]
+
+#IF
+CheckContainsText <$STR(T90)> 月神印
+#ACT
+MOV N$C_人物道术 <$MAXSC>
+DIV N$C_人物道术 3
+CHANGEMOBABILITY 月灵8 6 + <$STR(N$C_人物道术)> 65000
+CHANGEMOBABILITY 月灵8 14 + 10 65000
+sendmsg 9 【月神印】生效，你的月灵八攻击提升：<$STR(N$C_人物道术)>，攻速提升10%！
+
+[@月光印属性提升_月灵]
+
+#IF
+CheckContainsText <$STR(T90)> 月光印
+#ACT
+CHANGEMOBABILITY 月灵 11 + 1000 65000
+CHANGEMOBABILITY 月灵 6 + 500 65000
+CHANGEMOBABILITY 月灵 14 + 10 65000
+sendmsg 9 【月光印】生效，你的月灵攻击提升：500，血量提升：1000，攻速提升10%！
+
+[@月光印属性提升_月灵八]
+
+#IF
+CheckContainsText <$STR(T90)> 月光印
+#ACT
+CHANGEMOBABILITY 月灵8 11 + 1000 65000
+CHANGEMOBABILITY 月灵8 6 + 500 65000
+CHANGEMOBABILITY 月灵8 14 + 10 65000
+sendmsg 9 【月光印】生效，你的月灵攻击提升：500，血量提升：1000，攻速提升10%！
+
+
+[@MagSelfFunc30]
+#IF
+CheckContainsText <$STR(T90)> 白虎印
+NOT CheckContainsText <$STR(T90)> 虎啸印
+small <$SLAVECOUNT> 2
+#ACT
+RECALLMOB 白虎 5 60000
+break
+
+#IF
+NOT CheckContainsText <$STR(T90)> 白虎印
+CheckContainsText <$STR(T90)> 虎啸印
+small <$SLAVECOUNT> 1
+#ACT
+RECALLMOB 白虎 5 60000
+GOTO @虎啸印属性提升_白虎
+break
+
+#IF
+CheckContainsText <$STR(T90)> 白虎印
+CheckContainsText <$STR(T90)> 虎啸印
+small <$SLAVECOUNT> 1
+#ACT
+RECALLMOB 白虎 5 60000
+GOTO @虎啸印属性提升_白虎
+break
+
+#IF
+CheckContainsText <$STR(T90)> 白虎印
+CheckContainsText <$STR(T90)> 虎啸印
+small <$SLAVECOUNT> 2
+CHECKSLAVENAME 白虎
+#ACT
+RECALLMOB 白虎8 5 60000
+GOTO @虎啸印属性提升_白虎八
+break
+
+
+[@虎啸印属性提升_白虎]
+
+#IF
+CheckContainsText <$STR(T90)> 虎啸印
+#ACT
+MOV N$C_人物道术 <$MAXSC>
+DIV N$C_人物道术 4
+CHANGEMOBABILITY 月灵 6 + <$STR(N$C_人物道术)> 65000
+CHANGEMOBABILITY 月灵 14 + 20 65000
+sendmsg 9 【虎啸印】生效，你的白虎攻击提升：<$STR(N$C_人物道术)>，攻速提升20%！
+
+[@虎啸印属性提升_白虎八]
+
+#IF
+CheckContainsText <$STR(T90)> 虎啸印
+#ACT
+MOV N$C_人物道术 <$MAXSC>
+DIV N$C_人物道术 4
+CHANGEMOBABILITY 白虎8 6 + <$STR(N$C_人物道术)> 65000
+CHANGEMOBABILITY 白虎8 14 + 20 65000
+sendmsg 9 【虎啸印】生效，你的白虎攻击提升：<$STR(N$C_人物道术)>，攻速提升20%！
+
+
+[@MagSelfFunc50]
+
+#IF
+CheckContainsText <$STR(T90)> 无极印
+CHECKSKILL 无极真气 = 3
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+MOV N$C_无极道术 0
+DIV N$C_无极道术 <$MAXSC> 100
+MUL N$C_无极道术 30
+ChangeHumAbility 10 + <$STR(N$C_无极道术)> 8
+sendmsg 9 【无极印】生效，你的道术额外提升30%,<$STR(N$C_无极道术)>点！
+DELAYGOTO 8100 @无极印复原
+
+#IF
+CheckContainsText <$STR(T90)> 无极印
+CHECKSKILL 无极真气 = 2
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+MOV N$C_无极道术 0
+DIV N$C_无极道术 <$MAXSC> 100
+MUL N$C_无极道术 30
+ChangeHumAbility 10 + <$STR(N$C_无极道术)> 7
+sendmsg 9 【无极印】生效，你的道术额外提升30%,<$STR(N$C_无极道术)>点！
+DELAYGOTO 7100 @无极印复原
+
+#IF
+CheckContainsText <$STR(T90)> 无极印
+CHECKSKILL 无极真气 = 1
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+MOV N$C_无极道术 0
+DIV N$C_无极道术 <$MAXSC> 100
+MUL N$C_无极道术 30
+ChangeHumAbility 10 + <$STR(N$C_无极道术)> 6
+sendmsg 9 【无极印】生效，你的道术额外提升30%,<$STR(N$C_无极道术)>点！
+DELAYGOTO 6100 @无极印复原
+
+#IF
+CheckContainsText <$STR(T90)> 无极印
+CHECKSKILL 无极真气 = 0
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+MOV N$C_无极道术 0
+DIV N$C_无极道术 <$MAXSC> 100
+MUL N$C_无极道术 30
+ChangeHumAbility 10 + <$STR(N$C_无极道术)> 5
+sendmsg 9 【无极印】生效，你的道术额外提升30%,<$STR(N$C_无极道术)>点！
+DELAYGOTO 5100 @无极印复原
+
+#IF
+large <$UTCNOW8> <$HUMAN(C_极疗印CD)>
+CheckContainsText <$STR(T90)> 极疗印
+CheckHpPer < 50
+#ACT
+CALCVAR HUMAN C_极疗印CD = <$UTCNOW8>
+CALCVAR HUMAN C_极疗印CD + 15
+SAVEVAR HUMAN C_极疗印CD
+SetOnTimer 166 1
+
+#IF
+CheckContainsText <$STR(T90)> 罡气印
+CHECKSKILL 无极真气 = 3
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+MOV N$C_无极物防 0
+DIV N$C_无极物防 <$MAXAC> 100
+MUL N$C_无极物防 20
+MOV N$C_无极魔防 0
+DIV N$C_无极魔防 <$MAXMAC> 100
+MUL N$C_无极魔防 20
+INC N$C_无极物防 5
+INC N$C_无极魔防 5
+ChangeHumAbility 2 + <$STR(N$C_无极物防)> 8
+ChangeHumAbility 4 + <$STR(N$C_无极魔防)> 8
+sendmsg 9 【罡气印】生效，你的防御上限提升<$STR(N$C_无极物防)>点,魔御上限提升<$STR(N$C_无极魔防)>点！
+DELAYGOTO 8100 @罡气印复原
+
+#IF
+CheckContainsText <$STR(T90)> 罡气印
+CHECKSKILL 无极真气 = 2
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+MOV N$C_无极物防 0
+DIV N$C_无极物防 <$MAXAC> 100
+MUL N$C_无极物防 20
+MOV N$C_无极魔防 0
+DIV N$C_无极魔防 <$MAXMAC> 100
+MUL N$C_无极魔防 20
+INC N$C_无极物防 5
+INC N$C_无极魔防 5
+ChangeHumAbility 2 + <$STR(N$C_无极物防)> 7
+ChangeHumAbility 4 + <$STR(N$C_无极魔防)> 7
+sendmsg 9 【罡气印】生效，你的防御上限提升<$STR(N$C_无极物防)>点,魔御上限提升<$STR(N$C_无极魔防)>点！
+DELAYGOTO 7100 @罡气印复原
+
+#IF
+CheckContainsText <$STR(T90)> 罡气印
+CHECKSKILL 无极真气 = 1
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+MOV N$C_无极物防 0
+DIV N$C_无极物防 <$MAXAC> 100
+MUL N$C_无极物防 20
+MOV N$C_无极魔防 0
+DIV N$C_无极魔防 <$MAXMAC> 100
+MUL N$C_无极魔防 20
+INC N$C_无极物防 5
+INC N$C_无极魔防 5
+ChangeHumAbility 2 + <$STR(N$C_无极物防)> 6
+ChangeHumAbility 4 + <$STR(N$C_无极魔防)> 6
+sendmsg 9 【罡气印】生效，你的防御上限提升<$STR(N$C_无极物防)>点,魔御上限提升<$STR(N$C_无极魔防)>点！
+DELAYGOTO 6100 @罡气印复原
+
+#IF
+CheckContainsText <$STR(T90)> 罡气印
+CHECKSKILL 无极真气 = 0
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+MOV N$C_无极物防 0
+DIV N$C_无极物防 <$MAXAC> 100
+MUL N$C_无极物防 20
+MOV N$C_无极魔防 0
+DIV N$C_无极魔防 <$MAXMAC> 100
+MUL N$C_无极魔防 20
+INC N$C_无极物防 5
+INC N$C_无极魔防 5
+ChangeHumAbility 2 + <$STR(N$C_无极物防)> 5
+ChangeHumAbility 4 + <$STR(N$C_无极魔防)> 5
+sendmsg 9 【罡气印】生效，你的防御上限提升<$STR(N$C_无极物防)>点,魔御上限提升<$STR(N$C_无极魔防)>点！
+DELAYGOTO 5100 @罡气印复原
+
+[@无极印复原]
+#IF
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+break
+
+[@罡气印复原]
+#IF
+#ACT
+#CALL [\属性刷新.txt] @属性刷新
+break
+
+[@MagTagFuncEx2]
+
+#IF
+checkHumanState 2
+CheckContainsText <$STR(T90)> 神体印
+check [411] 0
+#ACT
+set [411] 1
+MOV N$C_神体计时 10
+MOV N$C_神体加血 <$MAXDC>
+DIV N$C_神体加血 10
+SetOnTimer 165 1
+sendmsg 9 【神体印】生效，每秒额外回血<$STR(N$C_神体加血)>点，持续10秒！
+break
+
+[@MagTagFuncEx29]
+
+#IF
+checkHumanState 2
+CheckContainsText <$STR(T90)> 神体印
+check [411] 0
+#ACT
+set [411] 1
+MOV N$C_神体计时 10
+MOV N$C_神体加血 <$MAXDC>
+DIV N$C_神体加血 10
+SetOnTimer 165 1
+sendmsg 9 【神体印】生效，每秒额外回血<$STR(N$C_神体加血)>点，持续10秒！
+break
+
+[@MagTagFuncEx6]
+#IF
+<$CURRRTARGETNAME>.CheckContainsText <$STR(T90)> 毒王印
+#ACT
+GetHumVar <$CURRRTARGETNAME> N$C_毒王威力 <$MAXSC>
+DIV N$C_毒王威力 3
+MAKEPOSION 0 10 <$STR(N$C_毒王威力)>
+sendmsg 9 【<$CURRRTARGETNAME>】的毒王印对你生效，你中了毒火，每秒掉血<$STR(N$C_毒王威力)>点，持续10秒！
+break
+
+[@MagTagFuncEx51]
+#IF
+<$CURRRTARGETNAME>.CheckContainsText <$STR(T90)> 毒王印
+#ACT
+GetHumVar <$CURRRTARGETNAME> N$C_毒王威力 <$MAXSC>
+DIV N$C_毒王威力 3
+MAKEPOSION 0 10 <$STR(N$C_毒王威力)>
+sendmsg 9 【<$CURRRTARGETNAME>】的毒王印对你生效，你中了猛毒，每秒掉血<$STR(N$C_毒王威力)>点，持续10秒！
+break
+
+
+[@Attack]
+;#IF
+;EQUAL <$CURRRTARGETNAME> 一级镖车
+;#ACT
+;ChangeDamageValue 0 = 0
+;#IF
+;#ACT 
+;#CALL [\游戏功能\系统功能\攻击触发.txt] @攻击触发
+
+
+[@MagicAttack]
+;#IF
+;#ACT 
+;#CALL [\游戏功能\系统功能\攻击触发.txt] @魔法攻击触发
+
+
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 58
+CheckContainsText <$STR(T90)> 焚天印
+#ACT
+MOV N$C_焚天威力 <$MAXMC>
+DIV N$C_焚天威力 30
+M.MAKEPOSION 0 5 <$STR(N$C_焚天威力)>
+break
+
+#IF
+CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRUSEMAGICID> 39
+CheckContainsText <$STR(T90)> 毒藤印
+#ACT
+M.MAKEPOSION 0 10 10
+
+
+
+[@查看自己]
+
+#IF
+check [401] 1
+#ACT
+MOV S$C_自我铭文开封一 <Img|id=11|img=custom/hl/mingwen/1.png|x=139|y=113>
+#ELSEACT
+MOV S$C_自我铭文开封一
+#IF
+check [402] 1
+#ACT
+MOV S$C_自我铭文开封二 <Img|id=12|img=custom/hl/mingwen/2.png|x=180|y=110>
+#ELSEACT
+MOV S$C_自我铭文开封二
+#IF
+check [403] 1
+#ACT
+MOV S$C_自我铭文开封三 <Img|id=13|img=custom/hl/mingwen/3.png|x=221|y=114>
+#ELSEACT
+MOV S$C_自我铭文开封三
+#IF
+check [404] 1
+#ACT
+MOV S$C_自我铭文开封四 <Img|id=14|img=custom/hl/mingwen/4.png|x=235|y=155>
+#ELSEACT
+MOV S$C_自我铭文开封四
+#IF
+check [405] 1
+#ACT
+MOV S$C_自我铭文开封五 <Img|id=15|img=custom/hl/mingwen/5.png|x=220|y=194>
+#ELSEACT
+MOV S$C_自我铭文开封五
+#IF
+check [406] 1
+#ACT
+MOV S$C_自我铭文开封六 <Img|id=16|img=custom/hl/mingwen/6.png|x=182|y=208>
+#ELSEACT
+MOV S$C_自我铭文开封六
+#IF
+check [407] 1
+#ACT
+MOV S$C_自我铭文开封七 <Img|id=17|img=custom/hl/mingwen/7.png|x=143|y=193>
+#ELSEACT
+MOV S$C_自我铭文开封七
+#IF
+check [408] 1
+#ACT
+MOV S$C_自我铭文开封八 <Img|id=18|img=custom/hl/mingwen/8.png|x=138|y=154>
+#ELSEACT
+MOV S$C_自我铭文开封八
+
+#IF
+NOT EQUAL <$STR(T91)>
+#ACT
+MOV S$C_自我铭文展示一 <ItemShow|id=3|itemid=<$STR(T91)>|scale=0.8|x=105|y=75|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_自我铭文展示一
+#IF
+NOT EQUAL <$STR(T92)>
+#ACT
+MOV S$C_自我铭文展示二 <ItemShow|id=4|itemid=<$STR(T92)>|scale=0.8|x=172|y=50|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_自我铭文展示二
+#IF
+NOT EQUAL <$STR(T93)>
+#ACT
+MOV S$C_自我铭文展示三 <ItemShow|id=5|itemid=<$STR(T93)>|scale=0.8|x=235|y=75|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_自我铭文展示三
+#IF
+NOT EQUAL <$STR(T94)>
+#ACT
+MOV S$C_自我铭文展示四 <ItemShow|id=6|itemid=<$STR(T94)>|scale=0.8|x=265|y=145|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_自我铭文展示四
+#IF
+NOT EQUAL <$STR(T95)>
+#ACT
+MOV S$C_自我铭文展示五 <ItemShow|id=7|itemid=<$STR(T95)>|scale=0.8|x=240|y=210|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_自我铭文展示五
+#IF
+NOT EQUAL <$STR(T96)>
+#ACT
+MOV S$C_自我铭文展示六 <ItemShow|id=8|itemid=<$STR(T96)>|scale=0.8|x=172|y=239|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_自我铭文展示六
+#IF
+NOT EQUAL <$STR(T97)>
+#ACT
+MOV S$C_自我铭文展示七 <ItemShow|id=9|itemid=<$STR(T97)>|scale=0.8|x=100|y=210|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_自我铭文展示七
+#IF
+NOT EQUAL <$STR(T98)>
+#ACT
+MOV S$C_自我铭文展示八 <ItemShow|id=10|itemid=<$STR(T98)>|scale=0.8|x=75|y=145|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_自我铭文展示八
+
+#IF
+#ACT
+#SAY
+<Img|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18}|img=custom/hl/mingwen/mw_ui.png|x=240|y=112|bg=1>
+<Button|id=1|x=410|y0|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=2|x=390|y=0|width=70|height=70|link=@exit>
+
+<$STR(S$C_自我铭文开封一)>
+<$STR(S$C_自我铭文开封二)>
+<$STR(S$C_自我铭文开封三)>
+<$STR(S$C_自我铭文开封四)>
+<$STR(S$C_自我铭文开封五)>
+<$STR(S$C_自我铭文开封六)>
+<$STR(S$C_自我铭文开封七)>
+<$STR(S$C_自我铭文开封八)>
+
+<$STR(S$C_自我铭文展示一)>
+<$STR(S$C_自我铭文展示二)>
+<$STR(S$C_自我铭文展示三)>
+<$STR(S$C_自我铭文展示四)>
+<$STR(S$C_自我铭文展示五)>
+<$STR(S$C_自我铭文展示六)>
+<$STR(S$C_自我铭文展示七)>
+<$STR(S$C_自我铭文展示八)>
+
+
+[@查看别人]
+#IF
+<$USERSTATENAME>.check [401] 1
+#ACT
+MOV S$C_他人铭文开封一 <Img|id=11|img=custom/hl/mingwen/1.png|x=139|y=113>
+#ELSEACT
+MOV S$C_他人铭文开封一
+#IF
+<$USERSTATENAME>.check [402] 1
+#ACT
+MOV S$C_他人铭文开封二 <Img|id=12|img=custom/hl/mingwen/2.png|x=180|y=110>
+#ELSEACT
+MOV S$C_他人铭文开封二
+#IF
+<$USERSTATENAME>.check [403] 1
+#ACT
+MOV S$C_他人铭文开封三 <Img|id=13|img=custom/hl/mingwen/3.png|x=221|y=114>
+#ELSEACT
+MOV S$C_他人铭文开封三
+#IF
+<$USERSTATENAME>.check [404] 1
+#ACT
+MOV S$C_他人铭文开封四 <Img|id=14|img=custom/hl/mingwen/4.png|x=235|y=155>
+#ELSEACT
+MOV S$C_他人铭文开封四
+#IF
+<$USERSTATENAME>.check [405] 1
+#ACT
+MOV S$C_他人铭文开封五 <Img|id=15|img=custom/hl/mingwen/5.png|x=220|y=194>
+#ELSEACT
+MOV S$C_他人铭文开封五
+#IF
+<$USERSTATENAME>.check [406] 1
+#ACT
+MOV S$C_他人铭文开封六 <Img|id=16|img=custom/hl/mingwen/6.png|x=182|y=208>
+#ELSEACT
+MOV S$C_他人铭文开封六
+#IF
+<$USERSTATENAME>.check [407] 1
+#ACT
+MOV S$C_他人铭文开封七 <Img|id=17|img=custom/hl/mingwen/7.png|x=143|y=193>
+#ELSEACT
+MOV S$C_他人铭文开封七
+#IF
+<$USERSTATENAME>.check [408] 1
+#ACT
+MOV S$C_他人铭文开封八 <Img|id=18|img=custom/hl/mingwen/8.png|x=138|y=154>
+#ELSEACT
+MOV S$C_他人铭文开封八
+
+
+#IF
+#ACT
+GetHumVar <$USERSTATENAME> S$C_对方铭文IDX1 <$STR(T91)>
+GetHumVar <$USERSTATENAME> S$C_对方铭文IDX2 <$STR(T92)>
+GetHumVar <$USERSTATENAME> S$C_对方铭文IDX3 <$STR(T93)>
+GetHumVar <$USERSTATENAME> S$C_对方铭文IDX4 <$STR(T94)>
+GetHumVar <$USERSTATENAME> S$C_对方铭文IDX5 <$STR(T95)>
+GetHumVar <$USERSTATENAME> S$C_对方铭文IDX6 <$STR(T96)>
+GetHumVar <$USERSTATENAME> S$C_对方铭文IDX7 <$STR(T97)>
+GetHumVar <$USERSTATENAME> S$C_对方铭文IDX8 <$STR(T98)>
+
+#IF
+NOT EQUAL <$STR(S$C_对方铭文IDX1)>
+#ACT
+MOV S$C_他人铭文展示一 <ItemShow|id=3|itemid=<$STR(S$C_对方铭文IDX1)>|scale=0.8|x=105|y=75|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_他人铭文展示一
+#IF
+NOT EQUAL <$STR(S$C_对方铭文IDX2)>
+#ACT
+MOV S$C_他人铭文展示二 <ItemShow|id=4|itemid=<$STR(S$C_对方铭文IDX2)>|scale=0.8|x=172|y=50|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_他人铭文展示二
+#IF
+NOT EQUAL <$STR(S$C_对方铭文IDX3)>
+#ACT
+MOV S$C_他人铭文展示三 <ItemShow|id=5|itemid=<$STR(S$C_对方铭文IDX3)>|scale=0.8|x=235|y=75|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_他人铭文展示三
+#IF
+NOT EQUAL <$STR(S$C_对方铭文IDX4)>
+#ACT
+MOV S$C_他人铭文展示四 <ItemShow|id=6|itemid=<$STR(S$C_对方铭文IDX4)>|scale=0.8|x=265|y=145|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_他人铭文展示四
+#IF
+NOT EQUAL <$STR(S$C_对方铭文IDX5)>
+#ACT
+MOV S$C_他人铭文展示五 <ItemShow|id=7|itemid=<$STR(S$C_对方铭文IDX5)>|scale=0.8|x=240|y=210|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_他人铭文展示五
+#IF
+NOT EQUAL <$STR(S$C_对方铭文IDX6)>
+#ACT
+MOV S$C_他人铭文展示六 <ItemShow|id=8|itemid=<$STR(S$C_对方铭文IDX6)>|scale=0.8|x=172|y=239|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_他人铭文展示六
+#IF
+NOT EQUAL <$STR(S$C_对方铭文IDX7)>
+#ACT
+MOV S$C_他人铭文展示七 <ItemShow|id=9|itemid=<$STR(S$C_对方铭文IDX7)>|scale=0.8|x=100|y=210|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_他人铭文展示七
+#IF
+NOT EQUAL <$STR(S$C_对方铭文IDX8)>
+#ACT
+MOV S$C_他人铭文展示八 <ItemShow|id=10|itemid=<$STR(S$C_对方铭文IDX8)>|scale=0.8|x=75|y=145|itemcount=1|showtips=1|bgtype=0>
+#ELSEACT
+MOV S$C_他人铭文展示八
+
+#IF
+#ACT
+#SAY
+<Img|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18}|img=custom/hl/mingwen/mw_ui.png|x=240|y=112|bg=1>
+<Button|id=1|x=410|y0|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|color=103|size=18|link=@exit>
+<Layout|id=2|x=390|y=0|width=70|height=70|link=@exit>
+
+<$STR(S$C_他人铭文开封一)>
+<$STR(S$C_他人铭文开封二)>
+<$STR(S$C_他人铭文开封三)>
+<$STR(S$C_他人铭文开封四)>
+<$STR(S$C_他人铭文开封五)>
+<$STR(S$C_他人铭文开封六)>
+<$STR(S$C_他人铭文开封七)>
+<$STR(S$C_他人铭文开封八)>
+
+<$STR(S$C_他人铭文展示一)>
+<$STR(S$C_他人铭文展示二)>
+<$STR(S$C_他人铭文展示三)>
+<$STR(S$C_他人铭文展示四)>
+<$STR(S$C_他人铭文展示五)>
+<$STR(S$C_他人铭文展示六)>
+<$STR(S$C_他人铭文展示七)>
+<$STR(S$C_他人铭文展示八)>
+
+[@顶戴展示_他人]
+#IF
+#ACT
+#CALL [\游戏功能\顶戴系统\他人顶戴界面.txt] @他人顶戴界面
+break
+
+
+[@切换自己1]
+#IF
+#ACT
+OPENHYPERLINK 37
+
+#IF
+gender woman
+#ACT
+MOV S$自己性别 1
+#IF
+gender man
+#ACT
+MOV S$自己性别 0
+#IF
+#ACT
+MOV S$自己时装模型 <UIModel|x=174|y=238|scale=1|sex=<$STR(S$自己性别)>|weaponID=<$STR(U229)>|weaponEffectID=<$STR(U230)>#0#0#0|clothID=<$STR(U233)>|clothEffectID=<$STR(U234)>#1#0#0>
+ADDBUTTON 39  32 <$STR(S$自己时装模型)>
+
+
+[@切换他人1]
+#IF
+#ACT
+GetHumVar <$USERSTATENAME> S$USERID <$USERID>
+VIEWPLAYER <$STR(S$USERID)> 1011
+
+#IF
+<$USERSTATENAME>.gender woman
+#ACT
+MOV S$对方性别 1
+#IF
+<$USERSTATENAME>.gender man
+#ACT
+MOV S$对方性别 0
+#IF
+#ACT
+GetHumVar <$USERSTATENAME> N$对方武器内观ID <$STR(U229)>
+GetHumVar <$USERSTATENAME> N$对方武器特效ID <$STR(U230)>
+GetHumVar <$USERSTATENAME> N$对方衣服内观ID <$STR(U233)>
+GetHumVar <$USERSTATENAME> N$对方衣服特效ID <$STR(U234)>
+MOV S$对方时装模型 <UIModel|x=174|y=238|scale=1|sex=<$STR(S$对方性别)>|weaponID=<$STR(N$对方武器内观ID)>|weaponEffectID=<$STR(N$对方武器特效ID)>#0#0#0|clothID=<$STR(N$对方衣服内观ID)>|clothEffectID=<$STR(N$对方衣服特效ID)>#1#0#0>
+ADDBUTTON 3901  30 <$STR(S$对方时装模型)>
+
+[@切换自己2]
+#ACT
+OPENHYPERLINK 1
+[@切换他人2]
+#ACT
+GetHumVar <$USERSTATENAME> S$USERID <$USERID>
+VIEWPLAYER <$STR(S$USERID)> 101
+
+
+[@加夺宝积分]
+#IF
+#ACT
+CALCVAR HUMAN B_夺宝奇兵积分 + 10
+SAVEVAR HUMAN B_夺宝奇兵积分
+#CALL [\全服活动\夺宝奇兵排行.txt] @更新夺宝判断
+
+;--------------------------押镖
+[@CarFindMaster]
+#IF
+LARGE <$HP> 0
+#ACT
+SENDMSG 7 你进入了镖车自动寻路范围，请照顾好你的镖车。
+
+[@SlaveDamage]
+#IF
+CHECKSLAVENAME 四级镖车
+#ACT
+SENDMSG 7 你的四级镖车正在遭受攻击，速去援救。
+#IF
+CHECKSLAVENAME 三级镖车
+#ACT
+SENDMSG 7 你的三级镖车正在遭受攻击，速去援救。
+#IF
+CHECKSLAVENAME 二级镖车
+#ACT
+SENDMSG 7 你的二级镖车正在遭受攻击，速去援救。
+#IF
+CHECKSLAVENAME 一级镖车
+#ACT
+SENDMSG 7 你的一级镖车正在遭受攻击，速去援救。
+
+[@KillSlave]
+#IF
+CheckKillSlaveName 四级镖车
+#ACT
+MONEY 火龙币 + 500
+;CHANGEEXP + 20000000
+<$darlingpet>.NEWDELETETASK <$STR(U209)>
+<$darlingpet>.MOV U209 0
+SendMsg 5 你成功劫取了[<$darlingpet>]的四级镖车，获得奖励火龙币+500
+SENDMSGNEW 255 0 [<$USERNAME>]成功劫取了[<$darlingpet>]的四级镖车，获得奖励火龙币+500
+<$darlingpet>.SendMsg 5 你的四级镖车被歹徒[<$USERNAME>]劫杀，任务失败。
+#IF
+CheckKillSlaveName 三级镖车
+#ACT
+MONEY 火龙币 + 300
+;CHANGEEXP + 15000000
+<$darlingpet>.NEWDELETETASK <$STR(U209)>
+<$darlingpet>.MOV U209 0
+SendMsg 5 你成功劫取了[<$darlingpet>]的三级镖车，获得奖励火龙币+300
+SENDMSGNEW 255 0 [<$USERNAME>]成功劫取了[<$darlingpet>]的三级镖车，获得奖励火龙币+300
+<$darlingpet>.SendMsg 5 你的三级镖车被歹徒[<$USERNAME>]劫杀，任务失败。
+#IF
+CheckKillSlaveName 二级镖车
+#ACT
+MONEY 火龙币 + 150
+;CHANGEEXP + 10000000
+<$darlingpet>.NEWDELETETASK <$STR(U209)>
+<$darlingpet>.MOV U209 0
+SendMsg 5 你成功劫取了[<$darlingpet>]的二级镖车，获得奖励火龙币+150
+SENDMSGNEW 255 0 [<$USERNAME>]成功劫取了[<$darlingpet>]的二级镖车，获得奖励火龙币+150
+<$darlingpet>.SendMsg 5 你的二级镖车被歹徒[<$USERNAME>]劫杀，任务失败。
+
+;--------------------------------活动击杀奖励
+[@OnKillMob]
+#IF
+EQUAL <$KILLMONNAME> [活动]夺宝王
+EQUAL G250 2
+#ACT
+MOV A279 <$USERNAME>
+#CALL [\顶戴刷新.txt] @顶戴刷新
+#CALL [\属性刷新.txt] @属性刷新
+#CALL [\元素刷新.txt] @元素刷新
+SENDMSG 0 恭喜玩家【<$USERNAME>】在夺宝奇兵活动中击杀怪物<$KILLMONNAME>，并获得"你瞅啥"称号
+BREAK
+
+
+#IF
+ISONMAP gldt0
+CheckRangeMonCount gldt0 <$X> <$Y> 6 < 20
+#ACT
+MonGenEx gldt0 <$X> <$Y> [试炼]经验猪 6 60 0 255
+#IF
+ISONMAP gldt1
+CheckRangeMonCount gldt1 <$X> <$Y> 6 < 20
+#ACT
+MonGenEx gldt1 <$X> <$Y> [一转]经验猪 6 60 0 255
+#IF
+ISONMAP gldt2
+CheckRangeMonCount gldt2 <$X> <$Y> 6 < 20
+#ACT
+MonGenEx gldt2 <$X> <$Y> [二转]经验猪 6 60 0 255
+#IF
+ISONMAP gldt3
+CheckRangeMonCount gldt3 <$X> <$Y> 6 < 20
+#ACT
+MonGenEx gldt3 <$X> <$Y> [三转]经验猪 6 60 0 255
+#IF
+ISONMAP gldt4
+CheckRangeMonCount gldt4 <$X> <$Y> 6 < 20
+#ACT
+MonGenEx gldt4 <$X> <$Y> [四转]经验猪 6 60 0 255
+#IF
+ISONMAP gldt5
+CheckRangeMonCount gldt5 <$X> <$Y> 6 < 20
+#ACT
+MonGenEx gldt5 <$X> <$Y> [五转]经验猪 6 60 0 255
+#IF
+ISONMAP gldt6
+CheckRangeMonCount gldt6 <$X> <$Y> 6 < 20
+#ACT
+MonGenEx gldt6 <$X> <$Y> [六转]经验猪 6 60 0 255
+#IF
+ISONMAP gldt7
+CheckRangeMonCount gldt7 <$X> <$Y> 6 < 20
+#ACT
+MonGenEx gldt7 <$X> <$Y> [七转]经验猪 6 60 0 255
+#IF
+ISONMAP gldt8
+CheckRangeMonCount gldt8 <$X> <$Y> 6 < 20
+#ACT
+MonGenEx gldt8 <$X> <$Y> [八转]经验猪 6 60 0 255
+#IF
+ISONMAP gldt9
+CheckRangeMonCount gldt9 <$X> <$Y> 6 < 20
+#ACT
+MonGenEx gldt9 <$X> <$Y> [九转]经验猪 6 60 0 255
+#IF
+ISONMAP gldt10
+CheckRangeMonCount gldt10 <$X> <$Y> 6 < 20
+#ACT
+MonGenEx gldt10 <$X> <$Y> [十转]经验猪 6 60 0 255
+
+
+#IF
+NOT EQUAL G231 2
+#ACT
+BREAK
+
+#IF
+EQUAL <$KILLMONNAME> [活动]猪王
+EQUAL G231 2
+EQUAL G232 0
+#ACT
+MOV G232 1
+GMEXECUTE 开始提问 @更新勇闯积分排名
+BREAK
+#IF
+EQUAL <$KILLMONNAME> [活动]尸王
+EQUAL G231 2
+EQUAL G233 0
+#ACT
+MOV G233 1
+GMEXECUTE 开始提问 @更新勇闯积分排名
+BREAK
+#IF
+EQUAL <$KILLMONNAME> [活动]牛魔王
+EQUAL G231 2
+EQUAL G234 0
+#ACT
+MOV G234 1
+GMEXECUTE 开始提问 @更新勇闯积分排名
+BREAK
+#IF
+EQUAL <$KILLMONNAME> [活动]双头金刚
+EQUAL G231 2
+EQUAL G235 0
+#ACT
+MOV G235 1
+GMEXECUTE 开始提问 @更新勇闯积分排名
+BREAK
+#IF
+EQUAL <$KILLMONNAME> [活动]双头血魔
+EQUAL G231 2
+EQUAL G236 0
+#ACT
+MOV G236 1
+GMEXECUTE 开始提问 @更新勇闯积分排名
+BREAK
+#IF
+EQUAL <$KILLMONNAME> [活动]侍卫长
+EQUAL G231 2
+EQUAL G237 0
+#ACT
+MOV G237 1
+GMEXECUTE 开始提问 @更新勇闯积分排名
+BREAK
+#IF
+EQUAL <$KILLMONNAME> [活动]神卫长
+EQUAL G231 2
+EQUAL G238 0
+#ACT
+MOV G238 1
+GMEXECUTE 开始提问 @更新勇闯积分排名
+BREAK
+#IF
+EQUAL <$KILLMONNAME> [活动]火龙教主
+EQUAL G231 2
+EQUAL G239 0
+#ACT
+MOV G239 1
+BREAK
+#IF
+EQUAL <$KILLMONNAME> [活动]沃玛教主
+EQUAL G231 2
+EQUAL G240 0
+#ACT
+MOV G240 1
+GMEXECUTE 开始提问 @更新勇闯积分排名
+BREAK
+#IF
+EQUAL <$KILLMONNAME> [活动]阿修罗
+EQUAL G231 2
+EQUAL G241 0
+#ACT
+MOV G241 1
+GMEXECUTE 开始提问 @更新勇闯积分排名
+BREAK
+
+
+
+[@AttackDamage]
+#IF
+NOT CHECKCURRTARGETRACE = 0
+EQUAL <$CURRRTARGETNAME> [世界]龙神
+EQUAL G200 2
+ISONMAP sjboss
+#ACT
+CALCVAR HUMAN B_世界BOSS伤害 + <$DAMAGEVALUE>
+SAVEVAR HUMAN B_世界BOSS伤害
+MOV S$我的伤害面板 <ListView|children={1,2,3,4,5,6,7,8,9,10,11,12}|x=0|y=162|width=200|height=25|margin=0|bounce=0|direction=1|color=x>
+INC S$我的伤害面板 <Img|id=1|img=public/1900000667_1.png|x=0|y=203|width=260>
+INC S$我的伤害面板 <Layout|id=2|children={21}|width=200|height=22|color=x>
+INC S$我的伤害面板 <RText|id=21|a=4|percentx=50|percenty=50|color=100|size=18|outline=2|outlinecolor=0|text=我的伤害:<<$HUMAN(B_世界BOSS伤害)>/FCOLOR=250>>
+ADDBUTTON 110 16 <$STR(S$我的伤害面板)>
+
+#IF
+EQUAL <$CURRRTARGETNAME> 一级镖车
+#ACT
+ChangeDamageValue 0 = 0
+
+
+[@天降元宝提醒按钮]
+#IF
+SMALL G243 2
+#ACT
+SENDMSG 9 <font color='#ff0000'>天降元宝活动尚未开始</font>
+BREAK
+#IF
+EQUAL G243 2
+#ACT
+DELBUTTON 107 18
+MOV S$天降提示图标 <Layout|children={1,2,3,4,5,6,7,8}|x=-330|y=-180|width=180|height=200|color=x>
+INC S$天降提示图标 <Img|id=3|x=0|y=20|img=custom/hl/hdyg_ui/bg_yugao_01.png>
+INC S$天降提示图标 <Img|id=4|x=7|y=27|img=custom/hl/hdyg_ui/tjyb.jpg>
+INC S$天降提示图标 <Text|id=5|x=33|y=35|color=218|size=18|outline=2|outlinecolor=0|text=天降元宝>
+INC S$天降提示图标  <Button|id=6|x=25|y=170|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=立即参加|link=@打开天降弹窗>
+INC S$天降提示图标 <Text|x=35|y=100|color=100|size=20|outline=2|outlinecolor=0|text=已开启>
+INC S$天降提示图标 <Layout|id=7|children={71}|x=150|y=20|width=50|height=50|color=x|link=@关闭天降提醒>
+INC S$天降提示图标 <Button|id=71|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@关闭天降提醒>
+ADDBUTTON 107 18 <$STR(S$天降提示图标)>
+
+[@打开天降弹窗]
+#IF
+#ACT
+#CALL [\全服活动\天降元宝弹窗.txt] @天降元宝弹窗
+
+[@关闭天降提醒]
+#IF
+#ACT
+#CALL [\全服活动\天降元宝弹窗.txt] @天降提醒面板
+
+[@世界BOSS提醒按钮]
+#IF
+EQUAL G200 1
+#ACT
+SENDMSG 9 <font color='#ff0000'>世界BOSS活动尚未开始</font>
+BREAK
+#IF
+EQUAL G200 2
+#ACT
+DELBUTTON 107 18
+MOV S$世界提示图标 <Layout|children={1,2,3,4,5,6,7,8}|x=-330|y=-180|width=180|height=200|color=x>
+INC S$世界提示图标 <Img|id=3|x=0|y=20|img=custom/hl/hdyg_ui/bg_yugao_01.png>
+INC S$世界提示图标 <Img|id=4|x=7|y=27|img=custom/hl/hdyg_ui/sjbs.jpg>
+INC S$世界提示图标 <Text|id=5|x=33|y=35|color=218|size=18|outline=2|outlinecolor=0|text=世界BOSS>
+INC S$世界提示图标  <Button|id=6|x=25|y=170|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=立即参加|link=@打开世界弹窗>
+INC S$世界提示图标 <Text|x=35|y=100|color=100|size=20|outline=2|outlinecolor=0|text=已开启>
+INC S$世界提示图标 <Layout|id=7|children={71}|x=150|y=20|width=50|height=50|color=x|link=@关闭世界提醒>
+INC S$世界提示图标 <Button|id=71|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@关闭世界提醒>
+ADDBUTTON 107 18 <$STR(S$世界提示图标)>
+
+[@打开世界弹窗]
+#IF
+#ACT
+#CALL [\全服活动\世界BOSS弹窗.txt] @世界BOSS弹窗
+
+[@关闭世界提醒]
+#IF
+#ACT
+#CALL [\全服活动\世界BOSS弹窗.txt] @世界提醒面板
+
+
+[@勇闯炼狱提醒按钮]
+#IF
+EQUAL G231 1
+#ACT
+SENDMSG 9 <font color='#ff0000'>勇闯炼狱活动尚未开始</font>
+BREAK
+#IF
+EQUAL G231 2
+#ACT
+DELBUTTON 107 18
+MOV S$炼狱提示图标 <Layout|children={1,2,3,4,5,6,7,8}|x=-330|y=-180|width=180|height=200|color=x>
+INC S$炼狱提示图标 <Img|id=3|x=0|y=20|img=custom/hl/hdyg_ui/bg_yugao_01.png>
+INC S$炼狱提示图标 <Img|id=4|x=7|y=27|img=custom/hl/hdyg_ui/ycly.jpg>
+INC S$炼狱提示图标 <Text|id=5|x=33|y=35|color=218|size=18|outline=2|outlinecolor=0|text=勇闯炼狱>
+INC S$炼狱提示图标  <Button|id=6|x=25|y=170|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=立即参加|link=@打开炼狱弹窗>
+INC S$炼狱提示图标 <Text|x=35|y=100|color=100|size=20|outline=2|outlinecolor=0|text=已开启>
+INC S$炼狱提示图标 <Layout|id=7|children={71}|x=150|y=20|width=50|height=50|color=x|link=@关闭炼狱提醒>
+INC S$炼狱提示图标 <Button|id=71|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@关闭炼狱提醒>
+ADDBUTTON 107 18 <$STR(S$炼狱提示图标)>
+
+[@关闭炼狱提醒]
+#IF
+#ACT
+DELBUTTON 107 18
+#CALL [\全服活动\勇闯积分排行.txt] @勇闯提醒面板
+
+[@显示勇闯炼狱榜单]
+#IF
+#ACT
+MOV N$炼狱显示面板 1
+#CALL [\全服活动\勇闯积分排行.txt] @更新炼狱面板判断
+
+[@去勇闯任务面板]
+#IF
+#ACT
+MOV N$炼狱显示面板 0
+#CALL [\全服活动\勇闯积分排行.txt] @更新炼狱面板判断
+
+[@退出勇闯炼狱]
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/tsbj.png>
+<Layout|id=0|children={1}|x=452|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=170|y=8|width=120|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=勇闯炼狱>
+<Text|id=3|children={31,32,33}|x=30|y=50|color=251|size=18|outline=2|outlinecolor=0|text=勇闯炼狱>
+<RText|id=31|x=0|y=30|color=255|size=18|outline=2|outlinecolor=0|text=外面的空气真香,百花盛开,野菊遍地,>
+<RText|id=32|x=0|y=60|color=255|size=18|outline=2|outlinecolor=0|text=我想出去呼吸新鲜空气。>
+<Button|id=4|x=75|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=退出炼狱|link=@退出炼狱地图>
+<Button|id=5|x=225|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=继续留下|link=@exit>
+
+[@退出炼狱地图]
+#IF
+#ACT
+MAPMOVE 3 330 330 2
+
+[@打开炼狱弹窗]
+#IF
+#ACT
+#CALL [\全服活动\勇闯炼狱弹窗.txt] @勇闯炼狱弹窗
+
+
+[@夺宝奇兵提醒按钮]
+#IF
+EQUAL G250 1
+#ACT
+SENDMSG 9 <font color='#ff0000'>夺宝奇兵活动尚未开始</font>
+BREAK
+#IF
+EQUAL G250 2
+#ACT
+DELBUTTON 107 18
+MOV S$夺宝提示图标 <Layout|children={1,2,3,4,5,6,7,8}|x=-330|y=-180|width=180|height=200|color=x>
+INC S$夺宝提示图标 <Img|id=3|x=0|y=20|img=custom/hl/hdyg_ui/bg_yugao_01.png>
+INC S$夺宝提示图标 <Img|id=4|x=7|y=27|img=custom/hl/hdyg_ui/dbqb.jpg>
+INC S$夺宝提示图标 <Text|id=5|x=33|y=35|color=218|size=18|outline=2|outlinecolor=0|text=夺宝奇兵>
+INC S$夺宝提示图标  <Button|id=6|x=25|y=170|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=立即参加|link=@打开夺宝弹窗>
+INC S$夺宝提示图标 <Text|x=35|y=100|color=100|size=20|outline=2|outlinecolor=0|text=已开启>
+INC S$夺宝提示图标 <Layout|id=7|children={71}|x=150|y=23|width=50|height=50|color=x|link=@关闭夺宝提醒>
+INC S$夺宝提示图标 <Button|id=71|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@关闭夺宝提醒>
+ADDBUTTON 107 18 <$STR(S$夺宝提示图标)>
+
+[@打开夺宝弹窗]
+#IF
+#ACT
+DELBUTTON 107 18
+#CALL [\全服活动\夺宝奇兵弹窗.txt] @夺宝奇兵弹窗
+
+[@关闭夺宝提醒]
+#IF
+#ACT
+#CALL [\全服活动\夺宝奇兵弹窗.txt] @夺宝提醒面板
+
+[@显示夺宝榜单]
+#IF
+#ACT
+MOV N$显示面板 1
+#CALL [\全服活动\夺宝奇兵排行.txt] @更新夺宝判断
+
+[@去夺宝积分面板]
+#IF
+#ACT
+MOV N$显示面板 0
+#CALL [\全服活动\夺宝奇兵排行.txt] @更新夺宝判断
+
+[@STDMODEFUNC20000]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 风花雪月
+MOV S$部位 幻武
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+
+[@STDMODEFUNC20001]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 岁月鎏金
+MOV S$部位 装扮
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+[@STDMODEFUNC20003]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 开天辟日
+MOV S$部位 幻武
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+
+[@STDMODEFUNC20004]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 锦绣年华
+MOV S$部位 装扮
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+
+[@STDMODEFUNC20006]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 逐日之星
+MOV S$部位 幻武
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+[@STDMODEFUNC20007]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 风华正茂
+MOV S$部位 装扮
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+
+[@STDMODEFUNC20009]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 清风月影
+MOV S$部位 幻武
+SENDMSG 6 激活清风月影
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+[@STDMODEFUNC20010]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 大道无极
+MOV S$部位 装扮
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+
+[@STDMODEFUNC20012]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 天下无双
+MOV S$部位 幻武
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+[@STDMODEFUNC20013]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 十方俱灭
+MOV S$部位 装扮
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+
+[@STDMODEFUNC20015]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 逐风破浪
+MOV S$部位 幻武
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+[@STDMODEFUNC20016]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 恶魔之祸
+MOV S$部位 装扮
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+
+[@STDMODEFUNC20018]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 凤翥龙翔
+MOV S$部位 幻武
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+[@STDMODEFUNC20019]
+#IF
+#ACT
+MOV N$使用激活 1
+MOV S$激活物品 风华流砂
+MOV S$部位 幻武
+#CALL [\游戏功能\系统功能\时装柜.txt] @激活时装
+;------------------------------队伍召集令------------------
+[@StdModeFunc203]
+#IF
+NOT EQUAL <$TEAM0> <$USERNAME>
+#ACT
+GIVE 队伍召集令 1
+MESSAGEBOX 您不是队长无法使用此物品
+BREAK
+
+#IF
+LARGE <$RELEVEL> 2
+#ACT
+#ELSEACT
+GIVE 队伍召集令 1
+MESSAGEBOX 你的转生等级不足3级无法使用。
+BREAK
+
+#OR
+ISONMAP 0150
+ISONMAP 0151
+CheckContainsText <$MAPTITLE> 会员
+CheckContainsText <$MAP> hydt
+CheckContainsText <$MAPTITLE> 转
+CheckContainsText <$MAPTITLE> 级
+;禁止使用的地图
+#ACT
+GIVE 队伍召集令 1
+MESSAGEBOX 该地图禁止使用队伍召集令
+BREAK
+#ELSEACT
+MOV N$发起召集 0
+
+#IF
+CHECKITEM 队伍召集令 1
+EQUAL <$TEAM0> <$USERNAME>
+#ACT
+MOV S$召集地图 <$MAP>
+MOV S$召集X <$X>
+MOV S$召集Y <$Y>
+MOV N$发起召集 1
+#ELSEACT
+MESSAGEBOX 缺少队伍召集令或者你不是队长
+BREAK
+
+#IF
+NOT EQUAL <$TEAM1>
+#ACT
+SetHumVar <$TEAM1> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM1> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM1> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM2>
+#ACT
+SetHumVar <$TEAM2> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM2> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM2> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM3>
+#ACT
+SetHumVar <$TEAM3> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM3> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM3> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM4>
+#ACT
+SetHumVar <$TEAM4> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM4> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM4> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM5>
+#ACT
+SetHumVar <$TEAM5> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM5> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM5> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM6>
+#ACT
+SetHumVar <$TEAM6> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM6> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM6> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM7>
+#ACT
+SetHumVar <$TEAM7> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM7> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM7> S72 <$STR(S$召集Y)>
+
+
+#IF
+NOT EQUAL <$TEAM8>
+#ACT
+SetHumVar <$TEAM8> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM8> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM8> S72 <$STR(S$召集Y)>
+
+#IF
+NOT EQUAL <$TEAM9>
+#ACT
+SetHumVar <$TEAM9> S70 <$STR(S$召集地图)>
+SetHumVar <$TEAM9> S71 <$STR(S$召集X)>
+SetHumVar <$TEAM9> S72 <$STR(S$召集Y)>
+
+#IF
+#ACT
+MOV N$队伍集合 1
+GOTOLABEL 0 @队伍召集
+
+
+[@队伍召集]
+#IF
+NOT EQUAL S70
+NOT EQUAL <$TEAM0> <$USERNAME>
+#ACT
+AddbutShow 50 协助队长 @协助队长
+AddbutShow 51 放弃队长 @放弃队长
+
+[@协助队长]
+#IF
+NOT EQUAL S70
+#ACT
+MAPMOVE <$STR(S70)> <$STR(S71)> <$STR(S72)>
+MOV S70
+MOV S71
+MOV S72
+DelbutShow 50
+DelbutShow 51
+
+[@放弃队长]
+#ACT
+DelbutShow 50
+DelbutShow 51
+
+
+[@LeaveGroup]
+#ACT
+DelbutShow 50
+DelbutShow 51
+
+[@LeaveMap]
+
+#IF
+CHECKVAR HUMAN 活跃度_夺宝奇兵 = ??
+#ACT
+VAR Integer HUMAN 活跃度_夺宝奇兵
+VAR Integer HUMAN 活跃度_勇闯炼狱
+VAR Integer HUMAN 活跃度_世界BOSS
+VAR Integer HUMAN 活跃度_天降元宝
+
+#IF
+EQUAL <$MAP> erdalu
+EQUAL <$STR(U91)> 22
+#ACT
+MOV U91 23
+NEWCHANGETASK 13
+
+#IF
+EQUAL N$行会集合 1
+#act
+MOV N$行会集合 0
+GOTOLABEL 1 @放弃掌门
+
+#IF
+EQUAL N$队伍集合 1
+#act
+MOV N$队伍集合 0
+GOTOLABEL 0 @放弃队长
+
+
+#IF
+equal <$HUMAN(活跃度_夺宝奇兵)> 0
+EQUAL <$MAP> dbqb
+#ACT
+CALCVAR HUMAN 活跃度_夺宝奇兵 = 1
+SAVEVAR HUMAN 活跃度_夺宝奇兵
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_夺宝奇兵)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_夺宝奇兵)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【夺宝奇兵】任务已完成，活跃度+<$STR(S$活跃_夺宝奇兵)>点！
+
+#IF
+equal <$HUMAN(活跃度_勇闯炼狱)> 0
+EQUAL <$MAP> ycly1
+#ACT
+CALCVAR HUMAN 活跃度_勇闯炼狱 = 1
+SAVEVAR HUMAN 活跃度_勇闯炼狱
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_勇闯炼狱)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_勇闯炼狱)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【勇闯炼狱】任务已完成，活跃度+<$STR(S$活跃_勇闯炼狱)>点！
+
+#IF
+equal <$HUMAN(活跃度_世界BOSS)> 0
+EQUAL <$MAP> sjboss
+#ACT
+CALCVAR HUMAN 活跃度_世界BOSS = 1
+SAVEVAR HUMAN 活跃度_世界BOSS
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_世界BOSS)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_世界BOSS)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【世界BOSS】任务已完成，活跃度+<$STR(S$活跃_世界BOSS)>点！
+
+#IF
+equal <$HUMAN(活跃度_天降元宝)> 0
+EQUAL <$MAP> tjyb
+#ACT
+CALCVAR HUMAN 活跃度_天降元宝 = 1
+SAVEVAR HUMAN 活跃度_天降元宝
+CALCVAR HUMAN 活跃度_活跃度 + <$STR(S$活跃_天降元宝)>
+SAVEVAR HUMAN 活跃度_活跃度
+CALCVAR HUMAN 活跃度_活跃度周 + <$STR(S$活跃_天降元宝)>
+SAVEVAR HUMAN 活跃度_活跃度周
+sendmsg 9 活跃-【天降元宝】任务已完成，活跃度+<$STR(S$活跃_天降元宝)>点！
+
+[@PlayReconnection] 
+#IF
+#ACT
+MOV N$临时在线时长 <$UTCNOW8>
+DEC N$临时在线时长 <$HUMAN(B_本次登录时间)>
+INC N$临时在线时长 <$HUMAN(B_上次在线时长)>
+CALCVAR HUMAN B_上次在线时长 = <$STR(N$临时在线时长)>
+SAVEVAR HUMAN B_上次在线时长
+
+#IF
+EQUAL N$行会集合 1
+#act
+MOV N$行会集合 0
+GOTOLABEL 1 @放弃掌门
+
+#IF
+EQUAL N$队伍集合 1
+#act
+MOV N$队伍集合 0
+GOTOLABEL 0 @放弃队长
+
+[@PlayOffLine]
+#IF
+CHECKLEVELEX > 69
+#ACT
+mapmove 3 330 330 8
+KILLSLAVE
+OFFLINEPLAY 65535
+
+#IF
+#ACT
+MOV N$临时在线时长 <$UTCNOW8>
+DEC N$临时在线时长 <$HUMAN(B_本次登录时间)>
+INC N$临时在线时长 <$HUMAN(B_上次在线时长)>
+CALCVAR HUMAN B_上次在线时长 = <$STR(N$临时在线时长)>
+SAVEVAR HUMAN B_上次在线时长
+
+#IF
+EQUAL N$行会集合 1
+#act
+MOV N$行会集合 0
+GOTOLABEL 1 @放弃掌门
+
+#IF
+EQUAL N$队伍集合 1
+#act
+MOV N$队伍集合 0
+GOTOLABEL 0 @放弃队长
+
+[@召唤队员]
+#IF
+NOT EQUAL <$TEAM0> <$USERNAME>
+#ACT
+SENDMSG 9 <font color='#ff0000'>您不是队长无法使用此物品</font>
+BREAK
+
+#IF
+CHECKITEM 队伍召集令 1
+#ACT
+take 队伍召集令 1
+#CALL [\游戏功能\系统功能\队伍召集.txt] @启动召集
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>队伍召集令不足</font>
+
+;--------------------------------行会召集令---------------
+[@STDMODEFUNC202]
+#OR
+CheckContainsText <$MAPTITLE> 会员
+CheckContainsText <$MAP> hydt
+CheckContainsText <$MAPTITLE> 转
+CheckContainsText <$MAPTITLE> 级
+#ACT
+GIVE 行会召集令 1
+MESSAGEBOX 该地图禁止使用行会召集令
+BREAK
+#IF
+HAVEGUILD
+ISGUILDMASTER
+#ACT
+#CALL [\游戏功能\系统功能\行会召集.txt] @启动行会召集
+#ELSEACT
+GIVE 行会召集令 1
+SENDMSG 9 <font color='#ff0000'>你不是掌门无法使用此物品</font>
+break
+
+[@召唤行会成员]
+#IF
+HAVEGUILD
+ISGUILDMASTER
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>你不是掌门无法使用此物品</font>
+break
+#IF
+CHECKITEM 行会召集令 1
+#ACT
+take 行会召集令 1
+#CALL [\游戏功能\系统功能\行会召集.txt] @启动行会召集
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>行会召集令不足</font>
+
+[@地图回城]
+#IF
+CheckBindMoney 元宝 ? 2
+#ACT
+ChangeBindMoney 元宝 2
+MAPMOVE 3 330 330 2
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足</font>
+
+[@地图随机]
+#IF
+EQUAL <$MAP> 0150
+#ACT
+SENDMSG 9 <font color='#ff0000'>本地图禁止使用随机</font>
+BREAK
+#OR
+CheckContainsText <$map> ycly
+CheckContainsText tjyb|dbqb|sjBOSS|BOSS|BOSS2|lzld|lzld2|swgc4|wgd3|wmsm3|ltl4|emgc3|zmsm4|hldt4|cyxg3|nmsy2|nmsy3|wjdy2|wjdy3|nmjt2|nmjt3|lyd2|mly2|mly3|hyd2|hyd3|hlzd2|hlzd3|elsy2|elsy3|hyz1|hxd1|hxd2|hxd3|hld1|hld2|hld3 <$map>
+#ACT
+SENDMSG 9 <font color='#ff0000'>本地图禁止使用随机</font>
+BREAK
+
+#IF
+CheckBindMoney 元宝 ? 2
+#ACT
+ChangeBindMoney 元宝 2
+MAP <$MAP>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足</font>
+
+[@会员tfis]
+#ACT
+#CALL [\游戏功能\活动图标\会员显示tfis.txt] @会员显示tfis
+
+
+[@日常活动]
+#IF
+#ACT
+#CALL [\全服活动\每日活动.txt] @启动每日活动
+
+
+[@火龙盛典]
+#IF
+#ACT
+#CALL [\全服活动\火龙盛典.txt] @启动火龙盛典
+
+[@追加Pk值]
+#IF
+Equal <$CLIENTFLAG> 2
+#ACT
+Mov S$Pk值按钮 <Text|x=25.0|y=110.0|color=255|size=16|text=PK　　值：>
+Inc S$Pk值按钮 <Img|x=174.0|y=110.0|img=custom/hl/shajuan/zt.png|esc=0>
+Inc S$Pk值按钮 <Text|x=176.0|y=110.0|color=255|size=16|text=<$PKPOINT>>
+ADDBUTTON 4 3690 <$STR(S$Pk值按钮)> 150 100
+
+
+[@Triggerchat]
+#IF
+CHECKRENEWLEVEL > 2
+#ACT
+#ELSEACT
+STOP
+SENDMSG 6 转生等级未达到3级，禁止发言。
+BREAK
+
+#IF
+EQUAL <$Chat> 1
+#act
+SetChatPrefix [系统] 251
+break
+#IF
+EQUAL <$Chat> 2
+#act
+SetChatPrefix [喊话] 252
+break
+#IF
+EQUAL <$Chat> 3
+#act
+SetChatPrefix [私聊] 253
+break
+#IF
+EQUAL <$Chat> 4
+#act
+SetChatPrefix [行会] 254
+break
+#IF
+EQUAL <$Chat> 5
+#act
+SetChatPrefix [组队] 147
+break
+#IF
+EQUAL <$Chat> 6
+#act
+SetChatPrefix [附近] 249
+break
+
+#IF
+CHECKRENEWLEVEL < 2
+EQUAL <$Chat> 7
+#act
+messagebox [世界]频道发言需要一个千里传音符及转生等级3级以上...
+BREAK
+#IF
+Not Checkitem 千里传音符 1
+EQUAL <$Chat> 7
+#act
+messagebox [世界]频道发言需要一个千里传音符及转生等级3级以上...
+BREAK
+
+#IF
+Checkitem 千里传音符 1
+EQUAL <$Chat> 7
+#act
+TAKE 千里传音符 1
+SetChatPrefix [世界] 235
+;Sendmsg 1 [世界]<$Username>：<$ChatMsg>
+Sendmovemsg 0 251 0 150 1 <$Username><$ChatMsg>
+SENDTOPCHATBOARDMSG 0 149 235 30 <$ChatMsg>
+break
+
+[@记时地图回传]
+#IF
+#ACT
+MAPMOVE 3 330 330 2
+
+[@拍卖行说明]
+#IF
+#ACT
+MOV S$拍卖说明显示 是
+#CALL [\游戏功能\系统功能\拍卖行说明界面.txt] @拍卖行说明界面
+break
+[@拍卖行说明关]
+#IF
+#ACT
+MOV S$拍卖说明显示
+#CALL [\游戏功能\系统功能\拍卖行说明界面.txt] @拍卖行说明界面
+break
+
+[@CanBuyShopItem33]
+#IF
+#ACT
+Goto @活动消费记录
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem34]
+#IF
+#ACT
+Goto @活动消费记录
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem35]
+#IF
+#ACT
+Goto @活动消费记录
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem36]
+#IF
+#ACT
+Goto @活动消费记录
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem37]
+#IF
+#ACT
+Goto @活动消费记录
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem38]
+#IF
+#ACT
+Goto @活动消费记录
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem39]
+#IF
+#ACT
+Goto @活动消费记录
+INC U120 <$STR(M0)>
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem40]
+#IF
+#ACT
+Goto @活动消费记录
+INC U120 <$STR(M0)>
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem41]
+#IF
+#ACT
+Goto @活动消费记录
+INC U120 <$STR(M0)>
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem42]
+#IF
+#ACT
+Goto @活动消费记录
+INC U120 <$STR(M0)>
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem43]
+#IF
+#ACT
+Goto @活动消费记录
+INC U120 <$STR(M0)>
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem44]
+#IF
+#ACT
+Goto @活动消费记录
+INC U120 <$STR(M0)>
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+[@CanBuyShopItem45]
+#IF
+#ACT
+Goto @活动消费记录
+#CALL [\游戏功能\系统功能\时装柜.txt] @时装切换按钮红点
+
+
+[@CanBuyShopItem100]
+#IF
+#ACT
+Goto @活动消费记录
+
+[@活动消费记录]
+#IF
+large G100 0
+#ACT
+INC U120 <$STR(M0)>
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+
+
+[@StartMyShop]
+#if
+ISDUPMODE
+#ACT
+MESSAGEBOX 请找一个空位置，不能与别人站在一起。
+ForbidMyShop
+BREAK
+
+#IF
+CheckStringlength <$STALLNAME> > 20
+#ACT
+MESSAGEBOX 你的摊位名称长度超过10个字
+ForbidMyShop
+BREAK
+
+#IF
+NOT INSAFEZONE
+#ACT
+MESSAGEBOX 需要在安全区使用摆摊功能！
+ForbidMyShop
+BREAK
+
+#IF
+NOT IsOnMap 3
+#ACT
+MESSAGEBOX 需要在盟重使用摆摊功能.
+ForbidMyShop
+BREAK
+
+#OR
+EQUAL <$RELEVEL> 0
+small U119 1
+#ACT
+MESSAGEBOX 需要一转及完成首充才可以使用摆摊功能！
+ForbidMyShop
+BREAK
+
+
+#IF
+LARGE <$X> 279
+SMALL <$X> 320
+LARGE <$Y> 320
+SMALL <$Y> 341
+#ACT
+#ELSEACT
+MESSAGEBOX 请移步土城左边的安全区摆摊！
+ForbidMyShop
+
+[@Revival]
+#IF
+#Act
+AddMpper + 100
+MOV U243 <$UTCNOW8>
+INC U243 <$REVIVALTIME>
+#CALL [\游戏功能\系统功能\复活相关.txt] @启动复活面板
+
+[@复活倒计时触发]
+#IF
+#Act
+#CALL [\游戏功能\系统功能\复活相关.txt] @启动复活面板
+
+[@TakeOff15]
+#IF
+#Act
+#CALL [\游戏功能\系统功能\复活相关.txt] @启动复活面板
+
+[@TakeOn15]
+#IF
+#Act
+#CALL [\游戏功能\系统功能\复活相关.txt] @启动复活面板
+
+[@成长倒计时]
+#IF
+#ACT
+MOV S$当前查看地图 <$str(S$上次查看地图名)>
+#CALL [\游戏功能\系统功能\成长之路.txt] @查看地图BOSS
+
+
+[@全服晋级排行]
+#IF
+#ACT
+#Call [\全服活动\全服晋级排行.txt] @启全服竞技排行
+
+
+
+
+
+[@StdModeFunc1260]
+#IF
+#act
+MOV N$开启福利宝箱 1
+OPENHYPERLINK 7 2
+#CALL [\游戏功能\系统功能\福利宝箱.txt] @启动福利宝箱
+BREAK 
+
+
+[@GetMailItem] 
+#IF
+EQUAL <$LASTMAILOPTYPEID> 170
+#ACT
+CONFERTITLE 傲视群雄
+Take 傲视群雄 1
+#CALL [\顶戴刷新.txt] @顶戴刷新
+SENDMSG 6 恭喜你获得了【傲视群雄】称号...
+CALCVAR HUMAN 顶戴展示六A = 50713
+SAVEVAR HUMAN 顶戴展示六A
+GOTO @给顶戴_全服榜单
+
+
+#IF
+EQUAL <$LASTMAILOPTYPEID> 171
+#ACT
+CONFERTITLE 超凡入圣
+Take 超凡入圣 1
+#CALL [\顶戴刷新.txt] @顶戴刷新
+SENDMSG 6 恭喜你获得了【超凡入圣】称号...
+CALCVAR HUMAN 顶戴展示七A = 50714
+SAVEVAR HUMAN 顶戴展示七A
+GOTO @给顶戴_全服榜单
+
+#IF
+EQUAL <$LASTMAILOPTYPEID> 172
+#ACT
+CONFERTITLE 唯我独尊
+take 唯我独尊
+#CALL [\顶戴刷新.txt] @顶戴刷新
+SENDMSG 6 恭喜你获得了【唯我独尊】称号...
+CALCVAR HUMAN 顶戴展示八A = 50717
+SAVEVAR HUMAN 顶戴展示八A
+GOTO @给顶戴_全服榜单
+
+#IF
+EQUAL <$LASTMAILOPTYPEID> 173
+#ACT
+CONFERTITLE 巅峰之人
+Take 巅峰之人
+#CALL [\顶戴刷新.txt] @顶戴刷新
+SENDMSG 6 恭喜你获得了【巅峰之人】称号...
+CALCVAR HUMAN 顶戴展示九A = 50716
+SAVEVAR HUMAN 顶戴展示九A
+GOTO @给顶戴_全服榜单
+
+[@给顶戴_全服榜单]
+#IF
+SMALL <$STR(N$C_顶了几个)> 5
+#ACT
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#CALL [\顶戴刷新.txt] @顶戴刷新
+BREAK
+
+
+
+[@退出妖塔挑战]
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/tsbj.png>
+<Layout|id=0|children={1}|x=452|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=170|y=8|width=120|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=锁妖塔>
+<Text|id=3|children={31,32,33}|x=30|y=50|color=251|size=18|outline=2|outlinecolor=0|text=挑战锁妖塔>
+<RText|id=31|x=0|y=30|color=255|size=18|outline=2|outlinecolor=0|text=外面的空气真香,百花盛开,野菊遍地,>
+<RText|id=32|x=0|y=60|color=255|size=18|outline=2|outlinecolor=0|text=我想出去呼吸新鲜空气。>
+<Button|id=4|x=75|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=退出妖塔|link=@退出妖塔地图>
+<Button|id=5|x=225|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=继续留下|link=@exit>
+
+[@退出妖塔地图]
+#IF
+#ACT
+MAPMOVE 3 330 330 2
+MOV U244 0
+DelMirrorMap syt<$STR(N$今日挑战层)><$USERNAME>
+#CALL [\游戏功能\任务系统\主线流程.txt] @主线开始
+DELBUTTON 110 60
+
+[@妖塔限时退出]
+#IF
+#ACT
+MOV U244 0
+MOV N$闯塔失败 1
+CLEARMAPMON syt<$STR(N$今日挑战层)><$USERNAME>
+#CALL [\全服活动\锁妖塔.txt] @妖塔失败弹窗
+
+[@顶部状态展示]
+#IF
+#ACT
+#CALL [\游戏功能\状态按钮\状态按钮.txt] @启动状态按钮
+
+[@ReCharge]
+#IF
+#ACT
+CALCVAR HUMAN B_累计充值 + <$STR(M0)>
+SAVEVAR HUMAN B_累计充值
+MONEY 充值点 + <$STR(M0)>
+MONEY VIP经验 + <$STR(M0)>
+MOV N$累计比例 100
+MUL  N$累计比例 <$STR(M0)>
+MONEY 积分 + <$STR(N$累计比例)>
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini 奖励变化时段 开始天数 N$开始天数
+DEC N$开始天数 1
+#IF
+large G497 <$str(N$开始天数)>
+#ACT
+CALCVAR HUMAN B_今日充值 + <$STR(M0)>
+SAVEVAR HUMAN B_今日充值
+#ELSEACT
+BREAK
+#IF
+NOT EQUAL T206 <$MONTH><$DAY>
+CHECKVAR HUMAN B_今日充值 ? 98
+#ACT
+MOV T206 <$MONTH><$DAY>
+INC U252 1
+
+[@每日50个火龙凭证爆率限制]
+#IF
+SMALL U180 51
+#ACT
+ALLOWDROP 1
+INC U180 1
+#elseact
+ALLOWDROP 0
+[@每日100个火龙凭证爆率限制]
+#IF
+SMALL U181 101
+#ACT
+ALLOWDROP 1
+INC U181 1
+#elseact
+ALLOWDROP 0
+[@每日200个火龙凭证爆率限制]
+#IF
+SMALL U182 201
+#ACT
+ALLOWDROP 1
+INC U182 1
+#elseact
+ALLOWDROP 0
+[@2阶40级爆率限制]
+#IF
+SMALL U183 51
+#ACT
+ALLOWDROP 1
+INC U183 1
+#elseact
+ALLOWDROP 0
+[@4阶55阶爆率限制]
+#IF
+SMALL U184 51
+#ACT
+ALLOWDROP 1
+INC U184 1
+#elseact
+ALLOWDROP 0
+[@3阶1转爆率限制]
+#IF
+SMALL U185 51
+#ACT
+ALLOWDROP 1
+INC U185 1
+#elseact
+ALLOWDROP 0
+[@6阶70级爆率限制]
+#IF
+SMALL U186 51
+#ACT
+ALLOWDROP 1
+INC U186 1
+#elseact
+ALLOWDROP 0
+[@2阶40级爆率限制]
+#IF
+SMALL U187 201
+#ACT
+ALLOWDROP 1
+INC U187 1
+#elseact
+ALLOWDROP 0
+[@3阶1转爆率限制]
+#IF
+SMALL U188 201
+#ACT
+ALLOWDROP 1
+INC U188 1
+#elseact
+ALLOWDROP 0
+[@每日100个龙晶碎片爆率限制]
+#IF
+SMALL U189 101
+#ACT
+ALLOWDROP 1
+INC U189 1
+BREAK
+#IF
+CHECKVAR HUMAN B_累计充值 > 99999
+#ACT
+ALLOWDROP 1
+#elseact
+ALLOWDROP 0
+[@每日200个龙晶碎片爆率限制]
+#IF
+SMALL U190 201
+#ACT
+ALLOWDROP 1
+INC U190 1
+BREAK
+#IF
+CHECKVAR HUMAN B_累计充值 > 99999
+#ACT
+ALLOWDROP 1
+#elseact
+ALLOWDROP 0
+[@每日300个龙晶碎片爆率限制]
+#IF
+SMALL U191 301
+#ACT
+ALLOWDROP 1
+INC U191 1
+BREAK
+#IF
+CHECKVAR HUMAN B_累计充值 > 99999
+#ACT
+ALLOWDROP 1
+#elseact
+ALLOWDROP 0
+[@每日500个龙晶碎片爆率限制]
+#IF
+SMALL U192 501
+#ACT
+ALLOWDROP 1
+INC U192 1
+BREAK
+#IF
+CHECKVAR HUMAN B_累计充值 > 99999
+#ACT
+ALLOWDROP 1
+#elseact
+ALLOWDROP 0
+[@洗髓丹爆率限制]
+#IF
+SMALL U193 51
+#ACT
+ALLOWDROP 1
+INC U193 1
+BREAK
+#IF
+CHECKVAR HUMAN B_累计充值 > 99
+#ACT
+ALLOWDROP 1
+#elseact
+ALLOWDROP 0
+[@恶魔头颅爆率限制]
+#IF
+SMALL U194 51
+#ACT
+ALLOWDROP 1
+INC U194 1
+BREAK
+#IF
+CHECKVAR HUMAN B_累计充值 > 99
+#ACT
+ALLOWDROP 1
+#elseact
+ALLOWDROP 0
+[@龍魄爆率限制]
+#IF
+SMALL U195 51
+#ACT
+ALLOWDROP 1
+INC U195 1
+BREAK
+#IF
+CHECKVAR HUMAN B_累计充值 > 99
+#ACT
+ALLOWDROP 1
+#elseact
+ALLOWDROP 0
+[@龍心爆率限制]
+#IF
+SMALL U196 51
+#ACT
+ALLOWDROP 1
+INC U196 1
+BREAK
+#IF
+CHECKVAR HUMAN B_累计充值 > 99
+#ACT
+ALLOWDROP 1
+#elseact
+ALLOWDROP 0
+[@每日500个火龙凭证爆率限制]
+#IF
+SMALL U197 501
+#ACT
+ALLOWDROP 1
+INC U197 1
+#elseact
+ALLOWDROP 0
+[@每日1000个龙晶碎片爆率限制]
+#IF
+SMALL U198 501
+#ACT
+ALLOWDROP 1
+INC U198 1
+#elseact
+ALLOWDROP 0
+[@低级装备通用爆率限制]
+#IF
+SMALL U199 101
+#ACT
+ALLOWDROP 1
+INC U199 1
+#elseact
+ALLOWDROP 0
+[@新手图火龙凭证爆率限制]
+#IF
+SMALL U160 11
+#ACT
+ALLOWDROP 1
+INC U160 1
+#elseact
+ALLOWDROP 0
+[@迷宫火龙凭证爆率限制]
+#IF
+SMALL U161 25
+#ACT
+ALLOWDROP 1
+INC U161 1
+#elseact
+ALLOWDROP 0
+[@祭坛火龙凭证爆率限制]
+#IF
+SMALL U162 40
+#ACT
+ALLOWDROP 1
+INC U162 1
+#elseact
+ALLOWDROP 0
+[@1转图火龙凭证爆率限制]
+#IF
+SMALL U163 50
+#ACT
+ALLOWDROP 1
+INC U163 1
+#elseact
+ALLOWDROP 0
+[@2转图火龙凭证爆率限制]
+#IF
+SMALL U164 128
+#ACT
+ALLOWDROP 1
+INC U164 1
+#elseact
+ALLOWDROP 0
+[@3转图火龙凭证爆率限制]
+#IF
+SMALL U165 401
+#ACT
+ALLOWDROP 1
+INC U165 1
+#elseact
+ALLOWDROP 0
+[@4转图火龙凭证爆率限制]
+#IF
+SMALL U166 801
+#ACT
+ALLOWDROP 1
+INC U166 1
+#elseact
+ALLOWDROP 0
+[@5转图火龙凭证爆率限制]
+#IF
+SMALL U167 1101
+#ACT
+ALLOWDROP 1
+INC U167 1
+#elseact
+ALLOWDROP 0
+[@6转图火龙凭证爆率限制]
+#IF
+SMALL U168 2501
+#ACT
+ALLOWDROP 1
+INC U168 1
+#elseact
+ALLOWDROP 0
+[@7转图火龙凭证爆率限制]
+#IF
+SMALL U169 5201
+#ACT
+ALLOWDROP 1
+INC U169 1
+#elseact
+ALLOWDROP 0
+[@8转图火龙凭证爆率限制]
+#IF
+SMALL U158 10102
+#ACT
+ALLOWDROP 1
+INC U158 1
+#elseact
+ALLOWDROP 0
+[@9转图火龙凭证爆率限制]
+#IF
+SMALL U159 20001
+#ACT
+ALLOWDROP 1
+INC U159 1
+#elseact
+ALLOWDROP 0
+[@399火龙凭证爆率限制]
+#IF
+SMALL U172 399
+#ACT
+ALLOWDROP 1
+INC U172 1
+#elseact
+ALLOWDROP 0
+[@799火龙凭证爆率限制]
+#IF
+SMALL U173 799
+#ACT
+ALLOWDROP 1
+INC U173 1
+#elseact
+ALLOWDROP 0
+[@999火龙凭证爆率限制]
+#IF
+SMALL U174 999
+#ACT
+ALLOWDROP 1
+INC U174 1
+#elseact
+ALLOWDROP 0
+
+[@StdModeFunc1263]
+#IF
+#act
+MOV N$开启五阶宝箱 1
+OPENHYPERLINK 7 2
+#CALL [\游戏功能\系统功能\特戒宝箱五阶.txt] @启动五阶特戒宝箱
+BREAK 
+[@StdModeFunc1272]
+#IF
+#act
+MOV N$开启三阶宝箱 1
+OPENHYPERLINK 7 2
+#CALL [\游戏功能\系统功能\特戒宝箱三阶.txt] @启动三阶特戒宝箱
+BREAK 
+[@小精灵界面]
+#IF
+#ACT
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @启动小精灵
+
+[@StdModeFunc1264]
+#IF
+SMALL U247 0
+#ACT
+MONEY 绑定元宝 + 10000
+SENDMSG 7 您已拥有永久小精灵，系统赠送你绑定元宝+1万。
+BREAK
+#IF
+SMALL U247 <$UTCNOW8>
+#ACT
+MOV U247 <$UTCNOW8>
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @召唤精灵
+#IF
+#ACT
+INC U247 10800
+SENDMSG 7 拾取小精灵(3小时)使用成功！月之精灵时间延长3小时
+#IF
+EQUAL N$小精灵面板状态 1
+#ACT
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @启动小精灵
+[@StdModeFunc1265]
+#IF
+SMALL U247 0
+#ACT
+MONEY 绑定元宝 + 50000
+SENDMSG 7 您已拥有永久小精灵，系统赠送你绑定元宝+5万。
+BREAK
+#IF
+SMALL U247 <$UTCNOW8>
+#ACT
+MOV U247 <$UTCNOW8>
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @召唤精灵
+#IF
+#ACT
+INC U247 86400
+SENDMSG 7 拾取小精灵(1天)使用成功！月之精灵时间延长1天
+#IF
+EQUAL N$小精灵面板状态 1
+#ACT
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @启动小精灵
+[@StdModeFunc1266]
+#IF
+SMALL U247 0
+#ACT
+MONEY 绑定元宝 + 100000
+SENDMSG 7 您已拥有永久小精灵，系统赠送你绑定元宝+10万。
+BREAK
+#IF
+SMALL U247 <$UTCNOW8>
+#ACT
+MOV U247 <$UTCNOW8>
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @召唤精灵
+#IF
+#ACT
+INC U247 259200
+SENDMSG 7 拾取小精灵(3天)使用成功！月之精灵时间延长3天
+#IF
+EQUAL N$小精灵面板状态 1
+#ACT
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @启动小精灵
+[@StdModeFunc1267]
+#IF
+SMALL U247 0
+#ACT
+MONEY 绑定元宝 + 200000
+SENDMSG 7 您已拥有永久小精灵，系统赠送你绑定元宝+20万。
+BREAK
+#IF
+SMALL U247 <$UTCNOW8>
+#ACT
+MOV U247 <$UTCNOW8>
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @召唤精灵
+#IF
+#ACT
+INC U247 432000
+SENDMSG 7 拾取小精灵(5天)使用成功！月之精灵时间延长5天
+#IF
+EQUAL N$小精灵面板状态 1
+#ACT
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @启动小精灵
+[@StdModeFunc1268]
+#IF
+SMALL U247 0
+#ACT
+MONEY 绑定元宝 + 500000
+SENDMSG 7 您已拥有永久小精灵，系统赠送你绑定元宝+50万。
+BREAK
+#IF
+SMALL U247 <$UTCNOW8>
+#ACT
+MOV U247 <$UTCNOW8>
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @召唤精灵
+#IF
+#ACT
+INC U247 604800
+SENDMSG 7 拾取小精灵(7天)使用成功！月之精灵时间延长7天
+#IF
+EQUAL N$小精灵面板状态 1
+#ACT
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @启动小精灵
+[@StdModeFunc1269]
+#IF
+SMALL U247 0
+#ACT
+MONEY 绑定元宝 + 1000000
+SENDMSG 7 您已拥有永久小精灵，系统赠送你绑定元宝+100万。
+BREAK
+#IF
+SMALL U247 <$UTCNOW8>
+#ACT
+MOV U247 <$UTCNOW8>
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @召唤精灵
+#IF
+#ACT
+INC U247 1296000
+SENDMSG 7 拾取小精灵(15天)使用成功！月之精灵时间延长15天
+#IF
+EQUAL N$小精灵面板状态 1
+#ACT
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @启动小精灵
+[@StdModeFunc1270]
+#IF
+SMALL U247 0
+#ACT
+MONEY 绑定元宝 + 2000000
+SENDMSG 7 您已拥有永久小精灵，系统赠送你绑定元宝+200万。
+BREAK
+#IF
+SMALL U247 <$UTCNOW8>
+#ACT
+MOV U247 <$UTCNOW8>
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @召唤精灵
+#IF
+#ACT
+INC U247 2592000
+SENDMSG 7 拾取小精灵(30天)使用成功！月之精灵时间延长30天
+#IF
+EQUAL N$小精灵面板状态 1
+#ACT
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @启动小精灵
+[@StdModeFunc1271]
+#IF
+#ACT
+MOV U247 0
+DEC U247 1
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @召唤精灵
+SENDMSG 7 拾取小精灵(永久)使用成功！月之精灵已经成为您的终身伙伴！
+#IF
+EQUAL N$小精灵面板状态 1
+#ACT
+#CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @启动小精灵
+
+[@OpenLayer666]
+#IF
+#ACT
+MOV N$小精灵面板状态 1
+[@CloseLayer666]
+#IF
+#ACT
+MOV N$小精灵面板状态 0
+
+
+
+[@Slavebb]
+#IF
+CHECKSLAVENAME 月灵
+#ACT
+ChangeSlaveLevel 神兽 = 7
+ChangeSlaveLevel 月灵 = 3
+CalcPer <$MAXAC> 300 n$宝宝物防
+CalcPer <$MAXMAC> 300 n$宝宝魔防
+CalcPer <$MAXSC> 30 n$宝宝道术
+CalcPer <$MaxHP> 200 n$宝宝血量
+MEBabyHP 月灵 = 999999 0
+CHANGEMOBABILITY 月灵 6 =  <$str(n$宝宝道术)>  2100000000
+CHANGEMOBABILITY 月灵 11 =  <$str(n$宝宝血量)>  2100000000
+CHANGEMOBABILITY 月灵 2 =  <$str(n$宝宝物防)>  2100000000
+CHANGEMOBABILITY 月灵 4 =  <$str(n$宝宝魔防)>  2100000000
+#IF
+CHECKSLAVENAME 神兽
+#ACT
+ChangeSlaveLevel 神兽 = 7
+ChangeSlaveLevel 月灵 = 3
+CalcPer <$MAXAC> 300 n$宝宝物防
+CalcPer <$MAXMAC> 300 n$宝宝魔防
+CalcPer <$MaxHP> 150 n$宝宝血量
+CalcPer <$MAXSC> 30 n$宝宝道术
+MEBabyHP 神兽 = 999999 0
+CHANGEMOBABILITY 神兽 11 =  <$str(n$宝宝血量)>  2100000000
+CHANGEMOBABILITY 神兽 2 =  <$str(n$宝宝物防)>  2100000000
+CHANGEMOBABILITY 神兽 4 =  <$str(n$宝宝魔防)>  2100000000
+CHANGEMOBABILITY 神兽 6 =  <$str(n$宝宝道术)>  2100000000
+
+[@CanPaimaiItem]
+#IF
+small u13 2
+#ACT
+ALLOWPAIMAI 1
+sendmsg 6 VIP1以上才可以上架物品
+BREAK
+[@OpenLayer667]
+#IF
+#ACT
+MOV N$分解界面状态 1
+[@CloseLayer667]
+#IF
+#ACT
+MOV N$分解界面状态 0
+
+[@OpenLayer668]
+#IF
+#ACT
+MOV N$变强合成界面状态 1
+[@CloseLayer668]
+#IF
+EQUAL N$变强界面状态 1
+#ACT
+MOV N$变强合成界面状态 0
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+[@OpenLayer669]
+#IF
+#ACT
+MOV N$变强星座界面状态 1
+[@CloseLayer669]
+#IF
+EQUAL N$变强界面状态 1
+#ACT
+MOV N$变强星座界面状态 0
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+[@OpenLayer670]
+#IF
+#ACT
+MOV N$变强龙魂界面状态 1
+[@CloseLayer670]
+#IF
+EQUAL N$变强界面状态 1
+#ACT
+MOV N$变强龙魂界面状态 0
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+[@OpenLayer671]
+#IF
+#ACT
+MOV N$变强幸运界面状态 1
+[@CloseLayer671]
+#IF
+EQUAL N$变强界面状态 1
+#ACT
+MOV N$变强幸运界面状态 0
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+[@OpenLayer672]
+#IF
+#ACT
+MOV N$变强铭文界面状态 1
+[@CloseLayer672]
+#IF
+EQUAL N$变强界面状态 1
+#ACT
+MOV N$变强铭文界面状态 0
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+[@OpenLayer673]
+#IF
+#ACT
+MOV N$变强神器界面状态 1
+[@CloseLayer673]
+#IF
+EQUAL N$变强界面状态 1
+#ACT
+MOV N$变强神器界面状态 0
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+[@OpenLayer674]
+#IF
+#ACT
+MOV N$变强官职界面状态 1
+[@CloseLayer674]
+#IF
+EQUAL N$变强界面状态 1
+#ACT
+MOV N$变强官职界面状态 0
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+[@OpenLayer675]
+#IF
+#ACT
+MOV N$变强元神界面状态 1
+
+[@CloseLayer675]
+#IF
+#ACT
+CHANGEHUMABILITY 11 = 0
+#Call [\属性刷新.txt] @属性刷新
+#Call [\元素刷新.txt] @元素刷新
+#Call [\吸血刷新.txt] @吸血刷新
+
+#IF
+EQUAL N$变强界面状态 1
+#ACT
+MOV N$变强元神界面状态 0
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+
+[@OpenLayer676]
+#IF
+#ACT
+MOV N$变强附件界面状态 1
+[@CloseLayer676]
+#IF
+EQUAL N$变强界面状态 1
+#ACT
+MOV N$变强附件界面状态 0
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+
+[@OpenLayer677]
+#IF
+#ACT
+MOV N$变强界面状态 1
+
+[@OpenLayer678]
+#IF
+#ACT
+MOV N$变强强星界面状态 1
+[@CloseLayer678]
+#IF
+EQUAL N$变强界面状态 1
+#ACT
+MOV N$变强强星界面状态 0
+#CALL [\游戏功能\系统功能\我要变强.txt] @变强红点检测
+#CALL [\游戏功能\系统功能\我要变强.txt] @启动变强
+#Call [\游戏功能\活跃系统\活跃任务结算.txt] @活跃任务结算
+
+
+
+[@退出古陵地图]
+#ACT
+mapmove 3 330 330 
+
+[@StdModeFunc1273]
+#IF
+EQUAL <$HUMAN(B_聚元丹次数)> ??
+#ACT
+VAR Integer HUMAN B_聚元丹次数
+#IF
+#ACT
+MOV N$聚元丹可用次数 1
+#IF
+LARGE U13 2
+#ACT
+INC N$聚元丹可用次数 1
+#IF
+LARGE U13 4
+#ACT
+INC N$聚元丹可用次数 1
+#IF
+LARGE U13 7
+#ACT
+INC N$聚元丹可用次数 1
+#IF
+LARGE U13 9
+#ACT
+INC N$聚元丹可用次数 1
+#IF
+LARGE U13 11
+#ACT
+INC N$聚元丹可用次数 1
+#IF
+LARGE U13 14
+#ACT
+INC N$聚元丹可用次数 1
+
+#IF
+CHECKVAR HUMAN B_聚元丹次数 ? <$str(N$聚元丹可用次数)>
+#ACT
+GiveStateItem 聚元丹 1 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#ff0000'>今日使用聚元丹次数已超过<$str(N$聚元丹可用次数)>次！</font>
+BREAK
+
+#IF
+SMALL <$RELEVEL> 4
+#ACT
+MOV N$转生恢复值 30000000
+#IF
+LARGE <$RELEVEL> 3
+SMALL <$RELEVEL> 6
+#ACT
+MOV N$转生恢复值 50000000
+#IF
+LARGE <$RELEVEL> 5
+#ACT
+MOV N$转生恢复值 <$RELEVEL>
+MUL N$转生恢复值 20000000
+MOV N$等级恢复值 <$LEVEL>
+MUL N$等级恢复值 10000
+INC N$转生恢复值 <$STR(N$等级恢复值)>
+#IF
+LARGE N$转生恢复值 220000000
+#ACT
+MOV N$转生恢复值 220000000
+
+#IF
+#ACT
+MOV N$高倍总经验值 <$STR(N$转生恢复值)>
+MUL N$高倍总经验值 7
+#IF
+CHECKVAR HUMAN B_可恢复经验值 < <$STR(N$高倍总经验值)>
+#ACT
+MOV N$临时总额度 <$HUMAN(B_可恢复经验值)>
+INC N$临时总额度 <$STR(N$转生恢复值)>
+#ELSEACT
+GiveStateItem 聚元丹 1 0 1 0 1 1 1 1 1
+SENDMSG 9 <font color='#ff0000'>经验已超出总额，使用失败。</font>
+BREAK
+#IF
+SMALL N$临时总额度 <$STR(N$高倍总经验值)>
+#ACT
+CALCVAR HUMAN B_可恢复经验值 + <$STR(N$转生恢复值)>
+SAVEVAR HUMAN B_可恢复经验值
+CALCVAR HUMAN B_聚元丹次数 + 1
+SAVEVAR HUMAN B_聚元丹次数
+SENDMSG 9 <font color='#00ff00'>聚元丹使用成功，可使用高倍经验大幅提升</font>
+#CALL [\游戏功能\系统功能\经验使者.txt] @启动经验使者
+BREAK
+#IF
+NOT SMALL N$临时总额度 <$STR(N$高倍总经验值)>
+#ACT
+CALCVAR HUMAN B_可恢复经验值 = <$STR(N$高倍总经验值)>
+SAVEVAR HUMAN B_可恢复经验值
+CALCVAR HUMAN B_聚元丹次数 + 1
+SAVEVAR HUMAN B_聚元丹次数
+SENDMSG 9 <font color='#00ff00'>聚元丹使用成功，可使用高倍经验大幅提升</font>
+#CALL [\游戏功能\系统功能\经验使者.txt] @启动经验使者
+BREAK
+
+[@StdModeFunc1274]
+#OR
+EQUAL T203
+SMALL U248 <$UTCNOW8>
+#ACT
+MOV U248 <$UTCNOW8>
+INC U248 3600
+MOV T203 2倍
+MOV N$当前经验卷倍数 0
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+;KILLMONEXPRATE 200 <$STR(N$剩余倍数时间)>
+SENDMSG 7 2倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#IF
+#ACT
+MOV S$经验倍数值 <$STR(T203)>
+DEC S$经验倍数值 倍
+MOV N$当前经验卷倍数 2
+#CALL [\游戏功能\系统功能\经验使者.txt] @经验倍数递增
+[@StdModeFunc1275]
+#OR
+EQUAL T203
+SMALL U248 <$UTCNOW8>
+#ACT
+MOV U248 <$UTCNOW8>
+INC U248 3600
+MOV T203 3倍
+MOV N$当前经验卷倍数 0
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+;KILLMONEXPRATE 300 <$STR(N$剩余倍数时间)>
+SENDMSG 7 3倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#IF
+#ACT
+MOV S$经验倍数值 <$STR(T203)>
+DEC S$经验倍数值 倍
+MOV N$当前经验卷倍数 3
+#CALL [\游戏功能\系统功能\经验使者.txt] @经验倍数递增
+[@StdModeFunc1276]
+#OR
+EQUAL T203
+SMALL U248 <$UTCNOW8>
+#ACT
+MOV U248 <$UTCNOW8>
+INC U248 3600
+MOV T203 4倍
+MOV N$当前经验卷倍数 0
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+;KILLMONEXPRATE 400 <$STR(N$剩余倍数时间)>
+SENDMSG 7 4倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#IF
+#ACT
+MOV S$经验倍数值 <$STR(T203)>
+DEC S$经验倍数值 倍
+MOV N$当前经验卷倍数 4
+#CALL [\游戏功能\系统功能\经验使者.txt] @经验倍数递增
+[@StdModeFunc1277]
+#OR
+EQUAL T203
+SMALL U248 <$UTCNOW8>
+#ACT
+MOV U248 <$UTCNOW8>
+INC U248 3600
+MOV T203 5倍
+MOV N$当前经验卷倍数 0
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+;KILLMONEXPRATE 500 <$STR(N$剩余倍数时间)>
+SENDMSG 7 5倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#IF
+#ACT
+MOV S$经验倍数值 <$STR(T203)>
+DEC S$经验倍数值 倍
+MOV N$当前经验卷倍数 5
+#CALL [\游戏功能\系统功能\经验使者.txt] @经验倍数递增
+[@StdModeFunc1278]
+#OR
+EQUAL T203
+SMALL U248 <$UTCNOW8>
+#ACT
+MOV U248 <$UTCNOW8>
+INC U248 3600
+MOV T203 6倍
+MOV N$当前经验卷倍数 0
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+;KILLMONEXPRATE 600 <$STR(N$剩余倍数时间)>
+SENDMSG 8 6倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#IF
+#ACT
+MOV S$经验倍数值 <$STR(T203)>
+DEC S$经验倍数值 倍
+MOV N$当前经验卷倍数 6
+#CALL [\游戏功能\系统功能\经验使者.txt] @经验倍数递增
+
+[@StdModeFunc1279]
+#OR
+EQUAL T203
+SMALL U248 <$UTCNOW8>
+#ACT
+MOV U248 <$UTCNOW8>
+INC U248 3600
+MOV T203 7倍
+MOV N$当前经验卷倍数 0
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+;KILLMONEXPRATE 700 <$STR(N$剩余倍数时间)>
+SENDMSG 7 7倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#IF
+#ACT
+MOV S$经验倍数值 <$STR(T203)>
+DEC S$经验倍数值 倍
+MOV N$当前经验卷倍数 7
+#CALL [\游戏功能\系统功能\经验使者.txt] @经验倍数递增
+
+[@StdModeFunc1280]
+#OR
+EQUAL T203
+SMALL U248 <$UTCNOW8>
+#ACT
+MOV U248 <$UTCNOW8>
+INC U248 3600
+MOV T203 8倍
+MOV N$当前经验卷倍数 0
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+;KILLMONEXPRATE 800 <$STR(N$剩余倍数时间)>
+SENDMSG 7 8倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#IF
+#ACT
+MOV S$经验倍数值 <$STR(T203)>
+DEC S$经验倍数值 倍
+MOV N$当前经验卷倍数 8
+#CALL [\游戏功能\系统功能\经验使者.txt] @经验倍数递增
+
+[@StdModeFunc1281]
+#OR
+EQUAL T203
+SMALL U248 <$UTCNOW8>
+#ACT
+MOV U248 <$UTCNOW8>
+INC U248 3600
+MOV T203 9倍
+MOV N$当前经验卷倍数 0
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+;KILLMONEXPRATE 900 <$STR(N$剩余倍数时间)>
+SENDMSG 7 9倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#IF
+#ACT
+MOV S$经验倍数值 <$STR(T203)>
+DEC S$经验倍数值 倍
+MOV N$当前经验卷倍数 9
+#CALL [\游戏功能\系统功能\经验使者.txt] @经验倍数递增
+
+[@StdModeFunc1282]
+#OR
+EQUAL T203
+SMALL U248 <$UTCNOW8>
+#ACT
+MOV U248 <$UTCNOW8>
+INC U248 3600
+MOV T203 10倍
+MOV N$当前经验卷倍数 0
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+;KILLMONEXPRATE 1000 <$STR(N$剩余倍数时间)>
+SENDMSG 7 10倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#IF
+#ACT
+MOV S$经验倍数值 <$STR(T203)>
+DEC S$经验倍数值 倍
+MOV N$当前经验卷倍数 10
+#CALL [\游戏功能\系统功能\经验使者.txt] @经验倍数递增
+
+[@StdModeFunc1283]
+#OR
+EQUAL T203
+SMALL U248 <$UTCNOW8>
+#ACT
+MOV U248 <$UTCNOW8>
+INC U248 3600
+MOV T203 20倍
+MOV N$当前经验卷倍数 0
+MOV N$剩余倍数时间 U248
+DEC N$剩余倍数时间 <$UTCNOW8>
+;KILLMONEXPRATE 2000 <$STR(N$剩余倍数时间)>
+SENDMSG 7 20倍经验卷使用成功，剩余<$STR(N$剩余倍数时间)>秒尽情的杀猪去吧！
+BREAK
+#IF
+#ACT
+MOV S$经验倍数值 <$STR(T203)>
+DEC S$经验倍数值 倍
+MOV N$当前经验卷倍数 20
+#CALL [\游戏功能\系统功能\经验使者.txt] @经验倍数递增
+
+
+[@CloseLayer679]
+#IF
+equal N$开启福利宝箱 0
+#ACT
+BREAK
+#ELSEACT
+MOV N$打开火龙秘宝 0
+GiveStateItem 火龙秘宝 1 0 1 0 1 1 1 1 1
+MOV T201
+close
+OPENHYPERLINK 7
+
+[@CloseLayer680]
+#IF
+EQUAL N$打开特戒宝箱 1
+#ACT
+MOV N$打开特戒宝箱 0
+GiveStateItem 5阶特戒自选箱 1 0 1 0 1 1 1 1 1
+MOV T200
+OPENHYPERLINK 7
+
+[@去交易行]
+#IF
+#ACT
+OPENHYPERLINK 35
+
+[@StdModeFunc1416]
+#IF
+#ACT
+CALCVAR HUMAN B_累计充值 + 1
+SAVEVAR HUMAN B_累计充值
+CALCVAR HUMAN B_今日充值 + 1
+SAVEVAR HUMAN B_今日充值
+#IF
+LARGE U252 6
+#ACT
+MOV U252 0
+MOV T207
+MOV T208
+MOV T209
+MOV T210
+#IF
+NOT EQUAL T206 <$MONTH><$DAY>
+CHECKVAR HUMAN B_今日充值 ? 98
+#ACT
+MOV T206 <$MONTH><$DAY>
+INC U252 1
+[@StdModeFunc1417]
+#IF
+#ACT
+CALCVAR HUMAN B_累计充值 + 10
+SAVEVAR HUMAN B_累计充值
+CALCVAR HUMAN B_今日充值 + 10
+SAVEVAR HUMAN B_今日充值
+#IF
+LARGE U252 6
+#ACT
+MOV U252 0
+MOV T207
+MOV T208
+MOV T209
+MOV T210
+#IF
+NOT EQUAL T206 <$MONTH><$DAY>
+CHECKVAR HUMAN B_今日充值 ? 98
+#ACT
+MOV T206 <$MONTH><$DAY>
+INC U252 1
+[@StdModeFunc1418]
+#IF
+#ACT
+CALCVAR HUMAN B_累计充值 + 100
+SAVEVAR HUMAN B_累计充值
+CALCVAR HUMAN B_今日充值 + 100
+SAVEVAR HUMAN B_今日充值
+#IF
+LARGE U252 6
+#ACT
+MOV U252 0
+MOV T207
+MOV T208
+MOV T209
+MOV T210
+#IF
+NOT EQUAL T206 <$MONTH><$DAY>
+CHECKVAR HUMAN B_今日充值 ? 98
+#ACT
+MOV T206 <$MONTH><$DAY>
+INC U252 1
+
+;--------------------------------领主刷新------------------------------------
+[@刷新尸魔洞尸魔王]
+#ACT
+MOV G300 1
+SENDMSG 0 255 191 怪物【[领主]尸魔王】在地图【尸魔洞】强势复活，请各位勇士速去击杀！
+[@刷新骷髅洞骷髅王]
+#ACT
+MOV G301 1
+SENDMSG 0 255 191 怪物【[领主]骷髅王】在地图【骷髅洞】强势复活，请各位勇士速去击杀！
+[@刷新矿洞矿洞主宰]
+#ACT
+MOV G302 1
+SENDMSG 0 255 191 怪物【[领主]矿洞主宰】在地图【矿洞】强势复活，请各位勇士速去击杀！
+[@刷新死亡双头血魔]
+#ACT
+MOV G303 1
+SENDMSG 0 255 191 怪物【[领主]双头血魔】在地图【死亡棺材】强势复活，请各位勇士速去击杀！
+[@刷新死亡血巨人]
+#ACT
+MOV G304 1
+SENDMSG 0 255 191 怪物【[领主]血巨人】在地图【死亡棺材】强势复活，请各位勇士速去击杀！
+[@刷新蜈蚣洞蜈蚣王]
+#ACT
+MOV G305 1
+SENDMSG 0 255 191 怪物【[领主]蜈蚣王】在地图【蜈蚣洞】强势复活，请各位勇士速去击杀！
+[@刷新沃玛寺庙沃玛教主]
+#ACT
+MOV G306 1
+SENDMSG 0 255 191 怪物【[领主]沃玛教主】在地图【沃玛寺庙】强势复活，请各位勇士速去击杀！
+[@刷新雷霆路雷霆守护者]
+#ACT
+MOV G307 1
+SENDMSG 0 255 191 怪物【[领主]雷霆守护者】在地图【雷霆之路】强势复活，请各位勇士速去击杀！
+[@刷新恶魔广场恶魔霸主]
+#ACT
+MOV G308 1
+SENDMSG 0 255 191 怪物【[领主]恶魔霸主】在地图【恶魔广场】强势复活，请各位勇士速去击杀！
+[@刷新祖玛寺庙祖玛教主]
+#ACT
+MOV G309 1
+SENDMSG 0 255 191 怪物【[领主]祖玛教主】在地图【祖玛寺庙】强势复活，请各位勇士速去击杀！
+[@刷新混乱殿堂阿修罗]
+#ACT
+MOV G310 1
+SENDMSG 0 255 191 怪物【混乱主宰·阿修罗】在地图【混乱殿堂】强势复活，请各位勇士速去击杀！
+[@刷新赤月峡谷赤月之心]
+#ACT
+MOV G311 1
+SENDMSG 0 255 191 怪物【赤月之心·首领】在地图【赤月峡谷】强势复活，请各位勇士速去击杀！
+[@刷新牛魔寺院牛魔王]
+#ACT
+MOV G312 1
+SENDMSG 0 255 191 怪物【[领主]牛魔王】在地图【牛魔寺院】强势复活，请各位勇士速去击杀！
+[@刷新无间地狱勾魂使魄]
+#ACT
+MOV G317 1
+SENDMSG 0 255 191 怪物【地狱勾魂使·魄】在地图【无间地狱】强势复活，请各位勇士速去击杀！
+[@刷新无间地狱勾魂使噬]
+#ACT
+MOV G318 1
+SENDMSG 0 255 191 怪物【地狱勾魂使·魄】在地图【无间地狱】强势复活，请各位勇士速去击杀！
+[@刷新无间地狱遗忘者]
+#ACT
+MOV G319 1
+SENDMSG 0 255 191 怪物【地狱勾魂使·魄】在地图【无间地狱】强势复活，请各位勇士速去击杀！
+[@刷新牛魔祭坛冰霜]
+#ACT
+MOV G320 1
+SENDMSG 0 255 191 怪物【牛魔领主·冰霜】在地图【牛魔祭坛】强势复活，请各位勇士速去击杀！
+[@刷新牛魔祭坛惊雷]
+#ACT
+MOV G321 1
+SENDMSG 0 255 191 怪物【牛魔领主·惊雷】在地图【牛魔祭坛】强势复活，请各位勇士速去击杀！
+[@刷新牛魔祭坛暴风]
+#ACT
+MOV G322 1
+SENDMSG 0 255 191 怪物【牛魔领主·暴风】在地图【牛魔祭坛】强势复活，请各位勇士速去击杀！
+[@刷新牛魔祭坛虚空]
+#ACT
+MOV G323 1
+SENDMSG 0 255 191 怪物【牛魔领主·虚空】在地图【牛魔祭坛】强势复活，请各位勇士速去击杀！
+[@刷新牛魔祭坛赤炎]
+#ACT
+MOV G324 1
+SENDMSG 0 255 191 怪物【牛魔领主·赤炎】在地图【牛魔祭坛】强势复活，请各位勇士速去击杀！
+[@刷新雷炎洞穴冰霜]
+#ACT
+MOV G325 1
+SENDMSG 0 255 191 怪物【雷炎领主·冰霜】在地图【雷炎洞穴】强势复活，请各位勇士速去击杀！
+[@刷新雷炎洞穴惊雷]
+#ACT
+MOV G326 1
+SENDMSG 0 255 191 怪物【雷炎领主·惊雷】在地图【雷炎洞穴】强势复活，请各位勇士速去击杀！
+[@刷新雷炎洞穴暴风]
+#ACT
+MOV G327 1
+SENDMSG 0 255 191 怪物【雷炎领主·暴风】在地图【雷炎洞穴】强势复活，请各位勇士速去击杀！
+[@刷新雷炎洞穴虚空]
+#ACT
+MOV G328 1
+SENDMSG 0 255 191 怪物【雷炎领主·虚空】在地图【雷炎洞穴】强势复活，请各位勇士速去击杀！
+[@刷新雷炎洞穴赤炎]
+#ACT
+MOV G329 1
+SENDMSG 0 255 191 怪物【雷炎领主·赤炎】在地图【雷炎洞穴】强势复活，请各位勇士速去击杀！
+[@刷新魔龙之渊冰霜]
+#ACT
+MOV G330 1
+SENDMSG 0 255 191 怪物【魔龙领主·冰霜】在地图【魔龙之渊】强势复活，请各位勇士速去击杀！
+[@刷新魔龙之渊惊雷]
+#ACT
+MOV G331 1
+SENDMSG 0 255 191 怪物【魔龙领主·惊雷】在地图【魔龙之渊】强势复活，请各位勇士速去击杀！
+[@刷新魔龙之渊暴风]
+#ACT
+MOV G332 1
+SENDMSG 0 255 191 怪物【魔龙领主·暴风】在地图【魔龙之渊】强势复活，请各位勇士速去击杀！
+[@刷新魔龙之渊赤炎]
+#ACT
+MOV G333 1
+SENDMSG 0 255 191 怪物【魔龙领主·赤炎】在地图【魔龙之渊】强势复活，请各位勇士速去击杀！
+[@刷新魔龙之渊虚空]
+#ACT
+MOV G334 1
+SENDMSG 0 255 191 怪物【魔龙领主·虚空】在地图【魔龙之渊】强势复活，请各位勇士速去击杀！
+[@刷新狐月岛狐妖]
+#ACT
+MOV G335 1
+SENDMSG 0 255 191 怪物【[领主]狐王】在地图【狐月岛】强势复活，请各位勇士速去击杀！
+[@刷新火龙洞冰霜]
+#ACT
+MOV G336 1
+SENDMSG 0 255 191 怪物【火龙领主·冰霜】在地图【火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新火龙洞惊雷]
+#ACT
+MOV G337 1
+SENDMSG 0 255 191 怪物【火龙领主·惊雷】在地图【火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新火龙洞暴风]
+#ACT
+MOV G338 1
+SENDMSG 0 255 191 怪物【火龙领主·暴风】在地图【火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新火龙洞虚空]
+#ACT
+MOV G339 1
+SENDMSG 0 255 191 怪物【火龙领主·虚空】在地图【火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新火龙洞赤炎]
+#ACT
+MOV G340 1
+SENDMSG 0 255 191 怪物【火龙领主·赤炎】在地图【火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新火龙洞龙主]
+#ACT
+MOV G341 1
+SENDMSG 0 255 191 怪物【火龙领主·龙主】在地图【火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新恶龙神域守卫]
+#ACT
+MOV G342 1
+SENDMSG 0 255 191 怪物【[领主]恶龙守卫】在地图【恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新恶龙神域使者]
+#ACT
+MOV G343 1
+SENDMSG 0 255 191 怪物【[领主]恶龙使者】在地图【恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新恶龙神域统领]
+#ACT
+MOV G344 1
+SENDMSG 0 255 191 怪物【[领主]恶龙统领】在地图【恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新恶龙神域神卫]
+#ACT
+MOV G345 1
+SENDMSG 0 255 191 怪物【[领主]恶龙神卫】在地图【恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新恶龙神域暴君]
+#ACT
+MOV G346 1
+SENDMSG 0 255 191 怪物【[领主]恶龙暴君】在地图【恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新恶龙神域教主]
+#ACT
+MOV G347 1
+SENDMSG 0 255 191 怪物【[领主]恶龙教主】在地图【恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新恶龙神域主宰]
+#ACT
+MOV G348 1
+SENDMSG 0 255 191 怪物【[领主]恶龙主宰】在地图【恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新狐月庄狐王]
+#ACT
+MOV G349 1
+SENDMSG 0 255 191 怪物【[妖王]狐王】在地图【狐月庄】强势复活，请各位勇士速去击杀！
+[@刷新狐仙岛狐仙]
+#ACT
+MOV G350 1
+SENDMSG 0 255 191 怪物【[领主]狐仙】在地图【狐仙岛】强势复活，请各位勇士速去击杀！
+[@刷新火龙殿火龙神]
+#ACT
+MOV G351 1
+SENDMSG 0 255 191 怪物【[领主]火龙神】在地图【火龙殿】强势复活，请各位勇士速去击杀！
+[@刷新赞助骷髅王]
+#ACT
+MOV G352 1
+SENDMSG 0 255 191 怪物【[赞助]骷髅王】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助恶魔霸主]
+#ACT
+MOV G353 1
+SENDMSG 0 255 191 怪物【[赞助]恶魔霸主】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助矿洞主宰]
+#ACT
+MOV G354 1
+SENDMSG 0 255 191 怪物【[赞助]矿洞主宰】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助祖玛教主]
+#ACT
+MOV G355 1
+SENDMSG 0 255 191 怪物【[赞助]暗之祖玛教主】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助魔龙教主]
+#ACT
+MOV G356 1
+SENDMSG 0 255 191 怪物【[赞助]暗之魔龙教主】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助牛魔王]
+#ACT
+MOV G357 1
+SENDMSG 0 255 191 怪物【[赞助]暗之牛魔王】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助尸魔王]
+#ACT
+MOV G358 1
+SENDMSG 0 255 191 怪物【[赞助]尸魔王】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助血巨人]
+#ACT
+MOV G359 1
+SENDMSG 0 255 191 怪物【[赞助]暗之血巨人】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助双头血魔]
+#ACT
+MOV G360 1
+SENDMSG 0 255 191 怪物【[赞助]暗之双头血魔】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助遗忘者]
+#ACT
+MOV G361 1
+SENDMSG 0 255 191 怪物【[赞助]地狱主宰·遗忘者】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助魄]
+#ACT
+MOV G362 1
+SENDMSG 0 255 191 怪物【[赞助]地狱勾魂使·魄】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助噬]
+#ACT
+MOV G363 1
+SENDMSG 0 255 191 怪物【[赞助]地狱勾魂使·噬】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新赞助阿修罗]
+#ACT
+MOV G364 1
+SENDMSG 0 255 191 怪物【[赞助]混乱主宰·阿修罗】在地图【捐献之地】强势复活，请各位勇士速去击杀！
+[@刷新狂暴矿洞主宰]
+#ACT
+MOV G365 1
+SENDMSG 0 255 191 怪物【[狂暴]矿洞主宰】在地图【龙族领地】强势复活，请各位勇士速去击杀！
+[@刷新狂暴双头血魔]
+#ACT
+MOV G366 1
+SENDMSG 0 255 191 怪物【[狂暴]暗之双头血魔】在地图【龙族领地】强势复活，请各位勇士速去击杀！
+[@刷新狂暴血巨人]
+#ACT
+MOV G367 1
+SENDMSG 0 255 191 怪物【[狂暴]暗之血巨人】在地图【龙族领地】强势复活，请各位勇士速去击杀！
+[@刷新狂暴魄]
+#ACT
+MOV G368 1
+SENDMSG 0 255 191 怪物【[狂暴]地狱勾魂使·魄】在地图【龙族领地】强势复活，请各位勇士速去击杀！
+[@刷新狂暴遗忘者]
+#ACT
+MOV G369 1
+SENDMSG 0 255 191 怪物【[狂暴]地狱主宰·遗忘者】在地图【龙族领地】强势复活，请各位勇士速去击杀！
+[@刷新狂暴骷髅王]
+#ACT
+MOV G370 1
+SENDMSG 0 255 191 怪物【[狂暴]骷髅王】在地图【龙族领地】强势复活，请各位勇士速去击杀！
+[@刷新狂暴尸魔王]
+#ACT
+MOV G371 1
+SENDMSG 0 255 191 怪物【[狂暴]尸魔王】在地图【龙族领地】强势复活，请各位勇士速去击杀！
+[@刷新狂暴噬]
+#ACT
+MOV G372 1
+SENDMSG 0 255 191 怪物【[狂暴]地狱勾魂使·噬】在地图【龙族领地】强势复活，请各位勇士速去击杀！
+[@刷新狂暴魔龙教主]
+#ACT
+MOV G373 1
+SENDMSG 0 255 191 怪物【[狂暴]暗之魔龙教主】在地图【龙族领地】强势复活，请各位勇士速去击杀！
+[@刷新狂暴牛魔王]
+#ACT
+MOV G374 1
+SENDMSG 0 255 191 怪物【[狂暴]暗之牛魔王】在地图【龙族领地】强势复活，请各位勇士速去击杀！
+[@刷新会员雷霆路雷霆守护者]
+#ACT
+MOV G375 1
+SENDMSG 0 255 191 怪物【[会员]领主·雷霆守护者】在地图【会员雷霆之路】强势复活，请各位勇士速去击杀！
+[@刷新会员恶魔广场恶魔霸主]
+#ACT
+MOV G376 1
+SENDMSG 0 255 191 怪物【[会员]领主·恶魔霸主】在地图【会员恶魔广场】强势复活，请各位勇士速去击杀！
+[@刷新会员祖玛寺庙祖玛教主]
+#ACT
+MOV G377 1
+SENDMSG 0 255 191 怪物【[会员]领主·祖玛教主】在地图【会员祖玛寺庙】强势复活，请各位勇士速去击杀！
+[@刷新会员混乱殿堂阿修罗]
+#ACT
+MOV G378 1
+SENDMSG 0 255 191 怪物【[会员]领主·阿修罗】在地图【会员混乱殿堂】强势复活，请各位勇士速去击杀！
+[@刷新会员赤月峡谷赤月之心]
+#ACT
+MOV G379 1
+SENDMSG 0 255 191 怪物【[会员]赤月之心·首领】在地图【会员赤月峡谷】强势复活，请各位勇士速去击杀！
+[@刷新会员牛魔寺院牛魔王]
+#ACT
+MOV G380 1
+SENDMSG 0 255 191 怪物【[会员]领主·牛魔王】在地图【会员牛魔寺院】强势复活，请各位勇士速去击杀！
+[@刷新会员无间地狱勾魂使魄]
+#ACT
+MOV G381 1
+SENDMSG 0 255 191 怪物【[会员]地狱勾魂使·魄】在地图【会员无间地狱】强势复活，请各位勇士速去击杀！
+[@刷新会员无间地狱勾魂使噬]
+#ACT
+MOV G382 1
+SENDMSG 0 255 191 怪物【[会员]地狱勾魂使·噬】在地图【会员无间地狱】强势复活，请各位勇士速去击杀！
+[@刷新会员无间地狱遗忘者]
+#ACT
+MOV G383 1
+SENDMSG 0 255 191 怪物【[会员]地狱主宰·遗忘者】在地图【会员无间地狱】强势复活，请各位勇士速去击杀！
+[@刷新会员牛魔祭坛冰霜]
+#ACT
+MOV G384 1
+SENDMSG 0 255 191 怪物【[会员]牛魔领主·冰霜】在地图【会员牛魔祭坛】强势复活，请各位勇士速去击杀！
+[@刷新会员牛魔祭坛惊雷]
+#ACT
+MOV G385 1
+SENDMSG 0 255 191 怪物【[会员]牛魔领主·惊雷】在地图【会员牛魔祭坛】强势复活，请各位勇士速去击杀！
+[@刷新会员牛魔祭坛暴风]
+#ACT
+MOV G386 1
+SENDMSG 0 255 191 怪物【[会员]牛魔领主·暴风】在地图【会员牛魔祭坛】强势复活，请各位勇士速去击杀！
+[@刷新会员牛魔祭坛虚空]
+#ACT
+MOV G387 1
+SENDMSG 0 255 191 怪物【[会员]牛魔领主·虚空】在地图【会员牛魔祭坛】强势复活，请各位勇士速去击杀！
+[@刷新会员牛魔祭坛赤炎]
+#ACT
+MOV G388 1
+SENDMSG 0 255 191 怪物【[会员]牛魔领主·赤炎】在地图【会员牛魔祭坛】强势复活，请各位勇士速去击杀！
+[@刷新会员雷炎洞穴冰霜]
+#ACT
+MOV G389 1
+SENDMSG 0 255 191 怪物【[会员]雷炎领主·冰霜】在地图【会员雷炎洞穴】强势复活，请各位勇士速去击杀！
+[@刷新会员雷炎洞穴惊雷]
+#ACT
+MOV G390 1
+SENDMSG 0 255 191 怪物【[会员]雷炎领主·惊雷】在地图【会员雷炎洞穴】强势复活，请各位勇士速去击杀！
+[@刷新会员雷炎洞穴暴风]
+#ACT
+MOV G391 1
+SENDMSG 0 255 191 怪物【[会员]雷炎领主·暴风】在地图【会员雷炎洞穴】强势复活，请各位勇士速去击杀！
+[@刷新会员雷炎洞穴虚空]
+#ACT
+MOV G392 1
+SENDMSG 0 255 191 怪物【[会员]雷炎领主·虚空】在地图【会员雷炎洞穴】强势复活，请各位勇士速去击杀！
+[@刷新会员雷炎洞穴赤炎]
+#ACT
+MOV G393 1
+SENDMSG 0 255 191 怪物【[会员]雷炎领主·赤炎】在地图【会员雷炎洞穴】强势复活，请各位勇士速去击杀！
+[@刷新会员魔龙之渊冰霜]
+#ACT
+MOV G394 1
+SENDMSG 0 255 191 怪物【[会员]魔龙领主·冰霜】在地图【会员魔龙之渊】强势复活，请各位勇士速去击杀！
+[@刷新会员魔龙之渊惊雷]
+#ACT
+MOV G395 1
+SENDMSG 0 255 191 怪物【[会员]魔龙领主·惊雷】在地图【会员魔龙之渊】强势复活，请各位勇士速去击杀！
+[@刷新会员魔龙之渊暴风]
+#ACT
+MOV G396 1
+SENDMSG 0 255 191 怪物【[会员]魔龙领主·暴风】在地图【会员魔龙之渊】强势复活，请各位勇士速去击杀！
+[@刷新会员魔龙之渊赤炎]
+#ACT
+MOV G397 1
+SENDMSG 0 255 191 怪物【[会员]魔龙领主·虚空】在地图【会员魔龙之渊】强势复活，请各位勇士速去击杀！
+[@刷新会员魔龙之渊虚空]
+#ACT
+MOV G398 1
+SENDMSG 0 255 191 怪物【[会员]魔龙领主·赤炎】在地图【会员魔龙之渊】强势复活，请各位勇士速去击杀！
+[@刷新会员狐月岛狐妖]
+#ACT
+MOV G399 1
+SENDMSG 0 255 191 怪物【[会员]领主·狐妖】在地图【会员狐月岛】强势复活，请各位勇士速去击杀！
+[@刷新会员火龙洞冰霜]
+#ACT
+MOV G313 1
+SENDMSG 0 255 191 怪物【[会员]火龙领主·冰霜】在地图【会员火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新会员火龙洞惊雷]
+#ACT
+MOV G314 1
+SENDMSG 0 255 191 怪物【[会员]火龙领主·惊雷】在地图【会员火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新会员火龙洞暴风]
+#ACT
+MOV G315 1
+SENDMSG 0 255 191 怪物【[会员]火龙领主·暴风】在地图【会员火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新会员火龙洞虚空]
+#ACT
+MOV G316 1
+SENDMSG 0 255 191 怪物【[会员]火龙领主·虚空】在地图【会员火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新会员火龙洞赤炎]
+#ACT
+MOV G110 1
+SENDMSG 0 255 191 怪物【[会员]火龙领主·赤炎】在地图【会员火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新会员火龙洞龙主]
+#ACT
+MOV G111 1
+SENDMSG 0 255 191 怪物【[会员]火龙领主·龙主】在地图【会员火龙洞】强势复活，请各位勇士速去击杀！
+[@刷新会员恶龙神域守卫]
+#ACT
+MOV G112 1
+SENDMSG 0 255 191 怪物【[会员]领主·恶龙守卫】在地图【会员恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新会员恶龙神域使者]
+#ACT
+MOV G113 1
+SENDMSG 0 255 191 怪物【[会员]领主·恶龙使者】在地图【会员恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新会员恶龙神域统领]
+#ACT
+MOV G114 1
+SENDMSG 0 255 191 怪物【[会员]领主·恶龙统领】在地图【会员恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新会员恶龙神域神卫]
+#ACT
+MOV G115 1
+SENDMSG 0 255 191 怪物【[会员]领主·恶龙神卫】在地图【会员恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新会员恶龙神域暴君]
+#ACT
+MOV G116 1
+SENDMSG 0 255 191 怪物【[会员]领主·恶龙暴君】在地图【会员恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新会员恶龙神域教主]
+#ACT
+MOV G117 1
+SENDMSG 0 255 191 怪物【[会员]领主·恶龙教主】在地图【会员恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新会员恶龙神域主宰]
+#ACT
+MOV G118 1
+SENDMSG 0 255 191 怪物【[会员]领主·恶龙主宰】在地图【会员恶龙神域】强势复活，请各位勇士速去击杀！
+[@刷新会员狐月庄狐王]
+#ACT
+MOV G119 1
+SENDMSG 0 255 191 怪物【[会员]领主·狐王】在地图【会员狐月庄】强势复活，请各位勇士速去击杀！
+[@刷新会员狐仙岛狐仙]
+#ACT
+MOV G120 1
+SENDMSG 0 255 191 怪物【[会员]领主·狐仙】在地图【会员狐仙岛】强势复活，请各位勇士速去击杀！
+[@刷新会员火龙殿火龙神]
+#ACT
+MOV G121 1
+SENDMSG 0 255 191 怪物【[会员]领主·火龙神】在地图【会员火龙殿】强势复活，请各位勇士速去击杀！
+[@刷新八品骑士长]
+#ACT
+MOV G122 1
+SENDMSG 0 255 191 怪物【[骑士]领主·骑士长】在地图【八品专属】强势复活，请各位勇士速去击杀！
+[@刷新七品阿修罗]
+#ACT
+MOV G123 1
+SENDMSG 0 255 191 怪物【[前锋]主宰·阿修罗】在地图【七品专属】强势复活，请各位勇士速去击杀！
+[@刷新五品战将]
+#ACT
+MOV G124 1
+SENDMSG 0 255 191 怪物【[佐领]领主·战将】在地图【五品专属】强势复活，请各位勇士速去击杀！
+[@刷新三品冰霜]
+#ACT
+MOV G125 1
+SENDMSG 0 255 191 怪物【[大将]领主·冰霜】在地图【三品专属】强势复活，请各位勇士速去击杀！
+[@刷新三品惊雷]
+#ACT
+MOV G126 1
+SENDMSG 0 255 191 怪物【[大将]领主·惊雷】在地图【三品专属】强势复活，请各位勇士速去击杀！
+[@刷新三品暴风]
+#ACT
+MOV G127 1
+SENDMSG 0 255 191 怪物【[大将]领主·暴风】在地图【三品专属】强势复活，请各位勇士速去击杀！
+[@刷新三品虚空]
+#ACT
+MOV G128 1
+SENDMSG 0 255 191 怪物【[大将]领主·虚空】在地图【三品专属】强势复活，请各位勇士速去击杀！
+[@刷新三品赤炎]
+#ACT
+MOV G129 1
+SENDMSG 0 255 191 怪物【[大将]领主·赤炎】在地图【三品专属】强势复活，请各位勇士速去击杀！
+[@刷新一品冰霜]
+#ACT
+MOV G130 1
+SENDMSG 0 255 191 怪物【[统帅]领主·冰霜】在地图【一品专属】强势复活，请各位勇士速去击杀！
+[@刷新一品惊雷]
+#ACT
+MOV G131 1
+SENDMSG 0 255 191 怪物【[统帅]领主·惊雷】在地图【一品专属】强势复活，请各位勇士速去击杀！
+[@刷新一品暴风]
+#ACT
+MOV G132 1
+SENDMSG 0 255 191 怪物【[统帅]领主·暴风】在地图【一品专属】强势复活，请各位勇士速去击杀！
+[@刷新一品虚空]
+#ACT
+MOV G133 1
+SENDMSG 0 255 191 怪物【[统帅]领主·虚空】在地图【一品专属】强势复活，请各位勇士速去击杀！
+[@刷新一品赤炎]
+#ACT
+MOV G134 1
+SENDMSG 0 255 191 怪物【[统帅]领主·赤炎】在地图【一品专属】强势复活，请各位勇士速去击杀！
+[@刷新大都督冰霜]
+#ACT
+MOV G135 1
+SENDMSG 0 255 191 怪物【[都督]领主·冰霜】在地图【大都督专属】强势复活，请各位勇士速去击杀！
+[@刷新大都督惊雷]
+#ACT
+MOV G136 1
+SENDMSG 0 255 191 怪物【[都督]领主·惊雷】在地图【大都督专属】强势复活，请各位勇士速去击杀！
+[@刷新大都督暴风]
+#ACT
+MOV G137 1
+SENDMSG 0 255 191 怪物【[都督]领主·暴风】在地图【大都督专属】强势复活，请各位勇士速去击杀！
+[@刷新大都督虚空]
+#ACT
+MOV G138 1
+SENDMSG 0 255 191 怪物【[都督]领主·虚空】在地图【大都督专属】强势复活，请各位勇士速去击杀！
+[@刷新大都督赤炎]
+#ACT
+MOV G139 1
+SENDMSG 0 255 191 怪物【[都督]领主·赤炎】在地图【大都督专属】强势复活，请各位勇士速去击杀！
+[@刷新大都督龙主]
+#ACT
+MOV G140 1
+SENDMSG 0 255 191 怪物【[都督]领主·龙主】在地图【大都督专属】强势复活，请各位勇士速去击杀！
+[@刷新冠绝一世守卫]
+#ACT
+MOV G141 1
+;SENDMSG 0 255 191 怪物【[冠绝]领主·守卫】在地图【冠绝一世专属】强势复活，请各位勇士速去击杀！
+[@刷新冠绝一世使者]
+#ACT
+MOV G142 1
+;SENDMSG 0 255 191 怪物【[冠绝]领主·使者】在地图【冠绝一世专属】强势复活，请各位勇士速去击杀！
+[@刷新冠绝一世统领]
+#ACT
+MOV G143 1
+;SENDMSG 0 255 191 怪物【[冠绝]领主·统领】在地图【冠绝一世专属】强势复活，请各位勇士速去击杀！
+[@刷新冠绝一世神卫]
+#ACT
+MOV G144 1
+;SENDMSG 0 255 191 怪物【[冠绝]领主·神卫】在地图【冠绝一世专属】强势复活，请各位勇士速去击杀！
+[@刷新冠绝一世暴君]
+#ACT
+MOV G145 1
+;SENDMSG 0 255 191 怪物【[冠绝]领主·暴君】在地图【冠绝一世专属】强势复活，请各位勇士速去击杀！
+[@刷新冠绝一世教主]
+#ACT
+MOV G146 1
+;SENDMSG 0 255 191 怪物【[冠绝]领主·教主】在地图【冠绝一世专属】强势复活，请各位勇士速去击杀！
+[@刷新冠绝一世主宰]
+#ACT
+MOV G147 1
+;SENDMSG 0 255 191 怪物【[冠绝]领主·主宰】在地图【冠绝一世专属】强势复活，请各位勇士速去击杀！
+[@刷新逐鹿群雄狐仙]
+#ACT
+MOV G148 1
+;SENDMSG 0 255 191 怪物【[逐鹿]领主·狐仙】在地图【逐鹿群雄专属】强势复活，请各位勇士速去击杀！
+[@刷新雄霸天下龙神]
+#ACT
+MOV G149 1
+;SENDMSG 0 255 191 怪物【[雄霸]领主·龙神】在地图【雄霸天下专属】强势复活，请各位勇士速去击杀！
+[@刷新炼体一阶牛魔王]
+#ACT
+MOV G150 1
+SENDMSG 0 255 191 怪物【[领主]牛魔王】在地图【炼体一阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体二阶魄]
+#ACT
+MOV G151 1
+SENDMSG 0 255 191 怪物【地狱勾魂使·魄】在地图【炼体二阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体二阶噬]
+#ACT
+MOV G152 1
+SENDMSG 0 255 191 怪物【地狱勾魂使·噬】在地图【炼体二阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体二阶遗忘者]
+#ACT
+MOV G153 1
+SENDMSG 0 255 191 怪物【地狱主宰·遗忘者】在地图【炼体二阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体三阶冰霜]
+#ACT
+MOV G154 1
+SENDMSG 0 255 191 怪物【牛魔领主·冰霜】在地图【炼体三阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体三阶惊雷]
+#ACT
+MOV G155 1
+SENDMSG 0 255 191 怪物【牛魔领主·惊雷】在地图【炼体三阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体三阶暴风]
+#ACT
+MOV G156 1
+SENDMSG 0 255 191 怪物【牛魔领主·暴风】在地图【炼体三阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体三阶虚空]
+#ACT
+MOV G157 1
+SENDMSG 0 255 191 怪物【牛魔领主·虚空】在地图【炼体三阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体三阶赤炎]
+#ACT
+MOV G158 1
+SENDMSG 0 255 191 怪物【牛魔领主·赤炎】在地图【炼体三阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体四阶冰霜]
+#ACT
+MOV G159 1
+SENDMSG 0 255 191 怪物【魔龙领主·冰霜】在地图【炼体四阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体四阶惊雷]
+#ACT
+MOV G160 1
+SENDMSG 0 255 191 怪物【魔龙领主·惊雷】在地图【炼体四阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体四阶暴风]
+#ACT
+MOV G161 1
+SENDMSG 0 255 191 怪物【魔龙领主·暴风】在地图【炼体四阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体四阶虚空]
+#ACT
+MOV G162 1
+SENDMSG 0 255 191 怪物【魔龙领主·虚空】在地图【炼体四阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体四阶赤炎]
+#ACT
+MOV G163 1
+SENDMSG 0 255 191 怪物【魔龙领主·赤炎】在地图【炼体四阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体五阶冰霜]
+#ACT
+MOV G164 1
+SENDMSG 0 255 191 怪物【火龙领主·冰霜】在地图【炼体五阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体五阶惊雷]
+#ACT
+MOV G165 1
+SENDMSG 0 255 191 怪物【火龙领主·惊雷】在地图【炼体五阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体五阶暴风]
+#ACT
+MOV G166 1
+SENDMSG 0 255 191 怪物【火龙领主·暴风】在地图【炼体五阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体五阶虚空]
+#ACT
+MOV G167 1
+SENDMSG 0 255 191 怪物【火龙领主·虚空】在地图【炼体五阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体五阶赤炎]
+#ACT
+MOV G168 1
+SENDMSG 0 255 191 怪物【火龙领主·赤炎】在地图【炼体五阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体五阶龙主]
+#ACT
+MOV G169 1
+SENDMSG 0 255 191 怪物【火龙领主·龙主】在地图【炼体五阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体六阶守卫]
+#ACT
+MOV G170 1
+SENDMSG 0 255 191 怪物【[领主]恶龙守卫】在地图【炼体六阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体六阶使者]
+#ACT
+MOV G171 1
+SENDMSG 0 255 191 怪物【[领主]恶龙使者】在地图【炼体六阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体六阶统领]
+#ACT
+MOV G172 1
+SENDMSG 0 255 191 怪物【[领主]恶龙统领】在地图【炼体六阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体六阶神卫]
+#ACT
+MOV G173 1
+SENDMSG 0 255 191 怪物【[领主]恶龙神卫】在地图【炼体六阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体六阶暴君]
+#ACT
+MOV G174 1
+SENDMSG 0 255 191 怪物【[领主]恶龙暴君】在地图【炼体六阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体六阶教主]
+#ACT
+MOV G175 1
+SENDMSG 0 255 191 怪物【[领主]恶龙教主】在地图【炼体六阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体六阶主宰]
+#ACT
+MOV G176 1
+SENDMSG 0 255 191 怪物【[领主]恶龙主宰】在地图【炼体六阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体七阶狐仙]
+#ACT
+MOV G177 1
+SENDMSG 0 255 191 怪物【[领主]狐仙】在地图【炼体七阶】强势复活，请各位勇士速去击杀！
+[@刷新炼体八阶火龙神]
+#ACT
+MOV G178 1
+SENDMSG 0 255 191 怪物【[领主]火龙神】在地图【炼体八阶】强势复活，请各位勇士速去击杀！
+[@刷新元神一阶牛魔王]
+#ACT
+MOV G179 1
+SENDMSG 0 255 191 怪物【[领主]牛魔王】在地图【元神一阶】强势复活，请各位勇士速去击杀！
+[@刷新元神二阶魄]
+#ACT
+MOV G180 1
+SENDMSG 0 255 191 怪物【地狱勾魂使·魄】在地图【元神二阶】强势复活，请各位勇士速去击杀！
+[@刷新元神二阶噬]
+#ACT
+MOV G181 1
+SENDMSG 0 255 191 怪物【地狱勾魂使·噬】在地图【元神二阶】强势复活，请各位勇士速去击杀！
+[@刷新元神二阶遗忘者]
+#ACT
+MOV G182 1
+SENDMSG 0 255 191 怪物【地狱主宰·遗忘者】在地图【元神二阶】强势复活，请各位勇士速去击杀！
+[@刷新元神三阶冰霜]
+#ACT
+MOV G183 1
+SENDMSG 0 255 191 怪物【牛魔领主·冰霜】在地图【元神三阶】强势复活，请各位勇士速去击杀！
+[@刷新元神三阶惊雷]
+#ACT
+MOV G184 1
+SENDMSG 0 255 191 怪物【牛魔领主·惊雷】在地图【元神三阶】强势复活，请各位勇士速去击杀！
+[@刷新元神三阶暴风]
+#ACT
+MOV G185 1
+SENDMSG 0 255 191 怪物【牛魔领主·暴风】在地图【元神三阶】强势复活，请各位勇士速去击杀！
+[@刷新元神三阶虚空]
+#ACT
+MOV G186 1
+SENDMSG 0 255 191 怪物【牛魔领主·虚空】在地图【元神三阶】强势复活，请各位勇士速去击杀！
+[@刷新元神三阶赤炎]
+#ACT
+MOV G187 1
+SENDMSG 0 255 191 怪物【牛魔领主·赤炎】在地图【元神三阶】强势复活，请各位勇士速去击杀！
+[@刷新元神四阶冰霜]
+#ACT
+MOV G188 1
+SENDMSG 0 255 191 怪物【魔龙领主·冰霜】在地图【元神四阶】强势复活，请各位勇士速去击杀！
+[@刷新元神四阶惊雷]
+#ACT
+MOV G189 1
+SENDMSG 0 255 191 怪物【魔龙领主·惊雷】在地图【元神四阶】强势复活，请各位勇士速去击杀！
+[@刷新元神四阶暴风]
+#ACT
+MOV G190 1
+SENDMSG 0 255 191 怪物【魔龙领主·暴风】在地图【元神四阶】强势复活，请各位勇士速去击杀！
+[@刷新元神四阶虚空]
+#ACT
+MOV G191 1
+SENDMSG 0 255 191 怪物【魔龙领主·虚空】在地图【元神四阶】强势复活，请各位勇士速去击杀！
+[@刷新元神四阶赤炎]
+#ACT
+MOV G192 1
+SENDMSG 0 255 191 怪物【魔龙领主·赤炎】在地图【元神四阶】强势复活，请各位勇士速去击杀！
+[@刷新元神五阶冰霜]
+#ACT
+MOV G193 1
+SENDMSG 0 255 191 怪物【火龙领主·冰霜】在地图【元神五阶】强势复活，请各位勇士速去击杀！
+[@刷新元神五阶惊雷]
+#ACT
+MOV G194 1
+SENDMSG 0 255 191 怪物【火龙领主·惊雷】在地图【元神五阶】强势复活，请各位勇士速去击杀！
+[@刷新元神五阶暴风]
+#ACT
+MOV G195 1
+SENDMSG 0 255 191 怪物【火龙领主·暴风】在地图【元神五阶】强势复活，请各位勇士速去击杀！
+[@刷新元神五阶虚空]
+#ACT
+MOV G196 1
+SENDMSG 0 255 191 怪物【火龙领主·虚空】在地图【元神五阶】强势复活，请各位勇士速去击杀！
+[@刷新元神五阶赤炎]
+#ACT
+MOV G197 1
+SENDMSG 0 255 191 怪物【火龙领主·赤炎】在地图【元神五阶】强势复活，请各位勇士速去击杀！
+[@刷新元神五阶龙主]
+#ACT
+MOV G198 1
+SENDMSG 0 255 191 怪物【火龙领主·龙主】在地图【元神五阶】强势复活，请各位勇士速去击杀！
+[@刷新元神六阶守卫]
+#ACT
+MOV G199 1
+SENDMSG 0 255 191 怪物【[领主]恶龙守卫】在地图【元神六阶】强势复活，请各位勇士速去击杀！
+[@刷新元神六阶使者]
+#ACT
+MOV G400 1
+SENDMSG 0 255 191 怪物【[领主]恶龙使者】在地图【元神六阶】强势复活，请各位勇士速去击杀！
+[@刷新元神六阶统领]
+#ACT
+MOV G401 1
+SENDMSG 0 255 191 怪物【[领主]恶龙统领】在地图【元神六阶】强势复活，请各位勇士速去击杀！
+[@刷新元神六阶神卫]
+#ACT
+MOV G402 1
+SENDMSG 0 255 191 怪物【[领主]恶龙神卫】在地图【元神六阶】强势复活，请各位勇士速去击杀！
+[@刷新元神六阶暴君]
+#ACT
+MOV G403 1
+SENDMSG 0 255 191 怪物【[领主]恶龙暴君】在地图【元神六阶】强势复活，请各位勇士速去击杀！
+[@刷新元神六阶教主]
+#ACT
+MOV G404 1
+SENDMSG 0 255 191 怪物【[领主]恶龙教主】在地图【元神六阶】强势复活，请各位勇士速去击杀！
+[@刷新元神六阶主宰]
+#ACT
+MOV G405 1
+SENDMSG 0 255 191 怪物【[领主]恶龙主宰】在地图【元神六阶】强势复活，请各位勇士速去击杀！
+[@刷新元神七阶狐仙]
+#ACT
+MOV G406 1
+SENDMSG 0 255 191 怪物【[领主]狐仙】在地图【元神七阶】强势复活，请各位勇士速去击杀！
+[@刷新元神八阶火龙神]
+#ACT
+MOV G407 1
+SENDMSG 0 255 191 怪物【[领主]火龙神】在地图【元神八阶】强势复活，请各位勇士速去击杀！
+[@刷新11转地图鬼]
+#ACT
+MOV G408 1
+SENDMSG 0 255 191 怪物【[领主]鬼·魔王】在地图【11转地图】强势复活，请各位勇士速去击杀！
+[@刷新13转地图狂]
+#ACT
+MOV G409 1
+SENDMSG 0 255 191 怪物【[领主]狂·魔王】在地图【13转地图】强势复活，请各位勇士速去击杀！
+[@刷新15转地图神]
+#ACT
+MOV G429 1
+SENDMSG 0 255 191 怪物【[领主]神·魔王】在地图【15转地图】强势复活，请各位勇士速去击杀！
+[@刷新17转地图魔王]
+#ACT
+MOV G430 1
+SENDMSG 0 255 191 怪物【[领主]独孤求败·魔王】在地图【17转地图】强势复活，请各位勇士速去击杀！
+[@刷新19转地图鬼王]
+#ACT
+MOV G431 1
+SENDMSG 0 255 191 怪物【[领主]斩尽杀绝·鬼王】在地图【19转地图】强势复活，请各位勇士速去击杀！
+[@刷新19转地图妖王]
+#ACT
+MOV G432 1
+SENDMSG 0 255 191 怪物【[领主]斩尽杀绝·妖王】在地图【19转地图】强势复活，请各位勇士速去击杀！
+[@刷新200级地图鬼]
+#ACT
+MOV G433 1
+SENDMSG 0 255 191 怪物【[领主]鬼·天尊】在地图【200级地图】强势复活，请各位勇士速去击杀！
+[@刷新220级地图狂]
+#ACT
+MOV G434 1
+SENDMSG 0 255 191 怪物【[领主]狂·天尊】在地图【220级地图】强势复活，请各位勇士速去击杀！
+[@刷新240级地图神]
+#ACT
+MOV G435 1
+SENDMSG 0 255 191 怪物【[领主]神·天尊】在地图【240级地图】强势复活，请各位勇士速去击杀！
+[@刷新260级地图独孤]
+#ACT
+MOV G436 1
+SENDMSG 0 255 191 怪物【[领主]独孤求败·天尊】在地图【260级地图】强势复活，请各位勇士速去击杀！
+[@刷新280级地图斩尽]
+#ACT
+MOV G437 1
+SENDMSG 0 255 191 怪物【[领主]斩尽杀绝·天尊】在地图【280级地图】强势复活，请各位勇士速去击杀！
+[@刷新300级地图唯我]
+#ACT
+MOV G438 1
+SENDMSG 0 255 191 怪物【[领主]唯我独尊·天尊】在地图【300级地图】强势复活，请各位勇士速去击杀！
+[@刷新VIP11地图魔]
+#ACT
+MOV G420 1
+SENDMSG 0 255 191 怪物【[VIP]领主·魔·魔王】在地图【VIP11地图】强势复活，请各位勇士速去击杀！
+[@刷新VIP12地图怒]
+#ACT
+MOV G421 1
+SENDMSG 0 255 191 怪物【[VIP]领主·怒·魔王】在地图【VIP12地图】强势复活，请各位勇士速去击杀！
+[@刷新VIP13地图扭转魔王]
+#ACT
+MOV G422 1
+SENDMSG 0 255 191 怪物【[VIP]领主·扭转乾坤·魔王】在地图【VIP13地图】强势复活，请各位勇士速去击杀！
+[@刷新VIP13地图扭转鬼王]
+#ACT
+MOV G423 1
+SENDMSG 0 255 191 怪物【[VIP]领主·扭转乾坤·鬼王】在地图【VIP13地图】强势复活，请各位勇士速去击杀！
+[@刷新VIP14地图鬼哭魔王]
+#ACT
+MOV G424 1
+SENDMSG 0 255 191 怪物【[VIP]领主·鬼哭神啸·魔王】在地图【VIP14地图】强势复活，请各位勇士速去击杀！
+[@刷新VIP14地图鬼哭鬼王]
+#ACT
+MOV G425 1
+SENDMSG 0 255 191 怪物【[VIP]领主·鬼哭神啸·鬼王】在地图【VIP14地图】强势复活，请各位勇士速去击杀！
+[@刷新VIP15地图唯我魔王]
+#ACT
+MOV G426 1
+SENDMSG 0 255 191 怪物【[VIP]领主·唯我独尊·魔王】在地图【VIP15地图】强势复活，请各位勇士速去击杀！
+[@刷新VIP15地图唯我鬼王]
+#ACT
+MOV G427 1
+SENDMSG 0 255 191 怪物【[VIP]领主·唯我独尊·鬼王】在地图【VIP15地图】强势复活，请各位勇士速去击杀！
+[@刷新VIP15地图唯我妖王]
+#ACT
+MOV G428 1
+SENDMSG 0 255 191 怪物【[VIP]领主·唯我独尊·妖王】在地图【VIP15地图】强势复活，请各位勇士速去击杀！
+
+
+
+
+

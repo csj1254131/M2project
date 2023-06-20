@@ -1,0 +1,723 @@
+[2023-06-06 15:10:12:016] 脚本错误, 加载失败: 功能脚本\Q群礼包\微信验证.txt  @微信MAIN
+[2023-06-06 15:10:12:018] 脚本错误, 加载失败: 游戏登陆\管理功能.txt  @管理后台
+
+[2023-06-06 15:10:43:055] [脚本错误]@创建盒子 变量礼包申请状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包申请状态 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:055] [脚本错误]@创建盒子 变量礼包领取状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包领取状态 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:055] [脚本错误]@创建盒子 变量礼包码申请状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包码申请状态 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:055] [脚本错误]@创建盒子 变量礼包码领取状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包码领取状态 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:055] [脚本错误]@创建盒子 变量礼包领取日期已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:String 参数2:HUMAN 参数3:礼包领取日期 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:065] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:10:43:076] NPC:QManage ID:999999996 脚本执行 @LOGIN player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-121/58/ 407-15/1/ 515-16/82/ 
+
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-64/56/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-96/57/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-128/58/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-160/59/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-192/60/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-224/61/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-256/62/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-288/63/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-320/64/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-352/65/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-384/66/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-416/67/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-448/68/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-480/69/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-512/70/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-544/71/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-576/72/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-608/73/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收分页信息 player:爱唉 耗时:63; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-640/74/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @移动端装备回收 player:爱唉 耗时:63; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-703/75/ 441-32/1/ 515-63/64/ 
+[2023-06-06 15:11:51:976] NPC:QFunction ID:999999999 脚本执行 @回收 player:爱唉 耗时:63; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-766/76/ 441-32/1/ 515-63/64/ 
+
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-31/70/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-62/71/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-93/72/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-124/73/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-155/74/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-186/75/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-217/76/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-248/77/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-279/78/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-310/79/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-341/80/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-372/81/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-403/82/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-434/83/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-465/84/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-496/85/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-527/86/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-558/87/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收分页信息 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-589/88/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @移动端装备回收 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-620/89/ 441-31/1/ 
+[2023-06-06 15:13:33:338] NPC:QFunction ID:999999999 脚本执行 @回收 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-31/43/ 
+A(T/C)=71-651/90/ 441-31/1/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-62/70/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-93/71/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-124/72/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-155/73/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-186/74/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-217/75/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-248/76/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-279/77/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-310/78/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-341/79/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-372/80/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-403/81/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-434/82/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-465/83/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-496/84/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-527/85/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-558/86/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-589/87/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @回收分页信息 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-620/88/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @选定回收数据清理 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-651/89/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:34:880] NPC:QFunction ID:999999999 脚本执行 @跳转回收选定 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=62-15/93/ 71-682/90/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-47/70/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-78/71/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-109/72/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-140/73/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-171/74/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-202/75/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-233/76/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-264/77/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-295/78/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-326/79/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-357/80/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-388/81/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-419/82/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-450/83/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-481/84/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-512/85/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-543/86/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-574/87/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @回收分页信息 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-605/88/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @选定回收数据清理 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-636/89/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:36:316] NPC:QFunction ID:999999999 脚本执行 @跳转回收选定 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/64/ 
+A(T/C)=71-667/90/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-47/70/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-78/71/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-109/72/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-140/73/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-171/74/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-202/75/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-233/76/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-264/77/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-295/78/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-326/79/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-357/80/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-388/81/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-419/82/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-450/83/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-481/84/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-512/85/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-543/86/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-574/87/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @回收分页信息 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-605/88/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @选定回收数据清理 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-636/89/ 441-31/1/ 515-16/82/ 
+[2023-06-06 15:13:37:629] NPC:QFunction ID:999999999 脚本执行 @跳转回收选定 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-15/67/ 
+A(T/C)=71-667/90/ 441-31/1/ 515-16/82/ 
+
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-62/70/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-93/71/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-124/72/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-155/73/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-186/74/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-217/75/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-248/76/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-279/77/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-310/78/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-341/79/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-372/80/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-403/81/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-434/82/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-465/83/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-496/84/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-527/85/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-558/86/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-589/87/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @回收分页信息 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-620/88/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @选定回收数据清理 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-651/89/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:38:942] NPC:QFunction ID:999999999 脚本执行 @跳转回收选定 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-682/90/ 441-31/1/ 515-31/82/ 
+
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-62/70/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-93/71/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-124/72/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-155/73/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-186/74/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-217/75/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-248/76/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-279/77/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-310/78/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-341/79/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-372/80/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-403/81/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-434/82/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-465/83/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-496/84/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-527/85/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-558/86/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-589/87/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @回收分页信息 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-620/88/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @选定回收数据清理 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-651/89/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:44:651] NPC:QFunction ID:999999999 脚本执行 @跳转回收选定 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-682/90/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-62/70/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-93/71/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-124/72/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-155/73/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-186/74/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-217/75/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-248/76/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-279/77/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-310/78/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-341/79/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-372/80/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-403/81/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-434/82/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-465/83/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-496/84/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-527/85/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-558/86/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-589/87/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @回收分页信息 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-620/88/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @选定回收数据清理 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-651/89/ 441-31/1/ 515-31/82/ 
+[2023-06-06 15:13:47:161] NPC:QFunction ID:999999999 脚本执行 @跳转回收选定 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-682/90/ 441-31/1/ 515-31/82/ 
+
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-64/70/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-96/71/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-128/72/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-160/73/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-192/74/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-224/75/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-256/76/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-288/77/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-320/78/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-352/79/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-384/80/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-416/81/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-448/82/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-480/83/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-512/84/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-544/85/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-576/86/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-608/87/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @回收分页信息 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-640/88/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @选定回收数据清理 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-672/89/ 441-32/1/ 515-16/82/ 
+[2023-06-06 15:13:48:799] NPC:QFunction ID:999999999 脚本执行 @跳转回收选定 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=48-16/69/ 
+A(T/C)=71-704/90/ 441-32/1/ 515-16/82/ 
+
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-64/50/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-96/51/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-128/52/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-160/53/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-192/54/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-224/55/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-256/56/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-288/57/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-320/58/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-352/59/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-384/60/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-416/61/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-448/62/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-480/63/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-512/64/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-544/65/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-576/66/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收选定运算 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-608/67/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收分页信息 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-640/68/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @移动端装备回收 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-672/69/ 441-32/1/ 515-32/58/ 
+[2023-06-06 15:15:10:051] NPC:QFunction ID:999999999 脚本执行 @回收 player:爱唉 耗时:32; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-704/70/ 441-32/1/ 515-32/58/ 
+
+[2023-06-06 15:15:43:110] NPC:QManage ID:999999996 脚本执行 @官职红点 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=515-31/21/ 
+[2023-06-06 15:15:43:118] NPC:QManage ID:999999996 脚本执行 @变强红点检测 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-31/19/ 515-31/25/ 
+[2023-06-06 15:15:43:118] NPC:QManage ID:999999996 脚本执行 @ONTIMER104 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-62/20/ 515-31/25/ 
+
+[2023-06-06 15:21:39:162] [脚本错误]@全沙城捐献  脚本命令:DEC NPC名称:QFunction 地图:0(0:0) 参数1:S$今日区号 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:21:42:707] NPC:QFunction ID:999999999 脚本执行 @每日充值 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=515-31/64/ 
+[2023-06-06 15:21:42:707] NPC:QFunction ID:999999999 脚本执行 @开服活动 player:爱唉 耗时:31; NpcThreadId:27856, CurPlayThreadId:27856
+C(T/C)=
+A(T/C)=71-31/7/ 515-31/64/ 
+
+[2023-06-06 15:30:10:311] [脚本错误]@创建盒子 变量礼包申请状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包申请状态 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:311] [脚本错误]@创建盒子 变量礼包领取状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包领取状态 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:311] [脚本错误]@创建盒子 变量礼包码申请状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包码申请状态 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:311] [脚本错误]@创建盒子 变量礼包码领取状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包码领取状态 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:311] [脚本错误]@创建盒子 变量礼包领取日期已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:String 参数2:HUMAN 参数3:礼包领取日期 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:30:10:312] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+
+[2023-06-06 15:35:33:552] 脚本错误, 加载失败: 功能脚本\Q群礼包\微信验证.txt  @微信MAIN
+[2023-06-06 15:35:33:553] 脚本错误, 加载失败: 游戏登陆\管理功能.txt  @管理后台
+
+[2023-06-06 15:36:01:801] [脚本错误]@创建盒子 变量礼包申请状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包申请状态 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:801] [脚本错误]@创建盒子 变量礼包领取状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包领取状态 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:801] [脚本错误]@创建盒子 变量礼包码申请状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包码申请状态 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:801] [脚本错误]@创建盒子 变量礼包码领取状态已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:Integer 参数2:HUMAN 参数3:礼包码领取状态 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:801] [脚本错误]@创建盒子 变量礼包领取日期已存在，变量类型:HUMAN 脚本命令:VAR NPC名称:QManage 地图:0(0:0) 参数1:String 参数2:HUMAN 参数3:礼包领取日期 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+[2023-06-06 15:36:01:803] [脚本错误]@顶戴界面  脚本命令:INC NPC名称:QManage 地图:0(0:0) 参数1:S$C_顶戴面板 参数2: 参数3: 参数4: 参数5: 参数6:
+

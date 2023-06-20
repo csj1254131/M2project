@@ -1,0 +1,303 @@
+[2023-06-01 21:04:00:835] Socket Err:10061
+[2023-06-01 21:04:01:104] ProgramException Except£ºAccess violation at address 000000000040FC25 in module 'M2Server.exe'. Read of address FFFFFFFFFFFFFFFF[000000000040FC25] System._ZN6System7TObject4FreeEv (Line 18023, "System.pas" + 5)
+[00000000011FC0E2] JclDebug._ZN8Jcldebug18JclCreateStackListEbiPvbS0_ (Line 5351, "JclDebug.pas" + 1)
+[00000000011FBFC4] JclDebug._ZN8Jcldebug21DoExceptionStackTraceEPN6System7TObjectEPvbS3_ (Line 5292, "JclDebug.pas" + 20)
+[00000000011FF0D8] JclDebug._ZN8Jcldebug14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 6742, "JclDebug.pas" + 7)
+[00000000011EDCB2] JclHookExcept._ZN13Jclhookexcept13TNotifierItem8DoNotifyEPN6System7TObjectEPvbS4_ (Line 272, "JclHookExcept.pas" + 5)
+[00000000011EDF1B] JclHookExcept._ZN13Jclhookexcept14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 339, "JclHookExcept.pas" + 13)
+[00000000011EE0E1] JclHookExcept._ZN13Jclhookexcept19HookedExceptObjProcEPN6System16TExceptionRecordE (Line 395, "JclHookExcept.pas" + 5)
+[0000000000411817] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20765, "System.pas" + 53)
+[00007FFAA0BF3CFF] Unknown function at __chkstk
+[00007FFAA0B6E456] Unknown function at RtlFindCharInUnicodeString
+[00007FFAA0BF2CEE] KiUserExceptionDispatcher
+[000000000040FC25] System._ZN6System7TObject4FreeEv (Line 18023, "System.pas" + 5)
+[00000000004121B4] System._ZN6System17_DestroyExceptionEP18TExceptionPointersy (Line 23208, "System.pas" + 25)
+[00000000006A1839] Vcl.ExtCtrls._ZN3Vcl8Extctrls6TTimer7WndProcERN6Winapi8Messages8TMessageE (Line 3182, "Vcl.ExtCtrls.pas" + 6)
+[0000000000411B2B] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20834, "System.pas" + 122)
+[00007FFAA0BF3D7F] Unknown function at __chkstk
+[00007FFAA0B6FD44] RtlUnwindEx
+[0000000000411992] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20804, "System.pas" + 92)
+[00007FFAA0BF3CFF] Unknown function at __chkstk
+[00007FFAA0B6E456] Unknown function at RtlFindCharInUnicodeString
+[00007FFAA0BF2CEE] KiUserExceptionDispatcher
+[000000000041495B] System._ZN6System16InternalUStrCatNERNS_13UnicodeStringEiPS0_ (Line 30058, "System.pas" + 10)
+[00000000004151DB] System._ZN6System9_UStrCatNERNS_13UnicodeStringEi (Line 31171, "System.pas" + 12)
+[000000000122B86C] M2Share._ZN7M2share11OutErrorLogEN6System13UnicodeStringEPNS0_8Sysutils9ExceptionE (Line 4360, "M2Share.pas" + 8)
+[0000000001409930] svMain._ZN6Svmain8TFrmMain18OnProgramExceptionEPN6System7TObjectEPNS1_8Sysutils9ExceptionE (Line 323, "svMain.pas" + 2)
+[000000000073800F] Vcl.Forms._ZN3Vcl5Forms12TApplication15HandleExceptionEPN6System7TObjectE (Line 11537, "Vcl.Forms.pas" + 16)
+[00000000006A17F1] Vcl.ExtCtrls._ZN3Vcl8Extctrls6TTimer7WndProcERN6Winapi8Messages8TMessageE (Line 3182, "Vcl.ExtCtrls.pas" + 6)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7CF1] Unknown function at DispatchMessageW
+[0000000000737983] Vcl.Forms._ZN3Vcl5Forms12TApplication14ProcessMessageER6tagMSG (Line 11317, "Vcl.Forms.pas" + 23)
+[00000000007379F8] Vcl.Forms._ZN3Vcl5Forms12TApplication13HandleMessageEv (Line 11347, "Vcl.Forms.pas" + 1)
+[0000000000737E4F] Vcl.Forms._ZN3Vcl5Forms12TApplication3RunEv (Line 11486, "Vcl.Forms.pas" + 27)
+[0000000001419402] M2Server._ZN8M2server14initializationEv
+[00007FFAA01926AD] BaseThreadInitThunk
+[00007FFAA0BAA9F8] RtlUserThreadStart
+
+
+[2023-06-01 21:04:29:636] ProgramException Except£ºAccess violation at address 00000000007ED64C in module 'M2Server.exe'. Write of address 0000000000000020[00000000007ED64C] uThreadPools._ZN12Uthreadpools11TThreadPool7PostMsgEjyPv (Line 128, "uThreadPools.pas" + 1)
+[00000000011FC0E2] JclDebug._ZN8Jcldebug18JclCreateStackListEbiPvbS0_ (Line 5351, "JclDebug.pas" + 1)
+[00000000011FBFC4] JclDebug._ZN8Jcldebug21DoExceptionStackTraceEPN6System7TObjectEPvbS3_ (Line 5292, "JclDebug.pas" + 20)
+[00000000011FF0D8] JclDebug._ZN8Jcldebug14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 6742, "JclDebug.pas" + 7)
+[00000000011EDCB2] JclHookExcept._ZN13Jclhookexcept13TNotifierItem8DoNotifyEPN6System7TObjectEPvbS4_ (Line 272, "JclHookExcept.pas" + 5)
+[00000000011EDF1B] JclHookExcept._ZN13Jclhookexcept14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 339, "JclHookExcept.pas" + 13)
+[00000000011EE0E1] JclHookExcept._ZN13Jclhookexcept19HookedExceptObjProcEPN6System16TExceptionRecordE (Line 395, "JclHookExcept.pas" + 5)
+[0000000000411817] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20765, "System.pas" + 53)
+[00007FFAA0BF3CFF] Unknown function at __chkstk
+[00007FFAA0B6E456] Unknown function at RtlFindCharInUnicodeString
+[00007FFAA0BF2CEE] KiUserExceptionDispatcher
+[00000000007ED64C] uThreadPools._ZN12Uthreadpools11TThreadPool7PostMsgEjyPv (Line 128, "uThreadPools.pas" + 1)
+[000000000140E6E5] svMain._ZN6Svmain8TFrmMain11StopServiceEv (Line 1149, "svMain.pas" + 36)
+[0000000001410EC3] svMain._ZN6Svmain8TFrmMain15CloseTimerTimerEPN6System7TObjectE (Line 1646, "svMain.pas" + 8)
+[00000000006A19B2] Vcl.ExtCtrls._ZN3Vcl8Extctrls6TTimer5TimerEv (Line 3223, "Vcl.ExtCtrls.pas" + 2)
+[00000000006A17DA] Vcl.ExtCtrls._ZN3Vcl8Extctrls6TTimer7WndProcERN6Winapi8Messages8TMessageE (Line 3180, "Vcl.ExtCtrls.pas" + 4)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7CF1] Unknown function at DispatchMessageW
+[0000000000737983] Vcl.Forms._ZN3Vcl5Forms12TApplication14ProcessMessageER6tagMSG (Line 11317, "Vcl.Forms.pas" + 23)
+[00000000007379F8] Vcl.Forms._ZN3Vcl5Forms12TApplication13HandleMessageEv (Line 11347, "Vcl.Forms.pas" + 1)
+[0000000000737E4F] Vcl.Forms._ZN3Vcl5Forms12TApplication3RunEv (Line 11486, "Vcl.Forms.pas" + 27)
+[0000000001419402] M2Server._ZN8M2server14initializationEv
+[00007FFAA01926AD] BaseThreadInitThunk
+[00007FFAA0BAA9F8] RtlUserThreadStart
+
+
+[2023-06-01 21:04:37:207] ProgramException Except£ºAccess violation at address 0000000001410FAB in module 'M2Server.exe'. Read of address 0000000000000000[0000000001410FAB] svMain._ZN6Svmain8TFrmMain9FormCloseEPN6System7TObjectERNS1_7Uitypes12TCloseActionE (Line 1662, "svMain.pas" + 1)
+[00000000011FC0E2] JclDebug._ZN8Jcldebug18JclCreateStackListEbiPvbS0_ (Line 5351, "JclDebug.pas" + 1)
+[00000000011FBFC4] JclDebug._ZN8Jcldebug21DoExceptionStackTraceEPN6System7TObjectEPvbS3_ (Line 5292, "JclDebug.pas" + 20)
+[00000000011FF0D8] JclDebug._ZN8Jcldebug14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 6742, "JclDebug.pas" + 7)
+[00000000011EDCB2] JclHookExcept._ZN13Jclhookexcept13TNotifierItem8DoNotifyEPN6System7TObjectEPvbS4_ (Line 272, "JclHookExcept.pas" + 5)
+[00000000011EDF1B] JclHookExcept._ZN13Jclhookexcept14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 339, "JclHookExcept.pas" + 13)
+[00000000011EE0E1] JclHookExcept._ZN13Jclhookexcept19HookedExceptObjProcEPN6System16TExceptionRecordE (Line 395, "JclHookExcept.pas" + 5)
+[0000000000411817] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20765, "System.pas" + 53)
+[00007FFAA0BF3CFF] Unknown function at __chkstk
+[00007FFAA0B6E456] Unknown function at RtlFindCharInUnicodeString
+[00007FFAA0BF2CEE] KiUserExceptionDispatcher
+[0000000001410FAB] svMain._ZN6Svmain8TFrmMain9FormCloseEPN6System7TObjectERNS1_7Uitypes12TCloseActionE (Line 1662, "svMain.pas" + 1)
+[0000000000727B9B] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7DoCloseERN6System7Uitypes12TCloseActionE (Line 4524, "Vcl.Forms.pas" + 2)
+[000000000072FDFB] Vcl.Forms._ZN3Vcl5Forms11TCustomForm5CloseEv (Line 7680, "Vcl.Forms.pas" + 13)
+[000000000072E0C9] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WMCloseERN6Winapi8Messages11TWMNoParamsE (Line 6991, "Vcl.Forms.pas" + 2)
+[0000000000410375] System._ZN6System7TObject8DispatchEPv (Line 18852, "System.pas" + 10)
+[00000000005FD340] Vcl.Controls._ZN3Vcl8Controls8TControl7WndProcERN6Winapi8Messages8TMessageE (Line 7545, "Vcl.Controls.pas" + 92)
+[0000000000604780] Vcl.Controls._ZN3Vcl8Controls11TWinControl7WndProcERN6Winapi8Messages8TMessageE (Line 10581, "Vcl.Controls.pas" + 172)
+[0000000000728D21] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WndProcERN6Winapi8Messages8TMessageE (Line 4986, "Vcl.Forms.pas" + 222)
+[000000000060391C] Vcl.Controls._ZN3Vcl8Controls11TWinControl11MainWndProcERN6Winapi8Messages8TMessageE (Line 10269, "Vcl.Controls.pas" + 5)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7EEC] Unknown function at DispatchMessageW
+[00007FFA9FEB306D] GetClassLongW
+[00007FFAA0BF2C94] KiUserCallbackDispatcher
+[00007FFA9DF71554] NtUserMessageCall
+[00007FFA9FEA6645] Unknown function at GetDlgCtrlID
+[00007FFA9FEA6152] Unknown function at GetDlgCtrlID
+[00007FFA9B54F490] Unknown function at 
+[00007FFA9B533032] Unknown function at GetThemeEnumValue
+[00007FFA9B546D9C] Unknown function at CloseThemeData
+[00007FFA9B545821] Unknown function at CloseThemeData
+[00007FFA9FEA62D5] Unknown function at GetDlgCtrlID
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7A7B] CallWindowProcW
+[00000000006048F1] Vcl.Controls._ZN3Vcl8Controls11TWinControl14DefaultHandlerEPv (Line 10620, "Vcl.Controls.pas" + 30)
+[000000000072C2A3] Vcl.Forms._ZN3Vcl5Forms11TCustomForm14DefaultHandlerEPv (Line 6301, "Vcl.Forms.pas" + 12)
+[0000000000607598] Vcl.Controls._ZN3Vcl8Controls11TWinControl12WMSysCommandERN6Winapi8Messages13TWMSysCommandE (Line 11841, "Vcl.Controls.pas" + 23)
+[000000000072E1FE] Vcl.Forms._ZN3Vcl5Forms11TCustomForm12WMSysCommandERN6Winapi8Messages13TWMSysCommandE (Line 7042, "Vcl.Forms.pas" + 15)
+[0000000000410375] System._ZN6System7TObject8DispatchEPv (Line 18852, "System.pas" + 10)
+[00000000005FD340] Vcl.Controls._ZN3Vcl8Controls8TControl7WndProcERN6Winapi8Messages8TMessageE (Line 7545, "Vcl.Controls.pas" + 92)
+[0000000000604780] Vcl.Controls._ZN3Vcl8Controls11TWinControl7WndProcERN6Winapi8Messages8TMessageE (Line 10581, "Vcl.Controls.pas" + 172)
+[0000000000728D21] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WndProcERN6Winapi8Messages8TMessageE (Line 4986, "Vcl.Forms.pas" + 222)
+[000000000060391C] Vcl.Controls._ZN3Vcl8Controls11TWinControl11MainWndProcERN6Winapi8Messages8TMessageE (Line 10269, "Vcl.Controls.pas" + 5)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7EEC] Unknown function at DispatchMessageW
+[00007FFA9FEB306D] GetClassLongW
+[00007FFAA0BF2C94] KiUserCallbackDispatcher
+[00007FFA9DF71554] NtUserMessageCall
+[00007FFA9FEA6645] Unknown function at GetDlgCtrlID
+[00007FFA9FEA6152] Unknown function at GetDlgCtrlID
+[00007FFA9B54F490] Unknown function at 
+[00007FFA9B5330CA] Unknown function at GetThemeEnumValue
+[00007FFA9B546D9C] Unknown function at CloseThemeData
+[00007FFA9B545821] Unknown function at CloseThemeData
+[00007FFA9FEA62D5] Unknown function at GetDlgCtrlID
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7A7B] CallWindowProcW
+[00000000006048F1] Vcl.Controls._ZN3Vcl8Controls11TWinControl14DefaultHandlerEPv (Line 10620, "Vcl.Controls.pas" + 30)
+[000000000072C2A3] Vcl.Forms._ZN3Vcl5Forms11TCustomForm14DefaultHandlerEPv (Line 6301, "Vcl.Forms.pas" + 12)
+[00000000005FDC83] Vcl.Controls._ZN3Vcl8Controls8TControl15WMNCLButtonDownERN6Winapi8Messages15TWMNCHitMessageE (Line 7701, "Vcl.Controls.pas" + 3)
+[000000000072DBB7] Vcl.Forms._ZN3Vcl5Forms11TCustomForm15WMNCLButtonDownERN6Winapi8Messages15TWMNCHitMessageE (Line 6848, "Vcl.Forms.pas" + 18)
+[0000000000410375] System._ZN6System7TObject8DispatchEPv (Line 18852, "System.pas" + 10)
+[00000000005FD340] Vcl.Controls._ZN3Vcl8Controls8TControl7WndProcERN6Winapi8Messages8TMessageE (Line 7545, "Vcl.Controls.pas" + 92)
+[0000000000604780] Vcl.Controls._ZN3Vcl8Controls11TWinControl7WndProcERN6Winapi8Messages8TMessageE (Line 10581, "Vcl.Controls.pas" + 172)
+[0000000000728D21] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WndProcERN6Winapi8Messages8TMessageE (Line 4986, "Vcl.Forms.pas" + 222)
+[000000000060391C] Vcl.Controls._ZN3Vcl8Controls11TWinControl11MainWndProcERN6Winapi8Messages8TMessageE (Line 10269, "Vcl.Controls.pas" + 5)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7CF1] Unknown function at DispatchMessageW
+[0000000000737983] Vcl.Forms._ZN3Vcl5Forms12TApplication14ProcessMessageER6tagMSG (Line 11317, "Vcl.Forms.pas" + 23)
+[00000000007379F8] Vcl.Forms._ZN3Vcl5Forms12TApplication13HandleMessageEv (Line 11347, "Vcl.Forms.pas" + 1)
+[0000000000737E4F] Vcl.Forms._ZN3Vcl5Forms12TApplication3RunEv (Line 11486, "Vcl.Forms.pas" + 27)
+[0000000001419402] M2Server._ZN8M2server14initializationEv
+[00007FFAA01926AD] BaseThreadInitThunk
+[00007FFAA0BAA9F8] RtlUserThreadStart
+
+
+[2023-06-01 21:04:40:039] ProgramException Except£ºAccess violation at address 0000000001410FAB in module 'M2Server.exe'. Read of address 0000000000000000[0000000001410FAB] svMain._ZN6Svmain8TFrmMain9FormCloseEPN6System7TObjectERNS1_7Uitypes12TCloseActionE (Line 1662, "svMain.pas" + 1)
+[00000000011FC0E2] JclDebug._ZN8Jcldebug18JclCreateStackListEbiPvbS0_ (Line 5351, "JclDebug.pas" + 1)
+[00000000011FBFC4] JclDebug._ZN8Jcldebug21DoExceptionStackTraceEPN6System7TObjectEPvbS3_ (Line 5292, "JclDebug.pas" + 20)
+[00000000011FF0D8] JclDebug._ZN8Jcldebug14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 6742, "JclDebug.pas" + 7)
+[00000000011EDCB2] JclHookExcept._ZN13Jclhookexcept13TNotifierItem8DoNotifyEPN6System7TObjectEPvbS4_ (Line 272, "JclHookExcept.pas" + 5)
+[00000000011EDF1B] JclHookExcept._ZN13Jclhookexcept14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 339, "JclHookExcept.pas" + 13)
+[00000000011EE0E1] JclHookExcept._ZN13Jclhookexcept19HookedExceptObjProcEPN6System16TExceptionRecordE (Line 395, "JclHookExcept.pas" + 5)
+[0000000000411817] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20765, "System.pas" + 53)
+[00007FFAA0BF3CFF] Unknown function at __chkstk
+[00007FFAA0B6E456] Unknown function at RtlFindCharInUnicodeString
+[00007FFAA0BF2CEE] KiUserExceptionDispatcher
+[0000000001410FAB] svMain._ZN6Svmain8TFrmMain9FormCloseEPN6System7TObjectERNS1_7Uitypes12TCloseActionE (Line 1662, "svMain.pas" + 1)
+[0000000000727B9B] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7DoCloseERN6System7Uitypes12TCloseActionE (Line 4524, "Vcl.Forms.pas" + 2)
+[000000000072FDFB] Vcl.Forms._ZN3Vcl5Forms11TCustomForm5CloseEv (Line 7680, "Vcl.Forms.pas" + 13)
+[000000000072E0C9] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WMCloseERN6Winapi8Messages11TWMNoParamsE (Line 6991, "Vcl.Forms.pas" + 2)
+[0000000000410375] System._ZN6System7TObject8DispatchEPv (Line 18852, "System.pas" + 10)
+[00000000005FD340] Vcl.Controls._ZN3Vcl8Controls8TControl7WndProcERN6Winapi8Messages8TMessageE (Line 7545, "Vcl.Controls.pas" + 92)
+[0000000000604780] Vcl.Controls._ZN3Vcl8Controls11TWinControl7WndProcERN6Winapi8Messages8TMessageE (Line 10581, "Vcl.Controls.pas" + 172)
+[0000000000728D21] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WndProcERN6Winapi8Messages8TMessageE (Line 4986, "Vcl.Forms.pas" + 222)
+[000000000060391C] Vcl.Controls._ZN3Vcl8Controls11TWinControl11MainWndProcERN6Winapi8Messages8TMessageE (Line 10269, "Vcl.Controls.pas" + 5)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7EEC] Unknown function at DispatchMessageW
+[00007FFA9FEB306D] GetClassLongW
+[00007FFAA0BF2C94] KiUserCallbackDispatcher
+[00007FFA9DF71554] NtUserMessageCall
+[00007FFA9FEA6645] Unknown function at GetDlgCtrlID
+[00007FFA9FEA6152] Unknown function at GetDlgCtrlID
+[00007FFA9B54F490] Unknown function at 
+[00007FFA9B533032] Unknown function at GetThemeEnumValue
+[00007FFA9B546D9C] Unknown function at CloseThemeData
+[00007FFA9B545821] Unknown function at CloseThemeData
+[00007FFA9FEA62D5] Unknown function at GetDlgCtrlID
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7A7B] CallWindowProcW
+[00000000006048F1] Vcl.Controls._ZN3Vcl8Controls11TWinControl14DefaultHandlerEPv (Line 10620, "Vcl.Controls.pas" + 30)
+[000000000072C2A3] Vcl.Forms._ZN3Vcl5Forms11TCustomForm14DefaultHandlerEPv (Line 6301, "Vcl.Forms.pas" + 12)
+[0000000000607598] Vcl.Controls._ZN3Vcl8Controls11TWinControl12WMSysCommandERN6Winapi8Messages13TWMSysCommandE (Line 11841, "Vcl.Controls.pas" + 23)
+[000000000072E1FE] Vcl.Forms._ZN3Vcl5Forms11TCustomForm12WMSysCommandERN6Winapi8Messages13TWMSysCommandE (Line 7042, "Vcl.Forms.pas" + 15)
+[0000000000410375] System._ZN6System7TObject8DispatchEPv (Line 18852, "System.pas" + 10)
+[00000000005FD340] Vcl.Controls._ZN3Vcl8Controls8TControl7WndProcERN6Winapi8Messages8TMessageE (Line 7545, "Vcl.Controls.pas" + 92)
+[0000000000604780] Vcl.Controls._ZN3Vcl8Controls11TWinControl7WndProcERN6Winapi8Messages8TMessageE (Line 10581, "Vcl.Controls.pas" + 172)
+[0000000000728D21] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WndProcERN6Winapi8Messages8TMessageE (Line 4986, "Vcl.Forms.pas" + 222)
+[000000000060391C] Vcl.Controls._ZN3Vcl8Controls11TWinControl11MainWndProcERN6Winapi8Messages8TMessageE (Line 10269, "Vcl.Controls.pas" + 5)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7EEC] Unknown function at DispatchMessageW
+[00007FFA9FEB306D] GetClassLongW
+[00007FFAA0BF2C94] KiUserCallbackDispatcher
+[00007FFA9DF71554] NtUserMessageCall
+[00007FFA9FEA6645] Unknown function at GetDlgCtrlID
+[00007FFA9FEA6152] Unknown function at GetDlgCtrlID
+[00007FFA9B54F490] Unknown function at 
+[00007FFA9B5330CA] Unknown function at GetThemeEnumValue
+[00007FFA9B546D9C] Unknown function at CloseThemeData
+[00007FFA9B545821] Unknown function at CloseThemeData
+[00007FFA9FEA62D5] Unknown function at GetDlgCtrlID
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7A7B] CallWindowProcW
+[00000000006048F1] Vcl.Controls._ZN3Vcl8Controls11TWinControl14DefaultHandlerEPv (Line 10620, "Vcl.Controls.pas" + 30)
+[000000000072C2A3] Vcl.Forms._ZN3Vcl5Forms11TCustomForm14DefaultHandlerEPv (Line 6301, "Vcl.Forms.pas" + 12)
+[00000000005FDC83] Vcl.Controls._ZN3Vcl8Controls8TControl15WMNCLButtonDownERN6Winapi8Messages15TWMNCHitMessageE (Line 7701, "Vcl.Controls.pas" + 3)
+[000000000072DBB7] Vcl.Forms._ZN3Vcl5Forms11TCustomForm15WMNCLButtonDownERN6Winapi8Messages15TWMNCHitMessageE (Line 6848, "Vcl.Forms.pas" + 18)
+[0000000000410375] System._ZN6System7TObject8DispatchEPv (Line 18852, "System.pas" + 10)
+[00000000005FD340] Vcl.Controls._ZN3Vcl8Controls8TControl7WndProcERN6Winapi8Messages8TMessageE (Line 7545, "Vcl.Controls.pas" + 92)
+[0000000000604780] Vcl.Controls._ZN3Vcl8Controls11TWinControl7WndProcERN6Winapi8Messages8TMessageE (Line 10581, "Vcl.Controls.pas" + 172)
+[0000000000728D21] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WndProcERN6Winapi8Messages8TMessageE (Line 4986, "Vcl.Forms.pas" + 222)
+[000000000060391C] Vcl.Controls._ZN3Vcl8Controls11TWinControl11MainWndProcERN6Winapi8Messages8TMessageE (Line 10269, "Vcl.Controls.pas" + 5)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7CF1] Unknown function at DispatchMessageW
+[0000000000737983] Vcl.Forms._ZN3Vcl5Forms12TApplication14ProcessMessageER6tagMSG (Line 11317, "Vcl.Forms.pas" + 23)
+[00000000007379F8] Vcl.Forms._ZN3Vcl5Forms12TApplication13HandleMessageEv (Line 11347, "Vcl.Forms.pas" + 1)
+[0000000000737E4F] Vcl.Forms._ZN3Vcl5Forms12TApplication3RunEv (Line 11486, "Vcl.Forms.pas" + 27)
+[0000000001419402] M2Server._ZN8M2server14initializationEv
+[00007FFAA01926AD] BaseThreadInitThunk
+[00007FFAA0BAA9F8] RtlUserThreadStart
+
+
+[2023-06-01 21:05:02:039] ProgramException Except£ºAccess violation at address 0000000001410FAB in module 'M2Server.exe'. Read of address 0000000000000000[0000000001410FAB] svMain._ZN6Svmain8TFrmMain9FormCloseEPN6System7TObjectERNS1_7Uitypes12TCloseActionE (Line 1662, "svMain.pas" + 1)
+[00000000011FC0E2] JclDebug._ZN8Jcldebug18JclCreateStackListEbiPvbS0_ (Line 5351, "JclDebug.pas" + 1)
+[00000000011FBFC4] JclDebug._ZN8Jcldebug21DoExceptionStackTraceEPN6System7TObjectEPvbS3_ (Line 5292, "JclDebug.pas" + 20)
+[00000000011FF0D8] JclDebug._ZN8Jcldebug14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 6742, "JclDebug.pas" + 7)
+[00000000011EDCB2] JclHookExcept._ZN13Jclhookexcept13TNotifierItem8DoNotifyEPN6System7TObjectEPvbS4_ (Line 272, "JclHookExcept.pas" + 5)
+[00000000011EDF1B] JclHookExcept._ZN13Jclhookexcept14DoExceptNotifyEPN6System7TObjectEPvbS3_ (Line 339, "JclHookExcept.pas" + 13)
+[00000000011EE0E1] JclHookExcept._ZN13Jclhookexcept19HookedExceptObjProcEPN6System16TExceptionRecordE (Line 395, "JclHookExcept.pas" + 5)
+[0000000000411817] System._ZN6System23_DelphiExceptionHandlerEPNS_16TExceptionRecordEyPvS2_ (Line 20765, "System.pas" + 53)
+[00007FFAA0BF3CFF] Unknown function at __chkstk
+[00007FFAA0B6E456] Unknown function at RtlFindCharInUnicodeString
+[00007FFAA0BF2CEE] KiUserExceptionDispatcher
+[0000000001410FAB] svMain._ZN6Svmain8TFrmMain9FormCloseEPN6System7TObjectERNS1_7Uitypes12TCloseActionE (Line 1662, "svMain.pas" + 1)
+[0000000000727B9B] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7DoCloseERN6System7Uitypes12TCloseActionE (Line 4524, "Vcl.Forms.pas" + 2)
+[000000000072FDFB] Vcl.Forms._ZN3Vcl5Forms11TCustomForm5CloseEv (Line 7680, "Vcl.Forms.pas" + 13)
+[000000000072E0C9] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WMCloseERN6Winapi8Messages11TWMNoParamsE (Line 6991, "Vcl.Forms.pas" + 2)
+[0000000000410375] System._ZN6System7TObject8DispatchEPv (Line 18852, "System.pas" + 10)
+[00000000005FD340] Vcl.Controls._ZN3Vcl8Controls8TControl7WndProcERN6Winapi8Messages8TMessageE (Line 7545, "Vcl.Controls.pas" + 92)
+[0000000000604780] Vcl.Controls._ZN3Vcl8Controls11TWinControl7WndProcERN6Winapi8Messages8TMessageE (Line 10581, "Vcl.Controls.pas" + 172)
+[0000000000728D21] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WndProcERN6Winapi8Messages8TMessageE (Line 4986, "Vcl.Forms.pas" + 222)
+[000000000060391C] Vcl.Controls._ZN3Vcl8Controls11TWinControl11MainWndProcERN6Winapi8Messages8TMessageE (Line 10269, "Vcl.Controls.pas" + 5)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7EEC] Unknown function at DispatchMessageW
+[00007FFA9FEB306D] GetClassLongW
+[00007FFAA0BF2C94] KiUserCallbackDispatcher
+[00007FFA9DF71554] NtUserMessageCall
+[00007FFA9FEA6645] Unknown function at GetDlgCtrlID
+[00007FFA9FEA6152] Unknown function at GetDlgCtrlID
+[00007FFA9B54F490] Unknown function at 
+[00007FFA9B533032] Unknown function at GetThemeEnumValue
+[00007FFA9B546D9C] Unknown function at CloseThemeData
+[00007FFA9B545821] Unknown function at CloseThemeData
+[00007FFA9FEA62D5] Unknown function at GetDlgCtrlID
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7A7B] CallWindowProcW
+[00000000006048F1] Vcl.Controls._ZN3Vcl8Controls11TWinControl14DefaultHandlerEPv (Line 10620, "Vcl.Controls.pas" + 30)
+[000000000072C2A3] Vcl.Forms._ZN3Vcl5Forms11TCustomForm14DefaultHandlerEPv (Line 6301, "Vcl.Forms.pas" + 12)
+[0000000000607598] Vcl.Controls._ZN3Vcl8Controls11TWinControl12WMSysCommandERN6Winapi8Messages13TWMSysCommandE (Line 11841, "Vcl.Controls.pas" + 23)
+[000000000072E1FE] Vcl.Forms._ZN3Vcl5Forms11TCustomForm12WMSysCommandERN6Winapi8Messages13TWMSysCommandE (Line 7042, "Vcl.Forms.pas" + 15)
+[0000000000410375] System._ZN6System7TObject8DispatchEPv (Line 18852, "System.pas" + 10)
+[00000000005FD340] Vcl.Controls._ZN3Vcl8Controls8TControl7WndProcERN6Winapi8Messages8TMessageE (Line 7545, "Vcl.Controls.pas" + 92)
+[0000000000604780] Vcl.Controls._ZN3Vcl8Controls11TWinControl7WndProcERN6Winapi8Messages8TMessageE (Line 10581, "Vcl.Controls.pas" + 172)
+[0000000000728D21] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WndProcERN6Winapi8Messages8TMessageE (Line 4986, "Vcl.Forms.pas" + 222)
+[000000000060391C] Vcl.Controls._ZN3Vcl8Controls11TWinControl11MainWndProcERN6Winapi8Messages8TMessageE (Line 10269, "Vcl.Controls.pas" + 5)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7EEC] Unknown function at DispatchMessageW
+[00007FFA9FEB306D] GetClassLongW
+[00007FFAA0BF2C94] KiUserCallbackDispatcher
+[00007FFA9DF71554] NtUserMessageCall
+[00007FFA9FEA6645] Unknown function at GetDlgCtrlID
+[00007FFA9FEA6152] Unknown function at GetDlgCtrlID
+[00007FFA9B54F490] Unknown function at 
+[00007FFA9B5330CA] Unknown function at GetThemeEnumValue
+[00007FFA9B546D9C] Unknown function at CloseThemeData
+[00007FFA9B545821] Unknown function at CloseThemeData
+[00007FFA9FEA62D5] Unknown function at GetDlgCtrlID
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7A7B] CallWindowProcW
+[00000000006048F1] Vcl.Controls._ZN3Vcl8Controls11TWinControl14DefaultHandlerEPv (Line 10620, "Vcl.Controls.pas" + 30)
+[000000000072C2A3] Vcl.Forms._ZN3Vcl5Forms11TCustomForm14DefaultHandlerEPv (Line 6301, "Vcl.Forms.pas" + 12)
+[00000000005FDC83] Vcl.Controls._ZN3Vcl8Controls8TControl15WMNCLButtonDownERN6Winapi8Messages15TWMNCHitMessageE (Line 7701, "Vcl.Controls.pas" + 3)
+[000000000072DBB7] Vcl.Forms._ZN3Vcl5Forms11TCustomForm15WMNCLButtonDownERN6Winapi8Messages15TWMNCHitMessageE (Line 6848, "Vcl.Forms.pas" + 18)
+[0000000000410375] System._ZN6System7TObject8DispatchEPv (Line 18852, "System.pas" + 10)
+[00000000005FD340] Vcl.Controls._ZN3Vcl8Controls8TControl7WndProcERN6Winapi8Messages8TMessageE (Line 7545, "Vcl.Controls.pas" + 92)
+[0000000000604780] Vcl.Controls._ZN3Vcl8Controls11TWinControl7WndProcERN6Winapi8Messages8TMessageE (Line 10581, "Vcl.Controls.pas" + 172)
+[0000000000728D21] Vcl.Forms._ZN3Vcl5Forms11TCustomForm7WndProcERN6Winapi8Messages8TMessageE (Line 4986, "Vcl.Forms.pas" + 222)
+[000000000060391C] Vcl.Controls._ZN3Vcl8Controls11TWinControl11MainWndProcERN6Winapi8Messages8TMessageE (Line 10269, "Vcl.Controls.pas" + 5)
+[0000000000537356] System.Classes._ZN6System7Classes10StdWndProcEP6HWND__jyy (Line 18336, "System.Classes.pas" + 9)
+[00007FFA9FEA8231] Unknown function at DispatchMessageW
+[00007FFA9FEA7CF1] Unknown function at DispatchMessageW
+[0000000000737983] Vcl.Forms._ZN3Vcl5Forms12TApplication14ProcessMessageER6tagMSG (Line 11317, "Vcl.Forms.pas" + 23)
+[00000000007379F8] Vcl.Forms._ZN3Vcl5Forms12TApplication13HandleMessageEv (Line 11347, "Vcl.Forms.pas" + 1)
+[0000000000737E4F] Vcl.Forms._ZN3Vcl5Forms12TApplication3RunEv (Line 11486, "Vcl.Forms.pas" + 27)
+[0000000001419402] M2Server._ZN8M2server14initializationEv
+[00007FFAA01926AD] BaseThreadInitThunk
+[00007FFAA0BAA9F8] RtlUserThreadStart
+
+

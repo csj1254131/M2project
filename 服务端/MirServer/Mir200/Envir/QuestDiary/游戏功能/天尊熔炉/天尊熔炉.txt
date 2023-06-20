@@ -1,0 +1,1973 @@
+[@启动天尊熔炉]
+{
+#IF
+#ACT
+MOV S$激活按钮 140_1.png
+MOV S$默认按钮 140_2.png
+MOV S$套装序号
+MOV S$上次按钮序号
+MOV S$侧边按钮串 73,72,71,70,
+MOV S$侧按钮Y_71 80
+MOV S$侧按钮Y_72 150
+MOV S$侧按钮Y_73 220
+MOV S$侧按钮图标_70 cbl_1
+MOV S$侧按钮图标_71 cbl_2
+MOV S$侧按钮图标_72 cbl_2
+MOV S$侧按钮图标_73 cbl_2
+MOV S$侧按钮颜色_70 103
+MOV S$侧按钮颜色_71 160
+MOV S$侧按钮颜色_72 160
+MOV S$侧按钮颜色_73 160
+GOTO @按钮初始化
+
+[@天尊熔炉界面]
+#IF
+#ACT
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|percentx=50|percenty=3.8|color=100|size=20|outline=2|outlinecolor=0|text=天尊熔炉>
+<ListView|id=3|children={<$STR(S$按钮显示串)>}|x=20|y=60|width=160|height=450|margin=2|bounce=0|direction=1|color=x>
+
+<ListView|id=4|children={410}|x=180|y=60|width=3|height=450|margin=2|bounce=0|direction=1|color=x>
+<Img|id=410|img=custom/hl/hl_ui/hl_bg_02.png>
+
+<Layout|id=17|children={<$STR(S$侧边按钮串)>}|x=770|y=60|width=40|height=260|color=x>
+<Layout|id=70|children={700,701}|width=40|height=65|color=x|link=@侧边按钮#侧按钮序号=70>
+<Img|id=700|img=custom/hl/hl_ui/<$str(S$侧按钮图标_70)>.png>
+<Text|id=701|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_70)>|size=18|outline=2|outlinecolor=0|text=合\成>
+
+<Layout|id=71|children={710,711}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_71)>|link=@侧边按钮#侧按钮序号=71>
+<Img|id=710|img=custom/hl/hl_ui/<$str(S$侧按钮图标_71)>.png>
+<Text|id=711|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_71)>|size=18|outline=2|outlinecolor=0|text=洗\练>
+
+<Layout|id=72|children={720,721}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_72)>|link=@侧边按钮#侧按钮序号=72>
+<Img|id=720|img=custom/hl/hl_ui/<$str(S$侧按钮图标_72)>.png>
+<Text|id=721|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_72)>|size=18|outline=2|outlinecolor=0|text=进\阶>
+
+<Layout|id=73|children={730,731}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_73)>|link=@侧边按钮#侧按钮序号=73>
+<Img|id=730|img=custom/hl/hl_ui/<$str(S$侧按钮图标_73)>.png>
+<Text|id=731|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_73)>|size=18|outline=2|outlinecolor=0|text=分\解>
+
+
+
+
+<$STR(S$右侧显示)>
+
+;左侧按钮
+<Layout|id=31|children={310,311,312}|width=160|height=37|color=x>
+<Img|id=310|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_1)>>
+<Text|id=311|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=鬼の血光摄魂>
+<Layout|id=312|width=160|height=37|color=x|link=@按钮初始化#套装序号=1#选择类名=鬼の血光摄魂>
+
+<Layout|id=32|children={320,321,322}|width=160|height=37|color=x>
+<Img|id=320|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_2)>>
+<Text|id=321|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=魔の嗜血狂杀>
+<Layout|id=322|width=160|height=37|color=x|link=@按钮初始化#套装序号=2#选择类名=魔の嗜血狂杀>
+
+<Layout|id=33|children={330,331,332}|width=160|height=37|color=x>
+<Img|id=330|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_3)>>
+<Text|id=331|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=狂の纵横天下>
+<Layout|id=332|width=160|height=37|color=x|link=@按钮初始化#套装序号=3#选择类名=狂の纵横天下>
+
+<Layout|id=34|children={340,341,342}|width=160|height=37|color=x>
+<Img|id=340|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_4)>>
+<Text|id=341|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=怒の战无不胜>
+<Layout|id=342|width=160|height=37|color=x|link=@按钮初始化#套装序号=4#选择类名=怒の战无不胜>
+
+<Layout|id=35|children={350,351,352}|width=160|height=37|color=x>
+<Img|id=350|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_5)>>
+<Text|id=351|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=神の永恒霸主>
+<Layout|id=352|width=160|height=37|color=x|link=@按钮初始化#套装序号=5#选择类名=神の永恒霸主>
+
+<Layout|id=36|children={360,361,362}|width=160|height=37|color=x>
+<Img|id=360|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_6)>>
+<Text|id=361|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=扭转乾坤㊣绝杀>
+<Layout|id=362|width=160|height=37|color=x|link=@按钮初始化#套装序号=6#选择类名=扭转乾坤㊣绝杀>
+
+<Layout|id=37|children={370,371,372}|width=160|height=37|color=x>
+<Img|id=370|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_7)>>
+<Text|id=371|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=独孤求败㊣弑神>
+<Layout|id=372|width=160|height=37|color=x|link=@按钮初始化#套装序号=7#选择类名=独孤求败㊣弑神>
+
+<Layout|id=38|children={380,381,382}|width=160|height=37|color=x>
+<Img|id=380|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_8)>>
+<Text|id=381|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=鬼嚎神啸㊣无敌>
+<Layout|id=382|width=160|height=37|color=x|link=@按钮初始化#套装序号=8#选择类名=鬼嚎神啸㊣无敌>
+
+<Layout|id=39|children={390,391,392}|width=160|height=37|color=x>
+<Img|id=390|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_9)>>
+<Text|id=391|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=斩尽杀绝㊣帝陨>
+<Layout|id=392|width=160|height=37|color=x|link=@按钮初始化#套装序号=9#选择类名=斩尽杀绝㊣帝陨>
+
+<Layout|id=40|children={400,401,402}|width=160|height=37|color=x>
+<Img|id=400|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_10)>>
+<Text|id=401|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=无极㊣唯我独尊>
+<Layout|id=402|width=160|height=37|color=x|link=@按钮初始化#套装序号=10#选择类名=无极㊣唯我独尊>
+
+
+
+
+
+;夹层
+<Layout|id=50|children={500,501,502}|width=160|height=37|color=x>
+<Img|id=500|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/<$STR(S$小按钮_50)>>
+<Text|id=501|a=4|percentx=50|percenty=50|color=<$STR(S$散件颜色50)>|size=16|outline=2|outlinecolor=0|text=<$STR(S$散件名称1)>>
+<Layout|id=502|width=160|height=37|color=x|link=@夹层按钮初始化#选择名称=<$STR(S$散件名称1)>#夹层激活序号=50>
+
+<Layout|id=51|children={510,511,512}|width=160|height=37|color=x>
+<Img|id=510|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/<$STR(S$小按钮_51)>>
+<Text|id=511|a=4|percentx=50|percenty=50|color=<$STR(S$散件颜色51)>|size=16|outline=2|outlinecolor=0|text=<$STR(S$散件名称2)>>
+<Layout|id=512|width=160|height=37|color=x|link=@夹层按钮初始化#选择名称=<$STR(S$散件名称2)>#夹层激活序号=51>
+
+<Layout|id=52|children={520,521,522}|width=160|height=37|color=x>
+<Img|id=520|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/<$STR(S$小按钮_52)>>
+<Text|id=521|a=4|percentx=50|percenty=50|color=<$STR(S$散件颜色52)>|size=16|outline=2|outlinecolor=0|text=<$STR(S$散件名称3)>>
+<Layout|id=522|width=160|height=37|color=x|link=@夹层按钮初始化#选择名称=<$STR(S$散件名称3)>#夹层激活序号=52>
+
+<Layout|id=53|children={530,531,532}|width=160|height=37|color=x>
+<Img|id=530|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/<$STR(S$小按钮_53)>>
+<Text|id=531|a=4|percentx=50|percenty=50|color=<$STR(S$散件颜色53)>|size=16|outline=2|outlinecolor=0|text=<$STR(S$散件名称4)>>
+<Layout|id=532|width=160|height=37|color=x|link=@夹层按钮初始化#选择名称=<$STR(S$散件名称4)>#夹层激活序号=53>
+
+<Layout|id=54|children={540,541,542}|width=160|height=37|color=x>
+<Img|id=540|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/<$STR(S$小按钮_54)>>
+<Text|id=541|a=4|percentx=50|percenty=50|color=<$STR(S$散件颜色54)>|size=16|outline=2|outlinecolor=0|text=<$STR(S$散件名称5)>>
+<Layout|id=542|width=160|height=37|color=x|link=@夹层按钮初始化#选择名称=<$STR(S$散件名称5)>#夹层激活序号=54>
+
+<Layout|id=55|children={550,551,552}|width=160|height=37|color=x>
+<Img|id=550|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/<$STR(S$小按钮_55)>>
+<Text|id=551|a=4|percentx=50|percenty=50|color=<$STR(S$散件颜色55)>|size=16|outline=2|outlinecolor=0|text=<$STR(S$散件名称6)>>
+<Layout|id=552|width=160|height=37|color=x|link=@夹层按钮初始化#选择名称=<$STR(S$散件名称6)>#夹层激活序号=55>
+
+<Layout|id=56|children={560,561,562}|width=160|height=37|color=x>
+<Img|id=560|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/<$STR(S$小按钮_56)>>
+<Text|id=561|a=4|percentx=50|percenty=50|color=<$STR(S$散件颜色56)>|size=16|outline=2|outlinecolor=0|text=<$STR(S$散件名称7)>>
+<Layout|id=562|width=160|height=37|color=x|link=@夹层按钮初始化#选择名称=<$STR(S$散件名称7)>#夹层激活序号=56>
+
+<Layout|id=57|children={570,571,572}|width=160|height=37|color=x>
+<Img|id=570|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/<$STR(S$小按钮_57)>>
+<Text|id=571|a=4|percentx=50|percenty=50|color=<$STR(S$散件颜色57)>|size=16|outline=2|outlinecolor=0|text=<$STR(S$散件名称8)>>
+<Layout|id=572|width=160|height=37|color=x|link=@夹层按钮初始化#选择名称=<$STR(S$散件名称8)>#夹层激活序号=57>
+
+<Layout|id=58|children={580,581,582}|width=160|height=37|color=x>
+<Img|id=580|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/<$STR(S$小按钮_58)>>
+<Text|id=581|a=4|percentx=50|percenty=50|color=<$STR(S$散件颜色58)>|size=16|outline=2|outlinecolor=0|text=<$STR(S$散件名称9)>>
+<Layout|id=582|width=160|height=37|color=x|link=@夹层按钮初始化#选择名称=<$STR(S$散件名称9)>#夹层激活序号=58>
+
+<Layout|id=59|children={590,591,592}|width=160|height=37|color=x>
+<Img|id=590|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/<$STR(S$小按钮_59)>>
+<Text|id=591|a=4|percentx=50|percenty=50|color=<$STR(S$散件颜色59)>|size=16|outline=2|outlinecolor=0|text=<$STR(S$散件名称10)>>
+<Layout|id=592|width=160|height=37|color=x|link=@夹层按钮初始化#选择名称=<$STR(S$散件名称10)>#夹层激活序号=59>
+
+[@侧边按钮]
+#IF
+EQUAL S$侧按钮序号 70
+#ACT
+goto @启动天尊熔炉
+BREAK
+#IF
+EQUAL S$侧按钮序号 71
+#ACT
+MOV S$侧边按钮串 73,72,70,71,
+MOV S$侧按钮Y_71 70
+MOV S$侧按钮Y_72 150
+MOV S$侧按钮Y_73 220
+MOV S$侧按钮图标_70 cbl_2
+MOV S$侧按钮图标_71 cbl_1
+MOV S$侧按钮图标_72 cbl_2
+MOV S$侧按钮图标_73 cbl_2
+MOV S$侧按钮颜色_70 160
+MOV S$侧按钮颜色_71 103
+MOV S$侧按钮颜色_72 160
+MOV S$侧按钮颜色_73 160
+GOTO @洗练界面
+BREAK
+#IF
+EQUAL S$侧按钮序号 72
+#ACT
+MOV S$侧边按钮串 70,71,73,72,
+MOV S$侧按钮Y_71 70
+MOV S$侧按钮Y_72 140
+MOV S$侧按钮Y_73 220
+MOV S$侧按钮图标_70 cbl_2
+MOV S$侧按钮图标_71 cbl_2
+MOV S$侧按钮图标_72 cbl_1
+MOV S$侧按钮图标_73 cbl_2
+MOV S$侧按钮颜色_70 160
+MOV S$侧按钮颜色_71 160
+MOV S$侧按钮颜色_72 103
+MOV S$侧按钮颜色_73 160
+GOTO @天尊进阶界面
+BREAK
+#IF
+EQUAL S$侧按钮序号 73
+#ACT
+MOV S$侧边按钮串 70,71,72,73,
+MOV S$侧按钮Y_71 70
+MOV S$侧按钮Y_72 140
+MOV S$侧按钮Y_73 210
+MOV S$侧按钮图标_70 cbl_2
+MOV S$侧按钮图标_71 cbl_2
+MOV S$侧按钮图标_72 cbl_2
+MOV S$侧按钮图标_73 cbl_1
+MOV S$侧按钮颜色_70 160
+MOV S$侧按钮颜色_71 160
+MOV S$侧按钮颜色_72 160
+MOV S$侧按钮颜色_73 103
+GOTO @天尊装备分解
+BREAK
+
+[@按钮初始化]
+#IF
+NOT EQUAL S$套装序号
+#ACT
+MOV S$夹层按钮串 50,51,52,53,54,55,56,57,58,59,
+#ELSEACT
+MOV S$夹层按钮串 
+#IF
+#ACT
+MOV S$按钮显示串
+MOV S$合成按钮_1 <$STR(S$默认按钮)>
+MOV S$合成按钮_2 <$STR(S$默认按钮)>
+MOV S$合成按钮_3 <$STR(S$默认按钮)>
+MOV S$合成按钮_4 <$STR(S$默认按钮)>
+MOV S$合成按钮_5 <$STR(S$默认按钮)>
+MOV S$合成按钮_6 <$STR(S$默认按钮)>
+MOV S$合成按钮_7 <$STR(S$默认按钮)>
+MOV S$合成按钮_8 <$STR(S$默认按钮)>
+MOV S$合成按钮_9 <$STR(S$默认按钮)>
+MOV S$合成按钮_10 <$STR(S$默认按钮)>
+MOV S$合成按钮_<$str(S$套装序号)> <$STR(S$激活按钮)>
+MOV S$夹层激活序号 0
+MOV S$右侧显示
+MOV S$选择名称
+MOV N$按钮流水号 1
+MOV N$按钮控件号 31
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊熔炉配置.ini 合成装备 套装<$str(S$套装序号)> S$散件串
+GETVALIDSTRSUPER S$散件串 | S$散件名称
+GOTO @夹层显示初始化
+
+[@夹层显示初始化]
+#IF
+LARGE N$按钮流水号 10
+#ACT
+GOTO @夹层按钮处理
+BREAK
+#IF
+EQUAL N$按钮流水号 <$str(S$套装序号)>
+#ACT
+INC S$按钮显示串 <$str(N$按钮控件号)>,<$str(S$夹层按钮串)>
+INC N$按钮流水号 1
+INC N$按钮控件号 1
+GOTO @夹层显示初始化
+#ELSEACT
+INC S$按钮显示串 <$str(N$按钮控件号)>,
+INC N$按钮流水号 1
+INC N$按钮控件号 1
+GOTO @夹层显示初始化
+
+[@夹层按钮处理]
+#IF
+EQUAL S$上次按钮序号 <$str(S$套装序号)>
+#ACT
+DEC S$按钮显示串 <$str(S$夹层按钮串)>
+MOV S$上次按钮序号
+MOV S$右侧显示
+#ELSEACT
+MOV S$上次按钮序号 <$str(S$套装序号)>
+
+#IF
+#ACT
+GOTO @夹层按钮初始化
+[@夹层按钮初始化]
+#IF
+#ACT
+MOV S$右侧显示
+MOV N$装备IDX 0
+MOV S$小按钮_50 lxcz_05.png
+MOV S$小按钮_51 lxcz_05.png
+MOV S$小按钮_52 lxcz_05.png
+MOV S$小按钮_53 lxcz_05.png
+MOV S$小按钮_54 lxcz_05.png
+MOV S$小按钮_55 lxcz_05.png
+MOV S$小按钮_56 lxcz_05.png
+MOV S$小按钮_57 lxcz_05.png
+MOV S$小按钮_58 lxcz_05.png
+MOV S$小按钮_59 lxcz_05.png
+MOV S$散件颜色50 158
+MOV S$散件颜色51 158
+MOV S$散件颜色52 158
+MOV S$散件颜色53 158
+MOV S$散件颜色54 158
+MOV S$散件颜色55 158
+MOV S$散件颜色56 158
+MOV S$散件颜色57 158
+MOV S$散件颜色58 158
+MOV S$散件颜色59 158
+MOV S$散件颜色<$STR(S$夹层激活序号)> 250
+MOV S$小按钮_<$STR(S$夹层激活序号)> lxcz_01.png
+;1900000680_1.png:1900000680.png
+#IF
+NOT EQUAL S$选择名称
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊熔炉配置.ini <$STR(S$选择类名)> <$str(S$选择名称)> S$条件串
+GETVALIDSTRSUPER S$条件串 | S$专属材料IDX_
+GetDBItemFieldValue <$str(S$选择名称)> idx N$装备IDX
+GetDBIdxItemFieldValue <$str(S$专属材料IDX_1)> name S$专属材料_1
+GetDBIdxItemFieldValue <$str(S$专属材料IDX_3)> name S$专属材料_3
+GetDBIdxItemFieldValue <$str(S$专属材料IDX_5)> name S$专属材料_5
+GetDBIdxItemFieldValue <$str(S$专属材料IDX_7)> name S$专属材料_7
+#IF
+CHECKITEM <$str(S$专属材料_1)> <$str(S$专属材料IDX_2)>
+#ACT
+MOV S$专属材料颜色_1 250
+#ELSEACT
+MOV S$专属材料颜色_1 249
+#IF
+CHECKITEM <$str(S$专属材料_3)> <$str(S$专属材料IDX_4)>
+#ACT
+MOV S$专属材料颜色_2 250
+#ELSEACT
+MOV S$专属材料颜色_2 249
+#IF
+CHECKITEM <$str(S$专属材料_5)> <$str(S$专属材料IDX_6)>
+#ACT
+MOV S$专属材料颜色_3 250
+#ELSEACT
+MOV S$专属材料颜色_3 249
+#IF
+CHECKITEM <$str(S$专属材料_7)> <$str(S$专属材料IDX_8)>
+#ACT
+MOV S$专属材料颜色_4 250
+#ELSEACT
+MOV S$专属材料颜色_4 249
+
+#IF
+CHECKMONEY 火龙币 ? <$str(S$专属材料IDX_10)>
+#ACT
+MOV S$专属材料颜色_5 250
+#ELSEACT
+MOV S$专属材料颜色_5 249
+#IF
+EQUAL S$专属材料颜色_1 250
+EQUAL S$专属材料颜色_2 250
+EQUAL S$专属材料颜色_3 250
+EQUAL S$专属材料颜色_4 250
+EQUAL S$专属材料颜色_5 250
+#ACT
+MOV S$合成按钮颜色 103
+#ELSEACT
+MOV S$合成按钮颜色 248
+
+
+#IF
+NOT EQUAL S$选择名称
+#ACT
+MOV S$右侧显示 <Text|id=5|x=260|y=80|color=255|size=18|outline=2|outlinecolor=0|text=合成规则：消耗一定数量材料和货币可以合成指定装备>
+INC S$右侧显示 <Text|id=6|a=4|percentx=60|percenty=28|color=254|size=24|outline=2|outlinecolor=0|text=<$str(S$选择名称)>>
+INC S$右侧显示 <ItemShow|id=7|itemid=<$str(N$装备IDX)>|itemcount=1|a=4|percentx=60|percenty=40|showtips=1|bgtype=1>
+INC S$右侧显示 <ItemShow|id=8|children={80}|itemid=<$str(S$专属材料IDX_1)>|itemcount=1|a=4|percentx=38|percenty=58|showtips=1|bgtype=1>
+INC S$右侧显示 <RText|id=80|a=3|percentx=90|percenty=98|color=<$str(S$专属材料颜色_1)>|size=16|outline=2|outlinecolor=0|text=<$str(S$专属材料IDX_2)>>
+INC S$右侧显示 <ItemShow|id=9|children={90}|itemid=<$str(S$专属材料IDX_3)>|itemcount=1|a=4|percentx=53|percenty=58|showtips=1|bgtype=1>
+INC S$右侧显示 <RText|id=90|a=3|percentx=90|percenty=98|color=<$str(S$专属材料颜色_2)>|size=16|outline=2|outlinecolor=0|text=<$str(S$专属材料IDX_4)>>
+INC S$右侧显示 <ItemShow|id=10|children={100}|itemid=<$str(S$专属材料IDX_5)>|itemcount=1|a=4|percentx=68|percenty=58|showtips=1|bgtype=1>
+INC S$右侧显示 <RText|id=100|a=3|percentx=90|percenty=98|color=<$str(S$专属材料颜色_3)>|size=16|outline=2|outlinecolor=0|text=<$str(S$专属材料IDX_6)>>
+INC S$右侧显示 <ItemShow|id=11|children={110}|itemid=<$str(S$专属材料IDX_7)>|itemcount=<$str(S$专属材料IDX_8)>|a=4|percentx=83|percenty=58|showtips=1|bgtype=1>
+INC S$右侧显示 <RText|id=110|a=3|percentx=90|percenty=98|color=<$str(S$专属材料颜色_4)>|size=16|outline=2|outlinecolor=0|text=<$str(S$专属材料IDX_8)>>
+INC S$右侧显示 <ItemShow|id=12|children={121,122}|itemid=7|itemcount=1|a=4|percentx=57|percenty=76|showtips=1|scale=0.8>
+INC S$右侧显示 <Text|id=121|x=60|y=15|color=<$str(S$专属材料颜色_5)>|size=24|outline=2|outlinecolor=0|text=<$str(S$专属材料IDX_10)>>
+INC S$右侧显示 <Button||id=122|x=10|y=65|color=<$str(S$合成按钮颜色)>|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=专属合成|link=@合成专属装备>
+#IF
+#ACT
+GOTO @天尊熔炉界面
+
+[@合成专属装备]
+#IF
+CHECKBAGSIZE 5 
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留5个空格</font>
+BREAK
+
+#IF
+NOT EQUAL S$选择名称
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊熔炉配置.ini <$STR(S$选择类名)> <$str(S$选择名称)> S$条件串
+GETVALIDSTRSUPER S$条件串 | S$专属材料IDX_
+GetDBIdxItemFieldValue <$str(S$专属材料IDX_1)> name S$专属材料_1
+GetDBIdxItemFieldValue <$str(S$专属材料IDX_3)> name S$专属材料_3
+GetDBIdxItemFieldValue <$str(S$专属材料IDX_5)> name S$专属材料_5
+GetDBIdxItemFieldValue <$str(S$专属材料IDX_7)> name S$专属材料_7
+
+
+#IF
+CHECKITEM <$str(S$专属材料_1)> <$str(S$专属材料IDX_2)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>材料<$str(S$专属材料_1)>不足</font>
+BREAK
+#IF
+CHECKITEM <$str(S$专属材料_3)> <$str(S$专属材料IDX_4)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>材料<$str(S$专属材料_3)>不足</font>
+BREAK
+#IF
+CHECKITEM <$str(S$专属材料_5)> <$str(S$专属材料IDX_6)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>材料<$str(S$专属材料_5)>不足</font>
+BREAK
+#IF
+CHECKITEM <$str(S$专属材料_7)> <$str(S$专属材料IDX_8)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>材料<$str(S$专属材料_7)>不足</font>
+BREAK
+
+#IF
+LARGE S$专属材料IDX_10 0
+CHECKMONEY 火龙币 ? <$str(S$专属材料IDX_10)>
+#ACT
+MONEY 火龙币 - <$str(S$专属材料IDX_10)>
+TAKE <$str(S$专属材料_1)> <$str(S$专属材料IDX_2)>
+TAKE <$str(S$专属材料_3)> <$str(S$专属材料IDX_4)>
+TAKE <$str(S$专属材料_5)> <$str(S$专属材料IDX_6)>
+TAKE <$str(S$专属材料_7)> <$str(S$专属材料IDX_8)>
+GIVE <$str(S$选择名称)> 1
+INC U120 <$str(S$专属材料IDX_10)>
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=250}成功锻造出{<$str(S$选择名称)>/FCOLOR=58}称霸玛法指日可待 1 5
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>火龙币不足,请前往充值！</font>
+BREAK
+
+
+
+[@洗练界面]
+#IF
+#ACT
+MOV S$选择部位
+MOV S$返回洗练名
+MOV S$穿戴位置
+GOTO @天尊洗练
+
+[@装备洗练]
+#IF
+#ACT
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|percentx=50|percenty=3.8|color=100|size=20|outline=2|outlinecolor=0|text=天尊洗练>
+<ListView|id=3|children={<$STR(S$洗练控件串)>}|x=20|y=60|width=220|height=450|margin=2|bounce=0|direction=1|color=X>
+
+<ListView|id=4|children={4001}|x=240|y=60|width=3|height=450|margin=2|bounce=0|direction=1|color=x>
+<Img|id=4001|img=custom/hl/hl_ui/hl_bg_02.png>
+
+<Layout|id=17|children={<$STR(S$侧边按钮串)>}|x=770|y=60|width=40|height=260|color=x>
+<Layout|id=70|children={700,701}|width=40|height=65|color=x|link=@侧边按钮#侧按钮序号=70>
+<Img|id=700|img=custom/hl/hl_ui/<$str(S$侧按钮图标_70)>.png>
+<Text|id=701|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_70)>|size=18|outline=2|outlinecolor=0|text=合\成>
+
+<Layout|id=71|children={710,711}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_71)>|link=@侧边按钮#侧按钮序号=71>
+<Img|id=710|img=custom/hl/hl_ui/<$str(S$侧按钮图标_71)>.png>
+<Text|id=711|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_71)>|size=18|outline=2|outlinecolor=0|text=洗\练>
+
+<Layout|id=72|children={720,721}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_72)>|link=@侧边按钮#侧按钮序号=72>
+<Img|id=720|img=custom/hl/hl_ui/<$str(S$侧按钮图标_72)>.png>
+<Text|id=721|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_72)>|size=18|outline=2|outlinecolor=0|text=进\阶>
+
+<Layout|id=73|children={730,731}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_73)>|link=@侧边按钮#侧按钮序号=73>
+<Img|id=730|img=custom/hl/hl_ui/<$str(S$侧按钮图标_73)>.png>
+<Text|id=731|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_73)>|size=18|outline=2|outlinecolor=0|text=分\解>
+
+;<$STR(S$洗练右侧显示)>
+
+
+
+<ListView|id=14|children={140,141,142,143,144,145,146}|x=280|y=220|width=140|height=140|margin=0|bounce=0|direction=1|color=x>
+<Layout|id=140|children={1400,1401}|width=140|height=30|color=x>
+<Img|id=1400|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/lxcz_01.png>
+<RText|id=1401|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$str(N$上级等级)>/FCOLOR=250>级>
+
+<ListView|id=15|children={150,151,152,153,154,155,156}|x=520|y=220|width=140|height=140|margin=0|bounce=0|direction=1|color=x>
+<Layout|id=150|children={1500,1501}|width=140|height=30|color=x>
+<Img|id=1500|a=4|percentx=50|percenty=50|width=140|height=30|img=custom/hl/fuli_ui/lxcz_01.png>
+<RText|id=1501|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$str(N$当前洗练等级)>/FCOLOR=250>级>
+
+
+
+
+;剑
+<Layout|id=31|children={310,311,312,313,314}|width=220|height=70|color=x|link=@天尊洗练#选择部位=1#返回洗练名=<$WEAPON>#穿戴位置=1>
+<Img|id=310|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=311|index=1|showtips=1|x=0|y=3>
+<Text|id=312|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$WEAPON>>
+<RText|id=313|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_1)>/FCOLOR=250>级>
+<Img|id=314|img=custom/hl/hl_ui/<$STR(S$洗练选择_1)>.png|x=0|y=0|width=220|height=70>
+;甲
+<Layout|id=32|children={320,321,322,323,324}|width=220|height=70|color=x|link=@天尊洗练#选择部位=2#返回洗练名=<$DRESS>#穿戴位置=0>
+<Img|id=320|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=321|index=0|showtips=1|x=0|y=3>
+<Text|id=322|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$DRESS>>
+<RText|id=323|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_2)>/FCOLOR=250>级>
+<Img|id=324|img=custom/hl/hl_ui/<$STR(S$洗练选择_2)>.png|x=0|y=0|width=220|height=70>
+;盔
+<Layout|id=33|children={330,331,332,333,334}|width=220|height=70|color=x|link=@天尊洗练#选择部位=3#返回洗练名=<$HELMET>#穿戴位置=4>
+<Img|id=330|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=331|index=4|showtips=1|x=0|y=3>
+<Text|id=332|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$HELMET>>
+<RText|id=333|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_3)>/FCOLOR=250>级>
+<Img|id=334|img=custom/hl/hl_ui/<$STR(S$洗练选择_3)>.png|x=0|y=0|width=220|height=70>
+;链
+<Layout|id=34|children={340,341,342,343,344}|width=220|height=70|color=x|link=@天尊洗练#选择部位=4#返回洗练名=<$NECKLACE>#穿戴位置=3>
+<Img|id=340|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=341|index=3|showtips=1|x=0|y=3>
+<Text|id=342|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$NECKLACE>>
+<RText|id=343|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_4)>/FCOLOR=250>级>
+<Img|id=344|img=custom/hl/hl_ui/<$STR(S$洗练选择_4)>.png|x=0|y=0|width=220|height=70>
+;镯
+<Layout|id=35|children={350,351,352,353,354}|width=220|height=70|color=x|link=@天尊洗练#选择部位=5#返回洗练名=<$ARMRING_R>#穿戴位置=5>
+<Img|id=350|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=351|index=5|showtips=1|x=0|y=3>
+<Text|id=352|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$ARMRING_R>>
+<RText|id=353|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_5)>/FCOLOR=250>级>
+<Img|id=354|img=custom/hl/hl_ui/<$STR(S$洗练选择_5)>.png|x=0|y=0|width=220|height=70>
+;镯
+<Layout|id=36|children={360,361,362,363,364}|width=220|height=70|color=x|link=@天尊洗练#选择部位=6#返回洗练名=<$ARMRING_L>#穿戴位置=6>
+<Img|id=360|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=361|index=6|showtips=1|x=0|y=3>
+<Text|id=362|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$ARMRING_L>>
+<RText|id=363|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_6)>/FCOLOR=250>级>
+<Img|id=364|img=custom/hl/hl_ui/<$STR(S$洗练选择_6)>.png|x=0|y=0|width=220|height=70>
+;戒
+<Layout|id=37|children={370,371,372,373,374}|width=220|height=70|color=x|link=@天尊洗练#选择部位=7#返回洗练名=<$RING_R>#穿戴位置=7>
+<Img|id=370|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=371|index=7|showtips=1|x=0|y=3>
+<Text|id=372|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$RING_R>>
+<RText|id=373|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_7)>/FCOLOR=250>级>
+<Img|id=374|img=custom/hl/hl_ui/<$STR(S$洗练选择_7)>.png|x=0|y=0|width=220|height=70>
+;戒
+<Layout|id=38|children={380,381,382,383,384}|width=220|height=70|color=x|link=@天尊洗练#选择部位=8#返回洗练名=<$RING_L>#穿戴位置=8>
+<Img|id=380|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=381|index=8|showtips=1|x=0|y=3>
+<Text|id=382|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$RING_L>>
+<RText|id=383|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_8)>/FCOLOR=250>级>
+<Img|id=384|img=custom/hl/hl_ui/<$STR(S$洗练选择_8)>.png|x=0|y=0|width=220|height=70>
+;腰带
+<Layout|id=39|children={390,391,392,393,394}|width=220|height=70|color=x|link=@天尊洗练#选择部位=9#返回洗练名=<$BELT>#穿戴位置=10>
+<Img|id=390|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=391|index=10|showtips=1|x=0|y=3>
+<Text|id=392|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$BELT>>
+<RText|id=393|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_9)>/FCOLOR=250>级>
+<Img|id=394|img=custom/hl/hl_ui/<$STR(S$洗练选择_9)>.png|x=0|y=0|width=220|height=70>
+;靴
+<Layout|id=40|children={400,401,402,403,404}|width=220|height=70|color=x|link=@天尊洗练#选择部位=10#返回洗练名=<$BOOTS>#穿戴位置=11>
+<Img|id=400|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=401|index=11|showtips=1|x=0|y=3>
+<Text|id=402|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$BOOTS>>
+<RText|id=403|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_10)>/FCOLOR=250>级>
+<Img|id=404|img=custom/hl/hl_ui/<$STR(S$洗练选择_10)>.png|x=0|y=0|width=220|height=70>
+;勋章
+<Layout|id=41|children={410,411,412,413,414}|width=220|height=70|color=x|link=@天尊洗练#选择部位=11#返回洗练名=<$RIGHTHAND>#穿戴位置=2>
+<Img|id=410|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=411|index=2|showtips=1|x=0|y=3>
+<Text|id=412|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$RIGHTHAND>>
+<RText|id=413|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_11)>/FCOLOR=250>级>
+<Img|id=414|img=custom/hl/hl_ui/<$STR(S$洗练选择_11)>.png|x=0|y=0|width=220|height=70>
+#IF
+SMALL N$上级等级 10
+#SAY
+<Text|id=5|children={510}|x=260|y=65|color=255|size=18|outline=2|outlinecolor=0|text=洗练规则：消耗一定数量材料和货币可以对装备进行洗练>
+<RText|id=510|x=90|y=20|color=255|size=18|outline=2|outlinecolor=0|text=1、只有<11转/FCOLOR=250>及以上装备才可以洗练。>
+<Text|id=6|a=4|percentx=60|percenty=25|color=254|size=24|outline=2|outlinecolor=0|text=<$str(S$洗练选择名称)>>
+<Img|id=13|children={130}|a=4|percentx=60|percenty=36|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<DBItemShow|id=130|makeindex=<$STR(S$洗练选择IDX)>|x=0|y=3>
+<ListView|id=8|children={80,81,82,83,84,85}|a=4|percentx=62|percenty=75|width=210|height=70|margin=2|bounce=0|direction=2|color=X>
+<Img|id=80|children={800,801,802}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=800|itemid=<$str(S$洗练材料IDX_1)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=801|a=3|percentx=90|percenty=98|color=<$str(S$洗练材料颜色_1)>|size=16|outline=2|outlinecolor=0|text=<$str(S$洗练材料IDX_2)>>
+<Img|id=81|children={810,811,802}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=810|itemid=<$str(S$洗练材料IDX_3)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=811|a=3|percentx=90|percenty=98|color=<$str(S$洗练材料颜色_2)>|size=16|outline=2|outlinecolor=0|text=<$str(S$洗练材料IDX_4)>>
+<Img|id=82|children={820,821,802}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=820|children={820}|itemid=<$str(S$洗练材料IDX_5)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=821|a=3|percentx=90|percenty=98|color=<$str(S$洗练材料颜色_3)>|size=16|outline=2|outlinecolor=0|text=<$str(S$洗练材料IDX_6)>>
+<ItemShow|id=12|children={121,122}|itemid=7|itemcount=1|a=4|percentx=57|percenty=85|showtips=1|scale=0.7>
+<Text|id=121|x=60|y=18|color=<$str(S$洗练材料颜色_4)>|size=20|outline=2|outlinecolor=0|text=<$str(S$洗练材料IDX_8)>>
+<Button|id=122|x=10|y=55|color=<$str(S$洗练按钮颜色)>|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=装备洗练|link=@执行装备洗练>
+<$STR(S$洗练属性显示)>
+<Img|id=16|a=4|percentx=61|percenty=55|img=custom/hl/equal_hc/hlhc_05.png>
+#ELSESAY
+<Text|id=5|x=260|y=80|color=255|size=18|outline=2|outlinecolor=0|text=洗练规则：消耗一定数量材料和货币可以对装备进行洗练>
+<Text|id=6|a=4|percentx=60|percenty=25|color=254|size=24|outline=2|outlinecolor=0|text=<$str(S$洗练选择名称)>>
+<Img|id=13|children={130}|a=4|percentx=60|percenty=36|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<DBItemShow|id=130|makeindex=<$STR(S$洗练选择IDX)>|x=0|y=3>
+<Img|id=18|a=4|percentx=62|percenty=60|img=custom/hl/suoyaota_ui/max.png|y=1>
+
+
+[@天尊洗练]
+#IF
+#ACT
+MOV S$洗练右侧显示
+MOV S$洗练选择IDX
+MOV S$洗练选择名称
+MOV N$洗练等级_1 0
+MOV N$洗练等级_2 0
+MOV N$洗练等级_3 0
+MOV N$洗练等级_4 0
+MOV N$洗练等级_5 0
+MOV N$洗练等级_6 0
+MOV N$洗练等级_7 0
+MOV N$洗练等级_8 0
+MOV N$洗练等级_9 0
+MOV N$洗练等级_10 0
+MOV N$洗练等级_11 0
+MOV S$洗练材料IDX_1
+MOV S$洗练材料IDX_2
+MOV S$洗练材料IDX_3
+MOV S$洗练材料IDX_4
+MOV S$洗练材料IDX_5
+MOV S$洗练材料IDX_6
+MOV S$洗练材料IDX_7
+MOV S$洗练材料IDX_8
+MOV S$洗练材料颜色_1
+MOV S$洗练材料颜色_2
+MOV S$洗练材料颜色_3
+MOV S$洗练材料颜色_4
+MOV S$洗练按钮颜色
+GETHUMCUSTOMITEMVALUE 1 92 N$洗练等级_1 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 0 92 N$洗练等级_2 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 4 92 N$洗练等级_3 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 3 92 N$洗练等级_4 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 5 92 N$洗练等级_5 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 6 92 N$洗练等级_6 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 7 92 N$洗练等级_7 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 8 92 N$洗练等级_8 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 10 92 N$洗练等级_9 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 11 92 N$洗练等级_10 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 2 92 N$洗练等级_11 N$洗练自定义 0 1
+GOTO @读取洗练配置
+GOTO @洗练部位判定
+
+
+[@洗练部位判定]
+#IF
+#ACT
+MOV S$洗练控件串
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$WEAPON>
+NOT EQUAL <$WEAPON>
+#ACT
+INC S$洗练控件串 31,
+#IF
+EQUAL S$返回洗练名
+#ACT
+MOV S$选择部位 1
+MOV S$返回洗练名 <$WEAPON>
+MOV S$穿戴位置 1
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$DRESS>
+NOT EQUAL <$DRESS>
+#ACT
+INC S$洗练控件串 32,
+#IF
+EQUAL S$返回洗练名
+#ACT
+MOV S$选择部位 2
+MOV S$返回洗练名 <$DRESS>
+MOV S$穿戴位置 0
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$HELMET>
+NOT EQUAL <$HELMET>
+#ACT
+INC S$洗练控件串 33,
+#IF
+EQUAL S$返回洗练名
+#ACT
+MOV S$选择部位 3
+MOV S$返回洗练名 <$HELMET>
+MOV S$穿戴位置 4
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$NECKLACE>
+NOT EQUAL <$NECKLACE>
+#ACT
+INC S$洗练控件串 34,
+#IF
+EQUAL S$返回洗练名
+#ACT
+MOV S$选择部位 4
+MOV S$返回洗练名 <$NECKLACE>
+MOV S$穿戴位置 3
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$ARMRING_R>
+NOT EQUAL <$ARMRING_R>
+#ACT
+INC S$洗练控件串 35,
+#IF
+EQUAL S$返回洗练名
+#ACT
+MOV S$选择部位 5
+MOV S$返回洗练名 <$ARMRING_R>
+MOV S$穿戴位置 5
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$ARMRING_L>
+NOT EQUAL <$ARMRING_L>
+#ACT
+INC S$洗练控件串 36,
+#IF
+EQUAL S$返回洗练名
+#ACT
+MOV S$选择部位 6
+MOV S$返回洗练名 <$ARMRING_L>
+MOV S$穿戴位置 6
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$RING_R>
+NOT EQUAL <$RING_R>
+#ACT
+INC S$洗练控件串 37,
+#IF
+EQUAL S$返回洗练名
+#ACT
+MOV S$选择部位 7
+MOV S$返回洗练名 <$RING_R>
+MOV S$穿戴位置 7
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$RING_L>
+NOT EQUAL <$RING_L>
+#ACT
+INC S$洗练控件串 38,
+#IF
+EQUAL S$返回洗练名
+#ACT
+MOV S$选择部位 8
+MOV S$返回洗练名 <$RING_L>
+MOV S$穿戴位置 8
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$BELT>
+NOT EQUAL <$BELT>
+#ACT
+INC S$洗练控件串 39,
+#IF
+EQUAL S$返回洗练名
+#ACT
+MOV S$选择部位 9
+MOV S$返回洗练名 <$BELT>
+MOV S$穿戴位置 10
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$BOOTS>
+NOT EQUAL <$BOOTS>
+#ACT
+INC S$洗练控件串 40,
+#IF
+EQUAL S$返回洗练名
+#ACT
+MOV S$选择部位 10
+MOV S$返回洗练名 <$BOOTS>
+MOV S$穿戴位置 11
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$RIGHTHAND>
+NOT EQUAL <$RIGHTHAND>
+#ACT
+INC S$洗练控件串 41,
+#IF
+EQUAL S$返回洗练名
+#ACT
+MOV S$选择部位 11
+MOV S$返回洗练名 <$RIGHTHAND>
+MOV S$穿戴位置 2
+
+#IF
+EQUAL S$选择部位 1
+NOT EQUAL <$WEAPON>
+#ACT
+MOV S$洗练选择名称 <$WEAPON>
+MOV S$洗练选择IDX <$WEAPONID>
+MOV S$部位名 武器
+#IF
+EQUAL S$选择部位 2
+NOT EQUAL <$DRESS>
+#ACT
+MOV S$洗练选择名称 <$DRESS>
+MOV S$洗练选择IDX <$DRESSID>
+MOV S$部位名 衣服
+#IF
+EQUAL S$选择部位 3
+NOT EQUAL <$HELMET>
+#ACT
+MOV S$洗练选择名称 <$HELMET>
+MOV S$洗练选择IDX <$HELMETID>
+MOV S$部位名 防具
+#IF
+EQUAL S$选择部位 4
+NOT EQUAL <$NECKLACE>
+#ACT
+MOV S$洗练选择名称 <$NECKLACE>
+MOV S$洗练选择IDX <$NECKLACEID>
+MOV S$部位名 首饰
+#IF
+EQUAL S$选择部位 5
+NOT EQUAL <$ARMRING_R>
+#ACT
+MOV S$洗练选择名称 <$ARMRING_R>
+MOV S$洗练选择IDX <$ARMRING_RID>
+MOV S$部位名 首饰
+#IF
+EQUAL S$选择部位 6
+NOT EQUAL <$ARMRING_L>
+#ACT
+MOV S$洗练选择名称 <$ARMRING_L>
+MOV S$洗练选择IDX <$ARMRING_LID>
+MOV S$部位名 首饰
+#IF
+EQUAL S$选择部位 7
+NOT EQUAL <$RING_R>
+#ACT
+MOV S$洗练选择名称 <$RING_R>
+MOV S$洗练选择IDX <$RING_RID>
+MOV S$部位名 首饰
+#IF
+EQUAL S$选择部位 8
+NOT EQUAL <$RING_L>
+#ACT
+MOV S$洗练选择名称 <$RING_L>
+MOV S$洗练选择IDX <$RING_LID>
+MOV S$部位名 首饰
+#IF
+EQUAL S$选择部位 9
+NOT EQUAL <$BELT>
+#ACT
+MOV S$洗练选择名称 <$BELT>
+MOV S$洗练选择IDX <$BELTID>
+MOV S$部位名 防具
+#IF
+EQUAL S$选择部位 10
+NOT EQUAL <$BOOTS>
+#ACT
+MOV S$洗练选择名称 <$BOOTS>
+MOV S$洗练选择IDX <$BOOTSID>
+MOV S$部位名 防具
+#IF
+EQUAL S$选择部位 11
+NOT EQUAL <$RIGHTHAND>
+#ACT
+MOV S$洗练选择名称 <$RIGHTHAND>
+MOV S$洗练选择IDX <$RIGHTHANDID>
+MOV S$部位名 防具
+
+
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$str(S$洗练选择名称)> 
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\洗练配置.ini <$STR(N$洗练等级_<$str(S$选择部位)>)>级 <$STR(N$洗练等级_<$str(S$选择部位)>)>级_<$str(S$部位名)> S$洗练材料串
+GETVALIDSTRSUPER S$洗练材料串 | S$洗练材料IDX_
+GetDBIdxItemFieldValue <$str(S$洗练材料IDX_1)> name S$洗练材料_1
+GetDBIdxItemFieldValue <$str(S$洗练材料IDX_3)> name S$洗练材料_3
+GetDBIdxItemFieldValue <$str(S$洗练材料IDX_5)> name S$洗练材料_5
+#IF
+CHECKITEM <$str(S$洗练材料_1)> <$str(S$洗练材料IDX_2)>
+#ACT
+MOV S$洗练材料颜色_1 250
+#ELSEACT
+MOV S$洗练材料颜色_1 249
+#IF
+CHECKITEM <$str(S$洗练材料_3)> <$str(S$洗练材料IDX_4)>
+#ACT
+MOV S$洗练材料颜色_2 250
+#ELSEACT
+MOV S$洗练材料颜色_2 249
+#IF
+CHECKITEM <$str(S$洗练材料_5)> <$str(S$洗练材料IDX_6)>
+#ACT
+MOV S$洗练材料颜色_3 250
+#ELSEACT
+MOV S$洗练材料颜色_3 249
+
+#IF
+CHECKMONEY 火龙币 ? <$str(S$洗练材料IDX_8)>
+#ACT
+MOV S$洗练材料颜色_4 250
+#ELSEACT
+MOV S$洗练材料颜色_4 249
+
+#IF
+EQUAL S$洗练材料颜色_1 250
+EQUAL S$洗练材料颜色_2 250
+EQUAL S$洗练材料颜色_3 250
+EQUAL S$洗练材料颜色_4 250
+#ACT
+MOV S$洗练按钮颜色 103
+#ELSEACT
+MOV S$洗练按钮颜色 248
+
+#IF
+#ACT
+MOV S$洗练选择_1 
+MOV S$洗练选择_2
+MOV S$洗练选择_3 
+MOV S$洗练选择_4 
+MOV S$洗练选择_5 
+MOV S$洗练选择_6 
+MOV S$洗练选择_7 
+MOV S$洗练选择_8 
+MOV S$洗练选择_9
+MOV S$洗练选择_10 
+MOV S$洗练选择_11
+MOV S$洗练选择_<$STR(S$选择部位)> hl_xz_01
+MOV N$当前洗练等级 <$STR(N$洗练等级_<$str(S$选择部位)>)>
+MOV N$上级等级 <$STR(N$当前洗练等级)>
+INC N$当前洗练等级 1
+GetDBItemFieldValue <$STR(S$返回洗练名)> Attribute S$属性串
+MOV N$属性流水号 1
+MOV S$原始属性串1
+MOV S$原始属性串2
+MOV S$原始属性串3
+MOV S$原始属性串4
+MOV S$原始属性串5
+MOV S$原始属性串6
+MOV S$原始属性串7
+MOV S$原始属性串8
+MOV S$原始属性串9
+MOV S$原始属性串10
+MOV N$防御属性 0
+MOV N$魔防属性 0
+MOV N$攻击属性 0
+MOV N$魔法属性 0
+MOV N$道术属性 0
+MOV N$上级防御属性 0
+MOV N$上级魔防属性 0
+MOV N$上级攻击属性 0
+MOV N$上级魔法属性 0
+MOV N$上级道术属性 0
+MOV  S$洗练属性显示
+GETVALIDSTRSUPER S$属性串 | S$原始属性串
+GOTO @取洗练属性值
+
+#IF
+LARGE N$攻击属性 0
+#ACT
+INC S$洗练属性显示 <Layout|id=141|children={1410}|width=140|height=20|color=x>
+INC S$洗练属性显示 <RText|id=1410|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=攻击：<$str(N$上级攻击属性)>>
+INC S$洗练属性显示 <Layout|id=151|children={1510}|width=140|height=20|color=x>
+INC S$洗练属性显示 <RText|id=1510|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=攻击：<$str(N$攻击属性)>>
+#IF
+LARGE N$魔法属性 0
+#ACT
+INC S$洗练属性显示 <Layout|id=142|children={1420}|width=140|height=20|color=x>
+INC S$洗练属性显示 <RText|id=1420|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=魔法：<$str(N$上级魔法属性)>>
+INC S$洗练属性显示 <Layout|id=152|children={1520}|width=140|height=20|color=x>
+INC S$洗练属性显示 <RText|id=1520|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=魔法：<$str(N$魔法属性)>>
+#IF
+LARGE N$道术属性 0
+#ACT
+INC S$洗练属性显示 <Layout|id=143|children={1430}|width=140|height=20|color=x>
+INC S$洗练属性显示 <RText|id=1430|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=道术：<$str(N$上级道术属性)>>
+INC S$洗练属性显示 <Layout|id=153|children={1530}|width=140|height=20|color=x>
+INC S$洗练属性显示 <RText|id=1530|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=道术：<$str(N$道术属性)>>
+#IF
+LARGE N$防御属性 0
+#ACT
+INC S$洗练属性显示 <Layout|id=144|children={1440}|width=140|height=20|color=x>
+INC S$洗练属性显示 <RText|id=1440|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=防御：<$str(N$上级防御属性)>>
+INC S$洗练属性显示 <Layout|id=154|children={1540}|width=140|height=20|color=x>
+INC S$洗练属性显示 <RText|id=1540|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=防御：<$str(N$防御属性)>>
+#IF
+LARGE N$魔防属性 0
+#ACT
+INC S$洗练属性显示 <Layout|id=145|children={1450}|width=140|height=20|color=x>
+INC S$洗练属性显示 <RText|id=1450|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=魔防：<$str(N$上级魔防属性)>>
+INC S$洗练属性显示 <Layout|id=155|children={1550}|width=140|height=20|color=x>
+INC S$洗练属性显示 <RText|id=1550|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=魔防：<$str(N$魔防属性)>>
+
+#IF
+#ACT
+GOTO @装备洗练
+
+
+[@执行装备洗练]
+#IF
+LARGE N$洗练等级_<$STR(S$选择部位)> 9
+#ACT
+SENDMSG 9 <font color='#ff0000'>【<$str(S$返回洗练名)>】属性洗练已满</font>
+BREAK
+#IF
+CheckContainsText <$str(S$可洗练装备)> <$str(S$返回洗练名)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>【<$str(S$返回洗练名)>】不可洗练</font>
+BREAK
+
+#IF
+NOT EQUAL S$返回洗练名
+#ACT
+MOV N$当前洗练等级 <$STR(N$洗练等级_<$str(S$选择部位)>)>
+INC N$当前洗练等级 1
+GetDBItemFieldValue <$STR(S$洗练选择名称)> Attribute S$属性串
+MOV N$属性流水号 1
+MOV S$原始属性串1
+MOV S$原始属性串2
+MOV S$原始属性串3
+MOV S$原始属性串4
+MOV S$原始属性串5
+MOV S$原始属性串6
+MOV S$原始属性串7
+MOV S$原始属性串8
+MOV S$原始属性串9
+MOV S$原始属性串10
+MOV N$防御属性 0
+MOV N$魔防属性 0
+MOV N$攻击属性 0
+MOV N$魔法属性 0
+MOV N$道术属性 0
+MOV N$上级防御属性 0
+MOV N$上级魔防属性 0
+MOV N$上级攻击属性 0
+MOV N$上级魔法属性 0
+MOV N$上级道术属性 0
+GETVALIDSTRSUPER S$属性串 | S$原始属性串
+GOTO @取洗练属性值
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>尚未选择洗练的部位</font>
+BREAK
+#IF
+CHECKITEM <$str(S$洗练材料_1)> <$str(S$洗练材料IDX_2)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'><$str(S$洗练材料_1)>不足</font>
+BREAK
+#IF
+CHECKITEM <$str(S$洗练材料_3)> <$str(S$洗练材料IDX_4)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'><$str(S$洗练材料_3)>不足</font>
+BREAK
+#IF
+CHECKITEM <$str(S$洗练材料_5)> <$str(S$洗练材料IDX_6)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'><$str(S$洗练材料_5)>不足</font>
+BREAK
+
+#IF
+LARGE S$洗练材料IDX_8 0
+LARGE S$洗练材料IDX_4 0
+LARGE S$洗练材料IDX_6 0
+CHECKMONEY 火龙币 ? <$str(S$洗练材料IDX_8)>
+#ACT
+MONEY 火龙币 - <$str(S$洗练材料IDX_8)>
+TAKE <$str(S$洗练材料_1)> <$str(S$洗练材料IDX_2)>
+TAKE <$str(S$洗练材料_3)> <$str(S$洗练材料IDX_4)>
+TAKE <$str(S$洗练材料_5)> <$str(S$洗练材料IDX_6)>
+
+CHANGECUSTOMITEMTEXT <$str(S$穿戴位置)> [洗练品阶] 1
+CHANGECUSTOMITEMTEXTCOLOR <$str(S$穿戴位置)> 250 1
+CHANGECUSTOMITEMABIL  <$str(S$穿戴位置)> 0 0 254 1
+CHANGECUSTOMITEMABIL  <$str(S$穿戴位置)> 0 1 92 1
+CHANGECUSTOMITEMABIL  <$str(S$穿戴位置)> 0 2 34 1
+CHANGECUSTOMITEMABIL  <$str(S$穿戴位置)> 0 3 0 1
+CHANGECUSTOMITEMABIL  <$str(S$穿戴位置)> 0 4 0 1
+CHANGECUSTOMITEMVALUE <$str(S$穿戴位置)> 0 = <$STR(N$当前洗练等级)> 1
+SENDMSG 9 <font color='#00ff00'>洗练成功</font>
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=250}将装备{<$STR(S$洗练选择名称)>/FCOLOR=254}洗练到{<$STR(N$当前洗练等级)>级/FCOLOR=58}属性大幅度提升 1 5
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>火龙币不足</font>
+BREAK
+#IF
+LARGE N$攻击属性 0
+#ACT
+ChangeitemaddvaLue <$str(S$穿戴位置)> 2 = <$STR(N$攻击属性)>
+#IF
+LARGE N$魔法属性 0
+#ACT
+ChangeitemaddvaLue <$str(S$穿戴位置)> 3 = <$STR(N$魔法属性)>
+#IF
+LARGE N$道术属性 0
+#ACT
+ChangeitemaddvaLue <$str(S$穿戴位置)> 4 = <$STR(N$道术属性)>
+#IF
+LARGE N$防御属性 0
+#ACT
+ChangeitemaddvaLue <$str(S$穿戴位置)> 0 = <$STR(N$防御属性)>
+#IF
+LARGE N$魔防属性 0
+#ACT
+ChangeitemaddvaLue <$str(S$穿戴位置)> 1 = <$STR(N$魔防属性)>
+
+#IF
+#ACT
+INC U120 <$str(S$洗练材料IDX_8)>
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+GOTO @天尊洗练
+
+[@取洗练属性值]
+#IF
+NOT EQUAL S$原始属性串<$STR(N$属性流水号)>
+#ACT
+#ELSEACT
+BREAK
+#IF
+CheckContainsText <$STR(S$原始属性串<$STR(N$属性流水号)>)> #4#
+#ACT
+GETVALIDSTRSUPER S$原始属性串<$STR(N$属性流水号)> # S$攻击属性
+MOV N$攻击属性 <$STR(S$攻击属性3)>
+DIV N$攻击属性 10
+MOV N$上级攻击属性 <$STR(N$攻击属性)>
+MUL N$上级攻击属性 <$STR(N$上级等级)>
+MUL N$攻击属性 <$STR(N$当前洗练等级)>
+
+#IF
+CheckContainsText <$STR(S$原始属性串<$STR(N$属性流水号)>)> #6#
+#ACT
+GETVALIDSTRSUPER S$原始属性串<$STR(N$属性流水号)> # S$魔法属性
+MOV N$魔法属性 <$STR(S$魔法属性3)>
+DIV N$魔法属性 10
+MOV N$上级魔法属性 <$STR(N$魔法属性)>
+MUL N$上级魔法属性 <$STR(N$上级等级)>
+MUL N$魔法属性 <$STR(N$当前洗练等级)>
+
+#IF
+CheckContainsText <$STR(S$原始属性串<$STR(N$属性流水号)>)> #8#
+#ACT
+GETVALIDSTRSUPER S$原始属性串<$STR(N$属性流水号)> # S$道术属性
+MOV N$道术属性 <$STR(S$道术属性3)>
+DIV N$道术属性 10
+MOV N$上级道术属性 <$STR(N$道术属性)>
+MUL N$上级道术属性 <$STR(N$上级等级)>
+MUL N$道术属性 <$STR(N$当前洗练等级)>
+
+#IF
+CheckContainsText <$STR(S$原始属性串<$STR(N$属性流水号)>)> #10#
+#ACT
+GETVALIDSTRSUPER S$原始属性串<$STR(N$属性流水号)> # S$防御属性
+MOV N$防御属性 <$STR(S$防御属性3)>
+DIV N$防御属性 10
+MOV N$上级防御属性 <$STR(N$防御属性)>
+MUL N$上级防御属性 <$STR(N$上级等级)>
+MUL N$防御属性 <$STR(N$当前洗练等级)>
+
+#IF
+CheckContainsText <$STR(S$原始属性串<$STR(N$属性流水号)>)> #12#
+#ACT
+GETVALIDSTRSUPER S$原始属性串<$STR(N$属性流水号)> # S$魔防属性
+MOV N$魔防属性 <$STR(S$魔防属性3)>
+DIV N$魔防属性 10
+MOV N$上级魔防属性 <$STR(N$魔防属性)>
+MUL N$上级魔防属性 <$STR(N$上级等级)>
+MUL N$魔防属性 <$STR(N$当前洗练等级)>
+
+#IF
+#ACT
+INC N$属性流水号 1
+GOTO @取洗练属性值
+
+[@读取洗练配置]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\洗练配置.ini 洗练装备 套装1 S$散件串1
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\洗练配置.ini 洗练装备 套装2 S$散件串2
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\洗练配置.ini 洗练装备 套装3 S$散件串3
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\洗练配置.ini 洗练装备 套装4 S$散件串4
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\洗练配置.ini 洗练装备 套装5 S$散件串5
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\洗练配置.ini 洗练装备 套装6 S$散件串6
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\洗练配置.ini 洗练装备 套装7 S$散件串7
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\洗练配置.ini 洗练装备 套装8 S$散件串8
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\洗练配置.ini 洗练装备 套装9 S$散件串9
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\洗练配置.ini 洗练装备 套装10 S$散件串10
+MOV S$可洗练装备 <$str(S$散件串1)>|<$str(S$散件串2)>|<$str(S$散件串3)>|<$str(S$散件串4)>|<$str(S$散件串5)>|<$str(S$散件串6)>|<$str(S$散件串7)>|<$str(S$散件串8)>|<$str(S$散件串9)>|<$str(S$散件串10)>
+
+
+[@天尊进阶界面]
+#IF
+#ACT
+MOV S$选择部位
+MOV S$返回进阶名
+MOV S$穿戴位置
+GOTO @天尊进阶
+
+[@装备进阶]
+#IF
+#ACT
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|percentx=50|percenty=3.8|color=100|size=20|outline=2|outlinecolor=0|text=天尊进阶>
+<ListView|id=3|children={<$STR(S$进阶控件串)>}|x=20|y=60|width=220|height=450|margin=2|bounce=0|direction=1|color=X>
+
+<ListView|id=4|children={4001}|x=240|y=60|width=3|height=450|margin=2|bounce=0|direction=1|color=x>
+<Img|id=4001|img=custom/hl/hl_ui/hl_bg_02.png>
+
+<Layout|id=17|children={<$STR(S$侧边按钮串)>}|x=770|y=60|width=40|height=260|color=x>
+<Layout|id=70|children={700,701}|width=40|height=65|color=x|link=@侧边按钮#侧按钮序号=70>
+<Img|id=700|img=custom/hl/hl_ui/<$str(S$侧按钮图标_70)>.png>
+<Text|id=701|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_70)>|size=18|outline=2|outlinecolor=0|text=合\成>
+
+<Layout|id=71|children={710,711}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_71)>|link=@侧边按钮#侧按钮序号=71>
+<Img|id=710|img=custom/hl/hl_ui/<$str(S$侧按钮图标_71)>.png>
+<Text|id=711|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_71)>|size=18|outline=2|outlinecolor=0|text=洗\练>
+
+<Layout|id=72|children={720,721}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_72)>|link=@侧边按钮#侧按钮序号=72>
+<Img|id=720|img=custom/hl/hl_ui/<$str(S$侧按钮图标_72)>.png>
+<Text|id=721|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_72)>|size=18|outline=2|outlinecolor=0|text=进\阶>
+
+<Layout|id=73|children={730,731}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_73)>|link=@侧边按钮#侧按钮序号=73>
+<Img|id=730|img=custom/hl/hl_ui/<$str(S$侧按钮图标_73)>.png>
+<Text|id=731|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_73)>|size=18|outline=2|outlinecolor=0|text=分\解>
+
+
+;剑
+<Layout|id=31|children={310,311,312,313,314}|width=220|height=70|color=x|link=@天尊进阶#选择部位=1#返回进阶名=<$WEAPON>#穿戴位置=1>
+<Img|id=310|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=311|index=1|showtips=1|x=0|y=3>
+<Text|id=312|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$WEAPON>>
+<RText|id=313|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_1)>/FCOLOR=250>级>
+<Img|id=314|img=custom/hl/hl_ui/<$STR(S$进阶选择_1)>.png|x=0|y=0|width=220|height=70>
+;甲
+<Layout|id=32|children={320,321,322,323,324}|width=220|height=70|color=x|link=@天尊进阶#选择部位=2#返回进阶名=<$DRESS>#穿戴位置=0>
+<Img|id=320|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=321|index=0|showtips=1|x=0|y=3>
+<Text|id=322|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$DRESS>>
+<RText|id=323|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_2)>/FCOLOR=250>级>
+<Img|id=324|img=custom/hl/hl_ui/<$STR(S$进阶选择_2)>.png|x=0|y=0|width=220|height=70>
+;盔
+<Layout|id=33|children={330,331,332,333,334}|width=220|height=70|color=x|link=@天尊进阶#选择部位=3#返回进阶名=<$HELMET>#穿戴位置=4>
+<Img|id=330|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=331|index=4|showtips=1|x=0|y=3>
+<Text|id=332|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$HELMET>>
+<RText|id=333|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_3)>/FCOLOR=250>级>
+<Img|id=334|img=custom/hl/hl_ui/<$STR(S$进阶选择_3)>.png|x=0|y=0|width=220|height=70>
+;链
+<Layout|id=34|children={340,341,342,343,344}|width=220|height=70|color=x|link=@天尊进阶#选择部位=4#返回进阶名=<$NECKLACE>#穿戴位置=3>
+<Img|id=340|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=341|index=3|showtips=1|x=0|y=3>
+<Text|id=342|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$NECKLACE>>
+<RText|id=343|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_4)>/FCOLOR=250>级>
+<Img|id=344|img=custom/hl/hl_ui/<$STR(S$进阶选择_4)>.png|x=0|y=0|width=220|height=70>
+;镯
+<Layout|id=35|children={350,351,352,353,354}|width=220|height=70|color=x|link=@天尊进阶#选择部位=5#返回进阶名=<$ARMRING_R>#穿戴位置=5>
+<Img|id=350|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=351|index=5|showtips=1|x=0|y=3>
+<Text|id=352|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$ARMRING_R>>
+<RText|id=353|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_5)>/FCOLOR=250>级>
+<Img|id=354|img=custom/hl/hl_ui/<$STR(S$进阶选择_5)>.png|x=0|y=0|width=220|height=70>
+;镯
+<Layout|id=36|children={360,361,362,363,364}|width=220|height=70|color=x|link=@天尊进阶#选择部位=6#返回进阶名=<$ARMRING_L>#穿戴位置=6>
+<Img|id=360|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=361|index=6|showtips=1|x=0|y=3>
+<Text|id=362|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$ARMRING_L>>
+<RText|id=363|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_6)>/FCOLOR=250>级>
+<Img|id=364|img=custom/hl/hl_ui/<$STR(S$进阶选择_6)>.png|x=0|y=0|width=220|height=70>
+;戒
+<Layout|id=37|children={370,371,372,373,374}|width=220|height=70|color=x|link=@天尊进阶#选择部位=7#返回进阶名=<$RING_R>#穿戴位置=7>
+<Img|id=370|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=371|index=7|showtips=1|x=0|y=3>
+<Text|id=372|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$RING_R>>
+<RText|id=373|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_7)>/FCOLOR=250>级>
+<Img|id=374|img=custom/hl/hl_ui/<$STR(S$进阶选择_7)>.png|x=0|y=0|width=220|height=70>
+;戒
+<Layout|id=38|children={380,381,382,383,384}|width=220|height=70|color=x|link=@天尊进阶#选择部位=8#返回进阶名=<$RING_L>#穿戴位置=8>
+<Img|id=380|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=381|index=8|showtips=1|x=0|y=3>
+<Text|id=382|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$RING_L>>
+<RText|id=383|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_8)>/FCOLOR=250>级>
+<Img|id=384|img=custom/hl/hl_ui/<$STR(S$进阶选择_8)>.png|x=0|y=0|width=220|height=70>
+;腰带
+<Layout|id=39|children={390,391,392,393,394}|width=220|height=70|color=x|link=@天尊进阶#选择部位=9#返回进阶名=<$BELT>#穿戴位置=10>
+<Img|id=390|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=391|index=10|showtips=1|x=0|y=3>
+<Text|id=392|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$BELT>>
+<RText|id=393|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_9)>/FCOLOR=250>级>
+<Img|id=394|img=custom/hl/hl_ui/<$STR(S$进阶选择_9)>.png|x=0|y=0|width=220|height=70>
+;靴
+<Layout|id=40|children={400,401,402,403,404}|width=220|height=70|color=x|link=@天尊进阶#选择部位=10#返回进阶名=<$BOOTS>#穿戴位置=11>
+<Img|id=400|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=401|index=11|showtips=1|x=0|y=3>
+<Text|id=402|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$BOOTS>>
+<RText|id=403|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_10)>/FCOLOR=250>级>
+<Img|id=404|img=custom/hl/hl_ui/<$STR(S$进阶选择_10)>.png|x=0|y=0|width=220|height=70>
+;勋章
+<Layout|id=41|children={410,411,412,413,414}|width=220|height=70|color=x|link=@天尊进阶#选择部位=11#返回进阶名=<$RIGHTHAND>#穿戴位置=2>
+<Img|id=410|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<EquipShow|id=411|index=2|showtips=1|x=0|y=3>
+<Text|id=412|x=72|y=6|color=255|size=18|outline=2|outlinecolor=0|text=<$RIGHTHAND>>
+<RText|id=413|x=72|y=32|color=255|size=18|outline=2|outlinecolor=0|text=洗练等级:<<$STR(N$洗练等级_11)>/FCOLOR=250>级>
+<Img|id=414|img=custom/hl/hl_ui/<$STR(S$进阶选择_11)>.png|x=0|y=0|width=220|height=70>
+
+;右侧显示
+<ListView|id=5|children={50,51,52,53,54,55}|x=260|y=65|width=480|height=140|margin=0|bounce=0|direction=1|color=x>
+<Layout|id=50|children={500}|width=480|height=20|color=x>
+<RText|id=500|x=0|y=-5|color=254|size=18|outline=2|outlinecolor=0|text=进阶规则>
+<Layout|id=51|children={510}|width=480|height=20|color=x>
+<RText|id=510|x=0|y=-5|color=255|size=18|outline=2|outlinecolor=0|text=1、消耗一定数量<材料和货币/FCOLOR=249>可以将<装备进阶/FCOLOR=250>为更高一级装备>
+<Layout|id=52|children={520}|width=480|height=20|color=x>
+<RText|id=520|x=0|y=-5|color=255|size=18|outline=2|outlinecolor=0|text=2、洗练等级将<自动转移/FCOLOR=250>至新装备,11转及以上才可以转移>
+<Layout|id=53|children={530}|width=480|height=20|color=x>
+<RText|id=530|x=0|y=-5|color=255|size=18|outline=2|outlinecolor=0|text=3、<强化等级/FCOLOR=250>无法在该功能内自动转移，请确保装备强化等级>
+<Layout|id=54|children={540}|width=480|height=20|color=x>
+<RText|id=540|x=30|y=-5|color=255|size=18|outline=2|outlinecolor=0|text=<已转移/FCOLOR=250>，避免<强化等级丢失/FCOLOR=249>>
+
+
+<Text|id=6|a=4|percentx=50|percenty=42|color=254|size=20|outline=2|outlinecolor=0|text=<$str(S$进阶选择名称)>>
+<Img|id=13|children={130}|a=4|percentx=50|percenty=53|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<DBItemShow|id=130|makeindex=<$STR(S$进阶选择IDX)>|x=0|y=3>
+
+<Img|id=16|a=4|percentx=65|percenty=53|img=custom/hl/equal_hc/hlhc_05.png>
+#IF
+NOT CheckContainsText <$str(S$进阶选择名称)> 无极㊣唯我独尊
+#ACT
+#SAY
+<Text|id=14|a=4|percentx=80|percenty=42|color=254|size=20|outline=2|outlinecolor=0|text=<$str(S$进阶材料IDX_1)>>
+<Img|id=15|children={150}|a=4|percentx=80|percenty=53|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<ItemShow|id=150|itemid=<$str(S$下阶装备IDX)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<ListView|id=8|children={80,81,82,83,84,85}|a=4|percentx=65|percenty=75|width=280|height=70|margin=2|bounce=0|direction=2|color=X>
+<Img|id=80|children={800,801,802}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=800|itemid=<$str(S$进阶材料IDX_2)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=801|a=3|percentx=90|percenty=98|color=<$str(S$进阶材料颜色_1)>|size=16|outline=2|outlinecolor=0|text=<$str(S$进阶材料IDX_3)>>
+<Img|id=81|children={810,811,802}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=810|itemid=<$str(S$进阶材料IDX_4)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=811|a=3|percentx=90|percenty=98|color=<$str(S$进阶材料颜色_2)>|size=16|outline=2|outlinecolor=0|text=<$str(S$进阶材料IDX_5)>>
+<Img|id=82|children={820,821,802}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=820|children={820}|itemid=<$str(S$进阶材料IDX_6)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=821|a=3|percentx=90|percenty=98|color=<$str(S$进阶材料颜色_3)>|size=16|outline=2|outlinecolor=0|text=<$str(S$进阶材料IDX_7)>>
+<Img|id=83|children={830,831,802}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=830|children={830}|itemid=<$str(S$进阶材料IDX_8)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=831|a=3|percentx=90|percenty=98|color=<$str(S$进阶材料颜色_4)>|size=16|outline=2|outlinecolor=0|text=<$str(S$进阶材料IDX_9)>>
+<ItemShow|id=12|children={121,122}|itemid=7|itemcount=1|a=4|percentx=61|percenty=85|showtips=1|scale=0.7>
+<Text|id=121|x=60|y=18|color=<$str(S$进阶材料颜色_5)>|size=20|outline=2|outlinecolor=0|text=<$str(S$进阶材料IDX_11)>>
+<Button|id=122|x=10|y=55|color=<$str(S$进阶按钮颜色)>|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=装备进阶|link=@执行装备进阶>
+#ELSESAY
+<Img|id=15|children={150}|a=4|percentx=80|percenty=53|img=custom/hl/suoyaota_ui/max.png|y=1>
+
+
+
+[@天尊进阶]
+#IF
+#ACT
+MOV S$进阶选择IDX
+MOV S$进阶选择名称
+MOV N$洗练等级_1 0
+MOV N$洗练等级_2 0
+MOV N$洗练等级_3 0
+MOV N$洗练等级_4 0
+MOV N$洗练等级_5 0
+MOV N$洗练等级_6 0
+MOV N$洗练等级_7 0
+MOV N$洗练等级_8 0
+MOV N$洗练等级_9 0
+MOV N$洗练等级_10 0
+MOV N$洗练等级_11 0
+MOV S$进阶材料IDX_1
+MOV S$进阶材料IDX_2
+MOV S$进阶材料IDX_3
+MOV S$进阶材料IDX_4
+MOV S$进阶材料IDX_5
+MOV S$进阶材料IDX_6
+MOV S$进阶材料IDX_7
+MOV S$进阶材料IDX_8
+MOV S$进阶材料IDX_9
+MOV S$进阶材料IDX_10
+MOV S$进阶材料IDX_11
+MOV S$进阶材料颜色_1
+MOV S$进阶材料颜色_2
+MOV S$进阶材料颜色_3
+MOV S$进阶材料颜色_4
+MOV S$进阶材料颜色_5
+MOV S$进阶按钮颜色
+GETHUMCUSTOMITEMVALUE 1 92 N$洗练等级_1 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 0 92 N$洗练等级_2 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 4 92 N$洗练等级_3 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 3 92 N$洗练等级_4 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 5 92 N$洗练等级_5 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 6 92 N$洗练等级_6 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 7 92 N$洗练等级_7 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 8 92 N$洗练等级_8 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 10 92 N$洗练等级_9 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 11 92 N$洗练等级_10 N$洗练自定义 0 1
+GETHUMCUSTOMITEMVALUE 2 92 N$洗练等级_11 N$洗练自定义 0 1
+GOTO @读取进阶配置
+GOTO @进阶部位判定
+
+
+[@进阶部位判定]
+#IF
+#ACT
+MOV S$进阶控件串
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$WEAPON>
+NOT EQUAL <$WEAPON>
+#ACT
+INC S$进阶控件串 31,
+#IF
+EQUAL S$返回进阶名
+#ACT
+MOV S$选择部位 1
+MOV S$返回进阶名 <$WEAPON>
+MOV S$穿戴位置 1
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$DRESS>
+NOT EQUAL <$DRESS>
+#ACT
+INC S$进阶控件串 32,
+#IF
+EQUAL S$返回进阶名
+#ACT
+MOV S$选择部位 2
+MOV S$返回进阶名 <$DRESS>
+MOV S$穿戴位置 0
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$HELMET>
+NOT EQUAL <$HELMET>
+#ACT
+INC S$进阶控件串 33,
+#IF
+EQUAL S$返回进阶名
+#ACT
+MOV S$选择部位 3
+MOV S$返回进阶名 <$HELMET>
+MOV S$穿戴位置 4
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$NECKLACE>
+NOT EQUAL <$NECKLACE>
+#ACT
+INC S$进阶控件串 34,
+#IF
+EQUAL S$返回进阶名
+#ACT
+MOV S$选择部位 4
+MOV S$返回进阶名 <$NECKLACE>
+MOV S$穿戴位置 3
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$ARMRING_R>
+NOT EQUAL <$ARMRING_R>
+#ACT
+INC S$进阶控件串 35,
+#IF
+EQUAL S$返回进阶名
+#ACT
+MOV S$选择部位 5
+MOV S$返回进阶名 <$ARMRING_R>
+MOV S$穿戴位置 5
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$ARMRING_L>
+NOT EQUAL <$ARMRING_L>
+#ACT
+INC S$进阶控件串 36,
+#IF
+EQUAL S$返回进阶名
+#ACT
+MOV S$选择部位 6
+MOV S$返回进阶名 <$ARMRING_L>
+MOV S$穿戴位置 6
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$RING_R>
+NOT EQUAL <$RING_R>
+#ACT
+INC S$进阶控件串 37,
+#IF
+EQUAL S$返回进阶名
+#ACT
+MOV S$选择部位 7
+MOV S$返回进阶名 <$RING_R>
+MOV S$穿戴位置 7
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$RING_L>
+NOT EQUAL <$RING_L>
+#ACT
+INC S$进阶控件串 38,
+#IF
+EQUAL S$返回进阶名
+#ACT
+MOV S$选择部位 8
+MOV S$返回进阶名 <$RING_L>
+MOV S$穿戴位置 8
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$BELT>
+NOT EQUAL <$BELT>
+#ACT
+INC S$进阶控件串 39,
+#IF
+EQUAL S$返回进阶名
+#ACT
+MOV S$选择部位 9
+MOV S$返回进阶名 <$BELT>
+MOV S$穿戴位置 10
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$BOOTS>
+NOT EQUAL <$BOOTS>
+#ACT
+INC S$进阶控件串 40,
+#IF
+EQUAL S$返回进阶名
+#ACT
+MOV S$选择部位 10
+MOV S$返回进阶名 <$BOOTS>
+MOV S$穿戴位置 11
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$RIGHTHAND>
+NOT EQUAL <$RIGHTHAND>
+#ACT
+INC S$进阶控件串 41,
+#IF
+EQUAL S$返回进阶名
+#ACT
+MOV S$选择部位 11
+MOV S$返回进阶名 <$RIGHTHAND>
+MOV S$穿戴位置 2
+
+#IF
+EQUAL S$选择部位 1
+NOT EQUAL <$WEAPON>
+#ACT
+MOV S$进阶选择名称 <$WEAPON>
+MOV S$进阶选择IDX <$WEAPONID>
+#IF
+EQUAL S$选择部位 2
+NOT EQUAL <$DRESS>
+#ACT
+MOV S$进阶选择名称 <$DRESS>
+MOV S$进阶选择IDX <$DRESSID>
+#IF
+EQUAL S$选择部位 3
+NOT EQUAL <$HELMET>
+#ACT
+MOV S$进阶选择名称 <$HELMET>
+MOV S$进阶选择IDX <$HELMETID>
+#IF
+EQUAL S$选择部位 4
+NOT EQUAL <$NECKLACE>
+#ACT
+MOV S$进阶选择名称 <$NECKLACE>
+MOV S$进阶选择IDX <$NECKLACEID>
+#IF
+EQUAL S$选择部位 5
+NOT EQUAL <$ARMRING_R>
+#ACT
+MOV S$进阶选择名称 <$ARMRING_R>
+MOV S$进阶选择IDX <$ARMRING_RID>
+#IF
+EQUAL S$选择部位 6
+NOT EQUAL <$ARMRING_L>
+#ACT
+MOV S$进阶选择名称 <$ARMRING_L>
+MOV S$进阶选择IDX <$ARMRING_LID>
+#IF
+EQUAL S$选择部位 7
+NOT EQUAL <$RING_R>
+#ACT
+MOV S$进阶选择名称 <$RING_R>
+MOV S$进阶选择IDX <$RING_RID>
+#IF
+EQUAL S$选择部位 8
+NOT EQUAL <$RING_L>
+#ACT
+MOV S$进阶选择名称 <$RING_L>
+MOV S$进阶选择IDX <$RING_LID>
+#IF
+EQUAL S$选择部位 9
+NOT EQUAL <$BELT>
+#ACT
+MOV S$进阶选择名称 <$BELT>
+MOV S$进阶选择IDX <$BELTID>
+#IF
+EQUAL S$选择部位 10
+NOT EQUAL <$BOOTS>
+#ACT
+MOV S$进阶选择名称 <$BOOTS>
+MOV S$进阶选择IDX <$BOOTSID>
+#IF
+EQUAL S$选择部位 11
+NOT EQUAL <$RIGHTHAND>
+#ACT
+MOV S$进阶选择名称 <$RIGHTHAND>
+MOV S$进阶选择IDX <$RIGHTHANDID>
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$str(S$进阶选择名称)> 
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 进阶配置 <$str(S$进阶选择名称)> S$进阶材料串
+GETVALIDSTRSUPER S$进阶材料串 | S$进阶材料IDX_
+GetDBIdxItemFieldValue <$str(S$进阶材料IDX_2)> name S$进阶材料_2
+GetDBIdxItemFieldValue <$str(S$进阶材料IDX_4)> name S$进阶材料_4
+GetDBIdxItemFieldValue <$str(S$进阶材料IDX_6)> name S$进阶材料_6
+GetDBIdxItemFieldValue <$str(S$进阶材料IDX_8)> name S$进阶材料_8
+GetDBItemFieldValue <$str(S$进阶材料IDX_1)> idx S$下阶装备IDX
+#IF
+CHECKITEM <$str(S$进阶材料_2)> <$str(S$进阶材料IDX_3)>
+#ACT
+MOV S$进阶材料颜色_1 250
+#ELSEACT
+MOV S$进阶材料颜色_1 249
+#IF
+CHECKITEM <$str(S$进阶材料_4)> <$str(S$进阶材料IDX_5)>
+#ACT
+MOV S$进阶材料颜色_2 250
+#ELSEACT
+MOV S$进阶材料颜色_2 249
+#IF
+CHECKITEM <$str(S$进阶材料_6)> <$str(S$进阶材料IDX_7)>
+#ACT
+MOV S$进阶材料颜色_3 250
+#ELSEACT
+MOV S$进阶材料颜色_3 249
+#IF
+CHECKITEM <$str(S$进阶材料_8)> <$str(S$进阶材料IDX_9)>
+#ACT
+MOV S$进阶材料颜色_4 250
+#ELSEACT
+MOV S$进阶材料颜色_4 249
+
+#IF
+CHECKMONEY 火龙币 ? <$str(S$进阶材料IDX_11)>
+#ACT
+MOV S$进阶材料颜色_5 250
+#ELSEACT
+MOV S$进阶材料颜色_5 249
+
+#IF
+EQUAL S$进阶材料颜色_1 250
+EQUAL S$进阶材料颜色_2 250
+EQUAL S$进阶材料颜色_3 250
+EQUAL S$进阶材料颜色_4 250
+EQUAL S$进阶材料颜色_5 250
+#ACT
+MOV S$进阶按钮颜色 103
+#ELSEACT
+MOV S$进阶按钮颜色 248
+
+#IF
+#ACT
+MOV S$进阶选择_1 
+MOV S$进阶选择_2
+MOV S$进阶选择_3 
+MOV S$进阶选择_4 
+MOV S$进阶选择_5 
+MOV S$进阶选择_6 
+MOV S$进阶选择_7 
+MOV S$进阶选择_8 
+MOV S$进阶选择_9
+MOV S$进阶选择_10 
+MOV S$进阶选择_11
+MOV S$进阶选择_<$STR(S$选择部位)> hl_xz_01
+GOTO @装备进阶
+
+
+
+
+[@执行装备进阶]
+#IF
+CHECKBAGSIZE 5 
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留5个空格</font>
+BREAK
+#IF
+CheckContainsText <$str(S$可进阶装备)> <$str(S$返回进阶名)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>【<$str(S$返回进阶名)>】不可进阶</font>
+BREAK
+#OR
+LARGE <$RELEVEL> <$str(S$进阶材料IDX_13)>
+EQUAL <$RELEVEL> <$str(S$进阶材料IDX_13)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>转生等级不足<$str(S$进阶材料IDX_13)>级！</font>
+BREAK
+#IF
+CHECKITEM <$str(S$进阶材料_2)> <$str(S$进阶材料IDX_3)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'><$str(S$进阶材料_2)>不足</font>
+BREAK
+#IF
+CHECKITEM <$str(S$进阶材料_4)> <$str(S$进阶材料IDX_5)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'><$str(S$进阶材料_4)>不足</font>
+BREAK
+#IF
+CHECKITEM <$str(S$进阶材料_6)> <$str(S$进阶材料IDX_7)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'><$str(S$进阶材料_6)>不足</font>
+BREAK
+#IF
+CHECKITEM <$str(S$进阶材料_8)> <$str(S$进阶材料IDX_9)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'><$str(S$进阶材料_8)>不足</font>
+BREAK
+
+#IF
+CHECKMONEY 火龙币 ? <$str(S$进阶材料IDX_11)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 进阶配置 <$str(S$返回进阶名)> S$进阶材料串
+GETVALIDSTRSUPER S$进阶材料串 | S$进阶装备名
+GetDBItemFieldValue <$STR(S$进阶装备名1)> Attribute S$属性串
+MOV N$属性流水号 1
+MOV S$原始属性串1
+MOV S$原始属性串2
+MOV S$原始属性串3
+MOV S$原始属性串4
+MOV S$原始属性串5
+MOV S$原始属性串6
+MOV S$原始属性串7
+MOV S$原始属性串8
+MOV S$原始属性串9
+MOV S$原始属性串10
+MOV N$防御属性 0
+MOV N$魔防属性 0
+MOV N$攻击属性 0
+MOV N$魔法属性 0
+MOV N$道术属性 0
+MOV N$上级防御属性 0
+MOV N$上级魔防属性 0
+MOV N$上级攻击属性 0
+MOV N$上级魔法属性 0
+MOV N$上级道术属性 0
+MOV N$上级等级 <$str(N$洗练等级_<$str(S$选择部位)>)>
+GETVALIDSTRSUPER S$属性串 | S$原始属性串
+GOTO @取洗练属性值
+
+#IF
+LARGE S$进阶材料IDX_11 0
+LARGE S$进阶材料IDX_4 0
+LARGE S$进阶材料IDX_6 0
+LARGE S$进阶材料IDX_8 0
+CHECKMONEY 火龙币 ? <$str(S$进阶材料IDX_11)>
+#ACT
+MONEY 火龙币 - <$str(S$进阶材料IDX_11)>
+TAKE <$str(S$进阶材料_2)> <$str(S$进阶材料IDX_3)>
+TAKE <$str(S$进阶材料_4)> <$str(S$进阶材料IDX_5)>
+TAKE <$str(S$进阶材料_6)> <$str(S$进阶材料IDX_7)>
+TAKE <$str(S$进阶材料_8)> <$str(S$进阶材料IDX_9)>
+TAKEW <$str(S$返回进阶名)> 1
+GiveOnItem <$str(S$穿戴位置)> <$STR(S$进阶装备名1)> 1
+CHANGECUSTOMITEMTEXT <$str(S$穿戴位置)> [洗练品阶] 1
+CHANGECUSTOMITEMTEXTCOLOR <$str(S$穿戴位置)> 250 1
+CHANGECUSTOMITEMABIL  <$str(S$穿戴位置)> 0 0 254 1
+CHANGECUSTOMITEMABIL  <$str(S$穿戴位置)> 0 1 92 1
+CHANGECUSTOMITEMABIL  <$str(S$穿戴位置)> 0 2 34 1
+CHANGECUSTOMITEMABIL  <$str(S$穿戴位置)> 0 3 0 1
+CHANGECUSTOMITEMABIL  <$str(S$穿戴位置)> 0 4 0 1
+CHANGECUSTOMITEMVALUE <$str(S$穿戴位置)> 0 = <$STR(N$上级等级)> 1
+SENDMSG 9 <font color='#00ff00'>进阶成功</font>
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=250}将装备{<$str(S$返回进阶名)>/FCOLOR=254}成功进阶为{<$STR(S$进阶装备名1)>/FCOLOR=58}属性大幅度提升 1 5
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>火龙币不足</font>
+BREAK
+#IF
+LARGE N$上级攻击属性 0
+#ACT
+ChangeitemaddvaLue <$str(S$穿戴位置)> 2 = <$STR(N$上级攻击属性)>
+#IF
+LARGE N$上级魔法属性 0
+#ACT
+ChangeitemaddvaLue <$str(S$穿戴位置)> 3 = <$STR(N$上级魔法属性)>
+#IF
+LARGE N$上级道术属性 0
+#ACT
+ChangeitemaddvaLue <$str(S$穿戴位置)> 4 = <$STR(N$上级道术属性)>
+#IF
+LARGE N$上级防御属性 0
+#ACT
+ChangeitemaddvaLue <$str(S$穿戴位置)> 0 = <$STR(N$上级防御属性)>
+#IF
+LARGE N$上级魔防属性 0
+#ACT
+ChangeitemaddvaLue <$str(S$穿戴位置)> 1 = <$STR(N$上级魔防属性)>
+
+#IF
+#ACT
+INC U120 <$str(S$进阶材料IDX_11)>
+#CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
+MOV S$返回进阶名 <$STR(S$进阶装备名1)>
+GOTO @天尊进阶
+
+
+[@读取进阶配置]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 可进阶装备 套装1 S$散件串1
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 可进阶装备 套装2 S$散件串2
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 可进阶装备 套装3 S$散件串3
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 可进阶装备 套装4 S$散件串4
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 可进阶装备 套装5 S$散件串5
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 可进阶装备 套装6 S$散件串6
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 可进阶装备 套装7 S$散件串7
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 可进阶装备 套装8 S$散件串8
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 可进阶装备 套装9 S$散件串9
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\进阶配置.ini 可进阶装备 套装10 S$散件串10
+MOV S$可进阶装备 <$str(S$散件串1)>|<$str(S$散件串2)>|<$str(S$散件串3)>|<$str(S$散件串4)>|<$str(S$散件串5)>|<$str(S$散件串6)>|<$str(S$散件串7)>|<$str(S$散件串8)>|<$str(S$散件串9)>|<$str(S$散件串10)>
+
+
+[@天尊装备分解]
+#IF
+#ACT
+MOV S0
+MOV S$分解装备名
+GOTO @天尊分解检测
+
+
+[@天尊分解界面]
+#IF
+#ACT
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|percentx=50|percenty=3.8|color=100|size=20|outline=2|outlinecolor=0|text=天尊分解>
+<ListView|id=3|children={30}|x=25|y=60|width=220|height=450|margin=2|bounce=0|direction=1|color=x>
+<BAGITEMS|id=30|condition=5,10,11,15,19,26,22,54,52,30|select=<$STR(S0)>|selecttype=1|count=40|row=14|filter3=<$STR(S$可分解装备)>|link=@天尊分解选择>
+
+<ListView|id=4|children={4001}|x=240|y=60|width=3|height=450|margin=2|bounce=0|direction=1|color=x>
+<Img|id=4001|img=custom/hl/hl_ui/hl_bg_02.png>
+
+<Layout|id=17|children={<$STR(S$侧边按钮串)>}|x=770|y=60|width=40|height=260|color=x>
+<Layout|id=70|children={700,701}|width=40|height=65|color=x|link=@侧边按钮#侧按钮序号=70>
+<Img|id=700|img=custom/hl/hl_ui/<$str(S$侧按钮图标_70)>.png>
+<Text|id=701|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_70)>|size=18|outline=2|outlinecolor=0|text=合\成>
+
+<Layout|id=71|children={710,711}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_71)>|link=@侧边按钮#侧按钮序号=71>
+<Img|id=710|img=custom/hl/hl_ui/<$str(S$侧按钮图标_71)>.png>
+<Text|id=711|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_71)>|size=18|outline=2|outlinecolor=0|text=洗\练>
+
+<Layout|id=72|children={720,721}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_72)>|link=@侧边按钮#侧按钮序号=72>
+<Img|id=720|img=custom/hl/hl_ui/<$str(S$侧按钮图标_72)>.png>
+<Text|id=721|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_72)>|size=18|outline=2|outlinecolor=0|text=进\阶>
+
+<Layout|id=73|children={730,731}|width=40|height=65|color=x|y=<$str(S$侧按钮Y_73)>|link=@侧边按钮#侧按钮序号=73>
+<Img|id=730|img=custom/hl/hl_ui/<$str(S$侧按钮图标_73)>.png>
+<Text|id=731|a=4|percentx=35|percenty=45|color=<$str(S$侧按钮颜色_73)>|size=18|outline=2|outlinecolor=0|text=分\解>
+
+<ListView|id=5|children={50,51,52,53,54,55}|x=260|y=65|width=480|height=140|margin=0|bounce=0|direction=1|color=x>
+<Layout|id=50|children={500}|width=480|height=20|color=x>
+<RText|id=500|x=0|y=-5|color=251|size=18|outline=2|outlinecolor=0|text=分解规则>
+<Layout|id=51|children={510}|width=480|height=20|color=x>
+<RText|id=510|x=0|y=-5|color=255|size=18|outline=2|outlinecolor=0|text=1、只有<11转/FCOLOR=250>及以上装备才可以分解。>
+<Layout|id=52|children={520}|width=480|height=20|color=x>
+<RText|id=520|x=0|y=-5|color=255|size=18|outline=2|outlinecolor=0|text=2、分解将获得该装备基础合成价值的<50%/FCOLOR=250>，其他加成无效。>
+<Layout|id=53|children={530}|width=480|height=20|color=x>
+<RText|id=530|x=0|y=-5|color=255|size=18|outline=2|outlinecolor=0|text=3、<请谨慎分解，高级装备得之不易，一经分解概不退回/FCOLOR=249>。>
+
+<Text|id=6|a=4|percentx=62|percenty=35|color=254|size=20|outline=2|outlinecolor=0|text=<$str(S$分解装备名)>>
+<Img|id=13|children={130}|a=4|percentx=62|percenty=45|img=custom/hl/equip_xlqh/xyqh_dj.png|y=1>
+<DBItemShow|id=130|makeindex=<$STR(S0)>|x=0|y=3>
+
+#IF
+CheckContainsText <$str(S$可分解装备)> <$str(S$分解装备名)>
+#SAY
+<ListView|id=8|children={80,81,82,83,84,85}|a=4|percentx=63|percenty=70|width=350|height=70|margin=2|bounce=0|direction=2|color=X>
+<Img|id=80|children={800,801,802}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=800|itemid=<$str(S$分解收益IDX_1)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=801|a=3|percentx=90|percenty=98|color=250|size=16|outline=2|outlinecolor=0|text=<$str(S$分解收益IDX_2)>>
+<Img|id=81|children={810,811,812}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=810|itemid=<$str(S$分解收益IDX_3)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=811|a=3|percentx=90|percenty=98|color=250|size=16|outline=2|outlinecolor=0|text=<$str(S$分解收益IDX_4)>>
+<Img|id=82|children={820,821,822}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=820|children={820}|itemid=<$str(S$分解收益IDX_5)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=821|a=3|percentx=90|percenty=98|color=250|size=16|outline=2|outlinecolor=0|text=<$str(S$分解收益IDX_6)>>
+<Img|id=83|children={830,831,832}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=830|children={830}|itemid=<$str(S$分解收益IDX_7)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=831|a=3|percentx=90|percenty=98|color=250|size=16|outline=2|outlinecolor=0|text=<$str(S$分解收益IDX_8)>>
+<Img|id=84|children={840,841,842}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<ItemShow|id=840|children={840}|itemid=7|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+<RText|id=841|a=3|percentx=90|percenty=98|color=250|size=16|outline=2|outlinecolor=0|text=<$str(S$分解收益IDX_10)>>
+<Button|id=12|a=4|percentx=64|percenty=84|color=103|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=天尊分解|link=@执行天尊分解>
+#ELSESAY
+<ListView|id=8|children={80,81,82,83,84,85}|a=4|percentx=63|percenty=70|width=350|height=70|margin=2|bounce=0|direction=2|color=X>
+<Img|id=80|children={800,801,802}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<Img|id=81|children={810,811,812}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<Img|id=82|children={820,821,822}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<Img|id=83|children={830,831,832}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<Img|id=84|children={840,841,842}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+<Button|id=12|a=4|percentx=64|percenty=84|color=248|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=天尊分解>
+
+
+
+[@执行天尊分解]
+#IF
+CheckContainsText <$str(S$可分解装备)> <$str(S$分解装备名)>
+#ACT
+TAKE <$str(S$分解装备名)> 1
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 分解配置 <$str(S$分解装备名)> S$分解收益串
+GETVALIDSTRSUPER S$分解收益串 | S$分解收益IDX_
+GetDBIdxItemFieldValue <$str(S$分解收益IDX_1)> name S$分解收益_1
+GetDBIdxItemFieldValue <$str(S$分解收益IDX_3)> name S$分解收益_3
+GetDBIdxItemFieldValue <$str(S$分解收益IDX_5)> name S$分解收益_5
+GetDBIdxItemFieldValue <$str(S$分解收益IDX_7)> name S$分解收益_7
+GiveStateItem <$str(S$分解收益_1)> <$str(S$分解收益IDX_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$str(S$分解收益_3)> <$str(S$分解收益IDX_4)> 0 1 0 1 1 1 1 1
+GiveStateItem <$str(S$分解收益_5)> <$str(S$分解收益IDX_6)> 0 1 0 1 1 1 1 1
+GiveStateItem <$str(S$分解收益_7)> <$str(S$分解收益IDX_8)> 0 1 0 1 1 1 1 1
+MONEY 火龙币 + <$str(S$分解收益IDX_10)>
+MOV S$分解装备名
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=250}成功分解{<$str(S$分解装备名)>/FCOLOR=58}海量材料等你来拿 1 5
+GOTO @天尊装备分解
+BREAK
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请选择需要分解的装备</font>
+BREAK
+
+[@天尊分解选择]
+#IF
+#ACT
+MOV S$分解收益IDX_1
+MOV S$分解收益IDX_2
+MOV S$分解收益IDX_3
+MOV S$分解收益IDX_4
+MOV S$分解收益IDX_5
+MOV S$分解收益IDX_6
+MOV S$分解收益IDX_7
+MOV S$分解收益IDX_8
+MOV S$分解收益IDX_9
+MOV S$分解收益IDX_10
+MOV S$分解收益_1
+MOV S$分解收益_2
+MOV S$分解收益_3
+MOV S$分解收益_4
+MOV S$分解收益_5
+MOV S$分解收益_6
+MOV S$分解收益_7
+MOV S$分解收益_8
+MOV S$分解收益_9
+MOV S$分解收益_10
+GetItemNameByMakeIndex <$STR(S0)> S$分解装备名
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 分解配置 <$str(S$分解装备名)> S$分解收益串
+GETVALIDSTRSUPER S$分解收益串 | S$分解收益IDX_
+GetDBIdxItemFieldValue <$str(S$分解收益IDX_1)> name S$分解收益_1
+GetDBIdxItemFieldValue <$str(S$分解收益IDX_3)> name S$分解收益_3
+GetDBIdxItemFieldValue <$str(S$分解收益IDX_5)> name S$分解收益_5
+GetDBIdxItemFieldValue <$str(S$分解收益IDX_7)> name S$分解收益_7
+GOTO @天尊分解界面
+
+
+
+[@天尊分解检测]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 可分解装备 套装1 S$散件串1
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 可分解装备 套装2 S$散件串2
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 可分解装备 套装3 S$散件串3
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 可分解装备 套装4 S$散件串4
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 可分解装备 套装5 S$散件串5
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 可分解装备 套装6 S$散件串6
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 可分解装备 套装7 S$散件串7
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 可分解装备 套装8 S$散件串8
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 可分解装备 套装9 S$散件串9
+ReadConfigFileItem ..\QuestDiary\游戏功能\天尊熔炉\天尊分解配置.ini 可分解装备 套装10 S$散件串10
+MOV S$可分解装备 <$str(S$散件串1)>,<$str(S$散件串2)>,<$str(S$散件串3)>,<$str(S$散件串4)>,<$str(S$散件串5)>,<$str(S$散件串6)>,<$str(S$散件串7)>,<$str(S$散件串8)>,<$str(S$散件串9)>,<$str(S$散件串10)>
+GOTO @天尊分解界面
+
+
+
+
+
+
+}

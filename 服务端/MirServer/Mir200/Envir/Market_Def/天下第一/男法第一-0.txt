@@ -1,0 +1,89 @@
+[@MAIN]
+#IF
+#ACT
+MOV S$第一男法记录 <$STR(A269)>
+GetValidstr <$STR(S$第一男法记录)> | S$第一转生_男法 S$经验串
+GetValidstr <$STR(S$经验串)> | S$第一等级_男法 S$第一攻击力_男法 
+MOV N$第一攻击力_男法 <$STR(S$第一攻击力_男法)>
+MOV N$第一转生_男法 <$STR(S$第一转生_男法)>
+MOV N$第一等级_男法 <$STR(S$第一等级_男法)>
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|height=260|img=custom/hl/hl_ui/tsbj.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+<Layout|id=0|children={1}|x=452|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=170|y=10|width=120|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=天下第一>
+<Layout|id=3|children={31,32,33,34,35}|x=30|y=50|width=422|height=168|color=x>
+<Text|id=34|x=130|y=8|color=251|size=18|outline=2|outlinecolor=0|text=申请男法天下第一>
+<RText|id=31|x=0|y=40|color=254|size=18|outline=2|outlinecolor=0|text=[属性介绍]:<蓝量+220　魔法10-10/FCOLOR=250>>
+<RText|id=32|x=0|y=65|color=254|size=18|outline=2|outlinecolor=0|text=[称号归属]:<<$STR(A263)>/FCOLOR=249>>
+<RText|id=33|x=0|y=90|color=254|size=18|outline=2|outlinecolor=0|text=[等级转生]:<<$STR(N$第一转生_男法)>转　<$STR(N$第一等级_男法)>级/FCOLOR=250>>
+<RText|id=35|x=0|y=115|color=191|size=18|outline=2|outlinecolor=0|text=[魔  法  力]:【<<$STR(N$第一攻击力_男法)>/FCOLOR=253>】>
+<Button|id=4|x=145|y=195|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=申请第一|link=@申请男法第一>
+
+
+[@申请男法第一]
+#IF
+gender man
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>你不是男性玩家！</font>
+BREAK
+
+#IF
+CHECKJOB Wizard
+#ACT
+MOV N$给男法第一 0
+MOV S$第一男法记录 <$STR(A269)>
+GetValidstr <$STR(S$第一男法记录)> | S$第一转生_男法 S$经验串
+GetValidstr <$STR(S$经验串)> | S$第一等级_男法 S$第一攻击力_男法 
+MOV N$第一攻击力_男法 <$STR(S$第一攻击力_男法)>
+MOV N$第一转生_男法 <$STR(S$第一转生_男法)>
+MOV N$第一等级_男法 <$STR(S$第一等级_男法)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>你的职业不是法师！</font>
+BREAK
+
+#IF
+LARGE <$MAXMC> <$STR(N$第一攻击力_男法)>
+#ACT
+MOV S$上届第一男法 <$STR(A263)>
+MOV A263 <$USERNAME>
+MOV A269 <$RELEVEL>|<$LEVEL>|<$MAXMC>
+HCALL <$USERNAME> @天下第一更新
+HCALL <$STR(S$上届第一男法)> @天下第一更新
+#CALL [\属性刷新.txt] @属性刷新
+S$上届第一男法.sendmsg 7 你的【天下第一男法】称号已经被【<$STR(A263)>】顶替。
+sendmsg 7 恭喜你登顶【天下第一男法】。
+SENDMSGNEW 255 0 玩家:<$USERNAME>在比奇皇宫天下第一处成功申请【天下第一男法】,属性大幅度提升。 1 5
+GOTO @MAIN
+BREAK
+
+#IF
+EQUAL <$MAXMC> <$STR(N$第一攻击力_男法)>
+EQUAL A263 <$USERNAME>
+#ACT
+SENDMSG 9 <font color='#ff0000'>您已上榜，请勿重复提交！</font>
+BREAK
+
+#IF
+#ACT
+SENDMSG 9 <font color='#ff0000'>你的资历不足，再去历练一下吧！</font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

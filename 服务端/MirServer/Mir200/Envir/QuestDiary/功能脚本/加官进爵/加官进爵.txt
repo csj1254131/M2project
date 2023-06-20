@@ -1,0 +1,272 @@
+[@加官进爵]
+{
+
+#IF
+#ACT
+Mov    s$升官特效_1
+Mov    s$升官特效_2
+Mov    n$途径窗口 0
+Goto   @加官进爵初始
+
+[@加官进爵初始]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 当前gj  s$当前gj
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 当前pj  s$当前pj
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 当前sx s$当前sx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 当前xx s$当前xx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 当前ts  s$当前ts
+
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级pj  s$下级pj
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级sx s$下级sx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级xx s$下级xx
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级ts s$下级ts
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级clmc s$下级clmc
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级clid  s$下级clid
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级clsl   s$下级clsl
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级ybsl  s$下级ybsl
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 下级dj     s$下级dj
+
+
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 消耗_1     s$消耗_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 消耗_2     s$消耗_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(u28)>阶 激活_2     s$激活_2
+
+
+#IF
+LARGE  U27 9
+SMALL U28 6
+#ACT
+Mov n$u28 <$str(u28)>
+inc   n$u28 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 消耗_1     s$消耗_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 消耗_2     s$消耗_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 激活_2     s$激活_2
+
+#IF
+LARGE  U27 9
+EQUAL U28 6
+#ACT
+Mov n$u28 <$str(u28)>
+Dec  n$u28 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 消耗_1     s$消耗_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 消耗_2     s$消耗_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官印配置.ini <$str(n$u28)>阶 激活_2     s$激活_2
+
+
+
+
+
+
+#if 
+checkitem <$STR(s$下级clmc)> <$str(s$下级clsl)>
+#act 
+Mov s$材料ys 250
+
+#ELSEACT
+Mov s$材料ys 249
+Mov s$官职红点
+
+
+#if 
+CheckBindMoney 元宝 ? <$STR(s$下级ybsl)>
+#act 
+Mov s$元宝ys 250
+#ELSEACT
+Mov s$元宝ys 249
+
+
+
+#IF
+CHECKJOB Warrior
+#ACT
+Mov s$Job 攻击
+#IF
+CHECKJOB Wizard
+#ACT
+Mov s$Job 魔法
+#IF
+CHECKJOB Taoist
+#ACT
+Mov s$Job 道术
+#IF
+#ACT
+#CALL [\功能脚本\加官进爵\官职红点.txt] @官职红点
+Goto @加官进爵展示
+[@加官进爵展示]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png|reload=1|layerid=674>
+<Img|a=4|children={0,2,3,20,22,40,41,34,30}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|a=4|id=2|text=加官进爵|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Img|a=4|id=3|children={4,5,6,7,8,9,11,12,13,14,15,16,17,19}|img=custom/hl/jiaguanjinjue_ui/bg_guanzhi_01.jpg|percentx=50|percenty=54>
+<Img|a=4|id=5|img=custom/hl/hl_ui/zyjt.png|percentx=50|percenty=40>
+<Text|a=4|id=4|text=当前官职品级：<$Str(s$当前gj)>|color=251|size=18|outline=2|outlinecolor=0|percentx=50|percenty=5>
+<Img|a=4|id=6|img=custom/hl/jiaguanjinjue_ui/<$Str(s$当前pj)>.png|percentx=20|percenty=18>
+
+<Img|a=4|id=8|children={80,81,82,83}|img=custom/hl/zhuansheng_ui/bg_hhzy_01_1.png|percentx=20|percenty=40|width=270|height=130|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+<$Str(s$升官特效_1)>
+<$Str(s$升官特效_2)>
+
+<Layout|id=30|children={31}|x=771|y=55|width=60|height=80|color=x>
+<Img|id=31|children={32,33,32a}|img=custom/hl/hl_ui/cbl_1.png>
+<Text|a=4|id=32|text=官|color=100|size=17|outline=2|outlinecolor=0|percentx=40|percenty=25>
+<Text|a=4|id=33|text=职|color=100|size=17|outline=2|outlinecolor=0|percentx=40|percenty=50>
+<Img|id=32a|img=custom/hl/hl_ui/<$Str(s$官职红点)>.png|x=15|y=5>
+
+
+<Layout|id=34|children={35}|x=771|y=133|width=60|height=80|color=x|link=@跳转官印>
+<Img|id=35|children={36,37,36a}|img=custom/hl/hl_ui/cbl_2.png|link=@跳转官印>
+<Text|a=4|id=36|text=官|color=10|size=17|outline=2|outlinecolor=0|percentx=40|percenty=25>
+<Text|a=4|id=37|text=印|color=10|size=17|outline=2|outlinecolor=0|percentx=40|percenty=50>
+<Img|id=36a|img=custom/hl/hl_ui/<$Str(s$官印红点)>.png|x=15|y=5>
+
+#IF
+LARGE U23 0
+#SAY
+<Text|id=80|text=攻击：<$Str(s$当前sx)>-<$Str(s$当前xx)>|color=255|size=18|outline=2|outlinecolor=0|x=95|y=8>
+<Text|id=81|text=魔法：<$Str(s$当前sx)>-<$Str(s$当前xx)>|color=255|size=18|outline=2|outlinecolor=0|x=95|y=38>
+<Text|id=82|text=道术：<$Str(s$当前sx)>-<$Str(s$当前xx)>|color=255|size=18|outline=2|outlinecolor=0|x=95|y=68>
+<Text|id=83|text=打怪爆率：<$Str(s$当前ts)>%|color=255|size=18|outline=2|outlinecolor=0|x=85|y=98>
+
+#IF
+#SAY
+<Img|a=4|id=9|children={90,91,92,93}|img=custom/hl/zhuansheng_ui/bg_hhzy_01_1.png|percentx=80|percenty=40|width=270|height=130|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+<Text|a=4|id=90|text=请前往三大陆晋升|color=250|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+
+
+#IF
+SMALL U23 11
+#SAY
+<Img|a=4|id=7|img=custom/hl/jiaguanjinjue_ui/<$Str(s$下级pj)>.png|percentx=80|percenty=18>
+<Text|id=90|text=攻击：<$Str(s$下级sx)>-<$Str(s$下级xx)>|color=250|size=18|outline=2|outlinecolor=0|x=95|y=8>
+<Text|id=91|text=魔法：<$Str(s$下级sx)>-<$Str(s$下级xx)>|color=250|size=18|outline=2|outlinecolor=0|x=95|y=38>
+<Text|id=92|text=道术：<$Str(s$下级sx)>-<$Str(s$下级xx)>|color=250|size=18|outline=2|outlinecolor=0|x=95|y=68>
+<Text|id=93|text=打怪爆率：<$Str(s$下级ts)>%|color=250|size=18|outline=2|outlinecolor=0|x=85|y=98>
+
+<Text|a=4|id=11|text=消耗材料：|color=255|size=18|outline=2|outlinecolor=0|percentx=30|percenty=82>
+
+<ItemShow|a=4|id=12|children={12a}|itemid=<$Str(s$下级clid)>|itemcount=1|showtips=1|bgtype=1|percentx=40|percenty=82>
+<Text|a=4|id=12a|text=<$Str(s$下级clsl)>|color=<$Str(s$材料ys)>|size=17|outline=2|outlinecolor=0|percentx=82|percenty=80>
+
+
+<Img|a=4|id=15|img=custom/hl/hl_ui/icon_add_01.png|percentx=50|percenty=82>
+<RText|id=16|text=<<$Str(s$下级ybsl)>/FCOLOR=<$Str(s$元宝ys)>> 元宝|color=255|size=18|outline=2|outlinecolor=0|x=400|y=350>
+<Button|a=4|id=17|children={18,18a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=95|link=@官职升级>
+<Img|id=18a|img=custom/hl/hl_ui/<$Str(s$官职红点)>.png|x=95|y=5>
+
+<Text|a=4|id=18|text=官职升级|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Text|a=4|id=19|text=获取途径|color=250|size=18|outline=2|outlinecolor=0|percentx=94|percenty=96|link=@官职途径>
+
+
+#IF
+EQUAL N$途径窗口 1
+#SAY
+<Img|a=4|id=20|children={21}|img=custom/hl/hl_ui/hqtj.png|percentx=74.5|percenty=54>
+<Img|a=4|id=21|children={210,211,212,213,214,215,216,217,218,219}|img=custom/hl/hl_ui/hqtj_1.jpg|percentx=50|percenty=50|width=334|height=422>
+<Text|a=4|id=210|text=获取途径|color=251|size=18|outline=2|outlinecolor=0|percentx=50|percenty=5>
+<Text|a=4|id=211|text=官职高爆地图|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=15>
+<Button|a=4|id=215|children={215a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=30|link=@官职传送_1>
+<Text|a=4|id=215a|text=<$Str(s$地图mc_1)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|a=4|id=216|children={216a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=40|link=@官职传送_2>
+<Text|a=4|id=216a|text=<$Str(s$地图mc_2)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|a=4|id=217|children={217a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=50|link=@官职传送_3>
+<Text|a=4|id=217a|text=<$Str(s$地图mc_3)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Text|a=4|id=219|text=点击按钮直接前往|color=250|size=18|outline=2|outlinecolor=0|percentx=50|percenty=80>
+
+<Button|a=4|id=22|children={220,221}|nimg=custom/hl/hl_ui/1900012110.png|percentx=48.9|percenty=18|link=@官职途径>
+<Text|a=4|id=220|text=关|color=100|size=18|outline=2|outlinecolor=0|percentx=55|percenty=25>
+<Text|a=4|id=221|text=闭|color=100|size=18|outline=2|outlinecolor=0|percentx=55|percenty=65>
+
+[@官职途径]
+#IF
+EQUAL N$途径窗口 0
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini 地图 地图mc_1 s$地图mc_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini 地图 地图cs_1 s$地图cs_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini 地图 地图mc_2 s$地图mc_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini 地图 地图cs_2 s$地图cs_2
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini 地图 地图mc_3 s$地图mc_3
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini 地图 地图cs_3 s$地图cs_3
+Mov  N$途径窗口 1
+Goto @加官进爵展示
+BREAK
+#IF
+#ACT
+Mov  N$途径窗口 0
+Goto @加官进爵展示
+BREAK
+
+[@官职传送_1]
+#IF
+#ACT
+OPENNPCSHOWEX <$Str(s$地图cs_1)>
+CLOSE
+[@官职传送_2]
+#IF
+#ACT
+OPENNPCSHOWEX  <$Str(s$地图cs_2)>
+CLOSE
+[@官职传送_3]
+#IF
+#ACT
+OPENNPCSHOWEX  <$Str(s$地图cs_3)>
+CLOSE
+[@官职升级]
+#IF
+LARGE U23 10
+#ACT
+SENDMSG 9 <font color='#ff0000'>当前官职已经满级，无法再进行提升</font>
+break
+
+
+#if
+checkitem <$STR(s$下级clmc)> <$str(s$下级clsl)>
+#act 
+#elseact
+SENDMSG 9 <font color='#ff0000'>您当前没有<$STR(s$下级clmc)>x<$str(s$下级clsl)>，无法进行提升</font>
+break
+#if 
+CheckBindMoney 元宝 ? <$STR(s$下级ybsl)>
+#act 
+TAKE <$STR(s$下级clmc)> <$str(s$下级clsl)>
+ChangeBindMoney 元宝  <$STR(s$下级ybsl)>
+INC  U23 1
+Mov u24 <$Str(s$下级sx)>
+Mov u25 <$Str(s$下级xx)>
+Mov u26 <$Str(s$下级ts)>
+Mov s$升官特效_1 <Effect|a=4|id=40|percentx=50|percenty=30|effecttype=0|effectid=5019|dir=5|scale=1|act=0|speed=1|count=1>
+Mov s$升官特效_2 <Effect|a=4|id=41|percentx=50|percenty=30|effecttype=0|effectid=5025|dir=5|scale=1|act=0|speed=1|count=1>
+ReadConfigFileItem ..\QuestDiary\功能脚本\加官进爵\官职配置.ini <$str(u23)>品 当前gj  s$当前gj
+SENDMSGNEW 250 0 {<$USERNAME>/FCOLOR=251}官职达到{<$Str(s$当前gj)>/FCOLOR=249}，打怪爆率大幅提升 1 2
+CALCVAR HUMAN 顶戴展示一 = <$STR(u23)>
+SAVEVAR HUMAN 顶戴展示一
+#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+#Call [\属性刷新.txt] @属性刷新
+#Call [\爆率刷新.txt] @爆率刷新
+#Call [\顶戴刷新.txt] @顶戴刷新
+goto @加官进爵初始
+goto @官职支线完成
+break
+#elseact
+SENDMSG 9 <font color='#ff0000'>您当前没有元宝x<$STR(s$下级ybsl)>，无法进行提升</font>
+break
+
+[@跳转官印]
+#ACT
+#CALL [\功能脚本\加官进爵\加官官印.txt] @加官官印
+
+[@官职支线完成]
+#IF
+LARGE <$STR(U23)> 0
+check [422] 1
+check [423] 0
+#ACT
+set [423] 1
+NEWCHANGETASK 34
+close
+break
+
+}

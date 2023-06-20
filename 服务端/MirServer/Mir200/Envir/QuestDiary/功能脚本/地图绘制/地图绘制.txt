@@ -1,0 +1,37 @@
+[@地图绘制]
+{
+#IF
+#ACT
+Mov s$地图状态 地　图
+Mov s$地图状态ys 100
+#IF
+#ACT
+MOV   S$地图边框 <Img|x=-18|y=-37|img=custom/hl/xtd_ui/1.png|link=@空>
+INC     S$地图边框 <Img|children={9}|x=-18|y=-42|img=custom/hl/xtd_ui/2.png|link=@空>
+INC     S$地图边框 <Img|x=611|y=-37|img=custom/hl/xtd_ui/3.png|link=@空>
+INC     S$地图边框 <Img|x=-18|y=464|img=custom/hl/xtd_ui/4.png|width=774|link=@空>
+INC     S$地图边框 <Img|x=611|y=18|img=custom/hl/hl_ui/fg_1.png|height=448>
+
+INC     S$地图边框 <Text|id=9|text=<$Str(s$地图状态)>|color=<$Str(s$地图状态ys)>|size=20|outline=2|outlinecolor=0|percentx=46|percenty=10>
+
+INC     S$地图边框 <Button|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|x=752|y=-36|link=@关闭地图>
+INC     S$地图边框 <Button|children={1,2}|nimg=custom/hl/hl_ui/1900000662.png|pimg=custom/hl/hl_ui/1900000663.png|x=620|y=306|link=@地图回城>
+INC     S$地图边框 <Text|a=4|id=1|text=立即回城|color=100|size=18|outline=2|outlinecolor=0|percentx=40|percenty=50>
+INC     S$地图边框 <Img|a=4|id=2|img=custom/hl/xtd_ui/icon_minumap_01.png|percentx=85|percenty=50>
+
+INC     S$地图边框 <Button|children={3,4}|nimg=custom/hl/hl_ui/1900000662.png|pimg=custom/hl/hl_ui/1900000663.png|x=620|y=346|link=@地图随机>
+INC     S$地图边框 <Text|a=4|id=3|text=地图随机|color=100|size=18|outline=2|outlinecolor=0|percentx=40|percenty=50>
+INC     S$地图边框 <Img|a=4|id=4|img=custom/hl/xtd_ui/icon_minumap_02.png|percentx=85|percenty=50>
+
+INC     S$地图边框 <Button|children={5,6}|nimg=custom/hl/hl_ui/1900000662.png|pimg=custom/hl/hl_ui/1900000663.png|x=620|y=386|link=@召唤队员>
+INC     S$地图边框 <Text|a=4|id=5|text=队伍召集|color=100|size=18|outline=2|outlinecolor=0|percentx=40|percenty=50>
+INC     S$地图边框 <Img|a=4|id=6|img=custom/hl/xtd_ui/icon_minumap_03.png|percentx=85|percenty=50>
+
+INC     S$地图边框 <Button|children={7,8}|nimg=custom/hl/hl_ui/1900000662.png|pimg=custom/hl/hl_ui/1900000663.png|x=620|y=426|link=@召唤行会成员>
+INC     S$地图边框 <Text|a=4|id=7|text=行会召集|color=100|size=18|outline=2|outlinecolor=0|percentx=40|percenty=50>
+INC     S$地图边框 <Img|a=4|id=8|img=custom/hl/xtd_ui/icon_minumap_04.png|percentx=85|percenty=50>
+ADDBUTTON 8 1 <$STR(S$地图边框)>
+
+
+
+}

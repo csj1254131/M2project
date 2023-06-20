@@ -1,0 +1,242 @@
+[@等级排行]
+{
+#IF
+#ACT
+SortHumVar   A_等级排行  S$排行玩家 n$排行等级 0 1 50
+HumVarRank A_等级排行  N$我的排行 0 1
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 开放日期 s$开放日期
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 开服充值 开放时间 n$开放时间
+Taketime  <$Str(s$开放日期)> <$DATETIME>
+DEC  n$开放时间 <$Timeresult>
+Mov  n$排名序号 1
+
+#IF
+SMALL N$我的排行 49
+#ACT
+Mov s$我的排名 <$Str(N$我的排行)>
+#elseact
+Mov s$我的排名 未上榜
+#IF
+#ACT
+Goto @等级排名读取
+
+[@等级排名读取]
+#IF
+small n$排名序号 10
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 排行奖励  排行奖励idx_<$Str(n$排名序号)> s$排行奖励idx_<$Str(n$排名序号)>
+ReadConfigFileItem ..\QuestDiary\功能脚本\开区活动\开区配置.ini 排行奖励  排行奖励mc_<$Str(n$排名序号)> s$排行奖励mc_<$Str(n$排名序号)>
+INC n$排名序号 1
+Goto @等级排名读取
+BREAK
+
+#IF
+#ACT
+Mov s$排行刷新 reload=1|loadDelay=1|loadCount=11|loadStep=1
+Goto @等级排名展示
+
+[@等级排名展示]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png|<$Str(s$排行刷新)>>
+<Img|a=4|children={0,8,2,900,910}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|a=4|id=2|text=开服活动|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+
+<Img|a=4|id=8|children={3,9a,9b,9c,9d,9e,9f,9g,10}|img=custom/hl/kqhd_ui/djph.jpg|percentx=50|percenty=54>
+
+<Layout|id=3|children={4,5,6,7}|width=115|height=165|x=3.5|y=5|color=x>
+<Button|id=4|children={4a}|nimg=custom/hl/hl_ui/115_2.png|link=@跳转每日充值>
+<Text|a=4|id=4a|text=连续充值|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=5|children={5a}|nimg=custom/hl/hl_ui/115_2.png|y=41|link=@跳转等级目标>
+<Text|a=4|id=5a|text=等级目标|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=6|children={6a}|nimg=custom/hl/hl_ui/115_1.png|y=82|link=@等级排行>
+<Text|a=4|id=6a|text=等级排行|x=30|y=20|size=18|color=100|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=7|children={7a}|nimg=custom/hl/hl_ui/115_2.png|y=123|link=@跳转装备首爆>
+<Text|a=4|id=7a|text=装备首爆|x=30|y=20|size=18|color=10|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Layout|id=9a|children={90a,91a,92a,93a,94a}|width=610|height=96|color=x|x=125>
+<Text|id=90a|text=剩余时间：|x=20|y=10|size=16|color=255|outline=2|outlinecolor=0>
+<TIMETIPS|id=91a|time=<$str(n$开放时间)>|color=250|size=16|outline=2|outlinecolor=0|x=105|y=10>
+<Text|id=92a|text=活动说明： 活动结束时，前50名玩家可获得入榜奖励|x=20|y=40|size=16|color=x|outline=2|outlinecolor=0>
+<Text|id=94a|text=第1-10额外获得排名奖励|x=20|y=70|size=16|color=x|outline=2|outlinecolor=0>
+<Button|id=93a|nimg=custom/hl/kqhd_ui/tstj.png|x=525|y=18|link=@跳转排行途径>
+<Text|id=9c|text=等级前50的玩家可入榜|x=150|y=390|size=18|color=100|outline=2|outlinecolor=0>
+<Text|id=9d|text=我的排名：|x=350|y=390|size=18|color=255|outline=2|outlinecolor=0>
+<Text|id=9e|text=<$Str(s$我的排名)>|x=440|y=390|size=18|color=250|outline=2|outlinecolor=0>
+<Text|id=9f|text=入榜奖励：|x=530|y=390|size=18|color=100|outline=2|outlinecolor=0>
+<ItemShow|id=9g|itemid=<$Str(s$排行奖励idx1_1)>|itemcount=1|showtips=1|bgtype=1|x=620|y=370>
+
+#IF
+EQUAL N$排行途径 1
+#SAY
+<Img|a=4|id=900|children={902}|img=custom/hl/hl_ui/hqtj.png|percentx=74.5|percenty=54>
+<Img|a=4|id=902|children={903,904,905,906,907,908,909}|img=custom/hl/hl_ui/hqtj_1.jpg|percentx=50|percenty=50|width=334|height=422>
+<Text|a=4|id=903|text=提升途径|color=251|size=18|outline=2|outlinecolor=0|percentx=50|percenty=5>
+<Text|a=4|id=904|text=转生材料高爆地图|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=15>
+<Button|a=4|id=905|children={905a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=30|link=@转生传送_1>
+<Text|a=4|id=905a|text=<$Str(s$地图mc_1)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|a=4|id=906|children={906a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=40|link=@转生传送_2>
+<Text|a=4|id=906a|text=<$Str(s$地图mc_2)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|a=4|id=907|children={907a}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=50|link=@转生传送_3>
+<Text|a=4|id=907a|text=<$Str(s$地图mc_3)>|color=100|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Text|a=4|id=909|text=点击按钮直接前往|color=250|size=18|outline=2|outlinecolor=0|percentx=50|percenty=80>
+<Button|a=4|id=910|children={911,912}|nimg=custom/hl/hl_ui/1900012110.png|percentx=48.9|percenty=18|link=@跳转排行途径>
+<Text|a=4|id=911|text=关|color=100|size=18|outline=2|outlinecolor=0|percentx=55|percenty=25>
+<Text|a=4|id=912|text=闭|color=100|size=18|outline=2|outlinecolor=0|percentx=55|percenty=65>
+
+
+#IF
+#SAY
+<Text|id=9b|text=　    排名　　　　　　　  玩家　　　　　　　　　  奖励　　　　|x=120|y=103|size=18|color=100|outline=2|outlinecolor=0>
+<ListView|id=10|children={20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400,410,420,430,440,450,460,470,480,490,500,510,520,530,540,550,560,570,580,590,600,610,620,630,640,650,660,670,680,690,700,710,720,730,740,750,760,770,780,790,800,810}|direction=1|bounce=0|margin=2|width=605|height=218|x=128|y=140|color=x>
+<Layout|id=20|children={21,22,23,24,25,26,27,28}|width=605|height=101|color=x>
+<Img|id=21|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Img|id=22|img=custom/hl/kqhd_ui/1.png|x=20|y=25>
+
+<ItemShow|id=25|itemid=<$Str(s$排行奖励idx1_1)>|itemcount=1|showtips=1|bgtype=1|x=320|y=17>
+<ItemShow|id=26|itemid=<$Str(s$排行奖励idx1_2)>|itemcount=1|showtips=1|bgtype=1|x=400|y=17>
+<ItemShow|id=27|itemid=<$Str(s$排行奖励idx1_3)>|itemcount=1|showtips=1|bgtype=1|x=480|y=17>
+
+
+
+<Layout|id=30|children={31,32,33,34,35,36,37,38}|width=605|height=101|color=x>
+<Img|id=31|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Img|id=32|img=custom/hl/kqhd_ui/2.png|x=25|y=25>
+
+<ItemShow|id=35|itemid=<$Str(s$排行奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=320|y=17>
+<ItemShow|id=36|itemid=<$Str(s$排行奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=400|y=17>
+;<ItemShow|id=37|itemid=<$Str(s$排行奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=480|y=17>
+<Layout|id=40|children={41,42,43,44,45,46,47,48}|width=605|height=101|color=x>
+<Img|id=41|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Img|id=42|img=custom/hl/kqhd_ui/3.png|x=25|y=25>
+
+<ItemShow|id=45|itemid=<$Str(s$排行奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=320|y=17>
+<ItemShow|id=46|itemid=<$Str(s$排行奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=400|y=17>
+;<ItemShow|id=47|itemid=<$Str(s$排行奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=480|y=17>
+
+<Layout|id=50|children={51,52,53,54,55,56,57,58}|width=605|height=101|color=x>
+<Img|id=51|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=52|text=No.4|size=18|color=255|outline=2|outlinecolor=0|x=25|y=25>
+
+<ItemShow|id=55|itemid=<$Str(s$排行奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=320|y=17>
+<ItemShow|id=56|itemid=<$Str(s$排行奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=400|y=17>
+;<ItemShow|id=57|itemid=<$Str(s$排行奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=480|y=17>
+
+<Layout|id=60|children={61,62,63,64,65,66,67,68}|width=605|height=101|color=x>
+<Img|id=61|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=62|text=No.5|size=18|color=255|outline=2|outlinecolor=0|x=25|y=25>
+
+<ItemShow|id=65|itemid=<$Str(s$排行奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=320|y=17>
+<ItemShow|id=66|itemid=<$Str(s$排行奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=400|y=17>
+;<ItemShow|id=57|itemid=<$Str(s$排行奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=480|y=17>
+
+<Layout|id=70|children={71,72,73,74,75,76,77,78}|width=605|height=101|color=x>
+<Img|id=71|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=72|text=No.6|size=18|color=255|outline=2|outlinecolor=0|x=25|y=25>
+
+<ItemShow|id=75|itemid=<$Str(s$排行奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=320|y=17>
+<ItemShow|id=76|itemid=<$Str(s$排行奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=400|y=17>
+;<ItemShow|id=57|itemid=<$Str(s$排行奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=480|y=17>
+
+<Layout|id=80|children={81,82,83,84,85,86,87,88}|width=605|height=101|color=x>
+<Img|id=81|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=82|text=No.7|size=18|color=255|outline=2|outlinecolor=0|x=25|y=25>
+
+<ItemShow|id=85|itemid=<$Str(s$排行奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=320|y=17>
+<ItemShow|id=86|itemid=<$Str(s$排行奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=400|y=17>
+;<ItemShow|id=57|itemid=<$Str(s$排行奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=480|y=17>
+
+<Layout|id=90|children={91,92,93,94,95,96,97,98}|width=605|height=101|color=x>
+<Img|id=91|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=92|text=No.8|size=18|color=255|outline=2|outlinecolor=0|x=25|y=25>
+
+<ItemShow|id=95|itemid=<$Str(s$排行奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=320|y=17>
+<ItemShow|id=96|itemid=<$Str(s$排行奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=400|y=17>
+;<ItemShow|id=57|itemid=<$Str(s$排行奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=480|y=17>
+
+<Layout|id=100|children={101,102,103,104,105,106,107,108}|width=605|height=101|color=x>
+<Img|id=101|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=102|text=No.9|size=18|color=255|outline=2|outlinecolor=0|x=25|y=25>
+
+<ItemShow|id=105|itemid=<$Str(s$排行奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=320|y=17>
+<ItemShow|id=106|itemid=<$Str(s$排行奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=400|y=17>
+;<ItemShow|id=107|itemid=<$Str(s$排行奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=480|y=17>
+
+<Layout|id=110|children={111,112,113,114,115,116,117,118}|width=605|height=101|color=x>
+<Img|id=111|img=custom/hl/hl_ui/rwbjt_1.png|width=605>
+<Text|id=112|text=No.10|size=18|color=255|outline=2|outlinecolor=0|x=25|y=25>
+
+<ItemShow|id=115|itemid=<$Str(s$排行奖励idx2_1)>|itemcount=1|showtips=1|bgtype=1|x=320|y=17>
+<ItemShow|id=116|itemid=<$Str(s$排行奖励idx2_2)>|itemcount=1|showtips=1|bgtype=1|x=400|y=17>
+;<ItemShow|id=107|itemid=<$Str(s$排行奖励idx2_3)>|itemcount=1|showtips=1|bgtype=1|x=480|y=17>
+
+
+#IF
+LARGE n$排行等级1 0
+#SAY
+<Text|a=4|id=23|text=<$Str(s$排行玩家1)>|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=30>
+<Text|a=4|id=24|text=<$Str(n$排行等级1)>级|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=60>
+#IF
+LARGE n$排行等级2 0
+#SAY
+<Text|a=4|id=33|text=<$Str(s$排行玩家2)>|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=30>
+<Text|a=4|id=34|text=<$Str(n$排行等级2)>级|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=60>
+#IF
+LARGE n$排行等级3 0
+#SAY
+<Text|a=4|id=43|text=<$Str(s$排行玩家3)>|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=30>
+<Text|a=4|id=44|text=<$Str(n$排行等级3)>级|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=60>
+#IF
+LARGE n$排行等级4 0
+#SAY
+<Text|a=4|id=53|text=<$Str(s$排行玩家4)>|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=30>
+<Text|a=4|id=54|text=<$Str(n$排行等级4)>级|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=60>
+
+#IF
+LARGE n$排行等级5 0
+#SAY
+<Text|a=4|id=63|text=<$Str(s$排行玩家5)>|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=30>
+<Text|a=4|id=64|text=<$Str(n$排行等级5)>级|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=60>
+
+#IF
+LARGE n$排行等级6 0
+#SAY
+<Text|a=4|id=73|text=<$Str(s$排行玩家6)>|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=30>
+<Text|a=4|id=74|text=<$Str(n$排行等级6)>级|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=60>
+
+
+#IF
+LARGE n$排行等级7 0
+#SAY
+<Text|a=4|id=83|text=<$Str(s$排行玩家7)>|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=30>
+<Text|a=4|id=84|text=<$Str(n$排行等级7)>级|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=60>
+#IF
+LARGE n$排行等级8 0
+#SAY
+<Text|a=4|id=93|text=<$Str(s$排行玩家8)>|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=30>
+<Text|a=4|id=94|text=<$Str(n$排行等级8)>级|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=60>
+#IF
+LARGE n$排行等级9 0
+#SAY
+<Text|a=4|id=103|text=<$Str(s$排行玩家9)>|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=30>
+<Text|a=4|id=104|text=<$Str(n$排行等级9)>级|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=60>
+#IF
+LARGE n$排行等级10 0
+#SAY
+<Text|a=4|id=113|text=<$Str(s$排行玩家10)>|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=30>
+<Text|a=4|id=114|text=<$Str(n$排行等级10)>级|size=18|color=69|outline=2|outlinecolor=0|percentx=36.5|percenty=60>
+
+[@跳转排行途径]
+#IF
+EQUAL N$排行途径 0
+#ACT
+Mov N$排行途径 1
+Mov s$排行刷新 reload=1|loadDelay=1|loadCount=20|loadStep=5
+Goto @等级排名展示
+Break
+#IF
+#ACT
+Mov N$排行途径 0
+Mov s$排行刷新 reload=1|loadDelay=1|loadCount=25|loadStep=5
+Goto @等级排名展示
+Break
+}

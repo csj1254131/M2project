@@ -1,0 +1,47 @@
+[@切割]
+{
+#IF
+#ACT
+
+[@对怪增伤]
+#IF
+EQUAL A201 <$USERNAME>
+#ACT
+ChangeHumNewValue 41 5 2000000
+
+#IF
+EQUAL A202 <$USERNAME>
+#ACT
+ChangeHumNewValue 41 4 2000000
+
+#IF
+EQUAL A203 <$USERNAME>
+#ACT
+MOV S$我的排名 第三名
+ChangeHumNewValue 41 3 2000000
+
+#IF
+EQUAL A204 <$USERNAME>
+#ACT
+MOV S$我的排名 第四名
+ChangeHumNewValue 41 2 2000000
+
+#IF
+EQUAL A205 <$USERNAME>
+#ACT
+MOV S$我的排名 第五名
+ChangeHumNewValue 41 2 2000000
+
+#IF
+EQUAL A206 <$USERNAME>
+#ACT
+MOV S$我的排名 第六名
+ChangeHumNewValue 41 1 2000000
+
+
+
+
+
+
+
+}

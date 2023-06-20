@@ -1,0 +1,15 @@
+[@赞助红点]
+{
+#or
+EQUAL U14 1
+EQUAL U15 1
+EQUAL U16 1
+#act
+MOV S$赞助红点  icon_red_01
+INC   S$图标1 <Img|id=20|x=55|y=5|img=custom/hl/hl_ui/<$Str(S$赞助红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+#elseact
+MOV S$赞助红点
+INC   S$图标1 <Img|id=20|x=55|y=5|img=custom/hl/hl_ui/<$Str(S$赞助红点)>.png>
+addbutton 102 1 <$STR(S$图标1)>
+}

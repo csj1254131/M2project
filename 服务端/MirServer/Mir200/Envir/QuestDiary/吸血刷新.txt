@@ -1,0 +1,37 @@
+[@吸血刷新]
+{
+#IF
+#ACT
+GOTO @吸血清零
+
+;---------沙捐
+#IF
+Equal <$HUMAN(沙城捐献)> 已开启
+#Act
+Inc N$C_吸血 500
+
+;---------火龙元神
+#IF
+LARGE U1 0
+#ACT
+MUL N1 <$STR(U1)> 100
+INC N$C_吸血 <$STR(N1)>
+
+
+#IF
+#ACT
+GOTO @吸血叠加
+
+[@吸血叠加]
+#if
+#act
+ChangeModeEx 20 200000000 100 <$STR(N$C_吸血)>
+break
+
+[@吸血清零]
+#IF
+#ACT
+MOV N$C_吸血 0
+break
+
+}

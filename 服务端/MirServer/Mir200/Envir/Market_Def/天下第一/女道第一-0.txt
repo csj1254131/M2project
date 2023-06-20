@@ -1,0 +1,89 @@
+[@MAIN]
+#IF
+#ACT
+MOV S$第一女道记录 <$STR(A272)>
+GetValidstr <$STR(S$第一女道记录)> | S$第一转生_女道 S$经验串
+GetValidstr <$STR(S$经验串)> | S$第一等级_女道 S$第一攻击力_女道 
+MOV N$第一攻击力_女道 <$STR(S$第一攻击力_女道)>
+MOV N$第一转生_女道 <$STR(S$第一转生_女道)>
+MOV N$第一等级_女道 <$STR(S$第一等级_女道)>
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|height=260|img=custom/hl/hl_ui/tsbj.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+<Layout|id=0|children={1}|x=452|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=170|y=10|width=120|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=天下第一>
+<Layout|id=3|children={31,32,33,34,35}|x=30|y=50|width=422|height=168|color=x>
+<Text|id=34|x=130|y=8|color=251|size=18|outline=2|outlinecolor=0|text=申请女道天下第一>
+<RText|id=31|x=0|y=40|color=254|size=18|outline=2|outlinecolor=0|text=[属性介绍]:<血量+150　蓝量+110　道术10-10/FCOLOR=250>>
+<RText|id=32|x=0|y=65|color=254|size=18|outline=2|outlinecolor=0|text=[称号归属]:<<$STR(A266)>/FCOLOR=249>>
+<RText|id=33|x=0|y=90|color=254|size=18|outline=2|outlinecolor=0|text=[等级转生]:<<$STR(N$第一转生_女道)>转　<$STR(N$第一等级_女道)>级/FCOLOR=250>>
+<RText|id=35|x=0|y=115|color=191|size=18|outline=2|outlinecolor=0|text=[道  术  力]:【<<$STR(N$第一攻击力_女道)>/FCOLOR=253>】>
+<Button|id=4|x=145|y=195|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=申请第一|link=@申请女道第一>
+
+
+[@申请女道第一]
+#IF
+gender woman
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>你不是女性玩家！</font>
+BREAK
+
+#IF
+CHECKJOB Taoist
+#ACT
+MOV N$给女道第一 0
+MOV S$第一女道记录 <$STR(A272)>
+GetValidstr <$STR(S$第一女道记录)> | S$第一转生_女道 S$经验串
+GetValidstr <$STR(S$经验串)> | S$第一等级_女道 S$第一攻击力_女道 
+MOV N$第一攻击力_女道 <$STR(S$第一攻击力_女道)>
+MOV N$第一转生_女道 <$STR(S$第一转生_女道)>
+MOV N$第一等级_女道 <$STR(S$第一等级_女道)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>你的职业不是道士！</font>
+BREAK
+
+#IF
+LARGE <$MAXSC> <$STR(N$第一攻击力_女道)>
+#ACT
+MOV S$上届第一女道 <$STR(A266)>
+MOV A266 <$USERNAME>
+MOV A272 <$RELEVEL>|<$LEVEL>|<$MAXSC>
+HCALL <$USERNAME> @天下第一更新
+HCALL <$STR(S$上届第一女道)> @天下第一更新
+#CALL [\属性刷新.txt] @属性刷新
+S$上届第一女道.sendmsg 7 你的【天下第一女道】称号已经被【<$STR(A266)>】顶替。
+sendmsg 7 恭喜你登顶【天下第一女道】。
+SENDMSGNEW 255 0 玩家:<$USERNAME>在比奇皇宫天下第一处成功申请【天下第一女道】,属性大幅度提升。 1 5
+GOTO @MAIN
+BREAK
+
+#IF
+EQUAL <$MAXSC> <$STR(N$第一攻击力_女道)>
+EQUAL A266 <$USERNAME>
+#ACT
+SENDMSG 9 <font color='#ff0000'>您已上榜，请勿重复提交！</font>
+BREAK
+
+#IF
+#ACT
+SENDMSG 9 <font color='#ff0000'>你的资历不足，再去历练一下吧！</font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

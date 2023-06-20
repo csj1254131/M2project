@@ -1,0 +1,245 @@
+Msg:-------------
+2023-06-02 10:05:08 MainSocket:127.0.0.1,7011
+Msg:-------------
+2023-06-02 10:05:08 DBConnectString:Name=Unnamed;Database=tool_server_3O4mAv38781623_1_1;User_Name=996m2;password=www.996m2.com;Server={47.99.99.32,1433};DriverID=MSSQL
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:08:14 MainSocket:127.0.0.1,7011
+Msg:-------------
+2023-06-02 10:08:14 DBConnectString:Name=Unnamed;Database=tool_server_3O4mAv38781623_1_1;User_Name=996m2;password=www.996m2.com;Server={47.99.99.32,1433};DriverID=MSSQL
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+DBDataThread Run 15 Error:0 -------------
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:16:35 MainSocket:127.0.0.1,7011
+Msg:-------------
+2023-06-02 10:16:35 DBConnectString:Name=Unnamed;Database=tool_server_3O4mAv38781623_1_1;User_Name=996m2;password=www.996m2.com;Server={47.99.99.32,1433};DriverID=MSSQL
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:18:55 TFrmUserSoc.ProcessGateMsg1 ]TRA]TNA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]VbA]TRA]TRA38805466/2/1/1/0   2008
+Msg:-------------
+2023-06-02 10:18:55 查询人物 38805466/2/1/1/0  127.0.0.1
+Msg:-------------
+2023-06-02 10:18:56 TFrmUserSoc.ProcessGateMsg1 ]TRA]RjA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WJA]TRJ]TRA38805466   2008
+Msg:-------------
+2023-06-02 10:18:57 TFrmUserSoc.ProcessGateMsg1 ]TRA]XrA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WRA]TP@]TRA38805466/澶╂瓕   2008
+Msg:-------------
+2023-06-02 10:18:57 TFrmDBSrv.LoadHumanRcd1 38805466-10000000001684921416000001589,127.0.0.1,2,1,0
+Msg:-------------
+2023-06-02 10:18:59:141 >>>SaveData: 38805466, 10000000001684921416000001589
+Msg:-------------
+2023-06-02 10:18:59 >>TDataThread.OnMsg 10000000001684921416000001589
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:19:25 TFrmUserSoc.ProcessGateMsg1 ]TRA]TNA]TRA]TRA]TRA]TRA]TRH]TRA]TRA]VbA]TRA]TRA38805466/3/1/1/0   2016
+Msg:-------------
+2023-06-02 10:19:25 查询人物 38805466/3/1/1/0  127.0.0.1
+Msg:-------------
+2023-06-02 10:19:26 TFrmUserSoc.ProcessGateMsg1 ]TRA]RjA]TRA]TRA]TRA]TRA]TRH]TRA]TRA]WJA]TRJ]TRA38805466   2016
+Msg:-------------
+2023-06-02 10:19:27 TFrmUserSoc.ProcessGateMsg1 ]TRA]YvA]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TP@]TRA   2016
+Msg:-------------
+2023-06-02 10:19:29 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TRH]TRA   2016
+Msg:-------------
+2023-06-02 10:19:29 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-02 10:19:31 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TSY]TRA   2016
+Msg:-------------
+2023-06-02 10:19:31 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-02 10:19:33 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TRH]TRA]TRA]TRA]TQi]TRA   2016
+Msg:-------------
+2023-06-02 10:19:33 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-02 10:19:33 TFrmUserSoc.ProcessGateMsg1 ]TRA]S>A]TRA]TRA]TRA]TRA]TRH]TRA]TRA]MrA]TQf]TRA{"server_name":"1","sex":0,"secsdk":"0","account":38805466,"job":0,"chr":"鎴樼","sdkid":"1"}   2016
+Msg:-------------
+2023-06-02 10:19:33 TFrmUserSoc.ProcessGateMsg1 ]TRA]XrA]TRA]TRA]TRA]TRA]TRH]TRA]TRA]WRA]TSh]TRA38805466/鎴樼   2016
+Msg:-------------
+2023-06-02 10:19:33 TFrmDBSrv.LoadHumanRcd1 38805466-10000000001685672373000002559,127.0.0.1,3,1,0
+Msg:-------------
+2023-06-02 10:19:34:580 >>>SaveData: 38805466, 10000000001685672373000002559
+Msg:-------------
+2023-06-02 10:19:34 >>TDataThread.OnMsg 10000000001685672373000002559
+剩余待处理保存数据：1/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:22:36 MainSocket:127.0.0.1,7011
+Msg:-------------
+2023-06-02 10:22:36 DBConnectString:Name=Unnamed;Database=tool_server_3O4mAv38781623_1_1;User_Name=996m2;password=www.996m2.com;Server={47.99.99.32,1433};DriverID=MSSQL
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:24:05 MainSocket:127.0.0.1,7011
+Msg:-------------
+2023-06-02 10:24:05 DBConnectString:Name=Unnamed;Database=tool_server_3O4mAv38781623_1_1;User_Name=996m2;password=www.996m2.com;Server={47.99.99.32,1433};DriverID=MSSQL
+Msg:-------------
+2023-06-02 10:24:34 TFrmUserSoc.ProcessGateMsg1 ]TRA]TNA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]VbA]TRA]TRA38805466/2/1/1/0   976
+Msg:-------------
+2023-06-02 10:24:34 查询人物 38805466/2/1/1/0  127.0.0.1
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:24:35 TFrmUserSoc.ProcessGateMsg1 ]TRA]RjA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WJA]TRJ]TRA38805466   976
+Msg:-------------
+2023-06-02 10:24:36 TFrmUserSoc.ProcessGateMsg1 ]TRA]XrA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WRA]TP@]TRA38805466/澶╂瓕   976
+Msg:-------------
+2023-06-02 10:24:36 TFrmDBSrv.LoadHumanRcd1 38805466-10000000001684921416000001589,127.0.0.1,2,1,0
+Msg:-------------
+2023-06-02 10:24:40:250 >>>SaveData: 38805466, 10000000001684921416000001589
+Msg:-------------
+2023-06-02 10:24:40 >>TDataThread.OnMsg 10000000001684921416000001589
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:26:37 TFrmUserSoc.ProcessGateMsg1 ]TRA]TNA]TRA]TRA]TRA]TRA]TRH]TRA]TRA]VbA]TRA]TRA38805466/3/1/1/0   996
+Msg:-------------
+2023-06-02 10:26:37 查询人物 38805466/3/1/1/0  127.0.0.1
+Msg:-------------
+2023-06-02 10:26:38 TFrmUserSoc.ProcessGateMsg1 ]TRA]RjA]TRA]TRA]TRA]TRA]TRH]TRA]TRA]WJA]TRJ]TRA38805466   996
+Msg:-------------
+2023-06-02 10:26:39 TFrmUserSoc.ProcessGateMsg1 ]TRA]XrA]TRA]TRA]TRA]TRA]TRH]TRA]TRA]WRA]TP@]TRA38805466/鎴樼   996
+Msg:-------------
+2023-06-02 10:26:39 TFrmDBSrv.LoadHumanRcd1 38805466-10000000001685672373000002559,127.0.0.1,3,1,0
+Msg:-------------
+2023-06-02 10:26:40:844 >>>SaveData: 38805466, 10000000001685672373000002559
+Msg:-------------
+2023-06-02 10:26:40 >>TDataThread.OnMsg 10000000001685672373000002559
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+DBDataThread Run 0 Error:0 -------------
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:36:15 MainSocket:127.0.0.1,7011
+Msg:-------------
+2023-06-02 10:36:15 DBConnectString:Name=Unnamed;Database=tool_server_3O4mAv38781623_1_1;User_Name=996m2;password=www.996m2.com;Server={47.99.99.32,1433};DriverID=MSSQL
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:36:57 TFrmUserSoc.ProcessGateMsg1 ]TRA]TNA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]VbA]TRA]TRA38805466/2/1/1/0   2008
+Msg:-------------
+2023-06-02 10:36:57 查询人物 38805466/2/1/1/0  127.0.0.1
+Msg:-------------
+2023-06-02 10:36:58 TFrmUserSoc.ProcessGateMsg1 ]TRA]RjA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WJA]TRJ]TRA38805466   2008
+Msg:-------------
+2023-06-02 10:36:59 TFrmUserSoc.ProcessGateMsg1 ]TRA]XrA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WRA]TP@]TRA38805466/鎴樼   2008
+Msg:-------------
+2023-06-02 10:36:59 TFrmDBSrv.LoadHumanRcd1 38805466-10000000001685672373000002559,127.0.0.1,2,1,0
+Msg:-------------
+2023-06-02 10:37:00:458 >>>SaveData: 38805466, 10000000001685672373000002559
+Msg:-------------
+2023-06-02 10:37:00 >>TDataThread.OnMsg 10000000001685672373000002559
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+DBDataThread Run 16 Error:0 -------------
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:45:55 TFrmUserSoc.ProcessGateMsg1 ]TRA]TNA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]VbA]TRA]TRA38805466/2/1/1/0   1588
+Msg:-------------
+2023-06-02 10:45:55 查询人物 38805466/2/1/1/0  127.0.0.1
+Msg:-------------
+2023-06-02 10:45:57 TFrmUserSoc.ProcessGateMsg1 ]TRA]LgD]TRA]TRA]TRA]TRA]TP@]TRA]TRA]TRA]TRJ]TRA   1588
+Msg:-------------
+2023-06-02 10:45:57 DeCodeUserMsg 异常消息： [60000]:0,0,0,0
+Msg:-------------
+2023-06-02 10:45:58 TFrmUserSoc.ProcessGateMsg1 ]TRA]XrA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WRA]TP@]TRA38805466/鎴樼   1588
+Msg:-------------
+2023-06-02 10:45:58 TFrmDBSrv.LoadHumanRcd1 38805466-10000000001685672373000002559,127.0.0.1,2,1,0
+Msg:-------------
+2023-06-02 10:45:59:705 >>>SaveData: 38805466, 10000000001685672373000002559
+Msg:-------------
+2023-06-02 10:45:59 >>TDataThread.OnMsg 10000000001685672373000002559
+DBDataThread Run 0 Error:0 -------------
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+DBDataThread Run 15 Error:0 -------------
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:51:35 MainSocket:127.0.0.1,7011
+Msg:-------------
+2023-06-02 10:51:35 DBConnectString:Name=Unnamed;Database=tool_server_3O4mAv38781623_1_1;User_Name=996m2;password=www.996m2.com;Server={47.99.99.32,1433};DriverID=MSSQL
+剩余待处理保存数据：0/0
+Msg:-------------
+2023-06-02 10:52:05 TFrmUserSoc.ProcessGateMsg1 ]TRA]TNA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]VbA]TRA]TRA38805466/2/1/1/0   2000
+Msg:-------------
+2023-06-02 10:52:05 查询人物 38805466/2/1/1/0  127.0.0.1
+Msg:-------------
+2023-06-02 10:52:06 TFrmUserSoc.ProcessGateMsg1 ]TRA]RjA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WJA]TRJ]TRA38805466   2000
+Msg:-------------
+2023-06-02 10:52:06 TFrmUserSoc.ProcessGateMsg1 ]TRA]XrA]TRA]TRA]TRA]TRA]TP@]TRA]TRA]WRA]TP@]TRA38805466/鎴樼   2000
+Msg:-------------
+2023-06-02 10:52:07 TFrmDBSrv.LoadHumanRcd1 38805466-10000000001685672373000002559,127.0.0.1,2,1,0
+Msg:-------------
+2023-06-02 10:52:07:986 >>>SaveData: 38805466, 10000000001685672373000002559
+Msg:-------------
+2023-06-02 10:52:07 >>TDataThread.OnMsg 10000000001685672373000002559
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+DBDataThread Run 0 Error:0 -------------
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0
+剩余待处理保存数据：0/0

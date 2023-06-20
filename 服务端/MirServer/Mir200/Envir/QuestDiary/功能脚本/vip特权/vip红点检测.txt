@@ -1,0 +1,137 @@
+[@vip红点检测]
+{
+#IF
+#ACT
+mov S$赞助红点
+DEC  S$图标1 <Img|id=20|x=55|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+addbutton 102 1 <$STR(S$图标1)>
+#IF
+equal u137 0
+large  u13 0
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_1 <Img|id=18b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_1
+#IF
+equal u138 0
+large  u13 1
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_2 <Img|id=19b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_2
+#IF
+equal u139 0
+large  u13 2
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_3 <Img|id=20b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_3
+
+#IF
+equal u140 0
+large  u13 3
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_4 <Img|id=21b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_4
+
+#IF
+equal u141 0
+large  u13 4
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_5 <Img|id=22b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_5
+#IF
+equal u142 0
+large  u13 5
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_6 <Img|id=23b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_6
+
+#IF
+equal u143 0
+large  u13 6
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_7 <Img|id=24b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_7
+#IF
+equal u144 0
+large  u13 7
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_8 <Img|id=25b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_8
+#IF
+equal u145 0
+large  u13 8
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_9 <Img|id=26b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_9
+
+#IF
+equal u146 0
+large  u13 9
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_10 <Img|id=27b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_10
+#IF
+equal u147 0
+large  u13 10
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_11 <Img|id=28b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_11
+#IF
+equal u148 0
+large  u13 11
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_12 <Img|id=29b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_12
+#IF
+equal u149 0
+large  u13 12
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_13 <Img|id=30b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_13
+#IF
+equal u150 0
+large  u13 13
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_14 <Img|id=31b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_14
+#IF
+equal u151 0
+large  u13 14
+#ACT
+Mov S$赞助红点  icon_red_01
+Mov s$vip红点_15 <Img|id=32b|img=custom/hl/hl_ui/icon_red_01.png|x=85|y=10>
+#ELSEACT
+Mov s$vip红点_15
+#IF
+equal S$赞助红点  icon_red_01
+#ACT
+INC S$图标1 <Img|id=20|x=55|y=5|img=custom/hl/hl_ui/icon_red_01.png>
+addbutton 102 1 <$STR(S$图标1)>
+}

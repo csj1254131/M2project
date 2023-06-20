@@ -1,0 +1,167 @@
+[@攻击触发]
+{
+#IF
+Checkitemw 火龙之心Lv.2 1
+Randomex 1 200
+#Act
+P.Humanhp - 85
+M.Humanhp - 85
+sendmsg 6 致命一击触发目标造成85点真实伤害.
+
+
+#IF
+Checkitemw 火龙之心Lv.3 1
+Randomex 2 200
+#Act
+P.Humanhp - 179
+M.Humanhp - 179
+sendmsg 6 致命一击触发目标造成179点真实伤害.
+
+
+#IF
+Checkitemw 火龙之心Lv.4 1
+Randomex 3 200
+#Act
+P.Humanhp - 264
+M.Humanhp - 264
+sendmsg 6 致命一击触发目标造成264点真实伤害.
+
+
+#IF
+Checkitemw 火龙之心Lv.5 1
+Randomex 4 200
+#Act
+P.Humanhp - 330
+M.Humanhp - 330
+sendmsg 6 致命一击触发目标造成330点真实伤害.
+
+#IF
+Checkitemw 火龙之心Lv.6 1
+Randomex 5 200
+#Act
+P.Humanhp - 412
+M.Humanhp - 412
+sendmsg 6 致命一击触发目标造成412点真实伤害.
+
+#IF
+Checkitemw 火龙之心Lv.7 1
+Randomex 6 200
+#Act
+P.Humanhp - 495
+M.Humanhp - 495
+sendmsg 6 致命一击触发目标造成495点真实伤害.
+
+#IF
+Checkitemw 火龙之心Lv.8 1
+Randomex 7 200
+#Act
+P.Humanhp - 590
+M.Humanhp - 590
+sendmsg 6 致命一击触发目标造成590点真实伤害.
+
+#IF
+Checkitemw 火龙之心Lv.9 1
+Randomex 8 200
+#Act
+P.Humanhp - 684
+M.Humanhp - 684
+sendmsg 6 致命一击触发目标造成684点真实伤害.
+
+#IF
+Checkitemw 火龙之心Lv.10 1
+Randomex 10 200
+#Act
+P.Humanhp - 802
+M.Humanhp - 802
+sendmsg 6 致命一击触发目标造成802点真实伤害.
+}
+
+[@魔法攻击触发]
+{
+#OR
+Equal <$CURRRUSEMAGICID> 11
+Equal <$CURRRUSEMAGICID> 45
+Equal <$CURRRUSEMAGICID> 13
+Equal <$CURRRUSEMAGICID> 57
+#Act
+Goto @魔法触发开始
+Break
+#Elseact
+Break
+
+[@魔法触发开始]
+#IF
+Checkitemw 火龙之心Lv.2 1
+Randomex 1 200
+#Act
+Pex.Humanhp - 85
+M.Humanhp - 85
+sendmsg 6 致命一击触发目标造成85点真实伤害.
+
+
+#IF
+Checkitemw 火龙之心Lv.3 1
+Randomex 2 200
+#Act
+Pex.Humanhp - 179
+M.Humanhp - 179
+sendmsg 6 致命一击触发目标造成179点真实伤害.
+
+
+#IF
+Checkitemw 火龙之心Lv.4 1
+Randomex 3 200
+#Act
+Pex.Humanhp - 264
+M.Humanhp - 264
+sendmsg 6 致命一击触发目标造成264点真实伤害.
+
+
+#IF
+Checkitemw 火龙之心Lv.5 1
+Randomex 4 200
+#Act
+Pex.Humanhp - 330
+M.Humanhp - 330
+sendmsg 6 致命一击触发目标造成330点真实伤害.
+
+#IF
+Checkitemw 火龙之心Lv.6 1
+Randomex 5 200
+#Act
+Pex.Humanhp - 412
+M.Humanhp - 412
+sendmsg 6 致命一击触发目标造成412点真实伤害.
+
+#IF
+Checkitemw 火龙之心Lv.7 1
+Randomex 6 200
+#Act
+Pex.Humanhp - 495
+M.Humanhp - 495
+sendmsg 6 致命一击触发目标造成495点真实伤害.
+
+#IF
+Checkitemw 火龙之心Lv.8 1
+Randomex 7 200
+#Act
+Pex.Humanhp - 590
+M.Humanhp - 590
+sendmsg 6 致命一击触发目标造成590点真实伤害.
+
+#IF
+Checkitemw 火龙之心Lv.9 1
+Randomex 8 200
+#Act
+Pex.Humanhp - 684
+M.Humanhp - 684
+sendmsg 6 致命一击触发目标造成684点真实伤害.
+
+#IF
+Checkitemw 火龙之心Lv.10 1
+Randomex 10 200
+#Act
+Pex.Humanhp - 802
+M.Humanhp - 802
+sendmsg 6 致命一击触发目标造成802点真实伤害.
+}

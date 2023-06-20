@@ -1,0 +1,4 @@
+[@MAIN]
+#IF
+#ACT
+#CALL [\全服活动\世界BOSS.txt] @启动世界BOSS

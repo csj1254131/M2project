@@ -1,0 +1,997 @@
+[@启全服竞技排行]
+{
+#Or
+Large <$HFCOUNT> 4
+Small <$HFCOUNT> 1
+#Act
+Break
+
+#IF
+#Act
+Mov S$Npc标题 等级榜
+Mov S$竞技标识 转生
+Mov S$排名变量1 A410
+Mov S$排名变量2 A411
+Mov S$排名变量3 A412
+Mov S$排名变量4 A413
+Mov S$排名变量5 A414
+Mov S$排名变量6 A415
+Mov S$排名变量7 A416
+Mov S$排名变量8 A417
+Mov S$排名变量9 A418
+Mov S$排名变量10 A419
+Mov S$排名转生1 A420
+Mov S$排名转生2 A421
+Mov S$排名转生3 A422
+Mov S$排名转生4 A423
+Mov S$排名转生5 A424
+Mov S$排名转生6 A425
+Mov S$排名转生7 A426
+Mov S$排名转生8 A427
+Mov S$排名转生9 A428
+Mov S$排名转生10 A429
+Mov S$时间补差 2
+Mov S$竞技左按钮_1 custom/hl/hl_ui/an_01.png
+Mov S$竞技左按钮_2 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_3 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_4 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_5 custom/hl/hl_ui/an_02.png
+
+
+
+#IF
+Not Equal G410 0
+#Act
+Mov S$等级显示1 <$Str(G410)>级
+#Elseact
+Mov S$等级显示1
+#IF
+Not Equal G411 0
+#Act
+Mov S$等级显示2 <$Str(G411)>级
+#Elseact
+Mov S$等级显示2
+#IF
+Not Equal G412 0
+#Act
+Mov S$等级显示3 <$Str(G412)>级
+#Elseact
+Mov S$等级显示3
+#IF
+Not Equal G413 0
+#Act
+Mov S$等级显示4 <$Str(G413)>级
+#Elseact
+Mov S$等级显示4
+#IF
+Not Equal G414 0
+#Act
+Mov S$等级显示5 <$Str(G414)>级
+#Elseact
+Mov S$等级显示5
+#IF
+Not Equal G415 0
+#Act
+Mov S$等级显示6 <$Str(G415)>级
+#Elseact
+Mov S$等级显示6
+#IF
+Not Equal G416 0
+#Act
+Mov S$等级显示7 <$Str(G416)>级
+#Elseact
+Mov S$等级显示7
+#IF
+Not Equal G417 0
+#Act
+Mov S$等级显示8 <$Str(G417)>级
+#Elseact
+Mov S$等级显示8
+#IF
+Not Equal G418 0
+#Act
+Mov S$等级显示9 <$Str(G418)>级
+#Elseact
+Mov S$等级显示9
+#IF
+Not Equal G419 0
+#Act
+Mov S$等级显示10 <$Str(G419)>级
+#Elseact
+Mov S$等级显示10
+
+;=================================显示处理
+#IF
+Not Equal S$排名转生1
+#Act
+Mov S$排名转生1 <$Str(S$排名转生1)>转
+#IF
+Not Equal S$排名转生2
+#Act
+Mov S$排名转生2 <$Str(S$排名转生2)>转
+#IF
+Not Equal S$排名转生3
+#Act
+Mov S$排名转生3 <$Str(S$排名转生3)>转
+#IF
+Not Equal S$排名转生4
+#Act
+Mov S$排名转生4 <$Str(S$排名转生4)>转
+#IF
+Not Equal S$排名转生5
+#Act
+Mov S$排名转生5 <$Str(S$排名转生5)>转
+#IF
+Not Equal S$排名转生6
+#Act
+Mov S$排名转生6 <$Str(S$排名转生6)>转
+#IF
+Not Equal S$排名转生7
+#Act
+Mov S$排名转生7 <$Str(S$排名转生7)>转
+#IF
+Not Equal S$排名转生8
+#Act
+Mov S$排名转生8 <$Str(S$排名转生8)>转
+#IF
+Not Equal S$排名转生9
+#Act
+Mov S$排名转生9 <$Str(S$排名转生9)>转
+#IF
+Not Equal S$排名转生10
+#Act
+Mov S$排名转生10 <$Str(S$排名转生10)>转
+
+
+#IF
+#Act
+Goto @读取竞技配置
+
+Mov S$竞技右显示 <Img|ax=0|x=132.0|y=164.0|width=622|height=50|scale9t=6|scale9r=6|img=custom/hl/hlsd/fx.png|scale9b=6|scale9l=6|esc=0>
+Inc S$竞技右显示 <Text|x=152.0|y=175.0|color=255|size=18|text=排名>
+Inc S$竞技右显示 <Text|x=247.0|y=175.0|color=255|size=18|text=玩家名称>
+Inc S$竞技右显示 <Text|x=392.0|y=175.0|color=255|size=18|text=转生等级>
+Inc S$竞技右显示 <Text|x=616.0|y=175.0|color=255|size=18|text=奖励>
+Inc S$竞技右显示 <Img|ax=0|x=133.0|y=209.0|width=620|img=custom/hl/hl_ui/hl_bg_01.png|esc=0>
+Inc S$竞技右显示 <Img|ax=0|x=133.0|y=415.0|width=620|esc=0|img=custom/hl/hl_ui/hl_bg_01.png>
+
+Inc S$竞技右显示 <ListView|children={a-1,a-2,a-3,a-4,a-5,a-6,a-7,a-8,a-9,a-10}|x=134.0|y=213.0|direction=1|bounce=0|margin=2|width=620|height=200|reload=1>
+Inc S$竞技右显示 <Layout|id=a-1|children={b1,b2,b3,b4,b5,b6,b7,b8,b9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=b1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_01.png|esc=0>
+Inc S$竞技右显示 <Text|id=b2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A410)>>
+Inc S$竞技右显示 <RText|id=b3|a=4|x=295.0|y=40.0|color=255|size=18|text=<<$Str(S$排名转生1)>/FCOLOR=255><<$Str(S$等级显示1)>/FCOLOR=254>>
+Inc S$竞技右显示 <ItemShow|id=b4|children={a1_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=b5|children={a1_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=b6|children={a1_3,a1_3a}|x=535.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_5)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=b7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a1_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_2)>>
+Inc S$竞技右显示 <Text|id=a1_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_4)>>
+Inc S$竞技右显示 <Text|id=a1_3|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_6)>>
+Inc S$竞技右显示 <Img|id=a1_3a|x=62.0|y=0.0|img=custom/hl/hlsd/jb_1.png|esc=0>
+
+Inc S$竞技右显示 <Layout|id=a-2|children={c1,c2,c3,c4,c5,c6,c7,c8,c9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=c1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_02.png|esc=0>
+Inc S$竞技右显示 <Text|id=c2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A411)>>
+Inc S$竞技右显示 <RText|id=c3|a=4|x=295.0|y=40.0|color=255|size=18|text=<<$Str(S$排名转生2)>/FCOLOR=255><<$Str(S$等级显示2)>/FCOLOR=254>>
+Inc S$竞技右显示 <ItemShow|id=c4|children={a2_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖2_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=c5|children={a2_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖2_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=c7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a2_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖2_2)>>
+Inc S$竞技右显示 <Text|id=a2_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖2_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-3|children={d1,d2,d3,d4,d5,d6,d7,d8,d9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=d1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_03.png|esc=0>
+Inc S$竞技右显示 <Text|id=d2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A412)>>
+Inc S$竞技右显示 <RText|id=d3|a=4|x=295.0|y=40.0|color=255|size=18|text=<<$Str(S$排名转生3)>/FCOLOR=255><<$Str(S$等级显示3)>/FCOLOR=254>>
+Inc S$竞技右显示 <ItemShow|id=d4|children={a3_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖3_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=d5|children={a3_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖3_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=d7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a3_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖3_2)>>
+Inc S$竞技右显示 <Text|id=a3_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖3_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-4|children={e1,e2,e3,e4,e5,e6,e7,e8,e9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_04.png|esc=0>
+Inc S$竞技右显示 <Text|id=e2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A413)>>
+Inc S$竞技右显示 <RText|id=e3|a=4|x=295.0|y=40.0|color=255|size=18|text=<<$Str(S$排名转生4)>/FCOLOR=255><<$Str(S$等级显示4)>/FCOLOR=254>>
+Inc S$竞技右显示 <ItemShow|id=e4|children={a4_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖4_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e5|children={a4_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖4_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a4_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖4_2)>>
+Inc S$竞技右显示 <Text|id=a4_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖4_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-5|children={e11,e12,e13,e14,e15,e16,e17,e18,e19}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e11|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_05.png|esc=0>
+Inc S$竞技右显示 <Text|id=e12|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A414)>>
+Inc S$竞技右显示 <RText|id=e13|a=4|x=295.0|y=40.0|color=255|size=18|text=<<$Str(S$排名转生5)>/FCOLOR=255><<$Str(S$等级显示5)>/FCOLOR=254>>
+Inc S$竞技右显示 <ItemShow|id=e14|children={a5_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖5_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e15|children={a5_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖5_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e17|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a5_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖5_2)>>
+Inc S$竞技右显示 <Text|id=a5_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖5_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-6|children={e21,e22,e23,e24,e25,e26,e27,e28,e29}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e21|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_06.png|esc=0>
+Inc S$竞技右显示 <Text|id=e22|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A415)>>
+Inc S$竞技右显示 <RText|id=e23|a=4|x=295.0|y=40.0|color=255|size=18|text=<<$Str(S$排名转生6)>/FCOLOR=255><<$Str(S$等级显示6)>/FCOLOR=254>>
+Inc S$竞技右显示 <ItemShow|id=e24|children={a6_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖6_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e25|children={a6_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖6_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e27|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a6_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖6_2)>>
+Inc S$竞技右显示 <Text|id=a6_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖6_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-7|children={e31,e32,e33,e34,e35,e36,e37,e38,e39}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e31|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_07.png|esc=0>
+Inc S$竞技右显示 <Text|id=e32|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A416)>>
+Inc S$竞技右显示 <RText|id=e33|a=4|x=295.0|y=40.0|color=255|size=18|text=<<$Str(S$排名转生7)>/FCOLOR=255><<$Str(S$等级显示7)>/FCOLOR=254>>
+Inc S$竞技右显示 <ItemShow|id=e34|children={a7_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖7_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e35|children={a7_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖7_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e37|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a7_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖7_2)>>
+Inc S$竞技右显示 <Text|id=a7_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖7_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-8|children={e41,e42,e43,e44,e45,e46,e47,e48,e49}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e41|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_08.png|esc=0>
+Inc S$竞技右显示 <Text|id=e42|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A417)>>
+Inc S$竞技右显示 <RText|id=e43|a=4|x=295.0|y=40.0|color=255|size=18|text=<<$Str(S$排名转生8)>/FCOLOR=255><<$Str(S$等级显示8)>/FCOLOR=254>>
+Inc S$竞技右显示 <ItemShow|id=e44|children={a8_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖8_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e45|children={a8_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖8_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e47|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a8_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖8_2)>>
+Inc S$竞技右显示 <Text|id=a8_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖8_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-9|children={e51,e52,e53,e54,e55,e56,e57,e58,e59}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e51|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_09.png|esc=0>
+Inc S$竞技右显示 <Text|id=e52|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A418)>>
+Inc S$竞技右显示 <RText|id=e53|a=4|x=295.0|y=40.0|color=255|size=18|text=<<$Str(S$排名转生9)>/FCOLOR=255><<$Str(S$等级显示9)>/FCOLOR=254>>
+Inc S$竞技右显示 <ItemShow|id=e54|children={a9_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖9_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e55|children={a9_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖9_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e57|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a9_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖9_2)>>
+Inc S$竞技右显示 <Text|id=a9_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖9_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-10|children={e61,e62,e63,e64,e65,e66,e67,e68,e69}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e61|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_10.png|esc=0>
+Inc S$竞技右显示 <Text|id=e62|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A419)>>
+Inc S$竞技右显示 <RText|id=e63|a=4|x=295.0|y=40.0|color=255|size=18|text=<<$Str(S$排名转生10)>/FCOLOR=255><<$Str(S$等级显示10)>/FCOLOR=254>>
+Inc S$竞技右显示 <ItemShow|id=e64|children={a10_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖10_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e65|children={a10_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖10_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e67|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a10_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖10_2)>>
+Inc S$竞技右显示 <Text|id=a10_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖10_4)>>
+Mov S$竞技提示显示 <RText|id=f1|x=3.0|y=66.0|size=16|color=255|text=<入榜条件:/FCOLOR=159><转生等级达到/FCOLOR=159><3级及以上/FCOLOR=251>>
+
+
+#IF
+Equal <$HFCOUNT> 1
+#Act
+#Call [\全服活动\竞技排行榜.txt] @竞技等级榜排序
+Goto @Npc全服竞技会话
+
+#IF
+Equal <$HFCOUNT> 2
+#Act
+Goto @竞技龙魂榜SM
+
+#IF
+Equal <$HFCOUNT> 3
+#Act
+Goto @竞技注灵榜SM
+
+#IF
+Equal <$HFCOUNT> 4
+#Act
+Goto @竞技元神榜SM
+[@Npc全服竞技会话]
+#IF
+Large <$RELEVEL> 2
+Equal S$竞技标识 转生
+#Act
+Mov S$竞技徽章 11
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖11_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖11_2)>>
+#Elseact
+Mov S$竞技徽章 12
+Mov S$竞技底显示
+
+#IF
+Large <$Human(竞技龙魂榜)> 9
+Equal S$竞技标识 龙魂
+#Act
+Mov S$竞技徽章 11
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖11_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖11_2)>>
+#Elseact
+Mov S$竞技徽章 12
+Mov S$竞技底显示
+
+#IF
+Large <$Human(竞技元神榜)> 7
+Equal S$竞技标识 元神
+#Act
+Mov S$竞技徽章 11
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖11_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖11_2)>>
+#Elseact
+Mov S$竞技徽章 12
+Mov S$竞技底显示
+
+#IF
+Large <$Human(竞技注灵榜)> 29
+Equal S$竞技标识 注灵
+#Act
+Mov S$竞技徽章 11
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖11_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖11_2)>>
+#Elseact
+Mov S$竞技徽章 12
+Mov S$竞技底显示
+
+#IF
+Equal <$Str(S$排名变量1)> <$Username>
+#Act
+Mov S$竞技徽章 01
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖1_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <ItemShow|id=f6|children={a11_2}|x=432.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖1_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <ItemShow|id=f7|children={a11_3,a11_3a}|x=525.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖1_5)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_2)>>
+Inc S$竞技底显示 <Text|id=a11_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_4)>>
+Inc S$竞技底显示 <Text|id=a11_3|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_6)>>
+Inc S$竞技底显示 <Img|id=a11_3a|x=62.0|y=2.0|img=custom/hl/hlsd/jb_1.png|esc=0>
+#IF
+Equal <$Str(S$排名变量2)> <$Username>
+#Act
+Mov S$竞技徽章 02
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖2_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <ItemShow|id=f6|children={a11_2}|x=432.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖2_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖2_2)>>
+Inc S$竞技底显示 <Text|id=a11_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖2_4)>>
+
+#IF
+Equal <$Str(S$排名变量3)> <$Username>
+#Act
+Mov S$竞技徽章 03
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖3_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <ItemShow|id=f6|children={a11_2}|x=432.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖3_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖3_2)>>
+Inc S$竞技底显示 <Text|id=a11_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖3_4)>>
+#IF
+Equal <$Str(S$排名变量4)> <$Username>
+#Act
+Mov S$竞技徽章 04
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖4_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <ItemShow|id=f6|children={a11_2}|x=432.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖4_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖4_2)>>
+Inc S$竞技底显示 <Text|id=a11_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖4_4)>>
+#IF
+Equal <$Str(S$排名变量5)> <$Username>
+#Act
+Mov S$竞技徽章 05
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖5_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <ItemShow|id=f6|children={a11_2}|x=432.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖5_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖5_2)>>
+Inc S$竞技底显示 <Text|id=a11_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖5_4)>>
+#IF
+Equal <$Str(S$排名变量6)> <$Username>
+#Act
+Mov S$竞技徽章 06
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖6_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <ItemShow|id=f6|children={a11_2}|x=432.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖6_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖6_2)>>
+Inc S$竞技底显示 <Text|id=a11_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖6_4)>>
+#IF
+Equal <$Str(S$排名变量7)> <$Username>
+#Act
+Mov S$竞技徽章 07
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖7_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <ItemShow|id=f6|children={a11_2}|x=432.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖7_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖7_2)>>
+Inc S$竞技底显示 <Text|id=a11_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖7_4)>>
+#IF
+Equal <$Str(S$排名变量8)> <$Username>
+#Act
+Mov S$竞技徽章 08
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖8_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <ItemShow|id=f6|children={a11_2}|x=432.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖8_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖8_2)>>
+Inc S$竞技底显示 <Text|id=a11_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖8_4)>>
+#IF
+Equal <$Str(S$排名变量9)> <$Username>
+#Act
+Mov S$竞技徽章 09
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖9_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <ItemShow|id=f6|children={a11_2}|x=432.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖9_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖9_2)>>
+Inc S$竞技底显示 <Text|id=a11_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖9_4)>>
+#IF
+Equal <$Str(S$排名变量10)> <$Username>
+#Act
+Mov S$竞技徽章 10
+Mov S$竞技底显示 <ItemShow|id=f5|children={a11_1}|x=337.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖10_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <ItemShow|id=f6|children={a11_2}|x=432.0|y=13.0|width=70|height=70|itemid=<$Str(S$竞技奖10_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技底显示 <Text|id=a11_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖10_2)>>
+Inc S$竞技底显示 <Text|id=a11_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖10_4)>>
+
+
+#IF
+Equal <$HFCOUNT> 1
+#Act
+Mov S$竞技s主按钮 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_1)>|text=等级榜|link=@竞技等级榜SM#竞技标识=转生>
+;Inc S$竞技s主按钮 <Button|x=21.0|y=104.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_2)>|text=龙魂榜|link=@竞技龙魂榜SM#时间补差=1#竞技标识=龙魂>
+
+#IF
+Equal <$HFCOUNT> 2
+#Act
+;Mov S$竞技s主按钮 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_1)>|text=等级榜|link=@竞技等级榜SM#竞技标识=转生>
+Mov S$竞技s主按钮 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_2)>|text=龙魂榜|link=@竞技龙魂榜SM#时间补差=1#竞技标识=龙魂>
+;Inc S$竞技s主按钮 <Button|x=21.0|y=146.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_3)>|text=注灵榜|link=@竞技注灵榜SM#时间补差=1#竞技标识=注灵>
+;Inc S$竞技s主按钮 <Button|x=21.0|y=188.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_4)>|text=元神榜|link=@竞技元神榜SM#时间补差=1#竞技标识=元神>
+
+#IF
+Equal <$HFCOUNT> 3
+#Act
+Mov S$竞技s主按钮 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_3)>|text=注灵榜|link=@竞技注灵榜SM#时间补差=1#竞技标识=注灵>
+
+;Mov S$竞技s主按钮 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_1)>|text=等级榜|link=@竞技等级榜SM#竞技标识=转生>
+;Inc S$竞技s主按钮 <Button|x=21.0|y=104.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_4)>|text=元神榜|link=@竞技元神榜SM#时间补差=1#竞技标识=元神>
+#IF
+Equal <$HFCOUNT> 4
+#Act
+Mov S$竞技s主按钮 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_4)>|text=元神榜|link=@竞技元神榜SM#时间补差=1#竞技标识=元神>
+
+
+
+#IF
+#Act
+#Say
+<Img|show=4|bg=1|loadDelay=0|move=0|esc=1|img=custom/hl/hl_ui/hl_bg.png|reset=1>
+<Layout|x=763.0|y=5.0|width=80|height=80|link=@exit>
+<Button|x=770.0|y=5.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|x=352.0|y=9.0|color=103|size=18|text=<$Str(S$Npc标题)>>
+;<Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_1)>|text=等级榜|link=@竞技等级榜SM#竞技标识=转生>
+;<Button|x=21.0|y=104.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_2)>|text=龙魂榜|link=@竞技龙魂榜SM#时间补差=2#竞技标识=龙魂>
+<$Str(S$竞技s主按钮)>
+
+
+;<Button|x=21.0|y=146.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_4)>|text=元神榜|link=@竞技元神榜SM#时间补差=1>
+;<Button|x=21.0|y=188.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_3)>|text=注灵榜|link=@竞技注灵榜SM#时间补差=2>
+;<Button|x=21.0|y=230.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$竞技左按钮_5)>|text=强星榜|link=@竞技强星榜SM>
+<Img|x=129.0|y=61.0|img=custom/hl/hl_ui/hl_bg_02.png|esc=0>
+<Img|x=134.0|children={a1,a2,t03}|y=61.0|img=custom/hl/hlsd/banner_kfbp.png|esc=0>
+;<RText|id=a2|x=5.0|y=75.0|color=255|size=18|text=<活动剩余时间：/FCOLOR=251>>
+;<TIMETIPS|id=t03|x=130.0|y=74.0|color=253|size=18|outline=2|outlinecolor=0|time=今日凌晨结束|count=1>
+<Img|x=133.0|y=163.0|width=620|img=custom/hl/hl_ui/hl_bg_01.png|esc=0>
+<$Str(S$竞技右显示)>
+<Img|children={f1,f2,f3,f4,f5,f6,f7,f8}ax=0|ay=1|x=135.0|y=419.0|width=620|height=90|esc=0|img=custom/hl/hlsd/fgb.png>
+<$Str(S$竞技提示显示)>
+<Text|id=f2|x=198.0|y=18.0|color=255|size=22|text=入榜的奖励：>
+<Img|id=f3|x=131.0|y=11.0|img=custom/hl/hlsd/icon_paihangbang_<$Str(S$竞技徽章)>.png|esc=0>
+<Text|id=f4|x=14.0|y=18.0|color=255|size=22|text=我的排行：>
+<$Str(S$竞技底显示)>
+
+[@竞技等级榜SM]
+#Act
+Goto @启全服竞技排行
+Break
+[@竞技龙魂榜SM]
+#IF
+#Act
+Mov S$Npc标题 龙魂榜
+Mov S$排名变量1 A430
+Mov S$排名变量2 A431
+Mov S$排名变量3 A432
+Mov S$排名变量4 A433
+Mov S$排名变量5 A434
+Mov S$排名变量6 A435
+Mov S$排名变量7 A436
+Mov S$排名变量8 A437
+Mov S$排名变量9 A438
+Mov S$排名变量10 A439
+Mov S$竞技左按钮_1 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_2 custom/hl/hl_ui/an_01.png
+Mov S$竞技左按钮_3 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_4 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_5 custom/hl/hl_ui/an_02.png
+Goto @读取竞技配置
+
+Mov S$竞技右显示 <Img|ax=0|x=132.0|y=164.0|width=622|height=50|scale9t=6|scale9r=6|img=custom/hl/hlsd/fx.png|scale9b=6|scale9l=6|esc=0>
+Inc S$竞技右显示 <Text|x=152.0|y=175.0|color=255|size=18|text=排名>
+Inc S$竞技右显示 <Text|x=247.0|y=175.0|color=255|size=18|text=玩家名称>
+Inc S$竞技右显示 <Text|x=392.0|y=175.0|color=255|size=18|text=龙魂等级>
+Inc S$竞技右显示 <Text|x=616.0|y=175.0|color=255|size=18|text=奖励>
+Inc S$竞技右显示 <Img|ax=0|x=133.0|y=209.0|width=620|img=custom/hl/hl_ui/hl_bg_01.png|esc=0>
+Inc S$竞技右显示 <Img|ax=0|x=133.0|y=415.0|width=620|esc=0|img=custom/hl/hl_ui/hl_bg_01.png>
+
+Inc S$竞技右显示 <ListView|children={a-1,a-2,a-3,a-4,a-5,a-6,a-7,a-8,a-9,a-10}|x=134.0|y=213.0|direction=1|bounce=0|margin=2|width=620|height=200|reload=1>
+Inc S$竞技右显示 <Layout|id=a-1|children={b1,b2,b3,b4,b5,b6,b7,b8,b9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=b1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_01.png|esc=0>
+Inc S$竞技右显示 <Text|id=b2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A430)>>
+Inc S$竞技右显示 <Text|id=b3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A440)>>
+Inc S$竞技右显示 <ItemShow|id=b4|children={a1_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=b5|children={a1_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=b6|children={a1_3,a1_3a}|x=535.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_5)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=b7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a1_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_2)>>
+Inc S$竞技右显示 <Text|id=a1_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_4)>>
+Inc S$竞技右显示 <Text|id=a1_3|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_6)>>
+Inc S$竞技右显示 <Img|id=a1_3a|x=62.0|y=2.0|img=custom/hl/hlsd/jb_1.png|esc=0>
+
+Inc S$竞技右显示 <Layout|id=a-2|children={c1,c2,c3,c4,c5,c6,c7,c8,c9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=c1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_02.png|esc=0>
+Inc S$竞技右显示 <Text|id=c2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A431)>>
+Inc S$竞技右显示 <Text|id=c3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A441)>>
+Inc S$竞技右显示 <ItemShow|id=c4|children={a2_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖2_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=c5|children={a2_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖2_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=c7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a2_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖2_2)>>
+Inc S$竞技右显示 <Text|id=a2_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖2_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-3|children={d1,d2,d3,d4,d5,d6,d7,d8,d9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=d1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_03.png|esc=0>
+Inc S$竞技右显示 <Text|id=d2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A432)>>
+Inc S$竞技右显示 <Text|id=d3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A442)>>
+Inc S$竞技右显示 <ItemShow|id=d4|children={a3_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖3_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=d5|children={a3_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖3_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=d7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a3_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖3_2)>>
+Inc S$竞技右显示 <Text|id=a3_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖3_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-4|children={e1,e2,e3,e4,e5,e6,e7,e8,e9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_04.png|esc=0>
+Inc S$竞技右显示 <Text|id=e2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A433)>>
+Inc S$竞技右显示 <Text|id=e3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A443)>>
+Inc S$竞技右显示 <ItemShow|id=e4|children={a4_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖4_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e5|children={a4_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖4_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a4_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖4_2)>>
+Inc S$竞技右显示 <Text|id=a4_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖4_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-5|children={e11,e12,e13,e14,e15,e16,e17,e18,e19}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e11|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_05.png|esc=0>
+Inc S$竞技右显示 <Text|id=e12|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A434)>>
+Inc S$竞技右显示 <Text|id=e13|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A444)>>
+Inc S$竞技右显示 <ItemShow|id=e14|children={a5_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖5_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e15|children={a5_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖5_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e17|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a5_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖5_2)>>
+Inc S$竞技右显示 <Text|id=a5_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖5_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-6|children={e21,e22,e23,e24,e25,e26,e27,e28,e29}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e21|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_06.png|esc=0>
+Inc S$竞技右显示 <Text|id=e22|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A435)>>
+Inc S$竞技右显示 <Text|id=e23|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A445)>>
+Inc S$竞技右显示 <ItemShow|id=e24|children={a6_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖6_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e25|children={a6_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖6_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e27|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a6_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖6_2)>>
+Inc S$竞技右显示 <Text|id=a6_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖6_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-7|children={e31,e32,e33,e34,e35,e36,e37,e38,e39}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e31|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_07.png|esc=0>
+Inc S$竞技右显示 <Text|id=e32|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A436)>>
+Inc S$竞技右显示 <Text|id=e33|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A446)>>
+Inc S$竞技右显示 <ItemShow|id=e34|children={a7_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖7_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e35|children={a7_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖7_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e37|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a7_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖7_2)>>
+Inc S$竞技右显示 <Text|id=a7_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖7_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-8|children={e41,e42,e43,e44,e45,e46,e47,e48,e49}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e41|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_08.png|esc=0>
+Inc S$竞技右显示 <Text|id=e42|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A437)>>
+Inc S$竞技右显示 <Text|id=e43|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A447)>>
+Inc S$竞技右显示 <ItemShow|id=e44|children={a8_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖8_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e45|children={a8_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖8_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e47|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a8_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖8_2)>>
+Inc S$竞技右显示 <Text|id=a8_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖8_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-9|children={e51,e52,e53,e54,e55,e56,e57,e58,e59}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e51|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_09.png|esc=0>
+Inc S$竞技右显示 <Text|id=e52|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A438)>>
+Inc S$竞技右显示 <Text|id=e53|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A448)>>
+Inc S$竞技右显示 <ItemShow|id=e54|children={a9_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖9_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e55|children={a9_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖9_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e57|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a9_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖9_2)>>
+Inc S$竞技右显示 <Text|id=a9_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖9_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-10|children={e61,e62,e63,e64,e65,e66,e67,e68,e69}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e61|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_10.png|esc=0>
+Inc S$竞技右显示 <Text|id=e62|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A439)>>
+Inc S$竞技右显示 <Text|id=e63|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A449)>>
+Inc S$竞技右显示 <ItemShow|id=e64|children={a10_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖10_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e65|children={a10_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖10_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e67|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a10_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖10_2)>>
+Inc S$竞技右显示 <Text|id=a10_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖10_4)>>
+Mov S$竞技提示显示 <RText|id=f1|x=3.0|y=66.0|size=16|color=255|text=<入榜条件:/FCOLOR=159><所有龙魂炼体等级总和达到/FCOLOR=159><10级及以上/FCOLOR=251>>
+
+Goto @Npc全服竞技会话
+Break
+
+
+[@竞技注灵榜SM]
+#Act
+Mov S$Npc标题 注灵榜
+Mov S$排名变量1 A450
+Mov S$排名变量2 A451
+Mov S$排名变量3 A452
+Mov S$排名变量4 A453
+Mov S$排名变量5 A454
+Mov S$排名变量6 A455
+Mov S$排名变量7 A456
+Mov S$排名变量8 A457
+Mov S$排名变量9 A458
+Mov S$排名变量10 A459
+Mov S$竞技左按钮_1 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_2 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_3 custom/hl/hl_ui/an_01.png
+Mov S$竞技左按钮_4 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_5 custom/hl/hl_ui/an_02.png
+Goto @读取竞技配置
+
+Mov S$竞技右显示 <Img|ax=0|x=132.0|y=164.0|width=622|height=50|scale9t=6|scale9r=6|img=custom/hl/hlsd/fx.png|scale9b=6|scale9l=6|esc=0>
+Inc S$竞技右显示 <Text|x=152.0|y=175.0|color=255|size=18|text=排名>
+Inc S$竞技右显示 <Text|x=247.0|y=175.0|color=255|size=18|text=玩家名称>
+Inc S$竞技右显示 <Text|x=392.0|y=175.0|color=255|size=18|text=注灵等级>
+Inc S$竞技右显示 <Text|x=616.0|y=175.0|color=255|size=18|text=奖励>
+Inc S$竞技右显示 <Img|ax=0|x=133.0|y=209.0|width=620|img=custom/hl/hl_ui/hl_bg_01.png|esc=0>
+Inc S$竞技右显示 <Img|ax=0|x=133.0|y=415.0|width=620|esc=0|img=custom/hl/hl_ui/hl_bg_01.png>
+
+Inc S$竞技右显示 <ListView|children={a-1,a-2,a-3,a-4,a-5,a-6,a-7,a-8,a-9,a-10}|x=134.0|y=213.0|direction=1|bounce=0|margin=2|width=620|height=200|reload=1>
+Inc S$竞技右显示 <Layout|id=a-1|children={b1,b2,b3,b4,b5,b6,b7,b8,b9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=b1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_01.png|esc=0>
+Inc S$竞技右显示 <Text|id=b2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A450)>>
+Inc S$竞技右显示 <Text|id=b3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A460)>>
+Inc S$竞技右显示 <ItemShow|id=b4|children={a1_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=b5|children={a1_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=b6|children={a1_3,a1_3a}|x=535.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_5)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=b7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a1_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_2)>>
+Inc S$竞技右显示 <Text|id=a1_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_4)>>
+Inc S$竞技右显示 <Text|id=a1_3|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_6)>>
+Inc S$竞技右显示 <Img|id=a1_3a|x=62.0|y=2.0|img=custom/hl/hlsd/jb_1.png|esc=0>
+
+Inc S$竞技右显示 <Layout|id=a-2|children={c1,c2,c3,c4,c5,c6,c7,c8,c9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=c1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_02.png|esc=0>
+Inc S$竞技右显示 <Text|id=c2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A451)>>
+Inc S$竞技右显示 <Text|id=c3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A461)>>
+Inc S$竞技右显示 <ItemShow|id=c4|children={a2_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖2_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=c5|children={a2_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖2_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=c7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a2_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖2_2)>>
+Inc S$竞技右显示 <Text|id=a2_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖2_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-3|children={d1,d2,d3,d4,d5,d6,d7,d8,d9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=d1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_03.png|esc=0>
+Inc S$竞技右显示 <Text|id=d2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A452)>>
+Inc S$竞技右显示 <Text|id=d3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A462)>>
+Inc S$竞技右显示 <ItemShow|id=d4|children={a3_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖3_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=d5|children={a3_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖3_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=d7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a3_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖3_2)>>
+Inc S$竞技右显示 <Text|id=a3_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖3_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-4|children={e1,e2,e3,e4,e5,e6,e7,e8,e9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_04.png|esc=0>
+Inc S$竞技右显示 <Text|id=e2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A453)>>
+Inc S$竞技右显示 <Text|id=e3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A463)>>
+Inc S$竞技右显示 <ItemShow|id=e4|children={a4_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖4_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e5|children={a4_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖4_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a4_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖4_2)>>
+Inc S$竞技右显示 <Text|id=a4_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖4_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-5|children={e11,e12,e13,e14,e15,e16,e17,e18,e19}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e11|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_05.png|esc=0>
+Inc S$竞技右显示 <Text|id=e12|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A454)>>
+Inc S$竞技右显示 <Text|id=e13|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A464)>>
+Inc S$竞技右显示 <ItemShow|id=e14|children={a5_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖5_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e15|children={a5_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖5_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e17|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a5_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖5_2)>>
+Inc S$竞技右显示 <Text|id=a5_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖5_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-6|children={e21,e22,e23,e24,e25,e26,e27,e28,e29}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e21|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_06.png|esc=0>
+Inc S$竞技右显示 <Text|id=e22|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A455)>>
+Inc S$竞技右显示 <Text|id=e23|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A465)>>
+Inc S$竞技右显示 <ItemShow|id=e24|children={a6_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖6_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e25|children={a6_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖6_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e27|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a6_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖6_2)>>
+Inc S$竞技右显示 <Text|id=a6_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖6_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-7|children={e31,e32,e33,e34,e35,e36,e37,e38,e39}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e31|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_07.png|esc=0>
+Inc S$竞技右显示 <Text|id=e32|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A456)>>
+Inc S$竞技右显示 <Text|id=e33|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A466)>>
+Inc S$竞技右显示 <ItemShow|id=e34|children={a7_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖7_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e35|children={a7_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖7_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e37|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a7_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖7_2)>>
+Inc S$竞技右显示 <Text|id=a7_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖7_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-8|children={e41,e42,e43,e44,e45,e46,e47,e48,e49}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e41|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_08.png|esc=0>
+Inc S$竞技右显示 <Text|id=e42|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A457)>>
+Inc S$竞技右显示 <Text|id=e43|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A467)>>
+Inc S$竞技右显示 <ItemShow|id=e44|children={a8_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖8_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e45|children={a8_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖8_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e47|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a8_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖8_2)>>
+Inc S$竞技右显示 <Text|id=a8_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖8_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-9|children={e51,e52,e53,e54,e55,e56,e57,e58,e59}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e51|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_09.png|esc=0>
+Inc S$竞技右显示 <Text|id=e52|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A458)>>
+Inc S$竞技右显示 <Text|id=e53|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A468)>>
+Inc S$竞技右显示 <ItemShow|id=e54|children={a9_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖9_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e55|children={a9_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖9_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e57|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a9_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖9_2)>>
+Inc S$竞技右显示 <Text|id=a9_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖9_4)>>
+
+Inc S$竞技右显示 <Layout|id=a-10|children={e61,e62,e63,e64,e65,e66,e67,e68,e69}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e61|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_10.png|esc=0>
+Inc S$竞技右显示 <Text|id=e62|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A459)>>
+Inc S$竞技右显示 <Text|id=e63|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A469)>>
+Inc S$竞技右显示 <ItemShow|id=e64|children={a10_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖10_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e65|children={a10_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖10_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e67|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a10_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖10_2)>>
+Inc S$竞技右显示 <Text|id=a10_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖10_4)>>
+Mov S$竞技提示显示 <RText|id=f1|x=3.0|y=66.0|size=16|color=255|text=<入榜条件:/FCOLOR=159><所有注灵等级总和达到/FCOLOR=159><30级及以上/FCOLOR=251>>
+Goto @Npc全服竞技会话
+Break
+[@竞技元神榜SM]
+#Act
+Mov S$Npc标题 元神榜
+Mov S$排名变量1 A470
+Mov S$排名变量2 A471
+Mov S$排名变量3 A472
+Mov S$排名变量4 A473
+Mov S$排名变量5 A474
+Mov S$排名变量6 A475
+Mov S$排名变量7 A476
+Mov S$排名变量8 A477
+Mov S$排名变量9 A478
+Mov S$排名变量10 A479
+Mov S$竞技左按钮_1 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_2 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_3 custom/hl/hl_ui/an_02.png
+Mov S$竞技左按钮_4 custom/hl/hl_ui/an_01.png
+Mov S$竞技左按钮_5 custom/hl/hl_ui/an_02.png
+
+Goto @读取竞技配置
+
+Mov S$竞技右显示 <Img|ax=0|x=132.0|y=164.0|width=622|height=50|scale9t=6|scale9r=6|img=custom/hl/hlsd/fx.png|scale9b=6|scale9l=6|esc=0>
+Inc S$竞技右显示 <Text|x=152.0|y=175.0|color=255|size=18|text=排名>
+Inc S$竞技右显示 <Text|x=247.0|y=175.0|color=255|size=18|text=玩家名称>
+Inc S$竞技右显示 <Text|x=392.0|y=175.0|color=255|size=18|text=元神等级>
+Inc S$竞技右显示 <Text|x=616.0|y=175.0|color=255|size=18|text=奖励>
+Inc S$竞技右显示 <Img|ax=0|x=133.0|y=209.0|width=620|img=custom/hl/hl_ui/hl_bg_01.png|esc=0>
+Inc S$竞技右显示 <Img|ax=0|x=133.0|y=415.0|width=620|esc=0|img=custom/hl/hl_ui/hl_bg_01.png>
+
+Inc S$竞技右显示 <ListView|children={a-1,a-2,a-3,a-4,a-5,a-6,a-7,a-8,a-9,a-10}|x=134.0|y=213.0|direction=1|bounce=0|margin=2|width=620|height=200|reload=1>
+Inc S$竞技右显示 <Layout|id=a-1|children={b1,b2,b3,b4,b5,b6,b7,b8,b9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=b1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_01.png|esc=0>
+Inc S$竞技右显示 <Text|id=b2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A470)>>
+Inc S$竞技右显示 <Text|id=b3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A480)>>
+Inc S$竞技右显示 <ItemShow|id=b4|children={a1_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=b5|children={a1_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=b6|children={a1_3,a1_3a}|x=535.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖1_5)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=b7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a1_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_2)>>
+Inc S$竞技右显示 <Text|id=a1_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_4)>>
+Inc S$竞技右显示 <Text|id=a1_3|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖1_6)>>
+Inc S$竞技右显示 <Img|id=a1_3a|x=62.0|y=2.0|img=custom/hl/hlsd/jb_1.png|esc=0>
+
+Inc S$竞技右显示 <Layout|id=a-2|children={c1,c2,c3,c4,c5,c6,c7,c8,c9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=c1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_02.png|esc=0>
+Inc S$竞技右显示 <Text|id=c2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A471)>>
+Inc S$竞技右显示 <Text|id=c3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A481)>>
+Inc S$竞技右显示 <ItemShow|id=c4|children={a2_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖2_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=c5|children={a2_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖2_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=c7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a2_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖2_2)>>
+Inc S$竞技右显示 <Text|id=a2_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖2_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-3|children={d1,d2,d3,d4,d5,d6,d7,d8,d9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=d1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_03.png|esc=0>
+Inc S$竞技右显示 <Text|id=d2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A472)>>
+Inc S$竞技右显示 <Text|id=d3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A482)>>
+Inc S$竞技右显示 <ItemShow|id=d4|children={a3_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖3_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=d5|children={a3_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖3_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=d7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a3_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖3_2)>>
+Inc S$竞技右显示 <Text|id=a3_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖3_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-4|children={e1,e2,e3,e4,e5,e6,e7,e8,e9}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e1|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_04.png|esc=0>
+Inc S$竞技右显示 <Text|id=e2|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A473)>>
+Inc S$竞技右显示 <Text|id=e3|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A483)>>
+Inc S$竞技右显示 <ItemShow|id=e4|children={a4_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖4_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e5|children={a4_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖4_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e7|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a4_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖4_2)>>
+Inc S$竞技右显示 <Text|id=a4_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖4_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-5|children={e11,e12,e13,e14,e15,e16,e17,e18,e19}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e11|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_05.png|esc=0>
+Inc S$竞技右显示 <Text|id=e12|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A474)>>
+Inc S$竞技右显示 <Text|id=e13|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A484)>>
+Inc S$竞技右显示 <ItemShow|id=e14|children={a5_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖5_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e15|children={a5_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖5_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e17|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a5_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖5_2)>>
+Inc S$竞技右显示 <Text|id=a5_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖5_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-6|children={e21,e22,e23,e24,e25,e26,e27,e28,e29}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e21|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_06.png|esc=0>
+Inc S$竞技右显示 <Text|id=e22|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A475)>>
+Inc S$竞技右显示 <Text|id=e23|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A485)>>
+Inc S$竞技右显示 <ItemShow|id=e24|children={a6_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖6_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e25|children={a6_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖6_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e27|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a6_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖6_2)>>
+Inc S$竞技右显示 <Text|id=a6_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖6_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-7|children={e31,e32,e33,e34,e35,e36,e37,e38,e39}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e31|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_07.png|esc=0>
+Inc S$竞技右显示 <Text|id=e32|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A476)>>
+Inc S$竞技右显示 <Text|id=e33|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A486)>>
+Inc S$竞技右显示 <ItemShow|id=e34|children={a7_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖7_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e35|children={a7_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖7_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e37|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a7_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖7_2)>>
+Inc S$竞技右显示 <Text|id=a7_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖7_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-8|children={e41,e42,e43,e44,e45,e46,e47,e48,e49}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e41|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_08.png|esc=0>
+Inc S$竞技右显示 <Text|id=e42|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A477)>>
+Inc S$竞技右显示 <Text|id=e43|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A487)>>
+Inc S$竞技右显示 <ItemShow|id=e44|children={a8_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖8_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e45|children={a8_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖8_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e47|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a8_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖8_2)>>
+Inc S$竞技右显示 <Text|id=a8_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖8_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-9|children={e51,e52,e53,e54,e55,e56,e57,e58,e59}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e51|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_09.png|esc=0>
+Inc S$竞技右显示 <Text|id=e52|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A478)>>
+Inc S$竞技右显示 <Text|id=e53|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A488)>>
+Inc S$竞技右显示 <ItemShow|id=e54|children={a9_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖9_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e55|children={a9_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖9_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e57|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a9_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖9_2)>>
+Inc S$竞技右显示 <Text|id=a9_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖9_4)>>
+
+
+Inc S$竞技右显示 <Layout|id=a-10|children={e61,e62,e63,e64,e65,e66,e67,e68,e69}|x=134.0|y=213.0|width=620|height=90>
+Inc S$竞技右显示 <Img|id=e61|x=8.0|y=21.0|img=custom/hl/hlsd/icon_paihangbang_10.png|esc=0>
+Inc S$竞技右显示 <Text|id=e62|a=4|x=150.0|y=40.0|color=255|size=18|text=<$Str(A479)>>
+Inc S$竞技右显示 <Text|id=e63|a=4|x=295.0|y=40.0|color=255|size=18|text=<$Str(A489)>>
+Inc S$竞技右显示 <ItemShow|id=e64|children={a10_1}|x=375.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖10_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <ItemShow|id=e65|children={a10_2}|x=455.0|y=10.0|width=70|height=70|itemid=<$Str(S$竞技奖10_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$竞技右显示 <Img|ax=0|id=e67|x=-75.0|y=90.0|width=750|img=custom/hl/hlsd/fot.png|esc=0>
+Inc S$竞技右显示 <Text|id=a10_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖10_2)>>
+Inc S$竞技右显示 <Text|id=a10_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$竞技奖10_4)>>
+Mov S$竞技提示显示 <RText|id=f1|x=3.0|y=66.0|size=16|color=255|text=<入榜条件:/FCOLOR=159><火龙元神5个属性总和/FCOLOR=159><大于等于8级/FCOLOR=251>>
+Goto @Npc全服竞技会话
+Break
+[@竞技强星榜SM]
+
+[@读取竞技配置]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\全服活动\竞技排行榜配置.ini <$Str(S$Npc标题)> 第一名 S$竞技奖1
+ReadConfigFileItem ..\QuestDiary\全服活动\竞技排行榜配置.ini <$Str(S$Npc标题)> 第二名 S$竞技奖2
+ReadConfigFileItem ..\QuestDiary\全服活动\竞技排行榜配置.ini <$Str(S$Npc标题)> 第三名 S$竞技奖3
+ReadConfigFileItem ..\QuestDiary\全服活动\竞技排行榜配置.ini <$Str(S$Npc标题)> 第四名 S$竞技奖4
+ReadConfigFileItem ..\QuestDiary\全服活动\竞技排行榜配置.ini <$Str(S$Npc标题)> 第五名 S$竞技奖5
+ReadConfigFileItem ..\QuestDiary\全服活动\竞技排行榜配置.ini <$Str(S$Npc标题)> 第六名 S$竞技奖6
+ReadConfigFileItem ..\QuestDiary\全服活动\竞技排行榜配置.ini <$Str(S$Npc标题)> 第七名 S$竞技奖7
+ReadConfigFileItem ..\QuestDiary\全服活动\竞技排行榜配置.ini <$Str(S$Npc标题)> 第八名 S$竞技奖8
+ReadConfigFileItem ..\QuestDiary\全服活动\竞技排行榜配置.ini <$Str(S$Npc标题)> 第九名 S$竞技奖9
+ReadConfigFileItem ..\QuestDiary\全服活动\竞技排行榜配置.ini <$Str(S$Npc标题)> 第十名 S$竞技奖10
+ReadConfigFileItem ..\QuestDiary\全服活动\竞技排行榜配置.ini <$Str(S$Npc标题)> 入围奖 S$竞技奖11
+GetValidstr <$Str(S$竞技奖1)> | S$竞技奖1_1 S$竞技奖1_2
+GetValidstr <$Str(S$竞技奖1_2)> | S$竞技奖1_2 S$竞技奖1_3
+GetValidstr <$Str(S$竞技奖1_3)> | S$竞技奖1_3 S$竞技奖1_4
+GetValidstr <$Str(S$竞技奖1_4)> | S$竞技奖1_4 S$竞技奖1_5
+GetValidstr <$Str(S$竞技奖1_5)> | S$竞技奖1_5 S$竞技奖1_6
+GetDBItemFieldValue <$Str(S$竞技奖1_1)> Idx S$竞技奖1_1
+GetDBItemFieldValue <$Str(S$竞技奖1_3)> Idx S$竞技奖1_3
+GetDBItemFieldValue <$Str(S$竞技奖1_5)> Idx S$竞技奖1_5
+;==================
+GetValidstr <$Str(S$竞技奖2)> | S$竞技奖2_1 S$竞技奖2_2
+GetValidstr <$Str(S$竞技奖2_2)> | S$竞技奖2_2 S$竞技奖2_3
+GetValidstr <$Str(S$竞技奖2_3)> | S$竞技奖2_3 S$竞技奖2_4
+GetDBItemFieldValue <$Str(S$竞技奖2_1)> Idx S$竞技奖2_1
+GetDBItemFieldValue <$Str(S$竞技奖2_3)> Idx S$竞技奖2_3
+;==================
+GetValidstr <$Str(S$竞技奖3)> | S$竞技奖3_1 S$竞技奖3_2
+GetValidstr <$Str(S$竞技奖3_2)> | S$竞技奖3_2 S$竞技奖3_3
+GetValidstr <$Str(S$竞技奖3_3)> | S$竞技奖3_3 S$竞技奖3_4
+GetDBItemFieldValue <$Str(S$竞技奖3_1)> Idx S$竞技奖3_1
+GetDBItemFieldValue <$Str(S$竞技奖3_3)> Idx S$竞技奖3_3
+;==================
+GetValidstr <$Str(S$竞技奖4)> | S$竞技奖4_1 S$竞技奖4_2
+GetValidstr <$Str(S$竞技奖4_2)> | S$竞技奖4_2 S$竞技奖4_3
+GetValidstr <$Str(S$竞技奖4_3)> | S$竞技奖4_3 S$竞技奖4_4
+GetDBItemFieldValue <$Str(S$竞技奖4_1)> Idx S$竞技奖4_1
+GetDBItemFieldValue <$Str(S$竞技奖4_3)> Idx S$竞技奖4_3
+;==================
+GetValidstr <$Str(S$竞技奖5)> | S$竞技奖5_1 S$竞技奖5_2
+GetValidstr <$Str(S$竞技奖5_2)> | S$竞技奖5_2 S$竞技奖5_3
+GetValidstr <$Str(S$竞技奖5_3)> | S$竞技奖5_3 S$竞技奖5_4
+GetDBItemFieldValue <$Str(S$竞技奖5_1)> Idx S$竞技奖5_1
+GetDBItemFieldValue <$Str(S$竞技奖5_3)> Idx S$竞技奖5_3
+;==================
+GetValidstr <$Str(S$竞技奖6)> | S$竞技奖6_1 S$竞技奖6_2
+GetValidstr <$Str(S$竞技奖6_2)> | S$竞技奖6_2 S$竞技奖6_3
+GetValidstr <$Str(S$竞技奖6_3)> | S$竞技奖6_3 S$竞技奖6_4
+GetDBItemFieldValue <$Str(S$竞技奖6_1)> Idx S$竞技奖6_1
+GetDBItemFieldValue <$Str(S$竞技奖6_3)> Idx S$竞技奖6_3
+;==================
+GetValidstr <$Str(S$竞技奖7)> | S$竞技奖7_1 S$竞技奖7_2
+GetValidstr <$Str(S$竞技奖7_2)> | S$竞技奖7_2 S$竞技奖7_3
+GetValidstr <$Str(S$竞技奖7_3)> | S$竞技奖7_3 S$竞技奖7_4
+GetDBItemFieldValue <$Str(S$竞技奖7_1)> Idx S$竞技奖7_1
+GetDBItemFieldValue <$Str(S$竞技奖7_3)> Idx S$竞技奖7_3
+;==================
+GetValidstr <$Str(S$竞技奖8)> | S$竞技奖8_1 S$竞技奖8_2
+GetValidstr <$Str(S$竞技奖8_2)> | S$竞技奖8_2 S$竞技奖8_3
+GetValidstr <$Str(S$竞技奖8_3)> | S$竞技奖8_3 S$竞技奖8_4
+GetDBItemFieldValue <$Str(S$竞技奖8_1)> Idx S$竞技奖8_1
+GetDBItemFieldValue <$Str(S$竞技奖8_3)> Idx S$竞技奖8_3
+;==================
+GetValidstr <$Str(S$竞技奖9)> | S$竞技奖9_1 S$竞技奖9_2
+GetValidstr <$Str(S$竞技奖9_2)> | S$竞技奖9_2 S$竞技奖9_3
+GetValidstr <$Str(S$竞技奖9_3)> | S$竞技奖9_3 S$竞技奖9_4
+GetDBItemFieldValue <$Str(S$竞技奖9_1)> Idx S$竞技奖9_1
+GetDBItemFieldValue <$Str(S$竞技奖9_3)> Idx S$竞技奖9_3
+;==================
+GetValidstr <$Str(S$竞技奖10)> | S$竞技奖10_1 S$竞技奖10_2
+GetValidstr <$Str(S$竞技奖10_2)> | S$竞技奖10_2 S$竞技奖10_3
+GetValidstr <$Str(S$竞技奖10_3)> | S$竞技奖10_3 S$竞技奖10_4
+GetDBItemFieldValue <$Str(S$竞技奖10_1)> Idx S$竞技奖10_1
+GetDBItemFieldValue <$Str(S$竞技奖10_3)> Idx S$竞技奖10_3
+;==================
+GetValidstr <$Str(S$竞技奖11)> | S$竞技奖11_1 S$竞技奖11_2
+GetDBItemFieldValue <$Str(S$竞技奖11_1)> Idx S$竞技奖11_1
+
+
+
+[@竞技时间计算]
+#IF
+#Act
+Taketime <$Str(A0)>-<$Str(A497)> <$Str(A0)>-23-59-59
+Mov N$开区当日时间差 <$Timeresult>
+Mov N$活动结束时间 0
+Mul N$活动结束时间 86400 <$Str(S$时间补差)>
+Inc N$活动结束时间 <$Str(N$开区当日时间差)>
+
+Taketime <$Str(A0)>-<$Str(A497)> <$YEAR>-<$MONTH>-<$DAY>-<$HOUR>-<$MINUTE>-<$SECOND>
+Mov N$当前系统时间差 <$Timeresult>
+Dec N$活动结束时间 <$Str(N$当前系统时间差)>
+
+
+
+}

@@ -1,0 +1,319 @@
+[@Main]
+#IF
+#Act
+Mov S$沙按钮A custom/hl/hl_ui/115_1.png
+Mov S$沙按钮B custom/hl/hl_ui/115_2.png
+Mov S$沙传送页面
+Inc S$沙传送页面 <Button|x=19.0|y=62.0|color=103|size=18|nimg=<$Str(S$沙按钮A)>|pimg=<$Str(S$沙按钮B)>|text=沙城传送|link=@沙城传送>
+Inc S$沙传送页面 <Button|x=19.0|y=105.0|color=10|size=18|nimg=<$Str(S$沙按钮B)>|pimg=<$Str(S$沙按钮A)>|text=沙城奖励|link=@城主奖励>
+Inc S$沙传送页面 <Button|x=19.0|y=148.0|color=10|size=18|nimg=<$Str(S$沙按钮B)>|pimg=<$Str(S$沙按钮A)>|text=沙城城主|link=@沙城城主>
+Inc S$沙传送页面 <Text|x=161.0|y=71.0|color=249|size=18|text=血战沙城,无上荣耀,实力和地位决定你的命运...>
+Inc S$沙传送页面 <Text|x=161.0|y=142.0|color=151|size=18|text=别啰嗦了,速度传我到沙巴克,我兄弟被人砍了...>
+Inc S$沙传送页面 <RText|x=161.0|y=106.0|color=255|size=18|text=<攻城期间只有开启/FCOLOR=255><沙城捐献/FCOLOR=254><才能参加攻城活动.../FCOLOR=255>>
+Inc S$沙传送页面 <Button|x=217.0|y=222.0|color=103|size=18|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=沙城复活点|link=@复活点>
+Inc S$沙传送页面 <Button|x=217.0|y=305.0|color=103|size=18|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=秘密通道|link=@秘密通道>
+Inc S$沙传送页面 <Button|x=389.0|y=222.0|color=103|size=18|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=仓库|link=@仓库>
+Inc S$沙传送页面 <Button|x=392.0|y=305.0|color=103|size=18|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=衣服店|link=@衣服店>
+Inc S$沙传送页面 <Button|x=565.0|y=222.0|color=103|size=18|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=武器店|link=@武器店>
+Inc S$沙传送页面 <Button|x=566.0|y=305.0|color=103|size=18|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=首饰店|link=@首饰店>
+Inc S$沙传送页面 <Text|x=210.0|y=435.0|color=147|size=18|text=每次合区后,当天晚上8点所有行会开始攻沙,22:30清理沙城捐献...>
+
+#If
+Equal A491 ◆◆◆沙城争霸◆◆◆\虚位以待
+#Act
+Mov S$沙城城主名称 虚位以待
+Goto @Npc会话
+Break
+#Elseact
+Mov S$沙城城主名称 <$Str(A491)>
+Goto @Npc会话
+
+[@Npc会话]
+
+<Img|show=4|bg=1|loadDelay=1|move=0|esc=0|img=custom/hl/shajuan/hl_bg.png|reset=1>
+<Layout|x=757.0|y=5.0|width=80|height=80|link=@exit>
+<Button|x=771.0|y=6.0|color=255|pimg=custom/hl/shajuan/c2.png|nimg=custom/hl/shajuan/c1.png|size=18|link=@exit>
+<Text|x=350.0|y=8.0|color=103|size=18|text=沙城争霸>
+<Img|x=139.0|y=59.0|width=450|height=5|rotate=90|img=custom/hl/shajuan/fg.png|esc=0>
+
+
+<$Str(S$沙传送页面)>
+
+
+
+[@沙城城主]
+#IF
+Equal <$LORD> 管理员
+#Act
+Mov S$沙传送页面
+Inc S$沙传送页面 <Button|x=19.0|y=62.0|color=10|size=18|nimg=<$Str(S$沙按钮B)>|pimg=<$Str(S$沙按钮B)>|text=沙城传送|link=@沙城传送>
+Inc S$沙传送页面 <Button|x=19.0|y=105.0|color=10|size=18|nimg=<$Str(S$沙按钮B)>|pimg=<$Str(S$沙按钮A)>|text=沙城奖励|link=@城主奖励>
+Inc S$沙传送页面 <Button|x=19.0|y=148.0|color=103|size=18|nimg=<$Str(S$沙按钮A)>|pimg=<$Str(S$沙按钮B)>|text=沙城城主|link=@沙城城主>
+Inc S$沙传送页面 <Img|x=139.0|y=74.0|img=custom/hl/shajuan/scz.png|esc=0>
+Inc S$沙传送页面 <Img|x=261.0|y=52.0|img=custom/hl/shajuan/rw.png|esc=0>
+Inc S$沙传送页面 <Effect|x=279.0|y=91.0|effecttype=0|effectid=35003|dir=5|speed=1|scale=1|act=0>
+Inc S$沙传送页面 <RText|x=749.0|a=3|y=85.0|color=103|size=18|text=<本届沙城城主：/FCOLOR=255><<$Str(S$沙城城主名称)>/FCOLOR=103>>
+
+Goto @Npc会话
+Break
+
+
+#IF
+Not Equal <$LORD> 管理员
+Gender Man
+#Act
+Mov N$性别 0
+#Elseact
+Mov N$性别 1
+
+#IF
+Not Equal <$LORD> 管理员
+#Act
+GetHumVar <$LORD> S$衣服名 <$DRESS>
+GetHumVar <$LORD> S$武器名 <$WEAPON>
+GetDBItemFieldValue <$Str(S$衣服名)> looks G480
+GetDBItemFieldValue <$Str(S$衣服名)> sEffect S$衣服特效ID
+GetDBItemFieldValue <$Str(S$武器名)> looks G481
+GetDBItemFieldValue <$Str(S$武器名)> sEffect S$武器特效ID
+Mov G482 <$Str(S$衣服特效ID)>
+Mov G483 <$Str(S$武器特效ID)>
+
+Mov S$沙传送页面
+Inc S$沙传送页面 <Button|x=19.0|y=62.0|color=10|size=18|nimg=<$Str(S$沙按钮B)>|pimg=<$Str(S$沙按钮B)>|text=沙城传送|link=@沙城传送>
+Inc S$沙传送页面 <Button|x=19.0|y=105.0|color=10|size=18|nimg=<$Str(S$沙按钮B)>|pimg=<$Str(S$沙按钮A)>|text=沙城奖励|link=@城主奖励>
+Inc S$沙传送页面 <Button|x=19.0|y=148.0|color=103|size=18|nimg=<$Str(S$沙按钮A)>|pimg=<$Str(S$沙按钮B)>|text=沙城城主|link=@沙城城主>
+Inc S$沙传送页面 <Img|x=139.0|y=74.0|img=custom/hl/shajuan/scz.png|esc=0>
+Inc S$沙传送页面 <UIModel|x=440.0|y=292.0|scale=1|sex=<$Str(N$性别)>|clothID=<$Str(G480)>|weaponID=<$Str(G481)>|clothEffectID=<$Str(G482)>#1#0#0|weaponEffectID=<$Str(G483)>#1#0#0>
+Inc S$沙传送页面 <Effect|x=279.0|y=91.0|effecttype=0|effectid=35003|dir=5|speed=1|scale=1|act=0>
+Inc S$沙传送页面 <RText|x=749.0|a=3|y=85.0|color=103|size=18|text=<本届沙城城主：/FCOLOR=255><<$Str(S$沙城城主名称)>/FCOLOR=103>>
+Goto @Npc会话
+Break
+
+[@沙城传送]
+#IF
+#Act
+Goto @Main
+Break
+
+
+[@城主奖励]
+#IF
+#Act
+Mov S$沙传送页面
+Inc S$沙传送页面 <Button|x=19.0|y=62.0|color=10|size=18|nimg=<$Str(S$沙按钮B)>|pimg=<$Str(S$沙按钮B)>|text=沙城传送|link=@沙城传送>
+Inc S$沙传送页面 <Button|x=19.0|y=105.0|color=103|size=18|nimg=<$Str(S$沙按钮A)>|pimg=<$Str(S$沙按钮B)>|text=沙城奖励|link=@城主奖励>
+Inc S$沙传送页面 <Button|x=19.0|y=148.0|color=10|size=18|nimg=<$Str(S$沙按钮B)>|pimg=<$Str(S$沙按钮A)>|text=沙城城主|link=@沙城城主>
+Inc S$沙传送页面 <Text|x=212.0|y=450.0|size=18|color=249|text=所有沙巴克的奖励均以邮件的方式发送给所有沙巴克成员...>
+Inc S$沙传送页面 <Text|x=255.0|y=478.0|color=151|size=18|text=别啰嗦了,速度传我到沙巴克,我兄弟被人砍了...>
+Inc S$沙传送页面 <Img|x=190.0|y=97.0|img=custom/hl/shajuan/icon1.png|esc=0>
+Inc S$沙传送页面 <RText|x=210.0|y=91.0|color=255|size=18|text=<沙巴克城主：/FCOLOR=255><<$LORD>/FCOLOR=254>>
+Inc S$沙传送页面 <Img|x=484.0|y=96.0|img=custom/hl/shajuan/icon1.png|esc=0>
+Inc S$沙传送页面 <RText|x=519.0|y=91.0|color=255|size=18|text=<所属行会：/FCOLOR=255><<$OWNERGUILD>/FCOLOR=254>>
+Inc S$沙传送页面 <Img|x=220.0|y=192.0|img=custom/hl/shajuan/icon3.png|esc=0>
+Inc S$沙传送页面 <Text|x=249.0|y=189.0|color=159|size=18|text=专属称号奖励>
+Inc S$沙传送页面 <Img|x=219.0|y=228.0|img=custom/hl/shajuan/icon3.png|esc=0>
+Inc S$沙传送页面 <Text|x=249.0|y=225.0|color=159|size=18|text=瓜分70%的沙城捐献奖池(合区首次攻沙)>
+Inc S$沙传送页面 <Img|x=219.0|y=265.0|img=custom/hl/shajuan/icon3.png|esc=0>
+Inc S$沙传送页面 <Text|x=250.0|y=263.0|color=159|size=18|text=所有沙巴克成员奖励10万绑定元宝(合区首次攻沙)>
+Inc S$沙传送页面 <Img|x=219.0|y=303.0|img=custom/hl/shajuan/icon3.png|esc=0>
+Inc S$沙传送页面 <Text|x=253.0|y=300.0|color=159|size=18|text=非合区首次攻沙励胜利行会:350万绑定元宝;1400火龙币>
+Inc S$沙传送页面 <Img|x=219.0|y=336.0|img=custom/hl/shajuan/icon3.png|esc=0>
+Inc S$沙传送页面 <Text|x=253.0|y=333.0|color=159|size=18|text=非合区首次攻沙励失败行会:150万绑定元宝;600火龙币>
+Goto @Npc会话
+Break
+
+
+[@复活点]
+#IF
+Not Checkunderwar 沙巴克
+#Act
+Sendmsg 9 非攻沙期间禁止传送...
+Close
+Break
+
+#IF
+Not Equal <$HUMAN(沙城捐献)> 已开启
+#Act
+Sendmsg 9 你不是沙捐玩家不能传送...
+Close
+Break
+
+#If
+Not Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Inc G495 1
+Calcvar Guild 参加沙巴克人数 + 1
+Savevar Guild 参加沙巴克人数
+Addnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+Mapmove 3 644 290 3
+Break
+#Elseact
+Mapmove 3 644 290 3
+Break
+
+[@武器店]
+#IF
+Not Checkunderwar 沙巴克
+#Act
+Sendmsg 9 非攻沙期间禁止传送...
+Close
+Break
+
+#IF
+Not Equal <$HUMAN(沙城捐献)> 已开启
+#Act
+Sendmsg 9 你不是沙捐玩家不能传送...
+Close
+Break
+
+#If
+Not Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Inc G495 1
+Calcvar Guild 参加沙巴克人数 + 1
+Savevar Guild 参加沙巴克人数
+Addnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+Mapmove 3 637 314 3
+Break
+#Elseact
+Mapmove 3 637 314 3
+Break
+
+[@首饰店]
+#IF
+Not Checkunderwar 沙巴克
+#Act
+Sendmsg 9 非攻沙期间禁止传送...
+Close
+Break
+
+#IF
+Not Equal <$HUMAN(沙城捐献)> 已开启
+#Act
+Sendmsg 9 你不是沙捐玩家不能传送...
+Close
+Break
+
+
+#If
+Not Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Inc G495 1
+Calcvar Guild 参加沙巴克人数 + 1
+Savevar Guild 参加沙巴克人数
+Addnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+Mapmove 3 680 297 3
+Break
+#Elseact
+Mapmove 3 680 297 3
+Break
+
+[@仓库]
+#IF
+Not Checkunderwar 沙巴克
+#Act
+Sendmsg 9 非攻沙期间禁止传送...
+Close
+Break
+
+#IF
+Not Equal <$HUMAN(沙城捐献)> 已开启
+#Act
+Sendmsg 9 你不是沙捐玩家不能传送...
+Close
+Break
+
+#If
+Not Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Inc G495 1
+Calcvar Guild 参加沙巴克人数 + 1
+Savevar Guild 参加沙巴克人数
+Addnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+Mapmove 3 641 249 3
+Break
+#Elseact
+Mapmove 3 641 249 3
+Break
+
+[@衣服店]
+#IF
+Not Checkunderwar 沙巴克
+#Act
+Sendmsg 9 非攻沙期间禁止传送...
+Close
+Break
+
+#IF
+Not Equal <$HUMAN(沙城捐献)> 已开启
+#Act
+Sendmsg 9 你不是沙捐玩家不能传送...
+Close
+Break
+
+#If
+Not Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Inc G495 1
+Calcvar Guild 参加沙巴克人数 + 1
+Savevar Guild 参加沙巴克人数
+Addnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+Mapmove 3 669 283 3
+Break
+#Elseact
+Mapmove 3 669 283 3
+Break
+
+
+[@秘密通道]
+#IF
+Not Checkunderwar 沙巴克
+#Act
+Sendmsg 9 非攻沙期间禁止传送...
+Close
+Break
+
+#IF
+Not Equal <$HUMAN(沙城捐献)> 已开启
+#Act
+Sendmsg 9 你不是沙捐玩家不能传送...
+Close
+Break
+
+#If
+Not Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Inc G495 1
+Calcvar Guild 参加沙巴克人数 + 1
+Savevar Guild 参加沙巴克人数
+Addnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+Mapmove D701 86 72 3
+Break
+#Elseact
+Mapmove D701 86 72 3
+Break
+
+
+
+
+
+[@exit]
+#Act
+Mov S$沙传送页面
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

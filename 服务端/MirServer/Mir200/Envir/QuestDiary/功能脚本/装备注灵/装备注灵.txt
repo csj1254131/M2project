@@ -1,0 +1,1878 @@
+[@装备注灵]
+{
+#IF
+#ACT
+Mov s$武器xk zlxk
+Mov s$衣服xk
+Mov s$头盔xk
+Mov s$项链xk
+Mov s$勋章xk
+Mov s$左手xk
+Mov s$右手xk
+Mov s$左戒xk
+Mov s$右戒xk
+Mov s$腰带xk
+Mov s$靴子xk
+Mov s$问号Tiss
+Mov s$套装Tiss
+Mov s$注灵选定 wq
+Mov s$注灵执行 1
+Mov s$注灵特效
+
+#IF
+Checkjob Warrior
+#ACT
+Mov s$职业属性 1
+Mov s$职业状态 攻击
+#IF
+Checkjob Wizard
+#ACT
+Mov s$职业属性 2
+Mov s$职业状态 魔法
+#IF
+Checkjob Taoist
+#ACT
+Mov s$职业属性 3
+Mov s$职业状态 道术
+#IF
+#ACT
+Goto @装备注灵部位运算
+
+[@装备注灵部位运算] 
+#IF
+#ACT
+Mov n$总攻下限 0
+Mov n$总攻上限 0
+Mov n$总防下限 0
+Mov n$总防上限 0
+Mov n$魔防下限 0
+Mov n$魔防上限 0
+Mov n$总生命值 0
+
+inc n$总攻下限 <$Str(u75)>
+inc n$总攻下限 <$Str(u81)>
+inc n$总攻下限 <$Str(u86)>
+inc n$总攻下限 <$Str(u88)>
+inc n$总攻下限 <$Str(u102)>
+
+inc n$总攻上限 <$Str(u76)>
+inc n$总攻上限 <$Str(u82)>
+inc n$总攻上限 <$Str(u87)>
+inc n$总攻上限 <$Str(u89)>
+inc n$总攻上限 <$Str(u103)>
+
+
+
+inc n$魔防下限 <$Str(u79)>
+inc n$魔防下限 <$Str(u95)>
+inc n$魔防下限 <$Str(u117)>
+
+inc n$魔防上限 <$Str(u80)>
+inc n$魔防上限 <$Str(u96)>
+inc n$魔防上限 <$Str(u118)>
+
+inc n$总防下限 <$Str(u77)>
+inc n$总防下限 <$Str(u97)>
+inc n$总防下限 <$Str(u104)>
+
+inc n$总防上限 <$Str(u78)>
+inc n$总防上限 <$Str(u98)>
+inc n$总防上限 <$Str(u105)>
+
+inc n$总生命值 <$Str(u83)>
+inc n$总生命值 <$Str(u84)>
+inc n$总生命值 <$Str(u85)>
+inc n$总生命值 <$Str(u106)>
+
+
+#IF
+LARGE U64 0 
+#ACT
+Mov s$注灵等级wq <TextAtlas|a=4|id=12b|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u64)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级wq
+#IF
+LARGE U65 0 
+#ACT
+Mov s$注灵等级yf <TextAtlas|a=4|id=13b|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u65)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级yf
+#IF
+LARGE U66 0 
+#ACT
+Mov s$注灵等级tk <TextAtlas|a=4|id=14b|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u66)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级tk
+#IF
+LARGE U67 0 
+#ACT
+Mov s$注灵等级xl <TextAtlas|a=4|id=16b|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u67)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级xl
+#IF
+LARGE U68 0 
+#ACT
+Mov s$注灵等级xz <TextAtlas|a=4|id=17b|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u68)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级xz
+#IF
+LARGE U69 0 
+#ACT
+Mov s$注灵等级zs <TextAtlas|a=4|id=18b|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u69)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级zs
+#IF
+LARGE U70 0 
+#ACT
+Mov s$注灵等级ys <TextAtlas|a=4|id=20b|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u70)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级ys
+#IF
+LARGE U71 0 
+#ACT
+Mov s$注灵等级zj <TextAtlas|a=4|id=21b|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u71)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级zj
+#IF
+LARGE U72 0 
+#ACT
+Mov s$注灵等级yj <TextAtlas|a=4|id=22b|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u72)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级yj
+#IF
+LARGE U73 0 
+#ACT
+Mov s$注灵等级yd <TextAtlas|a=4|id=24b|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u73)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级yd
+#IF
+LARGE U74 0 
+#ACT
+Mov s$注灵等级xzz <TextAtlas|a=4|id=25b|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u74)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级xzz
+
+#IF
+#ACT
+Goto @注灵选定_<$Str(s$注灵执行)>
+
+
+
+[@注灵选定_1]
+#IF
+LARGE u64 0
+#ACT
+Mov s$注灵等级   <TextAtlas|a=4|id=29a|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u64)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级
+
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  注灵材料idx s$注灵材料idx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  通用下限 s$通用下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  通用上限 s$通用上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  注灵概率     s$注灵概率
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  注灵材料xh s$注灵材料xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  注灵元宝xh s$注灵元宝xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)>  注灵龙币xh s$注灵龙币xh
+Mov n$注灵概率 <$str(s$注灵概率)>
+Div   n$注灵概率  100
+
+Mov s$注灵执行 1
+Mov s$注灵升级 64
+Mov n$u75 <$Str(u75)>
+Mov n$u76 <$Str(u76)>
+inc    n$u75 <$Str(s$通用下限)>
+inc    n$u76 <$Str(s$通用上限)>
+Mov s$注灵状态_1 <$Str(s$职业状态)>：<<$Str(u75)>-<$Str(u76)>/FCOLOR=250>
+Mov s$注灵状态_2 <$Str(s$职业状态)>：<<$Str(n$u75)>-<$Str(n$u76)>/FCOLOR=250>
+
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV n$龙币单价 0
+Goto @注灵选定星星运算
+BREAK
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+Goto @注灵选定星星运算
+BREAK
+[@注灵选定_2]
+#IF
+LARGE u65 0
+#ACT
+Mov s$注灵等级   <TextAtlas|a=4|id=29a|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u65)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)>  注灵材料idx s$注灵材料idx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)> 通用下限 s$通用下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)> 通用上限 s$通用上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)>  注灵概率     s$注灵概率
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)>  注灵材料xh s$注灵材料xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)>  注灵元宝xh s$注灵元宝xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)>  注灵龙币xh s$注灵龙币xh
+Mov n$注灵概率 <$str(s$注灵概率)>
+Div   n$注灵概率  100
+
+Mov s$注灵执行 2
+Mov s$注灵升级 65
+Mov n$u77 <$Str(u77)>
+Mov n$u78 <$Str(u78)>
+inc    n$u77 <$Str(s$通用下限)>
+inc    n$u78 <$Str(s$通用上限)>
+Mov s$注灵状态_1 防御：<<$Str(u77)>-<$Str(u78)>/FCOLOR=250>
+Mov s$注灵状态_2 防御：<<$Str(n$u77)>-<$Str(n$u78)>/FCOLOR=250>
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV n$龙币单价 0
+Goto @注灵选定星星运算
+BREAK
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+Goto @注灵选定星星运算
+BREAK
+[@注灵选定_3]
+#IF
+LARGE u66 0
+#ACT
+Mov s$注灵等级   <TextAtlas|a=4|id=29a|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u66)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)>  注灵材料idx s$注灵材料idx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)>  通用下限      s$通用下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)>  通用上限      s$通用上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)>  注灵概率      s$注灵概率
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)>  注灵材料xh s$注灵材料xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)>  注灵元宝xh s$注灵元宝xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)>  注灵龙币xh s$注灵龙币xh
+Mov  n$注灵概率 <$str(s$注灵概率)>
+Div    n$注灵概率  100
+Mov  s$注灵执行 3
+Mov  s$注灵升级 66
+Mov  n$u79 <$Str(u79)>
+Mov  n$u80 <$Str(u80)>
+inc    n$u79 <$Str(s$通用下限)>
+inc    n$u80 <$Str(s$通用上限)>
+Mov s$注灵状态_1 魔御：<<$Str(u79)>-<$Str(u80)>/FCOLOR=250>
+Mov s$注灵状态_2 魔御：<<$Str(n$u79)>-<$Str(n$u80)>/FCOLOR=250>
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV n$龙币单价 0
+Goto @注灵选定星星运算
+BREAK
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+Goto @注灵选定星星运算
+BREAK
+
+[@注灵选定_4]
+#IF
+LARGE u67 0
+#ACT
+Mov s$注灵等级   <TextAtlas|a=4|id=29a|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u67)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)>  注灵材料idx s$注灵材料idx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)>  通用下限     s$通用下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)>  通用上限     s$通用上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)>  注灵概率     s$注灵概率
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)>  注灵材料xh s$注灵材料xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)>  注灵元宝xh s$注灵元宝xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)>  注灵龙币xh s$注灵龙币xh
+Mov n$注灵概率 <$str(s$注灵概率)>
+Div   n$注灵概率  100
+
+Mov s$注灵执行 4
+Mov s$注灵升级 67
+Mov n$u81 <$Str(u81)>
+Mov n$u82 <$Str(u82)>
+inc    n$u81 <$Str(s$通用下限)>
+inc    n$u82 <$Str(s$通用上限)>
+Mov s$注灵状态_1 <$Str(s$职业状态)>：<<$Str(u81)>-<$Str(u82)>/FCOLOR=250>
+Mov s$注灵状态_2 <$Str(s$职业状态)>：<<$Str(n$u81)>-<$Str(n$u82)>/FCOLOR=250>
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV n$龙币单价 0
+Goto @注灵选定星星运算
+BREAK
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+Goto @注灵选定星星运算
+BREAK
+
+[@注灵选定_5]
+#IF
+LARGE u68 0
+#ACT
+Mov s$注灵等级   <TextAtlas|a=4|id=29a|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u68)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u68)>  注灵材料idx s$注灵材料idx
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵生命 提升生命 s$提升生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u68)>  注灵概率     s$注灵概率
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u68)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u68)>  注灵材料xh s$注灵材料xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u68)>  注灵元宝xh s$注灵元宝xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u68)>  注灵龙币xh s$注灵龙币xh
+Mov n$注灵概率 <$str(s$注灵概率)>
+Div   n$注灵概率  100
+Mov s$注灵执行 5
+Mov s$注灵升级 68
+#IF
+LARGE u68 0
+#ACT
+Mov n$u83 <$Str(u83)>
+Mov n$u68 <$Str(u68)>
+MUL n$u68 40
+DIV   n$u68 2
+
+Inc    n$u83 <$Str(n$u68)>
+Mov s$注灵状态_1 生命值：<<$Str(u83)>/FCOLOR=250>
+Mov s$注灵状态_2 生命值：<<$Str(n$u83)>/FCOLOR=250>
+
+#IF
+equal u68 0
+#ACT
+Mov n$u83 <$Str(u83)>
+Mov n$u68 1
+MUL n$u68 40
+DIV   n$u68 2
+Inc    n$u83 <$Str(n$u68)>
+Mov s$注灵状态_1 生命值：<<$Str(u83)>/FCOLOR=250>
+Mov s$注灵状态_2 生命值：<<$Str(n$u83)>/FCOLOR=250>
+
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV n$龙币单价 0
+Goto @注灵选定星星运算
+BREAK
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+Goto @注灵选定星星运算
+BREAK
+[@注灵选定_6]
+#IF
+LARGE u69 0
+#ACT
+Mov s$注灵等级   <TextAtlas|a=4|id=29a|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u69)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u69)>  注灵材料idx s$注灵材料idx
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵生命 提升生命 s$提升生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u69)>  注灵概率     s$注灵概率
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u69)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u69)>  注灵材料xh s$注灵材料xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u69)>  注灵元宝xh s$注灵元宝xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u69)>  注灵龙币xh s$注灵龙币xh
+Mov n$注灵概率 <$str(s$注灵概率)>
+Div   n$注灵概率  100
+Mov s$注灵执行 6
+Mov s$注灵升级 69
+#IF
+LARGE u69 0
+#ACT
+Mov n$u84 <$Str(u84)>
+Mov n$u69 <$Str(u69)>
+MUL n$u69 40
+DIV  n$u69  2
+Inc   n$u84 <$Str(n$u69)>
+Mov s$注灵状态_1 生命值：<<$Str(u84)>/FCOLOR=250>
+Mov s$注灵状态_2 生命值：<<$Str(n$u84)>/FCOLOR=250>
+#IF
+equal u69 0
+#ACT
+Mov n$u84 <$Str(u84)>
+Mov n$u69 1
+MUL n$u69 40
+DIV  n$u69  2
+Inc   n$u84 <$Str(n$u69)>
+Mov s$注灵状态_1 生命值：<<$Str(u84)>/FCOLOR=250>
+Mov s$注灵状态_2 生命值：<<$Str(n$u84)>/FCOLOR=250>
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV n$龙币单价 0
+Goto @注灵选定星星运算
+BREAK
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+Goto @注灵选定星星运算
+BREAK
+
+[@注灵选定_7]
+#IF
+LARGE u70 0
+#ACT
+Mov s$注灵等级   <TextAtlas|a=4|id=29a|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u70)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级
+
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u70)>  注灵材料idx s$注灵材料idx
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵生命 提升生命 s$提升生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u70)>  注灵概率     s$注灵概率
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u70)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u70)>  注灵材料xh s$注灵材料xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u70)>  注灵元宝xh s$注灵元宝xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u70)>  注灵龙币xh s$注灵龙币xh
+Mov n$注灵概率 <$str(s$注灵概率)>
+Div   n$注灵概率  100
+Mov s$注灵执行 7
+Mov s$注灵升级 70
+
+#IF
+LARGE u70 0
+#ACT
+Mov n$u85 <$Str(u85)>
+Mov n$u70 <$Str(u70)>
+MUL n$u70 40
+DIV  n$u70  2
+Inc   n$u85 <$Str(n$u70)>
+Mov s$注灵状态_1 生命值：<<$Str(u85)>/FCOLOR=250>
+Mov s$注灵状态_2 生命值：<<$Str(n$u85)>/FCOLOR=250>
+
+#IF
+equal u70 0
+#ACT
+Mov n$u85 <$Str(u85)>
+Mov n$u70  1
+MUL n$u70  40
+DIV  n$u70   2
+Inc   n$u85 <$Str(n$u70)>
+Mov s$注灵状态_1 生命值：<<$Str(u85)>/FCOLOR=250>
+Mov s$注灵状态_2 生命值：<<$Str(n$u85)>/FCOLOR=250>
+
+
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV n$龙币单价 0
+Goto @注灵选定星星运算
+BREAK
+
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+#ACT
+Goto @注灵选定星星运算
+BREAK
+
+[@注灵选定_8]
+#IF
+LARGE u71 0
+#ACT
+Mov s$注灵等级   <TextAtlas|a=4|id=29a|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u71)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)>  注灵材料idx s$注灵材料idx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)> 通用下限 s$通用下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71 )> 通用上限 s$通用上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)>  注灵概率     s$注灵概率
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)>  注灵材料xh s$注灵材料xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)>  注灵元宝xh s$注灵元宝xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)>  注灵龙币xh s$注灵龙币xh
+Mov n$注灵概率 <$str(s$注灵概率)>
+Div   n$注灵概率  100
+
+Mov s$注灵执行 8
+Mov s$注灵升级 71
+Mov n$u86 <$Str(u86)>
+Mov n$u87 <$Str(u87)>
+inc    n$u86 <$Str(s$通用下限)>
+inc    n$u87 <$Str(s$通用上限)>
+Mov s$注灵状态_1 <$Str(s$职业状态)>：<<$Str(u86)>-<$Str(u87)>/FCOLOR=250>
+Mov s$注灵状态_2 <$Str(s$职业状态)>：<<$Str(n$u86)>-<$Str(n$u87)>/FCOLOR=250>
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV n$龙币单价 0
+Goto @注灵选定星星运算
+BREAK
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+Goto @注灵选定星星运算
+BREAK
+[@注灵选定_9]
+#IF
+LARGE u72 0
+#ACT
+Mov s$注灵等级   <TextAtlas|a=4|id=29a|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u72)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)>  注灵材料idx s$注灵材料idx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)> 通用下限 s$通用下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)> 通用上限 s$通用上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)>  注灵概率     s$注灵概率
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)>  注灵材料xh s$注灵材料xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)>  注灵元宝xh s$注灵元宝xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)>  注灵龙币xh s$注灵龙币xh
+Mov  n$注灵概率 <$str(s$注灵概率)>
+Div    n$注灵概率  100
+Mov s$注灵执行 9
+Mov s$注灵升级 72
+Mov n$u88 <$Str(u88)>
+Mov n$u89 <$Str(u89)>
+inc    n$u88 <$Str(s$通用下限)>
+inc    n$u89 <$Str(s$通用上限)>
+Mov s$注灵状态_1 <$Str(s$职业状态)>：<<$Str(u88)>-<$Str(u89)>/FCOLOR=250>
+Mov s$注灵状态_2 <$Str(s$职业状态)>：<<$Str(n$u88)>-<$Str(n$u89)>/FCOLOR=250>
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV n$龙币单价 0
+Goto @注灵选定星星运算
+BREAK
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+Goto @注灵选定星星运算
+BREAK
+
+[@注灵选定_10]
+#IF
+LARGE u73 0
+#ACT
+Mov s$注灵等级   <TextAtlas|a=4|id=29a|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u73)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)>  注灵材料idx s$注灵材料idx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)> 通用下限 s$通用下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)> 通用上限 s$通用上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)>  注灵概率     s$注灵概率
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)>  注灵材料xh s$注灵材料xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)>  注灵元宝xh s$注灵元宝xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)>  注灵龙币xh s$注灵龙币xh
+Mov  n$注灵概率 <$str(s$注灵概率)>
+Div    n$注灵概率  100
+Mov s$注灵执行 10
+Mov s$注灵升级 73
+Mov n$u95 <$Str(u95)>
+Mov n$u96 <$Str(u96)>
+inc    n$u95 <$Str(s$通用下限)>
+inc    n$u96 <$Str(s$通用上限)>
+Mov s$注灵状态_1 魔御：<<$Str(u95)>-<$Str(u96)>/FCOLOR=250>
+Mov s$注灵状态_2 魔御：<<$Str(n$u95)>-<$Str(n$u96)>/FCOLOR=250>
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV n$龙币单价 0
+Goto @注灵选定星星运算
+BREAK
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+Goto @注灵选定星星运算
+BREAK
+
+[@注灵选定_11]
+#IF
+LARGE u74 0
+#ACT
+Mov s$注灵等级   <TextAtlas|a=4|id=29a|img=custom/hl/hl_ui/zlsj.png|schar=/|iheight=16|iwidth=11|text=/<$Str(u74)>|percentx=72|percenty=20>
+#ELSEACT
+Mov s$注灵等级
+#IF
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)>  注灵材料idx s$注灵材料idx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)> 通用下限 s$通用下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)> 通用上限 s$通用上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)>  注灵概率     s$注灵概率
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)>  注灵材料mc s$注灵材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)>  注灵材料xh s$注灵材料xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)>  注灵元宝xh s$注灵元宝xh
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)>  注灵龙币xh s$注灵龙币xh
+Mov  n$注灵概率 <$str(s$注灵概率)>
+Div    n$注灵概率  100
+Mov s$注灵执行 11
+Mov s$注灵升级 74
+Mov n$u97 <$Str(u97)>
+Mov n$u98 <$Str(u98)>
+inc    n$u97 <$Str(s$通用下限)>
+inc    n$u98 <$Str(s$通用上限)>
+Mov s$注灵状态_1 防御：<<$Str(u97)>-<$Str(u98)>/FCOLOR=250>
+Mov s$注灵状态_2 防御：<<$Str(n$u97)>-<$Str(n$u98)>/FCOLOR=250>
+#IF
+CHECKITEM <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+MOV n$龙币单价 0
+Goto @注灵选定星星运算
+BREAK
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+Goto @注灵选定星星运算
+BREAK
+[@注灵选定星星运算]
+#IF
+LARGE u<$str(s$注灵升级)> 29
+#ACT
+Mov s$注星标题 ty
+Mov n$注星Id 37
+Mov n$注星序号 1
+Mov n$注星标号 30
+Goto @执行注星运算
+BREAK
+
+#IF
+LARGE u<$str(s$注灵升级)> 14
+#ACT
+Mov s$注星标题 yl
+Mov n$注星Id 37
+Mov n$注星序号 1
+Mov n$注星标号 15
+Goto @执行注星运算
+BREAK
+
+#IF
+#ACT
+Mov s$注星标题 xx
+Mov n$注星Id 37
+Mov n$注星序号 1
+Mov n$注星标号 0
+Goto @执行注星运算
+BREAK
+
+
+[@执行注星运算]
+#IF
+LARGE u<$str(s$注灵升级)> <$Str(n$注星标号)>
+#ACT
+Mov s$注灵星星_<$Str(n$注星序号)> <Img|id=<$str(n$注星Id)>|img=custom/hl/zhuling/<$Str(s$注星标题)>_1.png>
+#ELSEACT
+Mov s$注灵星星_<$Str(n$注星序号)> <Img|id=<$str(n$注星Id)>|img=custom/hl/zhuling/<$Str(s$注星标题)>_0.png>
+
+
+#IF
+SMALL  n$注星序号 15
+#ACT
+INC n$注星序号 1
+INC n$注星Id 1
+INC n$注星标号 1
+Goto @执行注星运算
+BREAK
+
+#IF
+#ACT
+Goto @装备注灵展示
+BREAK
+
+
+
+
+[@开始注灵]
+#IF
+Not EQUAL s$注灵升级
+SMALL  U<$Str(s$注灵升级)> 45
+#ACT
+Movr n$注灵提升gl 1 10001
+Mov  n$是否注灵 0
+#ELSEACT
+BREAK
+#IF
+small u<$str(s$注灵升级)> 16
+#ACT
+Goto @进入消耗元宝模式
+BREAK
+
+#IF
+#ACT
+Goto @进入消耗材料模式
+BREAK
+
+
+[@进入消耗元宝模式]
+#IF
+Not equal s$注灵元宝xh
+CheckBindMoney 元宝 ? <$Str(s$注灵元宝xh)>
+#ACT
+Goto @进入消耗材料模式
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝数量不足</font>
+BREAK
+
+[@进入消耗材料模式]
+#IF
+Not EQUAL s$注灵材料mc
+Checkitem <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+#ACT
+ChangeBindMoney 元宝  <$Str(s$注灵元宝xh)>
+TAKE <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+Goto @执行开始注灵
+BREAK
+
+
+#IF
+#ACT
+GETBAGITEMCOUNT <$Str(s$注灵材料mc)> n$已有材料
+Mov  n$龙币单价 <$Str(s$注灵龙币xh)>
+Mul  n$已有材料 <$Str(n$龙币单价)>
+Mul  n$龙币单价 <$Str(s$注灵材料xh)>
+Dec  n$龙币单价 <$Str(n$已有材料)>
+Goto @执行购买火龙币
+break
+
+
+
+
+[@执行购买火龙币]
+#IF
+EQUAL U99 1
+CHECKMONEY 火龙币 ? <$Str(n$龙币单价)>
+#ACT
+MONEY 火龙币 - <$Str(n$龙币单价)>
+ChangeBindMoney 元宝  <$Str(s$注灵元宝xh)>
+TAKE <$Str(s$注灵材料mc)> <$Str(s$注灵材料xh)>
+Goto @执行开始注灵
+BREAK
+
+
+
+#IF
+EQUAL U99 1
+#ACT
+SENDMSG 9 <font color='#ff0000'>火龙币数量不足</font>
+BREAK
+
+#IF
+#ACT
+SENDMSG 9 <font color='#ff0000'>没有足够的<$Str(s$注灵材料mc)></font>
+
+
+[@执行开始注灵]
+#IF
+#ACT
+MOV S$C_活跃装备注灵完成 完成
+
+#IF
+EQUAL s$注灵升级 64
+SMALL n$注灵提升gl <$str(s$注灵概率)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)> 通用下限 s$通用下限
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u64)> 通用上限 s$通用上限
+INC U75 <$Str(s$通用下限)>
+INC U76 <$Str(s$通用上限)>
+INC U<$Str(s$注灵升级)> 1
+Mov s$注灵特效 <Effect|id=29b|effectid=6386|effecttype=0|scale=1|speed=1|x=-95|y=-95|count=1>
+;USEBONUSPOINT <$Str(s$职业属性)> + <$Str(s$通用下限)> 1
+;USEBONUSPOINT <$Str(s$职业属性)> + <$Str(s$通用上限)> 2
+;RECALCABILITYS
+#call [\属性刷新.txt] @属性刷新
+Goto @检测套装是否激活
+Goto @装备注灵部位运算
+Goto @注灵sm刷新
+BREAK
+#IF
+EQUAL s$注灵升级 65
+SMALL n$注灵提升gl <$str(s$注灵概率)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)> 通用下限 s$通用下限
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u65)> 通用上限 s$通用上限
+INC U77 <$Str(s$通用下限)>
+INC U78 <$Str(s$通用上限)>
+INC U<$Str(s$注灵升级)> 1
+#call [\属性刷新.txt] @属性刷新
+Mov s$注灵特效 <Effect|id=29b|effectid=6386|effecttype=0|scale=1|speed=1|x=-95|y=-95|count=1>
+Goto @检测套装是否激活
+Goto @装备注灵部位运算
+Goto @注灵sm刷新
+BREAK
+#IF
+EQUAL s$注灵升级 66
+SMALL n$注灵提升gl <$str(s$注灵概率)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)> 通用下限 s$通用下限
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u66)> 通用上限 s$通用上限
+INC U79 <$Str(s$通用下限)>
+INC U80 <$Str(s$通用上限)>
+INC U<$Str(s$注灵升级)> 1
+#CALL [\属性刷新.txt] @属性刷新
+Mov s$注灵特效 <Effect|id=29b|effectid=6386|effecttype=0|scale=1|speed=1|x=-95|y=-95|count=1>
+Goto @检测套装是否激活
+Goto @装备注灵部位运算
+Goto @注灵sm刷新
+BREAK
+#IF
+EQUAL s$注灵升级 67
+SMALL n$注灵提升gl <$str(s$注灵概率)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)> 通用下限 s$通用下限
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u67)> 通用上限 s$通用上限
+INC U81 <$Str(s$通用下限)>
+INC U82 <$Str(s$通用上限)>
+INC U<$Str(s$注灵升级)> 1
+Mov s$注灵特效 <Effect|id=29b|effectid=6386|effecttype=0|scale=1|speed=1|x=-95|y=-95|count=1>
+#CALL [\属性刷新.txt] @属性刷新
+Goto @检测套装是否激活
+Goto @装备注灵部位运算
+Goto @注灵sm刷新
+BREAK
+#IF
+EQUAL s$注灵升级 68
+SMALL n$注灵提升gl <$str(s$注灵概率)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵生命 提升生命 s$提升生命
+Mov s$生命标识 83
+Goto @提升生命值运算
+BREAK
+#IF
+EQUAL s$注灵升级 69
+SMALL n$注灵提升gl <$str(s$注灵概率)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵生命 提升生命 s$提升生命
+Mov s$生命标识 84
+Goto @提升生命值运算
+BREAK
+
+#IF
+EQUAL s$注灵升级 70
+SMALL n$注灵提升gl <$str(s$注灵概率)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵生命 提升生命 s$提升生命
+Mov s$生命标识 85
+Goto @提升生命值运算
+BREAK
+
+#IF
+EQUAL s$注灵升级 71
+SMALL n$注灵提升gl <$str(s$注灵概率)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)> 通用下限 s$通用下限
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u71)> 通用上限 s$通用上限
+INC U86 <$Str(s$通用下限)>
+INC U87 <$Str(s$通用上限)>
+INC U<$Str(s$注灵升级)> 1
+Mov s$注灵特效 <Effect|id=29b|effectid=6386|effecttype=0|scale=1|speed=1|x=-95|y=-95|count=1>
+#CALL [\属性刷新.txt] @属性刷新
+Goto @检测套装是否激活
+Goto @装备注灵部位运算
+Goto @注灵sm刷新
+BREAK
+#IF
+EQUAL s$注灵升级 72
+SMALL n$注灵提升gl <$str(s$注灵概率)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)> 通用下限 s$通用下限
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u72)> 通用上限 s$通用上限
+INC U88 <$Str(s$通用下限)>
+INC U89 <$Str(s$通用上限)>
+INC U<$Str(s$注灵升级)> 1
+Mov s$注灵特效 <Effect|id=29b|effectid=6386|effecttype=0|scale=1|speed=1|x=-95|y=-95|count=1>
+#CALL [\属性刷新.txt] @属性刷新
+Goto @检测套装是否激活
+Goto @装备注灵部位运算
+Goto @注灵sm刷新
+BREAK
+#IF
+EQUAL s$注灵升级 73
+SMALL n$注灵提升gl <$str(s$注灵概率)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)> 通用下限 s$通用下限
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u73)> 通用上限 s$通用上限
+
+INC U95 <$Str(s$通用下限)>
+INC U96 <$Str(s$通用上限)>
+INC U<$Str(s$注灵升级)> 1
+#CALL [\属性刷新.txt] @属性刷新
+Mov s$注灵特效 <Effect|id=29b|effectid=6386|effecttype=0|scale=1|speed=1|x=-95|y=-95|count=1>
+Goto @检测套装是否激活
+Goto @装备注灵部位运算
+Goto @注灵sm刷新
+BREAK
+#IF
+EQUAL s$注灵升级 74
+SMALL n$注灵提升gl <$str(s$注灵概率)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)> 通用下限 s$通用下限
+ReadConfigFileItem ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵等级_<$Str(u74)> 通用上限 s$通用上限
+INC U97 <$Str(s$通用下限)>
+INC U98 <$Str(s$通用上限)>
+INC U<$Str(s$注灵升级)> 1
+#CALL [\属性刷新.txt] @属性刷新
+Mov s$注灵特效 <Effect|id=29b|effectid=6386|effecttype=0|scale=1|speed=1|x=-95|y=-95|count=1>
+Goto @检测套装是否激活
+Goto @装备注灵部位运算
+Goto @注灵sm刷新
+BREAK
+
+#IF
+#ACT
+Mov s$注灵特效 <Effect|id=29b|effectid=6387|effecttype=0|scale=1|speed=1|x=-95|y=-35|count=1>
+Goto @装备注灵部位运算
+BREAK
+
+
+[@提升生命值运算]
+#IF
+large U<$Str(s$注灵升级)> 0
+#ACT
+Mov n$生命xj <$Str(U<$Str(s$注灵升级)>)>
+mul  n$生命xj 40
+div   n$生命xj 2
+INC U<$Str(s$生命标识)> <$Str(n$生命xj)>
+INC U<$Str(s$注灵升级)> 1
+#CALL [\属性刷新.txt] @属性刷新
+Mov s$注灵特效 <Effect|id=29b|effectid=6386|effecttype=0|scale=1|speed=1|x=-95|y=-95|count=1>
+Goto @检测套装是否激活
+Goto @装备注灵部位运算
+BREAK
+
+#IF
+#ACT
+Mov n$生命xj 1
+mul  n$生命xj 40
+div   n$生命xj 2
+INC U<$Str(s$生命标识)> <$Str(n$生命xj)>
+INC U<$Str(s$注灵升级)> 1
+
+
+;INC U<$Str(s$生命标识)> <$Str(s$提升生命)>
+;INC U<$Str(s$注灵升级)> 1
+#CALL [\属性刷新.txt] @属性刷新
+Mov s$注灵特效 <Effect|id=29b|effectid=6386|effecttype=0|scale=1|speed=1|x=-95|y=-95|count=1>
+Goto @检测套装是否激活
+Goto @装备注灵部位运算
+BREAK
+
+
+[@开启材料购买]
+#IF
+EQUAL U99 0
+#ACT
+Mov U99 1
+Goto @装备注灵部位运算
+BREAK
+
+#IF
+#ACT
+MOV U99 0
+Goto @装备注灵部位运算
+BREAK
+
+
+
+[@装备注灵展示]
+#IF
+#ACT
+#CALL [\游戏功能\读取背包\读取背包.txt] @背包检测
+#CALL [\功能脚本\装备注灵\注灵红点.txt] @注灵红点
+#SAY
+<Img|show=4|bg=1|img=custom/rxggui/bg_main_6.png|width=3000|height=3000|reload=1|layerid=4>
+<Img|a=4|children={0,2,0a,0b}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Text|id=0a|a=4|text=注灵|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Layout|id=0|children={1}|width=50|height=42|x=770|y=4|color=x|link=@exit>
+<Button|id=1|x=0|y=0|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+
+<Img|id=2|children={3,4,5,6,7,8,9,10,26}|img=custom/hl/zhuling/zlbj.jpg|x=21|y=62>
+<Text|id=3|text=注灵总属性|x=70|y=5|size=18|color=251|outline=2|outlinecolor=0>
+<RText|id=4|text=<$Str(s$职业状态)>：<<$str(n$总攻下限)>-<$str(n$总攻上限)>/FCOLOR=250>|x=50|y=40|size=18|color=100|outline=2|outlinecolor=0>
+
+<RText|id=6|text=防御：<<$str(n$总防下限)>-<$str(n$总防上限)>/FCOLOR=250>|x=50|y=65|size=18|color=100|outline=2|outlinecolor=0>
+<RText|id=7|text=魔御：<<$str(n$魔防下限)>-<$str(n$魔防上限)>/FCOLOR=250>|x=50|y=90|size=18|color=100|outline=2|outlinecolor=0>
+<RText|id=8|text=生命：<<$str(n$总生命值)>/FCOLOR=250>|x=50|y=115|size=18|color=100|outline=2|outlinecolor=0>
+
+<ListView|id=10|children={11,15,19,23}|direction=1|bounce=0|margin=12|width=222|height=290|color=x|x=10|y=150>
+<Layout|id=11|children={12,13,14}|width=210|height=62|color=x>
+<Img|id=12|children={12a,12b,12c}|img=custom/hl/zhuling/wq.png|link=@注灵选定_1#武器xk=zlxk#衣服xk=#头盔xk=#项链xk=#勋章xk=#左手xk=#右手xk=#左戒xk=#右戒xk=#腰带xk=#靴子xk=#注灵选定=wq#问号Tiss=#套装Tiss=#注灵特效>
+<Img|a=4|id=12a|img=custom/hl/zhuling/<$Str(s$武器xk)>.png|percentx=50|percenty=50>
+<$Str(s$注灵等级wq)>
+<Img|id=12c|x=5|y=5|img=custom/hl/hl_ui/<$Str(s$注灵红点wq)>.png> 
+
+
+<Img|id=13|children={13a,13b,13c}|img=custom/hl/zhuling/yf.png|x=75|link=@注灵选定_2#武器xk=#衣服xk=zlxk#头盔xk=#项链xk=#勋章xk=#左手xk=#右手xk=#左戒xk=#右戒xk=#腰带xk=#靴子xk=#注灵选定=yf#问号Tiss=#套装Tiss=#注灵特效>
+<Img|a=4|id=13a|img=custom/hl/zhuling/<$Str(s$衣服xk)>.png|percentx=50|percenty=50>
+<$Str(s$注灵等级yf)>
+<Img|id=13c|x=5|y=5|img=custom/hl/hl_ui/<$Str(s$注灵红点yf)>.png> 
+
+<Img|id=14|children={14a,14b,14c}|img=custom/hl/zhuling/tk.png|x=150|link=@注灵选定_3#武器xk=#衣服xk=#头盔xk=zlxk#项链xk=#勋章xk=#左手xk=#右手xk=#左戒xk=#右戒xk=#腰带xk=#靴子xk=#注灵选定=tk#问号Tiss=#套装Tiss=#注灵特效>
+<Img|a=4|id=14a|img=custom/hl/zhuling/<$Str(s$头盔xk)>.png|percentx=50|percenty=50>
+<$Str(s$注灵等级tk)>
+<Img|id=14c|x=5|y=5|img=custom/hl/hl_ui/<$Str(s$注灵红点tk)>.png> 
+
+<Layout|id=15|children={16,17,18}|width=210|height=62|color=x>
+<Img|id=16|children={16a,16b,16c}|img=custom/hl/zhuling/xl.png|link=@注灵选定_4#武器xk=#衣服xk=#头盔xk=#项链xk=zlxk#勋章xk=#左手xk=#右手xk=#左戒xk=#右戒xk=#腰带xk=#靴子xk=#注灵选定=xl#问号Tiss=#套装Tiss=#注灵特效>
+<Img|a=4|id=16a|img=custom/hl/zhuling/<$Str(s$项链xk)>.png|percentx=50|percenty=50>
+<$Str(s$注灵等级xl)>
+<Img|id=16c|x=5|y=5|img=custom/hl/hl_ui/<$Str(s$注灵红点xl)>.png> 
+
+<Img|id=17|children={17a,17b,17c}|img=custom/hl/zhuling/xz.png|x=75|link=@注灵选定_5#武器xk=#衣服xk=#头盔xk=#项链xk=#勋章xk=zlxk#左手xk=#右手xk=#左戒xk=#右戒xk=#腰带xk=#靴子xk=#注灵选定=xz#问号Tiss=#套装Tiss=#注灵特效>
+<Img|a=4|id=17a|img=custom/hl/zhuling/<$Str(s$勋章xk)>.png|percentx=50|percenty=50>
+<$Str(s$注灵等级xz)>
+<Img|id=17c|x=5|y=5|img=custom/hl/hl_ui/<$Str(s$注灵红点xz)>.png> 
+
+<Img|id=18|children={18a,18b,18c}|img=custom/hl/zhuling/zs.png|x=150|link=@注灵选定_6#武器xk=#衣服xk=#头盔xk=#项链xk=#勋章xk=#左手xk=zlxk#右手xk=#左戒xk=#右戒xk=#腰带xk=#靴子xk=#注灵选定=zs#问号Tiss=#套装Tiss=#注灵特效>
+<Img|a=4|id=18a|img=custom/hl/zhuling/<$Str(s$左手xk)>.png|percentx=50|percenty=50>
+<$Str(s$注灵等级zs)>
+<Img|id=18c|x=5|y=5|img=custom/hl/hl_ui/<$Str(s$注灵红点zs)>.png> 
+
+<Layout|id=19|children={20,21,22}|width=210|height=62|color=x>
+<Img|id=20|children={20a,20b,20c}|img=custom/hl/zhuling/ys.png|link=@注灵选定_7#武器xk=#衣服xk=#头盔xk=#项链xk=#勋章xk=#左手xk=#右手xk=zlxk#左戒xk=#右戒xk=#腰带xk=#靴子xk=#注灵选定=ys#问号Tiss=#套装Tiss=#注灵特效>
+<Img|a=4|id=20a|img=custom/hl/zhuling/<$Str(s$右手xk)>.png|percentx=50|percenty=50>
+<$Str(s$注灵等级ys)>
+<Img|id=20c|x=5|y=5|img=custom/hl/hl_ui/<$Str(s$注灵红点ys)>.png> 
+
+<Img|id=21|children={21a,21b,21c}|img=custom/hl/zhuling/zj.png|x=75|link=@注灵选定_8#武器xk=#衣服xk=#头盔xk=#项链xk=#勋章xk=#左手xk=#右手xk=#左戒xk=zlxk#右戒xk=#腰带xk=#靴子xk=#注灵选定=zj#问号Tiss=#套装Tiss=#注灵特效>
+<Img|a=4|id=21a|img=custom/hl/zhuling/<$Str(s$左戒xk)>.png|percentx=50|percenty=50>
+<$Str(s$注灵等级zj)>
+<Img|id=21c|x=5|y=5|img=custom/hl/hl_ui/<$Str(s$注灵红点zj)>.png> 
+
+<Img|id=22|children={22a,22b,22c}|img=custom/hl/zhuling/yj.png|x=150|link=@注灵选定_9#武器xk=#衣服xk=#头盔xk=#项链xk=#勋章xk=#左手xk=#右手xk=#左戒xk=#右戒xk=zlxk#腰带xk=#靴子xk=#注灵选定=yj#问号Tiss=#套装Tiss=#注灵特效>
+<Img|a=4|id=22a|img=custom/hl/zhuling/<$Str(s$右戒xk)>.png|percentx=50|percenty=50>
+<$Str(s$注灵等级yj)>
+<Img|id=22c|x=5|y=5|img=custom/hl/hl_ui/<$Str(s$注灵红点yj)>.png> 
+
+
+<Layout|id=23|children={24,25}|width=210|height=62|color=x>
+<Img|id=24|children={24a,24b,24c}|img=custom/hl/zhuling/yd.png|link=@注灵选定_10#武器xk=#衣服xk=#头盔xk=#项链xk=#勋章xk=#左手xk=#右手xk=#左戒xk=#右戒xk=#腰带xk=zlxk#靴子xk=#注灵选定=yd#问号Tiss=#套装Tiss=#注灵特效>
+<Img|a=4|id=24a|img=custom/hl/zhuling/<$Str(s$腰带xk)>.png|percentx=50|percenty=50>
+<Img|id=24c|x=5|y=5|img=custom/hl/hl_ui/<$Str(s$注灵红点yd)>.png> 
+
+<$Str(s$注灵等级yd)>
+<Img|id=25|children={25a,25b,25C}|img=custom/hl/zhuling/xzz.png|x=75|link=@注灵选定_11#武器xk=#衣服xk=#头盔xk=#项链xk=#勋章xk=#左手xk=#右手xk=#左戒xk=#右戒xk=#腰带xk=#靴子xk=zlxk#注灵选定=xzz#问号Tiss=#套装Tiss=#注灵特效>
+<Img|a=4|id=25a|img=custom/hl/zhuling/<$Str(s$靴子xk)>.png|percentx=50|percenty=50>
+<$Str(s$注灵等级xzz)>
+<Img|id=25c|x=5|y=5|img=custom/hl/hl_ui/<$Str(s$注灵红点xzz)>.png> 
+
+<Layout|id=26|children={27,28,29,30,31,32,33,34,35,36,52}|width=492|height=444|color=x|x=239>
+
+<Button|id=27|x=15|y=10|nimg=custom/hl/zhuling/sxsl.png|link=@注灵套装Tiss#问号Tiss#注灵特效=>
+<Button|id=28|x=452|y=10|nimg=custom/hl/hl_ui/icon_fuhao_02.png|link=@注灵介绍Tiss#套装Tiss=#注灵特效=>
+;选中展示
+<Img|a=4|id=29|children={29a,29b}|img=custom/hl/zhuling/<$Str(s$注灵选定)>.png|percentx=50|percenty=20>
+<$Str(s$注灵等级)>
+<$Str(s$注灵特效)>
+
+<Img|a=4|id=30|img=custom/hl/zhuling/zlyx.png|percentx=50|percenty=35>
+
+
+
+
+;星星显示
+<ListView|a=4|id=36|children={37,38,39,40,41,42,43,44,45,46,47,48,49,50,51}|direction=2|bounce=0|margin=0|width=465|height=31|color=x|percentx=50|percenty=57>
+<$Str(s$注灵星星_1)>
+<$Str(s$注灵星星_2)>
+<$Str(s$注灵星星_3)>
+<$Str(s$注灵星星_4)>
+<$Str(s$注灵星星_5)>
+<$Str(s$注灵星星_6)>
+<$Str(s$注灵星星_7)>
+<$Str(s$注灵星星_8)>
+<$Str(s$注灵星星_9)>
+<$Str(s$注灵星星_10)>
+<$Str(s$注灵星星_11)>
+<$Str(s$注灵星星_12)>
+<$Str(s$注灵星星_13)>
+<$Str(s$注灵星星_14)>
+<$Str(s$注灵星星_15)>
+
+#IF
+SMALL  U<$Str(s$注灵升级)> 45
+#SAY
+;当前属性
+<RText|id=31|text=<$Str(s$注灵状态_1)>|x=50|y=175|size=18|color=100|outline=2|outlinecolor=0>
+;下级属性
+<RText|id=33|text=<$Str(s$注灵状态_2)>|x=330|y=175|size=18|color=100|outline=2|outlinecolor=0>
+
+<Img|a=4|id=35|img=custom/hl/hl_ui/icon_arror_01.png|percentx=50|percenty=45>
+<Layout|a=4|id=52|children={53,54,55,56,57,58,59,60,61,62,63}|width=492|height=180|color=x|percentx=50|percenty=80>
+<RText|id=53|text=成功率：<<$Str(n$注灵概率)>/FCOLOR=250> %|percentx=35|percenty=0|size=18|color=100|outline=2|outlinecolor=0>
+<Text|id=55|text=消耗：|percentx=20|percenty=30|size=18|color=255|outline=2|outlinecolor=0>
+<ItemShow|id=56|itemid=<$str(S$注灵材料idx)>|itemcount=1|showtips=1|bgtype=1|itemcount=<$Str(s$注灵材料xh)>|percentx=30|percenty=20>
+<Img|id=57|img=custom/hl/hl_ui/icon_add_01.png|percentx=50|percenty=30>
+<RText|id=58|children={59}|text=<<$Str(s$注灵元宝xh)>/FCOLOR=250> 元宝|percentx=60|percenty=30|size=18|color=255|outline=2|outlinecolor=0>
+<Button|a=4|id=59|nimg=custom/hl/hl_ui/fxkk_<$str(u99)>.png|percentx=10|percenty=65|link=@开启材料购买#注灵特效=>
+<Text|a=4|id=60|text=材料不足时自动购买|percentx=30|percenty=65|size=17|color=255|outline=2|outlinecolor=0>
+<Button|a=4|id=63|text=注灵|color=100|outline=2|outlinecolor=0|percentx=50|percenty=87|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|link=@开始注灵#问号Tiss=#套装Tiss=>
+#ELSESAY
+<RText|id=31|text=<$Str(s$注灵状态_1)>|x=195|y=180|size=18|color=100|outline=2|outlinecolor=0>
+<RText|id=33|text=已注灵至顶级|x=185|y=310|size=18|color=250|outline=2|outlinecolor=0>
+
+#IF
+EQUAL U99 1
+#SAY
+<RText|a=4|id=61|text=消耗： <<$Str(n$龙币单价)>/FCOLOR=250> 火龙币|percentx=60|percenty=65|size=17|color=255|outline=2|outlinecolor=0>
+
+
+
+
+;Tiss展示
+
+;<Layout|id=0b|children={64}|width=732|height=445|x=21|y=62|color=x|link=@exit>
+#IF
+EQUAL s$问号Tiss 1
+#SAY
+<Img|id=0b|children={65,66,67,68,69,70,71,72,73,74,75}|img=custom/hl/hl_ui/bg_tips_01.png|percentx=<$Str(s$注灵介绍x)>|percenty=<$Str(s$注灵介绍y)>|width=<$Str(s$注灵介绍k)>|height=<$Str(s$注灵介绍g)>|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@注灵介绍Tiss>
+<RText|id=65|text=<$Str(s$注灵介绍Ts_1)>|x=5|y=2|size=17|color=255|outline=2|outlinecolor=0>
+<RText|id=66|text=<$Str(s$注灵介绍Ts_2)>|x=5|y=22|size=17|color=255|outline=2|outlinecolor=0>
+<RText|id=67|text=<$Str(s$注灵介绍Ts_3)>|x=5|y=42|size=17|color=255|outline=2|outlinecolor=0>
+<RText|id=68|text=<$Str(s$注灵介绍Ts_4)>|x=5|y=62|size=17|color=255|outline=2|outlinecolor=0>
+<RText|id=69|text=<$Str(s$注灵介绍Ts_5)>|x=5|y=82|size=17|color=255|outline=2|outlinecolor=0>
+<RText|id=70|text=<$Str(s$注灵介绍Ts_6)>|x=5|y=102|size=17|color=255|outline=2|outlinecolor=0>
+<RText|id=71|text=<$Str(s$注灵介绍Ts_7)>|x=5|y=122|size=17|color=255|outline=2|outlinecolor=0>
+<RText|id=72|text=<$Str(s$注灵介绍Ts_8)>|x=5|y=142|size=17|color=255|outline=2|outlinecolor=0>
+<RText|id=73|text=<$Str(s$注灵介绍Ts_9)>|x=5|y=162|size=17|color=255|outline=2|outlinecolor=0>
+<RText|id=74|text=<$Str(s$注灵介绍Ts_10)>|x=5|y=182|size=17|color=255|outline=2|outlinecolor=0>
+#IF
+EQUAL s$套装Tiss 1
+#SAY
+<Img|id=0b|children={65,66,67,68,69,70,71,72,73,74,75}|img=custom/hl/hl_ui/bg_tips_01.png|percentx=<$Str(s$注灵套装x)>|percenty=<$Str(s$注灵套装y)>|width=<$Str(s$注灵套装k)>|height=<$Str(s$注灵套装g)>|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@注灵套装Tiss>
+<RText|id=65|text=　　　　  <注灵套装属性/FCOLOR=125>|x=5|y=2|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=66|text=　      所有装备位普通注灵+<$str(s$当前套装)>|x=5|y=24|size=18|color=100|outline=2|outlinecolor=0>
+
+<RText|id=67|text=　<[衣服]/FCOLOR=<$Str(s$衣服激活ys)>>  <[武器]/FCOLOR=<$Str(s$武器激活ys)>>  <[勋章]/FCOLOR=<$Str(s$勋章激活ys)>>  <[项链]/FCOLOR=<$Str(s$项链激活ys)>>|x=5|y=44|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=68|text=　<[头盔]/FCOLOR=<$Str(s$头盔激活ys)>>  <[手镯]/FCOLOR=<$Str(s$左手激活ys)>>  <[手镯]/FCOLOR=<$Str(s$右手激活ys)>>  <[戒指]/FCOLOR=<$Str(s$左戒激活ys)>>|x=5|y=64|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=69|text=　<[戒指]/FCOLOR=<$Str(s$右戒激活ys)>>  <[腰带]/FCOLOR=<$Str(s$腰带激活ys)>>  <[靴子]/FCOLOR=<$Str(s$靴子激活ys)>>|x=5|y=84|size=18|color=255|outline=2|outlinecolor=0>
+
+<RText|id=70|text=　                 套装属性|x=5|y=104|size=18|color=103|outline=2|outlinecolor=0>
+<RText|id=71|text=　<生命值：/FCOLOR=100><$Str(s$套装生命)>|x=5|y=124|size=18|color=<$str(s$套装已激活ys)>|outline=2|outlinecolor=0>
+<RText|id=72|text=　<防御：/FCOLOR=100><$Str(s$套装下限)>-<$Str(s$套装上限)>　<魔御：/FCOLOR=100><$Str(s$套装下限)>-<$Str(s$套装上限)>|x=5|y=144|size=18|color=<$str(s$套装已激活ys)>|outline=2|outlinecolor=0>
+<RText|id=73|text=　<攻击：/FCOLOR=100><$Str(s$套装下限)>-<$Str(s$套装上限)>|x=5|y=164|size=18|color=<$str(s$套装已激活ys)>|outline=2|outlinecolor=0>
+<RText|id=74|text=　                 未激活|x=5|y=184|size=18|color=249|outline=2|outlinecolor=0>
+
+
+
+#IF
+EQUAL s$套装Tiss 1
+large U100 0
+#SAY
+<Img|id=0b|children={65,66,67,68,69,70,71,72,73,74,75}|img=custom/hl/hl_ui/bg_tips_01.png|percentx=<$Str(s$注灵套装x)>|percenty=<$Str(s$注灵套装y)>|width=<$Str(s$注灵套装k)>|height=<$Str(s$注灵套装g)>|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@注灵套装Tiss>
+<RText|id=65|text=　　　　  <注灵套装属性/FCOLOR=125>|x=5|y=2|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=66|text=　      所有装备位普通注灵+<$str(s$当前套装)>|x=5|y=24|size=18|color=100|outline=2|outlinecolor=0>
+
+<RText|id=67|text=　<[衣服]/FCOLOR=250>  <[武器]/FCOLOR=250>  <[勋章]/FCOLOR=250>  <[项链]/FCOLOR=250>|x=5|y=44|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=68|text=　<[头盔]/FCOLOR=250>  <[手镯]/FCOLOR=250>  <[手镯]/FCOLOR=250>  <[戒指]/FCOLOR=250>|x=5|y=64|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=69|text=　<[戒指]/FCOLOR=250>  <[腰带]/FCOLOR=250>  <[靴子]/FCOLOR=250>|x=5|y=84|size=18|color=255|outline=2|outlinecolor=0>
+
+<RText|id=70|text=　                 套装属性|x=5|y=104|size=18|color=103|outline=2|outlinecolor=0>
+<RText|id=71|text=　生命值：<<$Str(s$套装生命)>/FCOLOR=250>|x=5|y=124|size=18|color=100|outline=2|outlinecolor=0>
+<RText|id=72|text=　防御：<<$Str(s$套装下限)>-<$Str(s$套装上限)>/FCOLOR=250>　魔御：<<$Str(s$套装下限)>-<$Str(s$套装上限)>/FCOLOR=250>|x=5|y=144|size=18|color=100|outline=2|outlinecolor=0>
+<RText|id=73|text=　攻击：<<$Str(s$套装下限)>-<$Str(s$套装上限)>/FCOLOR=250>|x=5|y=164|size=18|color=100|outline=2|outlinecolor=0>
+<RText|id=74|text=　                 下一级|x=5|y=184|size=18|color=251|outline=2|outlinecolor=0>
+
+<Img|id=75|children={76,77,78,79,80,81,82,83,84}|img=custom/hl/hl_ui/bg_tips_01.png|percentx=<$Str(s$注灵套装x1)>|percenty=<$Str(s$注灵套装y1)>|width=<$Str(s$注灵套装k)>|height=<$Str(s$注灵套装g)>|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@注灵套装Tiss>
+<RText|id=76|text=　      所有装备位普通注灵+<$str(s$当前套装s)>|x=5|y=2|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=77|text=　<[衣服]/FCOLOR=<$Str(s$衣服激活ys)>>  <[武器]/FCOLOR=<$Str(s$武器激活ys)>>  <[勋章]/FCOLOR=<$Str(s$勋章激活ys)>>  <[项链]/FCOLOR=<$Str(s$项链激活ys)>>|x=5|y=24|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=78|text=　<[头盔]/FCOLOR=<$Str(s$头盔激活ys)>>  <[手镯]/FCOLOR=<$Str(s$左手激活ys)>>  <[手镯]/FCOLOR=<$Str(s$右手激活ys)>>  <[戒指]/FCOLOR=<$Str(s$左戒激活ys)>>|x=5|y=44|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=79|text=　<[戒指]/FCOLOR=<$Str(s$右戒激活ys)>>  <[腰带]/FCOLOR=<$Str(s$腰带激活ys)>>  <[靴子]/FCOLOR=<$Str(s$靴子激活ys)>>|x=5|y=64|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=80|text=　                 套装属性|x=5|y=84|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=81|text=　<生命值：/FCOLOR=100><$Str(s$套装生命s)>|x=5|y=104|size=18|color=<$str(s$套装已激活ys)>|outline=2|outlinecolor=0>
+<RText|id=82|text=　<防御：/FCOLOR=100><$Str(s$套装下限s)>-<$Str(s$套装上限s)>　魔御：<<$Str(s$套装下限s)>-<$Str(s$套装上限s)>/FCOLOR=10>|x=5|y=124|size=18|color=<$str(s$套装已激活ys)>|outline=2|outlinecolor=0>
+<RText|id=83|text=　<攻击：/FCOLOR=100><$Str(s$套装下限s)>-<$Str(s$套装上限s)>|x=5|y=144|size=18|color=<$str(s$套装已激活ys)>|outline=2|outlinecolor=0>
+<RText|id=84|text=　                 未激活|x=5|y=164|size=18|color=249|outline=2|outlinecolor=0>
+#IF
+EQUAL s$套装Tiss 1
+EQUAL U100 8
+#SAY
+<Img|id=0b|children={65,66,67,68,69,70,71,72,73,74,75}|img=custom/hl/hl_ui/bg_tips_01.png|percentx=<$Str(s$注灵套装x)>|percenty=<$Str(s$注灵套装y)>|width=<$Str(s$注灵套装k)>|height=<$Str(s$注灵套装g)>|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@注灵套装Tiss>
+<RText|id=65|text=　　　　  <注灵套装属性/FCOLOR=125>|x=5|y=2|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=66|text=　      所有装备位普通注灵+<$str(s$当前套装)>|x=5|y=24|size=18|color=100|outline=2|outlinecolor=0>
+
+<RText|id=67|text=　<[衣服]/FCOLOR=<$Str(s$衣服激活ys)>>  <[武器]/FCOLOR=<$Str(s$武器激活ys)>>  <[勋章]/FCOLOR=<$Str(s$勋章激活ys)>>  <[项链]/FCOLOR=<$Str(s$项链激活ys)>>|x=5|y=44|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=68|text=　<[头盔]/FCOLOR=<$Str(s$头盔激活ys)>>  <[手镯]/FCOLOR=<$Str(s$左手激活ys)>>  <[手镯]/FCOLOR=<$Str(s$右手激活ys)>>  <[戒指]/FCOLOR=<$Str(s$左戒激活ys)>>|x=5|y=64|size=18|color=255|outline=2|outlinecolor=0>
+<RText|id=69|text=　<[戒指]/FCOLOR=<$Str(s$右戒激活ys)>>  <[腰带]/FCOLOR=<$Str(s$腰带激活ys)>>  <[靴子]/FCOLOR=<$Str(s$靴子激活ys)>>|x=5|y=84|size=18|color=255|outline=2|outlinecolor=0>
+
+<RText|id=70|text=　                 套装属性|x=5|y=104|size=18|color=103|outline=2|outlinecolor=0>
+<RText|id=71|text=　<生命值：/FCOLOR=100><$Str(s$套装生命)>|x=5|y=124|size=18|color=<$str(s$套装已激活ys)>|outline=2|outlinecolor=0>
+<RText|id=72|text=　<防御：/FCOLOR=100><$Str(s$套装下限)>-<$Str(s$套装上限)>　魔御：<<$Str(s$套装下限)>-<$Str(s$套装上限)>/FCOLOR=250>|x=5|y=144|size=18|color=<$str(s$套装已激活ys)>|outline=2|outlinecolor=0>
+<RText|id=73|text=　<攻击：/FCOLOR=100><$Str(s$套装下限)>-<$Str(s$套装上限)>|x=5|y=164|size=18|color=<$str(s$套装已激活ys)>|outline=2|outlinecolor=0>
+<RText|id=74|text=　                 已达到顶级|x=5|y=184|size=18|color=250|outline=2|outlinecolor=0>
+
+[@注灵介绍Tiss]
+#IF
+EQUAL s$问号Tiss
+#ACT
+Mov s$问号Tiss 1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍k s$注灵介绍k
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍g s$注灵介绍g
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍x s$注灵介绍x
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍y s$注灵介绍y
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍Ts_1 s$注灵介绍Ts_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍Ts_2 s$注灵介绍Ts_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍Ts_3 s$注灵介绍Ts_3
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍Ts_4 s$注灵介绍Ts_4
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍Ts_5 s$注灵介绍Ts_5
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍Ts_6 s$注灵介绍Ts_6
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍Ts_7 s$注灵介绍Ts_7
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍Ts_8 s$注灵介绍Ts_8
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍Ts_9 s$注灵介绍Ts_9
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵介绍Tiss  注灵介绍Ts_10 s$注灵介绍Ts_10
+Goto @装备注灵展示
+Break
+#IF
+#ACT
+Mov s$问号Tiss
+Goto @装备注灵展示
+Break
+
+[@注灵套装Tiss]
+#IF
+EQUAL s$套装Tiss
+#ACT
+Mov s$套装Tiss 1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装Tiss  注灵套装k s$注灵套装k
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装Tiss  注灵套装g s$注灵套装g
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装Tiss  注灵套装x s$注灵套装x
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装Tiss  注灵套装y s$注灵套装y
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装Tiss  注灵套装x1 s$注灵套装x1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装Tiss  注灵套装y1 s$注灵套装y1
+Mov n$Tiss件数 0
+Goto @套装Tiss检测
+BREAK
+#IF
+#ACT
+Mov s$套装Tiss
+Goto @装备注灵展示
+Break
+
+
+
+
+
+
+
+
+
+
+[@套装Tiss检测]
+;套装序号+1
+#IF
+EQUAL U100 0
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_0  套装下限 s$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_0  套装上限 s$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_0  套装生命 s$套装生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_0  当前套装 s$当前套装
+MOV   s$Tiss套装序号 4
+Goto @Tiss执行套装激活检测
+BREAK
+#IF
+EQUAL U100 1
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_0  套装下限 s$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_0  套装上限 s$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_0  套装生命 s$套装生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_0  当前套装 s$当前套装
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  当前套装 s$当前套装s
+MOV   s$Tiss套装序号 9
+Goto @Tiss执行套装激活检测
+BREAK
+#IF
+EQUAL U100 2
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装下限 s$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装上限 s$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装生命 s$套装生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  当前套装 s$当前套装
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  当前套装 s$当前套装s
+MOV   s$Tiss套装序号 14
+Goto @Tiss执行套装激活检测
+BREAK
+#IF
+EQUAL U100 3
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装下限 s$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装上限 s$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装生命 s$套装生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  当前套装 s$当前套装
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  当前套装 s$当前套装s
+MOV   s$Tiss套装序号 19
+Goto @Tiss执行套装激活检测
+BREAK
+#IF
+EQUAL U100 4
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装下限 s$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装上限 s$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装生命 s$套装生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  当前套装 s$当前套装
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  当前套装 s$当前套装s
+MOV   s$Tiss套装序号 24
+Goto @Tiss执行套装激活检测
+BREAK
+#IF
+EQUAL U100 5
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装下限 s$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装上限 s$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装生命 s$套装生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  当前套装 s$当前套装
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  当前套装 s$当前套装s
+MOV   s$Tiss套装序号 29
+Goto @Tiss执行套装激活检测
+BREAK
+#IF
+EQUAL U100 6
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  套装下限 s$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  套装上限 s$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  套装生命 s$套装生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  当前套装 s$当前套装
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  当前套装 s$当前套装s
+MOV   s$Tiss套装序号 34
+Goto @Tiss执行套装激活检测
+BREAK
+#IF
+EQUAL U100 7
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装下限 s$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装上限 s$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装生命 s$套装生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  当前套装 s$当前套装
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  当前套装 s$当前套装s
+MOV   s$Tiss套装序号 39
+Goto @Tiss执行套装激活检测
+BREAK
+#IF
+EQUAL U100 8
+#ACT
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装下限 s$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装上限 s$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装生命 s$套装生命
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  当前套装 s$当前套装
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_8  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_8  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_8  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_8  当前套装 s$当前套装s
+MOV   s$Tiss套装序号 44
+Goto @Tiss执行套装激活检测
+BREAK
+
+
+
+[@Tiss执行套装激活检测]
+#IF
+large u64 	<$Str(s$Tiss套装序号)>
+#ACT
+Mov s$武器激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$武器激活ys 10
+#IF
+large u65 <$Str(s$Tiss套装序号)>
+#ACT
+Mov s$衣服激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$衣服激活ys 10
+#IF
+large u66 <$Str(s$Tiss套装序号)>
+#ACT
+Mov s$头盔激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$头盔激活ys 10
+#IF
+large u67 <$Str(s$Tiss套装序号)>
+#ACT
+Mov s$项链激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$项链激活ys 10
+#IF
+large u68 <$Str(s$Tiss套装序号)>
+#ACT
+Mov s$勋章激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$勋章激活ys 10
+#IF
+large u69 <$Str(s$Tiss套装序号)>
+#ACT
+Mov s$左手激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$左手激活ys 10
+#IF
+large u70 <$Str(s$Tiss套装序号)>
+#ACT
+Mov s$右手激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$右手激活ys 10
+#IF
+large u71 <$Str(s$Tiss套装序号)>
+#ACT
+Mov s$左戒激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$左戒激活ys 10
+#IF
+large u72 <$Str(s$Tiss套装序号)>
+#ACT
+Mov s$右戒激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$右戒激活ys 10
+#IF
+large u73 <$Str(s$Tiss套装序号)>
+#ACT
+Mov s$腰带激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$腰带激活ys 10
+#IF
+large u74 <$Str(s$Tiss套装序号)>
+#ACT
+Mov s$靴子激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$靴子激活ys 10
+
+#IF
+EQUAL n$Tiss件数 11
+#ACT
+Mov s$套装已激活ys 250
+inc n$Tiss件数 1 
+#ELSEACT
+Mov s$套装已激活ys 10
+#IF
+#ACT
+Goto @装备注灵展示
+BREAK
+
+
+[@注灵任务加一]
+#IF
+EQUAL <$STR(U93)> 1
+#ACT
+MOV U93 2
+NEWCHANGETASK 29
+sendmsg 9 恭喜，装备注灵支线任务完成！
+break
+
+[@注灵任务加五]
+#IF
+EQUAL <$STR(U93)> 3
+#ACT
+MOV U93 4
+NEWCHANGETASK 30
+sendmsg 9 恭喜，装备注灵支线任务完成！
+break
+
+[@注灵任务加十]
+#IF
+EQUAL <$STR(U93)> 5
+#ACT
+MOV U93 6
+NEWCHANGETASK 31
+sendmsg 9 恭喜，装备注灵支线任务完成！
+break
+
+[@注灵任务全体加五]
+#IF
+EQUAL <$STR(U93)> 7
+#ACT
+MOV U93 8
+NEWCHANGETASK 32
+sendmsg 9 恭喜，装备注灵支线任务完成！
+break
+
+;====================================
+[@检测套装是否激活]
+
+;=====注灵任务检测=====
+#IF
+#ACT
+GOTO @注灵任务加一
+
+#OR
+LARGE U64 4
+LARGE U65 4
+LARGE U66 4
+LARGE U67 4
+LARGE U68 4
+LARGE U69 4
+LARGE U70 4
+LARGE U71 4
+LARGE U72 4
+LARGE U73 4
+LARGE U74 4
+#ACT
+GOTO @注灵任务加五
+
+#OR
+LARGE U64 9
+LARGE U65 9
+LARGE U66 9
+LARGE U67 9
+LARGE U68 9
+LARGE U69 9
+LARGE U70 9
+LARGE U71 9
+LARGE U72 9
+LARGE U73 9
+LARGE U74 9
+#ACT
+GOTO @注灵任务加十
+
+#IF
+LARGE U64 4
+LARGE U65 4
+LARGE U66 4
+LARGE U67 4
+LARGE U68 4
+LARGE U69 4
+LARGE U70 4
+LARGE U71 4
+LARGE U72 4
+LARGE U73 4
+LARGE U74 4
+#ACT
+GOTO @注灵任务全体加五
+
+;=====注灵任务检测=====
+
+
+;套装序号+1
+#IF
+EQUAL U100 0
+#ACT
+MOV   s$套装序号 4
+MOV   u101 0
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_<$Str(U100)>  套装下限 s$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_<$Str(U100)>  套装上限 s$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_<$Str(U100)>  套装生命 s$套装生命
+Goto @执行套装激活检测
+BREAK
+
+#IF
+EQUAL U100 1
+#ACT
+MOV   s$套装序号 9
+MOV   u101 0
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_0  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_0  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_0  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装下限 n$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装上限 n$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装生命 n$套装生命
+DEC n$套装下限 <$Str(s$套装下限s)>
+DEC n$套装上限 <$Str(s$套装上限s)>
+DEC n$套装生命 <$Str(s$套装生命s)>
+Mov s$套装下限 <$Str(n$套装下限)>
+Mov s$套装上限 <$Str(n$套装上限)>
+Mov s$套装生命 <$Str(n$套装生命)>
+Goto @执行套装激活检测
+BREAK
+#IF
+EQUAL U100 2
+#ACT
+MOV   s$套装序号 14
+MOV   u101 0
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_1  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装下限 n$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装上限 n$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装生命 n$套装生命
+DEC n$套装下限 <$Str(s$套装下限s)>
+DEC n$套装上限 <$Str(s$套装上限s)>
+DEC n$套装生命 <$Str(s$套装生命s)>
+Mov s$套装下限 <$Str(n$套装下限)>
+Mov s$套装上限 <$Str(n$套装上限)>
+Mov s$套装生命 <$Str(n$套装生命)>
+Goto @执行套装激活检测
+BREAK
+#IF
+EQUAL U100 3
+#ACT
+MOV   s$套装序号 19
+MOV   u101 0
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_2  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装下限 n$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装上限 n$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装生命 n$套装生命
+DEC n$套装下限 <$Str(s$套装下限s)>
+DEC n$套装上限 <$Str(s$套装上限s)>
+DEC n$套装生命 <$Str(s$套装生命s)>
+Mov s$套装下限 <$Str(n$套装下限)>
+Mov s$套装上限 <$Str(n$套装上限)>
+Mov s$套装生命 <$Str(n$套装生命)>
+Goto @执行套装激活检测
+BREAK
+#IF
+EQUAL U100 4
+#ACT
+MOV   s$套装序号 24
+MOV   u101 0
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_3  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装下限 n$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装上限 n$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装生命 n$套装生命
+DEC n$套装下限 <$Str(s$套装下限s)>
+DEC n$套装上限 <$Str(s$套装上限s)>
+DEC n$套装生命 <$Str(s$套装生命s)>
+Mov s$套装下限 <$Str(n$套装下限)>
+Mov s$套装上限 <$Str(n$套装上限)>
+Mov s$套装生命 <$Str(n$套装生命)>
+Goto @执行套装激活检测
+BREAK
+#IF
+EQUAL U100 5
+#ACT
+MOV   s$套装序号 29
+MOV   u101 0
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_4  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  套装下限 n$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  套装上限 n$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  套装生命 n$套装生命
+DEC n$套装下限 <$Str(s$套装下限s)>
+DEC n$套装上限 <$Str(s$套装上限s)>
+DEC n$套装生命 <$Str(s$套装生命s)>
+Mov s$套装下限 <$Str(n$套装下限)>
+Mov s$套装上限 <$Str(n$套装上限)>
+Mov s$套装生命 <$Str(n$套装生命)>
+Goto @执行套装激活检测
+BREAK
+#IF
+EQUAL U100 6
+#ACT
+MOV   s$套装序号 34
+MOV   u101 0
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5 套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_5  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装下限 n$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装上限 n$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装生命 n$套装生命
+DEC n$套装下限 <$Str(s$套装下限s)>
+DEC n$套装上限 <$Str(s$套装上限s)>
+DEC n$套装生命 <$Str(s$套装生命s)>
+Mov s$套装下限 <$Str(n$套装下限)>
+Mov s$套装上限 <$Str(n$套装上限)>
+Mov s$套装生命 <$Str(n$套装生命)>
+Goto @执行套装激活检测
+BREAK
+#IF
+EQUAL U100 7
+#ACT
+MOV   s$套装序号 39
+MOV   u101 0
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_6  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装下限 n$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装上限 n$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装生命 n$套装生命
+DEC n$套装下限 <$Str(s$套装下限s)>
+DEC n$套装上限 <$Str(s$套装上限s)>
+DEC n$套装生命 <$Str(s$套装生命s)>
+Mov s$套装下限 <$Str(n$套装下限)>
+Mov s$套装上限 <$Str(n$套装上限)>
+Mov s$套装生命 <$Str(n$套装生命)>
+Goto @执行套装激活检测
+BREAK
+#IF
+EQUAL U100 8
+#ACT
+MOV   s$套装序号 44
+MOV   u101 0
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装下限 s$套装下限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装上限 s$套装上限s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_7  套装生命 s$套装生命s
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_8  套装下限 n$套装下限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_8  套装上限 n$套装上限
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备注灵\注灵配置.ini 注灵套装_8  套装生命 n$套装生命
+DEC n$套装下限 <$Str(s$套装下限s)>
+DEC n$套装上限 <$Str(s$套装上限s)>
+DEC n$套装生命 <$Str(s$套装生命s)>
+Mov s$套装下限 <$Str(n$套装下限)>
+Mov s$套装上限 <$Str(n$套装上限)>
+Mov s$套装生命 <$Str(n$套装生命)>
+Goto @执行套装激活检测
+BREAK
+
+[@执行套装激活检测]
+#IF
+large u64 	<$Str(s$套装序号)>
+#ACT
+INC u101 1
+
+
+#IF
+large u65 <$Str(s$套装序号)>
+#ACT
+INC u101 1
+
+#IF
+large u66 <$Str(s$套装序号)>
+#ACT
+INC u101 1
+
+
+#IF
+large u67 <$Str(s$套装序号)>
+#ACT
+INC u101 1
+
+
+#IF
+large u68 <$Str(s$套装序号)>
+#ACT
+INC u101 1
+
+#IF
+large u69 <$Str(s$套装序号)>
+#ACT
+INC u101 1
+
+#IF
+large u70 <$Str(s$套装序号)>
+#ACT
+INC u101 1
+
+#IF
+large u71 <$Str(s$套装序号)>
+#ACT
+INC u101 1
+
+#IF
+large u72 <$Str(s$套装序号)>
+#ACT
+INC u101 1
+
+#IF
+large u73 <$Str(s$套装序号)>
+#ACT
+INC u101 1
+
+#IF
+large u74 <$Str(s$套装序号)>
+#ACT
+INC u101 1
+
+
+#IF
+EQUAL U101 11
+#ACT
+INC  U100 1
+Mov n$u100 <$Str(U100)>
+MUL  n$u100 5
+
+
+INC U102 <$Str(s$套装下限)>
+INC U103 <$Str(s$套装上限)>
+INC U104 <$Str(s$套装下限)>
+INC U105 <$Str(s$套装上限)>
+INC U106 <$Str(s$套装生命)>
+INC U117 <$Str(s$套装下限)>
+INC U118 <$Str(s$套装上限)>
+
+#call [\属性刷新.txt] @属性刷新
+SENDMSGNEW 255 0 <<$USERNAME>/FCOLOR=251>成功激活全身装备位普通注灵<+<$str(n$u100)>/FCOLOR=250>套装属性，实力大增 1 2
+Goto @装备注灵展示
+Break
+
+#IF
+#ACT
+Goto @装备注灵展示
+[@注灵sm刷新]
+#IF
+#Act
+#Call [\全服活动\竞技排行榜.txt] @竞技注灵榜排序
+}

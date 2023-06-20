@@ -1,0 +1,24 @@
+[@首冲推荐]
+{
+
+#IF
+EQUAL U119 0
+Not EQUAL T5
+CHECKLEVELEX > 34
+#ACT
+Taketime <$STR(T5)>-<$STR(T6)> <$YEAR>-<$MONTH>-<$DAY>-<$HOUR>-<$MINUTE>-<$SECOND>
+Mov n$推荐时间 1799
+#ELSEACT
+BREAK
+
+
+#IF
+LARGE n$推荐时间 <$Timeresult>
+#ACT
+dec   n$推荐时间 <$Timeresult>
+inc   S$图标2 <Img|id=11|children={12}|img=custom/hl/shouchong_ui/sctx.png|x=-148|y=-5>
+inc   S$图标2 <TIMETIPS|id=12|x=100|y=40|time=<$Str(n$推荐时间)>|count=1|size=13|color=249|outline=2|outlinecolor=0|link=@取消首冲推荐>
+addbutton 102 2 <$STR(S$图标2)>
+BREAK
+
+}

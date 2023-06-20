@@ -1,0 +1,382 @@
+[@装备转移]
+{
+#IF
+#ACT
+Mov n$转移窗口 0
+Mov s$原始装备
+Mov s$目标装备
+Mov n$转移星数
+Mov n$屏蔽星数 0
+Mov n$是否转移 0
+Mov s$转移分类 10,11,5,6,29,30,19,20,21,15,22,23,24,26,54,64,52,62
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini 强星消耗  转移材料idx s$转移材料idx
+
+Goto @装备转移显示
+[@装备转移显示]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png|layerid=678|link=@关闭小窗>
+<Img|a=4|children={0,2,7,3,11,12,13,15}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000510.png|link=@exit>
+<Text|id=2|a=4|text=锻造|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+
+<Layout|id=3|children={4}|x=771|y=55|width=60|height=80|color=x|link=@跳转装备强星>
+<Img|id=4|children={5,6}|img=custom/hl/hl_ui/cbl_2.png|link=@跳转装备强星>
+<Text|a=4|id=5|text=强|color=10|size=17|outline=2|outlinecolor=0|percentx=40|percenty=25>
+<Text|a=4|id=6|text=星|color=10|size=17|outline=2|outlinecolor=0|percentx=40|percenty=50>
+
+<Layout|id=7|children={8}|x=771|y=133|width=60|height=80|color=x>
+<Img|id=8|children={9,10}|img=custom/hl/hl_ui/cbl_1.png>
+<Text|a=4|id=9|text=转|color=100|size=18|outline=2|outlinecolor=0|percentx=40|percenty=25>
+<Text|a=4|id=10|text=移|color=100|size=18|outline=2|outlinecolor=0|percentx=40|percenty=50>
+<Text|id=11|text=背包装备|color=100|size=20|outline=2|outlinecolor=0|x=95|y=65>
+<Img|id=13|img=custom/hl/hl_ui/fg_1.png|x=250|y=60|height=449>
+
+<ListView|id=12|children={14}|direction=1|bounce=0|margin=0|color=x|width=210|height=380|x=30|y=105>
+<BAGITEMS|id=14|condition=<$STR(s$转移分类)>|select=<$STR(s$原始装备)>|count=45|row=15|selecttype=1|showstar=1|conditionEx=1|conditionParam=1|exclude=<$str(s$原始装备)>|x=30|y=105|link=@原始装备选定>
+<Layout|id=15|children={16,17,18,19,20,23,24,25,26,28,32}|width=506|height=444|color=x|x=250|y=54>
+
+<Img|id=16|children={31}|img=custom/hl/duanzhao_ui/zyxt.png|x=60|y=32>
+<DBItemShow|a=4|id=31|makeindex=<$STR(s$原始装备)>|showtips=1|grey=0|showstar=1|percentx=51|percenty=60>
+
+<Img|id=17|img=custom/hl//duanzhao_ui/zyjt.png|x=230|y=80>
+<Img|id=18|children={21}|img=custom/hl/duanzhao_ui/zyxt.png|x=330|y=32>
+
+
+
+
+<Text|id=19|text=原始装备|color=100|size=18|outline=2|outlinecolor=0|x=90|y=10>
+<Text|id=20|text=目标装备|color=100|size=18|outline=2|outlinecolor=0|x=360|y=10>
+
+
+
+
+
+#IF
+;EQUAL  n$转移窗口 0
+#SAY
+;<Img|a=4|id=21|children={22}|img=custom/hl/hl_ui/1900015031.png|percentx=50|percenty=53.5|link=@开启小窗>
+;<Img|a=4|id=22|img=custom/hl/duanzhao_ui/qxjh.png|percentx=50|percenty=50|link=@开启小窗>
+
+
+#IF
+;EQUAL  n$转移窗口 1
+#SAY
+<DBItemShow|a=4|id=21|makeindex=<$STR(s$目标装备)>|showtips=1|grey=0|showstar=1|percentx=50|percenty=53.5>
+<Img|a=4|id=28|children={29}|img=custom/hl/duanzhao_ui/zyfb.png|percentx=50.2|percenty=77>
+
+<ListView|id=29|children={30}|direction=1|bounce=0|margin=0|color=x|width=420|height=185|x=50|y=10>
+<BAGITEMS|a=4|id=30|condition=<$STR(s$转移分类)>|select=<$STR(s$目标装备)>|count=42|row=7|percentx=50|percenty=50|showstar=1|selecttype=1|conditionEx=1|conditionParam=<$STR(N$屏蔽星数)>|conditionOnOff=1|exclude=<$str(s$原始装备)>|link=@目标装备选定>
+<Text|a=4|id=23|text=消耗：|color=255|size=18|outline=2|outlinecolor=0|percentx=37|percenty=37>
+<ItemShow|a=4|id=24|children={25a}|itemid=<$str(s$转移材料idx)>|itemcount=1|showtips=1|percentx=50|percenty=37|bgtype=1>
+<Text|a=4|id=25a|text=<$STR(s$转移sl)>|color=255|size=17|outline=2|outlinecolor=0|percentx=77|percenty=80>
+<Button|a=4|id=26|children={27}|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|percentx=50|percenty=50|link=@开始转移>
+<Text|a=4|id=27|text=转移|color=100|size=17|outline=2|outlinecolor=0|percentx=50|percenty=50>
+
+[@原始装备选定]
+#IF
+#ACT
+Mov s$原始装备 <$STR(S0)> 
+Mov s$目标装备
+LinkItemByMakeIndex <$Str(s$原始装备)>
+Mov n$默认星数 1
+Goto @读取星星数量
+
+[@读取星星数量]
+#if 
+CheckItemupgradeCount 0 -1 = <$str(n$默认星数)>
+#act 
+mov N$转移星数 <$str(n$默认星数)>
+Mov N$屏蔽星数 <$STR(N$转移星数)>
+dec N$屏蔽星数 1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini 强星消耗  转移材料mc  s$转移材料mc
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini 强星消耗  转移材料idx s$转移材料idx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(N$转移星数)>星  转移sl s$转移sl
+
+
+#IF
+SMALL n$默认星数 36
+#ACT
+INC   n$默认星数 1
+Goto @读取星星数量
+BREAK
+
+
+
+#IF
+#ACT
+Goto @装备转移显示
+
+[@目标装备选定]
+#IF
+EQUAL s$原始装备
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择原始装备</font>
+BREAK
+#IF
+#ACT
+MOV  s$目标装备 <$STR(S0)> 
+Goto @装备转移显示
+
+[@开启小窗]
+#IF
+EQUAL s$原始装备
+#ACT
+SENDMSG 9 <font color='#ff0000'>请选择原始装备</font>
+BREAK
+
+#IF
+#ACT
+Mov     s$目标装备
+Mov     n$转移窗口 1
+Goto @装备转移显示
+BREAK
+
+[@关闭小窗]
+#IF
+#ACT
+Mov   n$转移窗口 0
+Goto @装备转移显示
+
+
+
+[@开始转移]
+#if 
+equal s$原始装备
+#act 
+SENDMSG 9 <font color='#ff0000'>请放入原始装备</font>
+break
+
+#if 
+equal s$目标装备
+#act 
+SENDMSG 9 <font color='#ff0000'>请放入目标装备</font>
+break
+
+#IF
+#ACT
+LinkItemByMakeIndex <$Str(s$原始装备)>
+
+
+#OR
+CheckItemUpgradeCount 0 -1 = 1
+CheckItemUpgradeCount 0 -1 = 2
+#ACT
+LinkItemByMakeIndex <$Str(s$目标装备)>
+GetItemNameByMakeIndex <$Str(s$目标装备)> s$目标名称
+GetDBItemFieldValue <$Str(s$目标名称)> StdMode s$目标StdMode
+Goto @执行星星转移操作
+break
+
+#IF
+CHECKITEM <$Str(s$转移材料mc)> <$Str(s$转移sl)>
+#ACT
+TAKE <$Str(s$转移材料mc)> <$Str(s$转移sl)>
+LinkItemByMakeIndex <$Str(s$目标装备)>
+GetItemNameByMakeIndex <$Str(s$目标装备)> s$目标名称
+GetDBItemFieldValue <$Str(s$目标名称)> StdMode s$目标StdMode
+Goto @执行星星转移操作
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'><$Str(s$转移材料mc)>数量不足</font>
+BREAK
+
+
+
+[@执行星星转移操作]
+#or
+equal s$目标StdMode 10
+equal s$目标StdMode 11
+#act
+Mov s$转移位置 0
+Mov n$是否转移 1
+Goto @执行转移赋值
+BREAK
+
+#or
+equal s$目标StdMode 5
+equal s$目标StdMode 6
+#act
+Mov s$转移位置 1
+Mov n$是否转移 1
+Goto @执行转移赋值
+BREAK
+
+#IF
+equal s$目标StdMode 30
+#act
+Mov s$转移位置 2
+Mov n$是否转移 1
+Goto @执行转移赋值
+BREAK
+
+#or
+equal s$目标StdMode 19
+equal s$目标StdMode 20
+equal s$目标StdMode 21
+#act
+Mov s$转移位置 3
+Mov n$是否转移 1
+Goto @执行转移赋值
+BREAK
+
+#IF
+equal s$目标StdMode 15
+#act
+Mov s$转移位置 4
+Mov n$是否转移 1
+Goto @执行转移赋值
+BREAK
+
+#or
+equal s$目标StdMode 24
+equal s$目标StdMode 26
+#act
+Mov s$转移位置 5
+Mov n$是否转移 1
+Goto @执行转移赋值
+BREAK
+#or
+equal s$目标StdMode 22
+equal s$目标StdMode 23
+#act
+Mov s$转移位置 7
+Mov n$是否转移 1
+Goto @执行转移赋值
+BREAK
+
+#or
+equal s$目标StdMode 54
+equal s$目标StdMode 64
+#act
+Mov s$转移位置 10
+Mov n$是否转移 1
+Goto @执行转移赋值
+BREAK
+
+#or
+equal s$目标StdMode 52
+equal s$目标StdMode 62
+#act
+Mov s$转移位置 11
+Mov n$是否转移 1
+Goto @执行转移赋值
+BREAK
+
+[@执行转移赋值]
+#IF
+;Not EQUAL s$转移位置
+LARGE n$是否转移 0
+#ACT
+LinkItemByMakeIndex <$Str(s$原始装备)>
+ChangeItemUpgradeCount  -1 = 0
+CHANGECUSTOMITEMTEXT -1 
+CHANGECUSTOMITEMVALUE -1 1  = 0 0
+CHANGECUSTOMITEMVALUE -1 2  = 0 0
+CHANGECUSTOMITEMVALUE -1 3  = 0 0
+CHANGECUSTOMITEMVALUE -1 4  = 0 0
+CHANGECUSTOMITEMVALUE -1 5  = 0 0
+CHANGECUSTOMITEMVALUE -1 6  = 0 0
+CHANGECUSTOMITEMVALUE -1 7  = 0 0
+CHANGECUSTOMITEMVALUE -1 8  = 0 0
+UpDateBoxItem -1
+LinkItemByMakeIndex <$Str(s$目标装备)>
+ChangeItemUpgradeCount -1 = <$STR(N$转移星数)>
+Mov s$当前xx
+Mov s$当前sx
+Mov s$特殊sz_1
+Mov s$特殊sz_2
+Mov s$特殊id
+Mov s$特殊xs
+Mov s$特殊xb
+Mov s$特殊fj
+Mov s$特殊idxz
+Mov s$特殊xz
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$STR(N$转移星数)>星  当前xx    s$当前xx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$STR(N$转移星数)>星  当前sx    s$当前sx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$STR(N$转移星数)>星  特殊sz_1 s$特殊sz_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$STR(N$转移星数)>星  特殊sz_2 s$特殊sz_2
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(s$转移位置)>  特殊id s$特殊id
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(s$转移位置)>  特殊xs s$特殊xs
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(s$转移位置)>  特殊xb s$特殊xb
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(s$转移位置)>  特殊fj s$特殊fj
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(s$转移位置)>  特殊idxz s$特殊idxz
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(s$转移位置)>>  特殊xz s$特殊xz
+CHANGECUSTOMITEMTEXT -1 [锻造属性] 0
+CHANGECUSTOMITEMTEXTCOLOR -1 251 0
+;===========攻击
+;修改属性值
+CHANGECUSTOMITEMVALUE -1 1 = <$STR(s$当前xx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    -1 1 1 3 0
+;显示的行数
+CHANGECUSTOMITEMABIL    -1 1 2 1 0
+
+;修改属性值
+CHANGECUSTOMITEMVALUE -1 2 = <$STR(s$当前sx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    -1 2 1 4 0
+;显示的行数
+CHANGECUSTOMITEMABIL    -1 2 2 1 0
+;===========魔法
+;修改属性值
+CHANGECUSTOMITEMVALUE -1 3 = <$STR(s$当前xx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    -1 3 1 5 0
+;显示的行数
+CHANGECUSTOMITEMABIL    -1 3 2 9 0
+CHANGECUSTOMITEMABIL    -1 3 4 2 0
+;修改属性值
+CHANGECUSTOMITEMVALUE -1 4 = <$STR(s$当前sx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    -1 4 1 6 0
+;显示的行数
+CHANGECUSTOMITEMABIL    -1 4 2 9 0
+CHANGECUSTOMITEMABIL    -1 4 4 2 0
+;===========道术
+;修改属性值
+CHANGECUSTOMITEMVALUE -1 5 = <$STR(s$当前xx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    -1 5 1 7 0
+;显示的行数
+CHANGECUSTOMITEMABIL    -1 5 2 10 0
+CHANGECUSTOMITEMABIL    -1 5 4 3 0
+
+;修改属性值
+CHANGECUSTOMITEMVALUE -1 6 = <$STR(s$当前sx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    -1 6 1 8 0
+;显示的行数
+CHANGECUSTOMITEMABIL    -1 6 2 10 0
+CHANGECUSTOMITEMABIL    -1 6 4 3 0
+;==========特殊属性
+;修改属性值
+CHANGECUSTOMITEMVALUE -1 7  = <$STR(s$特殊sz_1)><$STR(s$特殊fj)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    -1 7  1 <$STR(s$特殊id)> 0
+;显示自定义类名称
+CHANGECUSTOMITEMABIL    -1 7  2 <$STR(s$特殊xb)> 0
+;是否显示百分比
+CHANGECUSTOMITEMABIL    -1 7  3 1 0
+;显示的行数
+CHANGECUSTOMITEMABIL    -1 7  4 4 0
+;修改属性值
+CHANGECUSTOMITEMVALUE   -1 8  = <$STR(s$特殊sz_1)><$STR(s$特殊fj)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    -1 8  1 <$STR(s$特殊idxz)> 0
+;显示自定义类名称
+CHANGECUSTOMITEMABIL    -1 8  2 <$STR(s$特殊xz)> 0
+;是否显示百分比
+CHANGECUSTOMITEMABIL    -1 8  3 1 0
+;显示的行数
+CHANGECUSTOMITEMABIL    -1 8  4 4 0
+UpDateBoxItem -1
+
+
+Mov s$原始装备
+Mov s$目标装备
+Mov n$是否转移 0
+Goto @装备转移显示
+
+[@跳转装备强星]
+#ACT
+#CALL [\功能脚本\装备强星\装备强星.txt] @装备强星
+}

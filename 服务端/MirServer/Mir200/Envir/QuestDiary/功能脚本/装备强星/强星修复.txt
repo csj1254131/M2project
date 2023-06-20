@@ -1,0 +1,159 @@
+[@强星修复]
+{
+#IF
+large <$Starcount0> 0
+#ACT
+Mov n$强星序号 0
+Goto @执行强星修复
+#IF
+large <$Starcount1> 0
+#ACT
+Mov n$强星序号 1
+Goto @执行强星修复
+#IF
+large <$Starcount2> 0
+#ACT
+Mov n$强星序号 2
+Goto @执行强星修复
+#IF
+large <$Starcount3> 0
+#ACT
+Mov n$强星序号 3
+Goto @执行强星修复
+#IF
+large <$Starcount4> 0
+#ACT
+Mov n$强星序号 4
+Goto @执行强星修复
+#IF
+large <$Starcount5> 0
+#ACT
+Mov n$强星序号 5
+Goto @执行强星修复
+#IF
+large <$Starcount6> 0
+#ACT
+Mov n$强星序号 6
+Goto @执行强星修复
+#IF
+large <$Starcount7> 0
+#ACT
+Mov n$强星序号 7
+Goto @执行强星修复
+#IF
+large <$Starcount8> 0
+#ACT
+Mov n$强星序号 8
+Goto @执行强星修复
+#IF
+large <$Starcount10> 0
+#ACT
+Mov n$强星序号 10
+Goto @执行强星修复
+#IF
+large <$Starcount11> 0
+#ACT
+Mov n$强星序号 11
+Goto @执行强星修复
+
+
+[@执行强星修复]
+#IF
+#ACT
+Mov s$特殊sz_1
+Mov s$特殊sz_2
+Mov s$特殊id
+Mov s$特殊xs
+Mov s$特殊xb
+Mov s$特殊fj
+Mov s$特殊idxz
+Mov s$特殊xz
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 1  = 0 0
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 2  = 0 0
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 3  = 0 0
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 4  = 0 0
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 5  = 0 0
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 6  = 0 0
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 7  = 0 0
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 8  = 0 0
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Starcount<$Str(n$强星序号)>>星  当前xx    s$当前xx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Starcount<$Str(n$强星序号)>>星  当前sx    s$当前sx
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Starcount<$Str(n$强星序号)>>星  特殊sz_1  s$特殊sz_1
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(n$强星序号)>  特殊id s$特殊id
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(n$强星序号)>  特殊xs s$特殊xs
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(n$强星序号)>  特殊xb s$特殊xb
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(n$强星序号)>  特殊fj s$特殊fj
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(n$强星序号)>  特殊idxz s$特殊idxz
+ReadConfigFileItem  ..\QuestDiary\功能脚本\装备强星\强星配置.ini <$Str(n$强星序号)>  特殊xz s$特殊xz
+
+;CHANGECUSTOMITEMTEXT <$Str(n$强星序号)> [锻造属性] 0
+;CHANGECUSTOMITEMTEXTCOLOR <$Str(n$强星序号)> 251 0
+;===========攻击
+;修改属性值
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 1 = <$STR(s$当前xx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 1 1 3 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 1 2 1 0
+;修改属性值
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 2 = <$STR(s$当前sx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 2 1 4 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 2 2 1 0
+;===========魔法
+;修改属性值
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 3 = <$STR(s$当前xx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 3 1 5 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 3 2 9 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 3 4 2 0
+;修改属性值
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 4 = <$STR(s$当前sx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 4 1 6 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 4 2 9 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 4  4 2 0
+;===========道术
+;修改属性值
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 5 = <$STR(s$当前xx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 5 1 7 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 5 2 10 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 5 4 3 0
+;修改属性值
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 6 = <$STR(s$当前sx)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 6 1 8 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 6 2 10 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 6  4 3 0
+;==========特殊属性
+;修改属性值
+CHANGECUSTOMITEMVALUE <$Str(n$强星序号)> 7  = <$STR(s$特殊sz_1)><$STR(s$特殊fj)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 7  1 <$STR(s$特殊id)> 0
+;显示自定义类名称
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 7  2 <$STR(s$特殊xb)> 0
+;是否显示百分比
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 7  3 1 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 7  4 4 0
+;修改属性值
+CHANGECUSTOMITEMVALUE   <$Str(n$强星序号)> 8  = <$STR(s$特殊sz_1)><$STR(s$特殊fj)> 0
+;绑定的属性
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 8  1 <$STR(s$特殊idxz)> 0
+;显示自定义类名称
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 8  2 <$STR(s$特殊xz)> 0
+;是否显示百分比
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 8  3 1 0
+;显示的行数
+CHANGECUSTOMITEMABIL    <$Str(n$强星序号)> 8  4 4 0
+}

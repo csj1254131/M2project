@@ -1,0 +1,198 @@
+[@界面按钮QF]
+{
+[@火龙币Tiss]
+<Img|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|bg=1|show=4|img=custom/hl/hl_ui/alpha_1px.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@exit>
+<Img|a=3|children={1,2,3,4}|percentx=38|percenty=16.5|width=410|height=80|img=custom/hl/hl_ui/bg_tips_01.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@exit>
+<Text|id=1|text=火龙币|x=10|y=5|size=16|color=251|outline=2|outlinecolor=0>
+<RText|id=2|text=可用于<购买商城道具，拍卖行购买道具，使用系统便捷功能/FCOLOR=250>|x=10|y=25|size=15|color=255|outline=2|outlinecolor=0>
+<Text|id=3|text=拥有火龙币：$STM(ITEMCOUNT_7)|x=10|y=45|size=15|color=251|outline=2|outlinecolor=0>
+
+[@元宝Tiss]
+<Img|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|bg=1|show=4|img=custom/hl/hl_ui/alpha_1px.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@exit>
+<Img|a=3|children={1,2,3,4}|percentx=52|percenty=16.5|width=410|height=80|img=custom/hl/hl_ui/bg_tips_01.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@exit>
+<Text|id=1|text=绑定元宝|x=10|y=5|size=16|color=251|outline=2|outlinecolor=0>
+<RText|id=2|text=可用于<购买商城道具，拍卖行购买道具，使用系统便捷功能/FCOLOR=250>|x=10|y=25|size=15|color=255|outline=2|outlinecolor=0>
+<Text|id=3|text=拥有元宝：$STM(ITEMCOUNT_2)    拥有绑定元宝：$STM(ITEMCOUNT_4) |x=10|y=45|size=15|color=251|outline=2|outlinecolor=0>
+[@切换]
+#IF
+CHECKJOB Warrior
+#ACT
+Mov s$Jobdy 0
+Mov s$Jobsx  <$MAXDC>
+#IF
+CHECKJOB Wizard
+#ACT
+Mov s$Jobdy 1
+Mov s$Jobsx  <$MAXMC>
+
+#IF
+CHECKJOB Taoist
+#ACT
+Mov s$Jobdy 2
+Mov s$Jobsx  <$MAXSC>
+
+
+#IF
+EQUAL N$切换 0
+#ACT
+MOV    N$切换 1
+DELBUTTON 101 9
+MOV    S$主界面按钮   <Button|x=245|y=2|nimg=custom/hl/dbsx_ui/btn_qiehuan_01.png|pimg=custom/hl/dbsx_ui/btn_qiehuan_02.png|height=30|width=20|link=@切换>
+ADDBUTTON 101 9 <$STR(S$主界面按钮)>
+MOV   S$主界面按钮   <Img|x=5|y=2|img=public/1900000668.png|width=240|height=33>
+Inc      S$主界面按钮   <Img|x=5|y=0|img=custom/hl/dbsx_ui/bj.png>
+Inc      S$主界面按钮   <Img|x=50|y=5|img=custom/hl/dbsx_ui/<$Str(s$Jobdy)>.png>
+Inc      S$主界面按钮   <TextAtlas|x=100|y=8|img=custom/hl/dbsx_ui/sz.png|schar=0|iheight=20|iwidth=14|text=<$Str(s$Jobsx)>>
+ADDBUTTON 101 99 <$STR(S$主界面按钮)>
+break
+#IF
+#ACT
+MOV    N$切换 0
+DELBUTTON 101 99
+MOV  S$主界面按钮   <Img|x=5|y=2|img=public/1900000668.png|width=240|height=33>
+INC   S$主界面按钮   <Img|x=5|y=8|img=item/item_1/000226.png|width=20|height=20>
+INC   S$主界面按钮   <Text|text=$STM(ITEMCOUNT_7)|x=27|y=5|size=16|color=255|outline=2|outlinecolor=0|simplenum=1>
+INC   S$主界面按钮   <Img|x=83|y=6|img=item/item_4/000001.png|width=25|height=25>
+INC   S$主界面按钮   <Text|text=$STM(MONEY_2)|x=108|y=5|size=16|color=255|outline=2|outlinecolor=0|simplenum=1>
+INC   S$主界面按钮   <Img|x=164|y=6|img=item/item_4/000002.png|width=25|height=25>
+INC   S$主界面按钮   <Text|text=$STM(ITEMCOUNT_4)|x=189|y=5|size=16|color=255|outline=2|outlinecolor=0|simplenum=1>
+Inc   S$主界面按钮   <Button|x=245|y=2|nimg=custom/hl/dbsx_ui/btn_qiehuan_01.png|pimg=custom/hl/dbsx_ui/btn_qiehuan_02.png|height=30|width=20|link=@切换>
+Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=5|y=4|link=@火龙币Tiss>
+Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=165|y=4|link=@元宝Tiss>
+ADDBUTTON 101 9 <$STR(S$主界面按钮)>
+BREAK
+
+[@角色]
+#IF
+#ACT
+OPENHYPERLINK 1
+
+[@技能]
+#IF
+#ACT
+OPENHYPERLINK 4
+
+[@组队]
+#IF
+#ACT
+OPENHYPERLINK 17
+
+[@行会]
+#IF
+#ACT
+OPENHYPERLINK 31
+
+[@拍卖行]
+#IF
+#ACT
+OPENHYPERLINK 27
+
+[@设置]
+#IF
+#ACT
+OPENHYPERLINK 23
+
+[@退出]
+#IF
+#ACT
+OPENHYPERLINK 29
+
+[@商城]
+#IF
+#ACT
+OPENHYPERLINK 9
+
+[@排行]
+#IF
+#ACT
+OPENHYPERLINK 32
+
+[@交易]
+#IF
+#ACT
+OPENHYPERLINK 33
+
+[@摆摊]
+#IF
+#ACT
+OPENHYPERLINK 8
+
+[@仓库]
+#IF
+large U119 0
+#ACT
+OPENSTORAGE
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>充值任意金额可开启远程仓库</font>
+BREAK
+
+[@背包]
+#IF
+EQUAL N$回收激活 1
+#ACT
+OPENHYPERLINK 7
+close
+break
+
+#IF
+EQUAL N$分解激活 1
+#ACT
+OPENHYPERLINK 7
+MOV N$分解激活 0
+close
+break
+
+#IF
+#ACT
+;#CALL [\游戏功能\界面按钮\界面红点.txt] @界面红点
+OPENHYPERLINK 7
+
+
+
+[@回收]
+#IF
+EQUAL n$回收激活 0
+#ACT
+Mov   n$回收激活 1
+#CALL [\游戏功能\装备回收\装备回收.txt] @移动端装备回收
+BREAK
+
+#IF
+#ACT
+Mov N$回收激活 0
+close
+
+[@充值]
+#IF
+#ACT
+OPENHYPERLINK 26
+
+[@分解]
+#IF
+CHECKLEVELEX < 35
+#ACT
+SENDMSG 9 <font color='#ff0000'>等级不足35级，无法使用次功能</font>
+BREAK
+#IF
+EQUAL N$分解激活 1
+#ACT
+MOV N$分解激活 0
+close
+BREAK
+#IF
+#ACT
+#CALL [\游戏功能\系统功能\分解大师.txt] @启动分解
+
+[@时装衣柜]
+#ACT
+#CALL [\游戏功能\系统功能\时装柜.txt] @启动时装柜
+
+[@注灵]
+#IF
+checkrenewlevel > 2
+#ACT
+#CALL [\功能脚本\装备注灵\装备注灵.txt] @装备注灵
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>转生等级达到3级可开启</font>
+BREAK
+}

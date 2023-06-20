@@ -1,0 +1,99 @@
+[@启动小精灵]
+{
+#IF
+CHECKSPRITELEVEL
+#ACT
+MOV S$精灵召唤状态 收回精灵
+#ELSEACT
+MOV S$精灵召唤状态 召唤精灵
+
+#OR
+SMALL U247 <$UTCNOW8>
+EQUAL U247 0
+#ACT
+MOV S$精灵倒计时显示 <Text|id=44|x=190|y=300|color=253|size=18|outline=2|outlinecolor=0|text=未开启>
+#IF
+SMALL U247 0
+#ACT
+MOV S$精灵倒计时显示 <Text|id=44|x=190|y=300|color=250|size=18|outline=2|outlinecolor=0|text=永久>
+#IF
+LARGE U247 <$UTCNOW8>
+#ACT
+MOV n$精灵剩余时间 <$STR(U247)>
+DEC n$精灵剩余时间 <$UTCNOW8>
+MOV S$精灵倒计时显示 <TIMETIPS|id=44|x=190|y=300|time=<$str(n$精灵剩余时间)>|color=249|size=18|outline=2|outlinecolor=0|link=@小精灵到期>
+
+#IF
+#ACT
+#SAY
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|move=1|bg=1|layerid=666|reload=1|img=custom/hl/fenjie_ui/hl_fj_01.png|width=405|height=447|show=4>
+<Layout|id=0|children={1}|x=405|y=0|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|percentx=50|y=35|color=255|size=18|outline=2|outlinecolor=0|text=拾取小精灵>
+<Img|id=3|children={31}|x=28|y=32|img=custom/hl/fenjie_ui/hl_fj_02.png>
+<Img|id=31|x=263|y=0|img=custom/hl/fenjie_ui/hl_fj_04.png>
+<Layout|id=4|children={40,41}|x=0|y=0|width=400|height=440|color=x>
+<Img|id=40|a=4|percentx=50|percenty=55|img=custom/hl/hdtb_ui/diyitaizi.png>
+<Effect|id=41|a=4|percentx=50|percenty=30|effectid=3232|effecttype=2|act=0|dir=2>
+;<RText|id=42|a=4|percentx=50|percenty=65|color=255|size=18|outline=2|outlinecolor=0|text=功能:<自动拾取/FCOLOR=253>>
+<Text|id=43|x=110|y=300|color=255|size=18|outline=2|outlinecolor=0|text=到期时间:>
+<$STR(S$精灵倒计时显示)>
+;<Text|id=45|x=60|y=325|color=255|size=18|outline=2|outlinecolor=0|text=月之精灵到期后，系统将自动收回>
+<Button|id=46|a=4|percentx=50|percenty=85|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=<$STR(S$精灵召唤状态)>|link=@召唤精灵#精灵状态=<$STR(S$精灵召唤状态)>>
+
+
+[@召唤精灵]
+#OR
+ISONMAP sjBOSS
+ISONMAP dbqb
+ISONMAP 0150
+#ACT
+SENDMSG 9 <font color='#ff0000'>当前地图不可召唤拾取小精灵！</font>
+CLOSE
+BREAK
+#IF
+EQUAL S$精灵召唤状态 收回精灵
+#ACT
+RELEASESPRITE
+SENDMSG 9 <font color='#ff0000'>月之精灵已收回！</font>
+DELAYGOTO 200 @启动小精灵
+BREAK
+#IF
+SMALL U247 <$UTCNOW8>
+NOT SMALL U247 0
+#ACT
+RELEASESPRITE
+SENDMSG 9 <font color='#ff0000'>您的月之精灵时间不足！</font>
+BREAK
+#IF
+LARGE U247 <$UTCNOW8>
+EQUAL S$精灵召唤状态 召唤精灵
+NOT CHECKSPRITELEVEL
+#ACT
+CREATESPRITE 月之精灵
+PICKUPITEMS 1 5 500
+SENDMSG 9 <font color='#00ff00'>月之精灵召唤成功！</font>
+CLOSE
+BREAK
+#IF
+NOT CHECKSPRITELEVEL
+#ACT
+CREATESPRITE 月之精灵
+PICKUPITEMS 1 5 500
+SENDMSG 9 <font color='#00ff00'>月之精灵召唤成功！</font>
+CLOSE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

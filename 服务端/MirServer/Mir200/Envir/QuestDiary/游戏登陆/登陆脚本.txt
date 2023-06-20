@@ -1,0 +1,155 @@
+
+[@登陆设置]
+{
+
+#IF
+#ACT
+AUTOPICKITEMBYBTN
+MOV S$时装切换1 <Button|a=4|percentx=50|percenty=93|nimg=custom/hl/hl_ui/ltan.png|link=@切换自己1>
+ADDBUTTON 3001 1 <$STR(S$时装切换1)>
+MOV S$时装切换2 <Button|a=4|percentx=50|percenty=93|nimg=custom/hl/hl_ui/ltan.png|link=@切换他人1>
+ADDBUTTON 3002 3 <$STR(S$时装切换2)>
+MOV S$时装战装1 <Button|a=4|percentx=50|percenty=93|nimg=custom/hl/hl_ui/zzan.png|link=@切换自己2>
+ADDBUTTON 39 2 <$STR(S$时装战装1)>
+MOV S$时装战装2 <Button|a=4|percentx=50|percenty=93|nimg=custom/hl/hl_ui/zzan.png|link=@切换他人2>
+ADDBUTTON 3901 4 <$STR(S$时装战装2)>
+
+
+ADDBUTTON 3001 51 <Button|x=260|y=5|pimg=custom/hl/mingwen/mw01.png|color=255|nimg=custom/hl/mingwen/mw03.png|link=@查看自己>
+ADDBUTTON 3002 52 <Button|x=260|y=5|pimg=custom/hl/mingwen/mw01.png|color=255|nimg=custom/hl/mingwen/mw03.png|link=@查看别人>
+ADDBUTTON 3002 54 <Button|a=4|x=376|y=150|pimg=custom/hl/chenhaoanniu/ch_ui5.png|color=255|nimg=custom/hl/chenhaoanniu/ch_ui4.png|link=@顶戴展示_他人>
+
+#IF
+NOT EQUAL <$STR(A273)> <$USERNAME>
+NOT EQUAL <$STR(A274)> <$USERNAME>
+#ACT
+CALCVAR HUMAN 顶戴展示八 =
+SAVEVAR HUMAN 顶戴展示八
+
+#IF
+LARGE G250 0
+#ACT
+#CALL [\全服活动\夺宝奇兵弹窗.txt] @夺宝提醒面板
+
+#IF
+LARGE G231 0
+#ACT
+#CALL [\全服活动\勇闯积分排行.txt] @勇闯提醒面板
+
+#IF
+LARGE G243 0
+#ACT
+#CALL [\全服活动\天降元宝弹窗.txt] @天降提醒面板
+
+#IF
+LARGE G200 0
+#ACT
+#CALL [\全服活动\世界BOSS弹窗.txt] @世界提醒面板
+
+#IF
+EQUAL U228 1
+LARGE U231 0
+#ACT
+ChangeItemShape 1 = <$STR(U231)>
+ChangeDressEffect 1 <$STR(U231)> 1
+#IF
+EQUAL U228 1
+LARGE U235 0
+#ACT
+ChangeItemShape 0 = <$STR(U235)>
+ChangeDressEffect 0 <$STR(U235)> 1
+
+#IF
+NOT EQUAL <$USERNAME> <$STR(A261)>
+NOT EQUAL <$USERNAME> <$STR(A262)>
+NOT EQUAL <$USERNAME> <$STR(A263)>
+NOT EQUAL <$USERNAME> <$STR(A264)>
+NOT EQUAL <$USERNAME> <$STR(A265)>
+NOT EQUAL <$USERNAME> <$STR(A266)>
+CHECKVAR HUMAN 顶戴展示九 > 0
+#ACT
+CALCVAR HUMAN 顶戴展示九 =
+SAVEVAR HUMAN 顶戴展示九
+
+
+#IF
+ISNEWHUMAN
+#ACT
+CHANGESTORAGE 120
+GiveOnItem 20 龙头·未修炼 1
+GiveOnItem 43 龙躯·未修炼 1
+GiveOnItem 26 龙骨·未修炼 1
+GiveOnItem 29 龙尾·未修炼 1
+Calcvar Human 龙魂礼包1 = 20
+Savevar Human 龙魂礼包1
+Calcvar Human 龙魂礼包2 = 10
+Savevar Human 龙魂礼包2
+Calcvar Human 龙魂礼包3 = 5
+Savevar Human 龙魂礼包3
+Calcvar Human 龙魂礼包4 = 3
+Savevar Human 龙魂礼包4
+
+Calcvar Human 强星礼包1 = 20
+Savevar Human 强星礼包1
+Calcvar Human 强星礼包2 = 10
+Savevar Human 强星礼包2
+Calcvar Human 强星礼包3 = 5
+Savevar Human 强星礼包3
+Calcvar Human 强星礼包4 = 3
+Savevar Human 强星礼包4
+
+Calcvar Human 注灵礼包1 = 20
+Savevar Human 注灵礼包1
+Calcvar Human 注灵礼包2 = 10
+Savevar Human 注灵礼包2
+Calcvar Human 注灵礼包3 = 5
+Savevar Human 注灵礼包3
+Calcvar Human 注灵礼包4 = 3
+Savevar Human 注灵礼包4
+
+Calcvar Human 元神礼包1 = 20
+Savevar Human 元神礼包1
+Calcvar Human 元神礼包2 = 10
+Savevar Human 元神礼包2
+Calcvar Human 元神礼包3 = 5
+Savevar Human 元神礼包3
+Calcvar Human 元神礼包4 = 3
+Savevar Human 元神礼包4
+GOTO @登陆弹窗
+SENDMSG 0 欢迎新的玛法勇士【{<$USERNAME>|251}】进入游戏!
+SENDMSGNEW 255 0 欢迎新的玛法勇士{<$USERNAME>/FCOLOR=251}进入游戏! 1 5
+
+#IF
+ISCASTLEMASTER
+#ACT
+SENDMSG 0 号令天下的沙城主『<$USERNAME>』进入了游戏!
+Sendmovemsg 0 0 255 150 1 号令天下的沙城主『<$USERNAME>』进入了游戏!
+break
+
+[@登陆弹窗]
+
+#IF
+#ACT
+#SAY
+<Img|width=2500|height=2500|bg=1|show=4|img=public/1900000651_1.png>
+<Img|a=4|children={0}|img=custom/hl/jinruyx_ui/bg_huanying_01.png|percentx=50|percenty=50>
+<Button|a=4|id=0|children={1}|percentx=70|percenty=75|nimg=custom/hl/jinruyx_ui/btn_shouchong_04.png|link=@跳转开始任务>
+<COUNTDOWN|id=100|a=0|x=280|y=355|time=5|count=1|size=16|color=224|link=@跳转开始任务>
+
+[@跳转开始任务]
+
+#IF
+EQUAL <$STR(U91)> 0
+#ACT
+SENDMSG 0 开始任务
+NEWPICKTASK 1
+GiveOnItem 1 木剑 1
+GiveOnItem 12 魔血石 1
+;GiveOnItem 27 天武之印 1
+OPENNPCSHOWEX 2 20 2
+close
+break
+
+
+
+}

@@ -1,0 +1,548 @@
+[@书店]
+{
+
+#IF
+EQUAL <$STR(U91)> 21
+#ACT
+GOTO @新人买书任务
+break
+
+#IF
+#ACT
+#SAY
+<Img|height=220|esc=1|img=custom/hl/shajuan/hl_bg1.png|move=0|reset=1|scale9t=70|show=0|scale9r=0|scale9l=0|scale9b=20|bg=1|loadDelay=0>
+<Layout|x=552.0|y=1.0|width=80|height=80|link=@exit>
+<Button|x=561.0|y=4.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|x=261.0|y=5.0|color=149|size=18|text=书店>
+<Text|x=17.0|y=59.0|color=255|size=18|text=这里保存着学徒们需要练学的各种书籍. 你需要什么书?>
+<RText|x=18.0|y=100.0|color=255|size=18|text=<我要购买/FCOLOR=149>< 书籍/FCOLOR=254>>
+<Layout|x=14.0|y=96.0|width=145|height=35|rotate=0|link=@购买战士书籍>
+
+
+[@新人买书任务]
+#IF
+CHECKJOB Warrior
+#ACT
+MOV S$C_职业文字1 战
+MOV S$C_职业文字2 士
+MOV S$C_职业文字3 战士
+MOV S$技能名称_1 基本剑术
+#IF
+CHECKJOB Wizard
+#ACT
+MOV S$C_职业文字1 法
+MOV S$C_职业文字2 师
+MOV S$C_职业文字3 法师
+MOV S$技能名称_1 火球术
+#IF
+CHECKJOB Taoist
+#ACT
+MOV S$C_职业文字1 道
+MOV S$C_职业文字2 士
+MOV S$C_职业文字3 道士
+MOV S$技能名称_1 精神力战法
+
+#IF
+#ACT
+GetDBItemFieldValue <$Str(S$技能名称_1)> Idx N$技能ID_1
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$STR(S$C_职业文字3)> <$STR(S$技能名称_1)> N$技能价格_1
+#Say
+<Img|height=220|scale9l=0|bg=1|scale9r=0|scale9t=70|show=0|scale9b=20|loadDelay=0|move=0|esc=1|img=custom/hl/shajuan/hl_bg1.png|reset=1>
+<Layout|x=552.0|y=1.0|width=80|height=80|link=@exit>
+<Button|x=561.0|y=4.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|x=261.0|y=5.0|color=149|size=18|text=书店>
+<Text|x=17.0|y=59.0|color=255|size=18|text=这里保存着学徒们需要练学的各种书籍. 你需要什么书?>
+<RText|x=18.0|y=100.0|color=255|size=18|text=<我要购买/FCOLOR=149>< 书籍/FCOLOR=254>>
+<Layout|x=14.0|y=96.0|width=145|height=35|rotate=0>
+<Img|ax=0|x=0.0|y=218.0|width=380|height=380|scale9l=20|scale9r=20|scale9t=20|esc=0|scale9b=20|img=custom/hl/shajuan/hl_bg2.png>
+<Layout|children={1,2,3}|ax=0|ay=1|x=380.0|y=223.0|width=40|height=260>
+<Button|id=1|children={1a}|height=60|ax=0|ay=1|x=0.0|y=0.0|width=30|height=80|color=255|pimg=custom/hl/shajuan/cbl_2.png|size=18|nimg=custom/hl/shajuan/cbl_1.png>
+<Text|id=1a|children={1b}|x=3|y=5|color=254|size=18|text=<$STR(S$C_职业文字1)>>
+<Text|id=1b|x=0.0|y=23.0|color=254|size=18|text=<$STR(S$C_职业文字2)>>
+
+<ListView|children={4,5,6,7,8,9}|direction=1|bounce=0|margin=2|width=351|height=345|x=15.0|y=238.0>
+<Layout|id=4|children={4a,4b,4c,4d,4e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=4a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_1)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=4b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_1)>>
+<RText|id=4c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255>{<$Str(N$技能价格_1)>/FCOLOR=254}>
+<Button|id=4d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_1)>#技能价格=<$Str(N$技能价格_1)>>
+<Img|id=4e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+[@购买战士书籍]
+#IF
+#Act
+Mov S$按钮A custom/hl/shajuan/cbl_1.png
+Mov S$按钮B custom/hl/shajuan/cbl_2.png
+Mov S$职业 战士
+Mov S$技能名称_1 基本剑术
+Mov S$技能名称_2 攻杀剑术
+Mov S$技能名称_3 刺杀剑术
+Mov S$技能名称_4 半月弯刀
+Mov S$技能名称_5 野蛮冲撞
+Mov S$技能名称_6 烈火剑法
+GetDBItemFieldValue <$Str(S$技能名称_1)> Idx N$技能ID_1
+GetDBItemFieldValue <$Str(S$技能名称_2)> Idx N$技能ID_2
+GetDBItemFieldValue <$Str(S$技能名称_3)> Idx N$技能ID_3
+GetDBItemFieldValue <$Str(S$技能名称_4)> Idx N$技能ID_4
+GetDBItemFieldValue <$Str(S$技能名称_5)> Idx N$技能ID_5
+GetDBItemFieldValue <$Str(S$技能名称_6)> Idx N$技能ID_6
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_1)> N$技能价格_1
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_2)> N$技能价格_2
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_3)> N$技能价格_3
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_4)> N$技能价格_4
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_5)> N$技能价格_5
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_6)> N$技能价格_6
+#Say
+
+<Img|height=220|scale9l=0|bg=1|scale9r=0|scale9t=70|show=0|scale9b=20|loadDelay=0|move=0|esc=1|img=custom/hl/shajuan/hl_bg1.png|reset=1>
+<Layout|x=552.0|y=1.0|width=80|height=80|link=@exit>
+<Button|x=561.0|y=4.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|x=261.0|y=5.0|color=149|size=18|text=书店>
+<Text|x=17.0|y=59.0|color=255|size=18|text=这里保存着学徒们需要练学的各种书籍. 你需要什么书?>
+<RText|x=18.0|y=100.0|color=255|size=18|text=<我要购买/FCOLOR=149>< 书籍/FCOLOR=254>>
+<Layout|x=14.0|y=96.0|width=145|height=35|rotate=0|link=@购买战士书籍>
+
+<Img|ax=0|x=0.0|y=218.0|width=380|height=380|scale9l=20|scale9r=20|scale9t=20|esc=0|scale9b=20|img=custom/hl/shajuan/hl_bg2.png>
+
+<Layout|children={1,2,3}|ax=0|ay=1|x=380.0|y=223.0|width=40|height=260>
+<Button|id=1|children={1a}|height=60|ax=0|ay=1|x=0.0|y=0.0|width=30|height=80|color=255|pimg=<$Str(S$按钮B)>|size=18|nimg=<$Str(S$按钮A)>|link=@购买战士书籍>
+<Text|id=1a|children={1b}|x=3|y=5|color=254|size=18|text=战>
+<Text|id=1b|x=0.0|y=20.0|color=254|size=18|text=士>
+
+<Button|id=2|children={2a}|height=60|ax=0|ay=1|x=0.0|y=70.0|width=30|height=80|color=255|pimg=<$Str(S$按钮A)>|size=18|nimg=<$Str(S$按钮B)>|link=@购买道士书籍>
+<Text|id=2a|children={2b}|x=3|y=5|color=254|size=18|text=道>
+<Text|id=2b|x=0.0|y=20.0|color=254|size=18|text=士>
+
+<Button|id=3|children={3a}|height=60|ax=0|ay=1|x=0.0|y=140.0|width=30|height=80|color=255|pimg=<$Str(S$按钮A)>|size=18|nimg=<$Str(S$按钮B)>|link=@购买法师书籍>
+<Text|id=3a|children={3b}|x=3|y=5|color=254|size=18|text=法>
+<Text|id=3b|x=0.0|y=20.0|color=254|size=18|text=师>
+
+<ListView|children={4,5,6,7,8,9}|direction=1|bounce=0|margin=2|width=351|height=345|x=15.0|y=238.0>
+<Layout|id=4|children={4a,4b,4c,4d,4e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=4a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_1)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=4b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_1)>>
+<RText|id=4c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_1)>/FCOLOR=254>>
+<Button|id=4d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_1)>#技能价格=<$Str(N$技能价格_1)>>
+<Img|id=4e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+<Layout|id=5|children={5a,5b,5c,5d,5e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=5a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_2)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=5b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_2)>>
+<RText|id=5c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_2)>/FCOLOR=254>>
+<Button|id=5d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_2)>#技能价格=<$Str(N$技能价格_2)>>
+<Img|id=5e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+<Layout|id=6|children={6a,6b,6c,6d,6e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=6a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_3)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=6b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_3)>>
+<RText|id=6c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_3)>/FCOLOR=254>>
+<Button|id=6d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_3)>#技能价格=<$Str(N$技能价格_3)>>
+<Img|id=6e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+
+<Layout|id=7|children={7a,7b,7c,7d,7e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=7a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_4)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=7b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_4)>>
+<RText|id=7c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_4)>/FCOLOR=254>>
+<Button|id=7d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_4)>#技能价格=<$Str(N$技能价格_4)>>
+<Img|id=7e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=8|children={8a,8b,8c,8d,8e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=8a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_5)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=8b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_5)>>
+<RText|id=8c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_5)>/FCOLOR=254>>
+<Button|id=8d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_5)>#技能价格=<$Str(N$技能价格_5)>>
+<Img|id=8e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=9|children={9a,9b,9c,9d,9e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=9a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_6)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=9b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_6)>>
+<RText|id=9c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_6)>/FCOLOR=254>>
+<Button|id=9d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_6)>#技能价格=<$Str(N$技能价格_6)>>
+<Img|id=9e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+
+
+
+[@购买道士书籍]
+#IF
+#Act
+Mov S$职业 道士
+Mov S$技能名称_1 精神力战法
+Mov S$技能名称_2 治愈术
+Mov S$技能名称_3 施毒术
+Mov S$技能名称_4 灵魂火符
+Mov S$技能名称_5 召唤骷髅
+Mov S$技能名称_6 隐身术
+Mov S$技能名称_7 集体隐身术
+Mov S$技能名称_8 幽灵盾
+Mov S$技能名称_9 神圣战甲术
+Mov S$技能名称_10 心灵启示
+Mov S$技能名称_11 困魔咒
+Mov S$技能名称_12 召唤神兽
+GetDBItemFieldValue <$Str(S$技能名称_1)> Idx N$技能ID_1
+GetDBItemFieldValue <$Str(S$技能名称_2)> Idx N$技能ID_2
+GetDBItemFieldValue <$Str(S$技能名称_3)> Idx N$技能ID_3
+GetDBItemFieldValue <$Str(S$技能名称_4)> Idx N$技能ID_4
+GetDBItemFieldValue <$Str(S$技能名称_5)> Idx N$技能ID_5
+GetDBItemFieldValue <$Str(S$技能名称_6)> Idx N$技能ID_6
+GetDBItemFieldValue <$Str(S$技能名称_7)> Idx N$技能ID_7
+GetDBItemFieldValue <$Str(S$技能名称_8)> Idx N$技能ID_8
+GetDBItemFieldValue <$Str(S$技能名称_9)> Idx N$技能ID_9
+GetDBItemFieldValue <$Str(S$技能名称_10)> Idx N$技能ID_10
+GetDBItemFieldValue <$Str(S$技能名称_11)> Idx N$技能ID_11
+GetDBItemFieldValue <$Str(S$技能名称_12)> Idx N$技能ID_12
+
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_1)> N$技能价格_1
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_2)> N$技能价格_2
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_3)> N$技能价格_3
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_4)> N$技能价格_4
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_5)> N$技能价格_5
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_6)> N$技能价格_6
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_7)> N$技能价格_7
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_8)> N$技能价格_8
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_9)> N$技能价格_9
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_10)> N$技能价格_10
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_11)> N$技能价格_11
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_12)> N$技能价格_12
+#Say
+
+<Img|height=220|scale9l=0|bg=1|scale9r=0|scale9t=70|show=0|scale9b=20|loadDelay=0|move=0|esc=1|img=custom/hl/shajuan/hl_bg1.png|reset=1>
+<Layout|x=552.0|y=1.0|width=80|height=80|link=@exit>
+<Button|x=561.0|y=4.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|x=261.0|y=5.0|color=149|size=18|text=书店>
+<Text|x=17.0|y=59.0|color=255|size=18|text=这里保存着学徒们需要练学的各种书籍. 你需要什么书?>
+<RText|x=18.0|y=100.0|color=255|size=18|text=<我要购买/FCOLOR=149>< 书籍/FCOLOR=254>>
+<Layout|x=14.0|y=96.0|width=145|height=35|rotate=0|link=@购买战士书籍>
+
+<Img|ax=0|x=0.0|y=218.0|width=380|height=380|scale9l=20|scale9r=20|scale9t=20|esc=0|scale9b=20|img=custom/hl/shajuan/hl_bg2.png>
+
+<Layout|children={1,2,3}|ax=0|ay=1|x=380.0|y=223.0|width=40|height=260>
+<Button|id=1|children={1a}|height=60|ax=0|ay=1|x=0.0|y=0.0|width=30|height=80|color=255|pimg=<$Str(S$按钮A)>|size=18|nimg=<$Str(S$按钮B)>|link=@购买战士书籍>
+<Text|id=1a|children={1b}|x=3|y=5|color=254|size=18|text=战>
+<Text|id=1b|x=0.0|y=20.0|color=254|size=18|text=士>
+
+<Button|id=2|children={2a}|height=60|ax=0|ay=1|x=0.0|y=70.0|width=30|height=80|color=255|pimg=<$Str(S$按钮B)>|size=18|nimg=<$Str(S$按钮A)>|link=@购买道士书籍>
+<Text|id=2a|children={2b}|x=3|y=5|color=254|size=18|text=道>
+<Text|id=2b|x=0.0|y=20.0|color=254|size=18|text=士>
+
+<Button|id=3|children={3a}|height=60|ax=0|ay=1|x=0.0|y=140.0|width=30|height=80|color=255|pimg=<$Str(S$按钮A)>|size=18|nimg=<$Str(S$按钮B)>|link=@购买法师书籍>
+<Text|id=3a|children={3b}|x=3|y=5|color=254|size=18|text=法>
+<Text|id=3b|x=0.0|y=20.0|color=254|size=18|text=师>
+
+<ListView|children={4,5,6,7,8,9,10,11,12,13,14,15}|direction=1|bounce=0|margin=2|width=351|height=345|x=15.0|y=238.0>
+<Layout|id=4|children={4a,4b,4c,4d,4e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=4a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_1)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=4b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_1)>>
+<RText|id=4c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_1)>/FCOLOR=254>>
+<Button|id=4d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_1)>#技能价格=<$Str(N$技能价格_1)>>
+<Img|id=4e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+<Layout|id=5|children={5a,5b,5c,5d,5e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=5a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_2)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=5b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_2)>>
+<RText|id=5c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_2)>/FCOLOR=254>>
+<Button|id=5d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_2)>#技能价格=<$Str(N$技能价格_2)>>
+<Img|id=5e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+<Layout|id=6|children={6a,6b,6c,6d,6e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=6a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_3)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=6b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_3)>>
+<RText|id=6c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_3)>/FCOLOR=254>>
+<Button|id=6d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_3)>#技能价格=<$Str(N$技能价格_3)>>
+<Img|id=6e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+
+<Layout|id=7|children={7a,7b,7c,7d,7e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=7a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_4)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=7b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_4)>>
+<RText|id=7c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_4)>/FCOLOR=254>>
+<Button|id=7d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_4)>#技能价格=<$Str(N$技能价格_4)>>
+<Img|id=7e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=8|children={8a,8b,8c,8d,8e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=8a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_5)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=8b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_5)>>
+<RText|id=8c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_5)>/FCOLOR=254>>
+<Button|id=8d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_5)>#技能价格=<$Str(N$技能价格_5)>>
+<Img|id=8e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=9|children={9a,9b,9c,9d,9e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=9a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_6)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=9b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_6)>>
+<RText|id=9c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_6)>/FCOLOR=254>>
+<Button|id=9d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_6)>#技能价格=<$Str(N$技能价格_6)>>
+<Img|id=9e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+
+<Layout|id=10|children={10a,10b,10c,10d,10e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=10a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_7)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=10b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_7)>>
+<RText|id=10c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_7)>/FCOLOR=254>>
+<Button|id=10d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_7)>#技能价格=<$Str(N$技能价格_7)>>
+<Img|id=10e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=11|children={11a,11b,11c,11d,11e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=11a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_8)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=11b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_8)>>
+<RText|id=11c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_8)>/FCOLOR=254>>
+<Button|id=11d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_8)>#技能价格=<$Str(N$技能价格_8)>>
+<Img|id=11e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=12|children={12a,12b,12c,12d,12e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=12a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_9)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=12b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_9)>>
+<RText|id=12c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_9)>/FCOLOR=254>>
+<Button|id=12d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_9)>#技能价格=<$Str(N$技能价格_9)>>
+<Img|id=12e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=13|children={13a,13b,13c,13d,13e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=13a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_10)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=13b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_10)>>
+<RText|id=13c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_10)>/FCOLOR=254>>
+<Button|id=13d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_10)>#技能价格=<$Str(N$技能价格_10)>>
+<Img|id=13e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+<Layout|id=14|children={14a,14b,14c,14d,14e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=14a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_11)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=14b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_11)>>
+<RText|id=14c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_11)>/FCOLOR=254>>
+<Button|id=14d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_11)>#技能价格=<$Str(N$技能价格_11)>>
+<Img|id=14e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=15|children={15a,15b,15c,15d,15e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=15a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_12)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=15b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_12)>>
+<RText|id=15c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_12)>/FCOLOR=254>>
+<Button|id=15d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_12)>#技能价格=<$Str(N$技能价格_12)>>
+<Img|id=15e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+
+[@购买法师书籍]
+#IF
+#Act
+Mov S$职业 法师
+Mov S$技能名称_1 火球术
+Mov S$技能名称_2 大火球
+Mov S$技能名称_3 抗拒火环
+Mov S$技能名称_4 诱惑之光
+Mov S$技能名称_5 地狱火
+Mov S$技能名称_6 雷电术
+Mov S$技能名称_7 瞬息移动
+Mov S$技能名称_8 爆裂火焰
+Mov S$技能名称_9 火墙
+Mov S$技能名称_10 疾光电影
+Mov S$技能名称_11 地狱雷光
+Mov S$技能名称_12 魔法盾
+Mov S$技能名称_13 圣言术
+Mov S$技能名称_14 冰咆哮
+GetDBItemFieldValue <$Str(S$技能名称_1)> Idx N$技能ID_1
+GetDBItemFieldValue <$Str(S$技能名称_2)> Idx N$技能ID_2
+GetDBItemFieldValue <$Str(S$技能名称_3)> Idx N$技能ID_3
+GetDBItemFieldValue <$Str(S$技能名称_4)> Idx N$技能ID_4
+GetDBItemFieldValue <$Str(S$技能名称_5)> Idx N$技能ID_5
+GetDBItemFieldValue <$Str(S$技能名称_6)> Idx N$技能ID_6
+GetDBItemFieldValue <$Str(S$技能名称_7)> Idx N$技能ID_7
+GetDBItemFieldValue <$Str(S$技能名称_8)> Idx N$技能ID_8
+GetDBItemFieldValue <$Str(S$技能名称_9)> Idx N$技能ID_9
+GetDBItemFieldValue <$Str(S$技能名称_10)> Idx N$技能ID_10
+GetDBItemFieldValue <$Str(S$技能名称_11)> Idx N$技能ID_11
+GetDBItemFieldValue <$Str(S$技能名称_12)> Idx N$技能ID_12
+GetDBItemFieldValue <$Str(S$技能名称_13)> Idx N$技能ID_13
+GetDBItemFieldValue <$Str(S$技能名称_14)> Idx N$技能ID_14
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_1)> N$技能价格_1
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_2)> N$技能价格_2
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_3)> N$技能价格_3
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_4)> N$技能价格_4
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_5)> N$技能价格_5
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_6)> N$技能价格_6
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_7)> N$技能价格_7
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_8)> N$技能价格_8
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_9)> N$技能价格_9
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_10)> N$技能价格_10
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_11)> N$技能价格_11
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_12)> N$技能价格_12
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_13)> N$技能价格_13
+ReadConfigFileItem ../QuestDiary/商人/书店.ini <$Str(S$职业)> <$Str(S$技能名称_14)> N$技能价格_14
+#Say
+
+<Img|height=220|scale9l=0|bg=1|scale9r=0|scale9t=70|show=0|scale9b=20|loadDelay=0|move=0|esc=1|img=custom/hl/shajuan/hl_bg1.png|reset=1>
+<Layout|x=552.0|y=1.0|width=80|height=80|link=@exit>
+<Button|x=561.0|y=4.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|x=261.0|y=5.0|color=149|size=18|text=书店>
+<Text|x=17.0|y=59.0|color=255|size=18|text=这里保存着学徒们需要练学的各种书籍. 你需要什么书?>
+<RText|x=18.0|y=100.0|color=255|size=18|text=<我要购买/FCOLOR=149>< 书籍/FCOLOR=254>>
+<Layout|x=14.0|y=96.0|width=145|height=35|rotate=0|link=@购买战士书籍>
+
+<Img|ax=0|x=0.0|y=218.0|width=380|height=380|scale9l=20|scale9r=20|scale9t=20|esc=0|scale9b=20|img=custom/hl/shajuan/hl_bg2.png>
+
+<Layout|children={1,2,3}|ax=0|ay=1|x=380.0|y=223.0|width=40|height=260>
+<Button|id=1|children={1a}|height=60|ax=0|ay=1|x=0.0|y=0.0|width=30|height=80|color=255|pimg=<$Str(S$按钮A)>|size=18|nimg=<$Str(S$按钮B)>|link=@购买战士书籍>
+<Text|id=1a|children={1b}|x=3|y=5|color=254|size=18|text=战>
+<Text|id=1b|x=0.0|y=20.0|color=254|size=18|text=士>
+
+<Button|id=2|children={2a}|height=60|ax=0|ay=1|x=0.0|y=70.0|width=30|height=80|color=255|pimg=<$Str(S$按钮A)>|size=18|nimg=<$Str(S$按钮B)>|link=@购买道士书籍>
+<Text|id=2a|children={2b}|x=3|y=5|color=254|size=18|text=道>
+<Text|id=2b|x=0.0|y=20.0|color=254|size=18|text=士>
+
+<Button|id=3|children={3a}|height=60|ax=0|ay=1|x=0.0|y=140.0|width=30|height=80|color=255|pimg=<$Str(S$按钮B)>|size=18|nimg=<$Str(S$按钮A)>|link=@购买法师书籍>
+<Text|id=3a|children={3b}|x=3|y=5|color=254|size=18|text=法>
+<Text|id=3b|x=0.0|y=20.0|color=254|size=18|text=师>
+
+<ListView|children={4,5,6,7,8,9,10,11,12,13,14,15,16,17}|direction=1|bounce=0|margin=2|width=351|height=345|x=15.0|y=238.0>
+<Layout|id=4|children={4a,4b,4c,4d,4e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=4a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_1)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=4b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_1)>>
+<RText|id=4c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_1)>/FCOLOR=254>>
+<Button|id=4d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_1)>#技能价格=<$Str(N$技能价格_1)>>
+<Img|id=4e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+<Layout|id=5|children={5a,5b,5c,5d,5e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=5a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_2)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=5b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_2)>>
+<RText|id=5c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_2)>/FCOLOR=254>>
+<Button|id=5d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_2)>#技能价格=<$Str(N$技能价格_2)>>
+<Img|id=5e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+<Layout|id=6|children={6a,6b,6c,6d,6e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=6a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_3)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=6b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_3)>>
+<RText|id=6c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_3)>/FCOLOR=254>>
+<Button|id=6d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_3)>#技能价格=<$Str(N$技能价格_3)>>
+<Img|id=6e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+
+<Layout|id=7|children={7a,7b,7c,7d,7e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=7a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_4)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=7b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_4)>>
+<RText|id=7c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_4)>/FCOLOR=254>>
+<Button|id=7d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_4)>#技能价格=<$Str(N$技能价格_4)>>
+<Img|id=7e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=8|children={8a,8b,8c,8d,8e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=8a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_5)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=8b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_5)>>
+<RText|id=8c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_5)>/FCOLOR=254>>
+<Button|id=8d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_5)>#技能价格=<$Str(N$技能价格_5)>>
+<Img|id=8e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=9|children={9a,9b,9c,9d,9e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=9a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_6)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=9b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_6)>>
+<RText|id=9c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_6)>/FCOLOR=254>>
+<Button|id=9d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_6)>#技能价格=<$Str(N$技能价格_6)>>
+<Img|id=9e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+
+<Layout|id=10|children={10a,10b,10c,10d,10e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=10a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_7)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=10b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_7)>>
+<RText|id=10c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_7)>/FCOLOR=254>>
+<Button|id=10d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_7)>#技能价格=<$Str(N$技能价格_7)>>
+<Img|id=10e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=11|children={11a,11b,11c,11d,11e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=11a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_8)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=11b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_8)>>
+<RText|id=11c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_8)>/FCOLOR=254>>
+<Button|id=11d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_8)>#技能价格=<$Str(N$技能价格_8)>>
+<Img|id=11e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=12|children={12a,12b,12c,12d,12e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=12a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_9)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=12b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_9)>>
+<RText|id=12c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_9)>/FCOLOR=254>>
+<Button|id=12d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_9)>#技能价格=<$Str(N$技能价格_9)>>
+<Img|id=12e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=13|children={13a,13b,13c,13d,13e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=13a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_10)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=13b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_10)>>
+<RText|id=13c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_10)>/FCOLOR=254>>
+<Button|id=13d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_10)>#技能价格=<$Str(N$技能价格_10)>>
+<Img|id=13e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+<Layout|id=14|children={14a,14b,14c,14d,14e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=14a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_11)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=14b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_11)>>
+<RText|id=14c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_11)>/FCOLOR=254>>
+<Button|id=14d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_11)>#技能价格=<$Str(N$技能价格_11)>>
+<Img|id=14e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=15|children={15a,15b,15c,15d,15e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=15a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_12)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=15b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_12)>>
+<RText|id=15c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_12)>/FCOLOR=254>>
+<Button|id=15d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_12)>#技能价格=<$Str(N$技能价格_12)>>
+<Img|id=15e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+<Layout|id=16|children={16a,16b,16c,16d,16e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=16a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_13)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=16b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_13)>>
+<RText|id=16c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_13)>/FCOLOR=254>>
+<Button|id=16d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_13)>#技能价格=<$Str(N$技能价格_13)>>
+<Img|id=16e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+
+<Layout|id=17|children={17a,17b,17c,17d,17e}|ax=0|ay=1|x=0.0|y=0.0|height=80|width=351>
+<ItemShow|id=17a|x=0.0|y=0.0|width=70|height=70|itemid=<$Str(N$技能ID_14)>|itemcount=1|showtips=1|bgtype=1>
+<Text|id=17b|x=70.0|y=8.0|color=255|size=18|text=<$Str(S$技能名称_14)>>
+<RText|id=17c|x=70.0|y=40.0|color=255|size=18|text=<元宝或绑定元宝: /FCOLOR=255><<$Str(N$技能价格_14)>/FCOLOR=254>>
+<Button|id=17d|x=270.0|y=45.0|color=255|size=18|nimg=public/1900000653.png|pimg=public/1900000653_1.png|text=购 买|link=@开始购买#技能名称=<$Str(S$技能名称_14)>#技能价格=<$Str(N$技能价格_14)>>
+<Img|id=17e|x=0.0|y=74.0|width=355|height=3|esc=0|img=custom/hl/shajuan/fg.png>
+
+
+
+
+
+[@开始购买]
+#IF
+#Act
+Mov N$技能价格 <$Str(S$技能价格)>
+
+#IF
+CheckBindMoney 元宝 ? <$Str(N$技能价格)>
+#Act
+ChangeBindMoney 元宝  <$Str(N$技能价格)>
+Give <$Str(S$技能名称)>
+GOTO @新人买书完成
+Break
+#Elseact
+Sendmsg 9 你的元宝和绑定元宝都不足...请充值后购买...
+Close
+OPENHYPERLINK 26 1
+Break
+
+[@新人买书完成]
+#IF
+EQUAL <$STR(U91)> 21
+#ACT
+MOV U91 22
+NEWCHANGETASK 14
+GOTO @main
+break
+
+
+
+}
+
+
+
+
+

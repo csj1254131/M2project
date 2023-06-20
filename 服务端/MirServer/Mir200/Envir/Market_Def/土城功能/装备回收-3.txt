@@ -1,0 +1,18 @@
+[@MAIN]
+
+#IF
+EQUAL <$STR(U91)> 11
+#ACT
+Mov N$回收激活 1
+MOV N$C_主线回收提示 1
+OPENHYPERLINK 7
+#CALL [\游戏功能\装备回收\装备回收.txt] @移动端装备回收
+break
+
+
+#IF
+#act
+Mov N$回收激活 1
+OPENHYPERLINK 7
+#CALL [\游戏功能\装备回收\装备回收.txt] @移动端装备回收
+

@@ -1,0 +1,101 @@
+[@其它按钮QM]
+{
+;=========================挂机
+#IF
+Equal <$CLIENTFLAG> 2
+#act
+MOV S$挂机 <Button|id=11|x=-127|y=-374|color=251|mimg=private\main\Skill\1900012708.png|size=16|nimg=private\main\Skill\1900012708.png|pimg=private\main\Skill\1900012708.png|link=@开始挂机>
+ADDBUTTON 104 1 <$STR(S$挂机)>
+MOV S$助手 <Button|x=0|y=-60|color=251|nimg=custom\hl\bangzhu\1900012554.png|pimg=custom\hl\bangzhu\1900012555.png|link=@帮助>
+ADDBUTTON 105 1 <$STR(S$助手)>
+
+MOV S$界面绘制 <Button|x=-275|y=-70|nimg=private/main/Button_3/1900012050.png|link=@排行>
+INC   S$界面绘制 <Button|x=-166|y=-63|nimg=private/main/Button_3/1900012054.png|link=@商城>
+INC   S$界面绘制 <Button|x=-285|y=-80|nimg=private/main/Button_3/1900012058.png>
+INC   S$界面绘制 <Img|x=130|y=-140|img=private/main/Button_3/1900012056.png>
+INC   S$界面绘制 <Button|x=141|y=-97|nimg=private/main/Button_3/1900012053.png|link=@拍卖行>
+INC   S$界面绘制 <Img|x=128|y=-124|img=private/main/Button_3/1900012057.png>
+INC   S$界面绘制 <Button|x=171|y=-134|nimg=private/main/Button_3/1900012052.png|link=@角色>
+INC   S$界面绘制 <Button|x=200|y=-102|nimg=private/main/Button_3/1900012051.png|link=@背包>
+INC   S$界面绘制 <Button|x=202|y=-65|nimg=private/main/Button_3/1900012055.png|link=@设置>
+INC   S$界面绘制 <Effect|effectid=3021|effecttype=0|scale=1|scale=1|x=-220|y=-85>
+INC   S$界面绘制 <Effect|effectid=3022|effecttype=0|scale=1|scale=1|x=205|y=-85>
+ADDBUTTON 108 108 <$STR(S$界面绘制)>
+#IF
+EQUAL U136 0
+#ACT
+Mov S$经验特效 <CheckBox|checkboxid=1|nimg=public/1900000550.png|pimg=public/1900000551.png|default=1|submit=1|x=30|y=265|link=@关闭经验特效>
+Inc   S$经验特效 <Text|text=经验提示|x=80|y=267|size=16|color=158|outline=1|outlinecolor=0>
+ADDBUTTON 22 1  <$STR(S$经验特效)>
+
+#IF
+EQUAL U136 1
+#ACT
+Mov S$经验特效 <CheckBox|checkboxid=1|nimg=public/1900000550.png|pimg=public/1900000551.png|default=0|submit=1|x=30|y=265|link=@关闭经验特效>
+Inc   S$经验特效 <Text|text=经验提示|x=80|y=267|size=16|color=158|outline=1|outlinecolor=0>
+ADDBUTTON 22 1  <$STR(S$经验特效)>
+#IF
+checkjob Warrior
+CHECKLEVELEX > 29
+#ACT
+INC   S$界面绘制 <Effect|effectid=50703|effecttype=0|scale=1|scale=0.7|x=-238|y=-110>
+INC   S$界面绘制 <Effect|effectid=50704|effecttype=0|scale=1|scale=0.7|x=-238|y=-110>
+ADDBUTTON 108 109 <$STR(S$界面绘制)>
+#elseact
+INC    S$界面绘制 <Effect|effectid=50703|effecttype=0|scale=1|scale=0.7|x=-238|y=-110>
+INC   S$界面绘制 <Effect|effectid=50704|effecttype=0|scale=1|scale=0.7|x=-238|y=-110>
+ADDBUTTON 108 109 <$STR(S$界面绘制)>
+
+#IF
+#ACT
+MOV S$图标3 <Button|children={50}|x=260|y=389|nimg=custom/hl/hl_ui/1900000652.png|pimg=custom/hl/hl_ui/1900000653.png|link=@刷新>
+INC  S$图标3  <Text|id=50|a=4|text=整理|color=251|size=17|outline=2|outlinecolor=0|percentx=50|percenty=50>
+INC  S$图标3  <Button|children={52}|x=350|y=389|nimg=custom/hl/hl_ui/1900000652.png|pimg=custom/hl/hl_ui/1900000653.png|link=@回收>
+INC  S$图标3  <Text|id=52|a=4|text=回收|color=251|size=17|outline=2|outlinecolor=0|percentx=50|percenty=50>
+INC  S$图标3  <Button|children={55}|x=440|y=389|nimg=custom/hl/hl_ui/1900000652.png|pimg=custom/hl/hl_ui/1900000653.png|link=@分解>
+INC  S$图标3  <Text|id=55|a=4|text=分解|color=251|size=17|outline=2|outlinecolor=0|percentx=50|percenty=50>
+;关闭
+INC S$图标3 <Layout|a=1|children={51}|width=50|height=50|color=x|percentx=109.5|percenty=0|link=@背包>
+INC S$图标3 <Button|id=51|x=-12|y=-8|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511|link=@背包>
+INC S$图标3 <Button|x=533|y=413.5|nimg=custom/hl/hl_ui/icon_beibao_01.png|link=@仓库>
+INC S$图标3 <Button|x=17|y=399|nimg=custom/hl/hl_ui/icon_beibao_02.png|width=49|height=49|link=@摆摊>
+;货币
+INC S$图标3 <Img|x=72|y=392|img=custom/hl/hl_ui/yb.png>
+INC S$图标3 <Img|x=110|children={53}|y=384|img=custom/hl/hl_ui/hbxk.png>
+INC S$图标3 <Layout|a=4|id=53|children={54}|width=126|height=28|color=x|percentx=50|percenty=50>
+INC S$图标3 <Text|id=54|text=$STM(MONEY_2)|x=5|y=0|size=18|outline=2|outlinecolor=0>
+addbutton 7 3 <$STR(S$图标3)>
+;=========================PC端
+#IF
+Equal <$CLIENTFLAG> 1
+#act
+MOV S$PC图标1 <Button|x=-60|y=65|nimg=private/main/Skill/1900012708.png|link=@开始挂机>
+addbutton 107 60 <$STR(S$PC图标1)>
+MOV S$PC图标2 <Button|x=-202|y=195|nimg=private/main-win32/000194.png|pimg=private/main-win32/000195.png|link=@摆摊>
+INC S$PC图标2 <Button|x=-60|y=0|nimg=private/main/bottom/1900013019.png|link=@拍卖行>
+INC S$PC图标2 <Button|x=-60|y=-65|nimg=custom/hl/top/16.png|link=@小精灵界面>
+INC S$PC图标2 <Button|x=-60|y=-130|nimg=custom/hl/zhuling/zlan.png|link=@注灵>
+addbutton 107 61 <$STR(S$PC图标2)>
+
+MOV S$图标3 <Button|children={50}|x=355|y=335|nimg=custom/hl/hl_ui/1900000652.png|pimg=custom/hl/hl_ui/1900000653.png|link=@刷新>
+INC  S$图标3  <Text|id=50|a=4|text=整理|color=251|size=17|outline=2|outlinecolor=0|percentx=50|percenty=50>
+INC  S$图标3  <Button|children={52}|x=445|y=335|nimg=custom/hl/hl_ui/1900000652.png|pimg=custom/hl/hl_ui/1900000653.png|link=@回收>
+INC  S$图标3  <Text|id=52|a=4|text=回收|color=251|size=17|outline=2|outlinecolor=0|percentx=50|percenty=50>
+INC  S$图标3  <Button|children={55}|x=535|y=335|nimg=custom/hl/hl_ui/1900000652.png|pimg=custom/hl/hl_ui/1900000653.png|link=@分解>
+INC  S$图标3  <Text|id=55|a=4|text=分解|color=251|size=17|outline=2|outlinecolor=0|percentx=50|percenty=50>
+;关闭
+INC S$图标3 <Layout|a=4|children={51}|width=50|height=50|color=x|percentx=172|percenty=9|link=@背包>
+INC S$图标3 <Button|id=51|x=-12|y=-8|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511|link=@背包>
+INC S$图标3 <Button|x=610|y=360|nimg=custom/hl/hl_ui/icon_beibao_01.png|link=@仓库>
+INC S$图标3 <Button|x=152|y=345|nimg=custom/hl/hl_ui/icon_beibao_02.png|width=49|height=49|link=@摆摊>
+;货币
+INC S$图标3 <Img|x=195|y=335|img=custom/hl/hl_ui/yb.png>
+INC S$图标3 <Img|x=222|children={53}|y=330|img=custom/hl/hl_ui/hbxk.png>
+INC S$图标3 <Layout|a=4|id=53|children={54}|width=126|height=28|color=x|percentx=50|percenty=50>
+INC S$图标3 <Text|id=54|text=$STM(MONEY_2)|x=5|y=0|size=18|outline=2|outlinecolor=0>
+addbutton 7 3 <$STR(S$图标3)>
+
+
+
+
+}

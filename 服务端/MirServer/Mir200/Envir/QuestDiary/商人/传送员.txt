@@ -1,0 +1,1546 @@
+[@传送员]
+{
+欢迎光临!你可以在我这里享受以下服务.\
+请选择你要前往的地区:\
+┏━━━━┳━━━━┳━━━━┳━━━━┓\
+┃<城区传送/@ANQUAN>┃<险恶区域/@XIANE>┃<挑战幻境/@huan>┃<查看时间/@time>┃\
+┗━━━━┻━━━━┻━━━━┻━━━━┛\
+
+[@ANQUAN]
+#IF
+checklevelex > 6
+#SAY
+这里是<城区传送>服务,你必须给我2000金币的报酬!\
+┏━━━━┳━━━━┳━━━━┳━━━━┓\
+┃<比齐大城/@JIANAN>┃<毒蛇山谷/@FENGDI>┃<银杏小村/@XIAGU>┃<比奇村庄/@HAIBIN>┃\
+┣━━━━╋━━━━╋━━━━╋━━━━┫\
+┃<盟重土城/@YASHU>┃<苍月之岛/@HUANGCHENG>┃<封魔神谷/@JIANYU>┃<白 日 门/@SHADINDAO>┃\
+┗━━━━┻━━━━┻━━━━┻━━━━┛\
+#ELSESAY
+照你现在这个级别,我没什么能帮的上你!\
+请你练到7级再来找我吧，祝你好运!\
+
+
+[@JIANAN]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 333 268
+break
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@FENGDI]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 2 500 485
+break
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@XIAGU]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 635 612
+break
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@HAIBIN]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 290 615
+break
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@YASHU]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 3 330 330
+break
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@HUANGCHENG]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 5 140 330
+break
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@JIANYU]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 4 240 200
+break
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@SHADINDAO]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 11 180 325
+break
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+;------------------------------------
+
+[@XIANE]
+#IF
+checklevelex > 34
+#SAY
+这里是<险恶地区>服务，按照你的级别你可以前往以下地区:\
+当然你还得付给我3000金币的报酬!\
+┏━━━━┳━━━━┳━━━━┳━━━━┳━━━━┓\
+┃<沃玛三层/@JM7>┃<猪洞七层/@JM8>┃<祖玛七层/@JM5>┃<死亡棺材/@JM6>┃<抉择之地/@S6>┃\
+┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫\
+┃<比齐矿区/@JN1>┃<蜈蚣洞穴/@JN2>┃<天然洞穴/@JM1>┃<牛魔四层/@JM2>┃<封魔矿区/@FENGMOKOU>┃\
+┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫\
+┃<未知暗殿/@JXJDVE>┃<尸 魔 洞/@JM3>┃<骨 魔 洞/@JM4>┃<尸王大殿/@LM2>┃<沙城区域/@沙城区域>┃\
+┗━━━━┻━━━━┻━━━━┻━━━━┻━━━━┛\
+#ELSEACT
+goto @22
+
+[@22]
+#IF
+checklevelex > 21
+#SAY
+这里是<险恶地区>服务，按照你的级别35级前你可以前往以下地区:\
+当然你还得付给我3000金币的报酬!\
+┏━━━━┳━━━━┳━━━━┳━━━━┳━━━━┓\
+┃<沃玛二层/@S1>┃<猪洞一层/@S2>┃<祖玛三层/@S3>┃<赤月峡谷/@S5>┃<封魔矿区/@FENGMOKOU>┃\
+┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫\
+┃<比齐矿区/@JN1>┃<蜈蚣洞穴/@JN2>┃<天然洞穴/@JM1>┃<牛魔一层/@NN7>┃<尸 魔 洞/@JM3>┃\
+┣━━━━╋━━━━╋━━━━┻━━━━┻━━━━┛\
+┃<骨 魔 洞/@JM4>┃<尸王大殿/@LM2>┃\
+┗━━━━┻━━━━┛\
+#ELSEACT
+goto @1
+
+[@1]
+#IF
+checklevelex > 6
+#SAY
+这里是<险恶地区>服务，按照你的级别22级前你只能前往以下地区:\
+当然你还得付给我3000金币的报酬!\
+┏━━━━┳━━━━┳━━━━┓\
+┃<比齐矿区/@JN1>┃<蜈蚣洞穴/@JN2>┃<天然洞穴/@JM1>┃\
+┣━━━━╋━━━━┻━━━━┛\
+┃<封魔矿区/@FENGMOKOU>┃\
+┗━━━━┛\
+#ELSESAY
+照你现在这个级别,我没什么能帮的上你!\
+请你练到7级再来找我吧，祝你好运!\
+
+
+[@JM7]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D024
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@JM8]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D716
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@JM5]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D5071 8 10
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@JM6]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D606
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@S6]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D1004
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@JN1]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D401
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@JN2]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D601
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@JM1]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove E001
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@JM2]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D2075
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@FENGMOKOU]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove 4 138 69
+break
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@JXJDVE]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove M001
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@JM3]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D2051
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@JM4]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D2061
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@LM2]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove Q004
+break
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@沙城区域]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove 3 716 407
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@S1]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D023
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@S2]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D711
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@S3]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D503
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@S5]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D10011
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+[@NN7]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+give 回城卷 1
+mapmove D2071
+BREAK
+#ELSESAY
+你身上的钱不够！请准备好后再来。\ \ \
+<离 开/@exit> \
+
+;------------------------------------
+
+[@huan]
+移动到幻境必须具备下列两个条件！\
+①：需要30万金币 ②：需要幻境凭证\
+支付这些钱，移动吗？\
+<移动/@移动> \
+<不/@exit> \
+<返 回/@Main>
+
+[@移动]
+#IF
+checkgold 300000
+checkitem 幻境凭证 1
+#ACT
+take 金币 300000
+take 幻境凭证 1
+give 回城卷 1
+mapmove H001 73 67
+#ELSESAY
+<$USERNAME> 你是否具备下列条件就想使用我们的服务!\
+①：你有30万金币吗？②：你有幻境凭证吗？\
+幻境凭证？我从来没听说过呀？\
+请去那些极品怪兽身上寻找凭证吧\
+找到凭证之后，我会为你打开传送之门。\ \
+<离开/@exit>\
+
+;------------------------------------
+
+[@time]
+#if
+hour 0
+#act
+mov p1 0
+goto @min
+break
+
+#if
+hour 1
+#act
+mov p1 1
+goto @min
+break
+
+#if
+hour 2
+#act
+mov p1 2
+goto @min
+break
+
+#if
+hour 3
+#act
+mov p1 3
+goto @min
+break
+
+#if
+hour 4
+#act
+mov p1 4
+goto @min
+break
+
+#if
+hour 5
+#act
+mov p1 5
+goto @min
+break
+
+#if
+hour 6
+#act
+mov p1 6
+goto @min
+break
+
+#if
+hour 7
+#act
+mov p1 7
+goto @min
+break
+
+#if
+hour 8
+#act
+mov p1 8
+goto @min
+break
+
+#if
+hour 9
+#act
+mov p1 9
+goto @min
+break
+
+#if
+hour 10
+#act
+mov p1 10
+goto @min
+break
+
+#if
+hour 11
+#act
+mov p1 11
+goto @min
+break
+
+#if
+hour 12
+#act
+mov p1 12
+goto @min
+break
+
+#if
+hour 13
+#act
+mov p1 13
+goto @min
+break
+
+#if
+hour 14
+#act
+mov p1 14
+goto @min
+break
+
+#if
+hour 15
+#act
+mov p1 15
+goto @min
+break
+
+#if
+hour 16
+#act
+mov p1 16
+goto @min
+break
+
+#if
+hour 17
+#act
+mov p1 17
+goto @min
+break
+
+#if
+hour 18
+#act
+mov p1 18
+goto @min
+break
+
+#if
+hour 19
+#act
+mov p1 19
+goto @min
+break
+
+#if
+hour 20
+#act
+mov p1 20
+goto @min
+break
+
+#if
+hour 21
+#act
+mov p1 21
+goto @min
+break
+
+#if
+hour 22
+#act
+mov p1 22
+goto @min
+break
+
+#if
+hour 23
+#act
+mov p1 23
+goto @min
+break
+
+[@min]
+#if
+min 0
+#act
+mov p2 0
+goto @week
+break
+
+#if
+min 1
+#act
+mov p2 1
+goto @week
+break
+
+#if
+min 2
+#act
+mov p2 2
+goto @week
+break
+
+#if
+min 3
+#act
+mov p2 3
+goto @week
+break
+
+#if
+min 4
+#act
+mov p2 4
+goto @week
+break
+
+#if
+min 5
+#act
+mov p2 5
+goto @week
+break
+
+#if
+min 6
+#act
+mov p2 6
+goto @week
+break
+
+#if
+min 7
+#act
+mov p2 7
+goto @week
+break
+
+#if
+min 8
+#act
+mov p2 8
+goto @week
+break
+
+#if
+min 9
+#act
+mov p2 9
+goto @week
+break
+
+#if
+min 10
+#act
+mov p2 10
+goto @week
+break
+
+#if
+min 11
+#act
+mov p2 11
+goto @week
+break
+
+#if
+min 12
+#act
+mov p2 12
+goto @week
+break
+
+#if
+min 13
+#act
+mov p2 13
+goto @week
+break
+
+#if
+min 14
+#act
+mov p2 14
+goto @week
+break
+
+#if
+min 15
+#act
+mov p2 15
+goto @week
+break
+
+#if
+min 16
+#act
+mov p2 16
+goto @week
+break
+
+#if
+min 17
+#act
+mov p2 17
+goto @week
+break
+
+#if
+min 18
+#act
+mov p2 18
+goto @week
+break
+
+#if
+min 19
+#act
+mov p2 19
+goto @week
+break
+
+#if
+min 20
+#act
+mov p2 20
+goto @week
+break
+
+#if
+min 21
+#act
+mov p2 21
+goto @week
+break
+
+#if
+min 22
+#act
+mov p2 22
+goto @week
+break
+
+#if
+min 23
+#act
+mov p2 23
+goto @week
+break
+
+#if
+min 24
+#act
+mov p2 24
+goto @week
+break
+
+#if
+min 25
+#act
+mov p2 25
+goto @week
+break
+
+#if
+min 26
+#act
+mov p2 26
+goto @week
+break
+
+#if
+min 27
+#act
+mov p2 27
+goto @week
+break
+
+#if
+min 28
+#act
+mov p2 28
+goto @week
+break
+
+#if
+min 29
+#act
+mov p2 29
+goto @week
+break
+
+#if
+min 30
+#act
+mov p2 30
+goto @week
+break
+
+#if
+min 31
+#act
+mov p2 31
+goto @week
+break
+
+#if
+min 32
+#act
+mov p2 32
+goto @week
+break
+
+#if
+min 33
+#act
+mov p2 33
+goto @week
+break
+
+#if
+min 34
+#act
+mov p2 34
+goto @week
+break
+
+#if
+min 35
+#act
+mov p2 35
+goto @week
+break
+
+#if
+min 36
+#act
+mov p2 36
+goto @week
+break
+
+#if
+min 37
+#act
+mov p2 37
+goto @week
+break
+
+#if
+min 38
+#act
+mov p2 38
+goto @week
+break
+
+#if
+min 39
+#act
+mov p2 39
+goto @week
+break
+
+#if
+min 40
+#act
+mov p2 40
+goto @week
+break
+
+#if
+min 41
+#act
+mov p2 41
+goto @week
+break
+
+#if
+min 42
+#act
+mov p2 42
+goto @week
+break
+
+#if
+min 43
+#act
+mov p2 43
+goto @week
+break
+
+#if
+min 44
+#act
+mov p2 44
+goto @week
+break
+
+#if
+min 45
+#act
+mov p2 45
+goto @week
+break
+
+#if
+min 46
+#act
+mov p2 46
+goto @week
+break
+
+#if
+min 47
+#act
+mov p2 47
+goto @week
+break
+
+#if
+min 48
+#act
+mov p2 48
+goto @week
+break
+
+#if
+min 49
+#act
+mov p2 49
+goto @week
+break
+
+#if
+min 50
+#act
+mov p2 50
+goto @week
+break
+
+#if
+min 51
+#act
+mov p2 51
+goto @week
+break
+
+#if
+min 52
+#act
+mov p2 52
+goto @week
+break
+
+#if
+min 53
+#act
+mov p2 53
+goto @week
+break
+
+#if
+min 54
+#act
+mov p2 54
+goto @week
+break
+
+#if
+min 55
+#act
+mov p2 55
+goto @week
+break
+
+#if
+min 56
+#act
+mov p2 56
+goto @week
+break
+
+#if
+min 57
+#act
+mov p2 57
+goto @week
+break
+
+#if
+min 58
+#act
+mov p2 58
+goto @week
+break
+
+#if
+min 59
+#act
+mov p2 59
+goto @week
+break
+
+[@week]
+#if
+dayofweek sun
+#act
+goto @sun
+#if
+dayofweek mon
+#act
+goto @mon
+#if
+dayofweek tue
+#act
+goto @tue
+#if
+dayofweek wed
+#act
+goto @wed
+#if
+dayofweek thu
+#act
+goto @thu
+#if
+dayofweek fri
+#act
+goto @fri
+#if
+dayofweek sat
+#act
+goto @sat
+
+[@sun]
+#if
+min 0 10
+#act
+goto @sun0
+#elseact
+goto @sun1
+
+[@sun0]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期天> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期天> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期天> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期天> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期天> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期天> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#elseact
+break
+#say
+[@sun1]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期天> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期天> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期天> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期天> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期天> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期天> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+
+[@mon]
+#if
+min 0 10
+#act
+goto @mon0
+#elseact
+goto @mon1
+[@mon0]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期一> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期一> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期一> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期一> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期一> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期一> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+[@mon1]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期一> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期一> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期一> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期一> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期一> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期一> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+
+[@tue]
+#if
+min 0 10
+#act
+goto @tue0
+#elseact
+goto @tue1
+[@tue0]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期二> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期二> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期二> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期二> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期二> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期二> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+[@tue1]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期二> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期二> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期二> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期二> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期二> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期二> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+
+[@wed]
+#if
+min 0 10
+#act
+goto @wed0
+#elseact
+goto @wed1
+[@wed0]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期三> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期三> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期三> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期三> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期三> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期三> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+[@wed1]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期三> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期三> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期三> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期三> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期三> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期三> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+
+[@thu]
+#if
+min 0 10
+#act
+goto @thu0
+#elseact
+goto @thu1
+[@thu0]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期四> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期四> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期四> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期四> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期四> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期四> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+[@thu1]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期四> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期四> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期四> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期四> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期四> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期四> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+
+
+[@fri]
+#if
+min 0 10
+#act
+goto @fri0
+#elseact
+goto @fri1
+[@fri0]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期五> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期五> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期五> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期五> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期五> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期五> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+
+[@fri1]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期五> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期五> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期五> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期五> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期五> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期五> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+
+[@sat]
+#if
+min 0 10
+#act
+goto @sat0
+#elseact
+goto @sat1
+[@sat0]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期六> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期六> 游戏时间 0<$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期六> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期六> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期六> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期六> 游戏时间 <$str(p1)>:0<$str(p2)>\ \
+<返 回/@main>\
+[@sat1]
+#if
+hour 0 5
+#say
+<$USERNAME> 凌晨好！今天是 <星期六> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 6 9
+#say
+<$USERNAME> 早上好！今天是 <星期六> 游戏时间 0<$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 10
+#say
+<$USERNAME> 早上好！今天是 <星期六> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 11 12
+#say
+<$USERNAME> 中午好！今天是 <星期六> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 13 17
+#say
+<$USERNAME> 下午好！今天是 <星期六> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+#if
+hour 18 23
+#say
+<$USERNAME> 晚上好！今天是 <星期六> 游戏时间 <$str(p1)>:<$str(p2)>\ \
+<返 回/@main>\
+}

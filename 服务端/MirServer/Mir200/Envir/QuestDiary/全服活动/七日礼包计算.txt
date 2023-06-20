@@ -1,0 +1,18 @@
+[@七日礼包计算]
+{
+#IF
+#Act
+Mov S$当前登陆时间 <$YEAR>-<$Month>-<$DAY>-<$HOUR>-<$MINUTE>-<$SECOND>
+Taketime <$Str(S$当前登陆时间)> <$Str(T251)>
+
+#IF
+Small <$Timeresult> 1
+#Act
+Calcvar Human 七日礼包 =
+Savevar Huamn 七日礼包
+Sendmsg 9 <font color='#ffff00'>你购买的7日成长礼包已过期...</font>
+Sendmsg 6 你购买的7日成长礼包已过期...
+Break
+#Elseact
+Sendmsg 6 7日成长礼包于【<$Str(T251)>】到期...
+}

@@ -1,0 +1,138 @@
+[@爆率刷新]
+{
+
+#IF
+#ACT
+GOTO @爆率清零
+
+;------------------------------------沙捐
+#If
+Equal <$HUMAN(沙城捐献)> 已开启
+#Act
+Inc N$叠加后爆率 20 
+
+
+;------------------------------------官职
+#if 
+LARGE U23 0
+#act 
+inc N$叠加后爆率 <$Str(u26)>
+
+;#if
+;check [1] 1
+;#act
+;mov N$狂暴爆率 15
+;inc N$叠加后爆率 <$STR(N$狂暴爆率)> 
+
+
+#IF
+large U13  0
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+
+#IF
+large U13  2
+#ACT
+Mov n$B_特权爆率 10
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+
+#IF
+large U13  4
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+
+#IF
+large U13  5
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+
+#IF
+large U13  6
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+
+#IF
+large U13  7
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+
+#IF
+large U13  8
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+
+#IF
+large U13  9
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+
+#IF
+large U13  10
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+
+#IF
+large U13  11
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+
+#IF
+large U13  12
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+#IF
+large U13  13
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+#IF
+large U13  14
+#ACT
+Mov n$B_特权爆率 5
+Inc   N$叠加后爆率 <$STR(n$B_特权爆率)> 
+
+;------------------------------------狂暴
+#IF
+CHECK [200] 1
+#ACT
+Inc   N$叠加后爆率 15
+
+#IF
+#ACT
+GOTO @爆率叠加
+
+
+[@爆率叠加]
+#if
+#act
+Mov n$原始爆率 100
+inc N$叠加后爆率 <$STR(N$原始爆率)>
+KILLMONBURSTRATE <$STR(N$叠加后爆率)> 200000000
+;SETNEWDROPADVALUE = <$STR(N$叠加后爆率)>
+;SENDMSG 7 当前杀怪物爆率为：<$KILLMONBURSTRATE>倍，时长：600秒
+;SENDMSG 6 爆率属性刷新，当前杀怪爆率为：<$STR(N$叠加后爆率)>
+
+
+[@爆率清零]
+#IF
+#ACT
+KILLMONBURSTRATE
+;SETNEWDROPADVALUE = 0
+MOV N$叠加后爆率 0
+mov n$B_特权爆率 0
+mov n$狂暴爆率 0
+
+}
+
+
+

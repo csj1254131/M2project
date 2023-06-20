@@ -1,0 +1,79 @@
+#AutoRun NPC SEC 1  @系统倒计时
+
+#AutoRun NPC RUNONDAY 7:00 @早上提示
+#AutoRun NPC RUNONDAY 12:00 @中午提示
+#AutoRun NPC RUNONDAY 18:00 @晚上提示
+#AutoRun NPC RUNONDAY 0:00 @凌晨清理
+#AutoRun NPC RUNONDAY 0:02 @排行榜奖励AA
+#AutoRun NPC RUNONDAY 00:00:05 @活跃系统重置每周
+#AutoRun NPC RUNONDAY 00:00:08 @活跃系统重置每日
+
+#AutoRun NPC RUNONDAY 19:30 @攻城提示
+#AutoRun NPC RUNONDAY 20:00 @攻城开始
+#AutoRun NPC RUNONDAY 22:00 @攻城结束
+#AutoRun NPC RUNONDAY 22:05 @攻城统计
+#AutoRun NPC RUNONDAY 22:10 @攻城奖励
+#AutoRun NPC RUNONDAY 22:15 @清理沙城捐献平时
+#AutoRun NPC RUNONDAY 22:20 @清理沙城捐献
+
+
+#AutoRun NPC RUNONDAY 18:55 @世界BOSS提醒
+#AutoRun NPC RUNONDAY 19:00 @开启世界BOSS
+#AutoRun NPC RUNONDAY 19:15 @关闭世界BOSS
+
+
+#AutoRun NPC RUNONDAY 10:40 @勇闯炼狱提醒
+#AutoRun NPC RUNONDAY 10:45 @开启勇闯炼狱
+#AutoRun NPC RUNONDAY 10:55 @勇闯炼狱补怪
+#AutoRun NPC RUNONDAY 11:05 @勇闯炼狱补怪
+#AutoRun NPC RUNONDAY 11:15 @勇闯炼狱补怪
+#AutoRun NPC RUNONDAY 11:25 @勇闯炼狱补怪
+#AutoRun NPC RUNONDAY 11:35 @勇闯炼狱补怪
+#AutoRun NPC RUNONDAY 11:45 @关闭勇闯炼狱
+
+#AutoRun NPC RUNONDAY 13:00 @开启个人押镖
+#AutoRun NPC RUNONDAY 13:20 @关闭个人押镖
+
+#AutoRun NPC RUNONDAY 16:00 @开启个人押镖
+#AutoRun NPC RUNONDAY 16:20 @关闭个人押镖
+
+#AutoRun NPC RUNONDAY 16:40 @勇闯炼狱提醒
+#AutoRun NPC RUNONDAY 16:45 @开启勇闯炼狱
+#AutoRun NPC RUNONDAY 16:55 @勇闯炼狱补怪
+#AutoRun NPC RUNONDAY 17:05 @勇闯炼狱补怪
+#AutoRun NPC RUNONDAY 17:15 @勇闯炼狱补怪
+#AutoRun NPC RUNONDAY 17:25 @勇闯炼狱补怪
+#AutoRun NPC RUNONDAY 17:35 @勇闯炼狱补怪
+#AutoRun NPC RUNONDAY 17:45 @关闭勇闯炼狱
+
+
+#AutoRun NPC RUNONDAY 18:55 @夺宝奇兵提醒
+#AutoRun NPC RUNONDAY 19:00 @开启夺宝奇兵
+#AutoRun NPC RUNONDAY 19:00:30 @刷夺宝BOSS
+#AutoRun NPC RUNONDAY 19:14:00 @夺宝一分钟
+#AutoRun NPC RUNONDAY 19:14:30 @夺宝30秒
+#AutoRun NPC RUNONDAY 19:15 @关闭夺宝奇兵
+#AutoRun NPC RUNONDAY 19:16 @清理夺宝顶戴
+
+
+#AutoRun NPC RUNONDAY 17:55 @天降元宝提醒
+#AutoRun NPC RUNONDAY 18:00 @天降元宝
+#AutoRun NPC RUNONDAY 18:10 @天降元宝
+#AutoRun NPC RUNONDAY 18:20 @天降元宝
+#AutoRun NPC RUNONDAY 18:26 @天降元宝
+#AutoRun NPC RUNONDAY 18:30 @天降元宝关闭
+
+
+#AutoRun NPC MIN 30  @通区下发
+
+
+
+
+
+
+
+
+
+
+
+

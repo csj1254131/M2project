@@ -1,0 +1,2338 @@
+[@启动火龙盛典]
+{
+#IF
+Small G497 3
+#Act
+Goto @特惠福利SM
+Break
+
+#IF
+Large G497 2
+#Act
+Goto @每日礼包SM
+Break
+#IF
+#Act
+Mov S$盛典右边显示
+Mov S$盛典小窗口
+Mov S$Npc标题 开服有礼
+Mov S$时间补差 2
+Mov N$炼制次数 5
+Dec N$炼制次数 <$Human(经验炼制)>
+Mov S$盛典左按钮_1 custom/hl/hl_ui/an_01.png
+Mov S$盛典左按钮_2 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_3 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_4 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_5 custom/hl/hl_ui/an_02.png
+Goto @助力倒计时计算
+
+
+
+#IF
+Equal <$Str(N$炼制次数)> 5
+#Act
+ReadConfigFileItem ..\QuestDiary\全服活动\经验炼制配置.ini 经验炼制1 火龙币 N$经验价格
+ReadConfigFileItem ..\QuestDiary\全服活动\经验炼制配置.ini 经验炼制1 经验 N$经验获得
+Mov N$按钮显示 <$Str(N$经验价格)>
+#elseact
+ReadConfigFileItem ..\QuestDiary\全服活动\经验炼制配置.ini 经验炼制<$Human(经验首次)> 火龙币 N$经验价格
+ReadConfigFileItem ..\QuestDiary\全服活动\经验炼制配置.ini 经验炼制<$Human(经验首次)> 经验 N$经验获得
+Mov N$按钮显示 <$Str(N$经验价格)>
+
+
+
+
+#IF
+Equal <$Str(N$炼制次数)> 0
+#Act 
+Mov S$经验炼制按钮 <Img|x=389.0|y=395.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#Elseact
+Mov S$经验炼制按钮 <Button|x=389.0|y=422.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=<$Str(N$按钮显示)>火龙币|link=@火龙币炼制经验#经验价格=<$Str(N$经验价格)>>
+
+#IF
+#Act
+Mov S$盛典右边显示 <Img|x=134.0|y=59.0|width=620|height=450|esc=0|img=custom/hl/hlsd/bg_1.png>
+Inc S$盛典右边显示 <Img|x=624.0|y=80.0|img=custom/hl/hlsd/3.png|esc=0>
+Inc S$盛典右边显示 <Img|x=308.0|y=375.0|img=custom/hl/hlsd/tc.png|esc=0>
+Inc S$盛典右边显示 <Img|x=297.0|y=376.0|img=custom/hl/hlsd/hdjy.png|esc=0>
+Inc S$盛典右边显示 <Text|x=394.0|y=377.0|color=254|size=18|text=<$Str(N$经验获得)>>
+Inc S$盛典右边显示 <RText|x=450.0|y=110.0|color=255|size=18|outline=2|outlinecolor=0|text=<活动剩余时间：/FCOLOR=251>>
+Inc S$盛典右边显示 <TIMETIPS|x=575.0|y=110.0|color=253|size=18|outline=2|outlinecolor=0|time=<$Str(N$礼包显示时间)>|count=1>
+Inc S$盛典右边显示 <$Str(S$经验炼制按钮)>
+Inc S$盛典右边显示 <RText|x=378.0|y=470.0|color=255|size=18|text=<今日剩余：/FCOLOR=251><<$Str(N$炼制次数)>次/FCOLOR=249>>
+
+
+
+
+
+Goto @Npc火龙盛典会话
+Break
+
+[@Npc火龙盛典会话]
+#IF
+large G497 0
+Small G497 3
+#Act
+;Mov S$top按钮1 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_1)>|text=开服有礼|link=@开服有礼SM#Npc标题=开服有礼>
+Mov S$top按钮1 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_2)>|text=特惠福利|link=@特惠福利SM#Npc标题=特惠福利>
+Mov S$top按钮2 <Button|x=21.0|y=104.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_3)>|text=每日礼包|link=@每日礼包SM#Npc标题=每日礼包>
+Mov S$top按钮3 <Button|x=21.0|y=146.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_4)>|text=助力礼包|link=@助力礼包SM#Npc标题=助力礼包>
+Mov S$top按钮4 <Button|x=21.0|y=188.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_5)>|text=成长基金|link=@成长基金SM#Npc标题=成长基金>
+Mov S$top按钮5
+#IF
+large G497 2
+Small G497 4
+#Act
+Mov S$top按钮1 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_2)>|text=特惠福利|link=@特惠福利SM#Npc标题=特惠福利>
+Mov S$top按钮2 <Button|x=21.0|y=104.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_3)>|text=每日礼包|link=@每日礼包SM#Npc标题=每日礼包>
+Mov S$top按钮3 <Button|x=21.0|y=146.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_4)>|text=助力礼包|link=@助力礼包SM#Npc标题=助力礼包>
+Mov S$top按钮4 <Button|x=21.0|y=188.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_5)>|text=成长基金|link=@成长基金SM#Npc标题=成长基金>
+Mov S$top按钮5
+#IF
+Large G497 3
+#Act
+Mov S$top按钮1 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_3)>|text=每日礼包|link=@每日礼包SM#Npc标题=每日礼包>
+Mov S$top按钮2 <Button|x=21.0|y=104.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_5)>|text=成长基金|link=@成长基金SM#Npc标题=成长基金>
+Mov S$top按钮3
+Mov S$top按钮4
+Mov S$top按钮5
+#IF
+#Act
+Goto @助力倒计时计算
+#Say
+<Img|show=4|bg=1|loadDelay=0|move=0|esc=1|img=custom/hl/hl_ui/hl_bg.png|reset=1>
+<Layout|x=763.0|y=5.0|width=80|height=80|link=@exit>
+<Button|x=770.0|y=5.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|x=352.0|y=9.0|color=103|size=18|text=<$Str(S$Npc标题)>>
+<$Str(S$top按钮1)>
+<$Str(S$top按钮2)>
+<$Str(S$top按钮3)>
+<$Str(S$top按钮4)>
+<$Str(S$top按钮5)>
+<Img|x=129.0|y=61.0|img=custom/hl/hl_ui/hl_bg_02.png|esc=0>
+
+
+<$Str(S$盛典右边显示)>
+<$Str(S$盛典小窗口)>
+[@助力tips]
+#Act
+Mov S$助力tips <Layout|id=tips|children={ts1}|x=-590.0|y=-6.0|width=625|height=450|link=@退出助力tips>
+Inc S$助力tips <Img|id=ts1|children={ts2,ts3,ts4}|x=406.0|y=20.0|width=200|height=100|scale9l=8|scale9r=8|img=custom/hl/hl_ui/bg_tips_01.png|scale9b=8|scale9t=8|esc=0>
+Inc S$助力tips <Text|id=ts2|x=5.0|y=7.0|color=253|size=18|text=钻石会员炼制次数+1>
+Inc S$助力tips <Text|id=ts3|x=5.0|y=37.0|color=253|size=18|text=至尊会员炼制次数+2>
+Inc S$助力tips <Text|id=ts4|x=5.0|y=67.0|size=18|color=253|text=王者会员炼制次数+3>
+Goto @启动火龙盛典
+[@退出助力tips]
+#Act
+Mov S$助力tips
+Goto @启动火龙盛典
+[@开服有礼SM]
+#IF
+#Act
+Mov S$助力tips
+Goto @启动火龙盛典
+Break
+[@特惠福利SM]
+#IF
+#Act
+Mov S$助力tips
+Mov S$盛典小窗口
+Mov S$盛典左按钮_1 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_2 custom/hl/hl_ui/an_01.png
+Mov S$盛典左按钮_3 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_4 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_5 custom/hl/hl_ui/an_02.png
+Mov S$时间补差 2
+Goto @助力倒计时计算
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 青铜礼包 实际价格 N$盛实价格_1
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 青铜礼包 优惠价格 N$盛优价格_1
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 青铜礼包 礼品A S$礼品1_1
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 青铜礼包 礼品B S$礼品1_2
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 青铜礼包 礼品C S$礼品1_3
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 青铜礼包 礼品D S$礼品1_4
+
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 白银礼包 实际价格 N$盛实价格_2
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 白银礼包 优惠价格 N$盛优价格_2
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 白银礼包 礼品A S$礼品2_1
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 白银礼包 礼品B S$礼品2_2
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 白银礼包 礼品C S$礼品2_3
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 白银礼包 礼品D S$礼品2_4
+
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 黄金礼包 实际价格 N$盛实价格_3
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 黄金礼包 优惠价格 N$盛优价格_3
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 黄金礼包 礼品A S$礼品3_1
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 黄金礼包 礼品B S$礼品3_2
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 黄金礼包 礼品C S$礼品3_3
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 黄金礼包 礼品D S$礼品3_4
+
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 钻石礼包 实际价格 N$盛实价格_4
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 钻石礼包 优惠价格 N$盛优价格_4
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 钻石礼包 礼品A S$礼品4_1
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 钻石礼包 礼品B S$礼品4_2
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 钻石礼包 礼品C S$礼品4_3
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 钻石礼包 礼品D S$礼品4_4
+
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 至尊礼包 实际价格 N$盛实价格_5
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 至尊礼包 优惠价格 N$盛优价格_5
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 至尊礼包 礼品A S$礼品5_1
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 至尊礼包 礼品B S$礼品5_2
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 至尊礼包 礼品C S$礼品5_3
+ReadConfigFileItem ..\QuestDiary\全服活动\火龙盛典配置.ini 至尊礼包 礼品D S$礼品5_4
+
+GetValidstr <$STR(S$礼品1_1)> | S$礼品1_1 S$礼品数量1_1
+GetValidstr <$STR(S$礼品1_2)> | S$礼品1_2 S$礼品数量1_2
+GetValidstr <$STR(S$礼品1_3)> | S$礼品1_3 S$礼品数量1_3
+GetValidstr <$STR(S$礼品1_4)> | S$礼品1_4 S$礼品数量1_4
+
+GetValidstr <$STR(S$礼品2_1)> | S$礼品2_1 S$礼品数量2_1
+GetValidstr <$STR(S$礼品2_2)> | S$礼品2_2 S$礼品数量2_2
+GetValidstr <$STR(S$礼品2_3)> | S$礼品2_3 S$礼品数量2_3
+GetValidstr <$STR(S$礼品2_4)> | S$礼品2_4 S$礼品数量2_4
+
+GetValidstr <$STR(S$礼品3_1)> | S$礼品3_1 S$礼品数量3_1
+GetValidstr <$STR(S$礼品3_2)> | S$礼品3_2 S$礼品数量3_2
+GetValidstr <$STR(S$礼品3_3)> | S$礼品3_3 S$礼品数量3_3
+GetValidstr <$STR(S$礼品3_4)> | S$礼品3_4 S$礼品数量3_4
+
+GetValidstr <$STR(S$礼品4_1)> | S$礼品4_1 S$礼品数量4_1
+GetValidstr <$STR(S$礼品4_2)> | S$礼品4_2 S$礼品数量4_2
+GetValidstr <$STR(S$礼品4_3)> | S$礼品4_3 S$礼品数量4_3
+GetValidstr <$STR(S$礼品4_4)> | S$礼品4_4 S$礼品数量4_4
+
+GetValidstr <$STR(S$礼品5_1)> | S$礼品5_1 S$礼品数量5_1
+GetValidstr <$STR(S$礼品5_2)> | S$礼品5_2 S$礼品数量5_2
+GetValidstr <$STR(S$礼品5_3)> | S$礼品5_3 S$礼品数量5_3
+GetValidstr <$STR(S$礼品5_4)> | S$礼品5_4 S$礼品数量5_4
+
+GetDBItemFieldValue <$Str(S$礼品1_1)> Idx N$礼品1_1
+GetDBItemFieldValue <$Str(S$礼品1_2)> Idx N$礼品1_2
+GetDBItemFieldValue <$Str(S$礼品1_3)> Idx N$礼品1_3
+GetDBItemFieldValue <$Str(S$礼品1_4)> Idx N$礼品1_4
+
+GetDBItemFieldValue <$Str(S$礼品2_1)> Idx N$礼品2_1
+GetDBItemFieldValue <$Str(S$礼品2_2)> Idx N$礼品2_2
+GetDBItemFieldValue <$Str(S$礼品2_3)> Idx N$礼品2_3
+GetDBItemFieldValue <$Str(S$礼品2_4)> Idx N$礼品2_4
+
+GetDBItemFieldValue <$Str(S$礼品3_1)> Idx N$礼品3_1
+GetDBItemFieldValue <$Str(S$礼品3_2)> Idx N$礼品3_2
+GetDBItemFieldValue <$Str(S$礼品3_3)> Idx N$礼品3_3
+GetDBItemFieldValue <$Str(S$礼品3_4)> Idx N$礼品3_4
+
+GetDBItemFieldValue <$Str(S$礼品4_1)> Idx N$礼品4_1
+GetDBItemFieldValue <$Str(S$礼品4_2)> Idx N$礼品4_2
+GetDBItemFieldValue <$Str(S$礼品4_3)> Idx N$礼品4_3
+GetDBItemFieldValue <$Str(S$礼品4_4)> Idx N$礼品4_4
+
+GetDBItemFieldValue <$Str(S$礼品5_1)> Idx N$礼品5_1
+GetDBItemFieldValue <$Str(S$礼品5_2)> Idx N$礼品5_2
+GetDBItemFieldValue <$Str(S$礼品5_3)> Idx N$礼品5_3
+GetDBItemFieldValue <$Str(S$礼品5_4)> Idx N$礼品5_4
+
+
+
+#IF
+Check [750] 0
+#Act
+Mov S$盛典购买按钮_1 <Button|id=6_7|x=500.0|y=31.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|outline=2|outlinecolor=0|text=购买|link=@盛典礼包购买#盛典礼包=青铜#基金购买费用=<$Str(N$盛优价格_1)>>
+#Elseact
+Mov S$盛典购买按钮_1 <Img|id=6_7|x=500.0|y=31.0|img=custom/hl/hlsd/hdyl_002.png|esc=0>
+#IF
+Check [751] 0
+#Act
+Mov S$盛典购买按钮_2 <Button|id=7_7|x=500.0|y=31.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|outline=2|outlinecolor=0|text=购买|link=@盛典礼包购买#盛典礼包=白银#基金购买费用=<$Str(N$盛优价格_2)>>
+#Elseact
+Mov S$盛典购买按钮_2 <Img|id=7_7|x=500.0|y=31.0|img=custom/hl/hlsd/hdyl_002.png|esc=0>
+#IF
+Check [752] 0
+#Act
+Mov S$盛典购买按钮_3 <Button|id=8_7|x=500.0|y=31.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|outline=2|outlinecolor=0|text=购买|link=@盛典礼包购买#盛典礼包=黄金#基金购买费用=<$Str(N$盛优价格_3)>>
+#Elseact
+Mov S$盛典购买按钮_3 <Img|id=8_7|x=500.0|y=31.0|img=custom/hl/hlsd/hdyl_002.png|esc=0>
+#IF
+Check [769] 0
+#Act
+Mov S$盛典购买按钮_4 <Button|id=9_7|x=500.0|y=31.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|outline=2|outlinecolor=0|text=购买|link=@盛典礼包购买#盛典礼包=钻石#基金购买费用=<$Str(N$盛优价格_4)>>
+#Elseact
+Mov S$盛典购买按钮_4 <Img|id=9_7|x=500.0|y=31.0|img=custom/hl/hlsd/hdyl_002.png|esc=0>
+#IF
+Check [770] 0
+#Act
+Mov S$盛典购买按钮_5 <Button|id=10_7|x=500.0|y=31.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|outline=2|outlinecolor=0|text=购买|link=@盛典礼包购买#盛典礼包=至尊#基金购买费用=<$Str(N$盛优价格_5)>>
+#Elseact
+Mov S$盛典购买按钮_5 <Img|id=10_7|x=500.0|y=31.0|img=custom/hl/hlsd/hdyl_002.png|esc=0>
+
+#IF
+#Act
+
+Mov S$盛典右边显示 <Img|children={5_1,5_2,5_3,5_4,tt-1}|ax=0|x=134.0|y=62.0|width=620|img=custom/hl/hlsd/banner_thfl.png|scale9l=30|scale9r=30|scale9t=30|scale9b=30|esc=0>
+Inc S$盛典右边显示 <RText|id=5_1|x=10.0|y=0.0|color=255|size=18|outline=2|outlinecolor=0|text=<活动剩余时间：/FCOLOR=251>>
+Inc S$盛典右边显示 <TIMETIPS|id=tt-1|x=135.0|y=0.0|color=253|size=18|outline=2|outlinecolor=0|time=<$Str(N$礼包显示时间)>|count=1>
+Inc S$盛典右边显示 <Img|id=5_2|x=0.0|y=102.0|width=620|img=custom/hl/hl_ui/hl_bg_01.png|esc=0>
+
+Inc S$盛典右边显示 <ListView|children={5a-1,5a-2,5a-3,5a-4,5a-5,5a-6,5a-7}|x=134.0|y=169.0|direction=1|bounce=0|margin=4|width=620|height=340>
+Inc S$盛典右边显示 <Img|id=5a-1|children={6_0,6_1,6_2,6_3,6_4,6_5,6_6,6_7}|ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Img|id=6_0|children={6_6_1,6_6_2,6_6_3,6_6_4,6_6_5}|ay=1|x=132.0|y=10.0|width=350|height=80|scale9l=10|img=custom/hl/hlsd/1900000650.png|scale9r=10|esc=0|scale9t=10|scale9b=10>
+Inc S$盛典右边显示 <Text|id=6_1|x=10.0|y=10.0|size=18|color=253|text=新手豪杰礼包>
+Inc S$盛典右边显示 <Text|id=6_2|x=48.0|y=38.0|color=159|size=18|text=<$Str(N$盛实价格_1)>>
+Inc S$盛典右边显示 <Text|id=6_3|x=48.0|y=60.0|size=18|color=249|text=<$Str(N$盛优价格_1)>>
+Inc S$盛典右边显示 <Img|id=6_4|ax=0|ay=1|x=45.0|y=50.0|width=45|height=2|img=custom/hl/hlsd/hg.png|esc=0>
+Inc S$盛典右边显示 <Img|id=6_5|x=17.0|y=48.0|img=custom/hl/hlsd/hb.png|esc=0|tips={火龙币}>
+Inc S$盛典右边显示 <ItemShow|id=6_6_1|children={6_6_1_a}|x=7.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品1_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <Text|id=6_6_1_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量1_1)>>
+Inc S$盛典右边显示 <ItemShow|id=6_6_2|children={6_6_2_a}|x=97.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品1_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <Text|id=6_6_2_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量1_2)>>
+Inc S$盛典右边显示 <ItemShow|id=6_6_3|children={6_6_3_a}|x=187.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品1_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <Text|id=6_6_3_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量1_3)>>
+Inc S$盛典右边显示 <ItemShow|id=6_6_4|children={6_6_4_a}|x=277.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品1_4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <Text|id=6_6_4_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量1_4)>>
+Inc S$盛典右边显示 <$Str(S$盛典购买按钮_1)>
+
+Inc S$盛典右边显示 <Img|id=5a-2|children={7_0,7_1,7_2,7_3,7_4,7_5,7_6,7_7}|ax=0|x=134.0|y=274.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Img|id=7_0|children={7_7_1,7_7_2,7_7_3,7_7_4,7_7_5}|ay=1|x=132.0|y=10.0|width=350|height=80|scale9l=10|img=custom/hl/hlsd/1900000650.png|scale9r=10|esc=0|scale9t=10|scale9b=10>
+Inc S$盛典右边显示 <Text|id=7_1|x=10.0|y=10.0|size=18|color=253|text=进阶成长礼包>
+Inc S$盛典右边显示 <Text|id=7_2|x=48.0|y=38.0|color=159|size=18|text=<$Str(N$盛实价格_2)>>
+Inc S$盛典右边显示 <Text|id=7_3|x=48.0|y=60.0|size=18|color=249|text=<$Str(N$盛优价格_2)>>
+Inc S$盛典右边显示 <Img|id=7_4|ax=0|ay=1|x=45.0|y=50.0|width=58|height=2|img=custom/hl/hlsd/hg.png|esc=0>
+Inc S$盛典右边显示 <Img|id=7_5|x=17.0|y=48.0|img=custom/hl/hlsd/hb.png|esc=0|tips={火龙币}>
+Inc S$盛典右边显示 <ItemShow|id=7_7_1|children={7_7_1_a}|x=7.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品2_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=7_7_2|children={7_7_2_a}|x=97.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品2_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=7_7_3|children={7_7_3_a}|x=187.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品2_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=7_7_4|children={7_7_4_a}|x=277.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品2_4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <Text|id=7_7_1_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量2_1)>>
+Inc S$盛典右边显示 <Text|id=7_7_2_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量2_2)>>
+Inc S$盛典右边显示 <Text|id=7_7_3_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量2_3)>>
+Inc S$盛典右边显示 <Text|id=7_7_4_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量2_4)>>
+Inc S$盛典右边显示 <$Str(S$盛典购买按钮_2)>
+
+Inc S$盛典右边显示 <Img|id=5a-3|children={8_0,8_1,8_2,8_3,8_4,8_5,8_6,8_7}|ax=0|x=134.0|y=379.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Img|id=8_0|children={8_8_1,8_8_2,8_8_3,8_8_4,8_8_5}|ay=1|x=132.0|y=10.0|width=350|height=80|scale9l=10|img=custom/hl/hlsd/1900000650.png|scale9r=10|esc=0|scale9t=10|scale9b=10>
+Inc S$盛典右边显示 <Text|id=8_1|x=10.0|y=10.0|size=18|color=253|text=名扬天下礼包>
+Inc S$盛典右边显示 <Text|id=8_2|x=48.0|y=38.0|color=159|size=18|text=<$Str(N$盛实价格_3)>>
+Inc S$盛典右边显示 <Text|id=8_3|x=48.0|y=60.0|size=18|color=249|text=<$Str(N$盛优价格_3)>>
+Inc S$盛典右边显示 <Img|id=8_4|ax=0|ay=1|x=45.0|y=50.0|width=58|height=2|img=custom/hl/hlsd/hg.png|esc=0>
+Inc S$盛典右边显示 <Img|id=8_5|x=17.0|y=48.0|img=custom/hl/hlsd/hb.png|esc=0|tips={火龙币}>
+Inc S$盛典右边显示 <ItemShow|id=8_8_1|children={8_8_1_a}|x=7.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品3_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=8_8_2|children={8_8_2_a}|x=97.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品3_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=8_8_3|children={8_8_3_a}|x=187.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品3_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=8_8_4|children={8_8_4_a}|x=277.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品3_4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <Text|id=8_8_1_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量3_1)>>
+Inc S$盛典右边显示 <Text|id=8_8_2_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量3_2)>>
+Inc S$盛典右边显示 <Text|id=8_8_3_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量3_3)>>
+Inc S$盛典右边显示 <Text|id=8_8_4_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量3_4)>>
+Inc S$盛典右边显示 <$Str(S$盛典购买按钮_3)>
+
+Inc S$盛典右边显示 <Img|id=5a-4|children={9_0,9_1,9_2,9_3,9_4,9_5,9_6,9_7}|ax=0|x=134.0|y=379.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Img|id=9_0|children={9_8_1,9_8_2,9_8_3,9_8_4,9_8_5}|ay=1|x=132.0|y=10.0|width=350|height=80|scale9l=10|img=custom/hl/hlsd/1900000650.png|scale9r=10|esc=0|scale9t=10|scale9b=10>
+Inc S$盛典右边显示 <Text|id=9_1|x=10.0|y=10.0|size=18|color=253|text=传奇之星礼包>
+Inc S$盛典右边显示 <Text|id=9_2|x=48.0|y=38.0|color=159|size=18|text=<$Str(N$盛实价格_4)>>
+Inc S$盛典右边显示 <Text|id=9_3|x=48.0|y=60.0|size=18|color=249|text=<$Str(N$盛优价格_4)>>
+Inc S$盛典右边显示 <Img|id=9_4|ax=0|ay=1|x=45.0|y=50.0|width=58|height=2|img=custom/hl/hlsd/hg.png|esc=0>
+Inc S$盛典右边显示 <Img|id=9_5|x=17.0|y=48.0|img=custom/hl/hlsd/hb.png|esc=0|tips={火龙币}>
+Inc S$盛典右边显示 <ItemShow|id=9_8_1|children={9_9_1_a}|x=7.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品4_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=9_8_2|children={9_9_2_a}|x=97.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品4_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=9_8_3|children={9_9_3_a}|x=187.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品4_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=9_8_4|children={9_9_4_a}|x=277.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品4_4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <Text|id=9_9_1_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量4_1)>>
+Inc S$盛典右边显示 <Text|id=9_9_2_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量4_2)>>
+Inc S$盛典右边显示 <Text|id=9_9_3_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量4_3)>>
+Inc S$盛典右边显示 <Text|id=9_9_4_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量4_4)>>
+Inc S$盛典右边显示 <$Str(S$盛典购买按钮_4)>
+
+Inc S$盛典右边显示 <Img|id=5a-5|children={10_0,10_1,10_2,10_3,10_4,10_5,10_6,10_7}|ax=0|x=134.0|y=379.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Img|id=10_0|children={10_8_1,10_8_2,10_8_3,10_8_4,10_8_5}|ay=1|x=132.0|y=10.0|width=350|height=80|scale9l=10|img=custom/hl/hlsd/1900000650.png|scale9r=10|esc=0|scale9t=10|scale9b=10>
+Inc S$盛典右边显示 <Text|id=10_1|x=10.0|y=10.0|size=18|color=253|text=君临天下礼包>
+Inc S$盛典右边显示 <Text|id=10_2|x=48.0|y=38.0|color=159|size=18|text=<$Str(N$盛实价格_5)>>
+Inc S$盛典右边显示 <Text|id=10_3|x=48.0|y=60.0|size=18|color=249|text=<$Str(N$盛优价格_5)>>
+Inc S$盛典右边显示 <Img|id=10_4|ax=0|ay=1|x=45.0|y=50.0|width=68|height=2|img=custom/hl/hlsd/hg.png|esc=0>
+Inc S$盛典右边显示 <Img|id=10_5|x=17.0|y=48.0|img=custom/hl/hlsd/hb.png|esc=0|tips={火龙币}>
+Inc S$盛典右边显示 <ItemShow|id=10_8_1|children={10_10_1_a}|x=7.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品5_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=10_8_2|children={10_10_2_a}|x=97.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品5_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=10_8_3|children={10_10_3_a}|x=187.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品5_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=10_8_4|children={10_10_4_a}|x=277.0|y=7.0|width=70|height=70|itemid=<$Str(N$礼品5_4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <Text|id=10_10_1_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量5_1)>>
+Inc S$盛典右边显示 <Text|id=10_10_2_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量5_2)>>
+Inc S$盛典右边显示 <Text|id=10_10_3_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量5_3)>>
+Inc S$盛典右边显示 <Text|id=10_10_4_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量5_4)>>
+Inc S$盛典右边显示 <$Str(S$盛典购买按钮_5)>
+
+Goto @Npc火龙盛典会话
+[@每日礼包SM]
+#IF
+#Act
+Mov S$助力tips
+Mov S$盛典小窗口
+Mov S$盛典左按钮_1 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_2 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_3 custom/hl/hl_ui/an_01.png
+Mov S$盛典左按钮_4 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_5 custom/hl/hl_ui/an_02.png
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 6 物品A S$礼品1_1
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 6 物品B S$礼品1_2
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 6 物品C S$礼品1_3
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 6 物品D S$礼品1_4
+
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 12 物品A S$礼品2_1
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 12 物品B S$礼品2_2
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 12 物品C S$礼品2_3
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 12 物品D S$礼品2_4
+
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 18 物品A S$礼品3_1
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 18 物品B S$礼品3_2
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 18 物品C S$礼品3_3
+ReadConfigFileItem ..\QuestDiary\全服活动\每日礼包配置.ini 18 物品D S$礼品3_4
+
+GetValidstr <$STR(S$礼品1_1)> | S$礼品1_1 S$礼品数量1_1
+GetValidstr <$STR(S$礼品1_2)> | S$礼品1_2 S$礼品数量1_2
+GetValidstr <$STR(S$礼品1_3)> | S$礼品1_3 S$礼品数量1_3
+GetValidstr <$STR(S$礼品1_4)> | S$礼品1_4 S$礼品数量1_4
+
+GetValidstr <$STR(S$礼品2_1)> | S$礼品2_1 S$礼品数量2_1
+GetValidstr <$STR(S$礼品2_2)> | S$礼品2_2 S$礼品数量2_2
+GetValidstr <$STR(S$礼品2_3)> | S$礼品2_3 S$礼品数量2_3
+GetValidstr <$STR(S$礼品2_4)> | S$礼品2_4 S$礼品数量2_4
+
+GetValidstr <$STR(S$礼品3_1)> | S$礼品3_1 S$礼品数量3_1
+GetValidstr <$STR(S$礼品3_2)> | S$礼品3_2 S$礼品数量3_2
+GetValidstr <$STR(S$礼品3_3)> | S$礼品3_3 S$礼品数量3_3
+GetValidstr <$STR(S$礼品3_4)> | S$礼品3_4 S$礼品数量3_4
+
+GetDBItemFieldValue <$STR(S$礼品1_1)> Idx N$礼品1_1
+GetDBItemFieldValue <$STR(S$礼品1_2)> Idx N$礼品1_2
+GetDBItemFieldValue <$STR(S$礼品1_3)> Idx N$礼品1_3
+GetDBItemFieldValue <$STR(S$礼品1_4)> Idx N$礼品1_4
+
+GetDBItemFieldValue <$STR(S$礼品2_1)> Idx N$礼品2_1
+GetDBItemFieldValue <$STR(S$礼品2_2)> Idx N$礼品2_2
+GetDBItemFieldValue <$STR(S$礼品2_3)> Idx N$礼品2_3
+GetDBItemFieldValue <$STR(S$礼品2_4)> Idx N$礼品2_4
+
+GetDBItemFieldValue <$STR(S$礼品3_1)> Idx N$礼品3_1
+GetDBItemFieldValue <$STR(S$礼品3_2)> Idx N$礼品3_2
+GetDBItemFieldValue <$STR(S$礼品3_3)> Idx N$礼品3_3
+GetDBItemFieldValue <$STR(S$礼品3_4)> Idx N$礼品3_4
+
+#IF
+Equal <$Human(七日礼包)>
+#Act
+Goto @未购买七日礼包转跳
+#Elseact
+Goto @已经购买七日礼包转跳
+
+#IF
+#Act
+Mov S$盛典右边显示 <Img|children={5_1,5_2,5_3,5_4}|ax=0|x=134.0|y=62.0|width=620|img=custom/hl/hlsd/banner_mrlb.png|scale9l=30|scale9r=30|scale9t=30|scale9b=30|esc=0>
+Inc S$盛典右边显示 <$Str(S$盛典7日按钮)>
+Inc S$盛典右边显示 <Img|id=5_3|x=0.0|y=102.0|width=620|img=custom/hl/hl_ui/hl_bg_01.png|esc=0>
+
+Inc S$盛典右边显示 <Img|children={6_1,6_2,6_3,6_4,6_5,6_6}|x=150.0|y=200.0|img=custom/hl/hlsd/spdt.png|esc=0>
+Inc S$盛典右边显示 <ItemShow|id=6_1|children={6_1_a}|x=21.0|y=66.0|width=70|height=70|itemid=<$Str(N$礼品1_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=6_2|children={6_2_a}|x=97.0|y=66.0|width=70|height=70|itemid=<$Str(N$礼品1_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=6_3|children={6_3_a}|x=21.0|y=149.0|width=70|height=70|itemid=<$Str(N$礼品1_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=6_4|children={6_4_a}|x=97.0|y=149.0|width=70|height=70|itemid=<$Str(N$礼品1_4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <Text|id=6_1_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量1_1)>>
+Inc S$盛典右边显示 <Text|id=6_2_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量1_2)>>
+Inc S$盛典右边显示 <Text|id=6_3_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量1_3)>>
+Inc S$盛典右边显示 <Text|id=6_4_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量1_4)>>
+Inc S$盛典右边显示 <Text|id=6_5|x=60.0|y=18.0|size=18|color=251|text=6元礼包|outline=2|outlinecolor=0>
+Inc S$盛典右边显示 <$Str(S$盛典购买按钮_1)>
+
+Inc S$盛典右边显示 <Img|children={7_1,7_2,7_3,7_4,7_5,7_6}|x=348.0|y=200.0|img=custom/hl/hlsd/spdt.png|esc=0>
+Inc S$盛典右边显示 <ItemShow|id=7_1|children={7_1_a}|x=21.0|y=66.0|width=70|height=70|itemid=<$Str(N$礼品2_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=7_2|children={7_2_a}|x=97.0|y=66.0|width=70|height=70|itemid=<$Str(N$礼品2_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=7_3|children={7_3_a}|x=21.0|y=149.0|width=70|height=70|itemid=<$Str(N$礼品2_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=7_4|children={7_4_a}|x=97.0|y=149.0|width=70|height=70|itemid=<$Str(N$礼品2_4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <Text|id=7_1_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量2_1)>>
+Inc S$盛典右边显示 <Text|id=7_2_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量2_2)>>
+Inc S$盛典右边显示 <Text|id=7_3_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量2_3)>>
+Inc S$盛典右边显示 <Text|id=7_4_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量2_4)>>
+Inc S$盛典右边显示 <Text|id=7_5|x=60.0|y=18.0|size=18|color=251|text=12元礼包|outline=2|outlinecolor=0>
+Inc S$盛典右边显示 <$Str(S$盛典购买按钮_2)>
+
+Inc S$盛典右边显示 <Img|children={8_1,8_2,8_3,8_4,8_5,8_6}|x=548.0|y=200.0|img=custom/hl/hlsd/spdt.png|esc=0>
+Inc S$盛典右边显示 <ItemShow|id=8_1|children={8_1_a}|x=21.0|y=66.0|width=70|height=70|itemid=<$Str(N$礼品3_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=8_2|children={8_2_a}|x=97.0|y=66.0|width=70|height=70|itemid=<$Str(N$礼品3_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=8_3|children={8_3_a}|x=21.0|y=149.0|width=70|height=70|itemid=<$Str(N$礼品3_3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <ItemShow|id=8_4|children={8_4_a}|x=97.0|y=149.0|width=70|height=70|itemid=<$Str(N$礼品3_4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示 <Text|id=8_1_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量3_1)>>
+Inc S$盛典右边显示 <Text|id=8_2_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量3_2)>>
+Inc S$盛典右边显示 <Text|id=8_3_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量3_3)>>
+Inc S$盛典右边显示 <Text|id=8_4_a|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$礼品数量3_4)>>
+Inc S$盛典右边显示 <Text|id=8_5|x=60.0|y=18.0|size=18|color=251|text=18元礼包|outline=2|outlinecolor=0>
+Inc S$盛典右边显示 <$Str(S$盛典购买按钮_3)>
+
+
+
+Goto @Npc火龙盛典会话
+
+
+[@未购买七日礼包转跳]
+#IF
+#Act
+Mov S$盛典7日按钮 <Button|id=5_2|x=480.0|y=58.0|pimg=custom/hl/hlsd/z2.png|color=255|size=18|nimg=custom/hl/hlsd/z1.png|link=@购买7天礼包>
+
+#IF
+Equal <$Human(每日礼包_1)> 
+#Act
+Mov S$盛典购买按钮_1 <Button|id=6_6|x=40.0|y=261.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|outline=2|outlinecolor=0|text=购6元礼包|link=@购买元礼包#盛典礼包=6元礼包#基金购买费用=600>
+#Elseact
+Mov S$盛典购买按钮_1 <Img|id=6_6|x=40.0|y=110.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+#IF
+Equal <$Human(每日礼包_2)>
+#Act
+Mov S$盛典购买按钮_2 <Button|id=7_6|x=40.0|y=261.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|outline=2|outlinecolor=0|text=购12元礼包|link=@购买元礼包#盛典礼包=12元礼包#基金购买费用=1200>
+#Elseact
+Mov S$盛典购买按钮_2 <Img|id=7_6|x=40.0|y=100.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+#IF
+Equal <$Human(每日礼包_3)>
+#Act
+Mov S$盛典购买按钮_3 <Button|id=8_6|x=40.0|y=261.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|outline=2|outlinecolor=0|text=购18元礼包|link=@购买元礼包#盛典礼包=18元礼包#基金购买费用=1800>
+#Elseact
+Mov S$盛典购买按钮_3 <Img|id=8_6|x=40.0|y=100.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+
+[@已经购买七日礼包转跳]
+#Act
+Mov N$七日剩余时间 <$Str(U250)>
+Dec N$七日剩余时间 <$UTCNOW8>
+#IF
+Small N$七日剩余时间 1
+#Act
+Mov T250
+Calcvar Human 七日礼包 =
+Savevar Human 七日礼包
+Goto @未购买七日礼包转跳
+Sendmsg 9 <font color='#ffff00'>你的7日成长礼包已经过期...</font>
+Sendmsg 6 你的7日成长礼包已经过期...
+Break
+
+#IF
+#Act
+Mov S$盛典7日按钮 <TIMETIPS|a=3|x=720.0|y=81.0|color=253|size=18|time=<$Str(N$七日剩余时间)>|count=1>
+Inc S$盛典7日按钮 <Text|x=720.0|y=55.0|size=18|color=251|text=到期|outline=2|outlinecolor=0>
+#IF
+Equal <$Human(每日礼包_1)>
+#Act
+Mov S$盛典购买按钮_1 <Button|id=6_6|x=40.0|y=261.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|outline=2|outlinecolor=0|text=领6元礼包|link=@领取元礼包#盛典礼包=6元礼包>
+#Elseact
+Mov S$盛典购买按钮_1 <Img|id=6_6|x=40.0|y=110.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+#IF
+Equal <$Human(每日礼包_2)>
+#Act
+Mov S$盛典购买按钮_2 <Button|id=7_6|x=40.0|y=261.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|outline=2|outlinecolor=0|text=领12元礼包|link=@领取元礼包#盛典礼包=12元礼包>
+#Elseact
+Mov S$盛典购买按钮_2 <Img|id=7_6|x=40.0|y=100.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+#IF
+Equal <$Human(每日礼包_3)>
+#Act
+Mov S$盛典购买按钮_3 <Button|id=8_6|x=40.0|y=261.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|outline=2|outlinecolor=0|text=领18元礼包|link=@领取元礼包#盛典礼包=18元礼包>
+#Elseact
+Mov S$盛典购买按钮_3 <Img|id=8_6|x=40.0|y=100.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+
+
+[@助力礼包SM]
+#IF
+#Act
+Mov S$助力tips
+Mov S$盛典左按钮_1 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_2 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_3 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_4 custom/hl/hl_ui/an_01.png
+Mov S$盛典左按钮_5 custom/hl/hl_ui/an_02.png
+Mov S$盛典中按钮_1 custom/hl/hl_ui/an_02.png
+Mov S$盛典中按钮_2 custom/hl/hl_ui/an_02.png
+Mov S$盛典中按钮_3 custom/hl/hl_ui/an_02.png
+Mov S$盛典中按钮_4 custom/hl/hl_ui/an_02.png
+;Mov S$top按钮1 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_1)>|text=开服有礼|link=@开服有礼SM#Npc标题=开服有礼>
+Mov S$top按钮1 <Button|x=21.0|y=62.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_2)>|text=特惠福利|link=@特惠福利SM#Npc标题=特惠福利>
+Mov S$top按钮2 <Button|x=21.0|y=104.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_3)>|text=每日礼包|link=@每日礼包SM#Npc标题=每日礼包>
+Mov S$top按钮3 <Button|x=21.0|y=146.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_4)>|text=助力礼包|link=@助力礼包SM#Npc标题=助力礼包>
+Mov S$top按钮4 <Button|x=21.0|y=188.0|color=103|size=18|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典左按钮_5)>|text=成长基金|link=@成长基金SM#Npc标题=成长基金>
+Mov S$top按钮5
+
+Mov S$Bannermid 龙魂
+Mov S$助力礼包名称 龙魂助力礼包
+Mov S$时间补差 2
+Mov S$时间补差1 2
+Mov S$盛典小窗口
+Goto @读取助力礼包
+Goto @助力倒计时计算
+Goto @礼包倒计时计算
+
+
+
+#IF
+Large <$Human(龙魂礼包1)> 0
+#Act
+Mov S$助力购买按钮1 <Button|id=7z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助龙魂1>
+#Elseact
+Mov S$助力购买按钮1 <Img|id=7z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(龙魂礼包2)> 0
+#Act
+Mov S$助力购买按钮2 <Button|id=8z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助龙魂2>
+#Elseact
+Mov S$助力购买按钮2 <Img|id=8z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(龙魂礼包3)> 0
+#Act
+Mov S$助力购买按钮3 <Button|id=9z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助龙魂3>
+#Elseact
+Mov S$助力购买按钮3 <Img|id=9z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(龙魂礼包4)> 0
+#Act
+Mov S$助力购买按钮4 <Button|id=10z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助龙魂4>
+#Elseact
+Mov S$助力购买按钮4 <Img|id=10z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+
+#IF
+#Act
+Mov S$mid按钮1 <Button|ax=0|x=134.0|y=168.0|width=154|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典中按钮_1)>|size=18|color=255|text=龙魂助力礼包|link=@龙魂助力礼包>
+Mov S$mid按钮2 <Button|ax=0|x=289.0|y=168.0|width=154|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典中按钮_2)>|size=18|color=255|text=强星助力礼包|link=@强星助力礼包>
+Mov S$mid按钮3 <Button|ax=0|x=444.0|y=168.0|width=154|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典中按钮_3)>|size=18|color=255|text=注灵助力礼包|link=@注灵助力礼包>
+Mov S$mid按钮4 <Button|ax=0|x=599.0|y=168.0|width=154|pimg=custom/hl/hl_ui/an_01.png|nimg=<$Str(S$盛典中按钮_4)>|size=18|color=255|text=元神助力礼包|link=@元神助力礼包>
+
+Mov S$盛典右边显示mid <ListView|children={7z,8z,9z,10z}|x=134.0|y=209.0|direction=1|bounce=0|margin=3|width=620|height=300|reload=1>
+Inc S$盛典右边显示mid <Img|id=7z|children={7z1,7tt-1,7z2,7z3,7z4,7z5,7z6,7z7,7z8,7z9,7z10,7z11,7z12,7z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=7z1|x=9.0|y=4.0|color=255|size=18|text=<普通<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=7tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=7z2|children={7zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=7z3|children={7zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包1_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=7zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包1a)>>
+Inc S$盛典右边显示mid <Text|id=7zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包1_1a)>>
+Inc S$盛典右边显示mid <Text|id=7z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=7z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=7z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格1)>>
+Inc S$盛典右边显示mid <Img|id=7z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=7z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=7z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格1)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮1)>
+Inc S$盛典右边显示mid <RText|id=7z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(龙魂礼包1)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=8z|children={8z1,8tt-1,8z2,8z3,8z4,8z5,8z6,8z7,8z8,8z9,8z10,8z11,8z12,8z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=8z1|x=9.0|y=4.0|color=255|size=18|text=<高级<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=8tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=8z2|children={8zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=8z3|children={8zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包2_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=8zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包2a)>>
+Inc S$盛典右边显示mid <Text|id=8zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包2_1a)>>
+Inc S$盛典右边显示mid <Text|id=8z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=8z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=8z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格2)>>
+Inc S$盛典右边显示mid <Img|id=8z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=8z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=8z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格2)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮2)>
+Inc S$盛典右边显示mid <RText|id=8z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(龙魂礼包2)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=9z|children={9z1,9tt-1,9z2,9z3,9z4,9z5,9z6,9z7,9z8,9z9,9z10,9z11,9z12,9z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=9z1|x=9.0|y=4.0|color=255|size=18|text=<至尊<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=9tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=9z2|children={9zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=9z3|children={9zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包3_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=9zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包3a)>>
+Inc S$盛典右边显示mid <Text|id=9zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包3_1a)>>
+Inc S$盛典右边显示mid <Text|id=9z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=9z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=9z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格3)>>
+Inc S$盛典右边显示mid <Img|id=9z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=9z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=9z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格3)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮3)>
+Inc S$盛典右边显示mid <RText|id=9z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(龙魂礼包3)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=10z|children={10z1,10tt-1,10z2,10z3,10z4,10z5,10z6,10z7,10z8,10z9,10z10,10z11,10z12,10z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=10z1|x=9.0|y=4.0|color=255|size=18|text=<王者<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=10tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z2|children={10zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z3|children={10zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z4|children={10zz_3}|x=144.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=10zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4a)>>
+Inc S$盛典右边显示mid <Text|id=10zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4_1a)>>
+Inc S$盛典右边显示mid <Text|id=10zz_3|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4_2a)>>
+Inc S$盛典右边显示mid <Text|id=10z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=10z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=10z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格4)>>
+Inc S$盛典右边显示mid <Img|id=10z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=10z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=10z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格4)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮4)>
+Inc S$盛典右边显示mid <RText|id=10z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(龙魂礼包4)>次/FCOLOR=254>>
+
+Goto @助力礼包SM1
+
+
+[@助力礼包SM1]
+
+#IF
+#Act
+Goto @礼包倒计时计算
+#Say
+<Img|show=4|bg=1|loadDelay=0|move=0|esc=1|img=custom/hl/hl_ui/hl_bg.png|reset=1>
+<Layout|x=763.0|y=5.0|width=80|height=80|link=@exit>
+<Button|x=770.0|y=5.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|x=352.0|y=9.0|color=103|size=18|text=<$Str(S$Npc标题)>>
+<$Str(S$top按钮1)>
+<$Str(S$top按钮2)>
+<$Str(S$top按钮3)>
+<$Str(S$top按钮4)>
+<$Str(S$top按钮5)>
+<Img|x=129.0|y=61.0|img=custom/hl/hl_ui/hl_bg_02.png|esc=0>
+<Img|children={5_1,5_2,5_3,5_4,tt-1}|ax=0|x=134.0|y=62.0|width=620|img=custom/hl/hlsd/banner_thfl.png|scale9l=30|scale9r=30|scale9t=30|scale9b=30|esc=0>
+<RText|id=5_1|x=10.0|y=0.0|color=255|size=18|outline=2|outlinecolor=0|text=<活动剩余时间：/FCOLOR=251>>
+<TIMETIPS|id=tt-1|x=135.0|y=0.0|color=253|size=18|outline=2|outlinecolor=0|time=<$Str(N$礼包显示时间)>|count=1>
+
+<Img|id=5_2|x=0.0|y=102.0|width=620|img=custom/hl/hl_ui/hl_bg_01.png|esc=0>
+
+<$Str(S$mid按钮1)>
+<$Str(S$mid按钮2)>
+<$Str(S$mid按钮3)>
+<$Str(S$mid按钮4)>
+
+
+<$Str(S$盛典右边显示mid)>
+<$Str(S$盛典小窗口)>
+
+[@龙魂助力礼包]
+#IF
+#Act
+Goto @助力礼包SM
+Goto @助力倒计时计算
+[@强星助力礼包]
+#IF
+#Act
+Mov S$盛典中按钮_1 custom/hl/hl_ui/an_02.png
+Mov S$盛典中按钮_2 custom/hl/hl_ui/an_01.png
+Mov S$盛典中按钮_3 custom/hl/hl_ui/an_02.png
+Mov S$盛典中按钮_4 custom/hl/hl_ui/an_02.png
+Mov S$Bannermid 强星
+Mov S$时间补差1 2
+Mov S$助力礼包名称 强星助力礼包
+Mov S$盛典小窗口
+Goto @读取助力礼包
+Goto @助力倒计时计算
+Goto @礼包倒计时计算
+#IF
+Large <$Human(强星礼包1)> 0
+#Act
+Mov S$助力购买按钮1 <Button|id=7z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助强星1>
+#Elseact
+Mov S$助力购买按钮1 <Img|id=7z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(强星礼包2)> 0
+#Act
+Mov S$助力购买按钮2 <Button|id=8z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助强星2>
+#Elseact
+Mov S$助力购买按钮2 <Img|id=8z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(强星礼包3)> 0
+#Act
+Mov S$助力购买按钮3 <Button|id=9z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助强星3>
+#Elseact
+Mov S$助力购买按钮3 <Img|id=9z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(强星礼包4)> 0
+#Act
+Mov S$助力购买按钮4 <Button|id=10z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助强星4>
+#Elseact
+Mov S$助力购买按钮4 <Img|id=10z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+#Act
+Mov S$盛典右边显示mid <ListView|children={7z,8z,9z,10z}|x=134.0|y=209.0|direction=1|bounce=0|margin=3|width=620|height=300|reload=1>
+Inc S$盛典右边显示mid <Img|id=7z|children={7z1,7tt-1,7z2,7z3,7z4,7z5,7z6,7z7,7z8,7z9,7z10,7z11,7z12,7z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=7z1|x=9.0|y=4.0|color=255|size=18|text=<普通<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=7tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=7z2|children={7zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=7z3|children={7zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包1_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=7zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包1a)>>
+Inc S$盛典右边显示mid <Text|id=7zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包1_1a)>>
+Inc S$盛典右边显示mid <Text|id=7z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=7z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=7z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格1)>>
+Inc S$盛典右边显示mid <Img|id=7z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=7z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=7z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格1)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮1)>
+Inc S$盛典右边显示mid <RText|id=7z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(强星礼包1)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=8z|children={8z1,8tt-1,8z2,8z3,8z4,8z5,8z6,8z7,8z8,8z9,8z10,8z11,8z12,8z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=8z1|x=9.0|y=4.0|color=255|size=18|text=<高级<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=8tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=8z2|children={8zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=8z3|children={8zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包2_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=8zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包2a)>>
+Inc S$盛典右边显示mid <Text|id=8zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包2_1a)>>
+Inc S$盛典右边显示mid <Text|id=8z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=8z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=8z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格2)>>
+Inc S$盛典右边显示mid <Img|id=8z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=8z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=8z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格2)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮2)>
+Inc S$盛典右边显示mid <RText|id=8z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(强星礼包2)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=9z|children={9z1,9tt-1,9z2,9z3,9z4,9z5,9z6,9z7,9z8,9z9,9z10,9z11,9z12,9z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=9z1|x=9.0|y=4.0|color=255|size=18|text=<至尊<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=9tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=9z2|children={9zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=9z3|children={9zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包3_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=9zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包3a)>>
+Inc S$盛典右边显示mid <Text|id=9zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包3_1a)>>
+Inc S$盛典右边显示mid <Text|id=9z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=9z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=9z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格3)>>
+Inc S$盛典右边显示mid <Img|id=9z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=9z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=9z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格3)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮3)>
+Inc S$盛典右边显示mid <RText|id=9z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(强星礼包3)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=10z|children={10z1,10tt-1,10z2,10z3,10z4,10z5,10z6,10z7,10z8,10z9,10z10,10z11,10z12,10z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=10z1|x=9.0|y=4.0|color=255|size=18|text=<王者<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=10tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z2|children={10zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z3|children={10zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z4|children={10zz_3}|x=144.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=10zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4a)>>
+Inc S$盛典右边显示mid <Text|id=10zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4_1a)>>
+Inc S$盛典右边显示mid <Text|id=10zz_3|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4_2a)>>
+Inc S$盛典右边显示mid <Text|id=10z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=10z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=10z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格4)>>
+Inc S$盛典右边显示mid <Img|id=10z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=10z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=10z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格4)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮4)>
+Inc S$盛典右边显示mid <RText|id=10z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(强星礼包4)>次/FCOLOR=254>>
+
+Goto @助力礼包SM1
+[@注灵助力礼包]
+#IF
+#Act
+Mov S$盛典中按钮_1 custom/hl/hl_ui/an_02.png
+Mov S$盛典中按钮_2 custom/hl/hl_ui/an_02.png
+Mov S$盛典中按钮_3 custom/hl/hl_ui/an_01.png
+Mov S$盛典中按钮_4 custom/hl/hl_ui/an_02.png
+Mov S$Bannermid 注灵
+Mov S$助力礼包名称 注灵助力礼包
+Mov S$时间补差1 2
+Mov S$盛典小窗口
+Goto @读取助力礼包
+Goto @助力倒计时计算
+Goto @礼包倒计时计算
+#IF
+Large <$Human(注灵礼包1)> 0
+#Act
+Mov S$助力购买按钮1 <Button|id=7z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助注灵1>
+#Elseact
+Mov S$助力购买按钮1 <Img|id=7z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(注灵礼包2)> 0
+#Act
+Mov S$助力购买按钮2 <Button|id=8z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助注灵2>
+#Elseact
+Mov S$助力购买按钮2 <Img|id=8z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(注灵礼包3)> 0
+#Act
+Mov S$助力购买按钮3 <Button|id=9z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助注灵3>
+#Elseact
+Mov S$助力购买按钮3 <Img|id=9z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(注灵礼包4)> 0
+#Act
+Mov S$助力购买按钮4 <Button|id=10z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助注灵4>
+#Elseact
+Mov S$助力购买按钮4 <Img|id=10z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+#Act
+Mov S$盛典右边显示mid <ListView|children={7z,8z,9z,10z}|x=134.0|y=209.0|direction=1|bounce=0|margin=3|width=620|height=300|reload=1>
+Inc S$盛典右边显示mid <Img|id=7z|children={7z1,7tt-1,7z2,7z3,7z4,7z5,7z6,7z7,7z8,7z9,7z10,7z11,7z12,7z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=7z1|x=9.0|y=4.0|color=255|size=18|text=<普通<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=7tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=7z2|children={7zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=7z3|children={7zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包1_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=7zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包1a)>>
+Inc S$盛典右边显示mid <Text|id=7zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包1_1a)>>
+Inc S$盛典右边显示mid <Text|id=7z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=7z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=7z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格1)>>
+Inc S$盛典右边显示mid <Img|id=7z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=7z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=7z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格1)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮1)>
+Inc S$盛典右边显示mid <RText|id=7z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(注灵礼包1)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=8z|children={8z1,8tt-1,8z2,8z3,8z4,8z5,8z6,8z7,8z8,8z9,8z10,8z11,8z12,8z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=8z1|x=9.0|y=4.0|color=255|size=18|text=<高级<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=8tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=8z2|children={8zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=8z3|children={8zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包2_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=8zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包2a)>>
+Inc S$盛典右边显示mid <Text|id=8zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包2_1a)>>
+Inc S$盛典右边显示mid <Text|id=8z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=8z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=8z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格2)>>
+Inc S$盛典右边显示mid <Img|id=8z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=8z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=8z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格2)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮2)>
+Inc S$盛典右边显示mid <RText|id=8z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(注灵礼包2)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=9z|children={9z1,9tt-1,9z2,9z3,9z4,9z5,9z6,9z7,9z8,9z9,9z10,9z11,9z12,9z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=9z1|x=9.0|y=4.0|color=255|size=18|text=<至尊<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=9tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=9z2|children={9zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=9z3|children={9zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包3_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=9zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包3a)>>
+Inc S$盛典右边显示mid <Text|id=9zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包3_1a)>>
+Inc S$盛典右边显示mid <Text|id=9z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=9z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=9z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格3)>>
+Inc S$盛典右边显示mid <Img|id=9z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=9z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=9z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格3)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮3)>
+Inc S$盛典右边显示mid <RText|id=9z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(注灵礼包3)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=10z|children={10z1,10tt-1,10z2,10z3,10z4,10z5,10z6,10z7,10z8,10z9,10z10,10z11,10z12,10z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=10z1|x=9.0|y=4.0|color=255|size=18|text=<王者<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=10tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z2|children={10zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z3|children={10zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z4|children={10zz_3}|x=144.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=10zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4a)>>
+Inc S$盛典右边显示mid <Text|id=10zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4_1a)>>
+Inc S$盛典右边显示mid <Text|id=10zz_3|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4_2a)>>
+Inc S$盛典右边显示mid <Text|id=10z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=10z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=10z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格4)>>
+Inc S$盛典右边显示mid <Img|id=10z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=10z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=10z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格4)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮4)>
+Inc S$盛典右边显示mid <RText|id=10z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(注灵礼包4)>次/FCOLOR=254>>
+
+Goto @助力礼包SM1
+
+[@元神助力礼包]
+#IF
+#Act
+Mov S$盛典中按钮_1 custom/hl/hl_ui/an_02.png
+Mov S$盛典中按钮_2 custom/hl/hl_ui/an_02.png
+Mov S$盛典中按钮_3 custom/hl/hl_ui/an_02.png
+Mov S$盛典中按钮_4 custom/hl/hl_ui/an_01.png
+Mov S$Bannermid 元神
+Mov S$助力礼包名称 元神助力礼包
+Mov S$时间补差1 2
+Mov S$盛典小窗口
+Goto @读取助力礼包
+Goto @助力倒计时计算
+Goto @礼包倒计时计算
+#IF
+Large <$Human(元神礼包1)> 0
+#Act
+Mov S$助力购买按钮1 <Button|id=7z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助元神1>
+#Elseact
+Mov S$助力购买按钮1 <Img|id=7z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(元神礼包2)> 0
+#Act
+Mov S$助力购买按钮2 <Button|id=8z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助元神2>
+#Elseact
+Mov S$助力购买按钮2 <Img|id=8z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(元神礼包3)> 0
+#Act
+Mov S$助力购买按钮3 <Button|id=9z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助元神3>
+#Elseact
+Mov S$助力购买按钮3 <Img|id=9z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+Large <$Human(元神礼包4)> 0
+#Act
+Mov S$助力购买按钮4 <Button|id=10z12|x=489.0|y=30.0|pimg=custom/hl/hl_ui/an_02.png|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|text=购买|link=@助力礼包购买S#助力标识=助元神4>
+#Elseact
+Mov S$助力购买按钮4 <Img|id=10z12|x=489.0|y=3.0|img=custom/hl/hlsd/hdw.png|esc=0>
+#IF
+#Act
+Mov S$盛典右边显示mid <ListView|children={7z,8z,9z,10z}|x=134.0|y=209.0|direction=1|bounce=0|margin=3|width=620|height=300|reload=1>
+Inc S$盛典右边显示mid <Img|id=7z|children={7z1,7tt-1,7z2,7z3,7z4,7z5,7z6,7z7,7z8,7z9,7z10,7z11,7z12,7z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=7z1|x=9.0|y=4.0|color=255|size=18|text=<普通<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=7tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=7z2|children={7zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=7z3|children={7zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包1_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=7zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包1a)>>
+Inc S$盛典右边显示mid <Text|id=7zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包1_1a)>>
+Inc S$盛典右边显示mid <Text|id=7z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=7z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=7z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格1)>>
+Inc S$盛典右边显示mid <Img|id=7z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=7z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=7z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格1)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮1)>
+Inc S$盛典右边显示mid <RText|id=7z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(元神礼包1)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=8z|children={8z1,8tt-1,8z2,8z3,8z4,8z5,8z6,8z7,8z8,8z9,8z10,8z11,8z12,8z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=8z1|x=9.0|y=4.0|color=255|size=18|text=<高级<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=8tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=8z2|children={8zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=8z3|children={8zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包2_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=8zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包2a)>>
+Inc S$盛典右边显示mid <Text|id=8zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包2_1a)>>
+Inc S$盛典右边显示mid <Text|id=8z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=8z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=8z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格2)>>
+Inc S$盛典右边显示mid <Img|id=8z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=8z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=8z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格2)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮2)>
+Inc S$盛典右边显示mid <RText|id=8z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(元神礼包2)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=9z|children={9z1,9tt-1,9z2,9z3,9z4,9z5,9z6,9z7,9z8,9z9,9z10,9z11,9z12,9z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=9z1|x=9.0|y=4.0|color=255|size=18|text=<至尊<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=9tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=9z2|children={9zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包3)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=9z3|children={9zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包3_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=9zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包3a)>>
+Inc S$盛典右边显示mid <Text|id=9zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包3_1a)>>
+Inc S$盛典右边显示mid <Text|id=9z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=9z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=9z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格3)>>
+Inc S$盛典右边显示mid <Img|id=9z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=9z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=9z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格3)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮3)>
+Inc S$盛典右边显示mid <RText|id=9z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(元神礼包3)>次/FCOLOR=254>>
+
+Inc S$盛典右边显示mid <Img|id=10z|children={10z1,10tt-1,10z2,10z3,10z4,10z5,10z6,10z7,10z8,10z9,10z10,10z11,10z12,10z13}|ax=0|x=134.0|y=208.0|width=620|scale9b=20|scale9t=20|img=custom/hl/hl_ui/hdt_1.png|scale9r=20|esc=0|scale9l=20>
+Inc S$盛典右边显示mid <RText|id=10z1|x=9.0|y=4.0|color=255|size=18|text=<王者<$Str(S$Bannermid)>礼包剩余时间：/FCOLOR=255>>
+Inc S$盛典右边显示mid <TIMETIPS|id=10tt-1|x=205.0|y=4.0|color=253|size=18|time=<$Str(N$礼包显示时间1)>|count=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z2|children={10zz_1}|x=8.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z3|children={10zz_2}|x=75.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4_1)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <ItemShow|id=10z4|children={10zz_3}|x=144.0|y=30.0|width=70|height=70|itemid=<$Str(S$助力礼包4_2)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$盛典右边显示mid <Text|id=10zz_1|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4a)>>
+Inc S$盛典右边显示mid <Text|id=10zz_2|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4_1a)>>
+Inc S$盛典右边显示mid <Text|id=10zz_3|a=3|x=60.0|y=63.0|size=16|color=147|text=<$Str(S$助力礼包4_2a)>>
+Inc S$盛典右边显示mid <Text|id=10z6|x=323.0|y=34.0|color=159|size=18|text=原价：>
+Inc S$盛典右边显示mid <Img|id=10z7|x=296.0|y=47.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示mid <Text|id=10z8|x=375.0|y=34.0|color=159|size=18|text=<$Str(N$助力实际价格4)>>
+Inc S$盛典右边显示mid <Img|id=10z9|ax=0|x=310.0|y=46.0|width=130|height=2|esc=0|img=custom/hl/hlsd/hg.png>
+Inc S$盛典右边显示mid <Text|id=10z10|x=323.0|y=62.0|color=249|size=18|text=现价：>
+Inc S$盛典右边显示mid <Text|id=10z11|x=375.0|y=62.0|color=249|size=18|text=<$Str(N$助力优惠价格4)>>
+Inc S$盛典右边显示mid <$Str(S$助力购买按钮4)>
+Inc S$盛典右边显示mid <RText|id=10z13|x=490.0|y=73.0|color=255|size=16|text=<剩余次数：/FCOLOR=255><<$Human(元神礼包4)>次/FCOLOR=254>>
+
+Goto @助力礼包SM1
+
+
+[@读取助力礼包]
+#IF
+#Act
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 实际价格1 N$助力实际价格1
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 优惠价格1 N$助力优惠价格1
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 限购1 N$助力限购1
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 礼包1 S$助力礼包1
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 实际价格2 N$助力实际价格2
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 优惠价格2 N$助力优惠价格2
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 限购2 N$助力限购2
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 礼包2 S$助力礼包2
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 实际价格3 N$助力实际价格3
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 优惠价格3 N$助力优惠价格3
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 限购3 N$助力限购3
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 礼包3 S$助力礼包3
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 实际价格4 N$助力实际价格4
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 优惠价格4 N$助力优惠价格4
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 限购4 N$助力限购4
+ReadConfigFileItem ..\QuestDiary\全服活动\助力礼包配置.ini <$Str(S$助力礼包名称)> 礼包4 S$助力礼包4
+GetValidstr <$Str(S$助力礼包1)> | S$助力礼包1 S$助力礼包1_1
+GetValidstr <$Str(S$助力礼包1_1)> | S$助力礼包1a S$助力礼包1_1
+GetValidstr <$Str(S$助力礼包1_1)> | S$助力礼包1_1 S$助力礼包1_1a
+
+GetValidstr <$Str(S$助力礼包2)> | S$助力礼包2 S$助力礼包2_1
+GetValidstr <$Str(S$助力礼包2_1)> | S$助力礼包2a S$助力礼包2_1
+GetValidstr <$Str(S$助力礼包2_1)> | S$助力礼包2_1 S$助力礼包2_1a
+
+GetValidstr <$Str(S$助力礼包3)> | S$助力礼包3 S$助力礼包3_1
+GetValidstr <$Str(S$助力礼包3_1)> | S$助力礼包3a S$助力礼包3_1
+GetValidstr <$Str(S$助力礼包3_1)> | S$助力礼包3_1 S$助力礼包3_1a
+
+GetValidstr <$Str(S$助力礼包4)> | S$助力礼包4 S$助力礼包4_1
+GetValidstr <$Str(S$助力礼包4_1)> | S$助力礼包4a S$助力礼包4_1
+GetValidstr <$Str(S$助力礼包4_1)> | S$助力礼包4_1 S$助力礼包4_2
+GetValidstr <$Str(S$助力礼包4_2)> | S$助力礼包4_1a S$助力礼包4_2
+GetValidstr <$Str(S$助力礼包4_2)> | S$助力礼包4_2 S$助力礼包4_2a
+
+GetDBItemFieldValue <$Str(S$助力礼包1)> Idx S$助力礼包1
+GetDBItemFieldValue <$Str(S$助力礼包1_1)> Idx S$助力礼包1_1
+GetDBItemFieldValue <$Str(S$助力礼包2)> Idx S$助力礼包2
+GetDBItemFieldValue <$Str(S$助力礼包2_1)> Idx S$助力礼包2_1
+GetDBItemFieldValue <$Str(S$助力礼包3)> Idx S$助力礼包3
+GetDBItemFieldValue <$Str(S$助力礼包3_1)> Idx S$助力礼包3_1
+GetDBItemFieldValue <$Str(S$助力礼包4)> Idx S$助力礼包4
+GetDBItemFieldValue <$Str(S$助力礼包4_1)> Idx S$助力礼包4_1
+GetDBItemFieldValue <$Str(S$助力礼包4_2)> Idx S$助力礼包4_2
+Break
+
+[@成长基金SM]
+#IF
+Check [753] 0
+#Act
+Mov S$盛典顶部按钮 <Button|id=5_2|x=480.0|y=58.0|pimg=custom/hl/hlsd/z4.png|color=255|size=18|nimg=custom/hl/hlsd/z3.png|text=我要购买|outline=1|outlinecolor=0|link=@购买成长基金#基金购买费用=9800>
+#Elseact
+Mov S$盛典顶部按钮
+
+#IF
+Check [753] 0
+#Act
+Mov S$领取基金按钮_1 <Img|id=5-1-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_2 <Img|id=5-2-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_3 <Img|id=5-3-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_4 <Img|id=5-4-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_5 <Img|id=5-5-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_6 <Img|id=5-6-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_7 <Img|id=5-7-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_8 <Img|id=5-8-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_9 <Img|id=5-9-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_10 <Img|id=5-10-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_11 <Img|id=5-11-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_12 <Img|id=5-12-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_13 <Img|id=5-13-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_14 <Img|id=5-14-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+Mov S$领取基金按钮_15 <Img|id=5-15-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+
+;1
+#IF
+Check [753] 1
+Check [754] 0
+#Act
+Mov S$领取基金按钮_1 <Button|id=5-1-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=1>
+#IF
+Check [753] 1
+Check [754] 1
+#Act
+Mov S$领取基金按钮_1 <Img|id=5-1-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+#IF
+;2
+#IF
+Check [753] 1
+Check [755] 0
+Checkrenewlevel > 1
+#Act
+Mov S$领取基金按钮_2 <Button|id=5-2-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=2>
+#Elseact
+Mov S$领取基金按钮_2 <Img|id=5-2-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [755] 1
+#Act
+Mov S$领取基金按钮_2 <Img|id=5-2-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+#IF
+;3
+#IF
+Check [753] 1
+Check [756] 0
+Checkrenewlevel > 2
+#Act
+Mov S$领取基金按钮_3 <Button|id=5-3-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=3>
+#Elseact
+Mov S$领取基金按钮_3 <Img|id=5-3-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [756] 1
+#Act
+Mov S$领取基金按钮_3 <Img|id=5-3-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;4
+#IF
+Check [753] 1
+Check [757] 0
+Checkrenewlevel > 3
+#Act
+Mov S$领取基金按钮_4 <Button|id=5-4-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=4>
+#Elseact
+Mov S$领取基金按钮_4 <Img|id=5-4-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [757] 1
+#Act
+Mov S$领取基金按钮_4 <Img|id=5-4-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;5
+#IF
+Check [753] 1
+Check [758] 0
+Checkrenewlevel > 4
+#Act
+Mov S$领取基金按钮_5 <Button|id=5-5-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=5>
+#Elseact
+Mov S$领取基金按钮_5 <Img|id=5-5-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [758] 1
+#Act
+Mov S$领取基金按钮_5 <Img|id=5-5-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;6
+#IF
+Check [753] 1
+Check [759] 0
+Checkrenewlevel > 5
+#Act
+Mov S$领取基金按钮_6 <Button|id=5-6-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=6>
+#Elseact
+Mov S$领取基金按钮_6 <Img|id=5-6-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [759] 1
+#Act
+Mov S$领取基金按钮_6 <Img|id=5-6-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;7
+#IF
+Check [753] 1
+Check [760] 0
+Checkrenewlevel > 6
+#Act
+Mov S$领取基金按钮_7 <Button|id=5-7-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=7>
+#Elseact
+Mov S$领取基金按钮_7 <Img|id=5-7-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [760] 1
+#Act
+Mov S$领取基金按钮_7 <Img|id=5-7-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;8
+#IF
+Check [753] 1
+Check [761] 0
+Checklevelex > 89
+#Act
+Mov S$领取基金按钮_8 <Button|id=5-8-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=8>
+#Elseact
+Mov S$领取基金按钮_8 <Img|id=5-8-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [761] 1
+#Act
+Mov S$领取基金按钮_8 <Img|id=5-8-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;9
+#IF
+Check [753] 1
+Check [762] 0
+Checklevelex > 109
+#Act
+Mov S$领取基金按钮_9 <Button|id=5-9-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=9>
+#Elseact
+Mov S$领取基金按钮_9 <Img|id=5-9-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [762] 1
+#Act
+Mov S$领取基金按钮_9 <Img|id=5-9-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;10
+#IF
+Check [753] 1
+Check [763] 0
+Checklevelex > 129
+#Act
+Mov S$领取基金按钮_10 <Button|id=5-10-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=10>
+#Elseact
+Mov S$领取基金按钮_10 <Img|id=5-10-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [763] 1
+#Act
+Mov S$领取基金按钮_10 <Img|id=5-10-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;11
+#IF
+Check [753] 1
+Check [764] 0
+Large U170 799
+#Act
+Mov S$领取基金按钮_11 <Button|id=5-11-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=11>
+#Elseact
+Mov S$领取基金按钮_11 <Img|id=5-11-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [764] 1
+#Act
+Mov S$领取基金按钮_11 <Img|id=5-11-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;12
+#IF
+Check [753] 1
+Check [765] 0
+Large U170 1499
+#Act
+Mov S$领取基金按钮_12 <Button|id=5-12-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=12>
+#Elseact
+Mov S$领取基金按钮_12 <Img|id=5-12-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [765] 1
+#Act
+Mov S$领取基金按钮_12 <Img|id=5-12-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;13
+#IF
+Check [753] 1
+Check [766] 0
+Large U170 2999
+#Act
+Mov S$领取基金按钮_13 <Button|id=5-13-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=13>
+#Elseact
+Mov S$领取基金按钮_13 <Img|id=5-13-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [766] 1
+#Act
+Mov S$领取基金按钮_13 <Img|id=5-13-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;14
+#IF
+Check [753] 1
+Check [767] 0
+Large U171 9
+#Act
+Mov S$领取基金按钮_14 <Button|id=5-14-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=14>
+#Elseact
+Mov S$领取基金按钮_14 <Img|id=5-14-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [767] 1
+#Act
+Mov S$领取基金按钮_14 <Img|id=5-14-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+;15
+#IF
+Check [753] 1
+Check [768] 0
+Large U171 29
+#Act
+Mov S$领取基金按钮_15 <Button|id=5-15-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取|link=@领取基金奖励#基金标识=15>
+#Elseact
+Mov S$领取基金按钮_15 <Img|id=5-15-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_02.png|esc=0>
+#IF
+Check [753] 1
+Check [768] 1
+#Act
+Mov S$领取基金按钮_15 <Img|id=5-15-4|x=463.0|y=9.0|img=custom/hl/hlsd/bq_01.png|esc=0>
+
+
+
+#IF
+#Act
+Mov S$助力tips
+Mov S$盛典小窗口
+Mov S$盛典左按钮_1 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_2 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_3 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_4 custom/hl/hl_ui/an_02.png
+Mov S$盛典左按钮_5 custom/hl/hl_ui/an_01.png
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 1 介绍 S$基金介绍_1
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 1 奖励 S$基金奖励_1
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 2 介绍 S$基金介绍_2
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 2 奖励 S$基金奖励_2
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 3 介绍 S$基金介绍_3
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 3 奖励 S$基金奖励_3
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 4 介绍 S$基金介绍_4
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 4 奖励 S$基金奖励_4
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 5 介绍 S$基金介绍_5
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 5 奖励 S$基金奖励_5
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 6 介绍 S$基金介绍_6
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 6 奖励 S$基金奖励_6
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 7 介绍 S$基金介绍_7
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 7 奖励 S$基金奖励_7
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 8 介绍 S$基金介绍_8
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 8 奖励 S$基金奖励_8
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 9 介绍 S$基金介绍_9
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 9 奖励 S$基金奖励_9
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 10 介绍 S$基金介绍_10
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 10 奖励 S$基金奖励_10
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 11 介绍 S$基金介绍_11
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 11 奖励 S$基金奖励_11
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 12 介绍 S$基金介绍_12
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 12 奖励 S$基金奖励_12
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 13 介绍 S$基金介绍_13
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 13 奖励 S$基金奖励_13
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 14 介绍 S$基金介绍_14
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 14 奖励 S$基金奖励_14
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 15 介绍 S$基金介绍_15
+ReadConfigFileItem ..\QuestDiary\全服活动\成长基金配置.ini 15 奖励 S$基金奖励_15
+
+
+Mov S$盛典右边显示 <Img|children={5_1,5_2,5_3,5_4}|ax=0|x=134.0|y=62.0|width=620|img=custom/hl/hlsd/banner_czjj.png|scale9l=30|scale9r=30|scale9t=30|scale9b=30|esc=0>
+Inc S$盛典右边显示 <Img|id=5_1|x=0.0|y=102.0|width=620|img=custom/hl/hl_ui/hl_bg_01.png|esc=0>
+Inc S$盛典右边显示 <$Str(S$盛典顶部按钮)>
+
+Inc S$盛典右边显示 <ListView|children={5-1,5-2,5-3,5-4,5-5,5-6,5-7,5-8,5-9,5-10,5-11,5-12,5-13,5-14,5-15}|x=134.0|y=169.0|direction=1|bounce=0|margin=6|width=620|height=340>
+Inc S$盛典右边显示 <Img|id=5-1|children={5-1-1,5-1-2,5-1-3,5-1-4,5-1-5,5-1-6}|ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-1-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_1)>>
+Inc S$盛典右边显示 <Img|id=5-1-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-1-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_1)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_1)>
+
+Inc S$盛典右边显示 <Img|id=5-2|children={5-2-1,5-2-2,5-2-3,5-2-4,5-2-5,5-2-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-2-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_2)>>
+Inc S$盛典右边显示 <Img|id=5-2-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-2-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_2)>>
+;Inc S$盛典右边显示 <Button|id=5-2-4|x=463.0|y=32.0|color=255|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|outline=2|outlinecolor=0|text=立即领取>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_2)>
+
+Inc S$盛典右边显示 <Img|id=5-3|children={5-3-1,5-3-2,5-3-3,5-3-4,5-3-5,5-3-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-3-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_3)>>
+Inc S$盛典右边显示 <Img|id=5-3-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-3-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_3)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_3)>
+
+
+Inc S$盛典右边显示 <Img|id=5-4|children={5-4-1,5-4-2,5-4-3,5-4-4,5-4-5,5-4-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-4-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_4)>>
+Inc S$盛典右边显示 <Img|id=5-4-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-4-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_4)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_4)>
+
+
+Inc S$盛典右边显示 <Img|id=5-5|children={5-5-1,5-5-2,5-5-3,5-5-4,5-5-5,5-5-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-5-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_5)>>
+Inc S$盛典右边显示 <Img|id=5-5-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-5-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_5)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_5)>
+
+
+Inc S$盛典右边显示 <Img|id=5-6|children={5-6-1,5-6-2,5-6-3,5-6-4,5-6-5,5-6-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-6-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_6)>>
+Inc S$盛典右边显示 <Img|id=5-6-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-6-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_6)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_6)>
+
+
+Inc S$盛典右边显示 <Img|id=5-7|children={5-7-1,5-7-2,5-7-3,5-7-4,5-7-5,5-7-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-7-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_7)>>
+Inc S$盛典右边显示 <Img|id=5-7-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-7-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_7)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_7)>
+
+
+Inc S$盛典右边显示 <Img|id=5-8|children={5-8-1,5-8-2,5-8-3,5-8-4,5-8-5,5-8-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-8-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_8)>>
+Inc S$盛典右边显示 <Img|id=5-8-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-8-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_8)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_8)>
+
+
+Inc S$盛典右边显示 <Img|id=5-9|children={5-9-1,5-9-2,5-9-3,5-9-4,5-9-5,5-9-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-9-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_9)>>
+Inc S$盛典右边显示 <Img|id=5-9-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-9-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_9)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_9)>
+
+
+Inc S$盛典右边显示 <Img|id=5-10|children={5-10-1,5-10-2,5-10-3,5-10-4,5-10-5,5-10-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-10-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_10)>>
+Inc S$盛典右边显示 <Img|id=5-10-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-10-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_10)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_10)>
+
+Inc S$盛典右边显示 <Img|id=5-11|children={5-11-1,5-11-2,5-11-3,5-11-4,5-11-5,5-11-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-11-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_11)>>
+Inc S$盛典右边显示 <Text|id=5-11-5|x=44.0|y=68.0|color=159|size=16|text=击杀怪物数量：<$Str(U170)>>
+Inc S$盛典右边显示 <Img|id=5-11-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-11-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_11)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_11)>
+
+Inc S$盛典右边显示 <Img|id=5-12|children={5-12-1,5-12-2,5-12-3,5-12-4,5-12-5,5-12-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-12-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_12)>>
+Inc S$盛典右边显示 <Text|id=5-12-5|x=44.0|y=68.0|color=159|size=16|text=击杀怪物数量：<$Str(U170)>>
+Inc S$盛典右边显示 <Img|id=5-12-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-12-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_12)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_12)>
+
+Inc S$盛典右边显示 <Img|id=5-13|children={5-13-1,5-13-2,5-13-3,5-13-4,5-13-5,5-13-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-13-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_13)>>
+Inc S$盛典右边显示 <Text|id=5-13-5|x=44.0|y=68.0|color=159|size=16|text=击杀怪物数量：<$Str(U170)>>
+Inc S$盛典右边显示 <Img|id=5-13-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-13-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_13)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_13)>
+
+Inc S$盛典右边显示 <Img|id=5-14|children={5-14-1,5-14-2,5-14-3,5-14-4,5-14-5,5-14-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-14-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_14)>>
+Inc S$盛典右边显示 <Text|id=5-14-5|x=44.0|y=68.0|color=159|size=16|text=击杀Boss数量：<$Str(U171)>>
+Inc S$盛典右边显示 <Img|id=5-14-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-14-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_14)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_14)>
+
+Inc S$盛典右边显示 <Img|id=5-15|children={5-15-1,5-15-2,5-15-3,5-15-4,5-15-5,5-15-6}ax=0|x=134.0|y=169.0|width=620|scale9r=30|scale9l=30|esc=0|scale9b=30|img=custom/hl/hlsd/hdt_1.png|scale9t=30>
+Inc S$盛典右边显示 <Text|id=5-15-1|x=29.0|y=38.0|color=147|size=18|text=<$Str(S$基金介绍_15)>>
+Inc S$盛典右边显示 <Text|id=5-15-5|x=44.0|y=68.0|color=159|size=16|text=击杀Boss数量：<$Str(U171)>>
+Inc S$盛典右边显示 <Img|id=5-15-2|x=255.0|y=38.0|img=custom/hl/hlsd/hb.png|esc=0>
+Inc S$盛典右边显示 <Text|id=5-15-3|x=280.0|y=38.0|color=253|size=18|text=<$Str(S$基金奖励_15)>>
+Inc S$盛典右边显示 <$Str(S$领取基金按钮_15)>
+
+Goto @Npc火龙盛典会话
+
+[@助力礼包购买S]
+#IF
+Equal S$助力标识 助龙魂1
+Large <$Human(龙魂礼包1)> 0
+Checkmoney 火龙币 ? 688
+#Act
+Calcvar Human 龙魂礼包1 - 1
+Savevar Human 龙魂礼包1
+Money 火龙币 - 688
+Inc U120 688
+GiveStateItem 火龙秘宝 4 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 10 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你普通龙魂助力礼包购买成功...</font>
+Sendmsg 6 恭喜你普通龙魂助力礼包购买成功...
+Goto @龙魂助力礼包
+Break
+#IF
+Equal S$助力标识 助龙魂2
+Large <$Human(龙魂礼包2)> 0
+Checkmoney 火龙币 ? 3000
+#Act
+Calcvar Human 龙魂礼包2 - 1
+Savevar Human 龙魂礼包2
+Money 火龙币 - 3000
+Inc U120 3000
+GiveStateItem 火龙秘宝 20 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 20 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你高级龙魂助力礼包购买成功...</font>
+Sendmsg 6 恭喜你高级龙魂助力礼包购买成功...
+Goto @龙魂助力礼包
+Break
+#IF
+Equal S$助力标识 助龙魂3
+Large <$Human(龙魂礼包3)> 0
+Checkmoney 火龙币 ? 6288
+#Act
+Calcvar Human 龙魂礼包3 - 1
+Savevar Human 龙魂礼包3
+Money 火龙币 - 6288
+Inc U120 6288
+GiveStateItem 火龙秘宝 60 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 30 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你至尊龙魂助力礼包购买成功...</font>
+Sendmsg 6 恭喜你至尊龙魂助力礼包购买成功...
+Goto @龙魂助力礼包
+Break
+#IF
+Equal S$助力标识 助龙魂4
+Large <$Human(龙魂礼包4)> 0
+Checkmoney 火龙币 ? 11600
+#Act
+Calcvar Human 龙魂礼包4 - 1
+Savevar Human 龙魂礼包4
+Money 火龙币 - 11600
+Inc U120 11600
+GiveStateItem 火龙秘宝 100 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 50 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你王者龙魂助力礼包购买成功...</font>
+Sendmsg 6 恭喜你王者龙魂助力礼包购买成功...
+Goto @龙魂助力礼包
+Break
+;===============================
+#IF
+Equal S$助力标识 助强星1
+Large <$Human(强星礼包1)> 0
+Checkmoney 火龙币 ? 888
+#Act
+Calcvar Human 强星礼包1 - 1
+Savevar Human 强星礼包1
+Money 火龙币 - 888
+Inc U120 888
+GiveStateItem 凡品升星石 200 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 5 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你普通强星助力礼包购买成功...</font>
+Sendmsg 6 恭喜你普通强星助力礼包购买成功...
+Goto @强星助力礼包
+Break
+#IF
+Equal S$助力标识 助强星2
+Large <$Human(强星礼包2)> 0
+Checkmoney 火龙币 ? 3000
+#Act
+Calcvar Human 强星礼包2 - 1
+Savevar Human 强星礼包2
+Money 火龙币 - 3000
+Inc U120 3000
+GiveStateItem 凡品升星石 500 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 20 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你高级强星助力礼包购买成功...</font>
+Sendmsg 6 恭喜你高级强星助力礼包购买成功...
+Goto @强星助力礼包
+Break
+#IF
+Equal S$助力标识 助强星3
+Large <$Human(强星礼包3)> 0
+Checkmoney 火龙币 ? 6288
+#Act
+Calcvar Human 强星礼包3 - 1
+Savevar Human 强星礼包3
+Money 火龙币 - 6288
+Inc U120 6288
+GiveStateItem 凡品升星石 1000 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 30 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你至尊强星助力礼包购买成功...</font>
+Sendmsg 6 恭喜你至尊强星助力礼包购买成功...
+Goto @强星助力礼包
+Break
+#IF
+Equal S$助力标识 助强星4
+Large <$Human(强星礼包4)> 0
+Checkmoney 火龙币 ? 15000
+#Act
+Calcvar Human 强星礼包4 - 1
+Savevar Human 强星礼包4
+Money 火龙币 - 15000
+Inc U120 15000
+GiveStateItem 仙品升星石 1000 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 50 0 1 0 1 1 1 1 1
+GiveStateItem 装备保护油 20 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你王者强星助力礼包购买成功...</font>
+Sendmsg 6 恭喜你王者强星助力礼包购买成功...
+Goto @强星助力礼包
+Break
+;===============================
+#IF
+Equal S$助力标识 助注灵1
+Large <$Human(注灵礼包1)> 0
+Checkmoney 火龙币 ? 888
+#Act
+Calcvar Human 注灵礼包1 - 1
+Savevar Human 注灵礼包1
+Money 火龙币 - 888
+Inc U120 888
+GiveStateItem 中品注灵石 500 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 10 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你普通注灵助力礼包购买成功...</font>
+Sendmsg 6 恭喜你普通注灵助力礼包购买成功...
+Goto @注灵助力礼包
+Break
+#IF
+Equal S$助力标识 助注灵2
+Large <$Human(注灵礼包2)> 0
+Checkmoney 火龙币 ? 3000
+#Act
+Calcvar Human 注灵礼包2 - 1
+Savevar Human 注灵礼包2
+Money 火龙币 - 3000
+Inc U120 3000
+GiveStateItem 中品注灵石 1200 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 20 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你高级注灵助力礼包购买成功...</font>
+Sendmsg 6 恭喜你高级注灵助力礼包购买成功...
+Goto @注灵助力礼包
+Break
+#IF
+Equal S$助力标识 助注灵3
+Large <$Human(注灵礼包3)> 0
+Checkmoney 火龙币 ? 6288
+#Act
+Calcvar Human 注灵礼包3 - 1
+Savevar Human 注灵礼包3
+Money 火龙币 - 6288
+Inc U120 6288
+GiveStateItem 中品注灵石 2000 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 30 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你至尊注灵助力礼包购买成功...</font>
+Sendmsg 6 恭喜你至尊注灵助力礼包购买成功...
+Goto @注灵助力礼包
+Break
+#IF
+Equal S$助力标识 助注灵4
+Large <$Human(注灵礼包4)> 0
+Checkmoney 火龙币 ? 11600
+#Act
+Calcvar Human 注灵礼包4 - 1
+Savevar Human 注灵礼包4
+Money 火龙币 - 11600
+Inc U120 11600
+GiveStateItem 上品注灵石 1600 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 50 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你王者注灵助力礼包购买成功...</font>
+Sendmsg 6 恭喜你王者注灵助力礼包购买成功...
+Goto @注灵助力礼包
+Break
+;===============================
+#IF
+Equal S$助力标识 助元神1
+Large <$Human(元神礼包1)> 0
+Checkmoney 火龙币 ? 1580
+#Act
+Calcvar Human 元神礼包1 - 1
+Savevar Human 元神礼包1
+Money 火龙币 - 1580
+Inc U120 1580
+GiveStateItem 火龙气息 20 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 10 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你普通元神助力礼包购买成功...</font>
+Sendmsg 6 恭喜你普通元神助力礼包购买成功...
+Goto @元神助力礼包
+Break
+#IF
+Equal S$助力标识 助元神2
+Large <$Human(元神礼包2)> 0
+Checkmoney 火龙币 ? 5000
+#Act
+Calcvar Human 元神礼包2 - 1
+Savevar Human 元神礼包2
+Money 火龙币 - 5000
+Inc U120 5000
+GiveStateItem 火龙气息 50 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 20 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你高级元神助力礼包购买成功...</font>
+Sendmsg 6 恭喜你高级元神助力礼包购买成功...
+Goto @元神助力礼包
+Break
+#IF
+Equal S$助力标识 助元神3
+Large <$Human(元神礼包3)> 0
+Checkmoney 火龙币 ? 10800
+#Act
+Calcvar Human 元神礼包3 - 1
+Savevar Human 元神礼包3
+Money 火龙币 - 10800
+Inc U120 10800
+GiveStateItem 火龙气息 100 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 30 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你至尊元神助力礼包购买成功...</font>
+Sendmsg 6 恭喜你至尊元神助力礼包购买成功...
+Goto @元神助力礼包
+Break
+#IF
+Equal S$助力标识 助元神4
+Large <$Human(元神礼包4)> 0
+Checkmoney 火龙币 ? 19800
+#Act
+Calcvar Human 元神礼包4 - 1
+Savevar Human 元神礼包4
+Money 火龙币 - 19800
+Inc U120 19800
+GiveStateItem 火龙气息 200 0 1 0 1 1 1 1 1
+GiveStateItem 10000绑定元宝 30 0 1 0 1 1 1 1 1
+GiveStateItem 元神保险卡 1 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>恭喜你王者元神助力礼包购买成功...</font>
+Sendmsg 6 恭喜你王者元神助力礼包购买成功...
+Goto @元神助力礼包
+Break
+;===============================
+#Elseact
+Goto @拉起助力充值接口
+Break
+[@盛典礼包购买]
+#IF
+#Act
+Mov N$基金购买费用 <$Str(S$基金购买费用)>
+Dec N$基金购买费用 1
+#IF
+Checkmoney 火龙币 < <$Str(N$基金购买费用)>
+#Act
+Goto @拉起盛典充值窗口
+Break
+#IF
+CheckHumBag <$Username> < 5
+#Act
+Sendmsg 9 <font color='#ffff00'>请确保你的背包有5个或以上的空格子...</font>
+Sendmsg 6 请确保你的背包有5个或以上的空格子...
+Break
+
+#IF
+Equal S$盛典礼包 青铜
+Check [750] 0
+Checkmoney 火龙币 ? 1800
+#Act
+Set [750] 1
+Money 火龙币 - 1800
+Inc U120 1800
+GiveStateItem 龙晶碎片 600 0 1 0 1 1 1 1 1
+GiveStateItem 火龙凭证 300 1 0 1 1 1 1 1 
+GiveStateItem 10000绑定元宝 10 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>你成功购买了新手豪杰礼包...</font>
+Sendmsg 6 你成功购买了新手豪杰礼包...
+Goto @特惠福利SM
+Break
+
+#IF
+Equal S$盛典礼包 白银
+Check [751] 0
+Checkmoney 火龙币 ? 3000
+#Act
+Set [751] 1
+Money 火龙币 - 3000
+Inc U120 3000
+GiveStateItem 龙晶碎片 1600 0 1 0 1 1 1 1 1
+GiveStateItem 火龙凭证 800 0 1 0 1 1 1 1 1 
+GiveStateItem 10000绑定元宝 20 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>你成功购买了进阶成长礼包...</font>
+Sendmsg 6 你成功购买了进阶成长礼包...
+Goto @特惠福利SM
+Break
+
+#IF
+Equal S$盛典礼包 黄金
+Check [752] 0
+Checkmoney 火龙币 ? 6800
+#Act
+Set [752] 1
+Money 火龙币 - 6800
+Inc U120 6800
+GiveStateItem 龙晶碎片 3000 0 1 0 1 1 1 1 1
+GiveStateItem 火龙凭证 1500 0 1 0 1 1 1 1 1 
+GiveStateItem 10000绑定元宝 40 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>你成功购买了名扬天下礼包...</font>
+Sendmsg 6 你成功购买了名扬天下礼包...
+Goto @特惠福利SM
+Break
+
+#IF
+Equal S$盛典礼包 钻石
+Check [769] 0
+Checkmoney 火龙币 ? 12800
+#Act
+Set [769] 1
+Money 火龙币 - 12800
+Inc U120 12800
+GiveStateItem 龙晶碎片 6760 0 1 0 1 1 1 1 1
+GiveStateItem 火龙凭证 3380 0 1 0 1 1 1 1 1 
+GiveStateItem 10000绑定元宝 80 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>你成功购买了传奇之星礼包...</font>
+Sendmsg 6 你成功购买了传奇之星礼包...
+Goto @特惠福利SM
+Break
+
+#IF
+Equal S$盛典礼包 至尊
+Check [770] 0
+Checkmoney 火龙币 ? 32800
+#Act
+Set [770] 1
+Money 火龙币 - 32800
+Inc U120 32800
+GiveStateItem 龙晶碎片 16000 0 1 0 1 1 1 1 1
+GiveStateItem 火龙凭证 8000 0 1 0 1 1 1 1 1 
+GiveStateItem 10000绑定元宝 150 0 1 0 1 1 1 1 1
+Sendmsg 9 <font color='#ffff00'>你成功购买了君临天下礼包...</font>
+Sendmsg 6 你成功购买了君临天下礼包...
+Goto @特惠福利SM
+Break
+#Elseact
+Sendmsg 9 非法参数错误...
+
+[@领取元礼包]
+#IF
+CheckHumBag <$Username> < 5
+#Act
+Sendmsg 9 <font color='#ffff00'>请确保你的背包有5个或以上的空格子...</font>
+Sendmsg 6 请确保你的背包有5个或以上的空格子...
+Break
+#IF
+Equal S$盛典礼包 6元礼包
+Equal <$Human(每日礼包_1)>
+Equal <$Human(七日礼包)> 已购买
+#Act
+GiveStateItem 10000绑定元宝 10 0 1 0 1 1 1 1 1
+GiveStateItem 火龙凭证 210 0 1 0 1 1 1 1 1
+GiveStateItem 防具碎片 30 0 1 0 1 1 1 1 1 
+GiveStateItem 龙晶碎片 120 0 1 0 1 1 1 1 1
+Calcvar Human 每日礼包_1 = 已购买
+Savevar Human 每日礼包_1
+Sendmsg 9 <font color='#ffff00'>你成功领取了每日6元礼包...</font>
+Sendmsg 6 你成功领取了每日6元礼包...
+Goto @每日礼包SM
+Break
+#IF
+Equal S$盛典礼包 12元礼包
+Equal <$Human(每日礼包_2)>
+Equal <$Human(七日礼包)> 已购买
+#Act
+GiveStateItem 10000绑定元宝 20 0 1 0 1 1 1 1 1
+GiveStateItem 火龙凭证 380 0 1 0 1 1 1 1 1
+GiveStateItem 防具碎片 70 0 1 0 1 1 1 1 1 
+GiveStateItem 龙晶碎片 200 0 1 0 1 1 1 1 1
+Calcvar Human 每日礼包_2 = 已购买
+Savevar Human 每日礼包_2
+Sendmsg 9 <font color='#ffff00'>你成功领取了每日12元礼包...</font>
+Sendmsg 6 你成功领取了每日12元礼包...
+Goto @每日礼包SM
+Break
+#IF
+Equal S$盛典礼包 18元礼包
+Equal <$Human(每日礼包_3)>
+Equal <$Human(七日礼包)> 已购买
+#Act
+GiveStateItem 10000绑定元宝 30 0 1 0 1 1 1 1 1
+GiveStateItem 火龙凭证 610 0 1 0 1 1 1 1 1
+GiveStateItem 首饰碎片 100 0 1 0 1 1 1 1 1 
+GiveStateItem 龙晶碎片 400 0 1 0 1 1 1 1 1
+Calcvar Human 每日礼包_3 = 已购买
+Savevar Human 每日礼包_3
+Sendmsg 9 <font color='#ffff00'>你成功领取了每日18元礼包...</font>
+Sendmsg 6 你成功领取了每日18元礼包...
+Goto @每日礼包SM
+Break
+
+[@火龙币炼制经验]
+#or
+Equal N$炼制次数 0
+Checkmoney 火龙币 < <$Str(S$经验价格)>
+#Act
+Sendmsg 9 <font color='#ffff00'>今日次数已用完或火龙货币不足...</font>
+Sendmsg 6 今日次数已用完或火龙货币不足...
+Break
+
+#IF
+Large N$炼制次数 0
+Equal S$经验价格 <$Str(N$经验价格)>
+Checkmoney 火龙币 ? <$Str(S$经验价格)>
+#Act
+Calcvar Human 经验首次 = 1
+Savevar Human 经验首次
+Calcvar Human 经验炼制 + 1
+Savevar Human 经验炼制
+Money 火龙币 - <$Str(S$经验价格)>
+Inc U120 <$Str(S$经验价格)>
+Changeexp + <$Str(N$经验获得)>
+Sendmsg 9 <font color='#ffff00'>经验炼制成功获得<$Str(N$经验获得)>点经验值...</font>
+Sendmsg 6 经验炼制成功获得<$Str(N$经验获得)>点经验值...
+Movr N$小标 2 9
+Calcvar Human 经验首次 = <$Str(N$小标)>
+Savevar Human 经验首次
+Goto @启动火龙盛典
+
+
+
+[@购买元礼包]
+#IF
+#Act
+Mov N$基金购买费用 <$Str(S$基金购买费用)>
+Dec N$基金购买费用 1
+#IF
+Checkmoney 火龙币 < <$Str(N$基金购买费用)>
+#Act
+Goto @拉起盛典充值窗口
+Break
+#IF
+CheckHumBag <$Username> < 5
+#Act
+Sendmsg 9 <font color='#ffff00'>请确保你的背包有5个或以上的空格子...</font>
+Sendmsg 6 请确保你的背包有5个或以上的空格子...
+Break
+
+
+#IF
+Equal S$盛典礼包 6元礼包
+Equal <$Human(每日礼包_1)>
+Checkmoney 火龙币 > 599
+#Act
+Money 火龙币 - 600
+Inc U120 600
+GiveStateItem 10000绑定元宝 10 0 1 0 1 1 1 1 1
+GiveStateItem 火龙凭证 210 0 1 0 1 1 1 1 1
+GiveStateItem 防具碎片 30 0 1 0 1 1 1 1 1 
+GiveStateItem 龙晶碎片 120 0 1 0 1 1 1 1 1
+Calcvar Human 每日礼包_1 = 已购买
+Savevar Human 每日礼包_1
+Sendmsg 9 <font color='#ffff00'>你成功购买了每日6元礼包...</font>
+Sendmsg 6 你成功购买了每日6元礼包...
+Goto @每日礼包SM
+Break
+#IF
+Equal S$盛典礼包 12元礼包
+Equal <$Human(每日礼包_2)>
+Checkmoney 火龙币 > 1199
+#Act
+Money 火龙币 - 1200
+Inc U120 1200
+GiveStateItem 10000绑定元宝 20 0 1 0 1 1 1 1 1
+GiveStateItem 火龙凭证 380 0 1 0 1 1 1 1 1
+GiveStateItem 防具碎片 70 0 1 0 1 1 1 1 1 
+GiveStateItem 龙晶碎片 200 0 1 0 1 1 1 1 1
+Calcvar Human 每日礼包_2 = 已购买
+Savevar Human 每日礼包_2
+Sendmsg 9 <font color='#ffff00'>你成功购买了每日12元礼包...</font>
+Sendmsg 6 你成功购买了每日12元礼包...
+Goto @每日礼包SM
+Break
+#IF
+Equal S$盛典礼包 18元礼包
+Equal <$Human(每日礼包_3)>
+Checkmoney 火龙币 > 1799
+#Act
+Money 火龙币 - 1800
+Inc U120 1800
+GiveStateItem 10000绑定元宝 30 0 1 0 1 1 1 1 1
+GiveStateItem 火龙凭证 610 0 1 0 1 1 1 1 1
+GiveStateItem 首饰碎片 100 0 1 0 1 1 1 1 1 
+GiveStateItem 龙晶碎片 400 0 1 0 1 1 1 1 1
+Calcvar Human 每日礼包_3 = 已购买
+Savevar Human 每日礼包_3
+Sendmsg 9 <font color='#ffff00'>你成功购买了每日18元礼包...</font>
+Sendmsg 6 你成功购买了每日18元礼包...
+Goto @每日礼包SM
+Break
+[@购买7天礼包]
+#Act
+Mov S$盛典小窗口
+Inc S$盛典小窗口 <Img|children={99-1,99-2,99-3}|x=248.0|y=195.0|img=custom/hl/hlsd/1900000650.png|esc=0>
+Inc S$盛典小窗口 <RText|id=99-1|a=4|x=170.0|y=40.0|color=255|size=18|text=<购买需要花费/FCOLOR=147><21600火龙币/FCOLOR=251>>
+Inc S$盛典小窗口 <Button|id=99-2|x=40.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=确定|link=@确定购买7日礼包>
+Inc S$盛典小窗口 <Button|id=99-3|x=190.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=取消|link=@取消购买基金>
+Goto @Npc火龙盛典会话
+Break
+[@确定购买7日礼包]
+#IF
+Checkmoney 火龙币 < 21600
+#Act
+Mov S$盛典小窗口
+Inc S$盛典小窗口 <Img|children={99-1,99-2,99-3,99-4}|x=248.0|y=195.0|img=custom/hl/hlsd/1900000650.png|esc=0>
+Inc S$盛典小窗口 <RText|id=99-1|a=4|x=170.0|y=40.0|color=255|size=18|text=<你当前只有/FCOLOR=147><<$MONEY(火龙币)>火龙币/FCOLOR=249><不能购买/FCOLOR=147>>
+Inc S$盛典小窗口 <RText|id=99-4|a=4|x=170.0|y=65.0|color=255|size=18|text=<是否前往充值.../FCOLOR=147>>
+Inc S$盛典小窗口 <Button|id=99-2|x=40.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=我要充值|link=@拉起基金充值>
+Inc S$盛典小窗口 <Button|id=99-3|x=190.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=取消充值|link=@取消购买基金>
+Goto @Npc火龙盛典会话
+Break
+#IF
+Checkvar Human 七日礼包 =
+Checkmoney 火龙币 > 21599
+#Act
+Money 火龙币 - 21600
+Inc U120 21600
+Calcvar Human 七日礼包 = 已购买
+Savevar Human 七日礼包
+Mov T250 <$YEAR>-<$MONTH>-<$DAY>-<$HOUR>-<$MINUTE>-<$SECOND>
+Goto @七日礼包时间计算
+Sendmsg 9 <font color='#ffff00'>你成功购买了7日成长礼包...</font>
+Sendmsg 6 你成功购买了7日成长礼包...
+Mov S$盛典小窗口
+Goto @每日礼包SM
+Break
+
+
+[@拉起盛典充值窗口]
+#Act
+Mov S$盛典小窗口
+Inc S$盛典小窗口 <Img|children={99-1,99-2,99-3,99-4}|x=248.0|y=195.0|img=custom/hl/hlsd/1900000650.png|esc=0>
+Inc S$盛典小窗口 <RText|id=99-1|a=4|x=170.0|y=40.0|color=255|size=18|text=<你当前只有/FCOLOR=147><<$MONEY(火龙币)>火龙币/FCOLOR=249><不能购买/FCOLOR=147>>
+Inc S$盛典小窗口 <RText|id=99-4|a=4|x=170.0|y=65.0|color=255|size=18|text=<是否前往充值.../FCOLOR=147>>
+Inc S$盛典小窗口 <Button|id=99-2|x=40.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=我要充值|link=@拉起基金充值>
+Inc S$盛典小窗口 <Button|id=99-3|x=190.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=取消充值|link=@取消购买基金>
+Goto @Npc火龙盛典会话
+Break
+
+[@购买成长基金]
+#IF
+Checkvar HUMAN B_累计充值 < 98
+#Act
+Sendmsg 9 你的累积充值积分小于98点不能购买...
+Break
+#IF
+#Act
+Mov S$盛典小窗口
+Mov S$基金购买费用 9800
+Inc S$盛典小窗口 <Img|children={99-1,99-2,99-3}|x=248.0|y=195.0|img=custom/hl/hlsd/1900000650.png|esc=0>
+Inc S$盛典小窗口 <RText|id=99-1|a=4|x=170.0|y=40.0|color=255|size=18|text=<购买需要花费/FCOLOR=147><<$Str(S$基金购买费用)>火龙币/FCOLOR=251>>
+Inc S$盛典小窗口 <Button|id=99-2|x=40.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=确定|link=@确定购买基金>
+Inc S$盛典小窗口 <Button|id=99-3|x=190.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=取消|link=@取消购买基金>
+Goto @Npc火龙盛典会话
+Break
+
+
+[@确定购买基金]
+#IF
+Checkmoney 火龙币 < 9800
+#Act
+Mov S$盛典小窗口
+Inc S$盛典小窗口 <Img|children={99-1,99-2,99-3,99-4}|x=248.0|y=195.0|img=custom/hl/hlsd/1900000650.png|esc=0>
+Inc S$盛典小窗口 <RText|id=99-1|a=4|x=170.0|y=40.0|color=255|size=18|text=<你当前只有/FCOLOR=147><<$MONEY(火龙币)>火龙币/FCOLOR=249><不能购买/FCOLOR=147>>
+Inc S$盛典小窗口 <RText|id=99-4|a=4|x=170.0|y=65.0|color=255|size=18|text=<是否前往充值.../FCOLOR=147>>
+Inc S$盛典小窗口 <Button|id=99-2|x=40.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=我要充值|link=@拉起基金充值>
+Inc S$盛典小窗口 <Button|id=99-3|x=190.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=取消充值|link=@取消购买基金>
+Goto @Npc火龙盛典会话
+Break
+#IF
+Check [753] 0
+Checkmoney 火龙币 > 9799
+#Act
+Money 火龙币 - 9800
+Inc U120 9800
+Set [753] 1
+Sendmsg 9 <font color='#ffff00'>你成功购买了成长基金...</font>
+Sendmsg 6 你成功购买了成长基金...
+Mov S$盛典小窗口
+Goto @成长基金SM
+Break
+
+
+
+[@领取基金奖励]
+#IF
+Check [753] 1
+Check [754] 0
+Equal S$基金标识 1
+#Act
+Money 火龙币 + 5000
+Set [754] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+#IF
+Check [753] 1
+Check [755] 0
+Equal S$基金标识 2
+Checkrenewlevel > 1
+#Act
+Money 火龙币 + 500
+Set [755] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [756] 0
+Equal S$基金标识 3
+Checkrenewlevel > 2
+#Act
+Money 火龙币 + 800
+Set [756] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+#IF
+Check [753] 1
+Check [757] 0
+Equal S$基金标识 4
+Checkrenewlevel > 3
+#Act
+Money 火龙币 + 1200
+Set [757] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [758] 0
+Equal S$基金标识 5
+Checkrenewlevel > 4
+#Act
+Money 火龙币 + 1800
+Set [758] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [759] 0
+Equal S$基金标识 6
+Checkrenewlevel > 5
+#Act
+Money 火龙币 + 2000
+Set [759] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [760] 0
+Equal S$基金标识 7
+Checkrenewlevel > 6
+#Act
+Money 火龙币 + 2888
+Set [760] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [761] 0
+Equal S$基金标识 8
+Checklevelex > 89
+#Act
+Money 火龙币 + 500
+Set [761] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [762] 0
+Equal S$基金标识 9
+Checklevelex > 109
+#Act
+Money 火龙币 + 1000
+Set [762] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [763] 0
+Equal S$基金标识 10
+Checklevelex > 129
+#Act
+Money 火龙币 + 1500
+Set [763] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [764] 0
+Equal S$基金标识 11
+large U170 799
+#Act
+Money 火龙币 + 1000
+Set [764] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [765] 0
+Equal S$基金标识 12
+large U170 1499
+#Act
+Money 火龙币 + 2000
+Set [765] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [766] 0
+Equal S$基金标识 13
+large U170 2999
+#Act
+Money 火龙币 + 4000
+Set [766] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [767] 0
+Equal S$基金标识 14
+large U171 9
+#Act
+Money 火龙币 + 1200
+Set [767] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+#IF
+Check [753] 1
+Check [768] 0
+Equal S$基金标识 15
+large U171 29
+#Act
+Money 火龙币 + 2500
+Set [768] 1
+Sendmsg 9 <font color='#ffff00'>你成功领取了成长基金...</font>
+Sendmsg 6 你成功领取了成长基金...
+Goto @成长基金SM
+Break
+
+[@拉起助力充值接口]
+#Act
+Mov S$盛典小窗口
+Inc S$盛典小窗口 <Img|children={99-1,99-2,99-3,99-4}|x=248.0|y=195.0|img=custom/hl/hlsd/1900000650.png|esc=0>
+Inc S$盛典小窗口 <RText|id=99-1|a=4|x=170.0|y=40.0|color=255|size=18|text=<你当前只有/FCOLOR=147><<$MONEY(火龙币)>火龙币/FCOLOR=249><不能购买/FCOLOR=147>>
+Inc S$盛典小窗口 <RText|id=99-4|a=4|x=170.0|y=65.0|color=255|size=18|text=<是否前往充值.../FCOLOR=147>>
+Inc S$盛典小窗口 <Button|id=99-2|x=40.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=我要充值|link=@拉起基金充值1>
+Inc S$盛典小窗口 <Button|id=99-3|x=190.0|y=85.0|color=255|outline=2|outlinecolor=0|size=18|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|text=取消充值|link=@取消购买基金1>
+Goto @助力礼包SM1
+Break
+[@拉起基金充值1]
+#IF
+#ACT
+OPENHYPERLINK 26
+Mov S$盛典小窗口
+Goto @助力礼包SM1
+Break
+[@取消购买基金1]
+#Act
+Mov S$盛典小窗口
+Goto @助力礼包SM1
+Break
+
+[@拉起基金充值]
+#IF
+#ACT
+OPENHYPERLINK 26
+Mov S$盛典小窗口
+Goto @Npc火龙盛典会话
+Break
+[@取消购买基金]
+#Act
+Mov S$盛典小窗口
+Goto @Npc火龙盛典会话
+Break
+
+
+
+[@礼包倒计时计算]
+#IF
+#Act
+Taketime <$Str(A0)>-<$Str(A497)> <$Str(A0)>-23-59-59
+Mov N$开区当日时间差1 <$Timeresult>
+Mov N$活动结束时间1 0
+Mul N$活动结束时间1 86400 <$Str(S$时间补差1)>
+Inc N$活动结束时间1 <$Str(N$开区当日时间差1)>
+
+Taketime <$Str(A0)>-<$Str(A497)> <$YEAR>-<$MONTH>-<$DAY>-<$HOUR>-<$MINUTE>-<$SECOND>
+Mov N$当前系统时间差1 <$Timeresult>
+Dec N$活动结束时间1 <$Str(N$当前系统时间差1)>
+
+Mov N$礼包显示时间1 <$Str(N$活动结束时间1)>
+
+[@七日礼包时间计算]
+#IF
+#Act
+Mov N$购买七日礼包时间 <$UTCNOW8>
+Mov N$七日时间计算 86100
+Mul N$七日时间计算 7
+Inc N$购买七日礼包时间 <$Str(N$七日时间计算)>
+Mov U250 <$Str(N$购买七日礼包时间)>
+Sendmsg 6 <$Str(U250)>
+[@助力倒计时计算]
+#IF
+#Act
+#IF
+#Act
+Taketime <$Str(A0)>-<$Str(A497)> <$Str(A0)>-23-59-59
+Mov N$开区当日时间差 <$Timeresult>
+Mov N$活动结束时间 0
+Mul N$活动结束时间 86400 <$Str(S$时间补差)>
+Inc N$活动结束时间 <$Str(N$开区当日时间差)>
+
+Taketime <$Str(A0)>-<$Str(A497)> <$YEAR>-<$MONTH>-<$DAY>-<$HOUR>-<$MINUTE>-<$SECOND>
+Mov N$当前系统时间差 <$Timeresult>
+Dec N$活动结束时间 <$Str(N$当前系统时间差)>
+
+Mov N$礼包显示时间 <$Str(N$活动结束时间)>
+
+
+[@关闭助力提示]
+#Act
+Sendmsg 9 <font color='#ffff00'>活动还未开启...</font>
+
+}

@@ -1,0 +1,465 @@
+[@vip福利]
+{
+#IF
+#ACT
+Mov n$u13 <$Str(u13)>
+Mov n$u14 <$Str(u13)>
+Mov s$默认调用_1 default=<$Str(n$u14)>|reload=1
+Mov N$vip面板 1
+
+#IF
+large u13 0
+#ACT
+Goto @读取Vip福利配置
+BREAK
+
+#IF
+small u13 15
+#ACT
+INC n$u13 1
+INC n$u14 1
+Goto @读取Vip福利配置
+BREAK
+
+[@读取Vip福利配置]
+#IF
+#ACT
+Mov s$特权_1
+Mov s$特权_2
+Mov s$特权_3
+Mov s$特权_4
+Mov s$特权_5
+Mov s$特权_6
+Mov s$特权_7
+Mov s$特权_8
+Mov s$特权_9
+Mov s$特权_10
+Mov s$特权_11
+Mov s$特权_12
+Mov s$特权_13
+Mov s$特权_14
+Mov s$特权_15
+Mov s$特权_16
+Mov s$特权_17
+Mov s$特权_18
+Mov s$特权_19
+Mov s$特权_20
+Mov s$特权_21
+Mov s$特权_22
+Mov s$特权_23
+Mov s$特权_24
+Mov s$特权_25
+Mov s$特权_26
+Mov s$特权_27
+Mov s$特权_28
+Mov s$特权_29
+Mov s$特权_30
+Mov s$特权_31
+Mov s$特权_32
+Mov s$特权_33
+Mov s$特权_34
+Mov s$特权_35
+Mov s$特权_36
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 实际价格 s$实际价格
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 优惠价格 s$优惠价格
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 礼包1 s$礼包1
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 礼包2 s$礼包2
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 礼包3 s$礼包3
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 礼包4 s$礼包4
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 点亮 s$点亮
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 成长值 n$成长值
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 展示 s$展示
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 特权 s$特权
+GETVALIDSTRSUPER <$Str(s$礼包1)> # s$礼包1_
+GETVALIDSTRSUPER <$Str(s$礼包2)> # s$礼包2_
+GETVALIDSTRSUPER <$Str(s$礼包3)> # s$礼包3_
+GETVALIDSTRSUPER <$Str(s$礼包4)> # s$礼包4_
+GETVALIDSTRSUPER <$Str(s$点亮)> # s$点亮_
+GETVALIDSTRSUPER <$Str(s$展示)> # s$展示_
+GETVALIDSTRSUPER <$Str(s$特权)> # s$特权_
+
+#IF
+large u13 0
+small u13 15
+#ACT
+INC n$u13 1
+
+#IF
+small u13 15
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 成长值 n$成长值_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 成长值 n$成长值_2
+DEC n$成长值_1 <$MONEY(18)>
+#call [\功能脚本\vip特权\vip红点检测.txt] @vip红点检测
+Goto @vip福利展示
+Goto @跳转福利vip<$Str(u13)>
+BREAK
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 成长值 n$成长值_1
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u13)>奖励 成长值 n$成长值_2
+Mov n$成长值_1 0
+#call [\功能脚本\vip特权\vip红点检测.txt] @vip红点检测
+Goto @vip福利展示
+Goto @跳转福利vip<$Str(u13)>
+
+[@vip福利展示]
+<Img|width=3000|height=3000|bg=1|show=4|img=public/1900000651_1.png|layerid=3>
+<Img|a=4|children={0,0c,0a,2,3}|img=custom/hl/hl_ui/hl_bg.png|percentx=50|percenty=50>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|a=4|id=2|text=VIP特权|color=100|size=20|outline=2|outlinecolor=0|percentx=50|percenty=4>
+<Img|a=4|id=3|children={4,7,8,9,13,16,17a,33,54}|img=custom/hl/vip/vip_bj_2.jpg|percentx=50|percenty=54>
+<Img|a=4|id=4|children={5,6}|img=custom/hl/vip/vip_hz.png|percentx=12|percenty=11>
+<Img|a=4|id=5|img=custom/hl/vip/vip_zb.png|percentx=50|percenty=32>
+
+<Button|id=0a|children={0b}|nimg=public/1900000641.png|pimg=public/1900000641.png|x=760|y=65|link=@vip特权>
+<Text|a=4|id=0b|text=福\利|size=16|color=10|outline=2|outlinecolor=0|percentx=35|percenty=35>
+
+<Button|id=0c|children={0d}|nimg=public/1900000640.png|pimg=public/1900000640.png|x=760|y=144|link=@vip福利>
+<Text|a=4|id=0d|text=特\权|size=16|color=100|outline=2|outlinecolor=0|percentx=35|percenty=35>
+
+
+;当前VIP
+<TextAtlas|a=4|id=6|img=custom/hl/vip/vip_sz_1.png|schar=0|iheight=26|iwidth=19|percentx=50|percenty=58|text=<$Str(u13)>>
+<Img|a=4|id=7|img=custom/hl/vip/vip_0.png|percentx=30|percenty=8>
+;在充值
+<TextAtlas|id=9|children={10}|img=custom/hl/vip/vip_sz_0.png|schar=0|iheight=19|iwidth=14|percentx=35|percenty=5.5|text=<$Str(n$成长值_1)>>
+<Img|id=10|children={11,12}|img=custom/hl/vip/vip_1.png|percentx=110|percenty=-2>
+<Img|id=11|img=custom/hl/vip/vip_zb.png|percentx=110|percenty=-20>
+;下级Vip
+<TextAtlas|id=12|img=custom/hl/vip/vip_sz_1.png|schar=0|iheight=26|iwidth=19|percentx=180|percenty=-20|text=<$Str(n$u13)>>
+#IF
+#SAY
+<Img|a=4|id=13|children={14,15}|img=custom/hl/vip/vip_jd_0.png|percentx=47|percenty=15>
+<PercentImg|id=14|direction=0|x=3|y=3|minValue=<$MONEY(18)>|maxValue=<$Str(n$成长值_2)>|img=custom/hl/vip/vip_jd_1.png> 
+;Vip进度
+<Text|a=4|id=15|text=<$MONEY(18)>/<$Str(n$成长值_2)>|size=14|color=255|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Button|id=16|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=前往充值|size=18|color=100|outline=2|outlinecolor=0|percentx=80|percenty=7|link=@vip充值>
+
+<Layout|id=17a|children={17}|width=732|height=38|color=x|x=2|y=104>
+<ListView|id=17|children={18,19,20,21,22,23,24,25,26,27,28,29,30,31,32}|direction=2|bounce=0|margin=-8|width=732|height=38|color=x|x=2|y=0|<$Str(s$默认调用_1)>>
+
+
+<Layout|id=18|children={18a,18b}|width=105|height=36|color=x>
+<Button|id=18a|nimg=custom/hl/vip/tips_<$Str(s$点亮_1)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_2)>.png|text=Vip 1|size=18|color=<$Str(s$点亮_3)>|outline=2|outlinecolor=0|link=@跳转福利Vip1>
+
+<Layout|id=19|children={19a,19b}|width=105|height=36|color=x>
+<Button|id=19a|nimg=custom/hl/vip/tips_<$Str(s$点亮_4)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_5)>.png|text=Vip 2|size=18|color=<$Str(s$点亮_6)>|outline=2|outlinecolor=0|link=@跳转福利Vip2>
+
+<Layout|id=20|children={20a,20b}|width=105|height=36|color=x>
+<Button|id=20a|nimg=custom/hl/vip/tips_<$Str(s$点亮_7)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_8)>.png|text=Vip 3|size=18|color=<$Str(s$点亮_9)>|outline=2|outlinecolor=0|link=@跳转福利Vip3>
+
+<Layout|id=21|children={21a,21b}|width=105|height=36|color=x>
+<Button|id=21a|nimg=custom/hl/vip/tips_<$Str(s$点亮_10)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_11)>.png|text=Vip 4|size=18|color=<$Str(s$点亮_12)>|outline=2|outlinecolor=0|link=@跳转福利Vip4>
+
+<Layout|id=22|children={22a,22b}|width=105|height=36|color=x>
+<Button|id=22a|nimg=custom/hl/vip/tips_<$Str(s$点亮_13)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_14)>.png|text=Vip 5|size=18|color=<$Str(s$点亮_15)>|outline=2|outlinecolor=0|link=@跳转福利Vip5>
+
+<Layout|id=23|children={23a,23b}|width=105|height=36|color=x>
+<Button|id=23a|nimg=custom/hl/vip/tips_<$Str(s$点亮_16)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_17)>.png|text=Vip 6|size=18|color=<$Str(s$点亮_18)>|outline=2|outlinecolor=0|link=@跳转福利Vip6>
+
+<Layout|id=24|children={24a,24b}|width=105|height=36|color=x>
+<Button|id=24a|nimg=custom/hl/vip/tips_<$Str(s$点亮_19)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_20)>.png|text=Vip 7|size=18|color=<$Str(s$点亮_21)>|outline=2|outlinecolor=0|link=@跳转福利Vip7>
+
+<Layout|id=25|children={25a,25b}|width=105|height=36|color=x>
+<Button|id=25a|nimg=custom/hl/vip/tips_<$Str(s$点亮_22)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_23)>.png|text=Vip 8|size=18|color=<$Str(s$点亮_24)>|outline=2|outlinecolor=0|link=@跳转福利Vip8>
+
+<Layout|id=26|children={26a,26b}|width=105|height=36|color=x>
+<Button|id=26a|nimg=custom/hl/vip/tips_<$Str(s$点亮_25)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_26)>.png|text=Vip 9|size=18|color=<$Str(s$点亮_27)>|outline=2|outlinecolor=0|link=@跳转福利Vip9>
+
+<Layout|id=27|children={27a,27b}|width=105|height=36|color=x>
+<Button|id=27a|nimg=custom/hl/vip/tips_<$Str(s$点亮_28)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_29)>.png|text=Vip 10|size=18|color=<$Str(s$点亮_30)>|outline=2|outlinecolor=0|link=@跳转福利Vip10>
+
+<Layout|id=28|children={28a,28b}|width=105|height=36|color=x>
+<Button|id=28a|nimg=custom/hl/vip/tips_<$Str(s$点亮_31)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_32)>.png|text=Vip 11|size=18|color=<$Str(s$点亮_33)>|outline=2|outlinecolor=0|link=@跳转福利Vip11>
+
+<Layout|id=29|children={29a,29b}|width=105|height=36|color=x>
+<Button|id=29a|nimg=custom/hl/vip/tips_<$Str(s$点亮_34)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_35)>.png|text=Vip 12|size=18|color=<$Str(s$点亮_36)>|outline=2|outlinecolor=0|link=@跳转福利Vip12>
+
+<Layout|id=30|children={30a,30b}|width=105|height=36|color=x>
+<Button|id=30a|nimg=custom/hl/vip/tips_<$Str(s$点亮_37)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_38)>.png|text=Vip 13|size=18|color=<$Str(s$点亮_39)>|outline=2|outlinecolor=0|link=@跳转福利Vip13>
+
+<Layout|id=31|children={31a,31b}|width=105|height=36|color=x>
+<Button|id=31a|nimg=custom/hl/vip/tips_<$Str(s$点亮_40)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_41)>.png|text=Vip 14|size=18|color=<$Str(s$点亮_42)>|outline=2|outlinecolor=0|link=@跳转福利Vip14>
+
+<Layout|id=32|children={32a,32b}|width=105|height=36|color=x>
+<Button|id=32a|nimg=custom/hl/vip/tips_<$Str(s$点亮_43)>.png|pimg=custom/hl/Vip/tips_<$Str(s$点亮_44)>.png|text=Vip 15|size=18|color=<$Str(s$点亮_45)>|outline=2|outlinecolor=0|link=@跳转福利Vip15>
+
+<Layout|width=50|height=50|color=xx>
+<ListView|a=4|id=33|children={34,36,38,40,42,44,46}|direction=1|bounce=0|margin=2|width=500|height=225|color=x|percentx=50|percenty=70>
+<Layout|id=34|children={34a,34b,35}|width=290|height=30|color=x>
+<Img|id=34a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=34b|text=<$Str(s$特权_1)>|size=17|color=<$Str(s$特权_2)>|outline=2|outlinecolor=0|x=30|y=0>
+
+<Layout|id=35|children={35a,35b}|width=290|height=30|color=x|x=300>
+<Img|id=35a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=35b|text=<$Str(s$特权_3)>|size=17|color=<$Str(s$特权_4)>|outline=2|outlinecolor=0|x=30|y=0>
+
+<Layout|id=36|children={36a,36b,37}|width=290|height=30|color=x>
+<Img|id=36a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=36b|text=<$Str(s$特权_5)>|size=17|color=<$Str(s$特权_6)>|outline=2|outlinecolor=0|x=30|y=0>
+
+<Layout|id=37|children={37a,37b}|width=290|height=30|color=x|x=300>
+<Img|id=37a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=37b|text=<$Str(s$特权_7)>|size=17|color=<$Str(s$特权_8)>|outline=2|outlinecolor=0|x=30|y=0>
+
+#IF
+not Equal s$特权_9
+#SAY
+<Layout|id=38|children={38a,38b,39}|width=290|height=30|color=x>
+<Img|id=38a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=38b|text=<$Str(s$特权_9)>|size=17|color=<$Str(s$特权_10)>|outline=2|outlinecolor=0|x=30|y=0>
+#IF
+not Equal s$特权_11
+#SAY
+<Layout|id=39|children={39a,39b}|width=290|height=30|color=x|x=300>
+<Img|id=39a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=39b|text=<$Str(s$特权_11)>|size=17|color=<$Str(s$特权_12)>|outline=2|outlinecolor=0|x=30|y=0>
+
+
+#IF
+not Equal s$特权_13
+#SAY
+<Layout|id=40|children={40a,40b,41}|width=290|height=30|color=x>
+<Img|id=40a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=40b|text=<$Str(s$特权_13)>|size=17|color=<$Str(s$特权_14)>|outline=2|outlinecolor=0|x=30|y=0>
+
+#IF
+not Equal s$特权_15
+#SAY
+<Layout|id=41|children={41a,41b}|width=290|height=30|color=x|x=300>
+<Img|id=41a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=41b|text=<$Str(s$特权_15)>|size=17|color=<$Str(s$特权_16)>|outline=2|outlinecolor=0|x=30|y=0>
+
+#IF
+not Equal s$特权_17
+#SAY
+<Layout|id=42|children={42a,42b,43}|width=290|height=30|color=x>
+<Img|id=42a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=42b|text=<$Str(s$特权_17)>|size=17|color=<$Str(s$特权_18)>|outline=2|outlinecolor=0|x=30|y=0>
+
+#IF
+not Equal s$特权_19
+#SAY
+<Layout|id=43|children={43a,43b}|width=290|height=30|color=x|x=300>
+<Img|id=43a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=43b|text=<$Str(s$特权_19)>|size=17|color=<$Str(s$特权_20)>|outline=2|outlinecolor=0|x=30|y=0>
+
+#IF
+not Equal s$特权_21
+#SAY
+<Layout|id=44|children={44a,44b,45}|width=290|height=30|color=x>
+<Img|id=44a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=44b|text=<$Str(s$特权_21)>|size=17|color=<$Str(s$特权_22)>|outline=2|outlinecolor=0|x=30|y=0>
+#IF
+not Equal s$特权_23
+#SAY
+<Layout|id=45|children={45a,45b}|width=290|height=30|color=x|x=300>
+<Img|id=45a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=45b|text=<$Str(s$特权_23)>|size=17|color=<$Str(s$特权_24)>|outline=2|outlinecolor=0|x=30|y=0>
+
+
+#IF
+not Equal s$特权_25
+#SAY
+<Layout|id=46|children={46a,46b,47}|width=290|height=30|color=x>
+<Img|id=46a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=46b|text=<$Str(s$特权_25)>|size=17|color=<$Str(s$特权_26)>|outline=2|outlinecolor=0|x=30|y=0>
+
+#IF
+not Equal s$特权_27
+#SAY
+<Layout|id=47|children={47a,47b}|width=290|height=30|color=x|x=300>
+<Img|id=47a|img=custom/hl/hl_ui/icon_target_01.png|x=5|y=2>
+<Text|id=47b|text=<$Str(s$特权_26)>|size=17|color=<$Str(s$特权_27)>|outline=2|outlinecolor=0|x=30|y=0>
+
+
+#if
+#say
+<Layout|a=4|id=54|children={54a,54b,54c}|width=290|height=30|color=x|percentx=50|percenty=40>
+<Img|id=54a|img=custom/hl/vip/vip_2.png|x=0|y=5>
+<Img|id=54b|img=custom/hl/vip/vip_zb.png|x=50|y=3>
+<TextAtlas|id=54c|children={54d}|img=custom/hl/vip/vip_sz_1.png|schar=0|iheight=26|iwidth=19|x=100|y=4|text=<$Str(n$u14)>>
+<Img|id=54d|img=custom/hl/vip/vip_3.png|percentx=100|y=2>
+
+
+
+
+
+
+
+#IF
+#SAY
+<$Str(s$vip红点_1)>
+<$Str(s$vip红点_2)>
+<$Str(s$vip红点_3)>
+<$Str(s$vip红点_4)>
+<$Str(s$vip红点_5)>
+<$Str(s$vip红点_6)>
+<$Str(s$vip红点_7)>
+<$Str(s$vip红点_8)>
+<$Str(s$vip红点_9)>
+<$Str(s$vip红点_10)>
+<$Str(s$vip红点_11)>
+<$Str(s$vip红点_12)>
+<$Str(s$vip红点_13)>
+<$Str(s$vip红点_14)>
+<$Str(s$vip红点_15)>
+
+[@跳转福利vip1]
+#if
+#act
+mov n$u14 1
+Mov s$默认调用_1 default=|reload=1
+goto @读取Vip福利配置1
+[@跳转福利vip2]
+#if
+#act
+mov n$u14 2
+Mov s$默认调用_1 default=|reload=1
+goto @读取Vip福利配置1
+[@跳转福利vip3]
+#if
+#act
+mov n$u14 3
+Mov s$默认调用_1 default=|reload=1
+goto @读取Vip福利配置1
+
+[@跳转福利vip4]
+#if
+#act
+mov n$u14 4
+Mov s$默认调用_1 default=|reload=1
+goto @读取Vip福利配置1
+
+[@跳转福利vip5]
+#if
+#act
+mov n$u14 5
+Mov s$默认调用_1 default=|reload=1
+goto @读取Vip福利配置1
+[@跳转福利vip6]
+#if
+#act
+mov n$u14 6
+Mov s$默认调用_1 default=|reload=1
+goto @读取Vip福利配置1
+[@跳转福利vip7]
+#if
+#act
+mov n$u14 7
+Mov s$默认调用_1 default=|reload=1
+goto @读取Vip福利配置1
+[@跳转福利vip8]
+#if
+#act
+mov n$u14 8
+Mov s$默认调用_1 default=|reload=0
+goto @读取Vip福利配置1
+[@跳转福利vip9]
+#if
+#act
+mov n$u14 9
+Mov s$默认调用_1 default=|reload=0
+goto @读取Vip福利配置1
+[@跳转福利vip10]
+#if
+#act
+mov n$u14 10
+Mov s$默认调用_1 default=|reload=0
+goto @读取Vip福利配置1
+[@跳转福利vip11]
+#if
+#act
+mov n$u14 11
+Mov s$默认调用_1 default=|reload=0
+goto @读取Vip福利配置1
+[@跳转福利vip12]
+#if
+#act
+mov n$u14 12
+Mov s$默认调用_1 default=|reload=0
+goto @读取Vip福利配置1
+[@跳转福利vip13]
+#if
+#act
+mov n$u14 13
+Mov s$默认调用_1 default=|reload=0
+goto @读取Vip福利配置1
+[@跳转福利vip14]
+#if
+#act
+mov n$u14 14
+Mov s$默认调用_1 default=|reload=0
+goto @读取Vip福利配置1
+[@跳转福利vip15]
+#if
+#act
+mov n$u14 15
+Mov s$默认调用_1 default=|reload=0
+goto @读取Vip福利配置1
+
+
+[@读取Vip福利配置1]
+#IF
+#ACT
+Mov s$特权_1
+Mov s$特权_2
+Mov s$特权_3
+Mov s$特权_4
+Mov s$特权_5
+Mov s$特权_6
+Mov s$特权_7
+Mov s$特权_8
+Mov s$特权_9
+Mov s$特权_10
+Mov s$特权_11
+Mov s$特权_12
+Mov s$特权_13
+Mov s$特权_14
+Mov s$特权_15
+Mov s$特权_16
+Mov s$特权_17
+Mov s$特权_18
+Mov s$特权_19
+Mov s$特权_20
+Mov s$特权_21
+Mov s$特权_22
+Mov s$特权_23
+Mov s$特权_24
+Mov s$特权_25
+Mov s$特权_26
+Mov s$特权_27
+Mov s$特权_28
+Mov s$特权_29
+Mov s$特权_30
+Mov s$特权_31
+Mov s$特权_32
+Mov s$特权_33
+Mov s$特权_34
+Mov s$特权_35
+Mov s$特权_36
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u14)>奖励 实际价格 s$实际价格
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u14)>奖励 优惠价格 s$优惠价格
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u14)>奖励 礼包1 s$礼包1
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u14)>奖励 礼包2 s$礼包2
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u14)>奖励 礼包3 s$礼包3
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u14)>奖励 礼包4 s$礼包4
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u14)>奖励 点亮 s$点亮
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u14)>奖励 成长值 n$成长值
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u14)>奖励 展示 s$展示
+ReadConfigFileItem ..\QuestDiary\功能脚本\vip特权\vip礼包配置.ini vip<$Str(n$u14)>奖励 特权 s$特权
+GETVALIDSTRSUPER <$Str(s$礼包1)> # s$礼包1_
+GETVALIDSTRSUPER <$Str(s$礼包2)> # s$礼包2_
+GETVALIDSTRSUPER <$Str(s$礼包3)> # s$礼包3_
+GETVALIDSTRSUPER <$Str(s$礼包4)> # s$礼包4_
+GETVALIDSTRSUPER <$Str(s$点亮)> # s$点亮_
+GETVALIDSTRSUPER <$Str(s$展示)> # s$展示_
+GETVALIDSTRSUPER <$Str(s$特权)> # s$特权_
+Goto @vip福利展示
+
+
+
+
+}

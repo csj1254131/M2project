@@ -1,0 +1,722 @@
+[@属性刷新]
+{
+#IF
+#ACT
+GOTO @属性清零
+
+;-----------------------------------狂暴
+#IF
+CHECK [200] 1
+#ACT
+INC N$属性计算1 30
+INC N$属性计算2 30
+INC N$属性计算3 30
+INC N$属性计算4 30
+INC N$属性计算5 100
+INC N$属性计算6 100
+INC N$属性计算7 100
+INC N$属性计算8 100
+INC N$属性计算9 100
+INC N$属性计算10 100
+
+;-----------------------------------转生
+#if 
+CHECKRENEWLEVEL > 0
+#act
+Mov n$转生HP  <$Str(u19)>
+Mov n$转生mP <$Str(u20)>
+Mov n$转生xx   <$Str(u21)>
+Mov n$转生sx   <$Str(u22)>
+INC N$属性计算11 <$str(n$转生hp)>
+INC N$属性计算12 <$str(n$转生mp)>
+Goto @转生属性刷新
+
+
+;-----------------------------------官职
+#if 
+LARGE U23 0
+#act
+INC N$属性计算5 <$str(u24)>
+INC N$属性计算6 <$str(u25)>
+INC N$属性计算7 <$str(u24)>
+INC N$属性计算8 <$str(u25)>
+INC N$属性计算9 <$str(u24)>
+INC N$属性计算10 <$str(u25)>
+;-----------------------------------官印
+#or 
+LARGE U27 0
+LARGE U28 0
+#act
+INC N$属性计算1 <$str(u29)>
+INC N$属性计算2 <$str(u30)>
+INC N$属性计算3 <$str(u31)>
+INC N$属性计算4 <$str(u32)>
+INC N$属性计算11 <$str(u35)>
+Goto @官印属性刷新
+;-----------------------------------捐献排行榜
+#IF
+EQUAL A201 <$USERNAME>
+#ACT
+MOV S$我的排名 第一名
+MOV N$上次排名 1
+INC N$属性计算5 100
+INC N$属性计算6 100
+INC N$属性计算7 100
+INC N$属性计算8 100
+INC N$属性计算9 100
+INC N$属性计算10 100
+#IF
+EQUAL A202 <$USERNAME>
+#ACT
+MOV S$我的排名 第二名
+MOV N$上次排名 2
+INC N$属性计算5 70
+INC N$属性计算6 70
+INC N$属性计算7 70
+INC N$属性计算8 70
+INC N$属性计算9 70
+INC N$属性计算10 70
+#IF
+EQUAL A203 <$USERNAME>
+#ACT
+MOV S$我的排名 第三名
+MOV N$上次排名 3
+INC N$属性计算5 50
+INC N$属性计算6 50
+INC N$属性计算7 50
+INC N$属性计算8 50
+INC N$属性计算9 50
+INC N$属性计算10 50
+#IF
+EQUAL A204 <$USERNAME>
+#ACT
+MOV S$我的排名 第四名
+MOV N$上次排名 4
+INC N$属性计算5 20
+INC N$属性计算6 20
+INC N$属性计算7 20
+INC N$属性计算8 20
+INC N$属性计算9 20
+INC N$属性计算10 20
+#IF
+EQUAL A205 <$USERNAME>
+#ACT
+MOV S$我的排名 第五名
+MOV N$上次排名 5
+INC N$属性计算5 10
+INC N$属性计算6 10
+INC N$属性计算7 10
+INC N$属性计算8 10
+INC N$属性计算9 10
+INC N$属性计算10 10
+#IF
+EQUAL A206 <$USERNAME>
+#ACT
+MOV S$我的排名 第六名
+MOV N$上次排名 6
+INC N$属性计算5 5
+INC N$属性计算6 5
+INC N$属性计算7 5
+INC N$属性计算8 5
+INC N$属性计算9 5
+INC N$属性计算10 5
+#IF
+EQUAL A207 <$USERNAME>
+#ACT
+MOV S$我的排名 第七名
+MOV N$上次排名 7
+INC N$属性计算5 5
+INC N$属性计算6 5
+INC N$属性计算7 5
+INC N$属性计算8 5
+INC N$属性计算9 5
+INC N$属性计算10 5
+#IF
+EQUAL A208 <$USERNAME>
+#ACT
+MOV S$我的排名 第八名
+MOV N$上次排名 8
+INC N$属性计算5 5
+INC N$属性计算6 5
+INC N$属性计算7 5
+INC N$属性计算8 5
+INC N$属性计算9 5
+INC N$属性计算10 5
+#IF
+EQUAL A209 <$USERNAME>
+#ACT
+MOV S$我的排名 第九名
+MOV N$上次排名 9
+INC N$属性计算5 5
+INC N$属性计算6 5
+INC N$属性计算7 5
+INC N$属性计算8 5
+INC N$属性计算9 5
+INC N$属性计算10 5
+#IF
+EQUAL A210 <$USERNAME>
+#ACT
+MOV S$我的排名 第十名
+MOV N$上次排名 10
+INC N$属性计算5 5
+INC N$属性计算6 5
+INC N$属性计算7 5
+INC N$属性计算8 5
+INC N$属性计算9 5
+INC N$属性计算10 5
+
+#IF
+LARGE G210 0
+#ACT
+MOV N$上榜捐献数 <$STR(G210)>
+#elseact
+MOV N$上榜捐献数 200
+
+#IF
+NOT EQUAL A201 <$USERNAME>
+NOT EQUAL A202 <$USERNAME>
+NOT EQUAL A203 <$USERNAME>
+NOT EQUAL A204 <$USERNAME>
+NOT EQUAL A205 <$USERNAME>
+NOT EQUAL A206 <$USERNAME>
+NOT EQUAL A207 <$USERNAME>
+NOT EQUAL A208 <$USERNAME>
+NOT EQUAL A209 <$USERNAME>
+NOT EQUAL A210 <$USERNAME>
+CHECKVAR HUMAN 捐献灵符 > 0
+CHECKVAR HUMAN 捐献灵符 < <$STR(N$上榜捐献数)>
+#ACT
+INC N$属性计算5 1
+INC N$属性计算6 1
+INC N$属性计算7 1
+INC N$属性计算8 1
+INC N$属性计算9 1
+INC N$属性计算10 1
+;-----------------------------------天下第一
+#IF
+EQUAL A261 <$USERNAME>
+CHECKJOB Warrior
+gender man
+#ACT
+INC N$属性计算5 10
+INC N$属性计算6 10
+INC N$属性计算11 300
+
+#IF
+EQUAL A262 <$USERNAME>
+CHECKJOB Warrior
+gender woman
+#ACT
+INC N$属性计算5 10
+INC N$属性计算6 10
+INC N$属性计算11 300
+
+#IF
+EQUAL A263 <$USERNAME>
+CHECKJOB Wizard
+gender man
+#ACT
+INC N$属性计算7 10
+INC N$属性计算8 10
+INC N$属性计算12 220
+
+#IF
+EQUAL A264 <$USERNAME>
+CHECKJOB Wizard
+gender woman
+#ACT
+INC N$属性计算7 10
+INC N$属性计算8 10
+INC N$属性计算12 220
+
+#IF
+EQUAL A265 <$USERNAME>
+CHECKJOB Taoist
+gender man
+#ACT
+INC N$属性计算9 10
+INC N$属性计算10 10
+INC N$属性计算11 150
+INC N$属性计算12 150
+
+#IF
+EQUAL A266 <$USERNAME>
+CHECKJOB Taoist
+gender woman
+#ACT
+INC N$属性计算9 10
+INC N$属性计算10 10
+INC N$属性计算11 150
+INC N$属性计算12 150
+;-----------------------------------第一猛男美女
+#IF
+EQUAL A273 <$USERNAME>
+gender man
+#ACT
+INC N$属性计算11 1120
+INC N$属性计算12 540
+
+
+#IF
+EQUAL A274 <$USERNAME>
+gender woman
+#ACT
+INC N$属性计算11 1120
+INC N$属性计算12 540
+
+;-----------------------------------夺宝称号你瞅啥
+#IF
+EQUAL A279 <$USERNAME>
+#ACT
+INC N$属性计算5 10
+INC N$属性计算6 10
+INC N$属性计算7 10
+INC N$属性计算8 10
+INC N$属性计算9 10
+INC N$属性计算10 10
+
+
+;-----------------------------------火龙元神
+#IF
+LARGE U11 0
+#ACT
+INC N$属性计算6   <$STR(U17)>
+INC N$属性计算8   <$STR(U17)>
+INC N$属性计算10 <$STR(U17)>
+INC N$属性计算2   <$STR(U17)>
+INC N$属性计算4   <$STR(U17)>
+INC N$属性计算11 <$STR(U18)>
+INC N$属性计算12 <$STR(U18)>
+
+#IF
+large U13 1
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 10
+INC N$属性计算2 10
+INC N$属性计算3 10
+INC N$属性计算4 10
+INC N$属性计算5 10
+INC N$属性计算6 10
+INC N$属性计算7 10
+INC N$属性计算8 10
+INC N$属性计算9 10
+INC N$属性计算10 10
+
+#IF
+large U13 2
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 10
+INC N$属性计算2 10
+INC N$属性计算3 10
+INC N$属性计算4 10
+INC N$属性计算5 10
+INC N$属性计算6 10
+INC N$属性计算7 10
+INC N$属性计算8 10
+INC N$属性计算9 10
+INC N$属性计算10 10
+
+#IF
+large U13 3
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 20
+INC N$属性计算2 20
+INC N$属性计算3 20
+INC N$属性计算4 20
+INC N$属性计算5 20
+INC N$属性计算6 20
+INC N$属性计算7 20
+INC N$属性计算8 20
+INC N$属性计算9 20
+INC N$属性计算10 20
+
+#IF
+large U13 4
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 20
+INC N$属性计算2 20
+INC N$属性计算3 20
+INC N$属性计算4 20
+INC N$属性计算5 20
+INC N$属性计算6 20
+INC N$属性计算7 20
+INC N$属性计算8 20
+INC N$属性计算9 20
+INC N$属性计算10 20
+#IF
+large U13 5
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 20
+INC N$属性计算2 20
+INC N$属性计算3 20
+INC N$属性计算4 20
+INC N$属性计算5 20
+INC N$属性计算6 20
+INC N$属性计算7 20
+INC N$属性计算8 20
+INC N$属性计算9 20
+INC N$属性计算10 20
+
+
+#IF
+large U13 6
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 30
+INC N$属性计算2 30
+INC N$属性计算3 30
+INC N$属性计算4 30
+INC N$属性计算5 30
+INC N$属性计算6 30
+INC N$属性计算7 30
+INC N$属性计算8 30
+INC N$属性计算9 30
+INC N$属性计算10 30
+
+#IF
+large U13 7
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 30
+INC N$属性计算2 30
+INC N$属性计算3 30
+INC N$属性计算4 30
+INC N$属性计算5 30
+INC N$属性计算6 30
+INC N$属性计算7 30
+INC N$属性计算8 30
+INC N$属性计算9 30
+INC N$属性计算10 30
+
+#IF
+large U13 8
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 40
+INC N$属性计算2 40
+INC N$属性计算3 40
+INC N$属性计算4 40
+INC N$属性计算5 40
+INC N$属性计算6 40
+INC N$属性计算7 40
+INC N$属性计算8 40
+INC N$属性计算9 40
+INC N$属性计算10 40
+
+#IF
+large U13 9
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 50
+INC N$属性计算2 50
+INC N$属性计算3 50
+INC N$属性计算4 50
+INC N$属性计算5 50
+INC N$属性计算6 50
+INC N$属性计算7 50
+INC N$属性计算8 50
+INC N$属性计算9 50
+INC N$属性计算10 50
+
+#IF
+large U13 10
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 80
+INC N$属性计算2 80
+INC N$属性计算3 80
+INC N$属性计算4 80
+INC N$属性计算5 80
+INC N$属性计算6 80
+INC N$属性计算7 80
+INC N$属性计算8 80
+INC N$属性计算9 80
+INC N$属性计算10 80
+
+#IF
+large U13 11
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 100
+INC N$属性计算2 100
+INC N$属性计算3 100
+INC N$属性计算4 100
+INC N$属性计算5 100
+INC N$属性计算6 100
+INC N$属性计算7 100
+INC N$属性计算8 100
+INC N$属性计算9 100
+INC N$属性计算10 100
+
+#IF
+large U13 12
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 150
+INC N$属性计算2 150
+INC N$属性计算3 150
+INC N$属性计算4 150
+INC N$属性计算5 150
+INC N$属性计算6 150
+INC N$属性计算7 150
+INC N$属性计算8 150
+INC N$属性计算9 150
+INC N$属性计算10 150
+
+#IF
+large U13 13
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 200
+INC N$属性计算2 200
+INC N$属性计算3 200
+INC N$属性计算4 200
+INC N$属性计算5 200
+INC N$属性计算6 200
+INC N$属性计算7 200
+INC N$属性计算8 200
+INC N$属性计算9 200
+INC N$属性计算10 200
+
+#IF
+large U13 14
+#ACT
+ChangeModeEx 14 65535
+INC N$属性计算1 300
+INC N$属性计算2 300
+INC N$属性计算3 300
+INC N$属性计算4 300
+INC N$属性计算5 300
+INC N$属性计算6 300
+INC N$属性计算7 300
+INC N$属性计算8 300
+INC N$属性计算9 300
+INC N$属性计算10 300
+
+
+
+;注灵
+#IF
+CHECKJOB Warrior
+#ACT
+INC N$属性计算5  <$Str(u75)>
+INC N$属性计算6  <$Str(u76)>
+INC N$属性计算5  <$Str(u81)>
+INC N$属性计算6  <$Str(u82)>
+INC N$属性计算5  <$Str(u86)>
+INC N$属性计算6  <$Str(u87)>
+INC N$属性计算5  <$Str(u88)>
+INC N$属性计算6  <$Str(u89)>
+INC N$属性计算5  <$Str(u102)>
+INC N$属性计算6  <$Str(u103)>
+inc  N$属性计算1 <$Str(u77)>
+inc  N$属性计算1 <$Str(u97)>
+inc  N$属性计算1 <$Str(u104)>
+
+inc  N$属性计算2 <$Str(u78)>
+inc  N$属性计算2 <$Str(u98)>
+inc  N$属性计算2 <$Str(u105)>
+
+inc  N$属性计算3 <$Str(u79)>
+inc  N$属性计算3 <$Str(u95)>
+inc  N$属性计算3 <$Str(u117)>
+
+inc  N$属性计算4 <$Str(u80)>
+inc  N$属性计算4 <$Str(u96)>
+inc  N$属性计算4 <$Str(u118)>
+
+inc  N$属性计算11 <$Str(u83)>
+inc  N$属性计算11 <$Str(u84)>
+inc  N$属性计算11 <$Str(u85)>
+inc  N$属性计算11 <$Str(u106)>
+
+#IF
+CHECKJOB Wizard
+#ACT
+INC N$属性计算7  <$Str(u75)>
+INC N$属性计算8  <$Str(u76)>
+INC N$属性计算7  <$Str(u81)>
+INC N$属性计算8  <$Str(u82)>
+INC N$属性计算7  <$Str(u86)>
+INC N$属性计算8  <$Str(u87)>
+INC N$属性计算7  <$Str(u88)>
+INC N$属性计算8  <$Str(u89)>
+INC N$属性计算7  <$Str(u102)>
+INC N$属性计算8  <$Str(u103)>
+inc  N$属性计算1 <$Str(u77)>
+inc  N$属性计算1 <$Str(u97)>
+inc  N$属性计算1 <$Str(u104)>
+
+inc  N$属性计算2 <$Str(u78)>
+inc  N$属性计算2 <$Str(u98)>
+inc  N$属性计算2 <$Str(u105)>
+
+inc  N$属性计算3 <$Str(u79)>
+inc  N$属性计算3 <$Str(u95)>
+inc  N$属性计算3 <$Str(u117)>
+
+inc  N$属性计算4 <$Str(u80)>
+inc  N$属性计算4 <$Str(u96)>
+inc  N$属性计算4 <$Str(u118)>
+
+inc  N$属性计算11 <$Str(u83)>
+inc  N$属性计算11 <$Str(u84)>
+inc  N$属性计算11 <$Str(u85)>
+inc  N$属性计算11 <$Str(u106)>
+#IF
+CHECKJOB Taoist
+#ACT
+INC N$属性计算9    <$Str(u75)>
+INC N$属性计算10  <$Str(u76)>
+INC N$属性计算9    <$Str(u81)>
+INC N$属性计算10  <$Str(u82)>
+INC N$属性计算9    <$Str(u86)>
+INC N$属性计算10  <$Str(u87)>
+INC N$属性计算9    <$Str(u88)>
+INC N$属性计算10  <$Str(u89)>
+INC N$属性计算9   <$Str(u102)>
+INC N$属性计算10  <$Str(u103)>
+
+inc  N$属性计算1 <$Str(u77)>
+inc  N$属性计算1 <$Str(u97)>
+inc  N$属性计算1 <$Str(u104)>
+
+inc  N$属性计算2 <$Str(u78)>
+inc  N$属性计算2 <$Str(u98)>
+inc  N$属性计算2 <$Str(u105)>
+
+inc  N$属性计算3 <$Str(u79)>
+inc  N$属性计算3 <$Str(u95)>
+inc  N$属性计算3 <$Str(u117)>
+
+inc  N$属性计算4 <$Str(u80)>
+inc  N$属性计算4 <$Str(u96)>
+inc  N$属性计算4 <$Str(u118)>
+
+inc  N$属性计算11 <$Str(u83)>
+inc  N$属性计算11 <$Str(u84)>
+inc  N$属性计算11 <$Str(u85)>
+inc  N$属性计算11 <$Str(u106)>
+#IF
+#ACT
+GOTO @属性赋值
+
+[@转生属性刷新]
+#IF
+CHECKJOB Warrior
+#ACT
+INC N$属性计算5 <$str(n$转生xx)>
+INC N$属性计算6 <$str(n$转生sx)>
+
+
+#IF
+CHECKJOB Wizard
+#ACT
+INC N$属性计算7 <$str(n$转生xx)>
+INC N$属性计算8 <$str(n$转生sx)>
+#IF
+CHECKJOB Taoist
+#ACT
+INC N$属性计算9  <$str(n$转生xx)>
+INC N$属性计算10 <$str(n$转生sx)>
+
+
+
+[@特权属性刷新]
+#IF
+#ACT
+ChangeModeEx 14 210000000
+INC N$属性计算1 <$str(n$特权点数)>
+INC N$属性计算2 <$str(n$特权点数)>
+INC N$属性计算3 <$str(n$特权点数)>
+INC N$属性计算4 <$str(n$特权点数)>
+INC N$属性计算5 <$str(n$特权点数)>
+INC N$属性计算6 <$str(n$特权点数)>
+INC N$属性计算7 <$str(n$特权点数)>
+INC N$属性计算8 <$str(n$特权点数)>
+INC N$属性计算9 <$str(n$特权点数)>
+INC N$属性计算10 <$str(n$特权点数)>
+
+[@官印属性刷新]
+#IF
+CHECKJOB Warrior
+#ACT
+INC N$属性计算5 <$str(u33)>
+INC N$属性计算6 <$str(u34)>
+#IF
+CHECKJOB Wizard
+#ACT
+INC N$属性计算7 <$str(u33)>
+INC N$属性计算8 <$str(u34)>
+
+#IF
+CHECKJOB Taoist
+#ACT
+INC N$属性计算9   <$str(u33)>
+INC N$属性计算10 <$str(u34)>
+
+
+
+
+
+
+
+
+
+;------------------------------------------------------------
+
+[@属性清零]
+#IF
+#ACT
+MOV N$属性计算1 0
+MOV N$属性计算2 0
+MOV N$属性计算3 0
+MOV N$属性计算4 0
+MOV N$属性计算5 0
+MOV N$属性计算6 0
+MOV N$属性计算7 0
+MOV N$属性计算8 0
+MOV N$属性计算9 0
+MOV N$属性计算10 0
+MOV N$属性计算11 0
+MOV N$属性计算12 0
+MOV N$属性计算13 0
+MOV N$属性计算14 0
+MOV N$属性计算15 0
+MOV N$属性计算16 0
+MOV N$属性计算17 0
+MOV N$属性计算18 0
+MOV N$属性计算19 0
+MOV N$属性计算20 0
+
+[@属性赋值]
+#IF
+#ACT
+CHANGEHUMABILITYEX 1 = <$STR(N$属性计算1)> 200000000
+CHANGEHUMABILITYEX 2 = <$STR(N$属性计算2)> 200000000
+CHANGEHUMABILITYEX 3 = <$STR(N$属性计算3)> 200000000
+CHANGEHUMABILITYEX 4 = <$STR(N$属性计算4)> 200000000
+CHANGEHUMABILITYEX 5 = <$STR(N$属性计算5)> 200000000
+CHANGEHUMABILITYEX 6 = <$STR(N$属性计算6)> 200000000
+CHANGEHUMABILITYEX 7 = <$STR(N$属性计算7)> 200000000
+CHANGEHUMABILITYEX 8 = <$STR(N$属性计算8)> 200000000
+CHANGEHUMABILITYEX 9 = <$STR(N$属性计算9)> 200000000
+CHANGEHUMABILITYEX 10 = <$STR(N$属性计算10)> 200000000
+CHANGEHUMABILITYEX 11 = <$STR(N$属性计算11)> 200000000
+CHANGEHUMABILITYEX 12 = <$STR(N$属性计算12)> 200000000
+CHANGEHUMABILITYEX 13 = <$STR(N$属性计算13)> 200000000
+CHANGEHUMABILITYEX 14 = <$STR(N$属性计算14)> 200000000
+CHANGEHUMABILITYEX 15 = <$STR(N$属性计算15)> 200000000
+CHANGEHUMABILITYEX 16 = <$STR(N$属性计算16)> 200000000
+CHANGEHUMABILITYEX 17 = <$STR(N$属性计算17)> 200000000
+CHANGEHUMABILITYEX 18 = <$STR(N$属性计算18)> 200000000
+CHANGEHUMABILITYEX 19 = <$STR(N$属性计算19)> 200000000
+CHANGEHUMABILITYEX 20 = <$STR(N$属性计算20)> 200000000
+RecalcAbilitys
+
+}

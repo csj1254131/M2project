@@ -1,0 +1,1614 @@
+[@启动福利大厅]
+{
+#IF
+CHECKVAR HUMAN B_本次登录时间 = ??
+#ACT
+VAR Integer HUMAN B_本次登录时间
+#IF
+CHECKVAR HUMAN B_上次在线时长 = ??
+#ACT
+VAR Integer HUMAN B_上次在线时长
+#IF
+#ACT
+MOV S$激活按钮 nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|color=103
+MOV S$默认按钮 nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=160
+MOV N$预览签到 2
+MOV S$在线提示
+MOV S$签到提示
+GOTO @福利配置读取
+GOTO @每日签到检测
+GOTO @福利在线奖励
+
+#IF
+EQUAL <$STR(S$C_签到支线跳转)> 开
+#ACT
+GOTO @福利每日签到
+
+
+[@福利大厅界面]
+#IF
+#ACT
+MOV S$签到提示
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|percentx=50|percenty=3.8|color=100|size=20|outline=2|outlinecolor=0|text=福利大厅>
+<ListView|id=3|children={31}|x=140|y=60|width=3|height=450|margin=2|bounce=0|direction=1|color=x>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45}|x=22|y=62|width=145|height=450|margin=2|bounce=0|direction=1|color=x>
+<Button|id=41|children={410}|<$STR(S$激活按钮)>|size=18|text=在线奖励|link=@福利在线奖励>
+<Img|id=410|x=98|y=3|img=custom/hl/hl_ui/<$STR(S$福利红点_1)>.png>
+<Button|id=42|children={420}|<$STR(S$默认按钮)>|size=18|text=每日签到|link=@福利每日签到>
+<Img|id=420|x=98|y=3|img=custom/hl/hl_ui/<$STR(S$福利红点_2)>.png>
+<Button|id=43|children={430}|<$STR(S$默认按钮)>|size=18|text=尊享有礼|link=@福利尊享有礼>
+<Img|id=430|x=98|y=3|img=custom/hl/hl_ui/<$STR(S$福利红点_3)>.png>
+;<Button|id=44|<$STR(S$默认按钮)>|size=18|text=分享有礼|link=@福利分享有礼>
+<RText|id=5|x=150|y=62|color=255|size=18|outline=2|outlinecolor=0|text=今日已在线：<<$HUMAN(B_今日在线时长)>/FCOLOR=250>分钟>
+<ListView|id=6|children={60,61,62,63,64}|x=170|y=90|width=520|height=268|margin=2|bounce=0|direction=1|color=x>
+<Layout|id=60|children={601,602,603,604,605,606}|width=520|height=65|color=x>
+<Img|id=601|img=custom/hl/hl_ui/hdt_1.png|width=520|height=65>
+<Text|id=602|x=20|y=16|color=94|size=20|outline=2|outlinecolor=0|text=在线10分钟>
+<ItemShow|id=603|itemid=<$str(S$10分钟奖励1)>|itemcount=<$str(S$10分钟奖励2)>|showtips=1|bgtype=1|x=190|y=0|scale=0.8>
+<ItemShow|id=604|itemid=<$str(S$10分钟奖励3)>|itemcount=<$str(S$10分钟奖励4)>|showtips=1|bgtype=1|x=255|y=0|scale=0.8>
+<$STR(S$在线奖励状态1)>
+<Layout|id=61|children={611}|width=520|height=65|color=x>
+<Img|id=611|children={611,612,613,614,615,616}|img=custom/hl/hl_ui/hdt_1.png|width=520|height=65>
+<Text|id=612|x=20|y=16|color=94|size=20|outline=2|outlinecolor=0|text=在线30分钟>
+<ItemShow|id=613|itemid=<$str(S$30分钟奖励1)>|itemcount=<$str(S$30分钟奖励2)>|showtips=1|bgtype=1|x=190|y=0|scale=0.8>
+<ItemShow|id=614|itemid=<$str(S$30分钟奖励3)>|itemcount=<$str(S$30分钟奖励4)>|showtips=1|bgtype=1|x=255|y=0|scale=0.8>
+<$STR(S$在线奖励状态2)>
+<Layout|id=62|children={621}|width=520|height=65|color=x>
+<Img|id=621|children={621,622,623,624,625,626}|img=custom/hl/hl_ui/hdt_1.png|width=520|height=65>
+<Text|id=622|x=20|y=16|color=94|size=20|outline=2|outlinecolor=0|text=在线 1 小时>
+<ItemShow|id=623|itemid=<$str(S$1小时奖励1)>|itemcount=<$str(S$1小时奖励2)>|showtips=1|bgtype=1|x=190|y=0|scale=0.8>
+<ItemShow|id=624|itemid=<$str(S$1小时奖励3)>|itemcount=<$str(S$1小时奖励4)>|showtips=1|bgtype=1|x=255|y=0|scale=0.8>
+<$STR(S$在线奖励状态3)>
+<Layout|id=63|children={631}|width=520|height=65|color=x>
+<Img|id=631|children={631,632,633,634,635,636}|img=custom/hl/hl_ui/hdt_1.png|width=520|height=65>
+<Text|id=632|x=20|y=16|color=94|size=20|outline=2|outlinecolor=0|text=在线 2 小时>
+<ItemShow|id=633|itemid=<$str(S$2小时奖励1)>|itemcount=<$str(S$2小时奖励2)>|showtips=1|bgtype=1|x=190|y=0|scale=0.8>
+<ItemShow|id=634|itemid=<$str(S$2小时奖励3)>|itemcount=<$str(S$2小时奖励4)>|showtips=1|bgtype=1|x=255|y=0|scale=0.8>
+<$STR(S$在线奖励状态4)>
+<ListView|id=7|children={71}|x=143|y=360|width=610|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=71|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=8|children={80,81,82,83,84,85,86,87}|x=170|y=370|width=560|height=135|margin=2|bounce=0|direction=2|color=x>
+<Layout|id=80|children={801,802,803}|width=90|height=135|color=x>
+<ItemShow|id=801|a=4|percentx=50|percenty=22|itemid=<$STR(S$周在线奖励1)>|itemcount=<$STR(S$周在线奖励2)>|showtips=1|bgtype=1>
+<Text|id=802|a=4|percentx=50|percenty=55|color=94|size=20|outline=2|outlinecolor=0|text=累计2天>
+<$STR(S$累计奖励状态1)>
+<Layout|id=81|children={811,812,813}|width=90|height=135|color=x>
+<ItemShow|id=811|a=4|percentx=50|percenty=22|itemid=<$STR(S$周在线奖励3)>|itemcount=<$STR(S$周在线奖励4)>|showtips=1|bgtype=1>
+<Text|id=812|a=4|percentx=50|percenty=55|color=94|size=20|outline=2|outlinecolor=0|text=累计3天>
+<$STR(S$累计奖励状态2)>
+<Layout|id=82|children={821,822,823}|width=90|height=135|color=x>
+<ItemShow|id=821|a=4|percentx=50|percenty=22|itemid=<$STR(S$周在线奖励5)>|itemcount=<$STR(S$周在线奖励6)>|showtips=1|bgtype=1>
+<Text|id=822|a=4|percentx=50|percenty=55|color=94|size=20|outline=2|outlinecolor=0|text=累计4天>
+<$STR(S$累计奖励状态3)>
+<Layout|id=83|children={831,832,833}|width=90|height=135|color=x>
+<ItemShow|id=831|a=4|percentx=50|percenty=22|itemid=<$STR(S$周在线奖励7)>|itemcount=<$STR(S$周在线奖励8)>|showtips=1|bgtype=1>
+<Text|id=832|a=4|percentx=50|percenty=55|color=94|size=20|outline=2|outlinecolor=0|text=累计5天>
+<$STR(S$累计奖励状态4)>
+<Layout|id=84|children={841,842,843}|width=90|height=135|color=x>
+<ItemShow|id=841|a=4|percentx=50|percenty=22|itemid=<$STR(S$周在线奖励9)>|itemcount=<$STR(S$周在线奖励10)>|showtips=1|bgtype=1>
+<Text|id=842|a=4|percentx=50|percenty=55|color=94|size=20|outline=2|outlinecolor=0|text=累计6天>
+<$STR(S$累计奖励状态5)>
+<Layout|id=85|children={851,852,853}|width=90|height=135|color=x>
+<ItemShow|id=851|a=4|percentx=50|percenty=22|itemid=<$STR(S$周在线奖励11)>|itemcount=<$STR(S$周在线奖励12)>|showtips=1|bgtype=1>
+<Text|id=852|a=4|percentx=50|percenty=55|color=94|size=20|outline=2|outlinecolor=0|text=累计7天>
+<$STR(S$累计奖励状态6)>
+<Button|id=9|x=720|y=62|nimg=custom/hl/hl_ui/icon_fuhao_02.png|pimg=custom/hl/hl_ui/icon_fuhao_02.png|color=103|size=18|link=@在线奖励提示>
+<$STR(S$在线提示)>
+
+[@在线奖励提示]
+#IF
+NOT EQUAL S$在线提示
+#ACT
+MOV S$在线提示
+GOTO @福利大厅界面
+#ELSEACT
+MOV S$在线提示 <Img|id=10|children={101,102,103,104,105}|x=360|y=83|width=365|height=120|img=public/1900000677.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+INC S$在线提示 <RText|id=101|x=20|y=6|color=255|size=16|text=1、领取完当天的<在线2小时/FCOLOR=250>礼包后，计算\累计1天。<没有领取不做累计/FCOLOR=58>>
+INC S$在线提示 <RText|id=102|x=20|y=56|color=255|size=16|text=2、累计天数奖励<星期一零点更新/FCOLOR=250>且每种\奖励，<每周只能领取一次/FCOLOR=58>>
+INC S$在线提示 <Layout|id=11|x=160|y=60|width=600|height=430|color=x|link=@关闭在线提示>
+GOTO @福利大厅界面
+
+[@关闭在线提示]
+#IF
+#ACT
+MOV S$在线提示
+GOTO @福利大厅界面
+
+[@福利在线奖励]
+#IF
+#ACT
+MOV S$福利红点_1
+#IF
+#ACT
+MOV N$临时在线时长 <$UTCNOW8>
+DEC N$临时在线时长 <$HUMAN(B_本次登录时间)>
+MOV N$今日时长 <$HUMAN(B_上次在线时长)>
+INC N$今日时长 <$STR(N$临时在线时长)>
+
+#IF
+LARGE <$STR(N$今日时长)> 59
+#ACT
+DIV N$今日时长 60
+CALCVAR HUMAN B_今日在线时长 = <$STR(N$今日时长)>
+SAVEVAR HUMAN B_今日在线时长
+#ELSEACT
+CALCVAR HUMAN B_今日在线时长 = 0
+SAVEVAR HUMAN B_今日在线时长
+
+
+#IF
+CHECKVAR HUMAN B_今日在线时长 > 9
+CHECKVAR HUMAN B_在线奖励_1 = 0
+#ACT
+MOV S$在线奖励状态1 <Button|id=606|x=390|y=16|color=103|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=领取|link=@领取10分钟奖励>
+MOV S$福利红点_1 hd
+#ELSEACT
+MOV S$在线奖励状态1 <Img|id=606|x=400|y=5|img=custom/hl/fuli_ui/word_qiri_01.png>
+#IF
+CHECKVAR HUMAN B_今日在线时长 > 29
+CHECKVAR HUMAN B_在线奖励_2 = 0
+#ACT
+MOV S$在线奖励状态2 <Button|id=616|x=390|y=16|color=103|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=领取|link=@领取30分钟奖励>
+MOV S$福利红点_1 hd
+#ELSEACT
+MOV S$在线奖励状态2 <Img|id=616|x=400|y=5|img=custom/hl/fuli_ui/word_qiri_01.png>
+#IF
+CHECKVAR HUMAN B_今日在线时长 > 59
+CHECKVAR HUMAN B_在线奖励_3 = 0
+#ACT
+MOV S$在线奖励状态3 <Button|id=626|x=390|y=16|color=103|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=领取|link=@领取1小时奖励>
+MOV S$福利红点_1 hd
+#ELSEACT
+MOV S$在线奖励状态3 <Img|id=626|x=400|y=5|img=custom/hl/fuli_ui/word_qiri_01.png>
+#IF
+CHECKVAR HUMAN B_今日在线时长 > 119
+CHECKVAR HUMAN B_在线奖励_4 = 0
+#ACT
+MOV S$在线奖励状态4 <Button|id=636|x=390|y=16|color=103|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=领取|link=@领取2小时奖励>
+MOV S$福利红点_1 hd
+#ELSEACT
+MOV S$在线奖励状态4 <Img|id=636|x=400|y=5|img=custom/hl/fuli_ui/word_qiri_01.png>
+
+#IF
+CHECKVAR HUMAN B_在线奖励_1 > 0
+#ACT
+MOV S$在线奖励状态1 <Img|id=606|x=400|y=5|img=custom/hl/fuli_ui/word_qiri_02.png>
+#IF
+CHECKVAR HUMAN B_在线奖励_2 > 0
+#ACT
+MOV S$在线奖励状态2 <Img|id=616|x=400|y=5|img=custom/hl/fuli_ui/word_qiri_02.png>
+#IF
+CHECKVAR HUMAN B_在线奖励_3 > 0
+#ACT
+MOV S$在线奖励状态3 <Img|id=626|x=400|y=5|img=custom/hl/fuli_ui/word_qiri_02.png>
+#IF
+CHECKVAR HUMAN B_在线奖励_4 > 0
+#ACT
+MOV S$在线奖励状态4 <Img|id=636|x=400|y=5|img=custom/hl/fuli_ui/word_qiri_02.png>
+
+#IF
+#ACT
+MOV S$累计奖励状态1 <Img|id=803|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_01.png|width=70|height=40>
+MOV S$累计奖励状态2 <Img|id=813|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_01.png|width=70|height=40>
+MOV S$累计奖励状态3 <Img|id=823|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_01.png|width=70|height=40>
+MOV S$累计奖励状态4 <Img|id=833|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_01.png|width=70|height=40>
+MOV S$累计奖励状态5 <Img|id=843|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_01.png|width=70|height=40>
+MOV S$累计奖励状态6 <Img|id=853|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_01.png|width=70|height=40>
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 1
+CHECKVAR HUMAN B_累计在线奖励_2 = 0
+#ACT
+MOV S$累计奖励状态1 <Button|id=803|a=4|percentx=50|percenty=80|width=80|color=103|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|text=领取|link=@领取累计2天奖励>
+MOV S$福利红点_1 hd
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 2
+CHECKVAR HUMAN B_累计在线奖励_3 = 0
+#ACT
+MOV S$累计奖励状态2 <Button|id=813|a=4|percentx=50|percenty=80|width=80|color=103|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|text=领取|link=@领取累计3天奖励>
+MOV S$福利红点_1 hd
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 3
+CHECKVAR HUMAN B_累计在线奖励_4 = 0
+#ACT
+MOV S$累计奖励状态3 <Button|id=823|a=4|percentx=50|percenty=80|width=80|color=103|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|text=领取|link=@领取累计4天奖励>
+MOV S$福利红点_1 hd
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 4
+CHECKVAR HUMAN B_累计在线奖励_5 = 0
+#ACT
+MOV S$累计奖励状态4 <Button|id=833|a=4|percentx=50|percenty=80|width=80|color=103|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|text=领取|link=@领取累计5天奖励>
+MOV S$福利红点_1 hd
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 5
+CHECKVAR HUMAN B_累计在线奖励_6 = 0
+#ACT
+MOV S$累计奖励状态5 <Button|id=843|a=4|percentx=50|percenty=80|width=80|color=103|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|text=领取|link=@领取累计6天奖励>
+MOV S$福利红点_1 hd
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 6
+CHECKVAR HUMAN B_累计在线奖励_7 = 0
+#ACT
+MOV S$累计奖励状态6 <Button|id=853|a=4|percentx=50|percenty=80|width=80|color=103|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|text=领取|link=@领取累计7天奖励>
+MOV S$福利红点_1 hd
+#IF
+CHECKVAR HUMAN B_累计在线奖励_2 > 0
+#ACT
+MOV S$累计奖励状态1 <Img|id=803|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_02.png>
+#IF
+CHECKVAR HUMAN B_累计在线奖励_3 > 0
+#ACT
+MOV S$累计奖励状态2 <Img|id=813|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_02.png>
+#IF
+CHECKVAR HUMAN B_累计在线奖励_4 > 0
+#ACT
+MOV S$累计奖励状态3 <Img|id=823|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_02.png>
+#IF
+CHECKVAR HUMAN B_累计在线奖励_5 > 0
+#ACT
+MOV S$累计奖励状态4 <Img|id=833|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_02.png>
+#IF
+CHECKVAR HUMAN B_累计在线奖励_6 > 0
+#ACT
+MOV S$累计奖励状态5 <Img|id=843|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_02.png>
+#IF
+CHECKVAR HUMAN B_累计在线奖励_7 > 0
+#ACT
+MOV S$累计奖励状态6 <Img|id=853|a=4|percentx=50|percenty=80|img=custom/hl/fuli_ui/word_qiri_02.png>
+
+#IF
+#ACT
+GOTO @福利大厅界面
+
+[@领取10分钟奖励]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留5个背包空格</font>
+BREAK
+
+#IF
+CHECKVAR HUMAN B_今日在线时长 > 9
+CHECKVAR HUMAN B_在线奖励_1 = 0
+#ACT
+GetDBIdxItemFieldValue <$STR(S$10分钟奖励1)> Name S$奖品1
+GetDBIdxItemFieldValue <$STR(S$10分钟奖励3)> Name S$奖品2
+GiveStateItem <$STR(S$奖品1)> <$STR(S$10分钟奖励2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$奖品2)> <$STR(S$10分钟奖励4)> 0 1 0 1 1 1 1 1
+CALCVAR HUMAN B_在线奖励_1 = 1
+SAVEVAR HUMAN B_在线奖励_1
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}成功领取了在线{10分钟/FCOLOR=58}奖励。 1 5
+MOV S$福利红点_1
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+GOTO @福利在线奖励
+
+[@领取30分钟奖励]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留5个背包空格</font>
+BREAK
+
+#IF
+CHECKVAR HUMAN B_今日在线时长 > 29
+CHECKVAR HUMAN B_在线奖励_2 = 0
+#ACT
+GetDBIdxItemFieldValue <$STR(S$30分钟奖励1)> Name S$奖品1
+GetDBIdxItemFieldValue <$STR(S$30分钟奖励3)> Name S$奖品2
+GiveStateItem <$STR(S$奖品1)> <$STR(S$30分钟奖励2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$奖品2)> <$STR(S$30分钟奖励4)> 0 1 0 1 1 1 1 1
+CALCVAR HUMAN B_在线奖励_2 = 1
+SAVEVAR HUMAN B_在线奖励_2
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}成功领取了在线{30分钟/FCOLOR=58}奖励。 1 5
+MOV S$福利红点_1
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+GOTO @福利在线奖励
+
+[@领取1小时奖励]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留5个背包空格</font>
+BREAK
+
+#IF
+CHECKVAR HUMAN B_今日在线时长 > 59
+CHECKVAR HUMAN B_在线奖励_3 = 0
+#ACT
+GetDBIdxItemFieldValue <$STR(S$1小时奖励1)> Name S$奖品1
+GetDBIdxItemFieldValue <$STR(S$1小时奖励3)> Name S$奖品2
+GiveStateItem <$STR(S$奖品1)> <$STR(S$1小时奖励2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$奖品2)> <$STR(S$1小时奖励4)> 0 1 0 1 1 1 1 1
+CALCVAR HUMAN B_在线奖励_3 = 1
+SAVEVAR HUMAN B_在线奖励_3
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}成功领取了在线{1小时/FCOLOR=58}奖励。 1 5
+MOV S$福利红点_1
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+GOTO @福利在线奖励
+
+[@领取2小时奖励]
+#IF
+CHECKBAGSIZE 5
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留5个背包空格</font>
+BREAK
+
+#IF
+CHECKVAR HUMAN B_今日在线时长 > 119
+CHECKVAR HUMAN B_在线奖励_4 = 0
+#ACT
+GetDBIdxItemFieldValue <$STR(S$2小时奖励1)> Name S$奖品1
+GetDBIdxItemFieldValue <$STR(S$2小时奖励3)> Name S$奖品2
+GiveStateItem <$STR(S$奖品1)> <$STR(S$2小时奖励2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$奖品2)> <$STR(S$2小时奖励4)> 0 1 0 1 1 1 1 1
+CALCVAR HUMAN B_在线奖励_4 = 1
+SAVEVAR HUMAN B_在线奖励_4
+CALCVAR HUMAN B_累计在线天数 + 1
+SAVEVAR HUMAN B_累计在线天数
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}成功领取了在线{2小时/FCOLOR=58}奖励。 1 5
+MOV S$福利红点_1
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+GOTO @福利在线奖励
+
+[@领取累计2天奖励]
+#IF
+CHECKBAGSIZE 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留2个背包空格</font>
+BREAK
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 1
+CHECKVAR HUMAN B_累计在线奖励_2 = 0
+#ACT
+GetDBIdxItemFieldValue <$STR(S$周在线奖励1)> Name S$奖品1
+GiveStateItem <$STR(S$奖品1)> <$STR(S$周在线奖励2)> 0 1 0 1 1 1 1 1
+CALCVAR HUMAN B_累计在线奖励_2 = 1
+SAVEVAR HUMAN B_累计在线奖励_2
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}成功领取了累计{2天/FCOLOR=58}在线奖励。 1 5
+MOV S$福利红点_1
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+GOTO @福利在线奖励
+
+[@领取累计3天奖励]
+#IF
+CHECKBAGSIZE 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留2个背包空格</font>
+BREAK
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 2
+CHECKVAR HUMAN B_累计在线奖励_3 = 0
+#ACT
+GetDBIdxItemFieldValue <$STR(S$周在线奖励3)> Name S$奖品1
+GiveStateItem <$STR(S$奖品1)> <$STR(S$周在线奖励4)> 0 1 0 1 1 1 1 1
+CALCVAR HUMAN B_累计在线奖励_3 = 1
+SAVEVAR HUMAN B_累计在线奖励_3
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}成功领取了累计{3天/FCOLOR=58}在线奖励。 1 5
+MOV S$福利红点_1
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+GOTO @福利在线奖励
+
+[@领取累计4天奖励]
+#IF
+CHECKBAGSIZE 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留2个背包空格</font>
+BREAK
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 3
+CHECKVAR HUMAN B_累计在线奖励_4 = 0
+#ACT
+GetDBIdxItemFieldValue <$STR(S$周在线奖励5)> Name S$奖品1
+GiveStateItem <$STR(S$奖品1)> <$STR(S$周在线奖励6)> 0 1 0 1 1 1 1 1
+CALCVAR HUMAN B_累计在线奖励_4 = 1
+SAVEVAR HUMAN B_累计在线奖励_4
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}成功领取了累计{3天/FCOLOR=58}在线奖励。 1 5
+MOV S$福利红点_1
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+GOTO @福利在线奖励
+[@领取累计5天奖励]
+#IF
+CHECKBAGSIZE 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留2个背包空格</font>
+BREAK
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 4
+CHECKVAR HUMAN B_累计在线奖励_5 = 0
+#ACT
+GetDBIdxItemFieldValue <$STR(S$周在线奖励7)> Name S$奖品1
+GiveStateItem <$STR(S$奖品1)> <$STR(S$周在线奖励8)> 0 1 0 1 1 1 1 1
+CALCVAR HUMAN B_累计在线奖励_5 = 1
+SAVEVAR HUMAN B_累计在线奖励_5
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}成功领取了累计{3天/FCOLOR=58}在线奖励。 1 5
+MOV S$福利红点_1
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+GOTO @福利在线奖励
+[@领取累计6天奖励]
+#IF
+CHECKBAGSIZE 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留2个背包空格</font>
+BREAK
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 5
+CHECKVAR HUMAN B_累计在线奖励_6 = 0
+#ACT
+GetDBIdxItemFieldValue <$STR(S$周在线奖励9)> Name S$奖品1
+GiveStateItem <$STR(S$奖品1)> <$STR(S$周在线奖励10)> 0 1 0 1 1 1 1 1
+CALCVAR HUMAN B_累计在线奖励_6 = 1
+SAVEVAR HUMAN B_累计在线奖励_6
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}成功领取了累计{3天/FCOLOR=58}在线奖励。 1 5
+MOV S$福利红点_1
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+GOTO @福利在线奖励
+[@领取累计7天奖励]
+#IF
+CHECKBAGSIZE 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留2个背包空格</font>
+BREAK
+
+
+#IF
+CHECKVAR HUMAN B_累计在线天数 > 6
+CHECKVAR HUMAN B_累计在线奖励_7 = 0
+#ACT
+GetDBIdxItemFieldValue <$STR(S$周在线奖励11)> Name S$奖品1
+GiveStateItem <$STR(S$奖品1)> <$STR(S$周在线奖励12)> 0 1 0 1 1 1 1 1
+CALCVAR HUMAN B_累计在线奖励_7 = 1
+SAVEVAR HUMAN B_累计在线奖励_7
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}成功领取了累计{3天/FCOLOR=58}在线奖励。 1 5
+MOV S$福利红点_1
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+GOTO @福利在线奖励
+
+[@福利每日签到]
+#IF
+#ACT
+MOV N$累计奖励领取状态_1 1
+MOV N$累计奖励领取状态_2 1
+MOV N$累计奖励领取状态_3 1
+MOV N$累计奖励领取状态_4 1
+MOV N$累计奖励领取状态_5 1
+GOTO @每日签到检测
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|percentx=50|percenty=3.8|color=100|size=20|outline=2|outlinecolor=0|text=每日签到>
+<ListView|id=3|children={31}|x=140|y=60|width=3|height=450|margin=2|bounce=0|direction=1|color=x>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45}|x=22|y=62|width=145|height=450|margin=2|bounce=0|direction=1|color=x>
+<Button|id=41|children={410}|<$STR(S$默认按钮)>|size=18|text=在线奖励|link=@福利在线奖励>
+<Img|id=410|x=98|y=3|img=custom/hl/hl_ui/<$STR(S$福利红点_1)>.png>
+<Button|id=42|children={420}|<$STR(S$激活按钮)>|size=18|text=每日签到|link=@福利每日签到>
+<Img|id=420|x=98|y=3|img=custom/hl/hl_ui/<$STR(S$福利红点_2)>.png>
+<Button|id=43|children={430}|<$STR(S$默认按钮)>|size=18|text=尊享有礼|link=@福利尊享有礼>
+<Img|id=430|x=98|y=3|img=custom/hl/hl_ui/<$STR(S$福利红点_3)>.png>
+
+<ListView|id=6|children={60,61,62,63,64,65,66,67,68}|x=150|y=62|width=596|height=298|margin=2|bounce=0|direction=1|color=x>
+
+<Layout|id=60|children={601,602,603,604,605,606,607,608}|x=0|y=0|width=595|height=100|color=x>
+
+<Layout|id=601|children={6011,6012,6013}||width=80|height=85|color=x|x=10>
+<ItemShow|id=6011|x=6|y=3|itemid=<$STR(S$累计签到奖励1)>|itemcount=<$STR(S$累计签到奖励2)>|showtips=1|bgtype=1>
+<Text|id=6012|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第1天>
+<$STR(S$累计签到状态1)>
+
+<Layout|id=602|children={6021,6022,6023}||width=80|height=85|color=x|x=90>
+<ItemShow|id=6021|x=6|y=3|itemid=<$STR(S$累计签到奖励3)>|itemcount=<$STR(S$累计签到奖励4)>|showtips=1|bgtype=1>
+<Text|id=6022|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第2天>
+<$STR(S$累计签到状态2)>
+
+<Layout|id=603|children={6031,6032,6033}||width=80|height=85|color=x|x=170>
+<ItemShow|id=6031|x=6|y=3|itemid=<$STR(S$累计签到奖励5)>|itemcount=<$STR(S$累计签到奖励6)>|showtips=1|bgtype=1>
+<Text|id=6032|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第3天>
+<$STR(S$累计签到状态3)>
+
+<Layout|id=604|children={6041,6042,6043}||width=80|height=85|color=x|x=250>
+<ItemShow|id=6041|x=6|y=3|itemid=<$STR(S$累计签到奖励7)>|itemcount=<$STR(S$累计签到奖励8)>|showtips=1|bgtype=1>
+<Text|id=6042|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第4天>
+<$STR(S$累计签到状态4)>
+
+<Layout|id=605|children={6051,6052,6053}||width=80|height=85|color=x|x=330>
+<ItemShow|id=6051|x=6|y=3|itemid=<$STR(S$累计签到奖励9)>|itemcount=<$STR(S$累计签到奖励10)>|showtips=1|bgtype=1>
+<Text|id=6052|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第5天>
+<$STR(S$累计签到状态5)>
+
+<Layout|id=606|children={6061,6062,6063}||width=80|height=85|color=x|x=410>
+<ItemShow|id=6061|x=6|y=3|itemid=<$STR(S$累计签到奖励11)>|itemcount=<$STR(S$累计签到奖励12)>|showtips=1|bgtype=1>
+<Text|id=6062|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第6天>
+<$STR(S$累计签到状态6)>
+
+<Layout|id=607|children={6071,6072,6073}||width=80|height=85|color=x|x=490>
+<ItemShow|id=6071|x=6|y=3|itemid=<$STR(S$累计签到奖励13)>|itemcount=<$STR(S$累计签到奖励14)>|showtips=1|bgtype=1>
+<Text|id=6072|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第7天>
+<$STR(S$累计签到状态7)>
+
+<Layout|id=61|children={611,612,613,614,615,616,617,618}|x=0|y=100|width=595|height=100|color=x>
+
+<Layout|id=611|children={6111,6112,6113}||width=80|height=85|color=x|x=10>
+<ItemShow|id=6111|x=6|y=3|itemid=<$STR(S$累计签到奖励15)>|itemcount=<$STR(S$累计签到奖励16)>|showtips=1|bgtype=1>
+<Text|id=6112|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第8天>
+<$STR(S$累计签到状态8)>
+
+<Layout|id=612|children={6121,6122,6123}||width=80|height=85|color=x|x=90>
+<ItemShow|id=6121|x=6|y=3|itemid=<$STR(S$累计签到奖励17)>|itemcount=<$STR(S$累计签到奖励18)>|showtips=1|bgtype=1>
+<Text|id=6122|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第9天>
+<$STR(S$累计签到状态9)>
+
+<Layout|id=613|children={6131,6132,6133}||width=80|height=85|color=x|x=170>
+<ItemShow|id=6131|x=6|y=3|itemid=<$STR(S$累计签到奖励19)>|itemcount=<$STR(S$累计签到奖励20)>|showtips=1|bgtype=1>
+<Text|id=6132|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第10天>
+<$STR(S$累计签到状态10)>
+
+<Layout|id=614|children={6141,6142,6143}||width=80|height=85|color=x|x=250>
+<ItemShow|id=6141|x=6|y=3|itemid=<$STR(S$累计签到奖励21)>|itemcount=<$STR(S$累计签到奖励22)>|showtips=1|bgtype=1>
+<Text|id=6142|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第11天>
+<$STR(S$累计签到状态11)>
+
+<Layout|id=615|children={6151,6152,6153}||width=80|height=85|color=x|x=330>
+<ItemShow|id=6151|x=6|y=3|itemid=<$STR(S$累计签到奖励23)>|itemcount=<$STR(S$累计签到奖励24)>|showtips=1|bgtype=1>
+<Text|id=6152|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第12天>
+<$STR(S$累计签到状态12)>
+
+<Layout|id=616|children={6161,6162,6163}||width=80|height=85|color=x|x=410>
+<ItemShow|id=6161|x=6|y=3|itemid=<$STR(S$累计签到奖励25)>|itemcount=<$STR(S$累计签到奖励26)>|showtips=1|bgtype=1>
+<Text|id=6162|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第13天>
+<$STR(S$累计签到状态13)>
+
+<Layout|id=617|children={6171,6172,6173}||width=80|height=85|color=x|x=490>
+<ItemShow|id=6171|x=6|y=3|itemid=<$STR(S$累计签到奖励27)>|itemcount=<$STR(S$累计签到奖励28)>|showtips=1|bgtype=1>
+<Text|id=6172|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第14天>
+<$STR(S$累计签到状态14)>
+
+<Layout|id=62|children={621,622,623,624,625,626,627,628}|x=0|y=200|width=595|height=100|color=x>
+
+<Layout|id=621|children={6211,6212,6213}||width=80|height=85|color=x|x=10>
+<ItemShow|id=6211|x=6|y=3|itemid=<$STR(S$累计签到奖励29)>|itemcount=<$STR(S$累计签到奖励30)>|showtips=1|bgtype=1>
+<Text|id=6212|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第15天>
+<$STR(S$累计签到状态15)>
+
+<Layout|id=622|children={6221,6222,6223}||width=80|height=85|color=x|x=90>
+<ItemShow|id=6221|x=6|y=3|itemid=<$STR(S$累计签到奖励31)>|itemcount=<$STR(S$累计签到奖励32)>|showtips=1|bgtype=1>
+<Text|id=6222|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第16天>
+<$STR(S$累计签到状态16)>
+
+<Layout|id=623|children={6231,6232,6233}||width=80|height=85|color=x|x=170>
+<ItemShow|id=6231|x=6|y=3|itemid=<$STR(S$累计签到奖励33)>|itemcount=<$STR(S$累计签到奖励34)>|showtips=1|bgtype=1>
+<Text|id=6232|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第17天>
+<$STR(S$累计签到状态17)>
+
+<Layout|id=624|children={6241,6242,6243}||width=80|height=85|color=x|x=250>
+<ItemShow|id=6241|x=6|y=3|itemid=<$STR(S$累计签到奖励35)>|itemcount=<$STR(S$累计签到奖励36)>|showtips=1|bgtype=1>
+<Text|id=6242|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第18天>
+<$STR(S$累计签到状态18)>
+
+<Layout|id=625|children={6251,6252,6253}||width=80|height=85|color=x|x=330>
+<ItemShow|id=6251|x=6|y=3|itemid=<$STR(S$累计签到奖励37)>|itemcount=<$STR(S$累计签到奖励38)>|showtips=1|bgtype=1>
+<Text|id=6252|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第19天>
+<$STR(S$累计签到状态19)>
+
+<Layout|id=626|children={6261,6262,6263}||width=80|height=85|color=x|x=410>
+<ItemShow|id=6261|x=6|y=3|itemid=<$STR(S$累计签到奖励39)>|itemcount=<$STR(S$累计签到奖励40)>|showtips=1|bgtype=1>
+<Text|id=6262|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第20天>
+<$STR(S$累计签到状态20)>
+;<Img|id=6263|img=public/1900000678_4.png|x=8|y=5>
+
+<Layout|id=627|children={6271,6272,6273}||width=80|height=85|color=x|x=490>
+<ItemShow|id=6271|x=6|y=3|itemid=<$STR(S$累计签到奖励41)>|itemcount=<$STR(S$累计签到奖励42)>|showtips=1|bgtype=1>
+<Text|id=6272|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第21天>
+<$STR(S$累计签到状态21)>
+
+<Layout|id=63|children={631,632,633,634,635,636,637,638}|x=0|y=300|width=595|height=100|color=x>
+
+<Layout|id=631|children={6311,6312,6313}||width=80|height=85|color=x|x=10>
+<ItemShow|id=6311|x=6|y=3|itemid=<$STR(S$累计签到奖励43)>|itemcount=<$STR(S$累计签到奖励44)>|showtips=1|bgtype=1>
+<Text|id=6312|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第22天>
+<$STR(S$累计签到状态22)>
+
+<Layout|id=632|children={6321,6322,6323}||width=80|height=85|color=x|x=90>
+<ItemShow|id=6321|x=6|y=3|itemid=<$STR(S$累计签到奖励45)>|itemcount=<$STR(S$累计签到奖励46)>|showtips=1|bgtype=1>
+<Text|id=6322|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第23天>
+<$STR(S$累计签到状态23)>
+
+<Layout|id=633|children={6331,6332,6333}||width=80|height=85|color=x|x=170>
+<ItemShow|id=6331|x=6|y=3|itemid=<$STR(S$累计签到奖励47)>|itemcount=<$STR(S$累计签到奖励48)>|showtips=1|bgtype=1>
+<Text|id=6332|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第24天>
+<$STR(S$累计签到状态24)>
+
+<Layout|id=634|children={6341,6342,6343}||width=80|height=85|color=x|x=250>
+<ItemShow|id=6341|x=6|y=3|itemid=<$STR(S$累计签到奖励49)>|itemcount=<$STR(S$累计签到奖励50)>|showtips=1|bgtype=1>
+<Text|id=6342|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第25天>
+<$STR(S$累计签到状态25)>
+
+<Layout|id=635|children={6351,6352,6353}||width=80|height=85|color=x|x=330>
+<ItemShow|id=6351|x=6|y=3|itemid=<$STR(S$累计签到奖励51)>|itemcount=<$STR(S$累计签到奖励52)>|showtips=1|bgtype=1>
+<Text|id=6352|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第26天>
+<$STR(S$累计签到状态26)>
+
+<Layout|id=636|children={6361,6362,6363}||width=80|height=85|color=x|x=410>
+<ItemShow|id=6361|x=6|y=3|itemid=<$STR(S$累计签到奖励53)>|itemcount=<$STR(S$累计签到奖励54)>|showtips=1|bgtype=1>
+<Text|id=6362|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第27天>
+<$STR(S$累计签到状态27)>
+
+<Layout|id=637|children={6371,6372,6373}||width=80|height=85|color=x|x=490>
+<ItemShow|id=6371|x=6|y=3|itemid=<$STR(S$累计签到奖励55)>|itemcount=<$STR(S$累计签到奖励56)>|showtips=1|bgtype=1>
+<Text|id=6372|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第28天>
+<$STR(S$累计签到状态28)>
+
+;<Layout|id=64|children={641,642,643,644,645,646,647,648}|x=0|y=400|width=595|height=100|color=x>
+
+;<Layout|id=641|children={6411,6412,6413}||width=80|height=85|color=x|x=10>
+;<ItemShow|id=6411|x=6|y=3|itemid=2|itemcount=1|showtips=1|bgtype=1>
+;<Text|id=6412|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第29天>
+;<$STR(S$累计签到状态29)>
+
+;<Layout|id=642|children={6421,6422,6423}||width=80|height=85|color=x|x=90>
+;<ItemShow|id=6421|x=6|y=3|itemid=2|itemcount=1|showtips=1|bgtype=1>
+;<Text|id=6422|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第30天>
+;<$STR(S$累计签到状态30)>
+
+;<Layout|id=643|children={6431,6432,6433}||width=80|height=85|color=x|x=170>
+;<ItemShow|id=6431|x=6|y=3|itemid=2|itemcount=1|showtips=1|bgtype=1>
+;<Text|id=6432|a=4|percentx=50|percenty=98|color=95|size=20|outline=2|outlinecolor=0|text=第31天>
+;<$STR(S$累计签到状态31)>
+
+<ListView|id=7|children={71}|x=143|y=363|width=610|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=71|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=8|children={80,81,82,83,84,85,86,87,88}|x=150|y=371|width=596|height=35|margin=2|bounce=0|direction=2|color=x>
+<Button|id=80|width=80|nimg=custom/hl/fuli_ui/fuli_03.png|pimg=custom/hl/fuli_ui/fuli_03.png|color=<$STR(N$预览颜色_1)>|size=18|text=累计2天|link=@预览2天奖励>
+<Button|id=81|width=80|nimg=custom/hl/fuli_ui/fuli_03.png|pimg=custom/hl/fuli_ui/fuli_03.png|color=<$STR(N$预览颜色_2)>|size=18|text=累计5天|link=@预览5天奖励>
+<Button|id=82|width=80|nimg=custom/hl/fuli_ui/fuli_03.png|pimg=custom/hl/fuli_ui/fuli_03.png|color=<$STR(N$预览颜色_3)>|size=18|text=累计12天|link=@预览12天奖励>
+<Button|id=83|width=80|nimg=custom/hl/fuli_ui/fuli_03.png|pimg=custom/hl/fuli_ui/fuli_03.png|color=<$STR(N$预览颜色_4)>|size=18|text=累计20天|link=@预览20天奖励>
+<Button|id=84|width=80|nimg=custom/hl/fuli_ui/fuli_03.png|pimg=custom/hl/fuli_ui/fuli_03.png|color=<$STR(N$预览颜色_5)>|size=18|text=累计28天|link=@预览28天奖励>
+<Layout|id=85|children={851}||width=260|height=35|color=x>
+<RText|id=851|a=4|percentx=35|percenty=40|color=255|size=18|outline=2|outlinecolor=0|text=已累计签到：<<$HUMAN(B_累计签到天数)>/FCOLOR=250>天>
+
+<ListView|id=9|children={91}|x=143|y=405|width=610|height=3|margin=2|bounce=0|direction=2|color=x>
+<Img|id=91|img=custom/hl/hl_ui/hl_bg_01.png>
+
+<ListView|id=10|children={101,102,103,104,105,106}|x=190|y=427|width=460|height=80|margin=5|bounce=0|direction=2|color=x>
+<ItemShow|id=101|x=6|y=3|itemid=<$STR(S$合计签到奖励1)>|itemcount=<$STR(S$合计签到奖励2)>|showtips=1|bgtype=1>
+<ItemShow|id=102|x=6|y=3|itemid=<$STR(S$合计签到奖励3)>|itemcount=<$STR(S$合计签到奖励4)>|showtips=1|bgtype=1>
+<ItemShow|id=103|x=6|y=3|itemid=<$STR(S$合计签到奖励5)>|itemcount=<$STR(S$合计签到奖励6)>|showtips=1|bgtype=1>
+<ItemShow|id=104|x=6|y=3|itemid=<$STR(S$合计签到奖励7)>|itemcount=<$STR(S$合计签到奖励8)>|showtips=1|bgtype=1>
+<ItemShow|id=105|x=6|y=3|itemid=<$STR(S$合计签到奖励9)>|itemcount=<$STR(S$合计签到奖励10)>|showtips=1|bgtype=1>
+;<ItemShow|id=106|x=6|y=3|itemid=<$STR(S$合计签到奖励11)>|itemcount=<$STR(S$合计签到奖励12)>|showtips=1|bgtype=1>
+<Img|id=15|x=320|y=430|img=custom/hl/fuli_ui/word_qiri_0<$STR(N$累计奖励领取状态)>.png>
+<$STR(S$今日签到状态)>
+<Button|id=12|x=720|y=62|nimg=custom/hl/hl_ui/icon_fuhao_02.png|pimg=custom/hl/hl_ui/icon_fuhao_02.png|color=103|size=18|link=@在线签到提示>
+<$STR(S$签到提示)>
+
+#IF
+EQUAL <$STR(S$C_签到支线跳转)> 开
+#ACT
+MOV S$C_签到支线跳转
+Navigation 0 11 点此领取
+
+
+[@在线签到提示]
+#IF
+NOT EQUAL S$签到提示
+#ACT
+MOV S$签到提示
+GOTO @福利每日签到
+#ELSEACT
+MOV S$签到提示 <Img|id=13|children={131,132,133,134,135}|x=360|y=83|width=365|height=100|img=public/1900000677.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
+INC S$签到提示 <RText|id=131|x=20|y=6|color=255|size=16|text=1、每月<1号零点/FCOLOR=58>重置签到福利。>
+INC S$签到提示 <RText|id=132|x=20|y=26|color=255|size=16|text=2、每日仅可<签到一次/FCOLOR=250>>
+INC S$签到提示 <RText|id=133|x=20|y=46|color=255|size=16|text=3、累计签到一定次数可领取累计<签到奖励/FCOLOR=243>>
+INC S$签到提示 <RText|id=134|x=20|y=66|color=255|size=16|text=4、累计奖励通过<邮件/FCOLOR=245>自动发送>
+INC S$签到提示 <Layout|id=14|x=160|y=60|width=600|height=430|color=x|link=@关闭签到提示>
+GOTO @福利每日签到
+
+[@关闭签到提示]
+#IF
+#ACT
+MOV S$签到提示
+GOTO @福利每日签到
+
+
+[@每日签到检测]
+#IF
+#ACT
+MOV S$福利红点_2
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 0
+#ACT
+MOV S$累计签到状态1 <Img|id=6013|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 1
+#ACT
+MOV S$累计签到状态2 <Img|id=6023|img=public/1900000678_4.png|x=8|y=5>
+MOV N$累计奖励领取状态_1 2
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 2
+#ACT
+MOV S$累计签到状态3 <Img|id=6033|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 3
+#ACT
+MOV S$累计签到状态4 <Img|id=6043|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 4
+#ACT
+MOV S$累计签到状态5 <Img|id=6053|img=public/1900000678_4.png|x=8|y=5>
+MOV N$累计奖励领取状态_2 2
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 5
+#ACT
+MOV S$累计签到状态6 <Img|id=6063|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 6
+#ACT
+MOV S$累计签到状态7 <Img|id=6073|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 7
+#ACT
+MOV S$累计签到状态8 <Img|id=6113|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 8
+#ACT
+MOV S$累计签到状态9 <Img|id=6123|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 9
+#ACT
+MOV S$累计签到状态10 <Img|id=6133|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 10
+#ACT
+MOV S$累计签到状态11 <Img|id=6143|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 11
+#ACT
+MOV S$累计签到状态12 <Img|id=6153|img=public/1900000678_4.png|x=8|y=5>
+MOV N$累计奖励领取状态_3 2
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 12
+#ACT
+MOV S$累计签到状态13 <Img|id=6163|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 13
+#ACT
+MOV S$累计签到状态14 <Img|id=6173|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 14
+#ACT
+MOV S$累计签到状态15 <Img|id=6213|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 15
+#ACT
+MOV S$累计签到状态16 <Img|id=6223|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 16
+#ACT
+MOV S$累计签到状态17 <Img|id=6233|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 17
+#ACT
+MOV S$累计签到状态18 <Img|id=6243|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 18
+#ACT
+MOV S$累计签到状态19 <Img|id=6253|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 19
+#ACT
+MOV S$累计签到状态20 <Img|id=6263|img=public/1900000678_4.png|x=8|y=5>
+MOV N$累计奖励领取状态_4 2
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 20
+#ACT
+MOV S$累计签到状态21 <Img|id=6273|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 21
+#ACT
+MOV S$累计签到状态22 <Img|id=6313|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 22
+#ACT
+MOV S$累计签到状态23 <Img|id=6323|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 23
+#ACT
+MOV S$累计签到状态24 <Img|id=6333|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 24
+#ACT
+MOV S$累计签到状态25 <Img|id=6343|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 25
+#ACT
+MOV S$累计签到状态26 <Img|id=6353|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 26
+#ACT
+MOV S$累计签到状态27 <Img|id=6363|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 27
+#ACT
+MOV S$累计签到状态28 <Img|id=6373|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 28
+#ACT
+MOV S$累计签到状态29 <Img|id=6413|img=public/1900000678_4.png|x=8|y=5>
+MOV N$累计奖励领取状态_5 2
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 29
+#ACT
+MOV S$累计签到状态30 <Img|id=6423|img=public/1900000678_4.png|x=8|y=5>
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 30
+#ACT
+MOV S$累计签到状态31 <Img|id=6433|img=public/1900000678_4.png|x=8|y=5>
+
+
+#IF
+CHECKVAR HUMAN B_今日签到状态 = 0
+#ACT
+MOV S$今日签到状态 <Button|id=11|x=610|y=440|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=签到|link=@执行每日签到>
+MOV S$福利红点_2 hd
+#elseact
+MOV S$今日签到状态 <Button|id=11|x=610|y=440|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=250|size=18|text=已签到>
+MOV S$福利红点_2
+#IF
+CHECKVAR HUMAN B_累计签到天数 > 28
+#ACT
+MOV S$今日签到状态 <Button|id=11|x=610|y=440|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=250|size=18|text=已满签>
+MOV S$福利红点_2
+#IF
+#ACT
+MOV N$预览颜色_1 103
+MOV N$预览颜色_2 103
+MOV N$预览颜色_3 103
+MOV N$预览颜色_4 103
+MOV N$预览颜色_5 103
+
+#IF
+EQUAL N$预览签到 2
+#ACT
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 11 S$合计签到奖励 |
+MOV N$预览颜色_1 250
+MOV N$累计奖励领取状态 <$str(N$累计奖励领取状态_1)>
+#IF
+EQUAL N$预览签到 5
+#ACT
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 12 S$合计签到奖励 |
+MOV N$预览颜色_2 250
+MOV N$累计奖励领取状态 <$str(N$累计奖励领取状态_2)>
+#IF
+EQUAL N$预览签到 12
+#ACT
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 13 S$合计签到奖励 |
+MOV N$预览颜色_3 250
+MOV N$累计奖励领取状态 <$str(N$累计奖励领取状态_3)>
+#IF
+EQUAL N$预览签到 20
+#ACT
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 14 S$合计签到奖励 |
+MOV N$预览颜色_4 250
+MOV N$累计奖励领取状态 <$str(N$累计奖励领取状态_4)>
+#IF
+EQUAL N$预览签到 28
+#ACT
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 15 S$合计签到奖励 |
+MOV N$预览颜色_5 250
+MOV N$累计奖励领取状态 <$str(N$累计奖励领取状态_5)>
+
+
+
+[@执行每日签到]
+#IF
+CHECKBAGSIZE 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留2个背包空格</font>
+BREAK
+
+
+#IF
+CHECKVAR HUMAN B_今日签到状态 = 0
+#ACT
+CALCVAR HUMAN B_今日签到状态 = 1
+SAVEVAR HUMAN B_今日签到状态
+CALCVAR HUMAN B_累计签到天数 + 1
+SAVEVAR HUMAN B_累计签到天数
+MOV N$临时奖品序号 <$HUMAN(B_累计签到天数)>
+MUL N$临时奖品序号 2
+MOV N$临时奖品计数 <$STR(N$临时奖品序号)>
+DEC N$临时奖品序号 1
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 9 S$累计签到奖励 |
+GetDBIdxItemFieldValue <$STR(S$累计签到奖励<$STR(N$临时奖品序号)>)> Name S$奖品1
+GiveStateItem <$STR(S$奖品1)> <$STR(S$累计签到奖励<$STR(N$临时奖品计数)>)> 0 1 0 1 1 1 1 1
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}在福利大厅处{成功签到/FCOLOR=58}更有累计签到大奖惊喜不断,不要错过哦！。 1 5
+
+#IF
+CHECKVAR HUMAN B_累计签到天数 = 2
+#ACT
+CALCVAR HUMAN B_累计签到奖励 = 1
+SAVEVAR HUMAN B_累计签到奖励
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 11 S$合计签到奖励 |
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励1)> Name S$奖品1
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励3)> Name S$奖品3
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励5)> Name S$奖品5
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励7)> Name S$奖品7
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励9)> Name S$奖品9
+MailGIVE <$STR(S$奖品1)> <$STR(S$合计签到奖励2)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品3)> <$STR(S$合计签到奖励4)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品5)> <$STR(S$合计签到奖励6)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品7)> <$STR(S$合计签到奖励8)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品9)> <$STR(S$合计签到奖励10)> 1#3#4#5#6#7#8
+SendMail 1 每日签到 你好：<$USERNAME>你在本服已连续签到2天，特发奖品以资鼓励,请点提取! 
+
+#IF
+CHECKVAR HUMAN B_累计签到天数 = 5
+#ACT
+CALCVAR HUMAN B_累计签到奖励 = 2
+SAVEVAR HUMAN B_累计签到奖励
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 12 S$合计签到奖励 |
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励1)> Name S$奖品1
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励3)> Name S$奖品3
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励5)> Name S$奖品5
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励7)> Name S$奖品7
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励9)> Name S$奖品9
+MailGIVE <$STR(S$奖品1)> <$STR(S$合计签到奖励2)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品3)> <$STR(S$合计签到奖励4)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品5)> <$STR(S$合计签到奖励6)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品7)> <$STR(S$合计签到奖励8)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品9)> <$STR(S$合计签到奖励10)> 1#3#4#5#6#7#8
+SendMail 1 每日签到 你好：<$USERNAME>你在本服已连续签到5天，特发奖品以资鼓励,请点提取! 
+
+#IF
+CHECKVAR HUMAN B_累计签到天数 = 12
+#ACT
+CALCVAR HUMAN B_累计签到奖励 = 3
+SAVEVAR HUMAN B_累计签到奖励
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 13 S$合计签到奖励 |
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励1)> Name S$奖品1
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励3)> Name S$奖品3
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励5)> Name S$奖品5
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励7)> Name S$奖品7
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励9)> Name S$奖品9
+MailGIVE <$STR(S$奖品1)> <$STR(S$合计签到奖励2)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品3)> <$STR(S$合计签到奖励4)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品5)> <$STR(S$合计签到奖励6)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品7)> <$STR(S$合计签到奖励8)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品9)> <$STR(S$合计签到奖励10)> 1#3#4#5#6#7#8
+SendMail 1 每日签到 你好：<$USERNAME>你在本服已连续签到12天，特发奖品以资鼓励,请点提取! 
+
+#IF
+CHECKVAR HUMAN B_累计签到天数 = 20
+#ACT
+CALCVAR HUMAN B_累计签到奖励 = 4
+SAVEVAR HUMAN B_累计签到奖励
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 14 S$合计签到奖励 |
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励1)> Name S$奖品1
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励3)> Name S$奖品3
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励5)> Name S$奖品5
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励7)> Name S$奖品7
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励9)> Name S$奖品9
+MailGIVE <$STR(S$奖品1)> <$STR(S$合计签到奖励2)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品3)> <$STR(S$合计签到奖励4)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品5)> <$STR(S$合计签到奖励6)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品7)> <$STR(S$合计签到奖励8)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品9)> <$STR(S$合计签到奖励10)> 1#3#4#5#6#7#8
+SendMail 1 每日签到 你好：<$USERNAME>你在本服已连续签到20天，特发奖品以资鼓励,请点提取! 
+
+#IF
+CHECKVAR HUMAN B_累计签到天数 = 28
+#ACT
+CALCVAR HUMAN B_累计签到奖励 = 5
+SAVEVAR HUMAN B_累计签到奖励
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 15 S$合计签到奖励 |
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励1)> Name S$奖品1
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励3)> Name S$奖品3
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励5)> Name S$奖品5
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励7)> Name S$奖品7
+GetDBIdxItemFieldValue <$STR(S$合计签到奖励9)> Name S$奖品9
+MailGIVE <$STR(S$奖品1)> <$STR(S$合计签到奖励2)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品3)> <$STR(S$合计签到奖励4)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品5)> <$STR(S$合计签到奖励6)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品7)> <$STR(S$合计签到奖励8)> 1#3#4#5#6#7#8
+MailGIVE <$STR(S$奖品9)> <$STR(S$合计签到奖励10)> 1#3#4#5#6#7#8
+SendMail 1 每日签到 你好：<$USERNAME>你在本服已连续签到28天，特发奖品以资鼓励,请点提取! 
+
+
+#IF
+LARGE <$HUMAN(B_累计签到天数)> 0
+check [426] 1
+check [427] 0
+#ACT
+set [427] 1
+NEWCHANGETASK 36
+MOV S$福利红点_2
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+close
+break
+
+#IF
+#ACT
+MOV S$福利红点_2
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+GOTO @福利每日签到
+
+[@预览2天奖励]
+#IF
+#ACT
+MOV N$预览签到 2
+GOTO @福利每日签到
+
+[@预览5天奖励]
+#IF
+#ACT
+MOV N$预览签到 5
+GOTO @福利每日签到
+[@预览12天奖励]
+#IF
+#ACT
+MOV N$预览签到 12
+GOTO @福利每日签到
+[@预览20天奖励]
+#IF
+#ACT
+MOV N$预览签到 20
+GOTO @福利每日签到
+[@预览28天奖励]
+#IF
+#ACT
+MOV N$预览签到 28
+GOTO @福利每日签到
+
+[@福利配置读取]
+#IF
+EQUAL <$HUMAN(B_本次登录时间)> ??
+#ACT
+VAR Integer HUMAN B_本次登录时间
+#IF
+EQUAL <$HUMAN(B_上次在线时长)> ??
+#ACT
+VAR Integer HUMAN B_上次在线时长
+#IF
+EQUAL <$HUMAN(B_今日在线时长)> ??
+#ACT
+VAR Integer HUMAN B_今日在线时长
+#IF
+EQUAL <$HUMAN(B_累计在线天数)> ??
+#ACT
+VAR Integer HUMAN B_累计在线天数
+#IF
+EQUAL <$HUMAN(B_累计签到天数)> ??
+#ACT
+VAR Integer HUMAN B_累计签到天数
+#IF
+EQUAL <$HUMAN(B_累计签到奖励)> ??
+#ACT
+VAR Integer HUMAN B_累计签到奖励
+#IF
+EQUAL <$HUMAN(B_今日签到状态)> ??
+#ACT
+VAR Integer HUMAN B_今日签到状态
+#IF
+EQUAL <$HUMAN(B_累计在线奖励_2)> ??
+#ACT
+VAR Integer HUMAN B_累计在线奖励_2
+#IF
+EQUAL <$HUMAN(B_累计在线奖励_3)> ??
+#ACT
+VAR Integer HUMAN B_累计在线奖励_3
+#IF
+EQUAL <$HUMAN(B_累计在线奖励_4)> ??
+#ACT
+VAR Integer HUMAN B_累计在线奖励_4
+#IF
+EQUAL <$HUMAN(B_累计在线奖励_5)> ??
+#ACT
+VAR Integer HUMAN B_累计在线奖励_5
+#IF
+EQUAL <$HUMAN(B_累计在线奖励_6)> ??
+#ACT
+VAR Integer HUMAN B_累计在线奖励_6
+#IF
+EQUAL <$HUMAN(B_累计在线奖励_7)> ??
+#ACT
+VAR Integer HUMAN B_累计在线奖励_7
+#IF
+EQUAL <$HUMAN(B_在线奖励_1)> ??
+#ACT
+VAR Integer HUMAN B_在线奖励_1
+#IF
+EQUAL <$HUMAN(B_在线奖励_2)> ??
+#ACT
+VAR Integer HUMAN B_在线奖励_2
+#IF
+EQUAL <$HUMAN(B_在线奖励_3)> ??
+#ACT
+VAR Integer HUMAN B_在线奖励_3
+#IF
+EQUAL <$HUMAN(B_在线奖励_4)> ??
+#ACT
+VAR Integer HUMAN B_在线奖励_4
+#IF
+EQUAL <$HUMAN(B_尊享礼包记录)> ??
+#ACT
+VAR Integer HUMAN B_尊享礼包记录
+#IF
+EQUAL <$HUMAN(B_历史登录天数)> ??
+#ACT
+VAR Integer HUMAN B_历史登录天数
+
+#IF
+#ACT
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 2 S$10分钟奖励 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 3 S$30分钟奖励 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 4 S$1小时奖励 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 5 S$2小时奖励 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 7 S$周在线奖励 |
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt 9 S$累计签到奖励 |
+
+[@福利尊享有礼]
+#IF
+#ACT
+MOV N$尊享验证成功 0
+GOTO @尊享数据读取
+;SENDMSG 6 总串<$STR(S$ID总串)>
+;SENDMSG 6 未达成<$STR(S$ID未达成总串)>
+;SENDMSG 6 已领取总串<$STR(S$ID已领取总串)>
+INC S$ID总串 <$STR(S$ID未达成总串)>
+INC S$ID总串 <$STR(S$ID已领取总串)>
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|percentx=50|percenty=3.8|color=100|size=20|outline=2|outlinecolor=0|text=尊享有礼>
+<ListView|id=3|children={31}|x=140|y=60|width=3|height=450|margin=2|bounce=0|direction=1|color=x>
+<Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45}|x=22|y=62|width=145|height=450|margin=2|bounce=0|direction=1|color=x>
+<Button|id=41|children={410}|<$STR(S$默认按钮)>|size=18|text=在线奖励|link=@福利在线奖励>
+<Img|id=410|x=98|y=3|img=custom/hl/hl_ui/<$STR(S$福利红点_1)>.png>
+<Button|id=42|children={420}|<$STR(S$默认按钮)>|size=18|text=每日签到|link=@福利每日签到>
+<Img|id=420|x=98|y=3|img=custom/hl/hl_ui/<$STR(S$福利红点_2)>.png>
+<Button|id=43|children={430}|<$STR(S$激活按钮)>|size=18|text=尊享有礼|link=@福利尊享有礼>
+<Img|id=430|x=98|y=3|img=custom/hl/hl_ui/<$STR(S$福利红点_3)>.png>
+
+<Layout|id=5|children={51,52,53,54,55,56}|x=145|y=60|width=610|height=100|color=x>
+<Img|id=51|x=0|y=0|width=610|height=100|img=custom/hl/fuli_ui/fuli_07.jpg>
+<ListView|id=6|children={<$STR(S$ID总串)>}|x=145|y=160|width=610|height=350|margin=8|bounce=0|direction=1|color=x>
+<$STR(S$展现总串)>
+
+[@尊享数据读取]
+#IF
+#ACT
+MOV N$尊享流水号 59
+MOV N$尊享序号 <$STR(N$尊享流水号)>
+MOV N$总项目个数 35
+MOV N$尊享未达成序号 <$STR(N$尊享流水号)>
+INC N$尊享未达成序号 <$STR(N$总项目个数)>
+MOV N$尊享已领取序号 0
+MOV N$数据起步行 17
+MOV N$礼包记录递增数 0
+MOV N$读取序号 0
+MOV S$ID总串
+MOV S$ID已领取总串
+MOV S$ID未达成总串
+MOV S$展现总串
+GOTO @执行尊享数据读取
+
+
+[@执行尊享数据读取]
+#IF
+SMALL N$读取序号 <$STR(N$总项目个数)>
+#ACT
+INC N$读取序号 1
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\福利大厅配置.txt <$STR(N$数据起步行)> S$尊享<$STR(N$读取序号)>数据 |
+INC N$数据起步行 1
+#ELSEACT
+BREAK
+#IF
+SMALL N$读取序号 3
+#ACT
+MOV S$展现文字 在线
+MOV S$展现后缀 分钟
+MOV S$检测变量名 B_今日在线时长
+#ELSEACT
+MOV S$展现文字 累计
+MOV S$展现后缀 天
+MOV S$检测变量名 B_历史登录天数
+
+
+
+#IF
+CHECKVAR HUMAN B_尊享礼包记录 > <$STR(N$礼包记录递增数)>
+#ACT
+INC N$尊享未达成序号 1
+MOV N$尊享号_<$STR(N$读取序号)> <$STR(N$尊享未达成序号)>
+MOV S$尊享状态_<$STR(N$读取序号)> <Img|id=<$STR(N$尊享号_<$STR(N$读取序号)>)>4|a=4|percentx=85|percenty=50|img=custom/hl/fuli_ui/word_qiri_02.png>
+INC S$ID已领取总串 <$STR(N$尊享号_<$STR(N$读取序号)>)>,<$STR(N$尊享号_<$STR(N$读取序号)>)>01,
+GOTO @尊享面板拼接
+#ELSEACT
+INC N$尊享流水号 1
+MOV N$尊享号_<$STR(N$读取序号)> <$STR(N$尊享流水号)>
+#IF
+CHECKVAR HUMAN <$STR(S$检测变量名)> ? <$STR(S$尊享<$STR(N$读取序号)>数据0)>
+#ACT
+INC S$ID总串 <$STR(N$尊享号_<$STR(N$读取序号)>)>,<$STR(N$尊享号_<$STR(N$读取序号)>)>01,
+MOV S$尊享状态_<$STR(N$读取序号)> <Button|id=<$STR(N$尊享号_<$STR(N$读取序号)>)>4|a=4|percentx=85|percenty=50|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=领取|link=@领取尊享<$STR(S$尊享<$STR(N$读取序号)>数据0)><$STR(S$展现后缀)>>
+#ELSEACT
+INC S$ID未达成总串 <$STR(N$尊享号_<$STR(N$读取序号)>)>,<$STR(N$尊享号_<$STR(N$读取序号)>)>01,
+MOV S$尊享状态_<$STR(N$读取序号)> <Img|id=<$STR(N$尊享号_<$STR(N$读取序号)>)>4|a=4|percentx=85|percenty=50|img=custom/hl/fuli_ui/word_qiri_01.png>
+#IF
+#ACT
+GOTO @尊享面板拼接
+
+
+
+[@尊享面板拼接]
+#IF
+#ACT
+INC S$展现总串 <Layout|id=<$STR(N$尊享号_<$STR(N$读取序号)>)>|children={<$STR(N$尊享号_<$STR(N$读取序号)>)>1,<$STR(N$尊享号_<$STR(N$读取序号)>)>2,<$STR(N$尊享号_<$STR(N$读取序号)>)>3,<$STR(N$尊享号_<$STR(N$读取序号)>)>4}|width=610|height=70|color=x>
+INC S$展现总串 <Text|id=<$STR(N$尊享号_<$STR(N$读取序号)>)>1|a=4|percentx=20|percenty=50|color=255|size=18|outline=1|outlinecolor=0|text=<$STR(S$展现文字)><$STR(S$尊享<$STR(N$读取序号)>数据0)><$STR(S$展现后缀)>即可领取>
+INC S$展现总串 <ItemShow|id=<$STR(N$尊享号_<$STR(N$读取序号)>)>2|itemid=<$STR(S$尊享<$STR(N$读取序号)>数据1)>|itemcount=<$STR(S$尊享<$STR(N$读取序号)>数据2)>|showtips=1|x=260|y=5|bgtype=1>
+INC S$展现总串 <ItemShow|id=<$STR(N$尊享号_<$STR(N$读取序号)>)>3|itemid=<$STR(S$尊享<$STR(N$读取序号)>数据3)>|itemcount=<$STR(S$尊享<$STR(N$读取序号)>数据4)>|showtips=1|x=340|y=5|bgtype=1>
+INC S$展现总串 <$STR(S$尊享状态_<$STR(N$读取序号)>)>
+INC S$展现总串 <Img|id=<$STR(N$尊享号_<$STR(N$读取序号)>)>01|img=custom/hl/kqhd_ui/kqfg.png|width=580>
+INC N$礼包记录递增数 1
+goto @执行尊享数据读取
+
+[@尊享10分钟]
+#IF
+CHECKVAR HUMAN B_尊享礼包记录 > 0
+#ACT
+MOV N$尊享号_1 <$STR(N$尊享未达成序号)>
+INC N$尊享号_1 1
+INC N$尊享已领取序号 1
+MOV S$尊享状态_1 <Img|id=<$STR(N$尊享号_1)>4|a=4|percentx=85|percenty=50|img=custom/hl/hl_ui/word_qiri_02.png>
+BREAK
+#ELSEACT
+INC N$尊享流水号 1
+MOV N$尊享号_1 <$STR(N$尊享流水号)>
+#IF
+CHECKVAR HUMAN B_今日在线时长 > 9
+#ACT
+MOV S$尊享状态_1 <Button|id=<$STR(N$尊享号_1)>4|a=4|percentx=85|percenty=50|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=领取|link=@领取尊享10分钟>
+#ELSEACT
+MOV S$尊享状态_1 <Img|id=<$STR(N$尊享号_1)>4|a=4|percentx=85|percenty=50|img=custom/hl/hl_ui/word_qiri_01.png>
+
+
+[@领取尊享10分钟]
+#IF
+CHECKVAR HUMAN B_今日在线时长 > 9
+CHECKVAR HUMAN B_尊享礼包记录 = 0
+#ACT
+GetDBIdxItemFieldValue <$STR(S$尊享1数据1)> Name S$尊享奖品1
+GetDBIdxItemFieldValue <$STR(S$尊享1数据3)> Name S$尊享奖品3
+GiveStateItem <$STR(S$尊享奖品1)> <$STR(S$尊享1数据2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$尊享奖品3)> <$STR(S$尊享1数据4)> 0 1 0 1 1 1 1 1
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}在福利大厅处成功领取{尊享礼包/FCOLOR=58}更多大奖不要错过哦！。 1 5
+CALCVAR HUMAN B_尊享礼包记录 + 1
+SAVEVAR HUMAN B_尊享礼包记录
+MOV N$尊享验证成功 0
+MOV S$福利红点_3
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+DELAYGOTO 500 @福利尊享有礼
+[@领取尊享60分钟]
+#IF
+CHECKVAR HUMAN B_今日在线时长 > 59
+CHECKVAR HUMAN B_尊享礼包记录 < 2
+#ACT
+GetDBIdxItemFieldValue <$STR(S$尊享2数据1)> Name S$尊享奖品1
+GetDBIdxItemFieldValue <$STR(S$尊享2数据3)> Name S$尊享奖品3
+GiveStateItem <$STR(S$尊享奖品1)> <$STR(S$尊享2数据2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$尊享奖品3)> <$STR(S$尊享2数据4)> 0 1 0 1 1 1 1 1
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}在福利大厅处成功领取{尊享礼包/FCOLOR=58}更多大奖不要错过哦！。 1 5
+CALCVAR HUMAN B_尊享礼包记录 + 1
+SAVEVAR HUMAN B_尊享礼包记录
+MOV N$尊享验证成功 0
+MOV S$福利红点_3
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+DELAYGOTO 500 @福利尊享有礼
+[@领取尊享2天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 1
+CHECKVAR HUMAN B_尊享礼包记录 < 3
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 3
+GOTO @去尊享发奖
+[@领取尊享3天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 2
+CHECKVAR HUMAN B_尊享礼包记录 < 4
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 4
+GOTO @去尊享发奖
+[@领取尊享4天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 3
+CHECKVAR HUMAN B_尊享礼包记录 < 5
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 5
+GOTO @去尊享发奖
+[@领取尊享5天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 4
+CHECKVAR HUMAN B_尊享礼包记录 < 6
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 6
+GOTO @去尊享发奖
+[@领取尊享6天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 5
+CHECKVAR HUMAN B_尊享礼包记录 < 7
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 7
+GOTO @去尊享发奖
+[@领取尊享7天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 6
+CHECKVAR HUMAN B_尊享礼包记录 < 8
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 8
+GOTO @去尊享发奖
+[@领取尊享9天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 8
+CHECKVAR HUMAN B_尊享礼包记录 < 9
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 9
+GOTO @去尊享发奖
+[@领取尊享11天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 10
+CHECKVAR HUMAN B_尊享礼包记录 < 10
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 10
+GOTO @去尊享发奖
+[@领取尊享14天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 13
+CHECKVAR HUMAN B_尊享礼包记录 < 11
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 11
+GOTO @去尊享发奖
+[@领取尊享17天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 16
+CHECKVAR HUMAN B_尊享礼包记录 < 12
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 12
+GOTO @去尊享发奖
+[@领取尊享20天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 19
+CHECKVAR HUMAN B_尊享礼包记录 < 13
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 13
+GOTO @去尊享发奖
+[@领取尊享23天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 22
+CHECKVAR HUMAN B_尊享礼包记录 < 14
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 14
+GOTO @去尊享发奖
+[@领取尊享26天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 25
+CHECKVAR HUMAN B_尊享礼包记录 < 15
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 15
+GOTO @去尊享发奖
+[@领取尊享30天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 29
+CHECKVAR HUMAN B_尊享礼包记录 < 16
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 16
+GOTO @去尊享发奖
+[@领取尊享35天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 34
+CHECKVAR HUMAN B_尊享礼包记录 < 17
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 17
+GOTO @去尊享发奖
+[@领取尊享40天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 39
+CHECKVAR HUMAN B_尊享礼包记录 < 18
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 18
+GOTO @去尊享发奖
+[@领取尊享45天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 44
+CHECKVAR HUMAN B_尊享礼包记录 < 19
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 19
+GOTO @去尊享发奖
+[@领取尊享50天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 49
+CHECKVAR HUMAN B_尊享礼包记录 < 20
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 20
+GOTO @去尊享发奖
+[@领取尊享55天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 54
+CHECKVAR HUMAN B_尊享礼包记录 < 21
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 21
+GOTO @去尊享发奖
+[@领取尊享60天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 59
+CHECKVAR HUMAN B_尊享礼包记录 < 22
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 22
+GOTO @去尊享发奖
+[@领取尊享70天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 69
+CHECKVAR HUMAN B_尊享礼包记录 < 23
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 23
+GOTO @去尊享发奖
+[@领取尊享80天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 79
+CHECKVAR HUMAN B_尊享礼包记录 < 24
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 24
+GOTO @去尊享发奖
+[@领取尊享90天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 89
+CHECKVAR HUMAN B_尊享礼包记录 < 25
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 25
+GOTO @去尊享发奖
+[@领取尊享100天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 99
+CHECKVAR HUMAN B_尊享礼包记录 < 26
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 26
+GOTO @去尊享发奖
+[@领取尊享120天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 119
+CHECKVAR HUMAN B_尊享礼包记录 < 27
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 27
+GOTO @去尊享发奖
+[@领取尊享140天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 139
+CHECKVAR HUMAN B_尊享礼包记录 < 28
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 28
+GOTO @去尊享发奖
+[@领取尊享160天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 159
+CHECKVAR HUMAN B_尊享礼包记录 < 29
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 29
+GOTO @去尊享发奖
+[@领取尊享180天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 179
+CHECKVAR HUMAN B_尊享礼包记录 < 30
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 30
+GOTO @去尊享发奖
+[@领取尊享200天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 199
+CHECKVAR HUMAN B_尊享礼包记录 < 31
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 31
+GOTO @去尊享发奖
+[@领取尊享240天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 239
+CHECKVAR HUMAN B_尊享礼包记录 < 32
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 32
+GOTO @去尊享发奖
+[@领取尊享260天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 259
+CHECKVAR HUMAN B_尊享礼包记录 < 33
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 33
+GOTO @去尊享发奖
+[@领取尊享280天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 279
+CHECKVAR HUMAN B_尊享礼包记录 < 34
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 34
+GOTO @去尊享发奖
+[@领取尊享300天]
+#IF
+CHECKVAR HUMAN B_历史登录天数 > 299
+CHECKVAR HUMAN B_尊享礼包记录 < 35
+#ACT
+MOV N$尊享验证成功 1
+MOV N$奖品流水号 35
+GOTO @去尊享发奖
+
+[@去尊享发奖]
+#IF
+EQUAL N$尊享验证成功 1
+#ACT
+GetDBIdxItemFieldValue <$STR(S$尊享<$STR(N$奖品流水号)>数据1)> Name S$尊享奖品1
+GetDBIdxItemFieldValue <$STR(S$尊享<$STR(N$奖品流水号)>数据3)> Name S$尊享奖品3
+GiveStateItem <$STR(S$尊享奖品1)> <$STR(S$尊享<$STR(N$奖品流水号)>数据2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$尊享奖品3)> <$STR(S$尊享<$STR(N$奖品流水号)>数据4)> 0 1 0 1 1 1 1 1
+SENDMSGNEW 255 0 玩家:{<$USERNAME>/FCOLOR=250}在福利大厅处成功领取{尊享礼包/FCOLOR=58}更多大奖不要错过哦！。 1 5
+CALCVAR HUMAN B_尊享礼包记录 + 1
+SAVEVAR HUMAN B_尊享礼包记录
+MOV N$尊享验证成功 0
+MOV S$福利红点_3
+#CALL [\游戏功能\系统功能\福利红点检测.txt] @启动福利红点检测
+DELAYGOTO 500 @福利尊享有礼
+
+}

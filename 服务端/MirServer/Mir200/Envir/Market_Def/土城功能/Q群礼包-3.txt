@@ -1,0 +1,94 @@
+[@MAIN]
+#IF
+#ACT
+#CALL [\功能脚本\Q群礼包\Q群礼包.txt] @Q群MAIN
+break
+MOV S$输入界面
+GOTO @群礼包界面
+[@群礼包界面]
+#IF
+#ACT
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,7,6,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/fuli_ui/fuli_06.png>
+<Layout|id=0|children={1}|x=600|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=215|y=0|width=170|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=100|size=20|outline=2|outlinecolor=0|text=Q群礼包>
+<ItemShow|id=3|x=320|y=212|itemid=40828|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=7|x=255|y=212|itemid=40081|itemcount=2|showtips=1|bgtype=1>
+<Button|id=4|x=400|y=224|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|color=103|size=18|text=领取奖励|link=@打开验证界面>
+<TextAtlas|id=5|x=415|y=295|img=custom/hl/vip/vip_sz_1.png|schar=0|iheight=26|iwidth=19|text=751241021>
+<$str(S$输入界面)>
+
+[@打开验证界面]
+#IF
+EQUAL T202 
+#ACT
+MOV S$输入界面 <Img|id=6|a=4|percentx=50|percenty=50|children={61,62,63,64,65,66,67,68}|x=203.0|y=130.0|img=custom/hl/hl_ui/tsbj.png>
+INC  S$输入界面 <Layout|id=61|children={611}|x=448|y=-2|width=50|height=50|color=x|link=@MAIN>
+INC  S$输入界面 <Button|id=611|x=3|y=1|nimg=custom/szlyscb/tysc_ui/1900000510.png|pimg=custom/szlyscb/tysc_ui/1900000511.png|link=@MAIN>
+INC  S$输入界面 <Text|id=62|x=160|y=50|outline=2|outlinecolor=0|color=255|size=18|text=请输入Q群验证码>
+INC  S$输入界面 <Img|id=63|children={631}|x=160.0|y=90.0|img=public/1900000678.png>
+INC  S$输入界面 <Input|id=631|inputid=2|type=2|x=17|y=0|width=100|height=32|color=254|size=18|mincount=6|maxcount=12|errortips=3|place=输入验证码|placecolor=255|submitInput=1|reload=1>
+INC  S$输入界面 <Button|id=64|x=175|y=140|nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|submitInput=2|outline=2|outlinecolor=0|color=103|size=18|text=确定领取|link=@领取Q群奖励>
+GOTO @群礼包界面
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您已经领取过该奖励！</font>
+MOV S$输入界面
+CLOSE
+BREAK
+
+[@领取Q群奖励]
+#IF
+CHECKBAGSIZE 3
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>背包已满，请预留3个空格！</font>
+BREAK
+#IF
+EQUAL T202 已领取
+#ACT
+SENDMSG 9 <font color='#ff0000'>您已经领取过该奖励！</font>
+MOV S$输入界面
+CLOSE
+BREAK
+#IF
+EQUAL <$NPCINPUT(2)>
+#ACT
+SENDMSG 9 <font color='#ff0000'>请输入验证码！</font>
+BREAK
+#IF
+EQUAL <$NPCINPUT(2)> hua996
+#ACT
+GiveStateItem 50000绑定元宝 2 0 1 0 1 1 1 1 1
+GiveStateItem Q群专属礼包 1 0 1 0 1 1 1 1 1
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=253}在{盟重土城/FCOLOR=58}成功领取【{Q群礼包/FCOLOR=250}】。 1 5
+MOV T202 已领取
+SENDMSG 9 <font color='#00ff00'>验证成功！</font>
+CLOSE
+GOTO @MAIN
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>验证失败！</font>
+GOTO @MAIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

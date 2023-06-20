@@ -1,0 +1,457 @@
+[@启动连续福利]
+{
+#IF
+#ACT
+MOV S$当前选择奖励 18元
+MOV S$激活按钮 nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|color=103
+MOV S$默认按钮 nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|color=103
+GOTO @累计条件判断
+GOTO @读取连续充值配置
+
+
+[@连续福利界面]
+#IF
+#ACT
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Text|id=2|a=4|percentx=50|percenty=3.8|color=100|size=20|outline=2|outlinecolor=0|text=连续充值>
+<Img|id=3|img=custom/hl/fuli_ui/lxcz_02.jpg|x=20|y=60>
+
+<Layout|id=4|children={41,42}|color=x|width=170|height=50|x=60|y=420>
+<Effect|id=41|effectid=35006|effecttype=0|x=-90|y=-290>
+<ItemShow|id=42|itemid=<$STR(S$特效显示_1)>|itemcount=1|showtips=1|x=<$STR(S$特效显示_2)>|y=<$STR(S$特效显示_3)>>
+
+<Layout|id=5|children={50,51}|width=340|height=160|color=x|x=200|y=260>
+<ListView|id=50|children={501,502,503}|x=15|y=15|width=320|height=30|margin=6|bounce=0|direction=2|color=X>
+<Button|id=501|width=100|nimg=custom/hl/fuli_ui/fuli_03.png|pimg=custom/hl/fuli_ui/fuli_03.png|color=<$STR(N$预览颜色_1)>|size=18|text=累充18元|link=@查看累计18奖励>
+<Button|id=502|width=100|nimg=custom/hl/fuli_ui/fuli_03.png|pimg=custom/hl/fuli_ui/fuli_03.png|color=<$STR(N$预览颜色_2)>|size=18|text=累充58元|link=@查看累计58奖励>
+<Button|id=503|width=100|nimg=custom/hl/fuli_ui/fuli_03.png|pimg=custom/hl/fuli_ui/fuli_03.png|color=<$STR(N$预览颜色_3)>|size=18|text=累充98元|link=@查看累计98奖励>
+<Img|id=51|children={510}|a=4|percentx=50|percenty=60|img=custom/hl/dtcs_ui/map_ui_01.png|width=280|height=80>
+<ListView|id=510|children={511,512,513}|a=4|percentx=50|percenty=50|width=220|height=65|margin=10|bounce=0|direction=2|color=x>
+<ItemShow|id=511|itemid=<$STR(S$预览奖励_1)>|itemcount=<$STR(S$预览奖励_2)>|showtips=1|bgtype=1>
+<ItemShow|id=512|itemid=<$STR(S$预览奖励_3)>|itemcount=<$STR(S$预览奖励_4)>|showtips=1|bgtype=1>
+<ItemShow|id=513|itemid=<$STR(S$预览奖励_5)>|itemcount=<$STR(S$预览奖励_6)>|showtips=1|bgtype=1>
+
+<RText|id=6|x=320|y=410|color=255|size=18|outline=2|outlinecolor=0|text=今日已充值<<$HUMAN(B_今日充值)>/FCOLOR=250>元>
+<$STR(S$累计奖励按钮)>
+
+<Text|id=9|color=255|size=18|outline=2|outlinecolor=0|text=累计充值奖励|x=600|y=65>
+
+<ListView|id=10|children={100,101,102,103,104,105,106,107,108}|x=547|y=105|width=212|height=400|margin=0|bounce=0|direction=1|color=x>
+
+<Layout|id=100|children={1001,1002}|width=212|height=30|color=x>
+<RText|id=1002|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=每日充值98元(<<$STR(U252)>/FCOLOR=250>/2)>
+<Img|id=1001|a=4|percentx=50|percenty=50|img=custom/hl/fuli_ui/lxcz_01.png>
+
+<Layout|id=101|children={1011,1012}|width=180|height=70|color=x>
+<ItemShow|id=1011|x=10|y=0|itemid=<$STR(S$2天奖励1)>|itemcount=<$STR(S$2天奖励2)>|showtips=1|bgtype=1>
+<$STR(S$每日第2天状态)>
+
+<Layout|id=102|children={1021,1022}|width=212|height=30|color=x>
+<RText|id=1022|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=每日充值98元(<<$STR(U252)>/FCOLOR=250>/4)>
+<Img|id=1021|a=4|percentx=50|percenty=50|img=custom/hl/fuli_ui/lxcz_01.png>
+
+<Layout|id=103|children={1031,1032}|width=180|height=70|color=x>
+<ItemShow|id=1031|x=10|y=0|itemid=<$STR(S$4天奖励1)>|itemcount=<$STR(S$4天奖励2)>|showtips=1|bgtype=1>
+<$STR(S$每日第4天状态)>
+
+
+<Layout|id=104|children={1041,1042}|width=212|height=30|color=x>
+<RText|id=1042|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=每日充值98元(<<$STR(U252)>/FCOLOR=250>/6)>
+<Img|id=1041|a=4|percentx=50|percenty=50|img=custom/hl/fuli_ui/lxcz_01.png>
+
+<Layout|id=105|children={1051,1052}|width=180|height=70|color=x>
+<ItemShow|id=1051|x=10|y=0|itemid=<$STR(S$6天奖励1)>|itemcount=<$STR(S$6天奖励2)>|showtips=1|bgtype=1>
+<$STR(S$每日第6天状态)>
+
+
+<Layout|id=106|children={1061,1062}|width=212|height=30|color=x>
+<RText|id=1062|a=4|percentx=50|percenty=50|color=255|size=18|outline=2|outlinecolor=0|text=每日充值98元(<<$STR(U252)>/FCOLOR=250>/7)>
+<Img|id=1061|a=4|percentx=50|percenty=50|img=custom/hl/fuli_ui/lxcz_01.png>
+
+<Layout|id=107|children={1071,1072}|width=180|height=70|color=x>
+<ItemShow|id=1071|x=10|y=0|itemid=<$STR(S$7天奖励1)>|itemcount=<$STR(S$7天奖励2)>|showtips=1|bgtype=1>
+<$STR(S$每日第7天状态)>
+
+[@累计条件判断]
+#IF
+#ACT
+MOV S$每日第2天状态
+MOV S$每日第4天状态
+MOV S$每日第6天状态
+MOV S$每日第7天状态
+#IF
+LARGE U252 1
+EQUAL T207
+#ACT
+MOV S$每日第2天状态 <Button|id=1012|x=78|y=10|nimg=custom/hl/hl_ui/lxcz_03.png|pimg=custom/hl/hl_ui/lxcz_04.png|color=103|size=18|text=领取奖励|link=@领取每日2天奖励>
+#IF
+LARGE U252 1
+EQUAL T207 已领取
+#ACT
+MOV S$每日第2天状态 <Img|id=1012|img=custom/hl/fuli_ui/word_qiri_02.png|x=85|y=5>
+#IF
+SMALL U252 2
+#ACT
+MOV S$每日第2天状态 <Img|id=1012|img=custom/hl/fuli_ui/word_qiri_01.png|x=85|y=5>
+#IF
+LARGE U252 3
+EQUAL T208
+#ACT
+MOV S$每日第4天状态 <Button|id=1032|x=78|y=10|nimg=custom/hl/hl_ui/lxcz_03.png|pimg=custom/hl/hl_ui/lxcz_04.png|color=103|size=18|text=领取奖励|link=@领取每日4天奖励>
+#IF
+LARGE U252 3
+EQUAL T208 已领取
+#ACT
+MOV S$每日第4天状态 <Img|id=1032|img=custom/hl/fuli_ui/word_qiri_02.png|x=85|y=5>
+#IF
+SMALL U252 4
+#ACT
+MOV S$每日第4天状态 <Img|id=1032|img=custom/hl/fuli_ui/word_qiri_01.png|x=85|y=5>
+#IF
+LARGE U252 5
+EQUAL T209
+#ACT
+MOV S$每日第6天状态 <Button|id=1052|x=78|y=10|nimg=custom/hl/hl_ui/lxcz_03.png|pimg=custom/hl/hl_ui/lxcz_04.png|color=103|size=18|text=领取奖励|link=@领取每日6天奖励>
+#IF
+LARGE U252 5
+EQUAL T209 已领取
+#ACT
+MOV S$每日第6天状态 <Img|id=1052|img=custom/hl/fuli_ui/word_qiri_02.png|x=85|y=5>
+#IF
+SMALL U252 6
+#ACT
+MOV S$每日第6天状态 <Img|id=1052|img=custom/hl/fuli_ui/word_qiri_01.png|x=85|y=5>
+#IF
+LARGE U252 6
+EQUAL T210
+#ACT
+MOV S$每日第7天状态 <Button|id=1072|x=78|y=10|nimg=custom/hl/hl_ui/lxcz_03.png|pimg=custom/hl/hl_ui/lxcz_04.png|color=103|size=18|text=领取奖励|link=@领取每日7天奖励>
+#IF
+LARGE U252 6
+EQUAL T210 已领取
+#ACT
+MOV S$每日第7天状态 <Img|id=1072|img=custom/hl/fuli_ui/word_qiri_02.png|x=85|y=5>
+#IF
+SMALL U252 7
+#ACT
+MOV S$每日第7天状态 <Img|id=1072|img=custom/hl/fuli_ui/word_qiri_01.png|x=85|y=5>
+
+[@领取每日2天奖励]
+#IF
+CHECKBAGSIZE 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留2个背包空格</font>
+BREAK
+#IF
+LARGE U252 1
+EQUAL T207
+#ACT
+GETVALIDSTRSUPER S$2天奖励串 | S$2天奖励
+GetDBIdxItemFieldValue <$STR(S$2天奖励1)> Name S$2天奖品
+GiveStateItem <$STR(S$2天奖品)> <$STR(S$2天奖励2)> 0 1 0 1 1 1 1 1
+MOV T207 已领取
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=250}成功领取了连续{2天/FCOLOR=58}充值福利。 1 5
+GOTO @奖励页跳转
+[@领取每日4天奖励]
+#IF
+CHECKBAGSIZE 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留2个背包空格</font>
+BREAK
+#IF
+LARGE U252 3
+EQUAL T208
+#ACT
+GETVALIDSTRSUPER S$4天奖励串 | S$4天奖励
+GetDBIdxItemFieldValue <$STR(S$4天奖励1)> Name S$4天奖品
+GiveStateItem <$STR(S$4天奖品)> <$STR(S$4天奖励2)> 0 1 0 1 1 1 1 1
+MOV T208 已领取
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=250}成功领取了连续{4天/FCOLOR=58}充值福利。 1 5
+GOTO @奖励页跳转
+[@领取每日6天奖励]
+#IF
+CHECKBAGSIZE 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留2个背包空格</font>
+BREAK
+#IF
+LARGE U252 5
+EQUAL T209
+#ACT
+GETVALIDSTRSUPER S$6天奖励串 | S$6天奖励
+GetDBIdxItemFieldValue <$STR(S$6天奖励1)> Name S$6天奖品
+GiveStateItem <$STR(S$6天奖品)> <$STR(S$6天奖励2)> 0 1 0 1 1 1 1 1
+MOV T209 已领取
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=250}成功领取了连续{6天/FCOLOR=58}充值福利。 1 5
+GOTO @奖励页跳转
+[@领取每日7天奖励]
+#IF
+CHECKBAGSIZE 2
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留2个背包空格</font>
+BREAK
+#IF
+LARGE U252 6
+EQUAL T210
+#ACT
+GETVALIDSTRSUPER S$7天奖励串 | S$7天奖励
+GetDBIdxItemFieldValue <$STR(S$7天奖励1)> Name S$7天奖品
+GiveStateItem <$STR(S$7天奖品)> <$STR(S$7天奖励2)> 0 1 0 1 1 1 1 1
+MOV T210 已领取
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=250}成功领取了连续{7天/FCOLOR=58}充值福利。 1 5
+GOTO @奖励页跳转
+
+[@累计18元奖励]
+#IF
+CHECKBAGSIZE 4
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留4个背包空格</font>
+BREAK
+#IF
+CHECKVAR HUMAN B_今日充值 ? 18
+EQUAL T211
+#ACT
+MOV T211 已领取
+GETVALIDSTRSUPER S$18元奖励串 | S$预览奖励_
+GetDBIdxItemFieldValue <$STR(S$预览奖励_1)> Name S$今日18元奖品_1
+GetDBIdxItemFieldValue <$STR(S$预览奖励_3)> Name S$今日18元奖品_3
+GetDBIdxItemFieldValue <$STR(S$预览奖励_5)> Name S$今日18元奖品_5
+GiveStateItem <$STR(S$今日18元奖品_1)> <$STR(S$预览奖励_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$今日18元奖品_3)> <$STR(S$预览奖励_4)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$今日18元奖品_5)> <$STR(S$预览奖励_6)> 0 1 0 1 1 1 1 1
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=250}成功领取了今日累计{18元/FCOLOR=58}充值福利。 1 5
+MOV S$当前选择奖励 18元
+GOTO @奖励页跳转
+
+[@累计58元奖励]
+#IF
+CHECKBAGSIZE 4
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留4个背包空格</font>
+BREAK
+#IF
+CHECKVAR HUMAN B_今日充值 ? 58
+EQUAL T212
+#ACT
+MOV T212 已领取
+GETVALIDSTRSUPER S$58元奖励串 | S$预览奖励_
+GetDBIdxItemFieldValue <$STR(S$预览奖励_1)> Name S$今日58元奖品_1
+GetDBIdxItemFieldValue <$STR(S$预览奖励_3)> Name S$今日58元奖品_3
+GetDBIdxItemFieldValue <$STR(S$预览奖励_5)> Name S$今日58元奖品_5
+GiveStateItem <$STR(S$今日58元奖品_1)> <$STR(S$预览奖励_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$今日58元奖品_3)> <$STR(S$预览奖励_4)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$今日58元奖品_5)> <$STR(S$预览奖励_6)> 0 1 0 1 1 1 1 1
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=250}成功领取了今日累计{58元/FCOLOR=58}充值福利。 1 5
+MOV S$当前选择奖励 58元
+GOTO @奖励页跳转
+[@累计98元奖励]
+#IF
+CHECKBAGSIZE 4
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>请预留4个背包空格</font>
+BREAK
+#IF
+CHECKVAR HUMAN B_今日充值 ? 98
+EQUAL T213
+#ACT
+MOV T213 已领取
+GETVALIDSTRSUPER S$98元奖励串 | S$预览奖励_
+GetDBIdxItemFieldValue <$STR(S$预览奖励_1)> Name S$今日98元奖品_1
+GetDBIdxItemFieldValue <$STR(S$预览奖励_3)> Name S$今日98元奖品_3
+GetDBIdxItemFieldValue <$STR(S$预览奖励_5)> Name S$今日98元奖品_5
+GiveStateItem <$STR(S$今日98元奖品_1)> <$STR(S$预览奖励_2)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$今日98元奖品_3)> <$STR(S$预览奖励_4)> 0 1 0 1 1 1 1 1
+GiveStateItem <$STR(S$今日98元奖品_5)> <$STR(S$预览奖励_6)> 0 1 0 1 1 1 1 1
+SENDMSGNEW 255 0 恭喜玩家:{<$USERNAME>/FCOLOR=250}成功领取了今日累计{98元/FCOLOR=58}充值福利。 1 5
+MOV S$当前选择奖励 98元
+GOTO @奖励页跳转
+
+[@查看累计18奖励]
+#IF
+#ACT
+MOV S$累计奖励按钮
+#IF
+CHECKVAR HUMAN B_今日充值 ? 18
+EQUAL T211
+#ACT
+MOV S$累计奖励按钮 <Button|id=7|x=325|y=450|<$STR(S$默认按钮)>|size=18|text=领取奖励|link=@累计18元奖励>
+#IF
+CHECKVAR HUMAN B_今日充值 ? 18
+EQUAL T211 已领取
+#ACT
+MOV S$累计奖励按钮 <Img|id=7|img=custom/hl/fuli_ui/word_qiri_02.png|x=335|y=445>
+#IF
+CHECKVAR HUMAN B_今日充值 < 18
+#ACT
+MOV S$累计奖励按钮 <Button|id=7|x=325|y=450|<$STR(S$默认按钮)>|size=18|text=前往充值|link=@累计前往充值>
+#IF
+EQUAL T212 已领取
+EQUAL T211 已领取
+EQUAL T213 已领取
+#ACT
+MOV S$累计奖励按钮 <RText|id=7|x=295|y=450|color=250|size=18|outline=2|outlinecolor=0|text=今日奖励已全部领取>
+#IF
+SMALL U252 7
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_18元_1 S$18元奖励串
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_sfx_1 S$特效显示串
+#ELSEACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_18元_7 S$18元奖励串
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_sfx_7 S$特效显示串
+#IF
+#ACT
+MOV N$预览颜色_1 250
+MOV N$预览颜色_2 160
+MOV N$预览颜色_3 160
+GETVALIDSTRSUPER S$18元奖励串 | S$预览奖励_
+GETVALIDSTRSUPER S$特效显示串 | S$特效显示_
+GOTO @连续福利界面
+
+[@查看累计58奖励]
+#IF
+#ACT
+MOV S$累计奖励按钮
+#IF
+CHECKVAR HUMAN B_今日充值 ? 58
+EQUAL T212
+#ACT
+MOV S$累计奖励按钮 <Button|id=7|x=325|y=450|<$STR(S$默认按钮)>|size=18|text=领取奖励|link=@累计58元奖励>
+#IF
+CHECKVAR HUMAN B_今日充值 ? 58
+EQUAL T212 已领取
+#ACT
+MOV S$累计奖励按钮 <Img|id=7|img=custom/hl/fuli_ui/word_qiri_02.png|x=335|y=445>
+#IF
+CHECKVAR HUMAN B_今日充值 < 58
+#ACT
+MOV S$累计奖励按钮 <Button|id=7|x=325|y=450|<$STR(S$默认按钮)>|size=18|text=前往充值|link=@累计前往充值>
+#IF
+EQUAL T212 已领取
+EQUAL T211 已领取
+EQUAL T213 已领取
+#ACT
+MOV S$累计奖励按钮 <RText|id=7|x=295|y=450|color=250|size=18|outline=2|outlinecolor=0|text=今日奖励已全部领取>
+
+#IF
+SMALL U252 7
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_58元_1 S$58元奖励串
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_sfx_1 S$特效显示串
+#ELSEACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_58元_7 S$58元奖励串
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_sfx_7 S$特效显示串
+#IF
+#ACT
+MOV N$预览颜色_1 160
+MOV N$预览颜色_2 250
+MOV N$预览颜色_3 160
+GETVALIDSTRSUPER S$58元奖励串 | S$预览奖励_
+GETVALIDSTRSUPER S$特效显示串 | S$特效显示_
+GOTO @连续福利界面
+[@查看累计98奖励]
+#IF
+#ACT
+MOV S$累计奖励按钮
+#IF
+CHECKVAR HUMAN B_今日充值 ? 98
+EQUAL T213
+#ACT
+MOV S$累计奖励按钮 <Button|id=7|x=325|y=450|<$STR(S$默认按钮)>|size=18|text=领取奖励|link=@累计98元奖励>
+#IF
+CHECKVAR HUMAN B_今日充值 ? 98
+EQUAL T213 已领取
+#ACT
+MOV S$累计奖励按钮 <Img|id=7|img=custom/hl/fuli_ui/word_qiri_02.png|x=335|y=445>
+#IF
+CHECKVAR HUMAN B_今日充值 < 98
+#ACT
+MOV S$累计奖励按钮 <Button|id=7|x=325|y=450|<$STR(S$默认按钮)>|size=18|text=前往充值|link=@累计前往充值>
+#IF
+EQUAL T212 已领取
+EQUAL T211 已领取
+EQUAL T213 已领取
+#ACT
+MOV S$累计奖励按钮 <RText|id=7|x=295|y=450|color=250|size=18|outline=2|outlinecolor=0|text=今日奖励已全部领取>
+#IF
+SMALL U252 7
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_98元_1 S$98元奖励串
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_sfx_1 S$特效显示串
+#ELSEACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_98元_7 S$98元奖励串
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_sfx_7 S$特效显示串
+#IF
+#ACT
+MOV N$预览颜色_1 160
+MOV N$预览颜色_2 160
+MOV N$预览颜色_3 250
+GETVALIDSTRSUPER S$98元奖励串 | S$预览奖励_
+GETVALIDSTRSUPER S$特效显示串 | S$特效显示_
+GOTO @连续福利界面
+[@累计前往充值]
+#IF
+#ACT
+OPENHYPERLINK 26
+
+[@读取连续充值配置]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini 奖励变化时段 时段 S$时段串
+GETVALIDSTRSUPER S$时段串 | S$当前时段
+MOV N$时段序号
+GOTO @时段配置判断
+
+[@时段配置判断]
+#IF
+EQUAL S$当前时段<$STR(N$时段序号)>
+#ACT
+GOTO @读取奖励配置
+#IF
+SMALL G497 <$STR(S$当前时段<$STR(N$时段序号)>)>
+#ACT
+MOV S$时段配置 <$STR(S$当前时段<$STR(N$时段序号)>)>
+GOTO @读取奖励配置
+BREAK
+#ELSEACT
+INC N$时段序号 1
+GOTO @时段配置判断
+
+[@读取奖励配置]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_2天 S$2天奖励串
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_4天 S$4天奖励串
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_6天 S$6天奖励串
+ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini <$STR(S$时段配置)> <$STR(S$时段配置)>_7天 S$7天奖励串
+GETVALIDSTRSUPER S$2天奖励串 | S$2天奖励
+GETVALIDSTRSUPER S$4天奖励串 | S$4天奖励
+GETVALIDSTRSUPER S$6天奖励串 | S$6天奖励
+GETVALIDSTRSUPER S$7天奖励串 | S$7天奖励
+GOTO @查看累计18奖励
+
+[@奖励页跳转]
+#IF
+EQUAL S$当前选择奖励 18元
+#ACT
+GOTO @查看累计18奖励
+#IF
+EQUAL S$当前选择奖励 58元
+#ACT
+GOTO @查看累计58奖励
+#IF
+EQUAL S$当前选择奖励 98元
+#ACT
+GOTO @查看累计98奖励
+
+}
