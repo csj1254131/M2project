@@ -1,0 +1,33 @@
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>npc_0218_0_0_0_0000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,0},{230,340}}</string>
+                <key>offset</key>
+                <string>{-91,186}</string>
+                <key>rotated</key>
+                <false />
+                <key>sourceColorRect</key>
+                <string>{{0,0},{230,340}}</string>
+                <key>sourceSize</key>
+                <string>{230,340}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>npc_0218_0_0.png</string>
+            <key>size</key>
+            <string>{230,340}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:1a3681eca246506fb65ed6f1d77d7b14:2989edac323003e85a33f17c3763764a:389a34445e49282d71684c836f874949$</string>
+            <key>textureFileName</key>
+            <string>npc_0218_0_0.png</string>
+        </dict>
+    </dict>
+</plist>
