@@ -452,7 +452,7 @@ MOV S$C_¶¥´÷ÔªËØÇòÄãÕ¦µØ3 <Img|x=290|y=10|id=269|img=custom/hl/hl_ui/<$STR(S$C_¹
 
 #IF
 #ACT
-MOV S$C_¶¥´÷Ãæ°å <Img|x=-17|y=-20|bg=1|children={11,12,13,14,15,16}|width=382|height=515|img=custom/hl/chenhaoanniu/ch_ui1.png>
+MOV S$C_¶¥´÷Ãæ°å <Img|x=-17|y=-500|bg=1|children={11,12,13,14,15,16}|width=382|height=515|img=custom/hl/chenhaoanniu/ch_ui1.png>
 INC S$C_¶¥´÷Ãæ°å <Img|x=21|y=22|id=11|width=340|height=50|img=custom/hl/chenhaoanniu/ch_ui3.png>
 INC S$C_¶¥´÷Ãæ°å <Button|id=15|x=380|y=0|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exitQF>
 INC S$C_¶¥´÷Ãæ°å <Layout|id=16|x=375|y=0|width=70|height=70|link=@exitQF>

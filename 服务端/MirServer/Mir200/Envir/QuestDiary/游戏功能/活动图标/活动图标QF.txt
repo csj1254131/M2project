@@ -113,6 +113,7 @@ equal T202
 MOV S$图标3 <Layout|children={1c}|width=300|height=80|x=-500|y=180|color=x>
 inc    S$图标3 <Button|id=1c|children={2c}|x=180|nimg=custom/hl/top/17.png|link=@Q群礼包>
 INC   S$图标3 <Img|id=2c|x=55|y=5|img=custom/hl/hl_ui/hd.png>
+addbutton 102 3 <$STR(S$图标3)>
 
 
 
