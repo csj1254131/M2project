@@ -147,6 +147,7 @@ GiveOnItem 1 Ä¾½£ 1
 GiveOnItem 12 Ä§ÑªÊ¯ 1
 ;GiveOnItem 27 ÌìÎäÖ®Ó¡ 1
 OPENNPCSHOWEX 2 20 2
+mov U91 1
 close
 break
 

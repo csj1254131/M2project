@@ -3696,13 +3696,13 @@ ADDBUTTON 4 3690 <$STR(S$Pk值按钮)> 150 100
 
 
 [@Triggerchat]
-#IF
-CHECKRENEWLEVEL > 2
-#ACT
-#ELSEACT
-STOP
-SENDMSG 6 转生等级未达到3级，禁止发言。
-BREAK
+//#IF
+//CHECKRENEWLEVEL > 2
+//#ACT
+//#ELSEACT
+//STOP
+//SENDMSG 6 转生等级未达到3级，禁止发言。
+//BREAK
 
 #IF
 EQUAL <$Chat> 1
