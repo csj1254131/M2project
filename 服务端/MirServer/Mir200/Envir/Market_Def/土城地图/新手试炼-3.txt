@@ -38,8 +38,8 @@ MOV S$地图编号 xssl1
 <ItemShow|id=991|itemid=60508|itemcount=1|showtips=1|bgtype=1>
 <ItemShow|id=992|itemid=60509|itemcount=1|showtips=1|bgtype=1>
 <ItemShow|id=993|itemid=60528|itemcount=1|showtips=1|bgtype=1>
-<Text|id=10|x=50|y=380|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
-<Text|id=11|x=150|y=420|color=250|size=18|outline=2|outlinecolor=0|text=低于70级>
+//<Text|id=10|x=50|y=380|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
+//<Text|id=11|x=150|y=420|color=250|size=18|outline=2|outlinecolor=0|text=低于70级>
 <Layout|id=12|children={121}|x=490|y=79|width=230|height=30|color=x>
 <Text|id=121|a=4|percentx=50|percenty=50||color=251|size=18|outline=2|outlinecolor=0|text=<$STR(S$地图名称)>>
 <Img|id=13|children={131}|x=480|y=117|img=custom/hl/dtcs_ui/<$STR(S$小地图编号)>.png|width=253|height=207>
@@ -60,12 +60,12 @@ CLOSE
 SENDMSG 9 <font color='#ff0000'>地图已关闭</font>
 break
 #IF
-CHECKLEVELEX < 70
+//CHECKLEVELEX < 70
 #ACT
 map <$STR(S$地图编号)>
 SendCenterMsg 249 0 还剩余%d秒离开本地图. 0 3600 @记时地图回传
-#ELSEACT
-SENDMSG 9 <font color='#ff0000'>等级超过70级无法进入</font>
+//#ELSEACT
+//SENDMSG 9 <font color='#ff0000'>等级超过70级无法进入</font>
 BREAK
 
 #IF

@@ -37,7 +37,7 @@ GETITEMADDVALUE 1 5 n$幸运值w 1
 INC n$幸运值x <$str(n$幸运值w)>
 MOV S$助手 <ListView|children={1,2}|direction=2|bounce=0|margin=0|width=265|height=82|color=x|x=2|y=-58|default=0>
 INC S$助手 <Img|id=1|children={3,4,5}|img=custom\hl\bangzhu\1900012571.png|width=225|height=79|x=0|y=0>
-INC S$助手 <RText|id=3|text=当前杀怪爆率为：<<$KILLMONBURSTRATE>/FCOLOR=250>|size=18|color=255|outline=2|outlinecolor=0|x=5|y=0>
+INC S$助手 <RText|id=3|text=当前杀怪爆率为：<<$KILLMONBURSTRATE>00/FCOLOR=250>%|size=18|color=255|outline=2|outlinecolor=0|x=5|y=0>
 INC S$助手 <RText|id=4|text=当前杀人爆率为：<<$VALUE6>/FCOLOR=250>%|size=18|color=255|outline=2|outlinecolor=0|x=5|y=25>
 INC S$助手 <RText|id=5|text=当前幸运值：<<$Str(n$幸运值x)>/FCOLOR=250>|size=18|color=255|outline=2|outlinecolor=0|x=5|y=50>
 INC S$助手 <Layout|id=2|children={2a}|width=30|height=50|x=250|color=xx>
