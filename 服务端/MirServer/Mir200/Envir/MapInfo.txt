@@ -2,432 +2,430 @@
 [sjboss|em000 世界boss] noreconnect(3:330:330) onkillmon  norandommove
 [dbqb|nlts102 夺宝奇兵] noreconnect(3:330:330) onkillmon incmoney(88/10/10/@加夺宝积分)  norandommove
 [tjyb|nkuanggong 天降元宝] noreconnect(3:330:330)  norandommove
-[d401 比奇矿区] runmon(1) runhuman(1)
+[d401 比奇矿区] runmon runhuman(1)
 [d515 锁妖塔] noreconnect(3:330:330) fight
 
-[erdalu|nalx 二大陆] noreconnect(3:330:330)   runmon(1)
+[erdalu|nalx 二大陆] noreconnect(3:330:330)   runmon
 [sandalu 三大陆] noreconnect(3:330:330) safe
 
-[ycly1|d717 勇闯炼狱一层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon(1)
-[ycly2|d717 勇闯炼狱二层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon(1)
-[ycly3|d717 勇闯炼狱三层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon(1)
-[ycly4|d717 勇闯炼狱四层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon(1)
-[ycly5|d717 勇闯炼狱五层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon(1)
-[ycly6|d717 勇闯炼狱六层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon(1)
-[ycly7|d717 勇闯炼狱七层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon(1)
-[ycly8|d717 勇闯炼狱八层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon(1)
-[ycly9|d717 勇闯炼狱九层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon(1)
-[ycly10|d717 勇闯炼狱顶层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon(1)
+[ycly1|d717 勇闯炼狱一层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
+[ycly2|d717 勇闯炼狱二层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
+[ycly3|d717 勇闯炼狱三层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
+[ycly4|d717 勇闯炼狱四层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
+[ycly5|d717 勇闯炼狱五层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
+[ycly6|d717 勇闯炼狱六层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
+[ycly7|d717 勇闯炼狱七层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
+[ycly8|d717 勇闯炼狱八层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
+[ycly9|d717 勇闯炼狱九层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
+[ycly10|d717 勇闯炼狱顶层] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
 
-[boss|k001 捐献之地]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon(1)
-[boss2|k001 捐献之地二层]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon(1)
+[boss|k001 捐献之地]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon
+[boss2|k001 捐献之地二层]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon
 
-[lzld|f011 龙族领地一层]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon(1)
-[lzld2|f011 龙族领地二层]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon(1)
+[lzld|f011 龙族领地一层]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon
+[lzld2|f011 龙族领地二层]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon
 
-[xssl1|62 新手试炼] noreconnect(3:330:330) maxplayer(15) noreconnect(3:330:330) runmon(1)
+[xssl1|62 新手试炼] noreconnect(3:330:330) maxplayer(15) noreconnect(3:330:330)  runmon
 
 
-[mgdt1|d2004 迷宫一层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[mgdt1|d2004 迷宫一层] noreconnect(3:330:330) maxplayer(10) runmon
 mgdt1    19 16  -> mgdt2    85 88
 mgdt2    85 88  -> mgdt1    19 16
-[mgdt2|d2005 迷宫二层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[mgdt2|d2005 迷宫二层] noreconnect(3:330:330) maxplayer(10) runmon
 mgdt2    18 21  -> mgdt3 74 81
 mgdt3 74 81  -> mgdt2    18 21
-[mgdt3|d2006 迷宫三层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[mgdt3|d2006 迷宫三层] noreconnect(3:330:330) maxplayer(10) runmon
 mgdt3 15 21  -> mgdt4    82 83
 mgdt4    82 83  -> mgdt3 15 21
-[mgdt4|d2013 迷宫四层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[mgdt4|d2013 迷宫四层] noreconnect(3:330:330) maxplayer(10) runmon
 
-[fxdt1|622 废墟一层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[fxdt1|622 废墟一层] noreconnect(3:330:330) maxplayer(10) runmon
 fxdt1 262 39 -> fxdt2 45 47
-[fxdt2|613 废墟二层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[fxdt2|613 废墟二层] noreconnect(3:330:330) maxplayer(10) runmon
 fxdt2 45 47 -> fxdt1 262 39
 fxdt2 173 170 -> fxdt3 266 108
-[fxdt3|65 废墟三层]  noreconnect(3:330:330) norecall nodearrecall maxplayer(10) runmon(1)
+[fxdt3|65 废墟三层]  noreconnect(3:330:330) norecall nodearrecall maxplayer(10) runmon
 fxdt3 266 108 -> fxdt2 173 170
 fxdt3 42 158 -> fxdt4 256 213
-[fxdt4|66 废墟四层]  noreconnect(3:330:330) norecall nodearrecall maxplayer(10) runmon(1)
+[fxdt4|66 废墟四层]  noreconnect(3:330:330) norecall nodearrecall maxplayer(10) runmon
 fxdt4 256 213 -> fxdt3 42 158
 
-[jtdt1|bsrlm01 祭坛一层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[jtdt1|bsrlm01 祭坛一层] noreconnect(3:330:330) maxplayer(10) runmon
 jtdt1 43 260 -> jtdt2 138 99
-[jtdt2|bsrlm02 祭坛二层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[jtdt2|bsrlm02 祭坛二层] noreconnect(3:330:330) maxplayer(10) runmon
 jtdt2 138 99 -> jtdt1 43 260
 jtdt2 10 184 -> jtdt3 28 114
-[jtdt3|bsrlm04 祭坛三层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[jtdt3|bsrlm04 祭坛三层] noreconnect(3:330:330) maxplayer(10) runmon
 jtdt3 28 114 -> jtdt2 10 184
 jtdt3 226 136 -> jtdt4 148 80
-[jtdt4|bsrlm03 祭坛通道]  noreconnect(3:330:330) norecall nodearrecall maxplayer(10) runmon(1)
+[jtdt4|bsrlm03 祭坛通道]  noreconnect(3:330:330) norecall nodearrecall maxplayer(10) runmon
 jtdt4 148 80 -> jtdt3 226 136
 jtdt4 22 80 -> jtdt5 50 53
-[jtdt5|bsrlm 祖玛祭坛]  noreconnect(3:330:330) norecall nodearrecall maxplayer(10) runmon(1)
+[jtdt5|bsrlm 祖玛祭坛]  noreconnect(3:330:330) norecall nodearrecall maxplayer(10) runmon
 jtdt5 50 53 -> jtdt4 22 80
 
-[hjdt1|h001 幻境一层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[hjdt1|h001 幻境一层] noreconnect(3:330:330) maxplayer(10) runmon
 hjdt1 10 9 -> hjdt2 27 74
-[hjdt2|h006 幻境二层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[hjdt2|h006 幻境二层] noreconnect(3:330:330) maxplayer(10) runmon
 hjdt2 27 74 -> hjdt1 10 9
 hjdt2 83 25 -> hjdt3 95 102
-[hjdt3|h007 幻境三层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[hjdt3|h007 幻境三层] noreconnect(3:330:330) maxplayer(10) runmon
 hjdt3 95 102 -> hjdt2 83 25
 hjdt3 123 10 -> hjdt4 155 155
-[hjdt4|h010 幻境四层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[hjdt4|h010 幻境四层] noreconnect(3:330:330) maxplayer(10) runmon
 hjdt4 155 155 -> hjdt3 123 10
 
 
-[smd1|d2053 尸魔洞一层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[smd1|d2053 尸魔洞一层] noreconnect(3:330:330) maxplayer(10) runmon
 smd1 12 155 -> smd2 285 281
-[smd2|d2054 尸魔洞二层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[smd2|d2054 尸魔洞二层] noreconnect(3:330:330) maxplayer(10) runmon
 smd2 285 281 -> smd1 12 155
 smd2 213 165 -> smd3 92 76
-[smd3|d2052 尸魔洞三层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[smd3|d2052 尸魔洞三层] noreconnect(3:330:330) maxplayer(10) runmon
 smd3 92 76 -> smd2 213 165
 
 
-[kld1|d011 骷髅洞一层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[kld1|d011 骷髅洞一层] noreconnect(3:330:330) maxplayer(10) runmon
 kld1 127 201 -> kld2 77 197
-[kld2|d012 骷髅洞二层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[kld2|d012 骷髅洞二层] noreconnect(3:330:330) maxplayer(10) runmon
 kld2 77 197 -> kld1 127 201
 kld2 377 64 -> kld3 290 293
-[kld3|d003 骷髅洞三层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[kld3|d003 骷髅洞三层] noreconnect(3:330:330) maxplayer(10) runmon
 kld3 290 293 -> kld2 377 64
 
 
-[kd1|d406 矿洞一层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[kd1|d406 矿洞一层] noreconnect(3:330:330) maxplayer(10) runmon
 kd1 186 119 -> kd2 10 106
-[kd2|d403 矿洞二层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[kd2|d403 矿洞二层] noreconnect(3:330:330) maxplayer(10) runmon
 kd2 10 106 -> kd1 186 119
 kd2 121 191 -> kd3 11 148
-[kd3|d405 矿洞三层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[kd3|d405 矿洞三层] noreconnect(3:330:330) maxplayer(10) runmon
 kd3 11 148 -> kd2 121 191
 kd3 166 138 -> kd4 27 179
-[kd4|d2000 矿洞四层] noreconnect(3:330:330) maxplayer(10) runmon(1)
+[kd4|d2000 矿洞四层] noreconnect(3:330:330) maxplayer(10) runmon
 kd4 27 179 -> kd3 166 138
 
 
-[swgc1|d613 死亡棺材一层] noreconnect(3:330:330) maxplayer(20) runmon(1)
+[swgc1|d613 死亡棺材一层] noreconnect(3:330:330) maxplayer(20) runmon
 swgc1 8 51 -> swgc2 69 65
-[swgc2|d614 死亡棺材二层] noreconnect(3:330:330) maxplayer(20) runmon(1)
+[swgc2|d614 死亡棺材二层] noreconnect(3:330:330) maxplayer(20) runmon
 swgc2 69 65 -> swgc1 8 51
 swgc2 13 19 -> swgc3 64 82
-[swgc3|d615 死亡棺材三层] noreconnect(3:330:330) maxplayer(20) runmon(1) 
+[swgc3|d615 死亡棺材三层] noreconnect(3:330:330) maxplayer(20) runmon 
 swgc3 64 82 -> swgc2 13 19
 swgc3 88 76 -> swgc4 14 20
-[swgc4|d619 死亡棺材四层] noreconnect(3:330:330) maxplayer(20) norandommove runmon(1)
+[swgc4|d619 死亡棺材四层] noreconnect(3:330:330) maxplayer(20) norandommove runmon
 swgc4 14 20 -> swgc3 88 76
 
-[wgd1|d601 蜈蚣洞一层] noreconnect(3:330:330) maxplayer(20)  runmon(1)
+[wgd1|d601 蜈蚣洞一层] noreconnect(3:330:330) maxplayer(20)  runmon
 wgd1 52 15 -> wgd2 110 86
-[wgd2|d602 蜈蚣洞二层] noreconnect(3:330:330) maxplayer(20)  runmon(1)
+[wgd2|d602 蜈蚣洞二层] noreconnect(3:330:330) maxplayer(20)  runmon
 wgd2 110 86 -> wgd1 52 15
 wgd2 45 22 -> wgd3 9 25
-[wgd3|d606 蜈蚣洞三层] noreconnect(3:330:330) maxplayer(20) norandommove runmon(1)
+[wgd3|d606 蜈蚣洞三层] noreconnect(3:330:330) maxplayer(20) norandommove runmon
 wgd3 9 25 -> wgd2 45 22
 
-[wmsm1|d402 沃玛寺庙一层] noreconnect(3:330:330)   runmon(1)
+[wmsm1|d402 沃玛寺庙一层] noreconnect(3:330:330)   runmon
 wmsm1 195 81 -> wmsm2 9 152
-[wmsm2|d404 沃玛寺庙二层] noreconnect(3:330:330)   runmon(1)
+[wmsm2|d404 沃玛寺庙二层] noreconnect(3:330:330)   runmon
 wmsm2 9 152 -> wmsm1 195 81
 wmsm2 152 19 -> wmsm3 16 18
-[wmsm3|d024 沃玛寺庙三层] noreconnect(3:330:330)  norandommove runmon(1)
+[wmsm3|d024 沃玛寺庙三层] noreconnect(3:330:330)  norandommove runmon
 wmsm3 16 18 -> wmsm2 152 19
 
-[ltl1|d2008 雷霆之路一层] noreconnect(3:330:330)   runmon(1)
+[ltl1|d2008 雷霆之路一层] noreconnect(3:330:330)   runmon
 ltl1 26 23 -> ltl2 84 85
-[ltl2|d2012 雷霆之路二层] noreconnect(3:330:330)   runmon(1)
+[ltl2|d2012 雷霆之路二层] noreconnect(3:330:330)   runmon
 ltl2 84 85 -> ltl1 26 23
 ltl2 18 21 -> ltl3 86 91
-[ltl3|d2011 雷霆之路三层] noreconnect(3:330:330)   runmon(1)
+[ltl3|d2011 雷霆之路三层] noreconnect(3:330:330)   runmon
 ltl3 86 91 -> ltl2 18 21
 ltl3 19 20 -> ltl4 82 83
-[ltl4|d2013 雷霆殿] noreconnect(3:330:330)  norandommove runmon(1)
+[ltl4|d2013 雷霆殿] noreconnect(3:330:330)  norandommove runmon
 ltl4 82 83 -> ltl3 19 20
 
-[hyltl1|d2008 会员雷霆之路一层] noreconnect(3:330:330)   runmon(1)
+[hyltl1|d2008 会员雷霆之路一层] noreconnect(3:330:330)   runmon
 hyltl1 26 23 -> hyltl2 84 85
-[hyltl2|d2012 会员雷霆之路二层] noreconnect(3:330:330)   runmon(1)
+[hyltl2|d2012 会员雷霆之路二层] noreconnect(3:330:330)   runmon
 hyltl2 84 85 -> hyltl1 26 23
 hyltl2 18 21 -> hyltl3 86 91
-[hyltl3|d2011 会员雷霆之路三层] noreconnect(3:330:330)   runmon(1)
+[hyltl3|d2011 会员雷霆之路三层] noreconnect(3:330:330)   runmon
 hyltl3 86 91 -> hyltl2 18 21
 hyltl3 19 20 -> hyltl4 82 83
-[hyltl4|d2013 会员雷霆殿] noreconnect(3:330:330)  norandommove runmon(1)
+[hyltl4|d2013 会员雷霆殿] noreconnect(3:330:330)  norandommove runmon
 hyltl4 82 83 -> hyltl3 19 20
 
 
-[emgc1|k001 恶魔广场一层] noreconnect(3:330:330)   runmon(1)
-[emgc2|l001 恶魔广场二层] noreconnect(3:330:330)  norecall nodearrecall  runmon(1)
-[emgc3|f003 恶魔广场] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[emgc1|k001 恶魔广场一层] noreconnect(3:330:330)   runmon
+[emgc2|l001 恶魔广场二层] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[emgc3|f003 恶魔广场] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[hyemgc1|k001 会员恶魔广场一层] noreconnect(3:330:330)   runmon(1)
-[hyemgc2|l001 会员恶魔广场二层] noreconnect(3:330:330)  norecall nodearrecall  runmon(1)
-[hyemgc3|f003 会员恶魔广场] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hyemgc1|k001 会员恶魔广场一层] noreconnect(3:330:330)   runmon
+[hyemgc2|l001 会员恶魔广场二层] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[hyemgc3|f003 会员恶魔广场] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
 
 
-[zmsm1|nd5072 祖玛寺庙一层] noreconnect(3:330:330)   runmon(1)
+[zmsm1|nd5072 祖玛寺庙一层] noreconnect(3:330:330)   runmon
 zmsm1 89 20 -> zmsm2 10 69
-[zmsm2|nd5073 祖玛寺庙二层] noreconnect(3:330:330)   runmon(1)
+[zmsm2|nd5073 祖玛寺庙二层] noreconnect(3:330:330)   runmon
 zmsm2 10 69 -> zmsm1 89 20
 zmsm2 59 10 -> zmsm3 48 91
-[zmsm3|nd5074 祖玛寺庙三层] noreconnect(3:330:330)   runmon(1)
+[zmsm3|nd5074 祖玛寺庙三层] noreconnect(3:330:330)   runmon
 zmsm3 48 91 -> zmsm2 59 10 
 zmsm3 49 16 -> zmsm4 50 50
-[zmsm4|nf002 祖玛寺庙四层] noreconnect(3:330:330)  norandommove runmon(1)
+[zmsm4|nf002 祖玛寺庙四层] noreconnect(3:330:330)  norandommove runmon
 
-[hyzmsm1|nd5072 会员祖玛寺庙一层] noreconnect(3:330:330)   runmon(1)
+[hyzmsm1|nd5072 会员祖玛寺庙一层] noreconnect(3:330:330)   runmon
 hyzmsm1 89 20 -> hyzmsm2 10 69
-[hyzmsm2|nd5073 会员祖玛寺庙二层] noreconnect(3:330:330)   runmon(1)
+[hyzmsm2|nd5073 会员祖玛寺庙二层] noreconnect(3:330:330)   runmon
 hyzmsm2 10 69 -> hyzmsm1 89 20
 hyzmsm2 59 10 -> hyzmsm3 48 91
-[hyzmsm3|nd5074 会员祖玛寺庙三层] noreconnect(3:330:330)   runmon(1)
+[hyzmsm3|nd5074 会员祖玛寺庙三层] noreconnect(3:330:330)   runmon
 hyzmsm3 48 91 -> hyzmsm2 59 10 
 hyzmsm3 49 16 -> hyzmsm4 50 50
-[hyzmsm4|nf002 会员祖玛寺庙四层] noreconnect(3:330:330)  norandommove runmon(1)
+[hyzmsm4|nf002 会员祖玛寺庙四层] noreconnect(3:330:330)  norandommove runmon
 
-[hldt1|ygsd1 混乱殿堂一层] noreconnect(3:330:330)   runmon(1)
+[hldt1|ygsd1 混乱殿堂一层] noreconnect(3:330:330)   runmon
 hldt1 277 280 -> hldt2 21 47
-[hldt2|ygsd2 混乱殿堂二层] noreconnect(3:330:330)   runmon(1)
+[hldt2|ygsd2 混乱殿堂二层] noreconnect(3:330:330)   runmon
 hldt2 21 47 -> hldt1 277 280
 hldt2 282 108 -> hldt3 24 268
-[hldt3|ygsd3 混乱殿堂三层] noreconnect(3:330:330)   runmon(1)
+[hldt3|ygsd3 混乱殿堂三层] noreconnect(3:330:330)   runmon
 hldt3 24 268 -> hldt2 282 108
 hldt3 271 38 -> hldt4 51 111
-[hldt4|ygsd4 混乱殿堂四层] noreconnect(3:330:330)  norandommove runmon(1)
+[hldt4|ygsd4 混乱殿堂四层] noreconnect(3:330:330)  norandommove runmon
 hldt4 51 111 -> hldt3 271 38
 
-[hyhldt1|ygsd1 会员混乱殿堂一层] noreconnect(3:330:330)   runmon(1)
+[hyhldt1|ygsd1 会员混乱殿堂一层] noreconnect(3:330:330)   runmon
 hyhldt1 277 280 -> hyhldt2 21 47
-[hyhldt2|ygsd2 会员混乱殿堂二层] noreconnect(3:330:330)   runmon(1)
+[hyhldt2|ygsd2 会员混乱殿堂二层] noreconnect(3:330:330)   runmon
 hyhldt2 21 47 -> hyhldt1 277 280
 hyhldt2 282 108 -> hyhldt3 24 268
-[hyhldt3|ygsd3 会员混乱殿堂三层] noreconnect(3:330:330)   runmon(1)
+[hyhldt3|ygsd3 会员混乱殿堂三层] noreconnect(3:330:330)   runmon
 hyhldt3 24 268 -> hyhldt2 282 108
 hyhldt3 271 38 -> hyhldt4 51 111
-[hyhldt4|ygsd4 会员混乱殿堂四层] noreconnect(3:330:330)  norandommove runmon(1)
+[hyhldt4|ygsd4 会员混乱殿堂四层] noreconnect(3:330:330)  norandommove runmon
 hyhldt4 51 111 -> hyhldt3 271 38
 
 
-[cyxg1|d10032 赤月峡谷一层] noreconnect(3:330:330)   runmon(1)
+[cyxg1|d10032 赤月峡谷一层] noreconnect(3:330:330)   runmon
 cyxg1 201 148 -> cyxg2 99 185
-[cyxg2|d10052 赤月峡谷二层] noreconnect(3:330:330)   runmon(1)
+[cyxg2|d10052 赤月峡谷二层] noreconnect(3:330:330)   runmon
 cyxg2 99 185 -> cyxg1 201 148
 cyxg2 140 23 -> cyxg3 21 26
-[cyxg3|d10061 赤月峡谷三层] noreconnect(3:330:330)  norandommove runmon(1)
+[cyxg3|d10061 赤月峡谷三层] noreconnect(3:330:330)  norandommove runmon
 cyxg3 21 26 -> cyxg2 140 23
 
-[hycyxg1|d10032 会员赤月峡谷一层] noreconnect(3:330:330)   runmon(1)
+[hycyxg1|d10032 会员赤月峡谷一层] noreconnect(3:330:330)   runmon
 hycyxg1 201 148 -> hycyxg2 99 185
-[hycyxg2|d10052 会员赤月峡谷二层] noreconnect(3:330:330)   runmon(1)
+[hycyxg2|d10052 会员赤月峡谷二层] noreconnect(3:330:330)   runmon
 hycyxg2 99 185 -> hycyxg1 201 148
 hycyxg2 140 23 -> hycyxg3 21 26
-[hycyxg3|d10061 会员赤月峡谷三层] noreconnect(3:330:330)  norandommove runmon(1)
+[hycyxg3|d10061 会员赤月峡谷三层] noreconnect(3:330:330)  norandommove runmon
 hycyxg3 21 26 -> hycyxg2 140 23
 
 
-[nmsy1|d2071 牛魔寺院一层] noreconnect(3:330:330)   runmon(1)
+[nmsy1|d2071 牛魔寺院一层] noreconnect(3:330:330)   runmon
 nmsy1 111 114 -> nmsy2 95 130
-[nmsy2|d2076 牛魔寺院二层] noreconnect(3:330:330)  norandommove runmon(1)
+[nmsy2|d2076 牛魔寺院二层] noreconnect(3:330:330)  norandommove runmon
 nmsy2 95 130 -> nmsy1 111 114
 nmsy2 22 29 -> nmsy3 12 12
-[nmsy3|d2079 牛魔寺院三层] noreconnect(3:330:330)  norandommove runmon(1)
+[nmsy3|d2079 牛魔寺院三层] noreconnect(3:330:330)  norandommove runmon
 nmsy3 12 12 -> nmsy2 22 29
 
-[hynmsy1|d2071 会员牛魔寺院一层] noreconnect(3:330:330)   runmon(1)
+[hynmsy1|d2071 会员牛魔寺院一层] noreconnect(3:330:330)   runmon
 hynmsy1 111 114 -> hynmsy2 95 130
-[hynmsy2|d2076 会员牛魔寺院二层] noreconnect(3:330:330)  norandommove runmon(1)
+[hynmsy2|d2076 会员牛魔寺院二层] noreconnect(3:330:330)  norandommove runmon
 hynmsy2 95 130 -> hynmsy1 111 114
 hynmsy2 22 29 -> hynmsy3 12 12
-[hynmsy3|d2079 会员牛魔寺院三层] noreconnect(3:330:330)  norandommove runmon(1)
+[hynmsy3|d2079 会员牛魔寺院三层] noreconnect(3:330:330)  norandommove runmon
 hynmsy3 12 12 -> hynmsy2 22 29
 
-[wjdy1|nd2075 无间地狱一层] noreconnect(3:330:330)   runmon(1)
+[wjdy1|nd2075 无间地狱一层] noreconnect(3:330:330)   runmon
 wjdy1 125 62 -> wjdy2 13 12
-[wjdy2|nd2079 无间地狱二层] noreconnect(3:330:330)  norandommove runmon(1)
+[wjdy2|nd2079 无间地狱二层] noreconnect(3:330:330)  norandommove runmon
 wjdy2 13 12 -> wjdy1 125 62
 wjdy2 35 17 -> wjdy3 18 39
-[wjdy3|nd2070 无间地狱] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[wjdy3|nd2070 无间地狱] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 wjdy3 18 39 -> wjdy2 35 17
 
-[hywjdy1|nd2075 会员无间地狱一层] noreconnect(3:330:330)   runmon(1)
+[hywjdy1|nd2075 会员无间地狱一层] noreconnect(3:330:330)   runmon
 hywjdy1 125 62 -> hywjdy2 13 12
-[hywjdy2|nd2079 会员无间地狱二层] noreconnect(3:330:330)  norandommove runmon(1)
+[hywjdy2|nd2079 会员无间地狱二层] noreconnect(3:330:330)  norandommove runmon
 hywjdy2 13 12 -> hywjdy1 125 62
 hywjdy2 35 17 -> hywjdy3 18 39
-[hywjdy3|nd2070 会员无间地狱] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hywjdy3|nd2070 会员无间地狱] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 hywjdy3 18 39 -> hywjdy2 35 17
 
-[nmjt1|r001 牛魔祭坛一层] noreconnect(3:330:330)   runmon(1)
+[nmjt1|r001 牛魔祭坛一层] noreconnect(3:330:330)   runmon
 nmjt1 100 100 -> nmjt2 16 18
-[nmjt2|zhouyi 牛魔祭坛二层] noreconnect(3:330:330)  norandommove runmon(1)
+[nmjt2|zhouyi 牛魔祭坛二层] noreconnect(3:330:330)  norandommove runmon
 nmjt2 16 18 -> nmjt1 100 100
 nmjt2 50 50 -> nmjt3 12 12
-[nmjt3|d2079 牛魔祭坛] noreconnect(3:330:330)  norandommove runmon(1)
+[nmjt3|d2079 牛魔祭坛] noreconnect(3:330:330)  norandommove runmon
 nmjt3 12 12 -> nmjt2 50 50
 
-[hynmjt1|r001 会员牛魔祭坛一层] noreconnect(3:330:330)   runmon(1)
+[hynmjt1|r001 会员牛魔祭坛一层] noreconnect(3:330:330)   runmon
 hynmjt1 100 100 -> hynmjt2 16 18
-[hynmjt2|zhouyi 会员牛魔祭坛二层] noreconnect(3:330:330)  norandommove runmon(1)
+[hynmjt2|zhouyi 会员牛魔祭坛二层] noreconnect(3:330:330)  norandommove runmon
 hynmjt2 16 18 -> hynmjt1 100 100
 hynmjt2 50 50 -> hynmjt3 12 12
-[hynmjt3|d2079 会员牛魔祭坛] noreconnect(3:330:330)  norandommove runmon(1)
+[hynmjt3|d2079 会员牛魔祭坛] noreconnect(3:330:330)  norandommove runmon
 hynmjt3 12 12 -> hynmjt2 50 50
 
-[lyd1|hl001 雷炎洞穴一层] noreconnect(3:330:330)   runmon(1)
+[lyd1|hl001 雷炎洞穴一层] noreconnect(3:330:330)   runmon
 lyd1 20 218 -> lyd2 26 14
-[lyd2|hl002 雷炎洞穴二层] noreconnect(3:330:330)  norandommove runmon(1)
+[lyd2|hl002 雷炎洞穴二层] noreconnect(3:330:330)  norandommove runmon
 
 [hylyd1|hl001 会员雷炎洞穴一层] noreconnect(3:330:330)  
 hylyd1 20 218 -> hylyd2 26 14
-[hylyd2|hl002 会员雷炎洞穴二层] noreconnect(3:330:330)  norandommove runmon(1)
+[hylyd2|hl002 会员雷炎洞穴二层] noreconnect(3:330:330)  norandommove runmon
 
-[mly1|61 魔龙之渊一层] noreconnect(3:330:330)  runmon(1)
+[mly1|61 魔龙之渊一层] noreconnect(3:330:330)  runmon
 mly1 164 393 -> mly2 27 368
-[mly2|63 魔龙之渊二层] noreconnect(3:330:330)  norandommove runmon(1)
+[mly2|63 魔龙之渊二层] noreconnect(3:330:330)  norandommove runmon
 mly2 27 368 -> mly1 164 393
 mly2 19 39 -> mly3 256 213
-[mly3|66 魔龙之渊] noreconnect(3:330:330)  norandommove runmon(1)
+[mly3|66 魔龙之渊] noreconnect(3:330:330)  norandommove runmon
 mly3 256 213 -> mly2 19 39
 
-[hymly1|61 会员魔龙之渊一层] noreconnect(3:330:330)  runmon(1)
+[hymly1|61 会员魔龙之渊一层] noreconnect(3:330:330)  runmon
 hymly1 164 393 -> hymly2 27 368
-[hymly2|63 会员魔龙之渊二层] noreconnect(3:330:330)  norandommove runmon(1)
+[hymly2|63 会员魔龙之渊二层] noreconnect(3:330:330)  norandommove runmon
 hymly2 27 368 -> hymly1 164 393
 hymly2 19 39 -> hymly3 256 213
-[hymly3|66 会员魔龙之渊] noreconnect(3:330:330)  norandommove runmon(1)
+[hymly3|66 会员魔龙之渊] noreconnect(3:330:330)  norandommove runmon
 hymly3 256 213 -> hymly2 19 39
 
-[hyd1|f006 狐月岛一层] noreconnect(3:330:330)   runmon(1)
-[hyd2|fox01 狐月岛二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hyd1|f006 狐月岛一层] noreconnect(3:330:330)   runmon
+[hyd2|fox01 狐月岛二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 hyd2 274 125 -> hyd3 13 30
-[hyd3|fox03 狐月祭坛] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hyd3|fox03 狐月祭坛] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[hyhyd1|f006 会员狐月岛一层] noreconnect(3:330:330)   runmon(1)
-[hyhyd2|fox01 会员狐月岛二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hyhyd1|f006 会员狐月岛一层] noreconnect(3:330:330)   runmon
+[hyhyd2|fox01 会员狐月岛二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 hyhyd2 274 125 -> hyhyd3 13 30
-[hyhyd3|fox03 会员狐月祭坛] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hyhyd3|fox03 会员狐月祭坛] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[hlzd1|ev001 火龙禁地] noreconnect(3:330:330)   runmon(1)
+[hlzd1|ev001 火龙禁地] noreconnect(3:330:330)   runmon
 hlzd1 19 219 -> hlzd2 381 45
-[hlzd2|ev000 火龙通道] noreconnect(3:330:330)  norandommove runmon(1)
+[hlzd2|ev000 火龙通道] noreconnect(3:330:330)  norandommove runmon
 hlzd2 381 45 -> hlzd1 19 219
 hlzd2 374 273 -> hlzd3 24 10
-[hlzd3|hl002 火龙洞窟] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hlzd3|hl002 火龙洞窟] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[hyhlzd1|ev001 会员火龙禁地] noreconnect(3:330:330)   runmon(1)
+[hyhlzd1|ev001 会员火龙禁地] noreconnect(3:330:330)   runmon
 hyhlzd1 19 219 -> hyhlzd2 381 45
-[hyhlzd2|ev000 会员火龙通道] noreconnect(3:330:330)  norandommove runmon(1)
+[hyhlzd2|ev000 会员火龙通道] noreconnect(3:330:330)  norandommove runmon
 hyhlzd2 381 45 -> hyhlzd1 19 219
 hyhlzd2 374 273 -> hyhlzd3 24 10
-[hyhlzd3|hl002 会员火龙洞窟] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hyhlzd3|hl002 会员火龙洞窟] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[elsy1|nhero1 恶龙神域一层] noreconnect(3:330:330)  runmon(1)
-[elsy2|slhy2 恶龙神域二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[elsy3|slhy3 恶龙神域] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[elsy1|nhero1 恶龙神域一层] noreconnect(3:330:330)  runmon
+[elsy2|slhy2 恶龙神域二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[elsy3|slhy3 恶龙神域] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[hyelsy1|nhero1 会员恶龙神域一层] noreconnect(3:330:330)  runmon(1)
-[hyelsy2|slhy2 会员恶龙神域二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[hyelsy3|slhy3 会员恶龙神域] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hyelsy1|nhero1 会员恶龙神域一层] noreconnect(3:330:330)  runmon
+[hyelsy2|slhy2 会员恶龙神域二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hyelsy3|slhy3 会员恶龙神域] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
 
-[hyz1|nanm 狐月庄] noreconnect(3:330:330)  norandommove runmon(1)
+[hyz1|nanm 狐月庄] noreconnect(3:330:330)  norandommove runmon
 
-[hyhyz1|nanm 会员狐月庄] noreconnect(3:330:330)  norandommove runmon(1)
+[hyhyz1|nanm 会员狐月庄] noreconnect(3:330:330)  norandommove runmon
 
-[hxd1|ygsd2 狐仙岛一层] noreconnect(3:330:330) norandommove runmon(1)
+[hxd1|ygsd2 狐仙岛一层] noreconnect(3:330:330) norandommove runmon
 hxd1 282 108 -> hxd2 24 268
-[hxd2|ygsd3 狐仙岛二层] noreconnect(3:330:330)  norandommove runmon(1)
+[hxd2|ygsd3 狐仙岛二层] noreconnect(3:330:330)  norandommove runmon
 hxd2 24 268 -> hxd1 282 108
 hxd2 271 37 -> hxd3 51 111
-[hxd3|ygsd4 狐仙岛] noreconnect(3:330:330)  norandommove runmon(1)
+[hxd3|ygsd4 狐仙岛] noreconnect(3:330:330)  norandommove runmon
 hxd3 51 111 -> hxd2 271 37
 
-[hyhxd1|ygsd2 会员狐仙岛一层] noreconnect(3:330:330) norandommove runmon(1)
+[hyhxd1|ygsd2 会员狐仙岛一层] noreconnect(3:330:330) norandommove runmon
 hyhxd1 282 108 -> hyhxd2 24 268
-[hyhxd2|ygsd3 会员狐仙岛二层] noreconnect(3:330:330)  norandommove runmon(1)
+[hyhxd2|ygsd3 会员狐仙岛二层] noreconnect(3:330:330)  norandommove runmon
 hyhxd2 24 268 -> hyhxd1 282 108
 hyhxd2 271 37 -> hyhxd3 51 111
-[hyhxd3|ygsd4 会员狐仙岛] noreconnect(3:330:330)  norandommove runmon(1)
+[hyhxd3|ygsd4 会员狐仙岛] noreconnect(3:330:330)  norandommove runmon
 hyhxd3 51 111 -> hyhxd2 271 37
 
-[hld1|nkuanggong 火龙殿一层] noreconnect(3:330:330) norandommove runmon(1)
+[hld1|nkuanggong 火龙殿一层] noreconnect(3:330:330) norandommove runmon
 hld1 28 52 -> hld2 12 12
-[hld2|d2079 火龙殿二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hld2|d2079 火龙殿二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 hld2 12 12 -> hld1 28 52
 hld2 36 17 -> hld3 48 22
-[hld3|f014 火龙殿] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hld3|f014 火龙殿] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[hyhld1|nkuanggong 会员火龙殿一层] noreconnect(3:330:330) norandommove runmon(1)
+[hyhld1|nkuanggong 会员火龙殿一层] noreconnect(3:330:330) norandommove runmon
 hyhld1 28 52 -> hyhld2 12 12
-[hyhld2|d2079 会员火龙殿二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hyhld2|d2079 会员火龙殿二层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 hyhld2 12 12 -> hyhld1 28 52
 hyhld2 36 17 -> hyhld3 48 22
-[hyhld3|f014 会员火龙殿] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[hyhld3|f014 会员火龙殿] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[kbzc|slhy3 狂暴之城] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[kbzc|slhy3 狂暴之城] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[gzzs8|ygsd1 八品专属] noreconnect(3:330:330)  runmon(1)
-[gzzs7|ygsd1 七品专属] noreconnect(3:330:330)  runmon(1)
-[gzzs5|ygsd2 五品专属] noreconnect(3:330:330)  runmon(1)
-[gzzs3|ygsd2 三品专属] noreconnect(3:330:330)  runmon(1)
-[gzzs1|ygsd2 一品专属] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[gzzsdd|ygsd3 大都督专属] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[gzzsgj|ygsd3 冠绝一世专属] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[gzzszl|ygsd3 逐鹿群雄专属] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[gzzsxb|ygsd3 雄霸天下专属] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[gzzs8|ygsd1 八品专属] noreconnect(3:330:330)  runmon
+[gzzs7|ygsd1 七品专属] noreconnect(3:330:330)  runmon
+[gzzs5|ygsd2 五品专属] noreconnect(3:330:330)  runmon
+[gzzs3|ygsd2 三品专属] noreconnect(3:330:330)  runmon
+[gzzs1|ygsd2 一品专属] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[gzzsdd|ygsd3 大都督专属] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[gzzsgj|ygsd3 冠绝一世专属] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[gzzszl|ygsd3 逐鹿群雄专属] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[gzzsxb|ygsd3 雄霸天下专属] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[ltzs1|nd2079 炼体一阶] noreconnect(3:330:330)  runmon(1)
-[ltzs2|nd2079 炼体二阶] noreconnect(3:330:330)  runmon(1)
-[ltzs3|nd2079 炼体三阶] noreconnect(3:330:330)  runmon(1)
-[ltzs4|nd2079 炼体四阶] noreconnect(3:330:330)  runmon(1)
-[ltzs5|slhy3 炼体五阶] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[ltzs6|slhy3 炼体六阶] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[ltzs7|slhy3 炼体七阶] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[ltzs8|slhy3 炼体八阶] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[ltzs1|nd2079 炼体一阶] noreconnect(3:330:330)  runmon
+[ltzs2|nd2079 炼体二阶] noreconnect(3:330:330)  runmon
+[ltzs3|nd2079 炼体三阶] noreconnect(3:330:330)  runmon
+[ltzs4|nd2079 炼体四阶] noreconnect(3:330:330)  runmon
+[ltzs5|slhy3 炼体五阶] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[ltzs6|slhy3 炼体六阶] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[ltzs7|slhy3 炼体七阶] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[ltzs8|slhy3 炼体八阶] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[ysdj8|d2004 元神一层] noreconnect(3:330:330)  runmon(1)
-[ysdj12|d2005 元神二层] noreconnect(3:330:330)  runmon(1)
-[ysdj16|d2009 元神三层] noreconnect(3:330:330)  runmon(1)
-[ysdj20|d2012 元神四层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[ysdj24|d2013 元神五层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[ysdj30|r001 元神六层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[ysdj40|r001 元神七层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
-[ysdj50|r001 元神八层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon(1)
+[ysdj8|d2004 元神一层] noreconnect(3:330:330)  runmon
+[ysdj12|d2005 元神二层] noreconnect(3:330:330)  runmon
+[ysdj16|d2009 元神三层] noreconnect(3:330:330)  runmon
+[ysdj20|d2012 元神四层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[ysdj24|d2013 元神五层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[ysdj30|r001 元神六层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[ysdj40|r001 元神七层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[ysdj50|r001 元神八层] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
 
-[gldt0|g002 古陵试炼] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon(1)
-[gldt1|g002 古陵一层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon(1)
-[gldt2|g002 古陵二层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon(1)
-[gldt3|g002 古陵三层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon(1)
-[gldt4|g002 古陵四层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon(1)
-[gldt5|g002 古陵五层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon(1)
-[gldt6|g002 古陵六层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon(1)
-[gldt7|g002 古陵七层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon(1)
-[gldt8|g002 古陵八层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon(1)
-[gldt9|g002 古陵九层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon(1)
-[gldt10|g002 古陵十层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon(1)
-
-
-[zsdt1|djdt1 11转地图] noreconnect(3:330:330) norandommove runmon(1)
-[zsdt2|djdt2 13转地图] noreconnect(3:330:330) norandommove runmon(1)
-[zsdt3|djdt3 15转地图] noreconnect(3:330:330) norandommove runmon(1)
-[zsdt4|djdt4 17转地图] noreconnect(3:330:330) norandommove runmon(1)
-[zsdt5|djdt5 19转地图] noreconnect(3:330:330) norandommove runmon(1)
-
-[hydt1 VIP11地图] noreconnect(3:330:330) norandommove runmon(1)
-[hydt2 VIP12地图] noreconnect(3:330:330) norandommove runmon(1)
-[hydt3 VIP13地图] noreconnect(3:330:330) norandommove runmon(1)
-[hydt4 VIP14地图] noreconnect(3:330:330) norandommove runmon(1)
-[hydt5 VIP15地图] noreconnect(3:330:330) norandommove runmon(1)
-
-[djdt1 200级地图] noreconnect(3:330:330) norandommove runmon(1)
-[djdt2 220级地图] noreconnect(3:330:330) norandommove runmon(1)
-[djdt3 240级地图] noreconnect(3:330:330) norandommove runmon(1)
-[djdt4 260级地图] noreconnect(3:330:330) norandommove runmon(1)
-[djdt5 280级地图] noreconnect(3:330:330) norandommove runmon(1)
-[djdt6|hydt3 300级地图] noreconnect(3:330:330) norandommove runmon(1)
+[gldt0|g002 古陵试炼] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon
+[gldt1|g002 古陵一层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon
+[gldt2|g002 古陵二层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon
+[gldt3|g002 古陵三层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon
+[gldt4|g002 古陵四层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon
+[gldt5|g002 古陵五层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon
+[gldt6|g002 古陵六层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon
+[gldt7|g002 古陵七层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon
+[gldt8|g002 古陵八层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon
+[gldt9|g002 古陵九层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon
+[gldt10|g002 古陵十层] noreconnect(3:330:330)  onkillmon INCMONEY(经验/1/5000/@XX) safe runmon
 
 
+[zsdt1|djdt1 11转地图] noreconnect(3:330:330) norandommove runmon
+[zsdt2|djdt2 13转地图] noreconnect(3:330:330) norandommove runmon
+[zsdt3|djdt3 15转地图] noreconnect(3:330:330) norandommove runmon
+[zsdt4|djdt4 17转地图] noreconnect(3:330:330) norandommove runmon
+[zsdt5|djdt5 19转地图] noreconnect(3:330:330) norandommove runmon
+
+[hydt1 VIP11地图] noreconnect(3:330:330) norandommove runmon
+[hydt2 VIP12地图] noreconnect(3:330:330) norandommove runmon
+[hydt3 VIP13地图] noreconnect(3:330:330) norandommove runmon
+[hydt4 VIP14地图] noreconnect(3:330:330) norandommove runmon
+[hydt5 VIP15地图] noreconnect(3:330:330) norandommove runmon
+
+[djdt1 200级地图] noreconnect(3:330:330) norandommove runmon
+[djdt2 220级地图] noreconnect(3:330:330) norandommove runmon
+[djdt3 240级地图] noreconnect(3:330:330) norandommove runmon
+[djdt4 260级地图] noreconnect(3:330:330) norandommove runmon
+[djdt5 280级地图] noreconnect(3:330:330) norandommove runmon
+[djdt6|hydt3 300级地图] noreconnect(3:330:330) norandommove runmon
 
 
 
@@ -435,7 +433,9 @@ hyhld2 36 17 -> hyhld3 48 22
 
 
 
-[0 比奇省] runmon(1) runhuman(1) incmoney(经验/2/0/@比奇新手泡点)
+
+
+[0 比奇省] runmon runhuman(1) incmoney(经验/2/0/@比奇新手泡点)
 [0122 宫殿] day
 [0110 研究院] fight
 [0111 研究院] fight
@@ -650,7 +650,7 @@ hyhld2 36 17 -> hyhld3 48 22
 
 ;带傈 1锅 (坷付悼奔)
 
-[d001 兽人古墓一层] runmon(1) runhuman(1)
+[d001 兽人古墓一层] runmon runhuman(1)
 [d002 兽人古墓二层] dark
 [dm001 奸商] dark fight
 [dm002 国王陵墓] dark
@@ -904,7 +904,7 @@ d717   83 25  -> r001  100  99
 
 ;根锰泅
 
-[3   盟重省] runmon(1) runhuman(1)
+[3   盟重省] runmon runhuman(1)
 3 330 314 -> 0159   5   16
 0159   4   16 -> 3 330 314
 
