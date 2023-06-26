@@ -45,7 +45,8 @@ INC   S$主界面按钮   <Img|x=164|y=6|img=item/item_4/000002.png|width=25|height=2
 INC   S$主界面按钮   <Text|text=$STM(ITEMCOUNT_4)|x=189|y=5|size=16|color=255|outline=2|outlinecolor=0|simplenum=1>
 Inc   S$主界面按钮   <Button|x=245|y=2|nimg=custom/hl/dbsx_ui/btn_qiehuan_01.png|pimg=custom/hl/dbsx_ui/btn_qiehuan_02.png|height=30|width=20|link=@切换>
 Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=5|y=4|link=@火龙币Tiss>
-Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=165|y=4|link=@元宝Tiss>
+Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=85|y=4|link=@元宝Tiss>
+Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=165|y=4|link=@绑定元宝Tiss>
 ADDBUTTON 101 9 <$STR(S$主界面按钮)>
 MOV S$主界面按钮 <Img|x=92|y=100|img=custom/hl/hl_ui/<$Str(s$注灵红点)>.png>
 ADDBUTTON 109 8 <$STR(S$主界面按钮)>

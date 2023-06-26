@@ -13,6 +13,13 @@
 <Text|id=1|text=绑定元宝|x=10|y=5|size=16|color=251|outline=2|outlinecolor=0>
 <RText|id=2|text=可用于<购买商城道具，拍卖行购买道具，使用系统便捷功能/FCOLOR=250>|x=10|y=25|size=15|color=255|outline=2|outlinecolor=0>
 <Text|id=3|text=拥有元宝：$STM(ITEMCOUNT_2)    拥有绑定元宝：$STM(ITEMCOUNT_4) |x=10|y=45|size=15|color=251|outline=2|outlinecolor=0>
+
+[@绑定元宝Tiss]
+<Img|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|bg=1|show=4|img=custom/hl/hl_ui/alpha_1px.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@exit>
+<Img|a=3|children={1,2,3,4}|percentx=52|percenty=16.5|width=410|height=80|img=custom/hl/hl_ui/bg_tips_01.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@exit>
+<Text|id=1|text=绑定元宝|x=10|y=5|size=16|color=251|outline=2|outlinecolor=0>
+<RText|id=2|text=可用于<养成消耗，使用系统便捷功能/FCOLOR=250>|x=10|y=25|size=15|color=255|outline=2|outlinecolor=0>
+<Text|id=3|text=拥有元宝：$STM(ITEMCOUNT_2)    拥有绑定元宝：$STM(ITEMCOUNT_4) |x=10|y=45|size=15|color=251|outline=2|outlinecolor=0>
 [@切换]
 #IF
 CHECKJOB Warrior
@@ -58,7 +65,8 @@ INC   S$主界面按钮   <Img|x=164|y=6|img=item/item_4/000002.png|width=25|height=2
 INC   S$主界面按钮   <Text|text=$STM(ITEMCOUNT_4)|x=189|y=5|size=16|color=255|outline=2|outlinecolor=0|simplenum=1>
 Inc   S$主界面按钮   <Button|x=245|y=2|nimg=custom/hl/dbsx_ui/btn_qiehuan_01.png|pimg=custom/hl/dbsx_ui/btn_qiehuan_02.png|height=30|width=20|link=@切换>
 Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=5|y=4|link=@火龙币Tiss>
-Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=165|y=4|link=@元宝Tiss>
+Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=85|y=4|link=@元宝Tiss>
+Inc   S$主界面按钮 <Layout|width=80|height=30|color=x|x=165|y=4|link=@绑定元宝Tiss>
 ADDBUTTON 101 9 <$STR(S$主界面按钮)>
 BREAK
 
