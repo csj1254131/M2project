@@ -366,7 +366,7 @@ MOV S$C_¶¥´÷ÔªËØÈý3 <Img|x=290|y=10|id=203|img=custom/hl/hl_ui/<$STR(S$C_¹´Ñ¡¶¥´
 check [200] 1
 #ACT
 MOV S$C_¶¥´÷ÔªËØËÄ1 <Img|id=24|width=338|height=50|children={104,204}|img=custom/hl/chenhaoanniu/ch_ui2.png|link=@³ÆÎ½¿ªÊ¼»ðÁúÖ®Á¦>
-MOV S$C_¶¥´÷ÔªËØËÄ2 <Img|x=110|y=10|id=104|img=Topwear/kuangbao_1.png>
+MOV S$C_¶¥´÷ÔªËØËÄ2 <Effect|id=104|x=170|y=22|effectid=5053|count=0|scale=1|dir=5|speed=1|effecttype=0|act=0>
 MOV S$C_¶¥´÷ÔªËØËÄ3 <Img|x=290|y=10|id=204|img=custom/hl/hl_ui/<$STR(S$C_¹´Ñ¡¶¥´÷4)>.png>
 
 #IF
@@ -551,9 +551,26 @@ break
 [@³ÆÎ½¿ªÊ¼»ðÁúÖ®Á¦]
 
 #IF
+EQUAL <$STR(S$C_¹´Ñ¡¶¥´÷4)> 1900000682
+EQUAL <$STR(N$C_¶¥ÁË¼¸¸ö)> 5
 #ACT
-sendmsg 9 ¿ñ±©³ÆÎ½±ØÐëÍâÏÔ£¡
+sendmsg 9 ³ÆÎ½ÍâÏÔÒÑ´ïÉÏÏÞ£¬ÇëÏÈÈ¡Ïû¹´Ñ¡Ò»¸öÆäËû³ÆÎ½£¡
 break
+
+#IF
+EQUAL <$HUMAN(¶¥´÷Õ¹Ê¾¶þ)>
+#ACT
+CALCVAR HUMAN ¶¥´÷Õ¹Ê¾¶þ = 5053
+SAVEVAR HUMAN ¶¥´÷Õ¹Ê¾¶þ
+#CALL [\¶¥´÷Ë¢ÐÂ.txt] @¶¥´÷Ë¢ÐÂ
+#CALL [\ÓÎÏ·¹¦ÄÜ\¶¥´÷ÏµÍ³\¶¥´÷½çÃæ.txt] @¶¥´÷½çÃæ
+#ELSEACT
+CALCVAR HUMAN ¶¥´÷Õ¹Ê¾¶þ =
+SAVEVAR HUMAN ¶¥´÷Õ¹Ê¾¶þ
+#CALL [\¶¥´÷Ë¢ÐÂ.txt] @¶¥´÷Ë¢ÐÂ
+#CALL [\ÓÎÏ·¹¦ÄÜ\¶¥´÷ÏµÍ³\¶¥´÷½çÃæ.txt] @¶¥´÷½çÃæ
+break
+
 
 [@³ÆÎ½¿ªÊ¼¹ÙÖ°ÏµÍ³]
 

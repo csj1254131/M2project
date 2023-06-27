@@ -337,7 +337,7 @@ INC S$火龙之力状态 <Img|id=<$STR(N$状态流水号)>0|children={<$STR(N$状态流水号)>0
 INC S$火龙之力状态 <Img|id=<$STR(N$状态流水号)>01|a=4|percentx=50|percenty=50|img=custom/hl/buff_ui/buff_6.png>
 INC S$火龙之力状态 <Img|id=<$STR(N$状态流水号)>1|children={<$STR(N$状态流水号)>11,<$STR(N$状态流水号)>12,<$STR(N$状态流水号)>13,<$STR(N$状态流水号)>14,<$STR(N$状态流水号)>15}|img=custom/hl/buff_ui/buff_sx.png|x=80|y=2>
 INC S$火龙之力状态 <Layout|id=<$STR(N$状态流水号)>11|children={<$STR(N$状态流水号)>111,<$STR(N$状态流水号)>112}|width=280|height=20|color=x>
-INC S$火龙之力状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=火龙之力>
+INC S$火龙之力状态 <Text|id=<$STR(N$状态流水号)>111|color=251|a=4|percentx=50|percenty=50|size=18|outline=2|outlinecolor=0|text=狂暴之力>
 INC S$火龙之力状态 <Img|id=<$STR(N$状态流水号)>112|a=4|percentx=50|percenty=43|img=custom/hl/shizhuanggui_ui/hl_sz_04.png>
 INC S$火龙之力状态 <Layout|id=<$STR(N$状态流水号)>12|children={<$STR(N$状态流水号)>1<$STR(N$状态流水号)>}|width=150|height=22|color=x|y=21>
 INC S$火龙之力状态 <Text|id=<$STR(N$状态流水号)>1<$STR(N$状态流水号)>|color=250|x=3|y=-3|size=18|outline=2|outlinecolor=0|text=攻魔道:100-100>

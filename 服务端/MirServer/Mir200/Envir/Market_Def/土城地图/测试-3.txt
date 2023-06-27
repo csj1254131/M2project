@@ -3,7 +3,7 @@
 #ACT
 #SAY
 <Img|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|bg=1|loadCount=4|img=public/bg_main_6.png|esc=1|show=4>
-<Img|id=10|children={11,12,13,14,15,20,21,22,23,24,25,26}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Img|id=10|children={11,12,13,14,15,20,21,22,23,24,25,26,27}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
 <Img|id=11|x=135|y=60|height=449|img=custom/hl/hl_ui/fg_1.png>
 <Text|id=12|a=0|x=347|y=5|outlinecolor=0|outline=2|size=20|color=103|text=万能商人>
 <Button|id=13|x=770|y=5|color=103|pimg=custom/hl/hl_ui/close_02.png|size=18|nimg=custom/hl/hl_ui/close_01.png|link=@exit>
@@ -17,6 +17,7 @@
 <Button|id=25|x=639.0|y=120.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=增加称号5|link=@称号5>
 <Button|id=26|x=142.0|y=170.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=复活面板|link=@复活>
 <Button|id=27|x=268.0|y=170.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=新内挂设置|link=@开启新内挂>
+<Button|id=28|x=394.0|y=170.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=增加新称号|link=@增加新称号>
 
 [@拉起支付]
 #IF
@@ -70,5 +71,12 @@ SENDMSG 6 拉起复活面板
 #IF
 #ACT
 OPENHYPERLINK 300
+
+
+[@增加新称号]
+#IF
+#ACT
+SetIcon 0 1 5053 0 10 0 0 0
+SENDMSG 6 狂暴之力
 
 

@@ -38,7 +38,7 @@ MOV S$默认按钮 nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png
 <Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,5a}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
 <Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
 <Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
-<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=火龙之力>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=狂暴之力>
 <ListView|id=3|children={31}|x=132|y=60|width=3|height=450|bounce=1|direction=1|color=x|margin=2>
 <Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
 <Button|id=4|x=22.0|y=65.0|<$STR(S$激活按钮)>|color=103|size=18|text=开启狂暴|link=@启动狂暴>
@@ -76,7 +76,7 @@ MOV S$默认按钮 nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png
 <Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,5a}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
 <Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
 <Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
-<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=火龙之力>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=狂暴之力>
 <ListView|id=3|children={31}|x=132|y=60|width=3|height=450|bounce=1|direction=1|color=x|margin=2>
 <Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
 <Button|id=4|x=22.0|y=65.0|<$STR(S$默认按钮)>|color=160|size=18|text=开启狂暴|link=@启动狂暴>
@@ -91,7 +91,7 @@ MOV S$默认按钮 nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png
 <Img|id=10|children={101,102}|x=175.0|y=188.0|img=custom/hl/hl_ui/dt_7.png>
 <RText|id=101|x=22|y=-7.0|color=103|size=18|text=装备回收元宝<+20%/FCOLOR=250>>
 <Img|id=11|children={111,112}|x=175.0|y=228.0|img=custom/hl/hl_ui/dt_7.png>
-<RText|id=111|x=22|y=-7.0|color=103|size=18|text=获得称号：<【火龙之力】/FCOLOR=250>>
+<RText|id=111|x=22|y=-7.0|color=103|size=18|text=获得称号：<【狂暴之力】/FCOLOR=250>>
 <Img|id=12|children={121}|x=175.0|y=268.0|img=custom/hl/hl_ui/dt_7.png>
 <Text|id=121|x=22|y=-7.0|color=103|size=18|text=人物下线或被怪物打死状态不会消失>
 <ListView|id=13|children={131}|x=136|y=428|width=617|height=3|margin=2|bounce=0|direction=2|color=x>
@@ -111,7 +111,7 @@ MOV S$默认按钮 nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png
 <Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,5a}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
 <Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
 <Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
-<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=火龙之力>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=狂暴之力>
 <ListView|id=3|children={31}|x=132|y=60|width=3|height=450|bounce=1|direction=1|color=x|margin=2>
 <Img|id=31|img=custom/hl/hl_ui/hl_bg_02.png>
 <Button|id=4|x=22.0|y=65.0|<$STR(S$默认按钮)>|color=160|size=18|text=开启狂暴|link=@启动狂暴>
@@ -196,7 +196,7 @@ BREAK
 #IF
 CHECK [200] 1
 #ACT
-SENDMSG 9 <font color='#00ff00'>您的火龙之力还在，无需开启。</font>
+SENDMSG 9 <font color='#00ff00'>您的狂暴之力还在，无需开启。</font>
 BREAK
 
 #IF
@@ -206,13 +206,13 @@ MONEY 火龙币 - 2000
 SET [200] 1
 #CALL [\属性刷新.txt] @属性刷新
 #CALL [爆率刷新.txt] @爆率刷新
-CALCVAR HUMAN 顶戴展示二 = kuangbao_1
+CALCVAR HUMAN 顶戴展示二 = 5053
 SAVEVAR HUMAN 顶戴展示二
 #CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
 #CALL [\顶戴刷新.txt] @顶戴刷新
 INC U120 200
 #CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
-SENDMSGNEW 255 0 大佬玩家[{<$USERNAME>/FCOLOR=58}]开启了{火龙之力/FCOLOR=250}！请小心此人！ 1 10
+SENDMSGNEW 255 0 大佬玩家[{<$USERNAME>/FCOLOR=58}]开启了{狂暴之力/FCOLOR=250}！请小心此人！ 1 10
 CLOSE
 #ELSEACT
 SENDMSG 9 <font color='#ff0000'>您的火龙币不足，无法开启。</font>
@@ -224,7 +224,7 @@ BREAK
 CHECK [200] 1
 #ACT
 #ELSEACT
-SENDMSG 9 <font color='#ff0000'>开启火龙之力方可进入。</font>
+SENDMSG 9 <font color='#ff0000'>开启狂暴之力方可进入。</font>
 BREAK
 
 #IF

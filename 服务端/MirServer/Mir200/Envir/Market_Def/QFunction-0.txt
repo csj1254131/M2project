@@ -1625,7 +1625,7 @@ SAVEVAR HUMAN 顶戴展示二
 #CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
 #CALL [\顶戴刷新.txt] @顶戴刷新
 <$CURRRTARGETNAME>.MailGIVE 火龙币 1000 0#1#2#3#4#5#6#7#8
-<$CURRRTARGETNAME>.SendMail 1 击杀奖励 你好:<$USERNAME>\你击杀了火龙之力玩家【<$CURRRTARGETNAME>】，获得火龙币1000奖励。请提取
+<$CURRRTARGETNAME>.SendMail 1 击杀奖励 你好:<$USERNAME>\你击杀了狂暴之力玩家【<$CURRRTARGETNAME>】，获得火龙币1000奖励。请提取
 
 
 #IF

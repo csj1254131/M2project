@@ -102,6 +102,8 @@ VAR String HUMAN 顶戴展示八A
 VAR String HUMAN 顶戴展示九A
 VAR String HUMAN 顶戴你球啥
 VAR String HUMAN 顶戴球你咋地
+VAR String HUMAN 顶戴新狂暴之力
+
 
 VAR Integer HUMAN 活跃度_每日登录
 VAR Integer HUMAN 活跃度_会员登录
