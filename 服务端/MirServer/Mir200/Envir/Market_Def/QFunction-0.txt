@@ -1571,8 +1571,9 @@ REFRESHBAG
 <Layout|id=0|width=348|height=200>
 <Text|id=2|x=129.0|y=15.0|size=18|color=1001|text=死亡复活>
 <Text|id=3|a=4|x=168.0|y=64.0|color=1006|size=16|text=你被 <$CURRRTARGETNAME> 杀死了！>
-<COUNTDOWN|id=5|x=146.0|y=78.0|time=30|count=1|size=16|color=249|link=@免费复活>
+<COUNTDOWN|id=5|x=146.0|y=78.0|time=5|count=1|size=16|color=249|link=@免费复活>
 <Button|id=6|ax=0|ay=1|x=115.0|y=109.0|width=95|height=32|color=1020|pimg=custom/hl/hl_ui/115_1.png|nimg=custom/hl/hl_ui/115_2.png|size=17|text=免费复活|link=@免费复活>
+
 
 
 #IF
@@ -1581,7 +1582,7 @@ CheckInWarArea
 KILLBYHUM
 Not Checkvar Human 狂暴保护 =
 Checkvar Human 庇护之力 < 5
-#ACT
+#ACT 
 Set [598] 1
 Set [597] 0
 Calcvar Human 庇护之力 + 1
@@ -1649,38 +1650,17 @@ SendMail 1 死亡提醒 你好:<$USERNAME>\你在【<<$MAPTITLE>/FCOLOR=250>】被玩家【<<$
 #ELSEACT
 SendMail 1 死亡提醒 你好:<$USERNAME>\你在【<<$MAPTITLE>/FCOLOR=250>】被怪物【<<$CURRRTARGETNAME>/FCOLOR=249>】无情击杀
 
-
 [@免费复活]
 #IF
-CheckInWarArea
-Iscastleguild
 #Act
-REALIVE
-AddhpPer - 90
-AddmpPer - 90
-Mapmove 3 644 290 3
-Break
-#IF
-Checkunderwar 沙巴克
-Iscastleguild
-Isonmap 0150
-#Act
-REALIVE
-AddhpPer - 90
-AddmpPer - 90
-Mapmove 3 644 290 3
-Break
-#IF
-#Act
-REALIVE
-AddhpPer - 90
-AddmpPer - 90
 Mapmove 3 334 329 2
+REALIVE
 #IF
-LARGE U247 0
+LARGE U247 1
 #ACT
 #CALL [\游戏功能\拾取小精灵\拾取小精灵.txt] @召唤精灵
 ;----------------------------------------------------
+
 
 [@STDMODEFUNC9]
 #IF

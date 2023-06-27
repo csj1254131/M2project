@@ -1,5 +1,5 @@
 {
-    "version": "3.3.3048",
+    "version": "3.3.3050",
     "assets": {
         "anim_effect.zip": {
             "md5": "f7b49059a3b601b0c794cafb15dec2da",
@@ -39,8 +39,7 @@
         "assets_sub.zip": {
             "md5": "79dd90ca9342518f74000e5757d34993",
             "compressed": true,
-            "size": 3473723,
-            "downloadState": 1
+            "size": 3473723
         },
         "data_config.zip": {
             "md5": "06d9117d9d94d4fb25dae19f3b821907",
@@ -715,8 +714,7 @@
         "scripts_config.zip": {
             "md5": "52483ad9618f38c4fea7c6e3c90b663d",
             "compressed": true,
-            "size": 205237,
-            "downloadState": 2
+            "size": 205237
         },
         "scripts_framework_core.zip": {
             "md5": "d2d4a2413659f953c6a0be4644fb5448",
@@ -749,9 +747,10 @@
             "size": 627
         },
         "scripts_gamestates.zip": {
-            "md5": "f41c7bfd9ba95460fd2938a3a21474a2",
+            "md5": "4c430735989b76b7e037d27f6c5dcaa6",
             "compressed": true,
-            "size": 29467
+            "size": 29519,
+            "downloadState": 1
         },
         "scripts_game_command_actor.zip": {
             "md5": "5eb08e76a6a19b845824378665e149f8",
@@ -1171,8 +1170,7 @@
         "scripts_game_mediator_throw_damage_number.zip": {
             "md5": "abe5d7325eeb82eba5e9cff748b12b04",
             "compressed": true,
-            "size": 5899,
-            "downloadState": 2
+            "size": 5899
         },
         "scripts_game_mediator_top_touch_layer.zip": {
             "md5": "b51fc01710aaf375195d0c6017a5040f",
@@ -2037,8 +2035,7 @@
         "scripts_util.zip": {
             "md5": "89e3731df64010e7d9338b9ee2aa0f53",
             "compressed": true,
-            "size": 161412,
-            "downloadState": 2
+            "size": 161412
         },
         "shader.zip": {
             "md5": "356945ecd1c3e925120e880045d700d5",

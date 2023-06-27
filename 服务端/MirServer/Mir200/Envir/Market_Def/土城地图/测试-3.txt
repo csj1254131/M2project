@@ -3,18 +3,19 @@
 #ACT
 #SAY
 <Img|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|bg=1|loadCount=4|img=public/bg_main_6.png|esc=1|show=4>
-<Img|id=10|children={11,12,13,14,15,20,21,22}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Img|id=10|children={11,12,13,14,15,20,21,22,23,24,25,26}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
 <Img|id=11|x=135|y=60|height=449|img=custom/hl/hl_ui/fg_1.png>
 <Text|id=12|a=0|x=347|y=5|outlinecolor=0|outline=2|size=20|color=103|text=万能商人>
 <Button|id=13|x=770|y=5|color=103|pimg=custom/hl/hl_ui/close_02.png|size=18|nimg=custom/hl/hl_ui/close_01.png|link=@exit>
 <Layout|id=14|x=765|y=0|width=70|height=70|link=@exit>
-<Button|id=15|x=20|y=62|pimg=custom/hl/hl_ui/115_2.png|size=18|color=100|nimg=custom/hl/hl_ui/115_1.png|text=快捷功能>
-<Button|id=20|x=139.0|y=119.0|color=103|size=18|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=拉起支付|link=@拉起支付>
-<Button|id=21|x=289.0|y=118.0|color=103|size=18|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=增加称号1|link=@称号1>
-<Button|id=22|x=434.0|y=118.0|color=103|size=18|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=增加称号2|link=@称号2>
-<Button|id=23|x=500.0|y=118.0|color=103|size=18|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=增加称号3|link=@称号3>
-<Button|id=24|x=600.0|y=118.0|color=103|size=18|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=增加称号4|link=@称号4>
-<Button|id=24|x=700.0|y=118.0|color=103|size=18|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=增加称号5|link=@称号5>
+<Button|id=15|x=20|y=62|color=100|pimg=custom/hl/hl_ui/115_2.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=快捷功能>
+<Button|id=20|x=142.0|y=66.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=拉起支付|link=@拉起支付>
+<Button|id=21|x=142.0|y=120.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=增加称号1|link=@称号1>
+<Button|id=22|x=268.0|y=120.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=增加称号2|link=@称号2>
+<Button|id=23|x=394.0|y=120.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=增加称号3|link=@称号3>
+<Button|id=24|x=518.0|y=120.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=增加称号4|link=@称号4>
+<Button|id=25|x=639.0|y=120.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=增加称号5|link=@称号5>
+<Button|id=26|x=139.0|y=170.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=复活面板|link=@复活>
 
 [@拉起支付]
 #IF
@@ -55,3 +56,10 @@ SENDMSG 6 获得称号你瞅啥
 CONFERTITLE 君临天下
 SENDMSG 6 获得称号君临天下
 #CALL [\顶戴刷新.txt] @顶戴刷新
+
+[@复活]
+#IF
+#ACT
+SENDMSG 6 拉起复活面板
+#call[\游戏功能\系统功能\复活相关.txt] @启动复活面板
+
