@@ -55,7 +55,7 @@ BREAK
 EQUAL S$精灵召唤状态 收回精灵
 #ACT
 RELEASESPRITE
-SENDMSG 9 <font color='#ff0000'>月之精灵已收回！</font>
+SENDMSG 9 <font color='#ff0000'>拾取小精灵已收回！</font>
 DELAYGOTO 200 @启动小精灵
 BREAK
 #IF
@@ -63,7 +63,7 @@ SMALL U247 <$UTCNOW8>
 NOT SMALL U247 0
 #ACT
 RELEASESPRITE
-SENDMSG 9 <font color='#ff0000'>您的月之精灵时间不足！</font>
+SENDMSG 9 <font color='#ff0000'>您的拾取小精灵时间不足！</font>
 BREAK
 #IF
 LARGE U247 <$UTCNOW8>
@@ -72,7 +72,7 @@ NOT CHECKSPRITELEVEL
 #ACT
 CREATESPRITE 月之精灵
 PICKUPITEMS 1 5 500
-SENDMSG 9 <font color='#00ff00'>月之精灵召唤成功！</font>
+SENDMSG 9 <font color='#00ff00'>拾取小精灵召唤成功！</font>
 CLOSE
 BREAK
 #IF
@@ -80,7 +80,7 @@ NOT CHECKSPRITELEVEL
 #ACT
 CREATESPRITE 月之精灵
 PICKUPITEMS 1 5 500
-SENDMSG 9 <font color='#00ff00'>月之精灵召唤成功！</font>
+SENDMSG 9 <font color='#00ff00'>拾取小精灵召唤成功！</font>
 CLOSE
 
 

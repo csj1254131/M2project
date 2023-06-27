@@ -15,7 +15,8 @@
 <Button|id=23|x=394.0|y=120.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=增加称号3|link=@称号3>
 <Button|id=24|x=518.0|y=120.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=增加称号4|link=@称号4>
 <Button|id=25|x=639.0|y=120.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=增加称号5|link=@称号5>
-<Button|id=26|x=139.0|y=170.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=复活面板|link=@复活>
+<Button|id=26|x=142.0|y=170.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=复活面板|link=@复活>
+<Button|id=27|x=268.0|y=170.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=新内挂设置|link=@开启新内挂>
 
 [@拉起支付]
 #IF
@@ -62,4 +63,12 @@ SENDMSG 6 获得称号君临天下
 #ACT
 SENDMSG 6 拉起复活面板
 #call[\游戏功能\系统功能\复活相关.txt] @启动复活面板
+
+
+
+[@开启新内挂]
+#IF
+#ACT
+OPENHYPERLINK 300
+
 

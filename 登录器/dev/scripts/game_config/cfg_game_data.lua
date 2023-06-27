@@ -523,5 +523,10 @@ local config = {
 		value=" # |绑定元宝#<$MONEY(绑定元宝)>|元宝#<$MONEY(元宝)>|金币#<$MONEY(金币)>|火龙币#<$MONEY(火龙币)>",
 		notice="属性栏自定义标题 每行标题用|分割,支持变量",
 	},
+	["newSetup"] = { 
+		k="newSetup",
+		value=1,
+		notice="新内挂配置开启",
+	},
 }
 return config
