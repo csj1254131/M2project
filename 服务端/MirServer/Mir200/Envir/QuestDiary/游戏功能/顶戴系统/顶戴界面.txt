@@ -89,6 +89,13 @@ MOV S$C_勾选顶戴5 1900000682
 MOV S$C_勾选顶戴5 1900000683
 
 #IF
+EQUAL <$HUMAN(顶戴展示二)>
+#ACT
+MOV S$C_勾选顶戴4 1900000682
+#ELSEACT
+MOV S$C_勾选顶戴4 1900000683
+
+#IF
 EQUAL <$HUMAN(顶戴展示三)>
 #ACT
 MOV S$C_勾选顶戴3 1900000682
@@ -597,7 +604,6 @@ SAVEVAR HUMAN 顶戴展示一
 break
 
 [@称谓开始捐献系统]
-
 #IF
 EQUAL <$STR(S$C_勾选顶戴6)> 1900000682
 EQUAL <$STR(N$C_顶了几个)> 5

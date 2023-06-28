@@ -1,5 +1,5 @@
 {
-    "version": "3.3.3053",
+    "version": "3.3.3055",
     "assets": {
         "anim_effect.zip": {
             "md5": "f7b49059a3b601b0c794cafb15dec2da",
@@ -39,8 +39,7 @@
         "assets_sub.zip": {
             "md5": "b0f304465be1c0f9e501aa501fc5cb05",
             "compressed": true,
-            "size": 3474587,
-            "downloadState": 1
+            "size": 3474587
         },
         "data_config.zip": {
             "md5": "06d9117d9d94d4fb25dae19f3b821907",
@@ -645,8 +644,7 @@
         "scripts_actor.zip": {
             "md5": "565b436db7af817f7c25a900cb7e4d6e",
             "compressed": true,
-            "size": 141911,
-            "downloadState": 2
+            "size": 141911
         },
         "scripts_animation.zip": {
             "md5": "6fc4c1447b0b9303a4ba890c6849d05f",
@@ -771,8 +769,7 @@
         "scripts_game_command_gamestates.zip": {
             "md5": "01db4fe6e16b012fe8bb3489abc4efcb",
             "compressed": true,
-            "size": 21958,
-            "downloadState": 2
+            "size": 21958
         },
         "scripts_game_command_input.zip": {
             "md5": "c2f716498ac3346baa63b4b3d4d28af7",
@@ -1192,8 +1189,7 @@
         "scripts_game_proxy_local.zip": {
             "md5": "89087b1042e6ec73a5fb64c9da683f27",
             "compressed": true,
-            "size": 146293,
-            "downloadState": 2
+            "size": 146293
         },
         "scripts_game_proxy_remote_guild.zip": {
             "md5": "2accf7fd9aada45de5ddd7e77612c79e",
@@ -1998,8 +1994,7 @@
         "scripts_logic.zip": {
             "md5": "3b24d633cef843a2fb6337bd9ccc496c",
             "compressed": true,
-            "size": 158026,
-            "downloadState": 2
+            "size": 158026
         },
         "scripts_network_jsonproto.zip": {
             "md5": "a80172930e503cbf1eb5647be2d04c62",
@@ -2037,10 +2032,10 @@
             "size": 177353
         },
         "scripts_util.zip": {
-            "md5": "e5d911500be899f7c7161212bd83730a",
+            "md5": "6095d58182ea125e16f7472abf685fe7",
             "compressed": true,
-            "size": 161052,
-            "downloadState": 2
+            "size": 161108,
+            "downloadState": 1
         },
         "shader.zip": {
             "md5": "356945ecd1c3e925120e880045d700d5",

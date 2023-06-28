@@ -1,7 +1,5 @@
 [@顶戴刷新]
 {
-
-
 #IF
 #ACT
 MOV S$顶戴串
@@ -239,7 +237,7 @@ EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示二)>
 MOV N$顶戴宽<$STR(N$顶戴流水号)> 22
 MOV N$类别<$STR(N$顶戴流水号)> 1
 MOV S$顶戴编号<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示二)>
-SENDMSG 6 【狂暴】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
+;SENDMSG 6 【狂暴】:<$str(N$类别<$STR(N$顶戴流水号)>)>:<$str(S$顶戴编号<$STR(N$顶戴流水号)>)>
 
 #IF
 EQUAL S$顶戴<$STR(N$顶戴流水号)> <$HUMAN(顶戴展示三)>
@@ -414,8 +412,5 @@ LARGE U13 0
 MOV N$会员顶戴 50718
 INC N$会员顶戴 <$STR(u13)>
 SetIcon 5 1 <$STR(N$会员顶戴)> -35 30 0 0
-
-
-
 
 }

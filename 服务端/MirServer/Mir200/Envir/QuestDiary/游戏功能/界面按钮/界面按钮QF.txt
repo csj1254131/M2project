@@ -10,7 +10,7 @@
 [@元宝Tiss]
 <Img|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|bg=1|show=4|img=custom/hl/hl_ui/alpha_1px.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@exit>
 <Img|a=3|children={1,2,3,4}|percentx=52|percenty=16.5|width=410|height=80|img=custom/hl/hl_ui/bg_tips_01.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|link=@exit>
-<Text|id=1|text=绑定元宝|x=10|y=5|size=16|color=251|outline=2|outlinecolor=0>
+<Text|id=1|text=元宝|x=10|y=5|size=16|color=251|outline=2|outlinecolor=0>
 <RText|id=2|text=可用于<购买商城道具，拍卖行购买道具，使用系统便捷功能/FCOLOR=250>|x=10|y=25|size=15|color=255|outline=2|outlinecolor=0>
 <Text|id=3|text=拥有元宝：$STM(ITEMCOUNT_2)    拥有绑定元宝：$STM(ITEMCOUNT_4) |x=10|y=45|size=15|color=251|outline=2|outlinecolor=0>
 
