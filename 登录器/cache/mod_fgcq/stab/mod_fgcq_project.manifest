@@ -1,5 +1,5 @@
 {
-    "version": "3.3.3055",
+    "version": "3.3.3056",
     "assets": {
         "anim_effect.zip": {
             "md5": "f7b49059a3b601b0c794cafb15dec2da",
@@ -712,9 +712,10 @@
             "size": 10512
         },
         "scripts_config.zip": {
-            "md5": "52483ad9618f38c4fea7c6e3c90b663d",
+            "md5": "50dad283339365c45fe13709dca9d917",
             "compressed": true,
-            "size": 205237
+            "size": 205305,
+            "downloadState": 1
         },
         "scripts_framework_core.zip": {
             "md5": "d2d4a2413659f953c6a0be4644fb5448",
@@ -887,9 +888,10 @@
             "size": 4814
         },
         "scripts_game_mediator_couping.zip": {
-            "md5": "b7e35aec528007583ede16074a8e8a11",
+            "md5": "e10d0a90b6333259e1f9a4e5abff7bf2",
             "compressed": true,
-            "size": 37638
+            "size": 38302,
+            "downloadState": 2
         },
         "scripts_game_mediator_create_hero.zip": {
             "md5": "5c6036f2ea97302eb2cd1be066bf7bba",
@@ -1187,9 +1189,10 @@
             "size": 31999
         },
         "scripts_game_proxy_local.zip": {
-            "md5": "89087b1042e6ec73a5fb64c9da683f27",
+            "md5": "5aa66dc78383e16e2264eac21886bf13",
             "compressed": true,
-            "size": 146293
+            "size": 146553,
+            "downloadState": 2
         },
         "scripts_game_proxy_remote_guild.zip": {
             "md5": "2accf7fd9aada45de5ddd7e77612c79e",
@@ -2034,8 +2037,7 @@
         "scripts_util.zip": {
             "md5": "6095d58182ea125e16f7472abf685fe7",
             "compressed": true,
-            "size": 161108,
-            "downloadState": 1
+            "size": 161108
         },
         "shader.zip": {
             "md5": "356945ecd1c3e925120e880045d700d5",
