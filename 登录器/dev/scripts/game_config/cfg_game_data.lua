@@ -490,7 +490,7 @@ local config = {
 	},
 	["ItemLock"] = { 
 		k="ItemLock",
-		value=0,
+		value=2,
 		notice="是否显示锁图标 0=背包  1=所有的 2=不显示",
 	},
 	["minimap_title_range"] = { 

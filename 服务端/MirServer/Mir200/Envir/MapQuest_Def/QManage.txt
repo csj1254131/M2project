@@ -313,6 +313,13 @@ Savevar GUILD 参加沙巴克人数
 #ACT
 #CALL [\游戏变量\玩家变量声明.txt] @玩家变量声明
 
+
+;提高背包上限
+#IF
+#ACT
+EXTBAGOPENITEMCOUNT 126
+;SENDMSG 6 你的背包格子扩展到<$ADVBAGSIZE>格
+
 #If
 LARGE <$Hfcount> 0
 Checkunderwar 沙巴克
