@@ -5207,7 +5207,7 @@ MpBase=10
 MoFaDunCloseAtLogon=0
 UpgradeFailNotBreakWeapon=0
 PosionAtFirePlayLogout=0
-ItemLineEffTime=120
+ItemLineEffTime=180
 JoinGuildCoolTime=0
 AllowClientCount=2
 EatItemSpeed=200
@@ -5925,6 +5925,7 @@ BoxKFSynHP=1
 BoxBFSynHP=1
 Question=0
 NewTongSvr=0
+nGroupRecallTime=5
 [String]
 MonLevel=[Lv:%d]\%s
 [Kuafu]
