@@ -77,7 +77,7 @@ hjdt4 155 155 -> hjdt3 123 10
 
 
 [smd1|d2053 Ê¬Ä§¶´Ò»²ã] noreconnect(3:330:330) maxplayer(10) runmon
-smd1 12 155 -> smd2 285 281
+smd1 12 154 -> smd2 285 281
 [smd2|d2054 Ê¬Ä§¶´¶ş²ã] noreconnect(3:330:330) maxplayer(10) runmon
 smd2 285 281 -> smd1 12 155
 smd2 213 165 -> smd3 92 76

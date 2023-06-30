@@ -21,7 +21,7 @@ break
 MOV S$活动红点
 MOV S$赞助红点
 ;常驻按钮 
-MOV   S$图标1 <Layout|children={1,2,3,4,5,6,7}|width=300|height=80|x=-500|y=5|color=x>
+MOV   S$图标1 <Layout|children={1,2,3,4,5,6,7,8}|width=300|height=80|x=-500|y=5|color=x>
 INC   S$图标1 <Layout|id=1|children={10}|width=50|height=50|x=270|link=@开关>
 INC   S$图标1 <Button|id=10|a=4|x=15|y=15|nimg=custom/hl/top/0.png|link=@开关>
 INC   S$图标1 <Button|id=2|children={20}|x=180|nimg=custom/hl/top/1.png|link=@会员>
@@ -31,6 +31,7 @@ INC   S$图标1 <Button|id=5|x=-60|nimg=custom/hl/top/11.png|link=@调用沙捐>
 INC   S$图标1 <Img|id=20|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$赞助红点)>.png>
 INC   S$图标1 <Button|id=6|children={600}|x=-140|nimg=custom/hl/top/9.png|link=@我要变强>
 INC   S$图标1 <Button|id=3|children={30}|x=100|nimg=custom/hl/top/10.png|link=@福利>
+INC   S$图标1 <Button|id=8|x=-300|nimg=custom/hl/top/BOSS.png|link=@怪物>
 
 #IF
 #ACT

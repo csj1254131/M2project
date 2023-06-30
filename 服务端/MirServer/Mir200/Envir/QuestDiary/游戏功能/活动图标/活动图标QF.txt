@@ -26,10 +26,10 @@ MOV N$X 180
 MOV N$Y 0
 DELBUTTON 102 1
 DELBUTTON 102 3
-mov S$图标1 <Layout|children={1,2,3,4,5,6,7}|width=300|height=80|x=-500|y=5|color=x>
+mov S$图标1 <Layout|children={1,2,3,4,5,6,7,8}|width=300|height=80|x=-500|y=5|color=x>
 inc S$图标1 <Layout|id=1|children={10}|width=50|height=50|x=270|link=@开关>
 inc S$图标1 <Button|id=10|a=4|x=15|y=15|nimg=custom/hl/top/0.png|rotate=<$STR(n$topxz)>>
-inc S$图标1 <Button|id=2|children={20}|x=180|nimg=custom/hl/top/1.png|link=@会员>
+//;inc S$图标1 <Button|id=2|children={20}|x=180|nimg=custom/hl/top/1.png|link=@会员>
 Goto @gbanbw
 addbutton 102 1 <$STR(S$图标1)>
 BREAK
@@ -41,7 +41,7 @@ EQUAL <$CLIENTFLAG> 1
 MOV N$X 180
 MOV N$Y 0
 DELBUTTON 102 1
-mov S$图标1 <Layout|children={1,2,3,4,5,6,7}|width=300|height=80|x=-460|y=5|color=x>
+mov S$图标1 <Layout|children={1,2,3,4,5,6,7,8}|width=300|height=80|x=-460|y=5|color=x>
 inc S$图标1 <Layout|id=1|children={10}|width=50|height=50|x=270|link=@开关>
 inc S$图标1 <Button|id=10|a=4|x=15|y=15|nimg=custom/hl/top/0.png|rotate=<$STR(n$topxz)>>
 inc S$图标1 <Button|id=2|children={20}|x=180|nimg=custom/hl/top/1.png|link=@会员>
@@ -49,18 +49,14 @@ Goto @gbanbw
 addbutton 102 1 <$STR(S$图标1)>
 BREAK
 
-
-
-
-
-
 #IF
 small n$topxz 180
 #ACT
 inc   n$topxz 60
 inc   S$图标1 <Button|id=10|a=4|x=15|y=15|nimg=custom/hl/top/0.png|rotate=<$STR(n$topxz)>>
 addbutton 102 1 <$STR(S$图标1)>
-DELAYGOTO 1 @关闭顶部图标
+;DELAYGOTO 1 @关闭顶部图标
+goto @关闭顶部图标
 BREAK
 
 
@@ -71,6 +67,8 @@ equal n$topxz 0
 INC   S$图标1 <Button|id=4|x=20|nimg=custom/hl/top/7.png|link=@狂暴>
 INC   S$图标1 <Button|id=5|x=-60|nimg=custom/hl/top/11.png|link=@调用沙捐>
 INC   S$图标1 <Button|id=6|children={600}|x=-140|nimg=custom/hl/top/9.png|link=@我要变强>
+inc   S$图标1 <Button|id=2|children={20}|x=180|nimg=custom/hl/top/1.png|link=@会员>
+inc   S$图标1 <Button|id=8|x=-300|nimg=custom/hl/top/BOSS.png|link=@怪物>
 Goto @执行活动按钮
 addbutton 102 1 <$STR(S$图标1)>
 BREAK
@@ -82,7 +80,8 @@ large n$topxz 0
 DEC  n$topxz 60
 inc  S$图标1 <Button|id=10|a=4|x=15|y=15|nimg=custom/hl/top/0.png|rotate=<$STR(n$topxz)>>
 addbutton 102 1 <$STR(S$图标1)>
-DELAYGOTO 1 @打开顶部图标
+;DELAYGOTO 1 @打开顶部图标
+goto  @打开顶部图标
 BREAK
 
 [@执行活动按钮]

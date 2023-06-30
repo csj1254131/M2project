@@ -314,6 +314,9 @@ Savevar GUILD 参加沙巴克人数
 #CALL [\游戏变量\玩家变量声明.txt] @玩家变量声明
 
 
+
+
+
 ;提高背包上限
 #IF
 #ACT
@@ -335,7 +338,7 @@ ChangeModeEx 14 65535
 CHECKLEVELEX > 0
 #ACT
 AUTOPICKITEMBYBTN
-#CALL [\游戏盒子\创建盒子.txt] @创建盒子
+;#CALL [\游戏盒子\创建盒子.txt] @创建盒子
 #CALL [\游戏登陆\登陆脚本.txt] @登陆设置
 #CALL [\游戏功能\系统功能\捐献.txt] @捐献合区排序
 #CALL [\游戏功能\界面按钮\界面按钮QM.txt] @界面按钮QM
