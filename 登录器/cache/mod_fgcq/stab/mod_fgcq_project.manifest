@@ -1,5 +1,5 @@
 {
-    "version": "3.3.3057",
+    "version": "3.3.3058",
     "assets": {
         "anim_effect.zip": {
             "md5": "f7b49059a3b601b0c794cafb15dec2da",
@@ -714,8 +714,7 @@
         "scripts_config.zip": {
             "md5": "9ab193eb547f4d7e1320bf632bbe52fc",
             "compressed": true,
-            "size": 205273,
-            "downloadState": 1
+            "size": 205273
         },
         "scripts_framework_core.zip": {
             "md5": "d2d4a2413659f953c6a0be4644fb5448",
@@ -1968,9 +1967,10 @@
             "size": 126650
         },
         "scripts_game_view_mainui-win32.zip": {
-            "md5": "bd08c4e432075ab4205118605458b396",
+            "md5": "da3fbc978d78fc2ba5ebc54a1e1fb2a9",
             "compressed": true,
-            "size": 73408
+            "size": 73412,
+            "downloadState": 1
         },
         "scripts_game_view_mainui.zip": {
             "md5": "31ff388121130b0ec132d18bdeb3fecd",

@@ -30814,7 +30814,7 @@ local config = {
 		die_interval=0.12,
 		stuck_interval=0.12,
 		showstand_interval=10,
-		enlarge=2,
+		enlarge=1.2,
 	},
 	[1549] = { 
 		index=1549,
@@ -30833,7 +30833,7 @@ local config = {
 		die_interval=0.12,
 		stuck_interval=0.12,
 		showstand_interval=10,
-		enlarge=2,
+		enlarge=1.2,
 	},
 	[1550] = { 
 		index=1550,
@@ -30852,7 +30852,7 @@ local config = {
 		die_interval=0.12,
 		stuck_interval=0.12,
 		showstand_interval=10,
-		enlarge=2,
+		enlarge=1.2,
 	},
 	[1551] = { 
 		index=1551,
@@ -56983,6 +56983,17 @@ local config = {
 		idle_interval=0.085,
 	},
 	[3262] = { 
+		index=3261,
+		id=25000,
+		type=4,
+		sex=0,
+		dir=1,
+		blendmode=0,
+		stand_pos_x=0.2,
+		stand_pos_y=0.9,
+		idle_interval=0.085,
+	},
+	[3263] = { 
 		index=3262,
 		id=25001,
 		type=4,
@@ -56993,7 +57004,7 @@ local config = {
 		stand_pos_y=0.9,
 		idle_interval=0.085,
 	},
-	[3263] = { 
+	[3264] = { 
 		index=3263,
 		id=25002,
 		type=4,
@@ -57004,7 +57015,7 @@ local config = {
 		stand_pos_y=0.9,
 		idle_interval=0.085,
 	},
-	[3264] = { 
+	[3265] = { 
 		index=3264,
 		id=25003,
 		type=4,
@@ -57015,7 +57026,7 @@ local config = {
 		stand_pos_y=0.9,
 		idle_interval=0.085,
 	},
-	[3265] = { 
+	[3266] = { 
 		index=3265,
 		id=25004,
 		type=4,
@@ -57026,7 +57037,7 @@ local config = {
 		stand_pos_y=0.85,
 		idle_interval=0.085,
 	},
-	[3266] = { 
+	[3267] = { 
 		index=3266,
 		id=25005,
 		type=4,
@@ -57037,7 +57048,7 @@ local config = {
 		stand_pos_y=0.85,
 		idle_interval=0.085,
 	},
-	[3267] = { 
+	[3268] = { 
 		index=3267,
 		id=25006,
 		type=4,
@@ -57048,7 +57059,7 @@ local config = {
 		stand_pos_y=0.85,
 		idle_interval=0.085,
 	},
-	[3268] = { 
+	[3269] = { 
 		index=3268,
 		id=25007,
 		type=4,
@@ -57059,7 +57070,7 @@ local config = {
 		stand_pos_y=0.85,
 		idle_interval=0.085,
 	},
-	[3269] = { 
+	[3270] = { 
 		index=3269,
 		id=25008,
 		type=4,
@@ -57070,7 +57081,7 @@ local config = {
 		stand_pos_y=0.9,
 		idle_interval=0.085,
 	},
-	[3270] = { 
+	[3271] = { 
 		index=3270,
 		id=25009,
 		type=4,
@@ -57081,7 +57092,7 @@ local config = {
 		stand_pos_y=0.18,
 		idle_interval=0.085,
 	},
-	[3271] = { 
+	[3272] = { 
 		index=3271,
 		id=25010,
 		type=4,
@@ -57092,7 +57103,7 @@ local config = {
 		stand_pos_y=0.18,
 		idle_interval=0.085,
 	},
-	[3272] = { 
+	[3273] = { 
 		index=3272,
 		id=25011,
 		type=4,
@@ -57103,7 +57114,7 @@ local config = {
 		stand_pos_y=0.18,
 		idle_interval=0.085,
 	},
-	[3273] = { 
+	[3274] = { 
 		index=3273,
 		id=25012,
 		type=4,
@@ -57114,7 +57125,7 @@ local config = {
 		stand_pos_y=0.9,
 		idle_interval=0.085,
 	},
-	[3274] = { 
+	[3275] = { 
 		index=3274,
 		id=25013,
 		type=4,
@@ -57125,7 +57136,7 @@ local config = {
 		stand_pos_y=0.18,
 		idle_interval=0.085,
 	},
-	[3275] = { 
+	[3276] = { 
 		index=3275,
 		id=25014,
 		type=4,
@@ -57136,7 +57147,7 @@ local config = {
 		stand_pos_y=0.28,
 		idle_interval=0.085,
 	},
-	[3276] = { 
+	[3277] = { 
 		index=3276,
 		id=25015,
 		type=4,
@@ -57147,7 +57158,7 @@ local config = {
 		stand_pos_y=0.28,
 		idle_interval=0.085,
 	},
-	[3277] = { 
+	[3278] = { 
 		index=3277,
 		id=25016,
 		type=4,
@@ -57158,7 +57169,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3278] = { 
+	[3279] = { 
 		index=3278,
 		id=25017,
 		type=4,
@@ -57169,7 +57180,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3279] = { 
+	[3280] = { 
 		index=3279,
 		id=25018,
 		type=4,
@@ -57180,7 +57191,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3280] = { 
+	[3281] = { 
 		index=3280,
 		id=25019,
 		type=4,
@@ -57191,7 +57202,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3281] = { 
+	[3282] = { 
 		index=3281,
 		id=25020,
 		type=4,
@@ -57202,7 +57213,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3282] = { 
+	[3283] = { 
 		index=3282,
 		id=25021,
 		type=4,
@@ -57213,7 +57224,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3283] = { 
+	[3284] = { 
 		index=3283,
 		id=25022,
 		type=4,
@@ -57224,7 +57235,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3284] = { 
+	[3285] = { 
 		index=3284,
 		id=25023,
 		type=4,
@@ -57235,7 +57246,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3285] = { 
+	[3286] = { 
 		index=3285,
 		id=25024,
 		type=4,
@@ -57246,7 +57257,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3286] = { 
+	[3287] = { 
 		index=3286,
 		id=25025,
 		type=4,
@@ -57257,7 +57268,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3287] = { 
+	[3288] = { 
 		index=3287,
 		id=25026,
 		type=4,
@@ -57268,7 +57279,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3288] = { 
+	[3289] = { 
 		index=3288,
 		id=25027,
 		type=4,
@@ -57279,7 +57290,7 @@ local config = {
 		stand_pos_y=0.13,
 		idle_interval=0.085,
 	},
-	[3289] = { 
+	[3290] = { 
 		index=3289,
 		id=8888888,
 		type=4,
@@ -57290,7 +57301,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3290] = { 
+	[3291] = { 
 		index=3290,
 		id=1000,
 		type=3,
@@ -57304,7 +57315,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3291] = { 
+	[3292] = { 
 		index=3291,
 		id=1001,
 		type=3,
@@ -57318,7 +57329,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3292] = { 
+	[3293] = { 
 		index=3292,
 		id=1002,
 		type=3,
@@ -57332,7 +57343,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3293] = { 
+	[3294] = { 
 		index=3293,
 		id=1003,
 		type=3,
@@ -57346,7 +57357,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3294] = { 
+	[3295] = { 
 		index=3294,
 		id=1004,
 		type=3,
@@ -57360,7 +57371,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3295] = { 
+	[3296] = { 
 		index=3295,
 		id=1005,
 		type=3,
@@ -57374,7 +57385,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3296] = { 
+	[3297] = { 
 		index=3296,
 		id=1006,
 		type=3,
@@ -57388,7 +57399,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3297] = { 
+	[3298] = { 
 		index=3297,
 		id=1007,
 		type=3,
@@ -57402,7 +57413,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3298] = { 
+	[3299] = { 
 		index=3298,
 		id=1008,
 		type=3,
@@ -57416,7 +57427,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3299] = { 
+	[3300] = { 
 		index=3299,
 		id=1009,
 		type=3,
@@ -57430,7 +57441,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3300] = { 
+	[3301] = { 
 		index=3300,
 		id=1010,
 		type=3,
@@ -57444,7 +57455,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3301] = { 
+	[3302] = { 
 		index=3301,
 		id=1011,
 		type=3,
@@ -57458,7 +57469,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3302] = { 
+	[3303] = { 
 		index=3302,
 		id=1012,
 		type=3,
@@ -57472,7 +57483,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3303] = { 
+	[3304] = { 
 		index=3303,
 		id=1013,
 		type=3,
@@ -57486,7 +57497,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3304] = { 
+	[3305] = { 
 		index=3304,
 		id=1014,
 		type=3,
@@ -57500,7 +57511,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3305] = { 
+	[3306] = { 
 		index=3305,
 		id=1015,
 		type=3,
@@ -57514,7 +57525,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3306] = { 
+	[3307] = { 
 		index=3306,
 		id=1016,
 		type=3,
@@ -57528,7 +57539,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3307] = { 
+	[3308] = { 
 		index=3307,
 		id=1017,
 		type=3,
@@ -57542,7 +57553,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3308] = { 
+	[3309] = { 
 		index=3308,
 		id=1018,
 		type=3,
@@ -57556,7 +57567,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3309] = { 
+	[3310] = { 
 		index=3309,
 		id=1019,
 		type=3,
@@ -57570,7 +57581,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3310] = { 
+	[3311] = { 
 		index=3310,
 		id=1020,
 		type=3,
@@ -57584,7 +57595,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3311] = { 
+	[3312] = { 
 		index=3311,
 		id=1021,
 		type=3,
@@ -57598,7 +57609,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3312] = { 
+	[3313] = { 
 		index=3312,
 		id=1022,
 		type=3,
@@ -57612,7 +57623,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3313] = { 
+	[3314] = { 
 		index=3313,
 		id=1023,
 		type=3,
@@ -57626,7 +57637,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3314] = { 
+	[3315] = { 
 		index=3314,
 		id=1024,
 		type=3,
@@ -57640,7 +57651,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3315] = { 
+	[3316] = { 
 		index=3315,
 		id=1025,
 		type=3,
@@ -57655,7 +57666,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3316] = { 
+	[3317] = { 
 		index=3316,
 		id=1026,
 		type=3,
@@ -57669,7 +57680,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3317] = { 
+	[3318] = { 
 		index=3317,
 		id=1027,
 		type=3,
@@ -57684,7 +57695,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3318] = { 
+	[3319] = { 
 		index=3318,
 		id=1028,
 		type=3,
@@ -57699,7 +57710,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3319] = { 
+	[3320] = { 
 		index=3319,
 		id=1029,
 		type=3,
@@ -57714,7 +57725,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3320] = { 
+	[3321] = { 
 		index=3320,
 		id=1030,
 		type=3,
@@ -57729,7 +57740,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3321] = { 
+	[3322] = { 
 		index=3321,
 		id=1031,
 		type=3,
@@ -57744,7 +57755,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3322] = { 
+	[3323] = { 
 		index=3322,
 		id=1032,
 		type=3,
@@ -57759,7 +57770,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3323] = { 
+	[3324] = { 
 		index=3323,
 		id=1033,
 		type=3,
@@ -57774,7 +57785,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3324] = { 
+	[3325] = { 
 		index=3324,
 		id=1034,
 		type=3,
@@ -57789,7 +57800,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3325] = { 
+	[3326] = { 
 		index=3325,
 		id=1035,
 		type=3,
@@ -57804,7 +57815,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3326] = { 
+	[3327] = { 
 		index=3326,
 		id=1036,
 		type=3,
@@ -57818,7 +57829,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3327] = { 
+	[3328] = { 
 		index=3327,
 		id=1037,
 		type=3,
@@ -57832,7 +57843,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3328] = { 
+	[3329] = { 
 		index=3328,
 		id=1038,
 		type=3,
@@ -57847,7 +57858,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3329] = { 
+	[3330] = { 
 		index=3329,
 		id=1039,
 		type=3,
@@ -57862,7 +57873,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3330] = { 
+	[3331] = { 
 		index=3330,
 		id=1040,
 		type=3,
@@ -57877,7 +57888,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3331] = { 
+	[3332] = { 
 		index=3331,
 		id=1041,
 		type=3,
@@ -57892,7 +57903,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3332] = { 
+	[3333] = { 
 		index=3332,
 		id=1042,
 		type=3,
@@ -57907,7 +57918,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.7,
 	},
-	[3333] = { 
+	[3334] = { 
 		index=3333,
 		id=1043,
 		type=3,
@@ -57921,7 +57932,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3334] = { 
+	[3335] = { 
 		index=3334,
 		id=1044,
 		type=3,
@@ -57935,7 +57946,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3335] = { 
+	[3336] = { 
 		index=3335,
 		id=1045,
 		type=3,
@@ -57949,7 +57960,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3336] = { 
+	[3337] = { 
 		index=3336,
 		id=1046,
 		type=3,
@@ -57963,7 +57974,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3337] = { 
+	[3338] = { 
 		index=3337,
 		id=1047,
 		type=3,
@@ -57977,7 +57988,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3338] = { 
+	[3339] = { 
 		index=3338,
 		id=1048,
 		type=3,
@@ -57991,7 +58002,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3339] = { 
+	[3340] = { 
 		index=3339,
 		id=2000,
 		type=3,
@@ -58005,7 +58016,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3340] = { 
+	[3341] = { 
 		index=3340,
 		id=2001,
 		type=3,
@@ -58019,7 +58030,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3341] = { 
+	[3342] = { 
 		index=3341,
 		id=2002,
 		type=3,
@@ -58033,7 +58044,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3342] = { 
+	[3343] = { 
 		index=3342,
 		id=2003,
 		type=3,
@@ -58047,7 +58058,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3343] = { 
+	[3344] = { 
 		index=3343,
 		id=2004,
 		type=3,
@@ -58061,7 +58072,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3344] = { 
+	[3345] = { 
 		index=3344,
 		id=2005,
 		type=3,
@@ -58075,7 +58086,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3345] = { 
+	[3346] = { 
 		index=3345,
 		id=2006,
 		type=3,
@@ -58089,7 +58100,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3346] = { 
+	[3347] = { 
 		index=3346,
 		id=2007,
 		type=3,
@@ -58103,7 +58114,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3347] = { 
+	[3348] = { 
 		index=3347,
 		id=2008,
 		type=3,
@@ -58117,7 +58128,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3348] = { 
+	[3349] = { 
 		index=3348,
 		id=2009,
 		type=3,
@@ -58131,7 +58142,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3349] = { 
+	[3350] = { 
 		index=3349,
 		id=2010,
 		type=3,
@@ -58146,7 +58157,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.4,
 	},
-	[3350] = { 
+	[3351] = { 
 		index=3350,
 		id=2011,
 		type=3,
@@ -58161,7 +58172,7 @@ local config = {
 		showstand_interval=10,
 		enlarge=0.4,
 	},
-	[3351] = { 
+	[3352] = { 
 		index=3351,
 		id=2012,
 		type=3,
@@ -58175,7 +58186,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3352] = { 
+	[3353] = { 
 		index=3352,
 		id=2013,
 		type=3,
@@ -58189,7 +58200,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3353] = { 
+	[3354] = { 
 		index=3353,
 		id=2014,
 		type=3,
@@ -58203,7 +58214,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3354] = { 
+	[3355] = { 
 		index=3354,
 		id=2015,
 		type=3,
@@ -58217,7 +58228,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3355] = { 
+	[3356] = { 
 		index=3355,
 		id=2016,
 		type=3,
@@ -58231,7 +58242,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3356] = { 
+	[3357] = { 
 		index=3356,
 		id=21050,
 		type=6,
@@ -58252,7 +58263,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3357] = { 
+	[3358] = { 
 		index=3357,
 		id=21050,
 		type=6,
@@ -58273,7 +58284,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3358] = { 
+	[3359] = { 
 		index=3358,
 		id=21051,
 		type=6,
@@ -58294,7 +58305,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3359] = { 
+	[3360] = { 
 		index=3359,
 		id=21051,
 		type=6,
@@ -58315,7 +58326,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3360] = { 
+	[3361] = { 
 		index=3360,
 		id=21052,
 		type=6,
@@ -58336,7 +58347,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3361] = { 
+	[3362] = { 
 		index=3361,
 		id=21052,
 		type=6,
@@ -58357,7 +58368,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3362] = { 
+	[3363] = { 
 		index=3362,
 		id=21053,
 		type=6,
@@ -58378,7 +58389,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3363] = { 
+	[3364] = { 
 		index=3363,
 		id=21053,
 		type=6,
@@ -58399,7 +58410,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3364] = { 
+	[3365] = { 
 		index=3364,
 		id=21054,
 		type=6,
@@ -58420,7 +58431,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3365] = { 
+	[3366] = { 
 		index=3365,
 		id=21054,
 		type=6,
@@ -58441,7 +58452,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3366] = { 
+	[3367] = { 
 		index=3366,
 		id=21055,
 		type=6,
@@ -58462,7 +58473,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3367] = { 
+	[3368] = { 
 		index=3367,
 		id=21055,
 		type=6,
@@ -58483,7 +58494,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3368] = { 
+	[3369] = { 
 		index=3368,
 		id=21056,
 		type=6,
@@ -58504,7 +58515,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3369] = { 
+	[3370] = { 
 		index=3369,
 		id=21056,
 		type=6,
@@ -58525,7 +58536,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3370] = { 
+	[3371] = { 
 		index=3370,
 		id=21057,
 		type=6,
@@ -58546,7 +58557,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3371] = { 
+	[3372] = { 
 		index=3371,
 		id=21057,
 		type=6,
@@ -58567,7 +58578,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3372] = { 
+	[3373] = { 
 		index=3372,
 		id=21058,
 		type=6,
@@ -58588,7 +58599,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3373] = { 
+	[3374] = { 
 		index=3373,
 		id=21058,
 		type=6,
@@ -58609,7 +58620,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3374] = { 
+	[3375] = { 
 		index=3374,
 		id=21059,
 		type=6,
@@ -58630,7 +58641,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3375] = { 
+	[3376] = { 
 		index=3375,
 		id=21059,
 		type=6,
@@ -58651,7 +58662,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3376] = { 
+	[3377] = { 
 		index=3376,
 		id=8888888,
 		type=2,
@@ -58659,7 +58670,7 @@ local config = {
 		dir=8,
 		hud_top=20,
 	},
-	[3377] = { 
+	[3378] = { 
 		index=3377,
 		id=21000,
 		type=2,
@@ -58678,7 +58689,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3378] = { 
+	[3379] = { 
 		index=3378,
 		id=21001,
 		type=2,
@@ -58697,7 +58708,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3379] = { 
+	[3380] = { 
 		index=3379,
 		id=21002,
 		type=2,
@@ -58716,7 +58727,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3380] = { 
+	[3381] = { 
 		index=3380,
 		id=21003,
 		type=2,
@@ -58735,7 +58746,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3381] = { 
+	[3382] = { 
 		index=3381,
 		id=21004,
 		type=2,
@@ -58754,7 +58765,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3382] = { 
+	[3383] = { 
 		index=3382,
 		id=21005,
 		type=2,
@@ -58773,7 +58784,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3383] = { 
+	[3384] = { 
 		index=3383,
 		id=21006,
 		type=2,
@@ -58792,7 +58803,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3384] = { 
+	[3385] = { 
 		index=3384,
 		id=21007,
 		type=2,
@@ -58811,7 +58822,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3385] = { 
+	[3386] = { 
 		index=3385,
 		id=21008,
 		type=2,
@@ -58830,7 +58841,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3386] = { 
+	[3387] = { 
 		index=3386,
 		id=21009,
 		type=2,
@@ -58849,7 +58860,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3387] = { 
+	[3388] = { 
 		index=3387,
 		id=21010,
 		type=2,
@@ -58868,7 +58879,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3388] = { 
+	[3389] = { 
 		index=3388,
 		id=21011,
 		type=2,
@@ -58887,7 +58898,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3389] = { 
+	[3390] = { 
 		index=3389,
 		id=21012,
 		type=2,
@@ -58906,7 +58917,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3390] = { 
+	[3391] = { 
 		index=3390,
 		id=21013,
 		type=2,
@@ -58925,7 +58936,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3391] = { 
+	[3392] = { 
 		index=3391,
 		id=21014,
 		type=2,
@@ -58944,7 +58955,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3392] = { 
+	[3393] = { 
 		index=3392,
 		id=21015,
 		type=2,
@@ -58963,7 +58974,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3393] = { 
+	[3394] = { 
 		index=3393,
 		id=21016,
 		type=2,
@@ -58982,7 +58993,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3394] = { 
+	[3395] = { 
 		index=3394,
 		id=21017,
 		type=2,
@@ -59001,7 +59012,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3395] = { 
+	[3396] = { 
 		index=3395,
 		id=21018,
 		type=2,
@@ -59020,7 +59031,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3396] = { 
+	[3397] = { 
 		index=3396,
 		id=21019,
 		type=2,
@@ -59039,7 +59050,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3397] = { 
+	[3398] = { 
 		index=3397,
 		id=21020,
 		type=2,
@@ -59058,7 +59069,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3398] = { 
+	[3399] = { 
 		index=3398,
 		id=21021,
 		type=2,
@@ -59077,7 +59088,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3399] = { 
+	[3400] = { 
 		index=3399,
 		id=21022,
 		type=2,
@@ -59096,7 +59107,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3400] = { 
+	[3401] = { 
 		index=3400,
 		id=21023,
 		type=2,
@@ -59115,7 +59126,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3401] = { 
+	[3402] = { 
 		index=3401,
 		id=21024,
 		type=2,
@@ -59134,7 +59145,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3402] = { 
+	[3403] = { 
 		index=3402,
 		id=21025,
 		type=2,
@@ -59153,7 +59164,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3403] = { 
+	[3404] = { 
 		index=3403,
 		id=21026,
 		type=2,
@@ -59172,7 +59183,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3404] = { 
+	[3405] = { 
 		index=3404,
 		id=21027,
 		type=2,
@@ -59191,7 +59202,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3405] = { 
+	[3406] = { 
 		index=3405,
 		id=21028,
 		type=2,
@@ -59210,7 +59221,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3406] = { 
+	[3407] = { 
 		index=3406,
 		id=21029,
 		type=2,
@@ -59229,7 +59240,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3407] = { 
+	[3408] = { 
 		index=3407,
 		id=21030,
 		type=2,
@@ -59248,7 +59259,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3408] = { 
+	[3409] = { 
 		index=3408,
 		id=21031,
 		type=2,
@@ -59267,7 +59278,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3409] = { 
+	[3410] = { 
 		index=3409,
 		id=21032,
 		type=2,
@@ -59286,7 +59297,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3410] = { 
+	[3411] = { 
 		index=3410,
 		id=21033,
 		type=2,
@@ -59305,7 +59316,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3411] = { 
+	[3412] = { 
 		index=3411,
 		id=21034,
 		type=2,
@@ -59324,7 +59335,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3412] = { 
+	[3413] = { 
 		index=3412,
 		id=21035,
 		type=2,
@@ -59343,7 +59354,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3413] = { 
+	[3414] = { 
 		index=3413,
 		id=21036,
 		type=2,
@@ -59362,7 +59373,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3414] = { 
+	[3415] = { 
 		index=3414,
 		id=21037,
 		type=2,
@@ -59381,7 +59392,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3415] = { 
+	[3416] = { 
 		index=3415,
 		id=21038,
 		type=2,
@@ -59400,7 +59411,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3416] = { 
+	[3417] = { 
 		index=3416,
 		id=21039,
 		type=2,
@@ -59419,7 +59430,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3417] = { 
+	[3418] = { 
 		index=3417,
 		id=21040,
 		type=2,
@@ -59438,7 +59449,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3418] = { 
+	[3419] = { 
 		index=3418,
 		id=21041,
 		type=2,
@@ -59457,7 +59468,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3419] = { 
+	[3420] = { 
 		index=3419,
 		id=21042,
 		type=2,
@@ -59476,7 +59487,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3420] = { 
+	[3421] = { 
 		index=3420,
 		id=21043,
 		type=2,
@@ -59495,7 +59506,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3421] = { 
+	[3422] = { 
 		index=3421,
 		id=21044,
 		type=2,
@@ -59514,7 +59525,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3422] = { 
+	[3423] = { 
 		index=3422,
 		id=21045,
 		type=2,
@@ -59533,7 +59544,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3423] = { 
+	[3424] = { 
 		index=3423,
 		id=21046,
 		type=2,
@@ -59552,7 +59563,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3424] = { 
+	[3425] = { 
 		index=3424,
 		id=21047,
 		type=2,
@@ -59571,7 +59582,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3425] = { 
+	[3426] = { 
 		index=3425,
 		id=21048,
 		type=2,
@@ -59590,7 +59601,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3426] = { 
+	[3427] = { 
 		index=3426,
 		id=21049,
 		type=2,
@@ -59609,7 +59620,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3427] = { 
+	[3428] = { 
 		index=3427,
 		id=21050,
 		type=2,
@@ -59628,7 +59639,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3428] = { 
+	[3429] = { 
 		index=3428,
 		id=21051,
 		type=2,
@@ -59647,7 +59658,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3429] = { 
+	[3430] = { 
 		index=3429,
 		id=21052,
 		type=2,
@@ -59666,7 +59677,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3430] = { 
+	[3431] = { 
 		index=3430,
 		id=21053,
 		type=2,
@@ -59685,7 +59696,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3431] = { 
+	[3432] = { 
 		index=3431,
 		id=21054,
 		type=2,
@@ -59704,7 +59715,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3432] = { 
+	[3433] = { 
 		index=3432,
 		id=21055,
 		type=2,
@@ -59723,7 +59734,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3433] = { 
+	[3434] = { 
 		index=3433,
 		id=20000,
 		type=2,
@@ -59742,7 +59753,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3434] = { 
+	[3435] = { 
 		index=3434,
 		id=20001,
 		type=2,
@@ -59761,7 +59772,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3435] = { 
+	[3436] = { 
 		index=3435,
 		id=20002,
 		type=2,
@@ -59780,7 +59791,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3436] = { 
+	[3437] = { 
 		index=3436,
 		id=20003,
 		type=2,
@@ -59799,7 +59810,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3437] = { 
+	[3438] = { 
 		index=3437,
 		id=20004,
 		type=2,
@@ -59818,7 +59829,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3438] = { 
+	[3439] = { 
 		index=3438,
 		id=20005,
 		type=2,
@@ -59837,7 +59848,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3439] = { 
+	[3440] = { 
 		index=3439,
 		id=20006,
 		type=2,
@@ -59856,7 +59867,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3440] = { 
+	[3441] = { 
 		index=3440,
 		id=20007,
 		type=2,
@@ -59875,7 +59886,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3441] = { 
+	[3442] = { 
 		index=3441,
 		id=4062,
 		type=4,
@@ -59887,7 +59898,7 @@ local config = {
 		idle_interval=0.125,
 		showstand_interval=10,
 	},
-	[3442] = { 
+	[3443] = { 
 		index=3442,
 		id=5013,
 		type=4,
@@ -59898,7 +59909,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3443] = { 
+	[3444] = { 
 		index=3443,
 		id=5014,
 		type=4,
@@ -59909,7 +59920,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3444] = { 
+	[3445] = { 
 		index=3444,
 		id=5050,
 		type=4,
@@ -59920,7 +59931,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3445] = { 
+	[3446] = { 
 		index=3445,
 		id=5051,
 		type=4,
@@ -59931,7 +59942,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3446] = { 
+	[3447] = { 
 		index=3446,
 		id=5052,
 		type=4,
@@ -59942,7 +59953,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3447] = { 
+	[3448] = { 
 		index=3445,
 		id=5053,
 		type=4,
@@ -59954,7 +59965,7 @@ local config = {
 		idle_interval=0.136,
 		enlarge=0.9,
 	},
-	[3448] = { 
+	[3449] = { 
 		index=3447,
 		id=6386,
 		type=4,
@@ -59966,7 +59977,7 @@ local config = {
 		idle_interval=0.125,
 		showstand_interval=10,
 	},
-	[3449] = { 
+	[3450] = { 
 		index=3448,
 		id=6387,
 		type=4,
@@ -59978,7 +59989,7 @@ local config = {
 		idle_interval=0.125,
 		showstand_interval=10,
 	},
-	[3450] = { 
+	[3451] = { 
 		index=3449,
 		id=50702,
 		type=4,
@@ -59990,7 +60001,7 @@ local config = {
 		idle_interval=2,
 		showstand_interval=10,
 	},
-	[3451] = { 
+	[3452] = { 
 		index=3450,
 		id=5038,
 		type=4,
@@ -60002,7 +60013,7 @@ local config = {
 		idle_interval=0.125,
 		showstand_interval=10,
 	},
-	[3452] = { 
+	[3453] = { 
 		index=3451,
 		id=50703,
 		type=4,
@@ -60013,7 +60024,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.125,
 	},
-	[3453] = { 
+	[3454] = { 
 		index=3452,
 		id=50704,
 		type=4,
@@ -60024,7 +60035,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.125,
 	},
-	[3454] = { 
+	[3455] = { 
 		index=3453,
 		id=4018,
 		type=4,
@@ -60036,7 +60047,7 @@ local config = {
 		idle_interval=0.125,
 		enlarge=0.75,
 	},
-	[3455] = { 
+	[3456] = { 
 		index=3454,
 		id=50705,
 		type=4,
@@ -60048,7 +60059,7 @@ local config = {
 		idle_interval=0.125,
 		enlarge=0.5,
 	},
-	[3456] = { 
+	[3457] = { 
 		index=3455,
 		id=50706,
 		type=4,
@@ -60060,7 +60071,7 @@ local config = {
 		idle_interval=0.125,
 		enlarge=0.5,
 	},
-	[3457] = { 
+	[3458] = { 
 		index=3456,
 		id=50707,
 		type=4,
@@ -60072,7 +60083,7 @@ local config = {
 		idle_interval=0.125,
 		enlarge=0.5,
 	},
-	[3458] = { 
+	[3459] = { 
 		index=3457,
 		id=6350,
 		type=4,
@@ -60083,7 +60094,7 @@ local config = {
 		stand_pos_y=-0.05,
 		idle_interval=0.125,
 	},
-	[3459] = { 
+	[3460] = { 
 		index=3458,
 		id=6351,
 		type=4,
@@ -60094,7 +60105,7 @@ local config = {
 		stand_pos_y=-0.05,
 		idle_interval=0.125,
 	},
-	[3460] = { 
+	[3461] = { 
 		index=3459,
 		id=6352,
 		type=4,
@@ -60105,7 +60116,7 @@ local config = {
 		stand_pos_y=-0.05,
 		idle_interval=0.125,
 	},
-	[3461] = { 
+	[3462] = { 
 		index=3460,
 		id=6353,
 		type=4,
@@ -60116,7 +60127,7 @@ local config = {
 		stand_pos_y=-0.05,
 		idle_interval=0.125,
 	},
-	[3462] = { 
+	[3463] = { 
 		index=3461,
 		id=6354,
 		type=4,
@@ -60127,7 +60138,7 @@ local config = {
 		stand_pos_y=-0.05,
 		idle_interval=0.125,
 	},
-	[3463] = { 
+	[3464] = { 
 		index=3462,
 		id=6355,
 		type=4,
@@ -60138,7 +60149,7 @@ local config = {
 		stand_pos_y=-0.05,
 		idle_interval=0.125,
 	},
-	[3464] = { 
+	[3465] = { 
 		index=3463,
 		id=5015,
 		type=4,
@@ -60149,7 +60160,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3465] = { 
+	[3466] = { 
 		index=3464,
 		id=3021,
 		type=4,
@@ -60160,7 +60171,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3466] = { 
+	[3467] = { 
 		index=3465,
 		id=3022,
 		type=4,
@@ -60171,7 +60182,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3467] = { 
+	[3468] = { 
 		index=3466,
 		id=50708,
 		type=4,
@@ -60182,7 +60193,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3468] = { 
+	[3469] = { 
 		index=3467,
 		id=50709,
 		type=4,
@@ -60193,7 +60204,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3469] = { 
+	[3470] = { 
 		index=3468,
 		id=50710,
 		type=4,
@@ -60204,7 +60215,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3470] = { 
+	[3471] = { 
 		index=3469,
 		id=50711,
 		type=4,
@@ -60215,7 +60226,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3471] = { 
+	[3472] = { 
 		index=3470,
 		id=50712,
 		type=4,
@@ -60226,7 +60237,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3472] = { 
+	[3473] = { 
 		index=3471,
 		id=50713,
 		type=4,
@@ -60237,7 +60248,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.125,
 	},
-	[3473] = { 
+	[3474] = { 
 		index=3472,
 		id=50714,
 		type=4,
@@ -60248,7 +60259,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3474] = { 
+	[3475] = { 
 		index=3473,
 		id=50715,
 		type=4,
@@ -60259,7 +60270,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3475] = { 
+	[3476] = { 
 		index=3474,
 		id=50716,
 		type=4,
@@ -60270,7 +60281,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3476] = { 
+	[3477] = { 
 		index=3474,
 		id=50717,
 		type=4,
@@ -60281,7 +60292,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3477] = { 
+	[3478] = { 
 		index=3475,
 		id=50718,
 		type=4,
@@ -60292,7 +60303,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3478] = { 
+	[3479] = { 
 		index=3476,
 		id=50719,
 		type=4,
@@ -60303,7 +60314,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3479] = { 
+	[3480] = { 
 		index=3477,
 		id=50720,
 		type=4,
@@ -60314,7 +60325,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3480] = { 
+	[3481] = { 
 		index=3478,
 		id=50721,
 		type=4,
@@ -60325,7 +60336,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3481] = { 
+	[3482] = { 
 		index=3479,
 		id=50722,
 		type=4,
@@ -60336,7 +60347,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3482] = { 
+	[3483] = { 
 		index=3480,
 		id=50723,
 		type=4,
@@ -60347,7 +60358,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3483] = { 
+	[3484] = { 
 		index=3481,
 		id=50724,
 		type=4,
@@ -60358,7 +60369,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3484] = { 
+	[3485] = { 
 		index=3482,
 		id=50725,
 		type=4,
@@ -60369,7 +60380,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3485] = { 
+	[3486] = { 
 		index=3483,
 		id=50726,
 		type=4,
@@ -60380,7 +60391,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3486] = { 
+	[3487] = { 
 		index=3484,
 		id=50727,
 		type=4,
@@ -60391,7 +60402,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3487] = { 
+	[3488] = { 
 		index=3485,
 		id=50728,
 		type=4,
@@ -60402,7 +60413,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3488] = { 
+	[3489] = { 
 		index=3486,
 		id=50729,
 		type=4,
@@ -60413,7 +60424,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3489] = { 
+	[3490] = { 
 		index=3487,
 		id=50730,
 		type=4,
@@ -60424,7 +60435,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3490] = { 
+	[3491] = { 
 		index=3488,
 		id=50731,
 		type=4,
@@ -60435,7 +60446,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3491] = { 
+	[3492] = { 
 		index=3489,
 		id=50732,
 		type=4,
@@ -60446,7 +60457,7 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3492] = { 
+	[3493] = { 
 		index=3490,
 		id=50733,
 		type=4,
@@ -60457,33 +60468,11 @@ local config = {
 		stand_pos_y=0.5,
 		idle_interval=0.085,
 	},
-	[3493] = { 
+	[3494] = { 
 		index=3491,
 		id=505,
 		type=1,
 		sex=0,
-		dir=8,
-		hud_top=20,
-		blendmode=0,
-		stand_pos_x=0,
-		stand_pos_y=1,
-		idle_interval=0.25,
-		walk_interval=0.09,
-		run_interval=0.1,
-		attack_interval=0.085,
-		magic_interval=0.1,
-		die_interval=0.12,
-		stuck_interval=0.07,
-		sitdown_interval=0.3,
-		mining_interval=0.09,
-		showstand_interval=10,
-		ready_interval=0.2,
-	},
-	[3494] = { 
-		index=3492,
-		id=505,
-		type=1,
-		sex=1,
 		dir=8,
 		hud_top=20,
 		blendmode=0,
@@ -60502,10 +60491,10 @@ local config = {
 		ready_interval=0.2,
 	},
 	[3495] = { 
-		index=3491,
-		id=506,
+		index=3492,
+		id=505,
 		type=1,
-		sex=0,
+		sex=1,
 		dir=8,
 		hud_top=20,
 		blendmode=0,
@@ -60524,6 +60513,28 @@ local config = {
 		ready_interval=0.2,
 	},
 	[3496] = { 
+		index=3491,
+		id=506,
+		type=1,
+		sex=0,
+		dir=8,
+		hud_top=20,
+		blendmode=0,
+		stand_pos_x=0,
+		stand_pos_y=1,
+		idle_interval=0.25,
+		walk_interval=0.09,
+		run_interval=0.1,
+		attack_interval=0.085,
+		magic_interval=0.1,
+		die_interval=0.12,
+		stuck_interval=0.07,
+		sitdown_interval=0.3,
+		mining_interval=0.09,
+		showstand_interval=10,
+		ready_interval=0.2,
+	},
+	[3497] = { 
 		index=3492,
 		id=506,
 		type=1,
@@ -60545,33 +60556,11 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3497] = { 
+	[3498] = { 
 		index=3491,
 		id=507,
 		type=1,
 		sex=0,
-		dir=8,
-		hud_top=20,
-		blendmode=0,
-		stand_pos_x=0,
-		stand_pos_y=1,
-		idle_interval=0.25,
-		walk_interval=0.09,
-		run_interval=0.1,
-		attack_interval=0.085,
-		magic_interval=0.1,
-		die_interval=0.12,
-		stuck_interval=0.07,
-		sitdown_interval=0.3,
-		mining_interval=0.09,
-		showstand_interval=10,
-		ready_interval=0.2,
-	},
-	[3498] = { 
-		index=3492,
-		id=507,
-		type=1,
-		sex=1,
 		dir=8,
 		hud_top=20,
 		blendmode=0,
@@ -60590,10 +60579,10 @@ local config = {
 		ready_interval=0.2,
 	},
 	[3499] = { 
-		index=3491,
-		id=508,
+		index=3492,
+		id=507,
 		type=1,
-		sex=0,
+		sex=1,
 		dir=8,
 		hud_top=20,
 		blendmode=0,
@@ -60612,6 +60601,28 @@ local config = {
 		ready_interval=0.2,
 	},
 	[3500] = { 
+		index=3491,
+		id=508,
+		type=1,
+		sex=0,
+		dir=8,
+		hud_top=20,
+		blendmode=0,
+		stand_pos_x=0,
+		stand_pos_y=1,
+		idle_interval=0.25,
+		walk_interval=0.09,
+		run_interval=0.1,
+		attack_interval=0.085,
+		magic_interval=0.1,
+		die_interval=0.12,
+		stuck_interval=0.07,
+		sitdown_interval=0.3,
+		mining_interval=0.09,
+		showstand_interval=10,
+		ready_interval=0.2,
+	},
+	[3501] = { 
 		index=3492,
 		id=508,
 		type=1,
@@ -60633,33 +60644,11 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3501] = { 
+	[3502] = { 
 		index=3491,
 		id=509,
 		type=1,
 		sex=0,
-		dir=8,
-		hud_top=20,
-		blendmode=0,
-		stand_pos_x=0,
-		stand_pos_y=1,
-		idle_interval=0.25,
-		walk_interval=0.09,
-		run_interval=0.1,
-		attack_interval=0.085,
-		magic_interval=0.1,
-		die_interval=0.12,
-		stuck_interval=0.07,
-		sitdown_interval=0.3,
-		mining_interval=0.09,
-		showstand_interval=10,
-		ready_interval=0.2,
-	},
-	[3502] = { 
-		index=3492,
-		id=509,
-		type=1,
-		sex=1,
 		dir=8,
 		hud_top=20,
 		blendmode=0,
@@ -60678,10 +60667,10 @@ local config = {
 		ready_interval=0.2,
 	},
 	[3503] = { 
-		index=3491,
-		id=510,
+		index=3492,
+		id=509,
 		type=1,
-		sex=0,
+		sex=1,
 		dir=8,
 		hud_top=20,
 		blendmode=0,
@@ -60700,6 +60689,28 @@ local config = {
 		ready_interval=0.2,
 	},
 	[3504] = { 
+		index=3491,
+		id=510,
+		type=1,
+		sex=0,
+		dir=8,
+		hud_top=20,
+		blendmode=0,
+		stand_pos_x=0,
+		stand_pos_y=1,
+		idle_interval=0.25,
+		walk_interval=0.09,
+		run_interval=0.1,
+		attack_interval=0.085,
+		magic_interval=0.1,
+		die_interval=0.12,
+		stuck_interval=0.07,
+		sitdown_interval=0.3,
+		mining_interval=0.09,
+		showstand_interval=10,
+		ready_interval=0.2,
+	},
+	[3505] = { 
 		index=3492,
 		id=510,
 		type=1,
@@ -60721,33 +60732,11 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3505] = { 
+	[3506] = { 
 		index=3491,
 		id=511,
 		type=1,
 		sex=0,
-		dir=8,
-		hud_top=20,
-		blendmode=0,
-		stand_pos_x=0,
-		stand_pos_y=1,
-		idle_interval=0.25,
-		walk_interval=0.09,
-		run_interval=0.1,
-		attack_interval=0.085,
-		magic_interval=0.1,
-		die_interval=0.12,
-		stuck_interval=0.07,
-		sitdown_interval=0.3,
-		mining_interval=0.09,
-		showstand_interval=10,
-		ready_interval=0.2,
-	},
-	[3506] = { 
-		index=3492,
-		id=511,
-		type=1,
-		sex=1,
 		dir=8,
 		hud_top=20,
 		blendmode=0,
@@ -60766,10 +60755,10 @@ local config = {
 		ready_interval=0.2,
 	},
 	[3507] = { 
-		index=3491,
-		id=512,
+		index=3492,
+		id=511,
 		type=1,
-		sex=0,
+		sex=1,
 		dir=8,
 		hud_top=20,
 		blendmode=0,
@@ -60788,6 +60777,28 @@ local config = {
 		ready_interval=0.2,
 	},
 	[3508] = { 
+		index=3491,
+		id=512,
+		type=1,
+		sex=0,
+		dir=8,
+		hud_top=20,
+		blendmode=0,
+		stand_pos_x=0,
+		stand_pos_y=1,
+		idle_interval=0.25,
+		walk_interval=0.09,
+		run_interval=0.1,
+		attack_interval=0.085,
+		magic_interval=0.1,
+		die_interval=0.12,
+		stuck_interval=0.07,
+		sitdown_interval=0.3,
+		mining_interval=0.09,
+		showstand_interval=10,
+		ready_interval=0.2,
+	},
+	[3509] = { 
 		index=3492,
 		id=512,
 		type=1,
@@ -60809,33 +60820,11 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3509] = { 
+	[3510] = { 
 		index=3491,
 		id=513,
 		type=1,
 		sex=0,
-		dir=8,
-		hud_top=20,
-		blendmode=0,
-		stand_pos_x=0,
-		stand_pos_y=1,
-		idle_interval=0.25,
-		walk_interval=0.09,
-		run_interval=0.1,
-		attack_interval=0.085,
-		magic_interval=0.1,
-		die_interval=0.12,
-		stuck_interval=0.07,
-		sitdown_interval=0.3,
-		mining_interval=0.09,
-		showstand_interval=10,
-		ready_interval=0.2,
-	},
-	[3510] = { 
-		index=3492,
-		id=513,
-		type=1,
-		sex=1,
 		dir=8,
 		hud_top=20,
 		blendmode=0,
@@ -60854,10 +60843,10 @@ local config = {
 		ready_interval=0.2,
 	},
 	[3511] = { 
-		index=3491,
-		id=514,
+		index=3492,
+		id=513,
 		type=1,
-		sex=0,
+		sex=1,
 		dir=8,
 		hud_top=20,
 		blendmode=0,
@@ -60876,6 +60865,28 @@ local config = {
 		ready_interval=0.2,
 	},
 	[3512] = { 
+		index=3491,
+		id=514,
+		type=1,
+		sex=0,
+		dir=8,
+		hud_top=20,
+		blendmode=0,
+		stand_pos_x=0,
+		stand_pos_y=1,
+		idle_interval=0.25,
+		walk_interval=0.09,
+		run_interval=0.1,
+		attack_interval=0.085,
+		magic_interval=0.1,
+		die_interval=0.12,
+		stuck_interval=0.07,
+		sitdown_interval=0.3,
+		mining_interval=0.09,
+		showstand_interval=10,
+		ready_interval=0.2,
+	},
+	[3513] = { 
 		index=3492,
 		id=514,
 		type=1,
@@ -60897,7 +60908,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3513] = { 
+	[3514] = { 
 		index=3491,
 		id=515,
 		type=1,
@@ -60919,7 +60930,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3514] = { 
+	[3515] = { 
 		index=3492,
 		id=515,
 		type=1,
@@ -60941,7 +60952,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3515] = { 
+	[3516] = { 
 		index=3493,
 		id=243,
 		type=6,
@@ -60962,7 +60973,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3516] = { 
+	[3517] = { 
 		index=3494,
 		id=243,
 		type=6,
@@ -60983,7 +60994,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3517] = { 
+	[3518] = { 
 		index=3495,
 		id=244,
 		type=6,
@@ -61004,7 +61015,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3518] = { 
+	[3519] = { 
 		index=3496,
 		id=244,
 		type=6,
@@ -61025,7 +61036,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3519] = { 
+	[3520] = { 
 		index=3497,
 		id=245,
 		type=6,
@@ -61046,7 +61057,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3520] = { 
+	[3521] = { 
 		index=3498,
 		id=245,
 		type=6,
@@ -61067,7 +61078,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3521] = { 
+	[3522] = { 
 		index=3499,
 		id=246,
 		type=6,
@@ -61088,7 +61099,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3522] = { 
+	[3523] = { 
 		index=3500,
 		id=246,
 		type=6,
@@ -61109,7 +61120,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3523] = { 
+	[3524] = { 
 		index=3501,
 		id=247,
 		type=6,
@@ -61130,7 +61141,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3524] = { 
+	[3525] = { 
 		index=3502,
 		id=247,
 		type=6,
@@ -61151,7 +61162,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3525] = { 
+	[3526] = { 
 		index=3503,
 		id=248,
 		type=6,
@@ -61172,7 +61183,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3526] = { 
+	[3527] = { 
 		index=3504,
 		id=248,
 		type=6,
@@ -61193,7 +61204,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3527] = { 
+	[3528] = { 
 		index=3505,
 		id=249,
 		type=6,
@@ -61214,7 +61225,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3528] = { 
+	[3529] = { 
 		index=3506,
 		id=249,
 		type=6,
@@ -61235,7 +61246,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3529] = { 
+	[3530] = { 
 		index=3507,
 		id=250,
 		type=6,
@@ -61256,7 +61267,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3530] = { 
+	[3531] = { 
 		index=3508,
 		id=250,
 		type=6,
@@ -61277,7 +61288,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3531] = { 
+	[3532] = { 
 		index=3509,
 		id=251,
 		type=6,
@@ -61298,7 +61309,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3532] = { 
+	[3533] = { 
 		index=3510,
 		id=251,
 		type=6,
@@ -61319,7 +61330,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3533] = { 
+	[3534] = { 
 		index=3511,
 		id=252,
 		type=6,
@@ -61340,7 +61351,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3534] = { 
+	[3535] = { 
 		index=3512,
 		id=252,
 		type=6,
@@ -61361,7 +61372,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3535] = { 
+	[3536] = { 
 		index=3513,
 		id=253,
 		type=6,
@@ -61382,7 +61393,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3536] = { 
+	[3537] = { 
 		index=3514,
 		id=253,
 		type=6,
@@ -61403,7 +61414,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3537] = { 
+	[3538] = { 
 		index=3515,
 		id=254,
 		type=6,
@@ -61424,7 +61435,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3538] = { 
+	[3539] = { 
 		index=3516,
 		id=254,
 		type=6,
@@ -61445,7 +61456,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3539] = { 
+	[3540] = { 
 		index=3517,
 		id=255,
 		type=6,
@@ -61466,7 +61477,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3540] = { 
+	[3541] = { 
 		index=3518,
 		id=255,
 		type=6,
@@ -61487,7 +61498,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3541] = { 
+	[3542] = { 
 		index=3519,
 		id=256,
 		type=6,
@@ -61508,7 +61519,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3542] = { 
+	[3543] = { 
 		index=3520,
 		id=256,
 		type=6,
@@ -61529,7 +61540,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3543] = { 
+	[3544] = { 
 		index=3521,
 		id=257,
 		type=6,
@@ -61550,7 +61561,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3544] = { 
+	[3545] = { 
 		index=3522,
 		id=257,
 		type=6,
@@ -61571,7 +61582,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3545] = { 
+	[3546] = { 
 		index=3523,
 		id=258,
 		type=6,
@@ -61592,7 +61603,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3546] = { 
+	[3547] = { 
 		index=3524,
 		id=258,
 		type=6,
@@ -61613,7 +61624,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3547] = { 
+	[3548] = { 
 		index=3525,
 		id=259,
 		type=6,
@@ -61634,7 +61645,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3548] = { 
+	[3549] = { 
 		index=3526,
 		id=259,
 		type=6,
@@ -61655,7 +61666,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3549] = { 
+	[3550] = { 
 		index=3527,
 		id=261,
 		type=6,
@@ -61676,7 +61687,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3550] = { 
+	[3551] = { 
 		index=3528,
 		id=261,
 		type=6,
@@ -61697,7 +61708,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3551] = { 
+	[3552] = { 
 		index=3529,
 		id=262,
 		type=6,
@@ -61718,7 +61729,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3552] = { 
+	[3553] = { 
 		index=3530,
 		id=262,
 		type=6,
@@ -61739,7 +61750,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3553] = { 
+	[3554] = { 
 		index=3531,
 		id=263,
 		type=6,
@@ -61760,7 +61771,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3554] = { 
+	[3555] = { 
 		index=3532,
 		id=263,
 		type=6,
@@ -61781,7 +61792,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3555] = { 
+	[3556] = { 
 		index=3533,
 		id=264,
 		type=6,
@@ -61802,7 +61813,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3556] = { 
+	[3557] = { 
 		index=3534,
 		id=264,
 		type=6,
@@ -61823,7 +61834,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3557] = { 
+	[3558] = { 
 		index=3535,
 		id=265,
 		type=6,
@@ -61844,7 +61855,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3558] = { 
+	[3559] = { 
 		index=3536,
 		id=265,
 		type=6,
@@ -61865,7 +61876,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3559] = { 
+	[3560] = { 
 		index=3537,
 		id=266,
 		type=6,
@@ -61886,7 +61897,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3560] = { 
+	[3561] = { 
 		index=3538,
 		id=266,
 		type=6,
@@ -61907,7 +61918,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3561] = { 
+	[3562] = { 
 		index=3539,
 		id=267,
 		type=6,
@@ -61928,7 +61939,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3562] = { 
+	[3563] = { 
 		index=3540,
 		id=267,
 		type=6,
@@ -61949,7 +61960,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3563] = { 
+	[3564] = { 
 		index=3541,
 		id=268,
 		type=6,
@@ -61970,7 +61981,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3564] = { 
+	[3565] = { 
 		index=3542,
 		id=268,
 		type=6,
@@ -61991,7 +62002,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3565] = { 
+	[3566] = { 
 		index=3543,
 		id=269,
 		type=6,
@@ -62012,7 +62023,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3566] = { 
+	[3567] = { 
 		index=3544,
 		id=269,
 		type=6,
@@ -62033,7 +62044,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3567] = { 
+	[3568] = { 
 		index=3545,
 		id=270,
 		type=6,
@@ -62054,7 +62065,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3568] = { 
+	[3569] = { 
 		index=3546,
 		id=270,
 		type=6,
@@ -62075,7 +62086,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3569] = { 
+	[3570] = { 
 		index=3547,
 		id=21090,
 		type=4,
@@ -62086,7 +62097,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3570] = { 
+	[3571] = { 
 		index=3548,
 		id=516,
 		type=1,
@@ -62108,7 +62119,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3571] = { 
+	[3572] = { 
 		index=3549,
 		id=516,
 		type=1,
@@ -62130,7 +62141,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3572] = { 
+	[3573] = { 
 		index=3550,
 		id=271,
 		type=6,
@@ -62151,7 +62162,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3573] = { 
+	[3574] = { 
 		index=3551,
 		id=271,
 		type=6,
@@ -62172,7 +62183,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3574] = { 
+	[3575] = { 
 		index=3552,
 		id=272,
 		type=6,
@@ -62193,7 +62204,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3575] = { 
+	[3576] = { 
 		index=3553,
 		id=272,
 		type=6,
@@ -62214,7 +62225,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3576] = { 
+	[3577] = { 
 		index=3554,
 		id=273,
 		type=6,
@@ -62235,7 +62246,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3577] = { 
+	[3578] = { 
 		index=3555,
 		id=273,
 		type=6,
@@ -62256,7 +62267,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3578] = { 
+	[3579] = { 
 		index=3556,
 		id=274,
 		type=6,
@@ -62277,7 +62288,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3579] = { 
+	[3580] = { 
 		index=3557,
 		id=274,
 		type=6,
@@ -62298,7 +62309,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3580] = { 
+	[3581] = { 
 		index=3558,
 		id=275,
 		type=6,
@@ -62319,7 +62330,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3581] = { 
+	[3582] = { 
 		index=3559,
 		id=275,
 		type=6,
@@ -62340,7 +62351,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3582] = { 
+	[3583] = { 
 		index=3560,
 		id=276,
 		type=6,
@@ -62361,7 +62372,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3583] = { 
+	[3584] = { 
 		index=3561,
 		id=276,
 		type=6,
@@ -62382,7 +62393,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3584] = { 
+	[3585] = { 
 		index=3562,
 		id=277,
 		type=6,
@@ -62403,7 +62414,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3585] = { 
+	[3586] = { 
 		index=3563,
 		id=277,
 		type=6,
@@ -62424,7 +62435,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3586] = { 
+	[3587] = { 
 		index=3564,
 		id=278,
 		type=6,
@@ -62445,7 +62456,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3587] = { 
+	[3588] = { 
 		index=3565,
 		id=278,
 		type=6,
@@ -62466,7 +62477,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3588] = { 
+	[3589] = { 
 		index=3566,
 		id=279,
 		type=6,
@@ -62487,7 +62498,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3589] = { 
+	[3590] = { 
 		index=3567,
 		id=279,
 		type=6,
@@ -62508,7 +62519,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3590] = { 
+	[3591] = { 
 		index=3568,
 		id=280,
 		type=6,
@@ -62529,7 +62540,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3591] = { 
+	[3592] = { 
 		index=3569,
 		id=280,
 		type=6,
@@ -62550,7 +62561,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3592] = { 
+	[3593] = { 
 		index=3570,
 		id=281,
 		type=6,
@@ -62571,7 +62582,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3593] = { 
+	[3594] = { 
 		index=3571,
 		id=281,
 		type=6,
@@ -62592,7 +62603,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3594] = { 
+	[3595] = { 
 		index=3572,
 		id=517,
 		type=1,
@@ -62614,7 +62625,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3595] = { 
+	[3596] = { 
 		index=3573,
 		id=517,
 		type=1,
@@ -62636,7 +62647,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3596] = { 
+	[3597] = { 
 		index=3574,
 		id=518,
 		type=1,
@@ -62658,7 +62669,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3597] = { 
+	[3598] = { 
 		index=3575,
 		id=518,
 		type=1,
@@ -62680,7 +62691,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3598] = { 
+	[3599] = { 
 		index=3576,
 		id=519,
 		type=1,
@@ -62702,7 +62713,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3599] = { 
+	[3600] = { 
 		index=3577,
 		id=519,
 		type=1,
@@ -62724,7 +62735,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3600] = { 
+	[3601] = { 
 		index=3578,
 		id=520,
 		type=1,
@@ -62746,7 +62757,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3601] = { 
+	[3602] = { 
 		index=3579,
 		id=520,
 		type=1,
@@ -62768,7 +62779,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3602] = { 
+	[3603] = { 
 		index=3580,
 		id=521,
 		type=1,
@@ -62790,7 +62801,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3603] = { 
+	[3604] = { 
 		index=3581,
 		id=521,
 		type=1,
@@ -62812,7 +62823,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3604] = { 
+	[3605] = { 
 		index=3582,
 		id=522,
 		type=1,
@@ -62834,7 +62845,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3605] = { 
+	[3606] = { 
 		index=3583,
 		id=522,
 		type=1,
@@ -62856,7 +62867,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3606] = { 
+	[3607] = { 
 		index=3584,
 		id=523,
 		type=1,
@@ -62878,7 +62889,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3607] = { 
+	[3608] = { 
 		index=3585,
 		id=523,
 		type=1,
@@ -62900,7 +62911,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3608] = { 
+	[3609] = { 
 		index=3586,
 		id=524,
 		type=1,
@@ -62922,7 +62933,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3609] = { 
+	[3610] = { 
 		index=3587,
 		id=524,
 		type=1,
@@ -62944,7 +62955,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3610] = { 
+	[3611] = { 
 		index=3588,
 		id=525,
 		type=1,
@@ -62966,7 +62977,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3611] = { 
+	[3612] = { 
 		index=3589,
 		id=525,
 		type=1,
@@ -62988,7 +62999,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3612] = { 
+	[3613] = { 
 		index=3590,
 		id=526,
 		type=1,
@@ -63010,7 +63021,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3613] = { 
+	[3614] = { 
 		index=3591,
 		id=526,
 		type=1,
@@ -63032,7 +63043,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3614] = { 
+	[3615] = { 
 		index=3592,
 		id=21093,
 		type=4,
@@ -63044,7 +63055,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.8,
 	},
-	[3615] = { 
+	[3616] = { 
 		index=3593,
 		id=21094,
 		type=4,
@@ -63056,7 +63067,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.8,
 	},
-	[3616] = { 
+	[3617] = { 
 		index=3594,
 		id=21095,
 		type=4,
@@ -63068,7 +63079,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.8,
 	},
-	[3617] = { 
+	[3618] = { 
 		index=3595,
 		id=21096,
 		type=4,
@@ -63080,7 +63091,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.8,
 	},
-	[3618] = { 
+	[3619] = { 
 		index=3596,
 		id=21097,
 		type=4,
@@ -63092,7 +63103,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.8,
 	},
-	[3619] = { 
+	[3620] = { 
 		index=3597,
 		id=21098,
 		type=4,
@@ -63104,7 +63115,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.6,
 	},
-	[3620] = { 
+	[3621] = { 
 		index=3598,
 		id=21099,
 		type=4,
@@ -63116,7 +63127,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.8,
 	},
-	[3621] = { 
+	[3622] = { 
 		index=3599,
 		id=21100,
 		type=4,
@@ -63128,7 +63139,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.8,
 	},
-	[3622] = { 
+	[3623] = { 
 		index=3600,
 		id=21101,
 		type=4,
@@ -63140,7 +63151,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.8,
 	},
-	[3623] = { 
+	[3624] = { 
 		index=3601,
 		id=21102,
 		type=4,
@@ -63152,7 +63163,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.8,
 	},
-	[3624] = { 
+	[3625] = { 
 		index=3602,
 		id=21103,
 		type=4,
@@ -63164,7 +63175,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.8,
 	},
-	[3625] = { 
+	[3626] = { 
 		index=3603,
 		id=21091,
 		type=4,
@@ -63175,7 +63186,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.13,
 	},
-	[3626] = { 
+	[3627] = { 
 		index=3604,
 		id=21092,
 		type=4,
@@ -63186,7 +63197,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.13,
 	},
-	[3627] = { 
+	[3628] = { 
 		index=3605,
 		id=21104,
 		type=4,
@@ -63197,7 +63208,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.1,
 	},
-	[3628] = { 
+	[3629] = { 
 		index=3606,
 		id=21105,
 		type=4,
@@ -63208,7 +63219,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.1,
 	},
-	[3629] = { 
+	[3630] = { 
 		index=3607,
 		id=21106,
 		type=4,
@@ -63219,7 +63230,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3630] = { 
+	[3631] = { 
 		index=3608,
 		id=21107,
 		type=4,
@@ -63230,7 +63241,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3631] = { 
+	[3632] = { 
 		index=3609,
 		id=21108,
 		type=4,
@@ -63241,7 +63252,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.095,
 	},
-	[3632] = { 
+	[3633] = { 
 		index=3610,
 		id=21109,
 		type=4,
@@ -63252,7 +63263,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.095,
 	},
-	[3633] = { 
+	[3634] = { 
 		index=3611,
 		id=21110,
 		type=4,
@@ -63263,7 +63274,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.11,
 	},
-	[3634] = { 
+	[3635] = { 
 		index=3612,
 		id=21111,
 		type=4,
@@ -63274,7 +63285,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.11,
 	},
-	[3635] = { 
+	[3636] = { 
 		index=3613,
 		id=21112,
 		type=4,
@@ -63285,7 +63296,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.11,
 	},
-	[3636] = { 
+	[3637] = { 
 		index=3614,
 		id=21113,
 		type=4,
@@ -63296,7 +63307,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.11,
 	},
-	[3637] = { 
+	[3638] = { 
 		index=3615,
 		id=21114,
 		type=4,
@@ -63307,7 +63318,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.11,
 	},
-	[3638] = { 
+	[3639] = { 
 		index=3616,
 		id=21115,
 		type=4,
@@ -63318,7 +63329,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.11,
 	},
-	[3639] = { 
+	[3640] = { 
 		index=3617,
 		id=21116,
 		type=4,
@@ -63329,7 +63340,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.11,
 	},
-	[3640] = { 
+	[3641] = { 
 		index=3618,
 		id=21117,
 		type=4,
@@ -63340,7 +63351,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.11,
 	},
-	[3641] = { 
+	[3642] = { 
 		index=3619,
 		id=21118,
 		type=4,
@@ -63351,7 +63362,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.11,
 	},
-	[3642] = { 
+	[3643] = { 
 		index=3620,
 		id=21119,
 		type=4,
@@ -63362,7 +63373,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.11,
 	},
-	[3643] = { 
+	[3644] = { 
 		index=3621,
 		id=21120,
 		type=4,
@@ -63373,7 +63384,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.20202,
 	},
-	[3644] = { 
+	[3645] = { 
 		index=3622,
 		id=21121,
 		type=4,
@@ -63384,7 +63395,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.20202,
 	},
-	[3645] = { 
+	[3646] = { 
 		index=3623,
 		id=21122,
 		type=4,
@@ -63395,7 +63406,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3646] = { 
+	[3647] = { 
 		index=3624,
 		id=21123,
 		type=4,
@@ -63406,7 +63417,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.1466,
 	},
-	[3647] = { 
+	[3648] = { 
 		index=3625,
 		id=21124,
 		type=4,
@@ -63417,7 +63428,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3648] = { 
+	[3649] = { 
 		index=3626,
 		id=21125,
 		type=4,
@@ -63428,7 +63439,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.14,
 	},
-	[3649] = { 
+	[3650] = { 
 		index=3627,
 		id=21126,
 		type=4,
@@ -63439,7 +63450,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.14,
 	},
-	[3650] = { 
+	[3651] = { 
 		index=3628,
 		id=21127,
 		type=4,
@@ -63451,7 +63462,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=1.5,
 	},
-	[3651] = { 
+	[3652] = { 
 		index=3629,
 		id=21128,
 		type=4,
@@ -63463,7 +63474,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.65,
 	},
-	[3652] = { 
+	[3653] = { 
 		index=3630,
 		id=21129,
 		type=4,
@@ -63475,7 +63486,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.65,
 	},
-	[3653] = { 
+	[3654] = { 
 		index=3631,
 		id=21130,
 		type=4,
@@ -63487,7 +63498,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.65,
 	},
-	[3654] = { 
+	[3655] = { 
 		index=3632,
 		id=21131,
 		type=4,
@@ -63499,7 +63510,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.65,
 	},
-	[3655] = { 
+	[3656] = { 
 		index=3633,
 		id=21132,
 		type=4,
@@ -63511,7 +63522,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.65,
 	},
-	[3656] = { 
+	[3657] = { 
 		index=3634,
 		id=21133,
 		type=4,
@@ -63523,7 +63534,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.65,
 	},
-	[3657] = { 
+	[3658] = { 
 		index=3635,
 		id=21134,
 		type=4,
@@ -63535,7 +63546,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.65,
 	},
-	[3658] = { 
+	[3659] = { 
 		index=3636,
 		id=21135,
 		type=4,
@@ -63547,7 +63558,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.18,
 	},
-	[3659] = { 
+	[3660] = { 
 		index=3637,
 		id=21136,
 		type=4,
@@ -63559,7 +63570,7 @@ local config = {
 		idle_interval=0.13,
 		enlarge=0.2,
 	},
-	[3660] = { 
+	[3661] = { 
 		index=3638,
 		id=21137,
 		type=4,
@@ -63571,7 +63582,7 @@ local config = {
 		idle_interval=0.13,
 		enlarge=0.2,
 	},
-	[3661] = { 
+	[3662] = { 
 		index=3639,
 		id=21138,
 		type=4,
@@ -63583,7 +63594,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.18,
 	},
-	[3662] = { 
+	[3663] = { 
 		index=3640,
 		id=21139,
 		type=4,
@@ -63595,7 +63606,7 @@ local config = {
 		idle_interval=0.1,
 		enlarge=0.2,
 	},
-	[3663] = { 
+	[3664] = { 
 		index=3642,
 		id=21140,
 		type=4,
@@ -63607,7 +63618,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.15,
 	},
-	[3664] = { 
+	[3665] = { 
 		index=3643,
 		id=21141,
 		type=4,
@@ -63619,7 +63630,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.2,
 	},
-	[3665] = { 
+	[3666] = { 
 		index=3642,
 		id=21142,
 		type=4,
@@ -63631,7 +63642,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.33,
 	},
-	[3666] = { 
+	[3667] = { 
 		index=3643,
 		id=21143,
 		type=4,
@@ -63643,7 +63654,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.2,
 	},
-	[3667] = { 
+	[3668] = { 
 		index=3642,
 		id=21144,
 		type=4,
@@ -63655,7 +63666,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.2,
 	},
-	[3668] = { 
+	[3669] = { 
 		index=3643,
 		id=21145,
 		type=4,
@@ -63667,7 +63678,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.2,
 	},
-	[3669] = { 
+	[3670] = { 
 		index=3642,
 		id=21146,
 		type=4,
@@ -63679,7 +63690,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.26,
 	},
-	[3670] = { 
+	[3671] = { 
 		index=3643,
 		id=21147,
 		type=4,
@@ -63691,7 +63702,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.2,
 	},
-	[3671] = { 
+	[3672] = { 
 		index=3642,
 		id=21148,
 		type=4,
@@ -63703,7 +63714,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.16,
 	},
-	[3672] = { 
+	[3673] = { 
 		index=3643,
 		id=21149,
 		type=4,
@@ -63715,7 +63726,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.3,
 	},
-	[3673] = { 
+	[3674] = { 
 		index=3642,
 		id=21150,
 		type=4,
@@ -63727,7 +63738,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.2,
 	},
-	[3674] = { 
+	[3675] = { 
 		index=3643,
 		id=21151,
 		type=4,
@@ -63739,7 +63750,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.2,
 	},
-	[3675] = { 
+	[3676] = { 
 		index=3644,
 		id=21152,
 		type=4,
@@ -63751,7 +63762,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.17,
 	},
-	[3676] = { 
+	[3677] = { 
 		index=3645,
 		id=21153,
 		type=4,
@@ -63763,7 +63774,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.2,
 	},
-	[3677] = { 
+	[3678] = { 
 		index=3646,
 		id=21154,
 		type=4,
@@ -63775,7 +63786,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.25,
 	},
-	[3678] = { 
+	[3679] = { 
 		index=3647,
 		id=21155,
 		type=4,
@@ -63787,7 +63798,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.2,
 	},
-	[3679] = { 
+	[3680] = { 
 		index=3648,
 		id=21156,
 		type=4,
@@ -63799,7 +63810,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.18,
 	},
-	[3680] = { 
+	[3681] = { 
 		index=3649,
 		id=21157,
 		type=4,
@@ -63811,7 +63822,7 @@ local config = {
 		idle_interval=0.085,
 		enlarge=0.2,
 	},
-	[3681] = { 
+	[3682] = { 
 		index=3650,
 		id=21158,
 		type=4,
@@ -63822,7 +63833,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3682] = { 
+	[3683] = { 
 		index=3651,
 		id=21159,
 		type=4,
@@ -63833,7 +63844,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3683] = { 
+	[3684] = { 
 		index=3652,
 		id=21160,
 		type=4,
@@ -63844,7 +63855,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3684] = { 
+	[3685] = { 
 		index=3653,
 		id=21161,
 		type=4,
@@ -63855,7 +63866,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3685] = { 
+	[3686] = { 
 		index=3654,
 		id=21162,
 		type=4,
@@ -63866,7 +63877,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3686] = { 
+	[3687] = { 
 		index=3655,
 		id=21163,
 		type=4,
@@ -63877,7 +63888,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3687] = { 
+	[3688] = { 
 		index=3656,
 		id=21164,
 		type=4,
@@ -63888,7 +63899,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3688] = { 
+	[3689] = { 
 		index=3657,
 		id=21165,
 		type=4,
@@ -63899,7 +63910,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3689] = { 
+	[3690] = { 
 		index=3658,
 		id=21166,
 		type=4,
@@ -63910,7 +63921,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3690] = { 
+	[3691] = { 
 		index=3659,
 		id=21167,
 		type=4,
@@ -63921,7 +63932,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3691] = { 
+	[3692] = { 
 		index=3660,
 		id=2017,
 		type=3,
@@ -63935,7 +63946,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3692] = { 
+	[3693] = { 
 		index=3661,
 		id=2018,
 		type=3,
@@ -63949,7 +63960,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3693] = { 
+	[3694] = { 
 		index=3662,
 		id=2019,
 		type=3,
@@ -63963,7 +63974,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3694] = { 
+	[3695] = { 
 		index=3663,
 		id=2020,
 		type=3,
@@ -63977,7 +63988,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3695] = { 
+	[3696] = { 
 		index=3664,
 		id=2021,
 		type=3,
@@ -63991,7 +64002,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3696] = { 
+	[3697] = { 
 		index=3665,
 		id=2022,
 		type=3,
@@ -64005,7 +64016,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3697] = { 
+	[3698] = { 
 		index=3666,
 		id=2023,
 		type=3,
@@ -64019,7 +64030,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3698] = { 
+	[3699] = { 
 		index=3667,
 		id=2024,
 		type=3,
@@ -64033,7 +64044,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3699] = { 
+	[3700] = { 
 		index=3668,
 		id=2025,
 		type=3,
@@ -64047,7 +64058,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3700] = { 
+	[3701] = { 
 		index=3669,
 		id=2026,
 		type=3,
@@ -64061,7 +64072,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3701] = { 
+	[3702] = { 
 		index=3670,
 		id=2027,
 		type=3,
@@ -64075,7 +64086,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3702] = { 
+	[3703] = { 
 		index=3671,
 		id=2028,
 		type=3,
@@ -64089,7 +64100,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3703] = { 
+	[3704] = { 
 		index=3672,
 		id=21056,
 		type=2,
@@ -64108,7 +64119,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3704] = { 
+	[3705] = { 
 		index=3673,
 		id=21057,
 		type=2,
@@ -64127,7 +64138,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3705] = { 
+	[3706] = { 
 		index=3674,
 		id=21058,
 		type=2,
@@ -64146,7 +64157,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3706] = { 
+	[3707] = { 
 		index=3675,
 		id=21059,
 		type=2,
@@ -64165,7 +64176,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3707] = { 
+	[3708] = { 
 		index=3676,
 		id=21060,
 		type=2,
@@ -64184,7 +64195,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3708] = { 
+	[3709] = { 
 		index=3677,
 		id=21061,
 		type=2,
@@ -64203,7 +64214,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3709] = { 
+	[3710] = { 
 		index=3678,
 		id=21062,
 		type=2,
@@ -64222,7 +64233,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3710] = { 
+	[3711] = { 
 		index=3679,
 		id=21063,
 		type=2,
@@ -64241,7 +64252,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3711] = { 
+	[3712] = { 
 		index=3680,
 		id=21064,
 		type=2,
@@ -64260,7 +64271,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3712] = { 
+	[3713] = { 
 		index=3681,
 		id=21065,
 		type=2,
@@ -64279,7 +64290,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3713] = { 
+	[3714] = { 
 		index=3682,
 		id=21066,
 		type=2,
@@ -64298,7 +64309,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3714] = { 
+	[3715] = { 
 		index=3683,
 		id=21067,
 		type=2,
@@ -64317,7 +64328,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3715] = { 
+	[3716] = { 
 		index=3684,
 		id=21068,
 		type=2,
@@ -64336,7 +64347,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3716] = { 
+	[3717] = { 
 		index=3685,
 		id=21069,
 		type=2,
@@ -64355,7 +64366,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3717] = { 
+	[3718] = { 
 		index=3686,
 		id=21070,
 		type=2,
@@ -64374,7 +64385,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3718] = { 
+	[3719] = { 
 		index=3687,
 		id=21071,
 		type=2,
@@ -64393,7 +64404,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3719] = { 
+	[3720] = { 
 		index=3688,
 		id=21072,
 		type=2,
@@ -64412,7 +64423,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3720] = { 
+	[3721] = { 
 		index=3689,
 		id=21073,
 		type=2,
@@ -64431,7 +64442,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3721] = { 
+	[3722] = { 
 		index=3690,
 		id=21074,
 		type=2,
@@ -64450,7 +64461,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3722] = { 
+	[3723] = { 
 		index=3691,
 		id=21075,
 		type=2,
@@ -64469,7 +64480,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3723] = { 
+	[3724] = { 
 		index=3692,
 		id=21076,
 		type=2,
@@ -64488,7 +64499,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3724] = { 
+	[3725] = { 
 		index=3693,
 		id=21077,
 		type=2,
@@ -64507,7 +64518,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3725] = { 
+	[3726] = { 
 		index=3694,
 		id=21078,
 		type=2,
@@ -64526,7 +64537,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3726] = { 
+	[3727] = { 
 		index=3695,
 		id=21079,
 		type=2,
@@ -64545,7 +64556,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3727] = { 
+	[3728] = { 
 		index=3696,
 		id=21080,
 		type=2,
@@ -64564,7 +64575,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3728] = { 
+	[3729] = { 
 		index=3697,
 		id=21081,
 		type=2,
@@ -64583,7 +64594,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3729] = { 
+	[3730] = { 
 		index=3698,
 		id=21082,
 		type=2,
@@ -64602,7 +64613,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3730] = { 
+	[3731] = { 
 		index=3699,
 		id=21083,
 		type=2,
@@ -64621,7 +64632,7 @@ local config = {
 		stuck_interval=0.12,
 		showstand_interval=10,
 	},
-	[3731] = { 
+	[3732] = { 
 		index=3700,
 		id=21000,
 		type=4,
@@ -64632,7 +64643,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3732] = { 
+	[3733] = { 
 		index=3701,
 		id=21001,
 		type=4,
@@ -64643,7 +64654,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3733] = { 
+	[3734] = { 
 		index=3702,
 		id=21002,
 		type=4,
@@ -64654,7 +64665,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3734] = { 
+	[3735] = { 
 		index=3703,
 		id=21009,
 		type=4,
@@ -64665,7 +64676,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3735] = { 
+	[3736] = { 
 		index=3704,
 		id=34001,
 		type=4,
@@ -64676,7 +64687,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3736] = { 
+	[3737] = { 
 		index=3705,
 		id=40000,
 		type=4,
@@ -64687,7 +64698,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3737] = { 
+	[3738] = { 
 		index=3706,
 		id=40001,
 		type=4,
@@ -64698,7 +64709,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3738] = { 
+	[3739] = { 
 		index=3707,
 		id=40002,
 		type=4,
@@ -64709,7 +64720,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3739] = { 
+	[3740] = { 
 		index=3708,
 		id=40003,
 		type=4,
@@ -64720,7 +64731,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3740] = { 
+	[3741] = { 
 		index=3709,
 		id=40004,
 		type=4,
@@ -64731,7 +64742,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3741] = { 
+	[3742] = { 
 		index=3710,
 		id=40008,
 		type=4,
@@ -64742,7 +64753,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3742] = { 
+	[3743] = { 
 		index=3711,
 		id=4014,
 		type=4,
@@ -64753,7 +64764,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3743] = { 
+	[3744] = { 
 		index=3712,
 		id=8000,
 		type=4,
@@ -64764,7 +64775,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3744] = { 
+	[3745] = { 
 		index=3713,
 		id=8001,
 		type=4,
@@ -64775,7 +64786,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3745] = { 
+	[3746] = { 
 		index=3714,
 		id=8002,
 		type=4,
@@ -64786,7 +64797,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3746] = { 
+	[3747] = { 
 		index=3715,
 		id=8003,
 		type=4,
@@ -64797,7 +64808,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3747] = { 
+	[3748] = { 
 		index=3716,
 		id=8004,
 		type=4,
@@ -64808,7 +64819,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3748] = { 
+	[3749] = { 
 		index=3717,
 		id=8009,
 		type=4,
@@ -64819,7 +64830,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3749] = { 
+	[3750] = { 
 		index=3718,
 		id=8010,
 		type=4,
@@ -64830,7 +64841,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3750] = { 
+	[3751] = { 
 		index=3719,
 		id=8011,
 		type=4,
@@ -64841,7 +64852,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3751] = { 
+	[3752] = { 
 		index=3720,
 		id=8012,
 		type=4,
@@ -64852,7 +64863,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3752] = { 
+	[3753] = { 
 		index=3721,
 		id=8013,
 		type=4,
@@ -64863,7 +64874,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3753] = { 
+	[3754] = { 
 		index=3722,
 		id=8014,
 		type=4,
@@ -64874,7 +64885,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3754] = { 
+	[3755] = { 
 		index=3723,
 		id=8604,
 		type=4,
@@ -64885,7 +64896,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3755] = { 
+	[3756] = { 
 		index=3724,
 		id=8606,
 		type=4,
@@ -64896,7 +64907,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3756] = { 
+	[3757] = { 
 		index=3725,
 		id=8609,
 		type=4,
@@ -64907,7 +64918,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3757] = { 
+	[3758] = { 
 		index=3726,
 		id=8610,
 		type=4,
@@ -64918,7 +64929,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3758] = { 
+	[3759] = { 
 		index=3727,
 		id=8611,
 		type=4,
@@ -64929,7 +64940,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3759] = { 
+	[3760] = { 
 		index=3728,
 		id=8612,
 		type=4,
@@ -64940,7 +64951,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3760] = { 
+	[3761] = { 
 		index=3729,
 		id=8613,
 		type=4,
@@ -64951,7 +64962,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3761] = { 
+	[3762] = { 
 		index=3730,
 		id=8614,
 		type=4,
@@ -64962,7 +64973,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3762] = { 
+	[3763] = { 
 		index=3731,
 		id=8617,
 		type=4,
@@ -64973,7 +64984,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3763] = { 
+	[3764] = { 
 		index=3732,
 		id=8618,
 		type=4,
@@ -64984,7 +64995,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3764] = { 
+	[3765] = { 
 		index=3733,
 		id=8631,
 		type=4,
@@ -64995,7 +65006,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3765] = { 
+	[3766] = { 
 		index=3734,
 		id=8632,
 		type=4,
@@ -65006,7 +65017,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3766] = { 
+	[3767] = { 
 		index=3735,
 		id=8633,
 		type=4,
@@ -65017,7 +65028,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3767] = { 
+	[3768] = { 
 		index=3736,
 		id=8634,
 		type=4,
@@ -65028,7 +65039,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3768] = { 
+	[3769] = { 
 		index=3737,
 		id=8635,
 		type=4,
@@ -65039,7 +65050,7 @@ local config = {
 		stand_pos_y=1,
 		idle_interval=0.085,
 	},
-	[3769] = { 
+	[3770] = { 
 		index=3738,
 		id=950,
 		type=2,
@@ -65058,7 +65069,7 @@ local config = {
 		born_interval=0.1,
 		showstand_interval=10,
 	},
-	[3770] = { 
+	[3771] = { 
 		index=3739,
 		id=5000,
 		type=1,
@@ -65080,7 +65091,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3771] = { 
+	[3772] = { 
 		index=3740,
 		id=5000,
 		type=1,
@@ -65102,7 +65113,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3772] = { 
+	[3773] = { 
 		index=3741,
 		id=5001,
 		type=1,
@@ -65124,7 +65135,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3773] = { 
+	[3774] = { 
 		index=3742,
 		id=5001,
 		type=1,
@@ -65146,7 +65157,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3774] = { 
+	[3775] = { 
 		index=3743,
 		id=5002,
 		type=1,
@@ -65168,7 +65179,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3775] = { 
+	[3776] = { 
 		index=3744,
 		id=5002,
 		type=1,
@@ -65190,7 +65201,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3776] = { 
+	[3777] = { 
 		index=3745,
 		id=5003,
 		type=1,
@@ -65212,7 +65223,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3777] = { 
+	[3778] = { 
 		index=3746,
 		id=5003,
 		type=1,
@@ -65234,7 +65245,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3778] = { 
+	[3779] = { 
 		index=3747,
 		id=5004,
 		type=1,
@@ -65256,7 +65267,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3779] = { 
+	[3780] = { 
 		index=3748,
 		id=5004,
 		type=1,
@@ -65278,7 +65289,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3780] = { 
+	[3781] = { 
 		index=3749,
 		id=5005,
 		type=1,
@@ -65300,7 +65311,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3781] = { 
+	[3782] = { 
 		index=3750,
 		id=5005,
 		type=1,
@@ -65322,7 +65333,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3782] = { 
+	[3783] = { 
 		index=3751,
 		id=21121,
 		type=6,
@@ -65343,7 +65354,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3783] = { 
+	[3784] = { 
 		index=3752,
 		id=21121,
 		type=6,
@@ -65364,7 +65375,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3784] = { 
+	[3785] = { 
 		index=3753,
 		id=30008,
 		type=6,
@@ -65385,7 +65396,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3785] = { 
+	[3786] = { 
 		index=3754,
 		id=30008,
 		type=6,
@@ -65406,7 +65417,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3786] = { 
+	[3787] = { 
 		index=3755,
 		id=5000,
 		type=6,
@@ -65427,7 +65438,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3787] = { 
+	[3788] = { 
 		index=3756,
 		id=5000,
 		type=6,
@@ -65448,7 +65459,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3788] = { 
+	[3789] = { 
 		index=3757,
 		id=5001,
 		type=6,
@@ -65469,7 +65480,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3789] = { 
+	[3790] = { 
 		index=3758,
 		id=5001,
 		type=6,
@@ -65490,7 +65501,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3790] = { 
+	[3791] = { 
 		index=3759,
 		id=5002,
 		type=6,
@@ -65511,7 +65522,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3791] = { 
+	[3792] = { 
 		index=3760,
 		id=5002,
 		type=6,
@@ -65532,7 +65543,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3792] = { 
+	[3793] = { 
 		index=3761,
 		id=5003,
 		type=6,
@@ -65553,7 +65564,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3793] = { 
+	[3794] = { 
 		index=3762,
 		id=5003,
 		type=6,
@@ -65574,7 +65585,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3794] = { 
+	[3795] = { 
 		index=3763,
 		id=5004,
 		type=6,
@@ -65595,7 +65606,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3795] = { 
+	[3796] = { 
 		index=3764,
 		id=5004,
 		type=6,
@@ -65616,7 +65627,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3796] = { 
+	[3797] = { 
 		index=3765,
 		id=5005,
 		type=6,
@@ -65637,7 +65648,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3797] = { 
+	[3798] = { 
 		index=3766,
 		id=5005,
 		type=6,
@@ -65658,7 +65669,7 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
-	[3798] = { 
+	[3799] = { 
 		index=3768,
 		id=4001,
 		type=3,
@@ -65672,7 +65683,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3799] = { 
+	[3800] = { 
 		index=3769,
 		id=4002,
 		type=3,
@@ -65686,7 +65697,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3800] = { 
+	[3801] = { 
 		index=3770,
 		id=4003,
 		type=3,
@@ -65700,7 +65711,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3801] = { 
+	[3802] = { 
 		index=3771,
 		id=4004,
 		type=3,
@@ -65714,7 +65725,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3802] = { 
+	[3803] = { 
 		index=3772,
 		id=4005,
 		type=3,
@@ -65728,7 +65739,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3803] = { 
+	[3804] = { 
 		index=3773,
 		id=4006,
 		type=3,
@@ -65742,7 +65753,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3804] = { 
+	[3805] = { 
 		index=3774,
 		id=4007,
 		type=3,
@@ -65756,7 +65767,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3805] = { 
+	[3806] = { 
 		index=3775,
 		id=4008,
 		type=3,
@@ -65770,7 +65781,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3806] = { 
+	[3807] = { 
 		index=3776,
 		id=4009,
 		type=3,
@@ -65784,7 +65795,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3807] = { 
+	[3808] = { 
 		index=3777,
 		id=4010,
 		type=3,
@@ -65798,7 +65809,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3808] = { 
+	[3809] = { 
 		index=3778,
 		id=4011,
 		type=3,
@@ -65812,7 +65823,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3809] = { 
+	[3810] = { 
 		index=3779,
 		id=4012,
 		type=3,
@@ -65826,7 +65837,7 @@ local config = {
 		attack_interval=0.085,
 		showstand_interval=10,
 	},
-	[3810] = { 
+	[3811] = { 
 		index=3780,
 		id=4013,
 		type=3,
@@ -65839,17 +65850,6 @@ local config = {
 		idle_interval=0.2,
 		attack_interval=0.085,
 		showstand_interval=10,
-	},
-	[3811] = { 
-		index=3781,
-		id=25000,
-		type=4,
-		sex=0,
-		dir=1,
-		blendmode=0,
-		stand_pos_x=0.5,
-		stand_pos_y=0.1,
-		idle_interval=0.125,
 	},
 }
 return config

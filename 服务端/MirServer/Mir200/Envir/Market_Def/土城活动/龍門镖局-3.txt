@@ -114,7 +114,7 @@ GOTO @镖车面板
 <Text|id=314|a=4|percentx=50|y=23|color=218|size=18|outline=2|outlinecolor=0|text=一级镖车>
 <Text|id=315|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
 <ItemShow|id=316|children={3161}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
-<Text|id=3161|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=3500>
+<Text|id=3161|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=5000>
 <ItemShow|id=317|children={3171}|itemid=40063|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
 <Text|id=3171|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=1000万>
 <Layout|id=32|children={321,322,323,324,325,326,327,328}|width=180|height=280|color=x>
@@ -124,7 +124,7 @@ GOTO @镖车面板
 <Text|id=324|a=4|percentx=50|y=23|color=229|size=18|outline=2|outlinecolor=0|text=二级镖车>
 <Text|id=325|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
 <ItemShow|id=326|children={3261}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
-<Text|id=3261|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=4000>
+<Text|id=3261|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=10000>
 <ItemShow|id=327|children={3271}|itemid=40064|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
 <Text|id=3271|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=2000万>
 <Layout|id=33|children={331,332,333,334,335,336,337,338}|width=180|height=280|color=x>
@@ -134,7 +134,7 @@ GOTO @镖车面板
 <Text|id=334|a=4|percentx=50|y=23|color=242|size=18|outline=2|outlinecolor=0|text=三级镖车>
 <Text|id=335|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
 <ItemShow|id=336|children={3361}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
-<Text|id=3361|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=4500>
+<Text|id=3361|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=50000>
 <ItemShow|id=337|children={3371}|itemid=40064|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
 <Text|id=3371|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=3000万>
 <Layout|id=34|children={341,342,343,344,345,346,347,348}|width=180|height=280|color=x>
@@ -144,7 +144,7 @@ GOTO @镖车面板
 <Text|id=344|a=4|percentx=50|y=23|color=243|size=18|outline=2|outlinecolor=0|text=四级镖车>
 <Text|id=345|a=4|percentx=50|y=190|color=255|size=16|outline=2|outlinecolor=0|text=·奖励预览·>
 <ItemShow|id=346|children={3461}|itemid=2|itemcount=1|showtips=1|bgtype=1|x=20|y=200>
-<Text|id=3461|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=5000>
+<Text|id=3461|a=4|percentx=70|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=10万>
 <ItemShow|id=347|children={3471}|itemid=40065|itemcount=1|showtips=1|bgtype=1|x=90|y=200>
 <Text|id=3471|a=4|percentx=50|percenty=80|color=218|size=18|outline=2|outlinecolor=0|text=5000万>
 
@@ -175,9 +175,7 @@ GOTO @镖车面板
 <Img|id=51|x=20|y=10|img=custom/hl/fenjie_ui/hl_fj_02.png>
 <Text|id=52|a=4|percentx=50|percenty=10|color=255|size=18|outline=2|outlinecolor=0|text=押镖状态>
 <Img|id=53|x=215|y=10|img=custom/hl/fenjie_ui/hl_fj_04.png>
-<RText|id=54|x=36|y=35|color=247|size=18|outline=2|outlinecolor=0|text=押镖次数：<<$HUMAN(B_押镖次数)>/3/FCOLOR=255>>
-<RText|id=55|x=160|y=35|color=247|size=18|outline=2|outlinecolor=0|text=押镖时间：<30分钟/FCOLOR=255>>
-;<Img|id=3<$STR(N$镖车等级)>8|x=7|y=7|img=custom/hl/hl_ui/hl_xz_01.png|width=166|height=266>
+<RText|id=54|x=71|y=33|color=247|size=18|outline=2|outlinecolor=0|text=押镖次数：<<$HUMAN(B_押镖次数)>/3/FCOLOR=255>>
 <Text|id=6|x=670|y=475|color=250|size=18|outline=2|outlinecolor=0|text=规则说明|link=@规则说明>
 
 ;
