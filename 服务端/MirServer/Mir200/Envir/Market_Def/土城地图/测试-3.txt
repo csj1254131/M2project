@@ -24,7 +24,6 @@
 <Button|id=32|x=268|y=230|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=开启勇闯炼狱|link=@勇闯炼狱测试>
 <Button|id=33|x=394|y=230|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=开启夺宝奇兵|link=@夺宝奇兵测试>
 
-
 [@拉起支付]
 #IF
 #ACT
@@ -213,6 +212,5 @@ MOV G260 0
 CLEARMAPMON dbqb
 SENDMSGNEW 255 0 {夺宝奇兵/FCOLOR=58}活动已经开启。 1 5
 GMEXECUTE 开始提问 @夺宝奇兵开启
-
 
 
