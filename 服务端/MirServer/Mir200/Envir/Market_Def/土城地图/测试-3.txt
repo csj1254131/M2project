@@ -184,33 +184,11 @@ SENDMSGNEW 255 0 {勇闯炼狱/FCOLOR=58}活动已经开启。 1 5
 GMEXECUTE 开始提问 @勇闯炼狱开启
 
 
-
-
 [@夺宝奇兵测试]
-#ACT
-MOV G250 2
-MOV A251 虚位以待
-MOV A252 虚位以待
-MOV A253 虚位以待
-MOV A254 虚位以待
-MOV A255 虚位以待
-MOV A256 虚位以待
-MOV A257 虚位以待
-MOV A258 虚位以待
-MOV A259 虚位以待
-MOV A260 虚位以待
-MOV G251 0
-MOV G252 0
-MOV G253 0
-MOV G254 0
-MOV G255 0
-MOV G256 0
-MOV G257 0
-MOV G258 0
-MOV G259 0
-MOV G260 0
-CLEARMAPMON dbqb
-SENDMSGNEW 255 0 {夺宝奇兵/FCOLOR=58}活动已经开启。 1 5
-GMEXECUTE 开始提问 @夺宝奇兵开启
-
-
+#if
+#act
+mov N$杀怪爆率1 100
+sendmsg 0 杀怪爆率 <$STR(N$杀怪爆率1)>
+mul N$杀怪爆率1 <$KILLMONBURSTRATE>
+sendmsg 0 当前爆率 <$KILLMONBURSTRATE>
+sendmsg 0 杀怪爆率 <$STR(N$杀怪爆率1)>

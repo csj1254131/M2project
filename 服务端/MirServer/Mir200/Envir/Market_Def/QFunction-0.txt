@@ -1,6 +1,28 @@
 ;此脚为功能脚本，用于实现各种与脚本有关的功能
 (@@InPutInteger @@InPutString @@useitemname @@OffLineMsg @@dealgold)
 
+
+
+//首爆掉落检测
+[@PickUpItemEx]
+#if
+#act
+LINKPICKUPITEM
+;此行建议放在QM里启动执行
+NEWREADCSV ..\QuestDiary\cfg_shoubao.csv
+mov N$物品序号 <$GetTypeERow(cfg_shoubao,0,<$CURRTEMNAME>)>
+ReadConfigFileItem ..\QuestDiary\已爆物品.txt <$CURRTEMNAME> 限制数 N$数量
+#if
+large <$cfg_shoubao(<$STR(n$物品序号)>_3)> <$STR(N$数量)>
+#act
+MONEY <$cfg_shoubao(<$STR(n$物品序号)>_2)> + <$cfg_shoubao(<$STR(n$物品序号)>_1)>
+sendmsg 0 251 249 恭喜<$USERNAME>获得首爆装备【<$CURRTEMNAME>】,奖励<$cfg_shoubao(<$STR(n$物品序号)>_2)><$cfg_shoubao(<$STR(n$物品序号)>_1)>！
+inc N$数量 1
+WriteConfigFileItem ..\QuestDiary\已爆物品.txt <$CURRTEMNAME> 限制数 <$STR(N$数量)>
+
+
+
+
 [@开启盒子]
 #IF
 #ACT

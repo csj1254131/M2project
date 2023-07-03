@@ -96,6 +96,9 @@ ReadConfigFileItem ..\QuestDiary\сно╥╧╕дэ\о╣мЁ╧╕дэ\BOSSеДжц.ini аЛжВ аЛжВ╢╝8 S$й
 MOV A352 <$STR(S$йви╠╢╝1)><$STR(S$йви╠╢╝2)><$STR(S$йви╠╢╝3)><$STR(S$йви╠╢╝4)><$STR(S$йви╠╢╝5)><$STR(S$йви╠╢╝6)><$STR(S$йви╠╢╝7)><$STR(S$йви╠╢╝8)>
 
 
+
+
+
 #If
 Equal A491
 #Act
@@ -312,12 +315,6 @@ Savevar GUILD ╡н╪сиЁ╟м©кхкйЩ
 #IF
 #ACT
 #CALL [\сно╥╠Да©\мФ╪р╠Да©иЫцВ.txt] @мФ╪р╠Да©иЫцВ
-
-
-
-
-
-
 
 
 
