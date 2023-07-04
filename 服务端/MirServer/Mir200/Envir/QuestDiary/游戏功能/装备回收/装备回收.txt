@@ -98,44 +98,44 @@ Goto @移动端装备回收展示
 EQUAL S$展开价格 1
 #SAY
 <Img|a=4|id=701|children={702a}|img=custom/hl/hl_ui/bg_tips_01.png|width=350|height=388|percentx=49|percenty=53|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
-<ListView|id=702a|children={702,703,704,705,706,707,708,709,710,712,714,715,711,713,716,717,718,737,738,739,740,741,742,743,719,720,721,722,744,723,724,725,726,727,728,729,730,731,732,733,734,735,736}|direction=1|bounce=0|margin=2|width=350|height=370|color=x|x=10|y=5>
+<ListView|id=702a|children={702,703,704,705,706,707,708,709,710,712,714,715,711,713,716,717,718,719,737,738,739,740,741,742,743,720,721,722,723,744,724,725,726,727,728,729,730,731,732,733,734,735,736,737}|direction=1|bounce=0|margin=2|width=350|height=370|color=x|x=10|y=5>
 
 
-<RText|id=702|text=新手套装                     <2元宝+5000经验/FCOLOR=250>|x=7|y=5|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=703|text=圣战套装[35级]          <5元宝+10000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=704|text=纵横套装[40级]          <10元宝+15000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=705|text=王者套装[50级]          <20元宝+20000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=706|text=赤焰套装[60级]          <40元宝+25000经验/FCOLOR=250>|x=7|y=45|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=707|text=传说套装[65级]          <50元宝+30000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=708|text=雄霸套装[70级]          <60元宝+35000经验/FCOLOR=250>|x=7|y=65|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=709|text=苍穹套装[75级]          <100元宝+40000经验/FCOLOR=250>|x=7|y=85|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=710|text=乾坤套装[80级]          <200元宝+45000经验/FCOLOR=250>|x=7|y=45|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=712|text=雷霆套装[90级]          <300元宝+50000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=714|text=强化套装[100级]         <400元宝+60000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=715|text=天之套装[110级]         <500元宝+70000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=711|text=审批套装[2转]            <600元宝+80000经验/FCOLOR=250>|x=7|y=85|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=713|text=逐月套装[3转]            <800元宝+100000经验/FCOLOR=250>|x=7|y=85|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=716|text=大地套装[4转]            <1000元宝+120000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=717|text=主宰套装[5转]            <1200元宝+150000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=718|text=太虚套装[6转]            <2000元宝+200000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
+
+<RText|id=702|text=新手套装                     <20元宝+5000经验/FCOLOR=250>|x=7|y=5|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=703|text=圣战套装[35级]          <50元宝+10000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=704|text=纵横套装[40级]          <100元宝+15000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=705|text=王者套装[50级]          <200元宝+20000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=706|text=赤焰套装[60级]          <400元宝+25000经验/FCOLOR=250>|x=7|y=45|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=707|text=传说套装[65级]          <500元宝+30000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=708|text=雄霸套装[70级]          <600元宝+35000经验/FCOLOR=250>|x=7|y=65|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=709|text=苍穹套装[75级]          <1000元宝+40000经验/FCOLOR=250>|x=7|y=85|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=710|text=乾坤套装[80级]          <2000元宝+45000经验/FCOLOR=250>|x=7|y=45|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=712|text=雷霆套装[90级]          <3000元宝+50000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=714|text=强化套装[100级]         <4000元宝+60000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=715|text=天之套装[110级]         <5000元宝+70000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=711|text=审判套装[5转]            <6000元宝+80000经验/FCOLOR=250>|x=7|y=85|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=713|text=逐月套装[6转]            <8000元宝+100000经验/FCOLOR=250>|x=7|y=85|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=716|text=大地套装[7转]            <10000元宝+120000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=717|text=主宰套装[8转]            <12000元宝+150000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=718|text=太虚套装[9转]            <15000元宝+200000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=719|text=太虚套装[10转]            <20000元宝+300000经验/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
 <RText|id=737|text=灵藻·玉                          <50元宝/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
 <RText|id=738|text=火龙斗笠Lv.1               <50元宝/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
 <RText|id=739|text=火龙盾牌Lv.1               <50元宝/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
 <RText|id=740|text=裁决宝珠                       <50元宝/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=741|text=1阶特戒                         <50元宝/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=742|text=2阶特戒                         <100元宝/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=743|text=3阶特戒                         <200元宝/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=719|text=4阶特戒                         <400元宝 /FCOLOR=250>|x=7|y=165|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=720|text=5阶特戒                         <800元宝 /FCOLOR=250>|x=7|y=165|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=721|text=6阶特戒                         <2000元宝/FCOLOR=250>|x=7|y=165|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=722|text=7阶特戒                         <4000元宝 /FCOLOR=250>|x=7|y=165|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=722|text=8阶特戒                         <8000元宝 /FCOLOR=250>|x=7|y=165|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=723|text=1阶主辅星                     <100元宝/FCOLOR=250>|x=7|y=245|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=724|text=2阶主辅星                     <200元宝/FCOLOR=250>|x=7|y=245|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=725|text=3阶主辅星                     <400元宝/FCOLOR=250>|x=7|y=265|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=726|text=4阶主辅星                     <600元宝/FCOLOR=250>|x=7|y=265|size=17|color=251|outline=2|outlinecolor=0>
-
-
+<RText|id=741|text=1阶特戒                         <500元宝/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=742|text=2阶特戒                         <1000元宝/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=743|text=3阶特戒                         <2000元宝/FCOLOR=250>|x=7|y=105|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=720|text=4阶特戒                         <4000元宝 /FCOLOR=250>|x=7|y=165|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=721|text=5阶特戒                         <8000元宝 /FCOLOR=250>|x=7|y=165|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=722|text=6阶特戒                         <20000元宝/FCOLOR=250>|x=7|y=165|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=723|text=7阶特戒                         <30000元宝 /FCOLOR=250>|x=7|y=165|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=724|text=8阶特戒                         <50000元宝 /FCOLOR=250>|x=7|y=165|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=725|text=1阶主辅星                     <1000元宝/FCOLOR=250>|x=7|y=245|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=726|text=2阶主辅星                     <2000元宝/FCOLOR=250>|x=7|y=245|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=727|text=3阶主辅星                     <4000元宝/FCOLOR=250>|x=7|y=265|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=728|text=4阶主辅星                     <6000元宝/FCOLOR=250>|x=7|y=265|size=17|color=251|outline=2|outlinecolor=0>
 
 
 
@@ -288,14 +288,18 @@ Not equal s$分类信息_8
 ;<Img|a=4|id=146|img=custom/hl/zbhs_ui/1900000667.png|width=350|percentx=50|percenty=100>
 
 ;9
-#IF
-EQUAL s$分类信息_20 1
-#SAY
 <Layout|id=15|children={150,151,153,154,156}|width=376|height=35|x=14|y=16|color=x>
 <CheckBox|id=150|x=10|y=0|checkboxid=9|nimg=custom/hl/hl_ui/1900000682.png|pimg=custom/hl/hl_ui/1900000683.png|default=<$Str(s$回收gx<$Str(s$当前分类)>_19)>|submit=1|delay=0|count=0|link=@跳转回收选定#选定分类=<$Str(s$分类信息_19)>>
 <Layout|id=151|children={152}|width=80|height=25|x=50|y=0|color=x>
 <Text|id=152|x=0|y=0|text=<$Str(s$分类信息_19)>|color=255|size=18|outline=2|outlinecolor=0|link=@跳转回收选定#选定分类=<$Str(s$分类信息_19)>>
 <Img|a=4|id=156|img=custom/hl/zbhs_ui/1900000667.png|width=350|percentx=50|percenty=100>
+
+
+<CheckBox|id=153|x=200|y=0|checkboxid=2|nimg=custom/hl/hl_ui/1900000682.png|pimg=custom/hl/hl_ui/1900000683.png|default=<$Str(s$回收gx<$Str(s$当前分类)>_20)>|submit=1|delay=0|count=0|link=@跳转回收选定#选定分类=<$Str(s$分类信息_20)>>
+<Layout|id=154|children={155}|width=80|height=25|x=240|y=0|color=x>
+<Text|id=155|x=0|y=0|text=<$Str(s$分类信息_20)>|color=255|size=18|outline=2|outlinecolor=0|link=@跳转回收选定#选定分类=<$Str(s$分类信息_20)>>
+;<Img|a=4|id=156|img=custom/hl/zbhs_ui/1900000667.png|width=350|percentx=50|percenty=100>
+
 
 
 
