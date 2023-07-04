@@ -8,7 +8,7 @@
         <key>frame</key>
         <string>{{0,402},{90,137}}</string>
         <key>offset</key>
-        <string>{30,118}</string>
+        <string>{30,116}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -21,7 +21,7 @@
         <key>frame</key>
         <string>{{139,402},{95,106}}</string>
         <key>offset</key>
-        <string>{17,90}</string>
+        <string>{17,88}</string>
         <key>rotated</key>
         <false />
         <key>sourceColorRect</key>
@@ -34,7 +34,7 @@
         <key>frame</key>
         <string>{{162,252},{63,148}}</string>
         <key>offset</key>
-        <string>{-8,127}</string>
+        <string>{-8,125}</string>
         <key>rotated</key>
         <false />
         <key>sourceColorRect</key>
@@ -47,7 +47,7 @@
         <key>frame</key>
         <string>{{0,260},{119,127}}</string>
         <key>offset</key>
-        <string>{-80,103}</string>
+        <string>{-80,101}</string>
         <key>rotated</key>
         <false />
         <key>sourceColorRect</key>
@@ -60,7 +60,7 @@
         <key>frame</key>
         <string>{{0,158},{100,160}}</string>
         <key>offset</key>
-        <string>{-64,139}</string>
+        <string>{-64,137}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -73,7 +73,7 @@
         <key>frame</key>
         <string>{{0,75},{81,176}}</string>
         <key>offset</key>
-        <string>{-54,160}</string>
+        <string>{-54,158}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -86,7 +86,7 @@
         <key>frame</key>
         <string>{{0,0},{73,179}}</string>
         <key>offset</key>
-        <string>{-3,168}</string>
+        <string>{-3,166}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -99,7 +99,7 @@
         <key>frame</key>
         <string>{{178,75},{76,175}}</string>
         <key>offset</key>
-        <string>{23,168}</string>
+        <string>{23,166}</string>
         <key>rotated</key>
         <false />
         <key>sourceColorRect</key>
