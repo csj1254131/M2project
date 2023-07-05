@@ -795,7 +795,7 @@ OPENHYPERLINK 24 2
 
 [@微信礼包]
 #ACT
-#CALL [\功能脚本\Q群礼包\微信验证.txt] @微信MAIN
+;#CALL [\功能脚本\Q群礼包\微信验证.txt] @微信MAIN
 [@关闭经验特效]
 #IF
 EQUAL U136 0
@@ -999,7 +999,6 @@ LARGE <$Starcount<$CURRTAKETEMPOS>> 6
 
 
 [@TakeOffEx]
-
 #IF
 #act 
 #CALL [\功能脚本\装备强星\强星套装.txt] @执行套装赋值1
@@ -1282,7 +1281,7 @@ BREAK
 
 [@管理模式]
 #ACT
-#CALL [\游戏登陆\管理功能.txt] @管理后台
+;#CALL [\游戏登陆\管理功能.txt] @管理后台
 
 [@KillMon]
 #IF

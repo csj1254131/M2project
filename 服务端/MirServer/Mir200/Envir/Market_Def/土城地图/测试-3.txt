@@ -186,7 +186,7 @@ SENDMSGNEW 255 0 {勇闯炼狱/FCOLOR=58}活动已经开启。 1 5
 GMEXECUTE 开始提问 @勇闯炼狱开启
 
 
-[@夺宝奇兵测试]
+[@夺宝奇兵测试1]
 #if
 #act
 mov N$杀怪爆率1 100
@@ -194,3 +194,11 @@ sendmsg 0 杀怪爆率 <$STR(N$杀怪爆率1)>
 mul N$杀怪爆率1 <$KILLMONBURSTRATE>
 sendmsg 0 当前爆率 <$KILLMONBURSTRATE>
 sendmsg 0 杀怪爆率 <$STR(N$杀怪爆率1)>
+
+[@夺宝奇兵测试]
+#if
+CHECKSKILL 护体神盾 ? 0
+#act
+PLAYEFFECT 17104 10 10 0 0 0
+#elseact
+sendmsg 0 你还未学习护体神盾

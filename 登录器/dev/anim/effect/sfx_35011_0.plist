@@ -8,7 +8,7 @@
         <key>frame</key>
         <string>{{0,0},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -21,7 +21,7 @@
         <key>frame</key>
         <string>{{145,0},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -34,7 +34,7 @@
         <key>frame</key>
         <string>{{290,0},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -47,7 +47,7 @@
         <key>frame</key>
         <string>{{290,138},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -60,7 +60,7 @@
         <key>frame</key>
         <string>{{0,138},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -73,7 +73,7 @@
         <key>frame</key>
         <string>{{145,138},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -86,7 +86,7 @@
         <key>frame</key>
         <string>{{145,276},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -99,7 +99,7 @@
         <key>frame</key>
         <string>{{0,276},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -112,7 +112,7 @@
         <key>frame</key>
         <string>{{0,414},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -125,7 +125,7 @@
         <key>frame</key>
         <string>{{290,276},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -138,7 +138,7 @@
         <key>frame</key>
         <string>{{290,414},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -151,7 +151,7 @@
         <key>frame</key>
         <string>{{145,414},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -164,7 +164,7 @@
         <key>frame</key>
         <string>{{145,552},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -177,7 +177,7 @@
         <key>frame</key>
         <string>{{0,552},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
@@ -190,7 +190,7 @@
         <key>frame</key>
         <string>{{0,690},{136,143}}</string>
         <key>offset</key>
-        <string>{0,0}</string>
+        <string>{-48,85}</string>
         <key>rotated</key>
         <true />
         <key>sourceColorRect</key>
