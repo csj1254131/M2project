@@ -56,9 +56,11 @@
 
 #AutoRun NPC RUNONDAY 17:55 @天降元宝提醒
 #AutoRun NPC RUNONDAY 18:00 @天降元宝
+#AutoRun NPC RUNONDAY 18:05 @天降元宝
 #AutoRun NPC RUNONDAY 18:10 @天降元宝
+#AutoRun NPC RUNONDAY 18:15 @天降元宝
 #AutoRun NPC RUNONDAY 18:20 @天降元宝
-#AutoRun NPC RUNONDAY 18:26 @天降元宝
+#AutoRun NPC RUNONDAY 18:25 @天降元宝
 #AutoRun NPC RUNONDAY 18:30 @天降元宝关闭
 
 

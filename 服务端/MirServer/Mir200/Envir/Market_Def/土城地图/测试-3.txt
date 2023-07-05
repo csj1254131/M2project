@@ -152,6 +152,8 @@ MonGenEx tjyb 193 95 散财猪 20 3 0 243
 MonGenEx tjyb 125 115 散财猪 20 3 0 243
 MonGenEx tjyb 110 47 散财猪 20 2 0 243
 SENDMSGNEW 255 0 一大波{散财猪/FCOLOR=250}空降{天降元宝/FCOLOR=58}地图，请火速前往击杀。 1 5
+FindMapMonster tjyb 散财猪 N1
+SENDMSG 0  当前剩余散财猪数量：<$STR(N1)>只
 GMEXECUTE 开始提问 @天降元宝开启
 
 
