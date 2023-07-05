@@ -1,29 +1,29 @@
 [em000 ¼¤ÇéÅÝµã] noreconnect(3:330:330) safe
-[sjboss|em000 ÊÀ½çboss] noreconnect(3:330:330) onkillmon  norandommove
-[dbqb|nlts102 ¶á±¦Ææ±ø] noreconnect(3:330:330) onkillmon incmoney(88/10/10/@¼Ó¶á±¦»ý·Ö)  norandommove
-[tjyb|nkuanggong Ìì½µÔª±¦] noreconnect(3:330:330)  norandommove
+[sjboss|em000 ÊÀ½çboss] noreconnect(3:330:330) onkillmon  
+[dbqb|nlts102 ¶á±¦Ææ±ø] noreconnect(3:330:330) onkillmon incmoney(88/10/10/@¼Ó¶á±¦»ý·Ö)  
+[tjyb|nkuanggong Ìì½µÔª±¦] noreconnect(3:330:330)  
 [d401 ±ÈÆæ¿óÇø] runmon runhuman(1)
 [d515 ËøÑýËþ] noreconnect(3:330:330) fight
 
 [erdalu|nalx ¶þ´óÂ½] noreconnect(3:330:330)   runmon
 [sandalu Èý´óÂ½] noreconnect(3:330:330) safe
 
-[ycly1|d717 ÓÂ´³Á¶ÓüÒ»²ã] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
-[ycly2|d717 ÓÂ´³Á¶Óü¶þ²ã] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
-[ycly3|d717 ÓÂ´³Á¶ÓüÈý²ã] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
-[ycly4|d717 ÓÂ´³Á¶ÓüËÄ²ã] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
-[ycly5|d717 ÓÂ´³Á¶ÓüÎå²ã] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
-[ycly6|d717 ÓÂ´³Á¶ÓüÁù²ã] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
-[ycly7|d717 ÓÂ´³Á¶ÓüÆß²ã] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
-[ycly8|d717 ÓÂ´³Á¶Óü°Ë²ã] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
-[ycly9|d717 ÓÂ´³Á¶Óü¾Å²ã] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
-[ycly10|d717 ÓÂ´³Á¶Óü¶¥²ã] noreconnect(3:330:330) norecall nodearrecall norandommove fight3(0) onkillmon runmon
+[ycly1|d717 ÓÂ´³Á¶ÓüÒ»²ã] noreconnect(3:330:330) norecall nodearrecall  fight3(0) onkillmon runmon
+[ycly2|d717 ÓÂ´³Á¶Óü¶þ²ã] noreconnect(3:330:330) norecall nodearrecall  fight3(0) onkillmon runmon
+[ycly3|d717 ÓÂ´³Á¶ÓüÈý²ã] noreconnect(3:330:330) norecall nodearrecall  fight3(0) onkillmon runmon
+[ycly4|d717 ÓÂ´³Á¶ÓüËÄ²ã] noreconnect(3:330:330) norecall nodearrecall  fight3(0) onkillmon runmon
+[ycly5|d717 ÓÂ´³Á¶ÓüÎå²ã] noreconnect(3:330:330) norecall nodearrecall  fight3(0) onkillmon runmon
+[ycly6|d717 ÓÂ´³Á¶ÓüÁù²ã] noreconnect(3:330:330) norecall nodearrecall  fight3(0) onkillmon runmon
+[ycly7|d717 ÓÂ´³Á¶ÓüÆß²ã] noreconnect(3:330:330) norecall nodearrecall  fight3(0) onkillmon runmon
+[ycly8|d717 ÓÂ´³Á¶Óü°Ë²ã] noreconnect(3:330:330) norecall nodearrecall  fight3(0) onkillmon runmon
+[ycly9|d717 ÓÂ´³Á¶Óü¾Å²ã] noreconnect(3:330:330) norecall nodearrecall  fight3(0) onkillmon runmon
+[ycly10|d717 ÓÂ´³Á¶Óü¶¥²ã] noreconnect(3:330:330) norecall nodearrecall  fight3(0) onkillmon runmon
 
-[boss|k001 ¾èÏ×Ö®µØ]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon
-[boss2|k001 ¾èÏ×Ö®µØ¶þ²ã]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon
+[boss|k001 ¾èÏ×Ö®µØ]  noreconnect(3:330:330) norecall nodearrecall   runmon
+[boss2|k001 ¾èÏ×Ö®µØ¶þ²ã]  noreconnect(3:330:330) norecall nodearrecall   runmon
 
-[lzld|f011 Áú×åÁìµØÒ»²ã]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon
-[lzld2|f011 Áú×åÁìµØ¶þ²ã]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon
+[lzld|f011 Áú×åÁìµØÒ»²ã]  noreconnect(3:330:330) norecall nodearrecall   runmon
+[lzld2|f011 Áú×åÁìµØ¶þ²ã]  noreconnect(3:330:330) norecall nodearrecall   runmon
 
 [xssl1|62 ÐÂÊÖÊÔÁ¶] noreconnect(3:330:330) maxplayer(15) noreconnect(3:330:330)  runmon
 
@@ -114,7 +114,7 @@ swgc2 13 19 -> swgc3 64 82
 [swgc3|d615 ËÀÍö¹×²ÄÈý²ã] noreconnect(3:330:330) maxplayer(20) runmon 
 swgc3 64 82 -> swgc2 13 19
 swgc3 88 76 -> swgc4 14 20
-[swgc4|d619 ËÀÍö¹×²ÄËÄ²ã] noreconnect(3:330:330) maxplayer(20) norandommove runmon
+[swgc4|d619 ËÀÍö¹×²ÄËÄ²ã] noreconnect(3:330:330) maxplayer(20)  runmon
 swgc4 14 20 -> swgc3 88 76
 
 [wgd1|d601 òÚò¼¶´Ò»²ã] noreconnect(3:330:330) maxplayer(20)  runmon
@@ -122,7 +122,7 @@ wgd1 52 15 -> wgd2 110 86
 [wgd2|d602 òÚò¼¶´¶þ²ã] noreconnect(3:330:330) maxplayer(20)  runmon
 wgd2 110 86 -> wgd1 52 15
 wgd2 45 22 -> wgd3 9 25
-[wgd3|d606 òÚò¼¶´Èý²ã] noreconnect(3:330:330) maxplayer(20) norandommove runmon
+[wgd3|d606 òÚò¼¶´Èý²ã] noreconnect(3:330:330) maxplayer(20)  runmon
 wgd3 9 25 -> wgd2 45 22
 
 [wmsm1|d402 ÎÖÂêËÂÃíÒ»²ã] noreconnect(3:330:330)   runmon
@@ -130,7 +130,7 @@ wmsm1 195 81 -> wmsm2 9 152
 [wmsm2|d404 ÎÖÂêËÂÃí¶þ²ã] noreconnect(3:330:330)   runmon
 wmsm2 9 152 -> wmsm1 195 81
 wmsm2 152 19 -> wmsm3 16 18
-[wmsm3|d024 ÎÖÂêËÂÃíÈý²ã] noreconnect(3:330:330)  norandommove runmon
+[wmsm3|d024 ÎÖÂêËÂÃíÈý²ã] noreconnect(3:330:330)   runmon
 wmsm3 16 18 -> wmsm2 152 19
 
 [ltl1|d2008 À×öªÖ®Â·Ò»²ã] noreconnect(3:330:330)   runmon
@@ -141,7 +141,7 @@ ltl2 18 21 -> ltl3 86 91
 [ltl3|d2011 À×öªÖ®Â·Èý²ã] noreconnect(3:330:330)   runmon
 ltl3 86 91 -> ltl2 18 21
 ltl3 19 20 -> ltl4 82 83
-[ltl4|d2013 À×öªµî] noreconnect(3:330:330)  norandommove runmon
+[ltl4|d2013 À×öªµî] noreconnect(3:330:330)   runmon
 ltl4 82 83 -> ltl3 19 20
 
 [hyltl1|d2008 »áÔ±À×öªÖ®Â·Ò»²ã] noreconnect(3:330:330)   runmon
@@ -152,17 +152,17 @@ hyltl2 18 21 -> hyltl3 86 91
 [hyltl3|d2011 »áÔ±À×öªÖ®Â·Èý²ã] noreconnect(3:330:330)   runmon
 hyltl3 86 91 -> hyltl2 18 21
 hyltl3 19 20 -> hyltl4 82 83
-[hyltl4|d2013 »áÔ±À×öªµî] noreconnect(3:330:330)  norandommove runmon
+[hyltl4|d2013 »áÔ±À×öªµî] noreconnect(3:330:330)   runmon
 hyltl4 82 83 -> hyltl3 19 20
 
 
 [emgc1|k001 ¶ñÄ§¹ã³¡Ò»²ã] noreconnect(3:330:330)   runmon
 [emgc2|l001 ¶ñÄ§¹ã³¡¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
-[emgc3|f003 ¶ñÄ§¹ã³¡] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[emgc3|f003 ¶ñÄ§¹ã³¡] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 [hyemgc1|k001 »áÔ±¶ñÄ§¹ã³¡Ò»²ã] noreconnect(3:330:330)   runmon
 [hyemgc2|l001 »áÔ±¶ñÄ§¹ã³¡¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
-[hyemgc3|f003 »áÔ±¶ñÄ§¹ã³¡] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hyemgc3|f003 »áÔ±¶ñÄ§¹ã³¡] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 
 
@@ -174,7 +174,7 @@ zmsm2 59 10 -> zmsm3 48 91
 [zmsm3|nd5074 ×æÂêËÂÃíÈý²ã] noreconnect(3:330:330)   runmon
 zmsm3 48 91 -> zmsm2 59 10 
 zmsm3 49 16 -> zmsm4 50 50
-[zmsm4|nf002 ×æÂêËÂÃíËÄ²ã] noreconnect(3:330:330)  norandommove runmon
+[zmsm4|nf002 ×æÂêËÂÃíËÄ²ã] noreconnect(3:330:330)   runmon
 
 [hyzmsm1|nd5072 »áÔ±×æÂêËÂÃíÒ»²ã] noreconnect(3:330:330)   runmon
 hyzmsm1 89 20 -> hyzmsm2 10 69
@@ -184,7 +184,7 @@ hyzmsm2 59 10 -> hyzmsm3 48 91
 [hyzmsm3|nd5074 »áÔ±×æÂêËÂÃíÈý²ã] noreconnect(3:330:330)   runmon
 hyzmsm3 48 91 -> hyzmsm2 59 10 
 hyzmsm3 49 16 -> hyzmsm4 50 50
-[hyzmsm4|nf002 »áÔ±×æÂêËÂÃíËÄ²ã] noreconnect(3:330:330)  norandommove runmon
+[hyzmsm4|nf002 »áÔ±×æÂêËÂÃíËÄ²ã] noreconnect(3:330:330)   runmon
 
 [hldt1|ygsd1 »ìÂÒµîÌÃÒ»²ã] noreconnect(3:330:330)   runmon
 hldt1 277 280 -> hldt2 21 47
@@ -194,7 +194,7 @@ hldt2 282 108 -> hldt3 24 268
 [hldt3|ygsd3 »ìÂÒµîÌÃÈý²ã] noreconnect(3:330:330)   runmon
 hldt3 24 268 -> hldt2 282 108
 hldt3 271 38 -> hldt4 51 111
-[hldt4|ygsd4 »ìÂÒµîÌÃËÄ²ã] noreconnect(3:330:330)  norandommove runmon
+[hldt4|ygsd4 »ìÂÒµîÌÃËÄ²ã] noreconnect(3:330:330)   runmon
 hldt4 51 111 -> hldt3 271 38
 
 [hyhldt1|ygsd1 »áÔ±»ìÂÒµîÌÃÒ»²ã] noreconnect(3:330:330)   runmon
@@ -205,7 +205,7 @@ hyhldt2 282 108 -> hyhldt3 24 268
 [hyhldt3|ygsd3 »áÔ±»ìÂÒµîÌÃÈý²ã] noreconnect(3:330:330)   runmon
 hyhldt3 24 268 -> hyhldt2 282 108
 hyhldt3 271 38 -> hyhldt4 51 111
-[hyhldt4|ygsd4 »áÔ±»ìÂÒµîÌÃËÄ²ã] noreconnect(3:330:330)  norandommove runmon
+[hyhldt4|ygsd4 »áÔ±»ìÂÒµîÌÃËÄ²ã] noreconnect(3:330:330)   runmon
 hyhldt4 51 111 -> hyhldt3 271 38
 
 
@@ -214,7 +214,7 @@ cyxg1 201 148 -> cyxg2 99 185
 [cyxg2|d10052 ³àÔÂÏ¿¹È¶þ²ã] noreconnect(3:330:330)   runmon
 cyxg2 99 185 -> cyxg1 201 148
 cyxg2 140 23 -> cyxg3 21 26
-[cyxg3|d10061 ³àÔÂÏ¿¹ÈÈý²ã] noreconnect(3:330:330)  norandommove runmon
+[cyxg3|d10061 ³àÔÂÏ¿¹ÈÈý²ã] noreconnect(3:330:330)   runmon
 cyxg3 21 26 -> cyxg2 140 23
 
 [hycyxg1|d10032 »áÔ±³àÔÂÏ¿¹ÈÒ»²ã] noreconnect(3:330:330)   runmon
@@ -222,178 +222,178 @@ hycyxg1 201 148 -> hycyxg2 99 185
 [hycyxg2|d10052 »áÔ±³àÔÂÏ¿¹È¶þ²ã] noreconnect(3:330:330)   runmon
 hycyxg2 99 185 -> hycyxg1 201 148
 hycyxg2 140 23 -> hycyxg3 21 26
-[hycyxg3|d10061 »áÔ±³àÔÂÏ¿¹ÈÈý²ã] noreconnect(3:330:330)  norandommove runmon
+[hycyxg3|d10061 »áÔ±³àÔÂÏ¿¹ÈÈý²ã] noreconnect(3:330:330)   runmon
 hycyxg3 21 26 -> hycyxg2 140 23
 
 
 [nmsy1|d2071 Å£Ä§ËÂÔºÒ»²ã] noreconnect(3:330:330)   runmon
 nmsy1 111 114 -> nmsy2 95 130
-[nmsy2|d2076 Å£Ä§ËÂÔº¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[nmsy2|d2076 Å£Ä§ËÂÔº¶þ²ã] noreconnect(3:330:330)   runmon
 nmsy2 95 130 -> nmsy1 111 114
 nmsy2 22 29 -> nmsy3 12 12
-[nmsy3|d2079 Å£Ä§ËÂÔºÈý²ã] noreconnect(3:330:330)  norandommove runmon
+[nmsy3|d2079 Å£Ä§ËÂÔºÈý²ã] noreconnect(3:330:330)   runmon
 nmsy3 12 12 -> nmsy2 22 29
 
 [hynmsy1|d2071 »áÔ±Å£Ä§ËÂÔºÒ»²ã] noreconnect(3:330:330)   runmon
 hynmsy1 111 114 -> hynmsy2 95 130
-[hynmsy2|d2076 »áÔ±Å£Ä§ËÂÔº¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[hynmsy2|d2076 »áÔ±Å£Ä§ËÂÔº¶þ²ã] noreconnect(3:330:330)   runmon
 hynmsy2 95 130 -> hynmsy1 111 114
 hynmsy2 22 29 -> hynmsy3 12 12
-[hynmsy3|d2079 »áÔ±Å£Ä§ËÂÔºÈý²ã] noreconnect(3:330:330)  norandommove runmon
+[hynmsy3|d2079 »áÔ±Å£Ä§ËÂÔºÈý²ã] noreconnect(3:330:330)   runmon
 hynmsy3 12 12 -> hynmsy2 22 29
 
 [wjdy1|nd2075 ÎÞ¼äµØÓüÒ»²ã] noreconnect(3:330:330)   runmon
 wjdy1 125 62 -> wjdy2 13 12
-[wjdy2|nd2079 ÎÞ¼äµØÓü¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[wjdy2|nd2079 ÎÞ¼äµØÓü¶þ²ã] noreconnect(3:330:330)   runmon
 wjdy2 13 12 -> wjdy1 125 62
 wjdy2 35 17 -> wjdy3 18 39
-[wjdy3|nd2070 ÎÞ¼äµØÓü] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[wjdy3|nd2070 ÎÞ¼äµØÓü] noreconnect(3:330:330)  norecall nodearrecall  runmon
 wjdy3 18 39 -> wjdy2 35 17
 
 [hywjdy1|nd2075 »áÔ±ÎÞ¼äµØÓüÒ»²ã] noreconnect(3:330:330)   runmon
 hywjdy1 125 62 -> hywjdy2 13 12
-[hywjdy2|nd2079 »áÔ±ÎÞ¼äµØÓü¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[hywjdy2|nd2079 »áÔ±ÎÞ¼äµØÓü¶þ²ã] noreconnect(3:330:330)   runmon
 hywjdy2 13 12 -> hywjdy1 125 62
 hywjdy2 35 17 -> hywjdy3 18 39
-[hywjdy3|nd2070 »áÔ±ÎÞ¼äµØÓü] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hywjdy3|nd2070 »áÔ±ÎÞ¼äµØÓü] noreconnect(3:330:330)  norecall nodearrecall  runmon
 hywjdy3 18 39 -> hywjdy2 35 17
 
 [nmjt1|r001 Å£Ä§¼ÀÌ³Ò»²ã] noreconnect(3:330:330)   runmon
 nmjt1 100 100 -> nmjt2 16 18
-[nmjt2|zhouyi Å£Ä§¼ÀÌ³¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[nmjt2|zhouyi Å£Ä§¼ÀÌ³¶þ²ã] noreconnect(3:330:330)   runmon
 nmjt2 16 18 -> nmjt1 100 100
 nmjt2 50 50 -> nmjt3 12 12
-[nmjt3|d2079 Å£Ä§¼ÀÌ³] noreconnect(3:330:330)  norandommove runmon
+[nmjt3|d2079 Å£Ä§¼ÀÌ³] noreconnect(3:330:330)   runmon
 nmjt3 12 12 -> nmjt2 50 50
 
 [hynmjt1|r001 »áÔ±Å£Ä§¼ÀÌ³Ò»²ã] noreconnect(3:330:330)   runmon
 hynmjt1 100 100 -> hynmjt2 16 18
-[hynmjt2|zhouyi »áÔ±Å£Ä§¼ÀÌ³¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[hynmjt2|zhouyi »áÔ±Å£Ä§¼ÀÌ³¶þ²ã] noreconnect(3:330:330)   runmon
 hynmjt2 16 18 -> hynmjt1 100 100
 hynmjt2 50 50 -> hynmjt3 12 12
-[hynmjt3|d2079 »áÔ±Å£Ä§¼ÀÌ³] noreconnect(3:330:330)  norandommove runmon
+[hynmjt3|d2079 »áÔ±Å£Ä§¼ÀÌ³] noreconnect(3:330:330)   runmon
 hynmjt3 12 12 -> hynmjt2 50 50
 
 [lyd1|hl001 À×Ñ×¶´Ñ¨Ò»²ã] noreconnect(3:330:330)   runmon
 lyd1 20 218 -> lyd2 26 14
-[lyd2|hl002 À×Ñ×¶´Ñ¨¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[lyd2|hl002 À×Ñ×¶´Ñ¨¶þ²ã] noreconnect(3:330:330)   runmon
 
 [hylyd1|hl001 »áÔ±À×Ñ×¶´Ñ¨Ò»²ã] noreconnect(3:330:330)  
 hylyd1 20 218 -> hylyd2 26 14
-[hylyd2|hl002 »áÔ±À×Ñ×¶´Ñ¨¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[hylyd2|hl002 »áÔ±À×Ñ×¶´Ñ¨¶þ²ã] noreconnect(3:330:330)   runmon
 
 [mly1|61 Ä§ÁúÖ®Ô¨Ò»²ã] noreconnect(3:330:330)  runmon
 mly1 164 393 -> mly2 27 368
-[mly2|63 Ä§ÁúÖ®Ô¨¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[mly2|63 Ä§ÁúÖ®Ô¨¶þ²ã] noreconnect(3:330:330)   runmon
 mly2 27 368 -> mly1 164 393
 mly2 19 39 -> mly3 256 213
-[mly3|66 Ä§ÁúÖ®Ô¨] noreconnect(3:330:330)  norandommove runmon
+[mly3|66 Ä§ÁúÖ®Ô¨] noreconnect(3:330:330)   runmon
 mly3 256 213 -> mly2 19 39
 
 [hymly1|61 »áÔ±Ä§ÁúÖ®Ô¨Ò»²ã] noreconnect(3:330:330)  runmon
 hymly1 164 393 -> hymly2 27 368
-[hymly2|63 »áÔ±Ä§ÁúÖ®Ô¨¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[hymly2|63 »áÔ±Ä§ÁúÖ®Ô¨¶þ²ã] noreconnect(3:330:330)   runmon
 hymly2 27 368 -> hymly1 164 393
 hymly2 19 39 -> hymly3 256 213
-[hymly3|66 »áÔ±Ä§ÁúÖ®Ô¨] noreconnect(3:330:330)  norandommove runmon
+[hymly3|66 »áÔ±Ä§ÁúÖ®Ô¨] noreconnect(3:330:330)   runmon
 hymly3 256 213 -> hymly2 19 39
 
 [hyd1|f006 ºüÔÂµºÒ»²ã] noreconnect(3:330:330)   runmon
-[hyd2|fox01 ºüÔÂµº¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hyd2|fox01 ºüÔÂµº¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
 hyd2 274 125 -> hyd3 13 30
-[hyd3|fox03 ºüÔÂ¼ÀÌ³] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hyd3|fox03 ºüÔÂ¼ÀÌ³] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 [hyhyd1|f006 »áÔ±ºüÔÂµºÒ»²ã] noreconnect(3:330:330)   runmon
-[hyhyd2|fox01 »áÔ±ºüÔÂµº¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hyhyd2|fox01 »áÔ±ºüÔÂµº¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
 hyhyd2 274 125 -> hyhyd3 13 30
-[hyhyd3|fox03 »áÔ±ºüÔÂ¼ÀÌ³] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hyhyd3|fox03 »áÔ±ºüÔÂ¼ÀÌ³] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 [hlzd1|ev001 »ðÁú½ûµØ] noreconnect(3:330:330)   runmon
 hlzd1 19 219 -> hlzd2 381 45
-[hlzd2|ev000 »ðÁúÍ¨µÀ] noreconnect(3:330:330)  norandommove runmon
+[hlzd2|ev000 »ðÁúÍ¨µÀ] noreconnect(3:330:330)   runmon
 hlzd2 381 45 -> hlzd1 19 219
 hlzd2 374 273 -> hlzd3 24 10
-[hlzd3|hl002 »ðÁú¶´¿ß] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hlzd3|hl002 »ðÁú¶´¿ß] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 [hyhlzd1|ev001 »áÔ±»ðÁú½ûµØ] noreconnect(3:330:330)   runmon
 hyhlzd1 19 219 -> hyhlzd2 381 45
-[hyhlzd2|ev000 »áÔ±»ðÁúÍ¨µÀ] noreconnect(3:330:330)  norandommove runmon
+[hyhlzd2|ev000 »áÔ±»ðÁúÍ¨µÀ] noreconnect(3:330:330)   runmon
 hyhlzd2 381 45 -> hyhlzd1 19 219
 hyhlzd2 374 273 -> hyhlzd3 24 10
-[hyhlzd3|hl002 »áÔ±»ðÁú¶´¿ß] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hyhlzd3|hl002 »áÔ±»ðÁú¶´¿ß] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 [elsy1|nhero1 ¶ñÁúÉñÓòÒ»²ã] noreconnect(3:330:330)  runmon
-[elsy2|slhy2 ¶ñÁúÉñÓò¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[elsy3|slhy3 ¶ñÁúÉñÓò] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[elsy2|slhy2 ¶ñÁúÉñÓò¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[elsy3|slhy3 ¶ñÁúÉñÓò] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 [hyelsy1|nhero1 »áÔ±¶ñÁúÉñÓòÒ»²ã] noreconnect(3:330:330)  runmon
-[hyelsy2|slhy2 »áÔ±¶ñÁúÉñÓò¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[hyelsy3|slhy3 »áÔ±¶ñÁúÉñÓò] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hyelsy2|slhy2 »áÔ±¶ñÁúÉñÓò¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[hyelsy3|slhy3 »áÔ±¶ñÁúÉñÓò] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 
-[hyz1|nanm ºüÔÂ×¯] noreconnect(3:330:330)  norandommove runmon
+[hyz1|nanm ºüÔÂ×¯] noreconnect(3:330:330)   runmon
 
-[hyhyz1|nanm »áÔ±ºüÔÂ×¯] noreconnect(3:330:330)  norandommove runmon
+[hyhyz1|nanm »áÔ±ºüÔÂ×¯] noreconnect(3:330:330)   runmon
 
-[hxd1|ygsd2 ºüÏÉµºÒ»²ã] noreconnect(3:330:330) norandommove runmon
+[hxd1|ygsd2 ºüÏÉµºÒ»²ã] noreconnect(3:330:330)  runmon
 hxd1 282 108 -> hxd2 24 268
-[hxd2|ygsd3 ºüÏÉµº¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[hxd2|ygsd3 ºüÏÉµº¶þ²ã] noreconnect(3:330:330)   runmon
 hxd2 24 268 -> hxd1 282 108
 hxd2 271 37 -> hxd3 51 111
-[hxd3|ygsd4 ºüÏÉµº] noreconnect(3:330:330)  norandommove runmon
+[hxd3|ygsd4 ºüÏÉµº] noreconnect(3:330:330)   runmon
 hxd3 51 111 -> hxd2 271 37
 
-[hyhxd1|ygsd2 »áÔ±ºüÏÉµºÒ»²ã] noreconnect(3:330:330) norandommove runmon
+[hyhxd1|ygsd2 »áÔ±ºüÏÉµºÒ»²ã] noreconnect(3:330:330)  runmon
 hyhxd1 282 108 -> hyhxd2 24 268
-[hyhxd2|ygsd3 »áÔ±ºüÏÉµº¶þ²ã] noreconnect(3:330:330)  norandommove runmon
+[hyhxd2|ygsd3 »áÔ±ºüÏÉµº¶þ²ã] noreconnect(3:330:330)   runmon
 hyhxd2 24 268 -> hyhxd1 282 108
 hyhxd2 271 37 -> hyhxd3 51 111
-[hyhxd3|ygsd4 »áÔ±ºüÏÉµº] noreconnect(3:330:330)  norandommove runmon
+[hyhxd3|ygsd4 »áÔ±ºüÏÉµº] noreconnect(3:330:330)   runmon
 hyhxd3 51 111 -> hyhxd2 271 37
 
-[hld1|nkuanggong »ðÁúµîÒ»²ã] noreconnect(3:330:330) norandommove runmon
+[hld1|nkuanggong »ðÁúµîÒ»²ã] noreconnect(3:330:330)  runmon
 hld1 28 52 -> hld2 12 12
-[hld2|d2079 »ðÁúµî¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hld2|d2079 »ðÁúµî¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
 hld2 12 12 -> hld1 28 52
 hld2 36 17 -> hld3 48 22
-[hld3|f014 »ðÁúµî] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hld3|f014 »ðÁúµî] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
-[hyhld1|nkuanggong »áÔ±»ðÁúµîÒ»²ã] noreconnect(3:330:330) norandommove runmon
+[hyhld1|nkuanggong »áÔ±»ðÁúµîÒ»²ã] noreconnect(3:330:330)  runmon
 hyhld1 28 52 -> hyhld2 12 12
-[hyhld2|d2079 »áÔ±»ðÁúµî¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hyhld2|d2079 »áÔ±»ðÁúµî¶þ²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
 hyhld2 12 12 -> hyhld1 28 52
 hyhld2 36 17 -> hyhld3 48 22
-[hyhld3|f014 »áÔ±»ðÁúµî] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[hyhld3|f014 »áÔ±»ðÁúµî] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
-[kbzc|slhy3 ¿ñ±©Ö®³Ç] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[kbzc|slhy3 ¿ñ±©Ö®³Ç] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 [gzzs8|ygsd1 °ËÆ·×¨Êô] noreconnect(3:330:330)  runmon
 [gzzs7|ygsd1 ÆßÆ·×¨Êô] noreconnect(3:330:330)  runmon
 [gzzs5|ygsd2 ÎåÆ·×¨Êô] noreconnect(3:330:330)  runmon
 [gzzs3|ygsd2 ÈýÆ·×¨Êô] noreconnect(3:330:330)  runmon
-[gzzs1|ygsd2 Ò»Æ·×¨Êô] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[gzzsdd|ygsd3 ´ó¶¼¶½×¨Êô] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[gzzsgj|ygsd3 ¹Ú¾øÒ»ÊÀ×¨Êô] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[gzzszl|ygsd3 ÖðÂ¹ÈºÐÛ×¨Êô] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[gzzsxb|ygsd3 ÐÛ°ÔÌìÏÂ×¨Êô] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[gzzs1|ygsd2 Ò»Æ·×¨Êô] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[gzzsdd|ygsd3 ´ó¶¼¶½×¨Êô] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[gzzsgj|ygsd3 ¹Ú¾øÒ»ÊÀ×¨Êô] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[gzzszl|ygsd3 ÖðÂ¹ÈºÐÛ×¨Êô] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[gzzsxb|ygsd3 ÐÛ°ÔÌìÏÂ×¨Êô] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 [ltzs1|nd2079 Á¶ÌåÒ»½×] noreconnect(3:330:330)  runmon
 [ltzs2|nd2079 Á¶Ìå¶þ½×] noreconnect(3:330:330)  runmon
 [ltzs3|nd2079 Á¶ÌåÈý½×] noreconnect(3:330:330)  runmon
 [ltzs4|nd2079 Á¶ÌåËÄ½×] noreconnect(3:330:330)  runmon
-[ltzs5|slhy3 Á¶ÌåÎå½×] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[ltzs6|slhy3 Á¶ÌåÁù½×] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[ltzs7|slhy3 Á¶ÌåÆß½×] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[ltzs8|slhy3 Á¶Ìå°Ë½×] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[ltzs5|slhy3 Á¶ÌåÎå½×] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[ltzs6|slhy3 Á¶ÌåÁù½×] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[ltzs7|slhy3 Á¶ÌåÆß½×] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[ltzs8|slhy3 Á¶Ìå°Ë½×] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 [ysdj8|d2004 ÔªÉñÒ»²ã] noreconnect(3:330:330)  runmon
 [ysdj12|d2005 ÔªÉñ¶þ²ã] noreconnect(3:330:330)  runmon
 [ysdj16|d2009 ÔªÉñÈý²ã] noreconnect(3:330:330)  runmon
-[ysdj20|d2012 ÔªÉñËÄ²ã] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[ysdj24|d2013 ÔªÉñÎå²ã] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[ysdj30|r001 ÔªÉñÁù²ã] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[ysdj40|r001 ÔªÉñÆß²ã] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
-[ysdj50|r001 ÔªÉñ°Ë²ã] noreconnect(3:330:330)  norecall nodearrecall norandommove runmon
+[ysdj20|d2012 ÔªÉñËÄ²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[ysdj24|d2013 ÔªÉñÎå²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[ysdj30|r001 ÔªÉñÁù²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[ysdj40|r001 ÔªÉñÆß²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
+[ysdj50|r001 ÔªÉñ°Ë²ã] noreconnect(3:330:330)  norecall nodearrecall  runmon
 
 [gldt0|g002 ¹ÅÁêÊÔÁ¶] noreconnect(3:330:330)  onkillmon INCMONEY(¾­Ñé/1/5000/@XX) safe runmon
 [gldt1|g002 ¹ÅÁêÒ»²ã] noreconnect(3:330:330)  onkillmon INCMONEY(¾­Ñé/1/5000/@XX) safe runmon
@@ -408,24 +408,24 @@ hyhld2 36 17 -> hyhld3 48 22
 [gldt10|g002 ¹ÅÁêÊ®²ã] noreconnect(3:330:330)  onkillmon INCMONEY(¾­Ñé/1/5000/@XX) safe runmon
 
 
-[zsdt1|djdt1 11×ªµØÍ¼] noreconnect(3:330:330) norandommove runmon
-[zsdt2|djdt2 13×ªµØÍ¼] noreconnect(3:330:330) norandommove runmon
-[zsdt3|djdt3 15×ªµØÍ¼] noreconnect(3:330:330) norandommove runmon
-[zsdt4|djdt4 17×ªµØÍ¼] noreconnect(3:330:330) norandommove runmon
-[zsdt5|djdt5 19×ªµØÍ¼] noreconnect(3:330:330) norandommove runmon
+[zsdt1|djdt1 11×ªµØÍ¼] noreconnect(3:330:330)  runmon
+[zsdt2|djdt2 13×ªµØÍ¼] noreconnect(3:330:330)  runmon
+[zsdt3|djdt3 15×ªµØÍ¼] noreconnect(3:330:330)  runmon
+[zsdt4|djdt4 17×ªµØÍ¼] noreconnect(3:330:330)  runmon
+[zsdt5|djdt5 19×ªµØÍ¼] noreconnect(3:330:330)  runmon
 
-[hydt1 VIP11µØÍ¼] noreconnect(3:330:330) norandommove runmon
-[hydt2 VIP12µØÍ¼] noreconnect(3:330:330) norandommove runmon
-[hydt3 VIP13µØÍ¼] noreconnect(3:330:330) norandommove runmon
-[hydt4 VIP14µØÍ¼] noreconnect(3:330:330) norandommove runmon
-[hydt5 VIP15µØÍ¼] noreconnect(3:330:330) norandommove runmon
+[hydt1 VIP11µØÍ¼] noreconnect(3:330:330)  runmon
+[hydt2 VIP12µØÍ¼] noreconnect(3:330:330)  runmon
+[hydt3 VIP13µØÍ¼] noreconnect(3:330:330)  runmon
+[hydt4 VIP14µØÍ¼] noreconnect(3:330:330)  runmon
+[hydt5 VIP15µØÍ¼] noreconnect(3:330:330)  runmon
 
-[djdt1 200¼¶µØÍ¼] noreconnect(3:330:330) norandommove runmon
-[djdt2 220¼¶µØÍ¼] noreconnect(3:330:330) norandommove runmon
-[djdt3 240¼¶µØÍ¼] noreconnect(3:330:330) norandommove runmon
-[djdt4 260¼¶µØÍ¼] noreconnect(3:330:330) norandommove runmon
-[djdt5 280¼¶µØÍ¼] noreconnect(3:330:330) norandommove runmon
-[djdt6|hydt3 300¼¶µØÍ¼] noreconnect(3:330:330) norandommove runmon
+[djdt1 200¼¶µØÍ¼] noreconnect(3:330:330)  runmon
+[djdt2 220¼¶µØÍ¼] noreconnect(3:330:330)  runmon
+[djdt3 240¼¶µØÍ¼] noreconnect(3:330:330)  runmon
+[djdt4 260¼¶µØÍ¼] noreconnect(3:330:330)  runmon
+[djdt5 280¼¶µØÍ¼] noreconnect(3:330:330)  runmon
+[djdt6|hydt3 300¼¶µØÍ¼] noreconnect(3:330:330)  runmon
 
 
 
@@ -750,7 +750,7 @@ dm011 6 10    -> d012  189 145
 [d033  ÎÖÂêËÂÃí¶þ²ã] dark
 [d043  ÎÖÂêËÂÃí¶þ²ã] dark
 [d053  ÎÖÂêËÂÃí¶þ²ã] dark
-[d024  ÎÖÂêËÂÃí] dark norecall norandommove noreconnect(d023)
+[d024  ÎÖÂêËÂÃí] dark norecall  noreconnect(d023)
 
 1     84 277  -> d021  76 74
 1     84 278  -> d021  76 75
@@ -1032,7 +1032,7 @@ d717   83 25  -> r001  100  99
 0158  22   13 -> 3  301  294
 
 ;»çºÏ¼º
-[0150  ³Ç±¤ÄÚ] norandommove
+[0150  ³Ç±¤ÄÚ] 
 [0151  Ìú½³ÆÌ] fight
 [0152  ·þ×°µê] fight
 [0153  Ò©µê] fight
@@ -1092,24 +1092,24 @@ d717   83 25  -> r001  100  99
 [d503  ×æÂêËÂÃíÈý²ã] dark
 [d504  ×æÂêËÂÃíËÄ²ã] dark
 [d505  ×æÂêËÂÃíÎå²ã] dark
-[d5061 ×æÂê¸ó] dark norandommove norecall
-[d5062 ×æÂê¸ó] dark norandommove norecall
-[d5063 ×æÂê¸ó] dark norandommove norecall
-[d5064 ×æÂê¸ó] dark norandommove norecall
-[d5065 ×æÂê¸ó] dark norandommove norecall
-[d5066 ×æÂê¸ó] dark norandommove norecall
-[d5067 ×æÂê¸ó] dark norandommove norecall
-[d5068 ×æÂê¸ó] dark norandommove norecall
-[d5069 ×æÂê¸ó] dark norandommove norecall
+[d5061 ×æÂê¸ó] dark  norecall
+[d5062 ×æÂê¸ó] dark  norecall
+[d5063 ×æÂê¸ó] dark  norecall
+[d5064 ×æÂê¸ó] dark  norecall
+[d5065 ×æÂê¸ó] dark  norecall
+[d5066 ×æÂê¸ó] dark  norecall
+[d5067 ×æÂê¸ó] dark  norecall
+[d5068 ×æÂê¸ó] dark  norecall
+[d5069 ×æÂê¸ó] dark  norecall
 [d5071  ×æÂêÉñµîÆß²ã´óÌü] dark norecall
-[d5072  ×æÂêÉñµîÆß²ã] dark norecall norandommove noreconnect(d5071)
-[d5073  ×æÂêÉñµîÆß²ã] dark norecall norandommove noreconnect(d5071)
-[d5074  ×æÂêÉñµîÆß²ã] dark norecall norandommove noreconnect(d5071)
+[d5072  ×æÂêÉñµîÆß²ã] dark norecall  noreconnect(d5071)
+[d5073  ×æÂêÉñµîÆß²ã] dark norecall  noreconnect(d5071)
+[d5074  ×æÂêÉñµîÆß²ã] dark norecall  noreconnect(d5071)
 [d511  ×æÂêËÂÃí] dark
 [d512  ×æÂêËÂÃí] dark
 [d513  ×æÂêËÂÃí] dark
 [d514  ×æÂêËÂÃí] dark
-;[d515  ×æÂê½ÌÖ÷Ö®¼Ò] dark norecall norandommove noreconnect(d5071)
+;[d515  ×æÂê½ÌÖ÷Ö®¼Ò] dark norecall  noreconnect(d5071)
 
 3 862  174 -> 0157   9   25
 3 863  174 -> 0157  10   26 
@@ -2286,7 +2286,7 @@ d2004 77 77 -> d2002 30 13
 d2004 19 16 -> d2005 84 86
 d2005 85 87 -> d2004 19 16
 
-[d2006 ÁÒÑæµî] norecall norandommove
+[d2006 ÁÒÑæµî] norecall 
 d2005 17 22 -> d2006 72 83
 d2005 18 21 -> d2006 73 82
 d2005 19 20 -> d2006 74 81
@@ -2304,12 +2304,12 @@ d2007 95 23 -> d10054 10 44
 [d10054 ÃØÃÜÍ¨µÀ] dark
 d10054 78 21 -> d2003 287 282
 
-[d2008 °ÔÕß´óÌü] norecall norandommove
+[d2008 °ÔÕß´óÌü] norecall 
 ;¶ñÄ§ÐÞÀíÊ¦(31,24)
 d2007 38 26 -> d2008 83 83
 d2008 84 84 -> d2007 20 86
 
-[d2009 ÓÄÚ¤»ØÀÈ] norecall norandommove
+[d2009 ÓÄÚ¤»ØÀÈ] norecall 
 d2008 26 23 -> d2009 84 86
 d2009 85 87 -> d2008 26 23
 
@@ -2325,15 +2325,15 @@ d2010 218 42 -> d10053 89 20
 [d10053 ÃØÃÜÍ¨µÀ] dark
 d10053 41 91 -> d2008 27 24
 
-[d2011 Ä§»êµî] norecall norandommove
+[d2011 Ä§»êµî] norecall 
 d2010 170 36 -> d2011 85 89
 d2011 86 90 -> d2008 27 24
 
-[d2012 Á¶Óü»ØÀÈ] norecall norandommove
+[d2012 Á¶Óü»ØÀÈ] norecall 
 d2011 19 20 -> d2012 84 85
 d2012 85 86 -> d2011 19 20
 
-[d2013 ·âÄ§µî] norecall norandommove noreconnect(d2005)
+[d2013 ·âÄ§µî] norecall  noreconnect(d2005)
 d2012 18 21 -> d2013 81 84
 d2012 19 20 -> d2013 82 83
 d2013 82 83 -> d2012 19 20
@@ -2454,7 +2454,7 @@ d2063 50 85 -> d2064 13 30
 d2064 13 29 -> d2063 49 85
 d2064 12 30 -> d2063 49 85
 
-[d2067 ¹ÇÄ§¶´Îå²ã] norecall norandommove
+[d2067 ¹ÇÄ§¶´Îå²ã] norecall 
 d2064 9 183 -> d2067 154 163
 d2064 10 184 -> d2067 155 164
 d2067 155 160 -> d2064   12 182
@@ -2498,13 +2498,13 @@ d2075 126 62 -> d2076 95 129
 d2076   95 130 -> d2075 127 61
 d2076   95 131 -> d2075 126 60
 
-[d2078 Å£Ä§ËÂÃíÁù²ã] dark norecall norandommove
+[d2078 Å£Ä§ËÂÃíÁù²ã] dark norecall 
 d2076 22 29 -> d2078 160 164
 d2076 23 29 -> d2078 161 163
 d2078 161 164 -> d2076 23 30
 d2078 161 165 -> d2076 24 29
 
-[d2079 Å£Ä§ËÂÃí´óÌü] dark norecall norandommove nopositionmove noreconnect(d2070)
+[d2079 Å£Ä§ËÂÃí´óÌü] dark norecall  nopositionmove noreconnect(d2070)
 d2078 255 256 -> d2079 12 13
 d2078 255 255 -> d2079 13 13
 d2079   12 12 ->      d2078 254 255
@@ -2513,24 +2513,24 @@ d2079   12 13 ->      d2078 255 254
 ;¨X©¨©¨©¨©¨©¨©¨©¨¨[
 ;©ªÁù¸öÐÂÒÂ·þµØµã©ª
 ;¨^©¨©¨©¨©¨©¨©¨©¨¨a
-[t232 Ç¯³æ³²Ñ¨] norecall norandommove nodearrecall noguildrecall nomasterrecall noreconnect(1) day 
+[t232 Ç¯³æ³²Ñ¨] norecall  nodearrecall noguildrecall nomasterrecall noreconnect(1) day 
 11         343,325              ->         t232       22,24
-[t218 ËÀÍöÉñµî] norecall norandommove nodearrecall noguildrecall nomasterrecall noreconnect(0) day
+[t218 ËÀÍöÉñµî] norecall  nodearrecall noguildrecall nomasterrecall noreconnect(0) day
 4          205,218              ->         t218       14,16
-[t339 µØÓüÁÒÑæ] norecall norandommove nodearrecall noguildrecall nomasterrecall noreconnect(0) day
+[t339 µØÓüÁÒÑæ] norecall  nodearrecall noguildrecall nomasterrecall noreconnect(0) day
 0          428,474              ->         t339       23,24
-[t219 ÉîÔ¨Ä§Óò] norecall norandommove nodearrecall noguildrecall nomasterrecall noreconnect(1) day
+[t219 ÉîÔ¨Ä§Óò] norecall  nodearrecall noguildrecall nomasterrecall noreconnect(1) day
 1          215,312              ->         t219       81,14
-[t315 ¶éÂä·Ø³¡] norecall norandommove nodearrecall noguildrecall nomasterrecall noreconnect(1) day 
+[t315 ¶éÂä·Ø³¡] norecall  nodearrecall noguildrecall nomasterrecall noreconnect(1) day 
 1          320,56               ->         t315       49,31
-[t118 À§»óµîÌÃ] norecall norandommove nodearrecall noguildrecall nomasterrecall noreconnect(2) day
+[t118 À§»óµîÌÃ] norecall  nodearrecall noguildrecall nomasterrecall noreconnect(2) day
 r001       55,94                ->         t118       14,15
 
 ;Ê¥Óò
 ;--------------------------------------------------
-[b101 Ê¥ÓòÖ®ÃÅ] safe norecall norandommove noreconnect(0)
+[b101 Ê¥ÓòÖ®ÃÅ] safe norecall  noreconnect(0)
 
-[b102 Ê¥ÓòÖ®ÃÅ] safe norecall norandommove noreconnect(0)
+[b102 Ê¥ÓòÖ®ÃÅ] safe norecall  noreconnect(0)
 b101 4 11 -> b102 9 9
 b101 10 6 -> b102 9 9
 
