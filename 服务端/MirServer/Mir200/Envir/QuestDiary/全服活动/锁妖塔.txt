@@ -49,7 +49,7 @@ GOTO @¶ÁÈ¡ÑýËþ½±ÀøÅäÖÃ
 #IF
 EQUAL N$ÑýËþÌôÕ½³É¹¦ 1
 #ACT
-MOV S$ÑýËþÌôÕ½µ¹¼ÆÊ± <TIMETIPS|id=11|x=660|y=448|time=10|count=1|size=14|color=249|outline=2|outlinecolor=0|link=@ÑýËþÍË³öµ¹¼ÆÊ±>
+MOV S$ÑýËþÌôÕ½µ¹¼ÆÊ± <TIMETIPS|id=11|x=660|y=448|time=3|count=1|size=14|color=249|outline=2|outlinecolor=0|link=@ÑýËþÍË³öµ¹¼ÆÊ±>
 MOV N$ÑýËþÌôÕ½³É¹¦ 0
 
 #OR
@@ -175,12 +175,12 @@ BREAK
 #IF
 #ACT
 MOV U244 <$UTCNOW8>
-INC U244 180
+INC U244 60
 MOV N$ÑýËþÌôÕ½³É¹¦ 0
 MOV N$´³ËþÊ§°Ü 0
-ADDMIRRORMAP d515 syt<$STR(N$½ñÈÕÌôÕ½²ã)><$USERNAME> ËøÑýËþ<$STR(N$½ñÈÕÌôÕ½²ã)>²ã 240 3 3072
-MonGenEx syt<$STR(N$½ñÈÕÌôÕ½²ã)><$USERNAME> 20 23 ÑýÊÞ<$STR(N$½ñÈÕÌôÕ½²ã)> 15 15 0 250
-MOV N$±¾²ãË¢¹ÖÊý 15
+ADDMIRRORMAP d515 syt<$STR(N$½ñÈÕÌôÕ½²ã)><$USERNAME> ËøÑýËþ<$STR(N$½ñÈÕÌôÕ½²ã)>²ã 120 3 3072
+MonGenEx syt<$STR(N$½ñÈÕÌôÕ½²ã)><$USERNAME> 20 23 ÑýÊÞ<$STR(N$½ñÈÕÌôÕ½²ã)> 5 3 0 250
+MOV N$±¾²ãË¢¹ÖÊý 3
 MOV N$ÏÖÓÐ¹ÖÎïÊý <$STR(N$±¾²ãË¢¹ÖÊý)>
 MAP syt<$STR(N$½ñÈÕÌôÕ½²ã)><$USERNAME>
 GOTO @ÑýËþÈÎÎñÃæ°å
@@ -324,7 +324,7 @@ INC S$ÑýËþÈÎÎñÃæ°å <Img|x=225|y=130|img=custom/hl/hdtb_ui/duobaotc.png|link=@ÍË³
 #IF
 EQUAL N$ÑýËþÌôÕ½³É¹¦ 1
 #ACT
-MOV N$Ê£ÓàÑýËþÊ±¼ä 10
+MOV N$Ê£ÓàÑýËþÊ±¼ä 3
 INC S$ÑýËþÈÎÎñÃæ°å <Text|id=31|x=5|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=¼ÌÐøµ¹¼ÆÊ±£º>
 INC S$ÑýËþÈÎÎñÃæ°å <TIMETIPS|id=32|x=115|y=-3|time=<$STR(N$Ê£ÓàÑýËþÊ±¼ä)>|count=1|size=18|color=249|outline=2|outlinecolor=0|link=@¼ÌÐøÑýËþÏÂÒ»²ã>
 #ELSEACT
