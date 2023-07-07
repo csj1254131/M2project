@@ -1,5 +1,5 @@
 {
-    "version": "3.3.3064",
+    "version": "3.3.3065",
     "assets": {
         "anim_effect.zip": {
             "md5": "f7b49059a3b601b0c794cafb15dec2da",
@@ -39,8 +39,7 @@
         "assets_sub.zip": {
             "md5": "4c0353fbbe275bb1188e56203274db6f",
             "compressed": true,
-            "size": 3474627,
-            "downloadState": 1
+            "size": 3474627
         },
         "data_config.zip": {
             "md5": "06d9117d9d94d4fb25dae19f3b821907",
@@ -2008,9 +2007,10 @@
             "size": 19078
         },
         "scripts_scene.zip": {
-            "md5": "4fc0ccf2726a013b0665d4687998e5b8",
+            "md5": "8cea32ca46d398b2318fe2d7f3ba5863",
             "compressed": true,
-            "size": 53680
+            "size": 53744,
+            "downloadState": 1
         },
         "scripts_sha1.zip": {
             "md5": "24b2c29cee72dfa13da1facf26e869e4",
