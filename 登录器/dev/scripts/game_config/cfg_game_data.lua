@@ -480,7 +480,7 @@ local config = {
 	},
 	["NewKfDay"] = { 
 		k="NewKfDay",
-		value=0,
+		value=1,
 		notice="常量开服天数<$KFDAY> 0=按运行24小时为一天    1=开服时间自然日天计算",
 	},
 	["setTipsFontSizeVspace"] = { 

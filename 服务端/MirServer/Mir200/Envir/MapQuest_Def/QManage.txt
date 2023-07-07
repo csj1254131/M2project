@@ -1058,6 +1058,14 @@ ClearHumCustVar 神龙之力|庇护之力|狂暴保护 0
 SetOffTimer 255
 #CALL [\元素刷新.txt] @元素刷新
 
+//占领行会
+#if
+equal <$MAPTITLE> 0150
+#act
+sendmsg 0 当前占领行会：<$OWNERGUILD>
+
+
+
 [@攻城奖励前统计]
 #If
 Checkofguild <$Ownerguild>
@@ -1070,7 +1078,7 @@ Not Equal <$Hfcount> <$Str(G490)>
 Checkofguild <$Ownerguild>
 Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
 #Act
-Div N$沙城员火龙 1400 <$Guild(参加沙巴克人数)>
+Div N$沙城员火龙 10000 <$Guild(参加沙巴克人数)>
 Div N$沙城员元宝 3500000 <$Guild(参加沙巴克人数)>
 MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
 MailGIVE 火龙币 <$Str(N$沙城员火龙)>
@@ -1086,7 +1094,7 @@ Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
 #Act
 Mov N$总沙城人数 <$Str(G495)>
 Dec N$总沙城人数 <$Str(G498)>
-Div N$沙城员火龙 600 <$Str(N$总沙城人数)>
+Div N$沙城员火龙 1800 <$Str(N$总沙城人数)>
 Div N$沙城员元宝 1500000 <$Str(N$总沙城人数)>
 MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
 MailGIVE 火龙币 <$Str(N$沙城员火龙)>
