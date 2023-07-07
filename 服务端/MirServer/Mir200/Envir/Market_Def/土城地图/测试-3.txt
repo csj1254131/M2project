@@ -3,7 +3,7 @@
 #ACT
 #SAY
 <Img|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|bg=1|loadCount=4|img=public/bg_main_6.png|esc=1|show=4>
-<Img|id=10|children={11,12,13,14,15,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Img|id=10|children={11,12,13,14,15,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
 <Img|id=11|x=135|y=60|height=449|img=custom/hl/hl_ui/fg_1.png>
 <Text|id=12|a=0|x=347|y=5|outlinecolor=0|outline=2|size=20|color=103|text=万能商人>
 <Button|id=13|x=770|y=5|color=103|pimg=custom/hl/hl_ui/close_02.png|size=18|nimg=custom/hl/hl_ui/close_01.png|link=@exit>
@@ -23,6 +23,8 @@
 <Button|id=31|x=142|y=230|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=开启天降元宝|link=@天降元宝测试>
 <Button|id=32|x=268|y=230|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=开启勇闯炼狱|link=@勇闯炼狱测试>
 <Button|id=33|x=394|y=230|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=开启夺宝奇兵|link=@夺宝奇兵测试>
+<Button|id=34|x=518|y=230|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=开启攻沙|link=@开启攻沙>
+<Button|id=35|x=639|y=230|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=结束攻沙|link=@攻城结束>
 
 [@拉起支付]
 #IF
@@ -98,6 +100,7 @@ SENDMSG 6 当前准备充值金额<$STR(N$累计比例)>
 MONEY 积分 + <$STR(N$累计比例)>
 MONEY 充值点 + <$STR(N$充值金额)>
 MONEY  VIP经验 + <$STR(N$充值金额)>
+MONEY  火龙币 + <$STR(N$累计比例)>
 SENDMSG 6 100000火龙币充值成功
 
 [@世界boss测试]
@@ -202,3 +205,71 @@ CHECKSKILL 护体神盾 ? 0
 PLAYEFFECT 17104 10 10 0 0 0
 #elseact
 sendmsg 0 你还未学习护体神盾
+
+
+
+[@开启攻沙]
+#If
+Large <$KFDAY> 1
+#Act
+AddAttackSabukAll 0
+AddToCastleWarListEx 沙巴克 *
+GMEXECUTE ForcedWallConQuestWar
+Scenevibration 1 1 1
+SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
+SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
+SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
+SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
+SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
+Sendcustommsg 0 征战沙巴克活动开始了... 0 249 500 333
+Sendcustommsg 0 荣誉、瓜分沙城奖池,希望大家勇于参与... 0 249 500 333
+Sendcustommsg 0 征战沙巴克活动开始了... 0 249 500 333
+Sendmsgnew 255 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1 10
+GMEXECUTE 开始提问 @开启沙城狂暴保护
+
+
+
+[@攻城结束]
+#If
+Large <$KFDAY> 1
+#Act
+Mov A491 <$LORD>
+Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
+Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
+Sendmsgnew 255 0 征战沙巴克活动结束了,请耐心等待奖励发放... 1 10
+Gmexecute 开始提问 @清理狂暴保护
+
+
+[@攻城统计]
+#If
+Large <$KFDAY> 1
+#Act
+Gmexecute 开始提问 @攻城奖励前统计
+
+[@攻城奖励]
+#If
+Large <$KFDAY> 1
+#Act
+Gmexecute 开始提问 @攻城奖励发放
+
+[@清理沙城捐献平时]
+#If
+Large <$KFDAY> 1
+#Act
+Mov G495 0
+Mov G498 0
+Clearnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+Gmexecute 开始提问 @清理沙城捐献平时xx
+
+
+[@清理沙城捐献]
+#If
+Equal <$Hfcount> <$Str(G490)>
+#Act
+Inc G490 1
+Mov G492 0
+Mov G493 0
+Mov G494 0
+Mov G495 0
+Mov G498 0
+Gmexecute 开始提问 @清理沙城捐献xx

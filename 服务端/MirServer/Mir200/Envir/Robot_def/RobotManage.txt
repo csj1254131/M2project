@@ -145,7 +145,7 @@ SENDMSG 1 游戏虽然好玩，也别忘了是不是该休息了
 
 [@攻城提示]
 #If
-Large <$Hfcount> 0
+Large <$KFDAY> 1
 #Act
 AddAttackSabukAll 0
 Scenevibration 1 1 1
@@ -165,7 +165,7 @@ GMEXECUTE 开始提问 @清理城主顶戴
 
 [@攻城开始]
 #If
-Large <$Hfcount> 0
+Large <$KFDAY> 1
 #Act
 Scenevibration 1 1 1
 SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
@@ -183,7 +183,7 @@ GMEXECUTE 开始提问 @开启沙城狂暴保护
 
 [@攻城结束]
 #If
-Large <$Hfcount> 0
+Large <$KFDAY> 1
 #Act
 Mov A491 <$LORD>
 Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
@@ -194,19 +194,19 @@ Gmexecute 开始提问 @清理狂暴保护
 
 [@攻城统计]
 #If
-Large <$Hfcount> 0
+Large <$KFDAY> 1
 #Act
 Gmexecute 开始提问 @攻城奖励前统计
 
 [@攻城奖励]
 #If
-Large <$Hfcount> 0
+Large <$KFDAY> 1
 #Act
 Gmexecute 开始提问 @攻城奖励发放
 
 [@清理沙城捐献平时]
 #If
-Large <$Hfcount> 0
+Large <$KFDAY> 1
 #Act
 Mov G495 0
 Mov G498 0
