@@ -19,7 +19,7 @@ mov N$剩余首爆数量 <$cfg_shoubao(<$STR(n$物品序号)>_3)>
 DEC N$剩余首爆数量 <$STR(N$数量)>
 DEC N$剩余首爆数量 1
 MONEY <$cfg_shoubao(<$STR(n$物品序号)>_2)> + <$cfg_shoubao(<$STR(n$物品序号)>_1)>
-sendmsg 0 251 249 恭喜<$USERNAME>击杀【<$CURRRTARGETNAME>】，获得首爆装备【<$CURRTEMNAME>】,奖励<$cfg_shoubao(<$STR(n$物品序号)>_2)><$cfg_shoubao(<$STR(n$物品序号)>_1)>！当前剩余可领取首爆数量：<$STR(N$剩余首爆数量)>件
+sendmsg 0 251 249 恭喜<$USERNAME>击杀【<$CURRRTARGETNAME>】，获得首爆装备【<$CURRTEMNAME>】,奖励<$cfg_shoubao(<$STR(n$物品序号)>_2)><$cfg_shoubao(<$STR(n$物品序号)>_1)>！当前装备剩余首爆数量：<$STR(N$剩余首爆数量)>件
 inc N$数量 1
 WriteConfigFileItem ..\QuestDiary\已爆物品.txt <$CURRTEMNAME> 限制数 <$STR(N$数量)>
 

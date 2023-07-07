@@ -141,7 +141,6 @@ break
 #IF
 EQUAL <$STR(U91)> 0
 #ACT
-SENDMSG 0 开始任务
 NEWPICKTASK 1
 GiveOnItem 1 木剑 1
 GiveOnItem 12 魔血石 1

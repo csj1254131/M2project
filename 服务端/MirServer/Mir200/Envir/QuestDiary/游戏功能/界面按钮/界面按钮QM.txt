@@ -19,19 +19,19 @@ BREAK
  ADDBUTTON 4 3690 <$STR(S$Pk值按钮)> 150 100
 
 
-MOV S$主界面按钮 <Button|x=-130|y=-445|mimg=private/Main/bottom/1900013010.png|color=255|nimg=private/Main/bottom/1900013010.png|link=@角色>
+MOV S$主界面按钮 <Button|x=-130|y=-445|mimg=private/Main/bottom/1900013010.png|color=255|nimg=private/main/bottom/1900013010.png|link=@角色>
 ADDBUTTON 104 2 <$STR(S$主界面按钮)>
-MOV S$主界面按钮 <Button|x=-63|y=-445|mimg=private/Main/bottom/1900013011.png|color=255|nimg=private/Main/bottom/1900013011.png|link=@背包>
+MOV S$主界面按钮 <Button|x=-63|y=-445|mimg=private/Main/bottom/1900013011.png|color=255|nimg=private/main/bottom/1900013011.png|link=@背包>
 ADDBUTTON 104 3 <$STR(S$主界面按钮)>
-MOV S$主界面按钮 <Button|x=22|y=30|mimg=private/Main/bottom/1900013012.png|color=255|nimg=private/Main/bottom/1900013012.png|link=@技能>
+MOV S$主界面按钮 <Button|x=22|y=30|mimg=private/Main/bottom/1900013012.png|color=255|nimg=private/main/bottom/1900013012.png|link=@技能>
 ADDBUTTON 109 1 <$STR(S$主界面按钮)>
-MOV S$主界面按钮 <Button|x=92|y=30|mimg=private/Main/bottom/1900013014.png|color=255|nimg=private/Main/bottom/1900013014.png|link=@组队>
+MOV S$主界面按钮 <Button|x=92|y=30|mimg=private/Main/bottom/1900013014.png|color=255|nimg=private/main/bottom/1900013014.png|link=@组队>
 ADDBUTTON 109 2 <$STR(S$主界面按钮)>
-MOV S$主界面按钮 <Button|x=162|y=30|mimg=private/Main/bottom/1900013013.png|color=255|nimg=private/Main/bottom/1900013013.png|link=@行会>
+MOV S$主界面按钮 <Button|x=162|y=30|mimg=private/Main/bottom/1900013013.png|color=255|nimg=private/main/bottom/1900013013.png|link=@行会>
 ADDBUTTON 109 3 <$STR(S$主界面按钮)>
-MOV S$主界面按钮 <Button|x=22|y=100|mimg=private/Main/bottom/1900012586.png|color=255|nimg=private/Main/bottom/1900012586.png|link=@拍卖行>
+MOV S$主界面按钮 <Button|x=22|y=100|mimg=private/Main/bottom/1900012586.png|color=255|nimg=private/main/bottom/1900012586.png|link=@拍卖行>
 ADDBUTTON 109 4 <$STR(S$主界面按钮)>
-MOV S$主界面按钮 <Button|x=22|y=100|mimg=private/Main/bottom/1900013016.png|color=255|nimg=private/Main/bottom/1900013016.png|link=@摆摊>
+MOV S$主界面按钮 <Button|x=22|y=100|mimg=private/Main/bottom/1900013016.png|color=255|nimg=private/main/bottom/1900013016.png|link=@摆摊>
 ADDBUTTON 109 5 <$STR(S$主界面按钮)>
 
 
