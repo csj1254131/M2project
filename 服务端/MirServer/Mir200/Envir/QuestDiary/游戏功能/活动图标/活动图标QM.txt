@@ -45,12 +45,6 @@ EQUAL S$福利红点_2 hd
 INC   S$图标1 <Img|id=30|x=55|y=5|img=custom/hl/hl_ui/hd.png>
 addbutton 102 1 <$STR(S$图标1)>
 
-#IF
-LARGE G100 0
-#ACT
-INC   S$图标1 <Button|id=7|children={60}|x=-220|nimg=custom/hl/top/4.png|link=@开服活动>
-INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
-
 
 
 

@@ -121,11 +121,7 @@ Not EQUAL s$赞助红点
 #ACT
 INC S$图标1 <Img|id=20|x=55|y=5|img=custom/hl/hl_ui/icon_red_01.png>
 
-#IF
-LARGE G100 0
-#ACT
-INC   S$图标1 <Button|id=7|children={60}|x=-220|nimg=custom/hl/top/4.png|link=@开服活动>
-INC   S$图标1 <Img|id=60|x=55|y=5|img=custom/hl/hl_ui/<$Str(s$活动红点)>.png>
+
 
 #IF
 NOT EQUAL S$福利红点_1 hd
