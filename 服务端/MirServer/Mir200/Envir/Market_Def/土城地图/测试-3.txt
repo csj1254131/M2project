@@ -25,6 +25,7 @@
 <Button|id=33|x=394|y=230|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=开启夺宝奇兵|link=@夺宝奇兵测试>
 <Button|id=34|x=518|y=230|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=开启攻沙|link=@开启攻沙>
 <Button|id=35|x=639|y=230|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=结束攻沙|link=@攻城结束>
+<Button|id=36|x=142|y=290|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=礼包码|link=@礼包码领取>
 
 [@拉起支付]
 #IF
@@ -359,4 +360,66 @@ Checkvar Human 沙城捐献 =
 Mapmove 3 335 327 3
 Sendmsg 9 你没有开启【沙城捐献】不能参加攻城活动...
 Sendmsg 6 你没有开启【沙城捐献】不能参加攻城活动...
+
+
+
+[@礼包码领取]
+<Img|width=620|height=300|img=public/bg_npc_01.png|bg=1|scale9r=10|scale9t=10|scale9b=10|reset=1|scale9l=10|move=0>
+<Layout|x=597|y=3|width=80|height=80|link=@exit>
+<Button|x=619|y=2.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+<Text|a=0|x=44.0|y=32.0|tipsx=10|tipsy=80|color=254|size=13|text=为方便玩家及时了解本服游戏动态,关注微信公众号可领取福利大礼包>
+<Text|a=0|x=45.0|y=51.0|tipsx=10|tipsy=80|color=254|size=13|text=为方便玩家及时了解本服游戏动态,关注微信公众号可领取福利大礼包>
+<Text|a=0|x=45.0|y=71.0|tipsx=10|tipsy=80|color=254|size=13|text=为方便玩家及时了解本服游戏动态,关注微信公众号可领取福利大礼包>
+<Text|a=0|x=236.0|y=93.0|tipsx=10|tipsy=80|color=249|size=15|text=军哥网络品牌出品→稳定开放←>
+<Text|a=0|x=175.0|y=109.0|tipsx=10|tipsy=80|color=254|size=15|text=关注本服微信公众号 大量豪礼免费送>
+<Text|a=0|x=175.0|y=129.0|tipsx=10|tipsy=80|color=254|size=15|text=提示：>
+<Text|a=0|x=241.0|y=129.0|tipsx=10|tipsy=80|color=87|size=15|text=请使用微信扫描二维码添加微信公众号！！>
+<Text|a=0|x=175.0|y=149.0|tipsx=10|tipsy=80|color=254|size=15|text=提示：>
+<Text|a=0|x=241.0|y=149.0|tipsx=10|tipsy=80|color=87|size=15|text=关注后点右下礼包码按钮获取>
+<Text|a=0|x=463.0|y=160.0|tipsx=10|tipsy=80|color=255|size=15|text=:>
+<Text|a=0|x=240.0|y=168.0|tipsx=10|tipsy=80|color=151|size=15|text=８位数动态礼包码>
+<Text|a=0|x=175.0|y=187.0|tipsx=10|tipsy=80|color=254|size=15|text=提示：>
+<Text|a=0|x=241.0|y=187.0|tipsx=10|tipsy=80|color=87|size=15|text=游戏问题也可以通过微信号反馈.>
+<Text|a=0|x=175.0|y=207.0|tipsx=10|tipsy=80|color=90|size=18|text=----------------------------------->
+<Text|a=0|x=175.0|y=224.0|tipsx=10|tipsy=80|color=250|size=15|text=1、请点击下方按钮输入您的微信兑换码.>
+<Text|a=0|x=175.0|y=244.0|tipsx=10|tipsy=80|color=250|size=15|text=2、每个角色只允许兑换一次微信兑换码.>
+<Text|a=0|x=175.0|y=264.0|tips={每个礼包码只限使用一次/FCOLOR=250}^{每种礼包只能领取一次/FCOLOR=250}^{赠送:永久杀怪爆率+100%/FCOLOR=245}|tipsx=55.0|tipsy=35.0|size=15|color=151|text=输入微信大礼包激活码|link=@@InPutString20>
+
+
+[@InPutString20]
+#IF
+CheckContainsText <$STR(S20)> @
+#ACT
+MESSAGEBOX \\输入含有非法字符，你已被T下线
+KICK
+break
+
+#IF
+CheckContainsText <$STR(S20)> qq
+#act
+goto @qq礼包检测
+#elseact
+sendmsg 0 输入礼包码不正确
+
+
+
+
+[@qq礼包检测]
+#IF
+NOT Check [128] 0
+#ACT
+MESSAGEBOX \\你已经领取过该礼包。
+break
+#IF
+Check [128] 0
+CHECKTEXTLIST ..\QuestDiary\礼包码\礼包码1.txt <$STR(S20)>
+#ACT
+SET [128] 1
+
+MESSAGEBOX \\提示：正确！恭喜您获得微信特权礼包！
+break
+#ELSEACT 
+MESSAGEBOX \\提示：礼包码不对，请重新输入。
+break
+
 
