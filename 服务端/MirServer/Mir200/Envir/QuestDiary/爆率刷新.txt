@@ -131,7 +131,6 @@ KILLMONBURSTRATE
 MOV N$叠加后爆率 0
 mov n$B_特权爆率 0
 mov n$狂暴爆率 0
-
 }
 
 
