@@ -69,6 +69,7 @@ INC   S$图标1 <Button|id=5|x=-60|nimg=custom/hl/top/11.png|link=@调用沙捐>
 INC   S$图标1 <Button|id=6|children={600}|x=-140|nimg=custom/hl/top/9.png|link=@我要变强>
 inc   S$图标1 <Button|id=2|children={20}|x=180|nimg=custom/hl/top/1.png|link=@会员>
 inc   S$图标1 <Button|id=8|x=-300|nimg=custom/hl/top/24.png|link=@怪物>
+INC   S$图标1 <Button|id=7|x=-220|nimg=custom/hl/top/4.png|link=@开服活动>
 Goto @执行活动按钮
 addbutton 102 1 <$STR(S$图标1)>
 BREAK

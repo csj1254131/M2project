@@ -25,6 +25,15 @@ WriteConfigFileItem ..\QuestDiary\“—±¨ŒÔ∆∑.txt <$CURRTEMNAME> œﬁ÷∆ ˝ <$STR(N$ ˝¡
 
 
 
+//10‘™∫Ï∞¸ π”√ºÏ≤‚
+[@StdModeFunc997]
+#IF
+#Act
+money ª¡˙±“ + 1000
+MONEY ≥‰÷µµ„ + 10
+money VIPæ≠—È + 10
+
+
 
 [@ø™∆Ù∫–◊”]
 #IF
@@ -1392,10 +1401,6 @@ SETSPRITEMODE 2
 RELEASESPRITE
 sendmsg 6 µ±«∞µÿÕº≤ª‘ –Ì–Ø¥¯ ∞»°–°æ´¡È£¨–°æ´¡È“— ’ªÿ°£
 
-#if
-ISONMAP 0150
-#act
-sendmsg 0 µ±«∞’º¡Ï––ª·£∫<$OWNERGUILD>
 
 
 
@@ -1403,7 +1408,9 @@ sendmsg 0 µ±«∞’º¡Ï––ª·£∫<$OWNERGUILD>
 #IF
 ISONMAP EM000
 #ACT
-setautogetexp 1 5000 0 EM000 0 9999999 150
+setautogetexp 1 20000 0 EM000 0 9999999 150
+#elseact
+setautogetexp 1 10000 0 * 0 9999999 100
 
 #IF
 NOT CheckContainsText <$map> syt
