@@ -1147,12 +1147,6 @@ MOV S$选择_装备 <$STR(S$默认按钮)>
 MOV S$选择_怪物 <$STR(S$默认按钮)>
 MOV S$选择_技能 <$STR(S$默认按钮)>
 MOV S$选择_<$STR(S$当前选择)> <$STR(S$激活按钮)>
-GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 44 S$荣耀装备 |
-GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 46 S$永恒装备 |
-GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 48 S$龙腾装备 |
-GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 50 S$盛世装备 |
-GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 52 S$辉煌装备 |
-GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 54 S$火龙装备 |
 GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 258 S$血光摄魂 |
 GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 260 S$嗜血狂杀 |
 GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 262 S$纵横天下 |
@@ -1190,96 +1184,6 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 276 S$唯我独尊 |
 ;<RText|id=5|x=150|y=110|color=251|size=18|text=神器分<残神器/FCOLOR=250>和<成品神器/FCOLOR=250>>
 ;<RText|id=6|x=150|y=140|color=254|size=18|text=<神器/FCOLOR=250>可晋级为<上古神器/FCOLOR=254>，<上古神器/FCOLOR=254>可以晋级为<荣耀神器/FCOLOR=253>>
 <ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
-
-<Layout|id=101|children={1011,1012}|width=590|height=40|color=x>
-<Img|id=1011|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1012|a=4|percentx=50|percenty=50|color=254|size=18|text=荣耀套装>
-<Layout|id=102|a=2|children={1021,1022,1023,1024,1025,1026,1027,1028,1029,10211}|width=590|height=130|color=x>
-<ItemShow|id=1021|itemid=<$STR(S$荣耀装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
-<ItemShow|id=1022|itemid=<$STR(S$荣耀装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
-<ItemShow|id=1023|itemid=<$STR(S$荣耀装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
-<ItemShow|id=1024|itemid=<$STR(S$荣耀装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
-<ItemShow|id=1025|itemid=<$STR(S$荣耀装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
-<ItemShow|id=1026|itemid=<$STR(S$荣耀装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
-<ItemShow|id=1027|itemid=<$STR(S$荣耀装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
-<ItemShow|id=1028|itemid=<$STR(S$荣耀装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
-<ItemShow|id=1029|itemid=<$STR(S$荣耀装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
-<ItemShow|id=10211|itemid=<$STR(S$荣耀装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
-
-<Layout|id=103|children={1031,1032}|width=590|height=40|color=x>
-<Img|id=1031|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1032|a=4|percentx=50|percenty=50|color=254|size=18|text=永恒套装>
-<Layout|id=104|a=2|children={1041,1042,1043,1044,1045,1046,1047,1048,1049,10411}|width=590|height=130|color=x>
-<ItemShow|id=1041|itemid=<$STR(S$永恒装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
-<ItemShow|id=1042|itemid=<$STR(S$永恒装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
-<ItemShow|id=1043|itemid=<$STR(S$永恒装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
-<ItemShow|id=1044|itemid=<$STR(S$永恒装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
-<ItemShow|id=1045|itemid=<$STR(S$永恒装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
-<ItemShow|id=1046|itemid=<$STR(S$永恒装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
-<ItemShow|id=1047|itemid=<$STR(S$永恒装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
-<ItemShow|id=1048|itemid=<$STR(S$永恒装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
-<ItemShow|id=1049|itemid=<$STR(S$永恒装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
-<ItemShow|id=10411|itemid=<$STR(S$永恒装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
-
-<Layout|id=105|children={1051,1052}|width=590|height=40|color=x>
-<Img|id=1051|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1052|a=4|percentx=50|percenty=50|color=254|size=18|text=龙腾套装>
-<Layout|id=106|a=2|children={1061,1062,1063,1064,1065,1066,1067,1068,1069,10611}|width=590|height=130|color=x>
-<ItemShow|id=1061|itemid=<$STR(S$龙腾装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
-<ItemShow|id=1062|itemid=<$STR(S$龙腾装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
-<ItemShow|id=1063|itemid=<$STR(S$龙腾装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
-<ItemShow|id=1064|itemid=<$STR(S$龙腾装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
-<ItemShow|id=1065|itemid=<$STR(S$龙腾装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
-<ItemShow|id=1066|itemid=<$STR(S$龙腾装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
-<ItemShow|id=1067|itemid=<$STR(S$龙腾装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
-<ItemShow|id=1068|itemid=<$STR(S$龙腾装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
-<ItemShow|id=1069|itemid=<$STR(S$龙腾装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
-<ItemShow|id=10611|itemid=<$STR(S$龙腾装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
-
-<Layout|id=107|children={1071,1072}|width=590|height=40|color=x>
-<Img|id=1071|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1072|a=4|percentx=50|percenty=50|color=254|size=18|text=盛世套装>
-<Layout|id=108|a=2|children={1081,1082,1083,1084,1085,1086,1087,1088,1089,10811}|width=590|height=130|color=x>
-<ItemShow|id=1081|itemid=<$STR(S$盛世装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
-<ItemShow|id=1082|itemid=<$STR(S$盛世装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
-<ItemShow|id=1083|itemid=<$STR(S$盛世装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
-<ItemShow|id=1084|itemid=<$STR(S$盛世装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
-<ItemShow|id=1085|itemid=<$STR(S$盛世装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
-<ItemShow|id=1086|itemid=<$STR(S$盛世装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
-<ItemShow|id=1087|itemid=<$STR(S$盛世装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
-<ItemShow|id=1088|itemid=<$STR(S$盛世装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
-<ItemShow|id=1089|itemid=<$STR(S$盛世装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
-<ItemShow|id=10811|itemid=<$STR(S$盛世装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
-
-<Layout|id=109|children={1091,1092}|width=590|height=40|color=x>
-<Img|id=1091|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1092|a=4|percentx=50|percenty=50|color=254|size=18|text=辉煌套装>
-<Layout|id=110|a=2|children={1101,1102,1103,1104,1105,1106,1107,1108,1109,11011}|width=590|height=130|color=x>
-<ItemShow|id=1101|itemid=<$STR(S$辉煌装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
-<ItemShow|id=1102|itemid=<$STR(S$辉煌装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
-<ItemShow|id=1103|itemid=<$STR(S$辉煌装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
-<ItemShow|id=1104|itemid=<$STR(S$辉煌装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
-<ItemShow|id=1105|itemid=<$STR(S$辉煌装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
-<ItemShow|id=1106|itemid=<$STR(S$辉煌装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
-<ItemShow|id=1107|itemid=<$STR(S$辉煌装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
-<ItemShow|id=1108|itemid=<$STR(S$辉煌装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
-<ItemShow|id=1109|itemid=<$STR(S$辉煌装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
-<ItemShow|id=11011|itemid=<$STR(S$辉煌装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
-
-<Layout|id=111|children={1111,1112}|width=590|height=40|color=x>
-<Img|id=1111|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1112|a=4|percentx=50|percenty=50|color=254|size=18|text=火龙套装>
-<Layout|id=112|a=2|children={1121,1122,1123,1124,1125,1126,1127,1128,1129,11211}|width=590|height=130|color=x>
-<ItemShow|id=1121|itemid=<$STR(S$火龙装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
-<ItemShow|id=1122|itemid=<$STR(S$火龙装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
-<ItemShow|id=1123|itemid=<$STR(S$火龙装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
-<ItemShow|id=1124|itemid=<$STR(S$火龙装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
-<ItemShow|id=1125|itemid=<$STR(S$火龙装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
-<ItemShow|id=1126|itemid=<$STR(S$火龙装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
-<ItemShow|id=1127|itemid=<$STR(S$火龙装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
-<ItemShow|id=1128|itemid=<$STR(S$火龙装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
-<ItemShow|id=1129|itemid=<$STR(S$火龙装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
-<ItemShow|id=11211|itemid=<$STR(S$火龙装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
 
 <Layout|id=113|children={1131,1132}|width=590|height=40|color=x>
 <Img|id=1131|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
