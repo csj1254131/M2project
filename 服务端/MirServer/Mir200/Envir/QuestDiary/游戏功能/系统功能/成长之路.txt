@@ -99,7 +99,7 @@ INC S$显示内容 <ListView|id=5|children={51,52,53,54,55,56,57,58,59,60,61,62,63,6
 INC S$显示内容 <RText|id=51|color=251|size=18|text=一、游戏前提（新手攻略）>
 INC S$显示内容 <RText|id=52|color=255|size=17|text=1.进入游戏后随主线任务前往土城后，先前往996盒子<领取礼包码和每日奖励。/FCOLOR=58>>
 INC S$显示内容 <RText|id=53|color=255|size=17|text=2.通过土城NPC<Q群礼包/FCOLOR=58>领取Q群礼包，获得大量奖励。>
-INC S$显示内容 <RText|id=54|color=255|size=17|text=3.顶部福利按钮<每日签到/FCOLOR=58>，获得首日奖励500W经验，快速提升角色等级。>
+INC S$显示内容 <RText|id=54|color=255|size=17|text=3.顶部福利按钮<每日签到/FCOLOR=58>，获得首日奖励拾取小精灵（3小时），提升刷怪效率。>
 INC S$显示内容 <RText|id=55|color=255|size=17|text=4.完成每日活动，活跃度达到一定值可以领取<活跃度奖励。/FCOLOR=58>>
 INC S$显示内容 <RText|id=56|color=255|size=17|text=5.每日保持2小时在线，领取在线奖励及累计登录奖励，更可获得稀有礼盒<神/FCOLOR=58>>
 INC S$显示内容 <RText|id=57|color=255|size=17|text=<秘惊喜礼包，/FCOLOR=58>开启有几率获得限定时装<[幻武]风花雪月/FCOLOR=58>等稀有奖励。>

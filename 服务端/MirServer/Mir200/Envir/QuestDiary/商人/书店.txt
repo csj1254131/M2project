@@ -183,7 +183,7 @@ Mov S$技能名称_8 幽灵盾
 Mov S$技能名称_9 神圣战甲术
 Mov S$技能名称_10 心灵启示
 Mov S$技能名称_11 困魔咒
-Mov S$技能名称_12 召唤神兽
+Mov S$技能名称_12 召唤白虎
 GetDBItemFieldValue <$Str(S$技能名称_1)> Idx N$技能ID_1
 GetDBItemFieldValue <$Str(S$技能名称_2)> Idx N$技能ID_2
 GetDBItemFieldValue <$Str(S$技能名称_3)> Idx N$技能ID_3

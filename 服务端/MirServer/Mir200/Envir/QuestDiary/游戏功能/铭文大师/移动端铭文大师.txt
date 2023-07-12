@@ -3,16 +3,16 @@
 
 #IF
 #ACT
-MOV S$C_排除共存
+MOV S$C_排除共存 0
 
 #IF
 CheckContainsText <$STR(T90)> 月神印
 #ACT
-INC S$C_排除共存 月光印
+;INC S$C_排除共存 月光印
 #IF
 CheckContainsText <$STR(T90)> 月光印
 #ACT
-INC S$C_排除共存 月神印
+;INC S$C_排除共存 月神印
 
 #IF
 CHECKJOB Warrior
@@ -199,7 +199,7 @@ EQUAL <$STR(S$C_铭文说明文字)> 打开
 #say
 <Text|id=71|outline=1|outlinecolor=0|a=0|x=-100|y=330|color=224|size=20|text=操作说明:>
 <Text|id=72|outline=1|outlinecolor=0|a=0|x=-10|y=332|color=103|size=18|text=灰色的八卦按钮代表八卦位尚未解封,点击按钮即可进行解封>
-<Text|id=73|outline=1|outlinecolor=0|a=0|x=-10|y=355|color=103|size=18|text=点击高亮的八卦按钮可进行铭文镶嵌与更换>
+<Text|id=73|outline=1|outlinecolor=0|a=0|x=-10|y=355|color=103|size=18|text=点击高亮的八卦按钮可进行铭文镶嵌>
 <Text|id=74|outline=1|outlinecolor=0|a=0|x=-10|y=380|color=103|size=18|text=点击已经镶嵌的铭文图案即可取回铭文>
 <Text|id=75|outline=1|outlinecolor=0|a=0|x=-10|y=405|color=103|size=18|text=只能镶嵌本职业的铭文>
 
@@ -301,94 +301,6 @@ EQUAL <$STR(S$C_铭文添加界面)> 打开
 <Img|id=69|img=custom/hl/mingwen/<$STR(S$C_解封z)>.png|x=<$STR(S$C_解封x)>|y=<$STR(S$C_解封y)>>
 
 
-#IF
-EQUAL <$STR(S$C_铭文背包)> 选中铭文
-EQUAL <$STR(S$C_铭文位置选择)> 一
-NOT EQUAL <$STR(T91)>
-#ACT
-#SAY
-<Layout|id=100|children={801,802,803,804,805,806,807,808,809,810}|width=610|height=140|direction=1|bounce=0|margin=1|default=1|x=141|y=370> 
-<ItemShow|id=802|itemid=<$STR(T91)>|scale=1.0|x=200|y=5|itemcount=1|showtips=1|bgtype=1>
-<Img|id=803|x=285|y=10|img=custom/hl/hl_ui/zyjt2.png>
-<DBItemShow|id=804|makeindex=<$STR(N$C_更新铭文ID)>|scale=1.0|x=340|y=5|showtips=1|bgtype=1>
-<Button|x=240|y=85|id=806|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定更换|color=103|size=18|link=@移动端铭文更换>
-#IF
-EQUAL <$STR(S$C_铭文背包)> 选中铭文
-EQUAL <$STR(S$C_铭文位置选择)> 二
-NOT EQUAL <$STR(T92)>
-#ACT
-#SAY
-<Layout|id=100|children={801,802,803,804,805,806,807,808,809,810}|width=610|height=140|direction=1|bounce=0|margin=1|default=1|x=141|y=370> 
-<ItemShow|id=802|itemid=<$STR(T92)>|scale=1.0|x=200|y=5|itemcount=1|showtips=1|bgtype=1>
-<Img|id=803|x=285|y=10|img=custom/hl/hl_ui/zyjt2.png>
-<DBItemShow|id=804|makeindex=<$STR(N$C_更新铭文ID)>|scale=1.0|x=340|y=5|showtips=1|bgtype=1>
-<Button|x=240|y=85|id=806|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定更换|color=103|size=18|link=@移动端铭文更换>
-#IF
-EQUAL <$STR(S$C_铭文背包)> 选中铭文
-EQUAL <$STR(S$C_铭文位置选择)> 三
-NOT EQUAL <$STR(T93)>
-#ACT
-#SAY
-<Layout|id=100|children={801,802,803,804,805,806,807,808,809,810}|width=610|height=140|direction=1|bounce=0|margin=1|default=1|x=141|y=370> 
-<ItemShow|id=802|itemid=<$STR(T93)>|scale=1.0|x=200|y=5|itemcount=1|showtips=1|bgtype=1>
-<Img|id=803|x=285|y=10|img=custom/hl/hl_ui/zyjt2.png>
-<DBItemShow|id=804|makeindex=<$STR(N$C_更新铭文ID)>|scale=1.0|x=340|y=5|showtips=1|bgtype=1>
-<Button|x=240|y=85|id=806|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定更换|color=103|size=18|link=@移动端铭文更换>
-#IF
-EQUAL <$STR(S$C_铭文背包)> 选中铭文
-EQUAL <$STR(S$C_铭文位置选择)> 四
-NOT EQUAL <$STR(T94)>
-#ACT
-#SAY
-<Layout|id=100|children={801,802,803,804,805,806,807,808,809,810}|width=610|height=140|direction=1|bounce=0|margin=1|default=1|x=141|y=370> 
-<ItemShow|id=802|itemid=<$STR(T94)>|scale=1.0|x=200|y=5|itemcount=1|showtips=1|bgtype=1>
-<Img|id=803|x=285|y=10|img=custom/hl/hl_ui/zyjt2.png>
-<DBItemShow|id=804|makeindex=<$STR(N$C_更新铭文ID)>|scale=1.0|x=340|y=5|showtips=1|bgtype=1>
-<Button|x=240|y=85|id=806|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定更换|color=103|size=18|link=@移动端铭文更换>
-#IF
-EQUAL <$STR(S$C_铭文背包)> 选中铭文
-EQUAL <$STR(S$C_铭文位置选择)> 五
-NOT EQUAL <$STR(T95)>
-#ACT
-#SAY
-<Layout|id=100|children={801,802,803,804,805,806,807,808,809,810}|width=610|height=140|direction=1|bounce=0|margin=1|default=1|x=141|y=370> 
-<ItemShow|id=802|itemid=<$STR(T95)>|scale=1.0|x=200|y=5|itemcount=1|showtips=1|bgtype=1>
-<Img|id=803|x=285|y=10|img=custom/hl/hl_ui/zyjt2.png>
-<DBItemShow|id=804|makeindex=<$STR(N$C_更新铭文ID)>|scale=1.0|x=340|y=5|showtips=1|bgtype=1>
-<Button|x=240|y=85|id=806|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定更换|color=103|size=18|link=@移动端铭文更换>
-#IF
-EQUAL <$STR(S$C_铭文背包)> 选中铭文
-EQUAL <$STR(S$C_铭文位置选择)> 六
-NOT EQUAL <$STR(T96)>
-#ACT
-#SAY
-<Layout|id=100|children={801,802,803,804,805,806,807,808,809,810}|width=610|height=140|direction=1|bounce=0|margin=1|default=1|x=141|y=370> 
-<ItemShow|id=802|itemid=<$STR(T96)>|scale=1.0|x=200|y=5|itemcount=1|showtips=1|bgtype=1>
-<Img|id=803|x=285|y=10|img=custom/hl/hl_ui/zyjt2.png>
-<DBItemShow|id=804|makeindex=<$STR(N$C_更新铭文ID)>|scale=1.0|x=340|y=5|showtips=1|bgtype=1>
-<Button|x=240|y=85|id=806|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定更换|color=103|size=18|link=@移动端铭文更换>
-#IF
-EQUAL <$STR(S$C_铭文背包)> 选中铭文
-EQUAL <$STR(S$C_铭文位置选择)> 七
-NOT EQUAL <$STR(T97)>
-#ACT
-#SAY
-<Layout|id=100|children={801,802,803,804,805,806,807,808,809,810}|width=610|height=140|direction=1|bounce=0|margin=1|default=1|x=141|y=370> 
-<ItemShow|id=802|itemid=<$STR(T97)>|scale=1.0|x=200|y=5|itemcount=1|showtips=1|bgtype=1>
-<Img|id=803|x=285|y=10|img=custom/hl/hl_ui/zyjt2.png>
-<DBItemShow|id=804|makeindex=<$STR(N$C_更新铭文ID)>|scale=1.0|x=340|y=5|showtips=1|bgtype=1>
-<Button|x=240|y=85|id=806|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定更换|color=103|size=18|link=@移动端铭文更换>
-#IF
-EQUAL <$STR(S$C_铭文背包)> 选中铭文
-EQUAL <$STR(S$C_铭文位置选择)> 八
-NOT EQUAL <$STR(T98)>
-#ACT
-#SAY
-<Layout|id=100|children={801,802,803,804,805,806,807,808,809,810}|width=610|height=140|direction=1|bounce=0|margin=1|default=1|x=141|y=370> 
-<ItemShow|id=802|itemid=<$STR(T98)>|scale=1.0|x=200|y=5|itemcount=1|showtips=1|bgtype=1>
-<Img|id=803|x=285|y=10|img=custom/hl/hl_ui/zyjt2.png>
-<DBItemShow|id=804|makeindex=<$STR(N$C_更新铭文ID)>|scale=1.0|x=340|y=5|showtips=1|bgtype=1>
-<Button|x=240|y=85|id=806|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=确定更换|color=103|size=18|link=@移动端铭文更换>
 
 [@移动端铭文解封]
 
@@ -837,40 +749,39 @@ CheckBindMoney 元宝 ? 50000
 #ACT
 #ELSEACT
 SENDMSG 9 <font color='#FF0000'>提示：元宝不足!</font>
-break
 
 #IF
 EQUAL <$STR(S$C_解封位置选择)> 一
 #ACT
-MOV S$C_铭文删除位置 T91
+MOV S$C_铭文删除位置 <$STR(T91)>
 #IF
 EQUAL <$STR(S$C_解封位置选择)> 二
 #ACT
-MOV S$C_铭文删除位置 T92
+MOV S$C_铭文删除位置 <$STR(T92)>
 #IF
 EQUAL <$STR(S$C_解封位置选择)> 三
 #ACT
-MOV S$C_铭文删除位置 T93
+MOV S$C_铭文删除位置 <$STR(T93)>
 #IF
 EQUAL <$STR(S$C_解封位置选择)> 四
 #ACT
-MOV S$C_铭文删除位置 T94
+MOV S$C_铭文删除位置 <$STR(T94)>
 #IF
 EQUAL <$STR(S$C_解封位置选择)> 五
 #ACT
-MOV S$C_铭文删除位置 T95
+MOV S$C_铭文删除位置 <$STR(T95)>
 #IF
 EQUAL <$STR(S$C_解封位置选择)> 六
 #ACT
-MOV S$C_铭文删除位置 T96
+MOV S$C_铭文删除位置 <$STR(T96)>
 #IF
 EQUAL <$STR(S$C_解封位置选择)> 七
 #ACT
-MOV S$C_铭文删除位置 T97
+MOV S$C_铭文删除位置 <$STR(T97)>
 #IF
 EQUAL <$STR(S$C_解封位置选择)> 八
 #ACT
-MOV S$C_铭文删除位置 T98
+MOV S$C_铭文删除位置 <$STR(T98)>
 
 #IF
 #ACT
@@ -884,6 +795,7 @@ MOV S$C_铭文记录6
 MOV S$C_铭文记录7
 MOV S$C_铭文记录8
 ChangeBindMoney 元宝 50000
+dec T90 <$STR(S$C_铭文删除名字)>
 MOV S$C_铭文剩余 <$STR(T90)>
 MOV N$C_铭文计数 0
 GOTO @铭文记录分割
@@ -907,7 +819,6 @@ break
 #ACT
 INC N$C_铭文计数 1
 MOV S$C_铭文记录<$STR(N$C_铭文计数)> <$STR(S$C_铭文分割)>
-
 #IF
 EQUAL <$STR(S$C_铭文删除名字)> <$STR(S$C_铭文分割)>
 #ACT
@@ -935,6 +846,7 @@ INC T90 <$STR(S$C_铭文记录5)>,
 INC T90 <$STR(S$C_铭文记录6)>,
 INC T90 <$STR(S$C_铭文记录7)>,
 INC T90 <$STR(S$C_铭文记录8)>,
+sendmsg 7 铭文记录更新
 #CALL [\游戏功能\铭文大师\铭文登录触发.txt] @铭文登录触发
 GOTO @移动端铭文大师
 break

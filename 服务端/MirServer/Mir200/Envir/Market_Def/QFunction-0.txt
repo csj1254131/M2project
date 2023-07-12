@@ -34,6 +34,43 @@ MONEY 充值点 + 10
 money VIP经验 + 10
 
 
+//道士宝宝相关
+;[@Slavebb]
+
+[@MagSelfFunc2005]
+#if
+#act
+KILLCALLMOB 白虎 2 1
+KILLCALLMOB 白虎1 2 1
+RECALLMOB 白虎1 5 60000
+RECALLMOB 白虎 5 60000
+;GetSlaveInfo <$SLAVECOUNT> S$宝宝名字1 N$宝宝等级1 
+;SENDMSG 7 当前宝宝名字：<$STR(S$宝宝名字1)>
+;SENDMSG 7 当前宝宝数量：<$SLAVECOUNT>
+mov N$当前道术 <$MAXSC>
+mov N$当前道术下限 <$SC>
+;SENDMSG 7 当前道术<$STR(N$当前道术)>
+mov N$白虎增加攻击 2
+mov N$白虎增加血量 10
+mov N$白虎增加防御 1
+;SENDMSG 7 当前道术<$STR(N$白虎增加攻击)>
+;SENDMSG 7 当前道术<$STR(N$白虎增加血量)>
+;SENDMSG 7 当前道术<$STR(N$白虎增加防御)>
+MUL N$白虎增加攻击 <$STR(N$白虎增加攻击)>  <$STR(N$当前道术)>
+MUL N$白虎增加血量  <$STR(N$白虎增加血量)> <$STR(N$当前道术)>
+MUL N$白虎增加防御 <$STR(N$白虎增加防御)>  <$STR(N$当前道术下限)>
+;SENDMSG 7 当前道术 <$STR(N$白虎增加攻击)>
+CHANGEMOBABILITY 白虎 5 + <$STR(N$白虎增加攻击)> 9999999 1
+CHANGEMOBABILITY 白虎 1 + <$STR(N$白虎增加防御)> 9999999 1
+CHANGEMOBABILITY 白虎 11 + <$STR(N$白虎增加血量)> 9999999 1
+MEBabyHP 白虎 = <$STR(N$白虎增加血量)> 1
+MEBabyHP 白虎1 = <$STR(N$白虎增加血量)> 1
+SENDMSG 7 当前白虎攻击：<$STR(N$白虎增加攻击)> 防御：<$STR(N$白虎增加防御)>  血量：<$STR(N$白虎增加血量)> 
+break
+
+
+
+
 
 [@开启盒子]
 #IF
@@ -2095,116 +2132,79 @@ ChangeHumAbility 4 - 10 3
 sendmsg 9 【<$CURRRTARGETNAME>】的冰霜印对你生效，你的魔御减少10点，持续3秒！
 
 
-[@MagSelfFunc55]
-
+[@MagSelfFunc2011]
 #IF
-CheckContainsText <$STR(T90)> 月灵印
-NOT CheckContainsText <$STR(T90)> 月神印
-NOT CheckContainsText <$STR(T90)> 月光印
-small <$SLAVECOUNT> 2
-#ACT
-RECALLMOB 月灵 5 60000
+#act
+GOTO @高级月灵属性刷新
+goto @月光印属性增加
+goto @月神印属性增加
+SENDMSG 7 当前高级月灵攻击：<$STR(N$宝宝增加攻击)> 防御：<$STR(N$宝宝增加防御)>  血量：<$STR(N$宝宝增加血量)> 
 break
 
-#IF
+
+[@高级月灵属性刷新]
+#if
 NOT CheckContainsText <$STR(T90)> 月灵印
-CheckContainsText <$STR(T90)> 月光印
-small <$SLAVECOUNT> 1
-#ACT
-RECALLMOB 月灵 5 60000
-GOTO @月光印属性提升_月灵
-break
+#act
+KILLCALLMOB 高级月灵1 2 1
+KILLCALLMOB 高级月灵2 2 1
+RECALLMOB 高级月灵1 5 60000
+;RECALLMOB 高级月灵2 5 60000
+mov N$当前道术 <$MAXSC>
+mov N$当前道术下限 <$SC>
+mov N$宝宝增加攻击 3
+mov N$宝宝增加血量 20
+mov N$宝宝增加防御 1
+MUL N$宝宝增加攻击 <$STR(N$宝宝增加攻击)>  <$STR(N$当前道术)>
+MUL N$宝宝增加血量  <$STR(N$宝宝增加血量)> <$STR(N$当前道术)>
+MUL N$宝宝增加防御 <$STR(N$宝宝增加防御)>  <$STR(N$当前道术下限)>
+CHANGEMOBABILITY 高级月灵 5 + <$STR(N$宝宝增加攻击)> 9999999 1
+CHANGEMOBABILITY 高级月灵 1 + <$STR(N$宝宝增加防御)> 9999999 1
+CHANGEMOBABILITY 高级月灵 11 + <$STR(N$宝宝增加血量)> 9999999 1
+MEBabyHP 高级月灵1 = <$STR(N$宝宝增加血量)> 1
+;MEBabyHP 高级月灵2 = <$STR(N$宝宝增加血量)> 1
 
-#IF
+#if
 CheckContainsText <$STR(T90)> 月灵印
+#act
+KILLCALLMOB 高级月灵1 2 1
+KILLCALLMOB 高级月灵2 2 1
+RECALLMOB 高级月灵1 5 60000
+RECALLMOB 高级月灵2 5 60000
+mov N$当前道术 <$MAXSC>
+mov N$当前道术下限 <$SC>
+mov N$宝宝增加攻击 3
+mov N$宝宝增加血量 20
+mov N$宝宝增加防御 1
+MUL N$宝宝增加攻击 <$STR(N$宝宝增加攻击)>  <$STR(N$当前道术)>
+MUL N$宝宝增加血量  <$STR(N$宝宝增加血量)> <$STR(N$当前道术)>
+MUL N$宝宝增加防御 <$STR(N$宝宝增加防御)>  <$STR(N$当前道术下限)>
+CHANGEMOBABILITY 高级月灵 5 + <$STR(N$宝宝增加攻击)> 9999999 1
+CHANGEMOBABILITY 高级月灵 1 + <$STR(N$宝宝增加防御)> 9999999 1
+CHANGEMOBABILITY 高级月灵 11 + <$STR(N$宝宝增加血量)> 9999999 1
+MEBabyHP 高级月灵1 = <$STR(N$宝宝增加血量)> 1
+MEBabyHP 高级月灵2 = <$STR(N$宝宝增加血量)> 1
+
+[@月光印属性增加]
+#if
 CheckContainsText <$STR(T90)> 月光印
-small <$SLAVECOUNT> 1
-#ACT
-RECALLMOB 月灵 5 60000
-GOTO @月光印属性提升_月灵
+#act
+mov N$当前道术 <$MAXSC> 
+mov N$当前道术下限 <$SC>
+mov N$月光印增加攻击 1
+MUL N$月光印增加攻击 <$STR(N$月光印增加攻击)>  <$STR(N$当前道术)>
+inc N$宝宝增加攻击 <$STR(N$月光印增加攻击)>
+CHANGEMOBABILITY 高级月灵 5 + <$STR(N$月光印增加攻击)> 9999999 1
+sendmsg 7 月灵印生效，高级月灵攻击增加<$STR(N$月光印增加攻击)>
 break
 
-#IF
-CheckContainsText <$STR(T90)> 月灵印
-CheckContainsText <$STR(T90)> 月光印
-small <$SLAVECOUNT> 2
-CHECKSLAVENAME 月灵
-#ACT
-RECALLMOB 月灵8 5 60000
-GOTO @月光印属性提升_月灵八
+[@月神印属性增加]
+#if
+CheckContainsText <$STR(T90)> 月神印
+#act
+CHANGEMOBABILITY 高级月灵 14 + 30 9999999 
+sendmsg 7 月神印生效，高级月灵攻速增加30%
 break
-
-#IF
-NOT CheckContainsText <$STR(T90)> 月灵印
-CheckContainsText <$STR(T90)> 月神印
-small <$SLAVECOUNT> 1
-#ACT
-RECALLMOB 月灵 5 60000
-GOTO @月神印属性提升_月灵
-break
-
-#IF
-CheckContainsText <$STR(T90)> 月灵印
-CheckContainsText <$STR(T90)> 月神印
-small <$SLAVECOUNT> 1
-#ACT
-RECALLMOB 月灵 5 60000
-GOTO @月神印属性提升_月灵
-break
-
-#IF
-CheckContainsText <$STR(T90)> 月灵印
-CheckContainsText <$STR(T90)> 月神印
-small <$SLAVECOUNT> 2
-CHECKSLAVENAME 月灵
-#ACT
-RECALLMOB 月灵8 5 60000
-GOTO @月神印属性提升_月灵八
-break
-
-
-[@月神印属性提升_月灵]
-
-#IF
-CheckContainsText <$STR(T90)> 月神印
-#ACT
-MOV N$C_人物道术 <$MAXSC>
-DIV N$C_人物道术 3
-CHANGEMOBABILITY 月灵 6 + <$STR(N$C_人物道术)> 65000
-CHANGEMOBABILITY 月灵 14 + 10 65000
-sendmsg 9 【月神印】生效，你的月灵攻击提升：<$STR(N$C_人物道术)>，攻速提升10%！
-
-[@月神印属性提升_月灵八]
-
-#IF
-CheckContainsText <$STR(T90)> 月神印
-#ACT
-MOV N$C_人物道术 <$MAXSC>
-DIV N$C_人物道术 3
-CHANGEMOBABILITY 月灵8 6 + <$STR(N$C_人物道术)> 65000
-CHANGEMOBABILITY 月灵8 14 + 10 65000
-sendmsg 9 【月神印】生效，你的月灵八攻击提升：<$STR(N$C_人物道术)>，攻速提升10%！
-
-[@月光印属性提升_月灵]
-
-#IF
-CheckContainsText <$STR(T90)> 月光印
-#ACT
-CHANGEMOBABILITY 月灵 11 + 1000 65000
-CHANGEMOBABILITY 月灵 6 + 500 65000
-CHANGEMOBABILITY 月灵 14 + 10 65000
-sendmsg 9 【月光印】生效，你的月灵攻击提升：500，血量提升：1000，攻速提升10%！
-
-[@月光印属性提升_月灵八]
-
-#IF
-CheckContainsText <$STR(T90)> 月光印
-#ACT
-CHANGEMOBABILITY 月灵8 11 + 1000 65000
-CHANGEMOBABILITY 月灵8 6 + 500 65000
-CHANGEMOBABILITY 月灵8 14 + 10 65000
-sendmsg 9 【月光印】生效，你的月灵攻击提升：500，血量提升：1000，攻速提升10%！
-
 
 [@MagSelfFunc30]
 #IF
@@ -2214,6 +2214,8 @@ small <$SLAVECOUNT> 2
 #ACT
 RECALLMOB 白虎 5 60000
 break
+
+
 
 #IF
 NOT CheckContainsText <$STR(T90)> 白虎印
