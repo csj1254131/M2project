@@ -1,5 +1,5 @@
 {
-    "version": "3.3.3065",
+    "version": "3.3.3066",
     "assets": {
         "anim_effect.zip": {
             "md5": "f7b49059a3b601b0c794cafb15dec2da",
@@ -1702,9 +1702,10 @@
             "size": 1955
         },
         "scripts_game_view_layersui_box996_layer.zip": {
-            "md5": "3ac7795ee0346fbd6102087365d83cf4",
+            "md5": "5549e4dfb86192523473eaf3b98ea317",
             "compressed": true,
-            "size": 24972
+            "size": 24964,
+            "downloadState": 1
         },
         "scripts_game_view_layersui_button_pos_layer.zip": {
             "md5": "7e267e95dfb5faa90ec4c616a3d63451",
@@ -2009,8 +2010,7 @@
         "scripts_scene.zip": {
             "md5": "8cea32ca46d398b2318fe2d7f3ba5863",
             "compressed": true,
-            "size": 53744,
-            "downloadState": 1
+            "size": 53744
         },
         "scripts_sha1.zip": {
             "md5": "24b2c29cee72dfa13da1facf26e869e4",

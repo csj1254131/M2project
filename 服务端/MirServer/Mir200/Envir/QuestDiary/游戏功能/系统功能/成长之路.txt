@@ -2117,7 +2117,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 68 S$道士技能 |
 INC S$显示内容 <Layout|id=104|children={1041,1042}|width=590|height=40|color=x>
 INC S$显示内容 <Img|id=1041|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
 INC S$显示内容 <Text|id=1042|a=4|percentx=50|percenty=50|color=254|size=18|text=道士技能>
-INC S$显示内容 <Layout|id=105|children={1051,1052,1053,1054,1055,1056,1057,1058,1059,10591,10592,10593,10594,10595}|width=590|height=130|color=x>
+INC S$显示内容 <Layout|id=105|children={1051,1052,1053,1054,1055,1056,1057,1058,1059,10591,10592,10593,10594,10595,10596}|width=590|height=130|color=x>
 INC S$显示内容 <ItemShow|id=1051|itemid=<$STR(S$道士技能1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
 INC S$显示内容 <ItemShow|id=1052|itemid=<$STR(S$道士技能2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
 INC S$显示内容 <ItemShow|id=1053|itemid=<$STR(S$道士技能3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
@@ -2132,6 +2132,7 @@ INC S$显示内容 <ItemShow|id=10592|itemid=<$STR(S$道士技能11)>|itemcount=0|showti
 INC S$显示内容 <ItemShow|id=10593|itemid=<$STR(S$道士技能12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
 INC S$显示内容 <ItemShow|id=10594|itemid=<$STR(S$道士技能13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
 INC S$显示内容 <ItemShow|id=10595|itemid=<$STR(S$道士技能14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+INC S$显示内容 <ItemShow|id=10596|itemid=<$STR(S$道士技能15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
 
 GOTO @子项选择
 

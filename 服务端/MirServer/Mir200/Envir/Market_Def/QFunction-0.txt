@@ -41,34 +41,27 @@ money VIP经验 + 10
 #if
 #act
 KILLCALLMOB 白虎 2 1
-KILLCALLMOB 白虎1 2 1
-RECALLMOB 白虎1 5 60000
 RECALLMOB 白虎 5 60000
-;GetSlaveInfo <$SLAVECOUNT> S$宝宝名字1 N$宝宝等级1 
-;SENDMSG 7 当前宝宝名字：<$STR(S$宝宝名字1)>
-;SENDMSG 7 当前宝宝数量：<$SLAVECOUNT>
+RECALLMOB 白虎 5 60000
 mov N$当前道术 <$MAXSC>
 mov N$当前道术下限 <$SC>
-;SENDMSG 7 当前道术<$STR(N$当前道术)>
-mov N$白虎增加攻击 2
-mov N$白虎增加血量 10
+mov N$白虎增加攻击 1
+mov N$白虎增加攻击下限 1
+mov N$白虎增加血量 11
 mov N$白虎增加防御 1
-;SENDMSG 7 当前道术<$STR(N$白虎增加攻击)>
-;SENDMSG 7 当前道术<$STR(N$白虎增加血量)>
-;SENDMSG 7 当前道术<$STR(N$白虎增加防御)>
 MUL N$白虎增加攻击 <$STR(N$白虎增加攻击)>  <$STR(N$当前道术)>
+MUL N$白虎增加攻击下限 <$STR(N$白虎增加攻击下限)>  <$STR(N$当前道术下限)>
 MUL N$白虎增加血量  <$STR(N$白虎增加血量)> <$STR(N$当前道术)>
 MUL N$白虎增加防御 <$STR(N$白虎增加防御)>  <$STR(N$当前道术下限)>
-;SENDMSG 7 当前道术 <$STR(N$白虎增加攻击)>
-CHANGEMOBABILITY 白虎 5 + <$STR(N$白虎增加攻击)> 9999999 1
+CHANGEMOBABILITY 白虎 6 + <$STR(N$白虎增加攻击)> 9999999 1
+CHANGEMOBABILITY 白虎 5 + <$STR(N$白虎增加攻击下限)> 9999999 1
 CHANGEMOBABILITY 白虎 1 + <$STR(N$白虎增加防御)> 9999999 1
+CHANGEMOBABILITY 白虎 3 + <$STR(N$白虎增加防御)> 9999999 1
 CHANGEMOBABILITY 白虎 11 + <$STR(N$白虎增加血量)> 9999999 1
 MEBabyHP 白虎 = <$STR(N$白虎增加血量)> 1
 MEBabyHP 白虎1 = <$STR(N$白虎增加血量)> 1
-SENDMSG 7 当前白虎攻击：<$STR(N$白虎增加攻击)> 防御：<$STR(N$白虎增加防御)>  血量：<$STR(N$白虎增加血量)> 
+SENDMSG 7 当前白虎血量：<$STR(N$白虎增加血量)> 攻击：<$STR(N$白虎增加攻击)>  防御：<$STR(N$白虎增加防御)>  
 break
-
-
 
 
 
@@ -2063,6 +2056,10 @@ EQUAL <$CURRRTARGETNAME> 月灵
 EQUAL <$CURRRTARGETNAME> 月灵8
 EQUAL <$CURRRTARGETNAME> 白虎
 EQUAL <$CURRRTARGETNAME> 白虎8
+EQUAL <$CURRRTARGETNAME> 白虎1
+EQUAL <$CURRRTARGETNAME> 高级月灵1
+EQUAL <$CURRRTARGETNAME> 高级月灵2
+
 #ACT
 GOTO @道抗召唤兽
 
@@ -2070,7 +2067,7 @@ GOTO @道抗召唤兽
 #IF
 CheckContainsText <$STR(T90)> 道抗印【召唤兽】
 #ACT
-ChangeDamageValue 1 = 80
+ChangeDamageValue 1 = 50
 
 
 [@MagTagFuncEx26]
@@ -2138,7 +2135,7 @@ sendmsg 9 【<$CURRRTARGETNAME>】的冰霜印对你生效，你的魔御减少10点，持续3秒！
 GOTO @高级月灵属性刷新
 goto @月光印属性增加
 goto @月神印属性增加
-SENDMSG 7 当前高级月灵攻击：<$STR(N$宝宝增加攻击)> 防御：<$STR(N$宝宝增加防御)>  血量：<$STR(N$宝宝增加血量)> 
+SENDMSG 7 当前高级月灵血量：<$STR(N$宝宝增加血量)> 攻击：<$STR(N$宝宝增加攻击)> 防御：<$STR(N$宝宝增加防御)> 
 break
 
 
@@ -2152,14 +2149,18 @@ RECALLMOB 高级月灵1 5 60000
 ;RECALLMOB 高级月灵2 5 60000
 mov N$当前道术 <$MAXSC>
 mov N$当前道术下限 <$SC>
-mov N$宝宝增加攻击 3
-mov N$宝宝增加血量 20
+mov N$宝宝增加攻击 2
+mov N$宝宝增加攻击下限 2
+mov N$宝宝增加血量 14
 mov N$宝宝增加防御 1
 MUL N$宝宝增加攻击 <$STR(N$宝宝增加攻击)>  <$STR(N$当前道术)>
+MUL N$宝宝增加攻击下限 <$STR(N$宝宝增加攻击下限)>  <$STR(N$当前道术下限)>
 MUL N$宝宝增加血量  <$STR(N$宝宝增加血量)> <$STR(N$当前道术)>
 MUL N$宝宝增加防御 <$STR(N$宝宝增加防御)>  <$STR(N$当前道术下限)>
-CHANGEMOBABILITY 高级月灵 5 + <$STR(N$宝宝增加攻击)> 9999999 1
+CHANGEMOBABILITY 高级月灵 5 + <$STR(N$宝宝增加攻击下限)> 9999999 1
+CHANGEMOBABILITY 高级月灵 6 + <$STR(N$宝宝增加攻击)> 9999999 1
 CHANGEMOBABILITY 高级月灵 1 + <$STR(N$宝宝增加防御)> 9999999 1
+CHANGEMOBABILITY 高级月灵 3 + <$STR(N$宝宝增加防御)> 9999999 1
 CHANGEMOBABILITY 高级月灵 11 + <$STR(N$宝宝增加血量)> 9999999 1
 MEBabyHP 高级月灵1 = <$STR(N$宝宝增加血量)> 1
 ;MEBabyHP 高级月灵2 = <$STR(N$宝宝增加血量)> 1
@@ -2173,14 +2174,18 @@ RECALLMOB 高级月灵1 5 60000
 RECALLMOB 高级月灵2 5 60000
 mov N$当前道术 <$MAXSC>
 mov N$当前道术下限 <$SC>
-mov N$宝宝增加攻击 3
-mov N$宝宝增加血量 20
+mov N$宝宝增加攻击 2
+mov N$宝宝增加攻击下限 2
+mov N$宝宝增加血量 14
 mov N$宝宝增加防御 1
 MUL N$宝宝增加攻击 <$STR(N$宝宝增加攻击)>  <$STR(N$当前道术)>
+MUL N$宝宝增加攻击下限 <$STR(N$宝宝增加攻击下限)>  <$STR(N$当前道术下限)>
 MUL N$宝宝增加血量  <$STR(N$宝宝增加血量)> <$STR(N$当前道术)>
 MUL N$宝宝增加防御 <$STR(N$宝宝增加防御)>  <$STR(N$当前道术下限)>
-CHANGEMOBABILITY 高级月灵 5 + <$STR(N$宝宝增加攻击)> 9999999 1
+CHANGEMOBABILITY 高级月灵 5 + <$STR(N$宝宝增加攻击下限)> 9999999 1
+CHANGEMOBABILITY 高级月灵 6 + <$STR(N$宝宝增加攻击)> 9999999 1
 CHANGEMOBABILITY 高级月灵 1 + <$STR(N$宝宝增加防御)> 9999999 1
+CHANGEMOBABILITY 高级月灵 3 + <$STR(N$宝宝增加防御)> 9999999 1
 CHANGEMOBABILITY 高级月灵 11 + <$STR(N$宝宝增加血量)> 9999999 1
 MEBabyHP 高级月灵1 = <$STR(N$宝宝增加血量)> 1
 MEBabyHP 高级月灵2 = <$STR(N$宝宝增加血量)> 1
