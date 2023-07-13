@@ -109,7 +109,7 @@ GiveStateItem <$Str(s$首冲奖励mc_3)> <$Str(s$首冲奖励sl_3)> 0 1 0 1 1 1 1 1
 GiveStateItem <$Str(s$首冲奖励mc_4)> <$Str(s$首冲奖励sl_4)> 0 1 0 1 1 1 1 1
 GiveStateItem <$Str(s$首冲奖励mc_5)> <$Str(s$首冲奖励sl_5)> 0 1 0 1 1 1 1 1
 AutoTakeOnItem <$Str(s$首冲奖励mc_1)> 1
-SENDMSGNEW 255 0 玩家　{<$USERNAME>/FCOLOR=251}，领取了　{首冲礼包/FCOLOR=249} 1 2
+SENDMSGNEW 255 0 玩家　{<$USERNAME>/FCOLOR=251}，领取了　{首充礼包/FCOLOR=249} 1 2
 MOV S$图标2 <Layout|children={1,2,3,4,5,6}|width=300|height=80|x=-500|y=90|color=x>
 ;addbutton 102 2 <$STR(S$图标2)>
 MOV n$top 1

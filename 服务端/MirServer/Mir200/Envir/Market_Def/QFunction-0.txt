@@ -60,7 +60,11 @@ CHANGEMOBABILITY 白虎 3 + <$STR(N$白虎增加防御)> 9999999 1
 CHANGEMOBABILITY 白虎 11 + <$STR(N$白虎增加血量)> 9999999 1
 MEBabyHP 白虎 = <$STR(N$白虎增加血量)> 1
 MEBabyHP 白虎1 = <$STR(N$白虎增加血量)> 1
-SENDMSG 7 当前白虎血量：<$STR(N$白虎增加血量)> 攻击：<$STR(N$白虎增加攻击)>  防御：<$STR(N$白虎增加防御)>  
+MEBabyHP 白虎 = 2000 1
+MEBabyHP 白虎1 = 2000 1
+mov N$白虎当前血量 <$STR(N$白虎增加血量)>
+inc  N$白虎当前血量 2000
+SENDMSG 7 当前白虎血量：<$STR(N$白虎当前血量)> 攻击：<$STR(N$白虎增加攻击)>  防御：<$STR(N$白虎增加防御)>  
 break
 
 
