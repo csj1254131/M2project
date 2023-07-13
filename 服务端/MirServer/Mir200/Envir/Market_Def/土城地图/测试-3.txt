@@ -32,9 +32,15 @@
 [@技能添加]
 #if
 #act
-addskill 召唤高级月灵
-SKILLLEVEL 召唤高级月灵 = 3
-sendmsg 0 召唤强化神兽技能添加成功
+MOV G1 <$UTCNOW8>
+MOV G479 <$UTCNOW8>
+INC G1 5400
+
+sendmsg 0 变量名 <$STR(U242)>
+sendmsg 0 变量名 <$STR(U13)>
+
+
+
 
 [@拉起支付]
 #IF

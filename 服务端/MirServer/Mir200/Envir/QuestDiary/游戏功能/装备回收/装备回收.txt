@@ -375,11 +375,7 @@ mov   u113 1
 Goto @选定回收数据清理
 BREAK
 
-#IF
-#ACT
-mov   u113 0
-Goto @选定回收数据清理
-BREAK
+
 
 
 [@跳转回收选定]

@@ -1844,7 +1844,7 @@ BREAK
 SMALL G<$STR(N$全局变量名)> <$UTCNOW8>
 EQUAL G<$STR(N$全局变量名)> 0
 #ACT
-INC S$领主状态 <Text|id=<$STR(N$领主序号)>3|a=4|percentx=50|percenty=70|color=249|size=18|outline=2|outlinecolor=0|text=未刷新>
+INC S$领主状态 <Text|id=<$STR(N$领主序号)>3|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=已刷新>
 #IF
 EQUAL G<$STR(N$全局变量名)> 1
 #ACT
