@@ -113,6 +113,23 @@ MONEY  VIP经验 + <$STR(N$充值金额)>
 MONEY  火龙币 + <$STR(N$累计比例)>
 SENDMSG 6 100000火龙币充值成功
 
+#IF
+large G497 <$str(N$开始天数)>
+#ACT
+CALCVAR HUMAN B_今日充值 + <$STR(M0)>
+SAVEVAR HUMAN B_今日充值
+#ELSEACT
+BREAK
+#IF
+NOT EQUAL T206 <$MONTH><$DAY>
+CHECKVAR HUMAN B_今日充值 ? 98
+#ACT
+MOV T206 <$MONTH><$DAY>
+INC U252 1
+
+
+
+
 [@世界boss测试]
 #IF
 #ACT

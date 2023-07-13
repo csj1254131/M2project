@@ -4092,6 +4092,7 @@ MONEY 积分 + <$STR(N$累计比例)>
 MONEY 火龙币 + <$STR(N$累计比例)>
 ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini 奖励变化时段 开始天数 N$开始天数
 DEC N$开始天数 1
+
 #IF
 large G497 <$str(N$开始天数)>
 #ACT
