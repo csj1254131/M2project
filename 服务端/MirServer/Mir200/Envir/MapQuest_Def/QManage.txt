@@ -332,6 +332,13 @@ EXTBAGOPENITEMCOUNT 126
 ;SENDMSG 6 你的背包格子扩展到<$ADVBAGSIZE>格
 
 
+;自动回收极品，元宝
+#if
+#act
+mov u152 1
+Mov u110 1
+
+
 #If
 LARGE <$Hfcount> 0
 Checkunderwar 沙巴克

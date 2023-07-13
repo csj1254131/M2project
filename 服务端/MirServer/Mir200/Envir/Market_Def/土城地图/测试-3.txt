@@ -32,16 +32,8 @@
 [@技能添加]
 #if
 #act
-MOV G1 <$UTCNOW8>
-MOV G479 <$UTCNOW8>
-INC G1 5400
-
-sendmsg 0 变量名 <$STR(U242)>
-sendmsg 0 变量名 <$STR(U13)>
-
-
-
-
+SKILLLEVEL 流星火雨 = 3
+SKILLLEVEL 灭天火 = 3
 [@拉起支付]
 #IF
 #ACT

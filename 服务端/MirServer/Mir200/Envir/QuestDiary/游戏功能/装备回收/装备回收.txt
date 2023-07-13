@@ -203,9 +203,9 @@ EQUAL S$展开价格 1
 <Img|a=4|id=106|img=custom/hl/zbhs_ui/1900000667.png|width=350|percentx=50|percenty=100>
 <Layout|id=20|children={200}|width=376|height=25|x=270|y=0|color=x>
 <Layout|id=26|children={260,262,264,265}|width=376|height=32|x=15|y=402|color=x>
-<Button|id=260|children={261}|x=250|nimg=custom/hl/hl_ui/1900000652.png|link=@跳转回收设置>
-<Text|a=4|id=261|percentx=50|percenty=50|text=回收设置|color=251|size=17|outline=2|outlinecolor=0>
-<Button|id=262|children={263}|x=150|nimg=custom/hl/hl_ui/1900000652.png|link=@执行快速回收>
+;<Button|id=260|children={261}|x=250|nimg=custom/hl/hl_ui/1900000652.png|link=@跳转回收设置>
+;<Text|a=4|id=261|percentx=50|percenty=50|text=回收设置|color=251|size=17|outline=2|outlinecolor=0>
+<Button|id=262|children={263}|x=200|nimg=custom/hl/hl_ui/1900000652.png|link=@执行快速回收>
 <Text|a=4|id=263|percentx=50|percenty=50|text=快速回收|color=251|size=17|outline=2|outlinecolor=0>
 <CheckBox|id=264|x=10|y=0|checkboxid=20|nimg=custom/hl/hl_ui/1900000682.png|pimg=custom/hl/hl_ui/1900000683.png|default=<$STR(U113)>|submit=1|delay=0|count=0|link=@自动回收勾选>
 <Layout|id=265|children={266}|width=80|height=25|x=50|y=0|color=x>

@@ -118,7 +118,7 @@ break
 <Button|id=15|children={201}|x=20|y=62|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|text=快捷功能|color=100|size=18>
 <Button|id=16|children={202}|x=20|y=103|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=转职变性|color=10|size=18|link=@移动端转职变性>
 <Button|id=17|children={203}|x=20|y=145|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=元宝兑换|color=10|size=18|link=@移动端元宝兑换>
-<Text|id=19|outline=1|outlinecolor=0|a=0|x=290|y=90|color=151|size=20|text=10火龙币>
+<Text|id=19|outline=1|outlinecolor=0|a=0|x=200|y=90|color=151|size=20|text=10火龙币，恢复状态解除中毒>
 <Button|x=250|y=120|id=20|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=一键满血|color=103|size=18|link=@移动端一键满血>
 <Button|x=500|y=120|id=21|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=我的仓库|color=103|size=18|link=@移动端打开仓库>
 
@@ -347,12 +347,6 @@ break
 
 
 [@移动端一键满血]
-#IF
-CheckHpPer > 95
-CheckMpPer > 95
-#ACT
-SENDMSG 9 <font color='#00FF00'>提示：你当前非常健康，无需此服务！</font>
-break
 
 #IF
 checkmoney 火龙币 ? 10
@@ -360,6 +354,7 @@ checkmoney 火龙币 ? 10
 money 火龙币 - 10
 AddhpPer + 100
 AddmpPer + 100
+DETOXIFCATION
 INC U120 10
 #CALL [\功能脚本\开区活动\开区红点.txt] @每日充值红点
 SENDMSG 9 <font color='#00FF00'>提示：已为您恢复至满血状态！</font>
