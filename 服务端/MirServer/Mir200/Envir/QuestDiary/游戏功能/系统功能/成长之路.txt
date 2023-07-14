@@ -97,8 +97,8 @@ MOV S$子项目显示
 MOV S$显示内容
 INC S$显示内容 <ListView|id=5|children={51,52,53,54,55,56,57,58,59,60,61,62,63,64,87,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,88,89,90,91,92,93,94,95,96,97,98,99,100}|x=155|y=110|width=580|height=375|margin=3|bounce=0|direction=1|color=x>
 INC S$显示内容 <RText|id=51|color=251|size=18|text=一、游戏前提（新手攻略）>
-INC S$显示内容 <RText|id=52|color=255|size=17|text=1.进入游戏后随主线任务前往土城后，先前往996盒子<领取礼包码和每日奖励。/FCOLOR=58>>
-INC S$显示内容 <RText|id=53|color=255|size=17|text=2.通过土城NPC<Q群礼包/FCOLOR=58>领取Q群礼包，获得大量奖励。>
+INC S$显示内容 <RText|id=52|color=255|size=17|text=1.进入游戏后随主线任务前往土城后，先前往福利<领取每日签到。/FCOLOR=58>>
+INC S$显示内容 <RText|id=53|color=255|size=17|text=2.通过福利尊享有礼领取<10元红包/FCOLOR=58>，白嫖火龙币。>
 INC S$显示内容 <RText|id=54|color=255|size=17|text=3.顶部福利按钮<每日签到/FCOLOR=58>，获得首日奖励拾取小精灵（3小时），提升刷怪效率。>
 INC S$显示内容 <RText|id=55|color=255|size=17|text=4.完成每日活动，活跃度达到一定值可以领取<活跃度奖励。/FCOLOR=58>>
 INC S$显示内容 <RText|id=56|color=255|size=17|text=5.每日保持2小时在线，领取在线奖励及累计登录奖励，更可获得稀有礼盒<神/FCOLOR=58>>
