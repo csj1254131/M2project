@@ -4106,7 +4106,6 @@ MONEY VIP经验 + <$STR(M0)>
 MOV N$累计比例 100
 MUL  N$累计比例 <$STR(M0)>
 MONEY 积分 + <$STR(N$累计比例)>
-MONEY 火龙币 + <$STR(N$累计比例)>
 ReadConfigFileItem ..\QuestDiary\游戏功能\充值福利\连续充值配置.ini 奖励变化时段 开始天数 N$开始天数
 DEC N$开始天数 1
 
