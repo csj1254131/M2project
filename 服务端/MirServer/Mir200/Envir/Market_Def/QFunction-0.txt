@@ -37,6 +37,22 @@ money VIP经验 + 10
 //道士宝宝相关
 ;[@Slavebb]
 
+
+
+[@BeginMagic]
+#if
+CHECKJOB Wizard
+#act
+sendmsg 0 当前职业：Wizard
+mov N$法师攻击力 <$MAXMC>
+mov N$当前道术 <$MAXSC>
+sendmsg 0 当前攻击力：<$Str(N$法师攻击力)>
+break
+
+
+
+
+
 [@MagSelfFunc2005]
 #if
 #act

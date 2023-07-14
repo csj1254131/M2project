@@ -339,6 +339,14 @@ mov u152 1
 Mov u110 1
 
 
+;
+#if
+CHECKJOB Wizard
+#act
+sendmsg 0 当前职业：Wizard
+mov <$Str(N$法师攻击力> <$MAXMC>
+
+
 #If
 LARGE <$Hfcount> 0
 Checkunderwar 沙巴克
