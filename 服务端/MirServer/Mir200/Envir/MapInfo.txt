@@ -3,7 +3,7 @@
 [sjboss|em000 世界boss] noreconnect(3:330:330) onkillmon  
 [dbqb|nlts102 夺宝奇兵] noreconnect(3:330:330) onkillmon incmoney(88/10/10/@加夺宝积分)  
 [tjyb|nkuanggong 天降元宝] noreconnect(3:330:330)  
-[d401 比奇矿区] runmon runhuman(1)
+[d401 比奇矿区] runmon runhuman
 [d515 锁妖塔] noreconnect(3:330:330) fight
 
 [erdalu|nalx 二大陆] noreconnect(3:330:330)   runmon
@@ -436,7 +436,7 @@ hyhld2 36 17 -> hyhld3 48 22
 
 
 
-[0 比奇省] runmon runhuman(1) incmoney(经验/2/0/@比奇新手泡点)
+[0 比奇省] runmon runhuman incmoney(经验/2/0/@比奇新手泡点)
 [0122 宫殿] day
 [0110 研究院] fight
 [0111 研究院] fight
@@ -651,7 +651,7 @@ hyhld2 36 17 -> hyhld3 48 22
 
 ;带傈 1锅 (坷付悼奔)
 
-[d001 兽人古墓一层] runmon runhuman(1)
+[d001 兽人古墓一层] runmon runhuman
 [d002 兽人古墓二层] dark
 [dm001 奸商] dark fight
 [dm002 国王陵墓] dark
@@ -905,7 +905,7 @@ d717   83 25  -> r001  100  99
 
 ;根锰泅
 
-[3   盟重省] runmon runhuman(1)
+[3   盟重省] runmon runhuman
 3 330 314 -> 0159   5   16
 0159   4   16 -> 3 330 314
 
