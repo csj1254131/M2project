@@ -127,7 +127,7 @@ INC S$地图简介 <Text|id=561|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0
 INC S$地图简介 <Img|id=55|children={551}|x=0|y=260|width=320|img=custom/hl/dtcs_ui/map_ui_01.png>
 INC S$地图简介 <Img|id=551|x=285|y=25|img=custom/hl/duanzhao_ui/zyjt.png>
 INC S$地图简介 <Text|id=7|x=150|y=430|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
-INC S$地图简介 <RText|id=8|x=250|y=450|color=250|size=18|outline=2|outlinecolor=0|text=5转\<推荐攻魔道：600点以上/FCOLOR=58>>
+INC S$地图简介 <RText|id=8|x=250|y=450|color=250|size=18|outline=2|outlinecolor=0|text=5转\<推荐攻魔道：1200点以上/FCOLOR=58>>
 
 GOTO @地图界面
 
@@ -154,7 +154,7 @@ INC S$地图简介 <Text|id=561|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0
 INC S$地图简介 <Img|id=55|children={551}|x=0|y=260|width=320|img=custom/hl/dtcs_ui/map_ui_01.png>
 INC S$地图简介 <Img|id=551|x=285|y=25|img=custom/hl/duanzhao_ui/zyjt.png>
 INC S$地图简介 <Text|id=7|x=150|y=430|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
-INC S$地图简介 <RText|id=8|x=250|y=450|color=250|size=18|outline=2|outlinecolor=0|text=5转\<推荐攻魔道：600点以上/FCOLOR=58>>
+INC S$地图简介 <RText|id=8|x=250|y=450|color=250|size=18|outline=2|outlinecolor=0|text=5转\<推荐攻魔道：1200点以上/FCOLOR=58>>
 
 GOTO @地图界面
 

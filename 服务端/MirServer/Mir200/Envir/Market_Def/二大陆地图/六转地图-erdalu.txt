@@ -44,7 +44,7 @@ MOV S$地图编号 nmjt1
 <ItemShow|id=994|itemid=50330|itemcount=1|showtips=1|bgtype=1>
 <ItemShow|id=995|itemid=50331|itemcount=1|showtips=1|bgtype=1>
 <Text|id=10|x=50|y=420|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
-<RText|id=11|x=150|y=450|color=250|size=18|outline=2|outlinecolor=0|text=六转\<推荐攻魔道：800点以上/FCOLOR=58>>
+<RText|id=11|x=150|y=450|color=250|size=18|outline=2|outlinecolor=0|text=六转\<推荐攻魔道：1600点以上/FCOLOR=58>>
 <Layout|id=12|children={121}|x=490|y=79|width=230|height=30|color=x>
 <Text|id=121|a=4|percentx=50|percenty=50||color=251|size=18|outline=2|outlinecolor=0|text=<$STR(S$地图名称)>>
 <Img|id=13|children={131}|x=480|y=117|img=custom/hl/dtcs_ui/<$STR(S$小地图编号)>.png|width=253|height=207>
