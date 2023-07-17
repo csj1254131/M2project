@@ -176,7 +176,7 @@ INC S$显示内容 <RText|id=51|color=255|size=17|text=1.<开服充值118元，/FCOLOR=58>
 INC S$显示内容 <RText|id=52|color=255|size=17|text=3阶特戒，打怪下图更效率。>
 INC S$显示内容 <RText|id=53|color=255|size=17|text=2.<开服充值218元，/FCOLOR=58>获得<VIP4/FCOLOR=251>特权，购买VIP礼包和特惠礼包，<极速5转/FCOLOR=251>，前100>
 INC S$显示内容 <RText|id=54|color=255|size=17|text=名更可获得奖励<【审判の剑】/FCOLOR=251>>
-INC S$显示内容 <RText|id=55|color=255|size=17|text=3.提升VIP等级至<VIP6/FCOLOR=251>，独有称号<武林至尊/FCOLOR=251>，<专属会员防麻痹/FCOLOR=251>，PK必备。>
+INC S$显示内容 <RText|id=55|color=255|size=17|text=3.提升VIP等级至<VIP6/FCOLOR=251>，独有称号<武林至尊/FCOLOR=251>，PK必备。>
 INC S$显示内容 <RText|id=56|color=255|size=17|text=>
 INC S$显示内容 <RText|id=57|color=255|size=17|text=4.提升VIP等级至<VIP12/FCOLOR=251>，独有上线<全服通知/FCOLOR=251>，土豪必备！>
 GOTO @子项选择
