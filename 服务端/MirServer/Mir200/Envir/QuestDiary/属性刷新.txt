@@ -291,7 +291,6 @@ INC N$属性计算12 <$STR(U18)>
 #IF
 large U13 1
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 10
 INC N$属性计算2 10
 INC N$属性计算3 10
@@ -306,7 +305,6 @@ INC N$属性计算10 10
 #IF
 large U13 2
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 10
 INC N$属性计算2 10
 INC N$属性计算3 10
@@ -321,7 +319,6 @@ INC N$属性计算10 10
 #IF
 large U13 3
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 20
 INC N$属性计算2 20
 INC N$属性计算3 20
@@ -336,7 +333,6 @@ INC N$属性计算10 20
 #IF
 large U13 4
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 20
 INC N$属性计算2 20
 INC N$属性计算3 20
@@ -350,7 +346,6 @@ INC N$属性计算10 20
 #IF
 large U13 5
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 20
 INC N$属性计算2 20
 INC N$属性计算3 20
@@ -366,7 +361,6 @@ INC N$属性计算10 20
 #IF
 large U13 6
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 30
 INC N$属性计算2 30
 INC N$属性计算3 30
@@ -381,7 +375,6 @@ INC N$属性计算10 30
 #IF
 large U13 7
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 30
 INC N$属性计算2 30
 INC N$属性计算3 30
@@ -396,7 +389,6 @@ INC N$属性计算10 30
 #IF
 large U13 8
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 40
 INC N$属性计算2 40
 INC N$属性计算3 40
@@ -411,7 +403,6 @@ INC N$属性计算10 40
 #IF
 large U13 9
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 50
 INC N$属性计算2 50
 INC N$属性计算3 50
@@ -426,7 +417,6 @@ INC N$属性计算10 50
 #IF
 large U13 10
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 80
 INC N$属性计算2 80
 INC N$属性计算3 80
@@ -441,7 +431,6 @@ INC N$属性计算10 80
 #IF
 large U13 11
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 100
 INC N$属性计算2 100
 INC N$属性计算3 100
@@ -456,7 +445,6 @@ INC N$属性计算10 100
 #IF
 large U13 12
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 150
 INC N$属性计算2 150
 INC N$属性计算3 150
@@ -471,7 +459,6 @@ INC N$属性计算10 150
 #IF
 large U13 13
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 200
 INC N$属性计算2 200
 INC N$属性计算3 200
@@ -486,7 +473,6 @@ INC N$属性计算10 200
 #IF
 large U13 14
 #ACT
-ChangeModeEx 14 65535
 INC N$属性计算1 300
 INC N$属性计算2 300
 INC N$属性计算3 300

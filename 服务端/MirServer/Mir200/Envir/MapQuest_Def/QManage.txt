@@ -347,10 +347,7 @@ Checkunderwar É³°Í¿Ë
 #Act
 SetOnTimer 255 1
 
-#IF
-large u13 4
-#ACT
-ChangeModeEx 14 65535
+
 
 #IF
 CHECKLEVELEX > 0
