@@ -48,9 +48,9 @@ CheckSlaveInRange 四级镖车 5
 Sendmsg 6 恭喜您，镖车任务成功完成！
 KILLCALLMOB 四级镖车 1 1
 MOV U237 0
-GuildNoticeMsg 255 252 恭喜玩家%s成功将【四级镖车】押到.完成任务获得【5000万经验+一级镖车声望礼包】奖励！
+GuildNoticeMsg 255 252 恭喜玩家%s成功将【四级镖车】押到.完成任务获得【5000万经验+四级镖车声望礼包】奖励！
 CHANGEEXP + 50000000
-GIVE 一级镖车声望礼包 1
+GIVE 四级镖车声望礼包 1
 ;MONEY 火龙币 + 1000
 close
 #IF
@@ -59,9 +59,9 @@ CheckSlaveInRange 三级镖车 5
 Sendmsg 6 恭喜您，镖车任务成功完成！
 KILLCALLMOB 三级镖车 1 1
 MOV U237 0
-GuildNoticeMsg 255 252 恭喜玩家%s成功将【三级镖车】押到.完成任务获得【3000万经验+二级镖车声望礼包】奖励！
+GuildNoticeMsg 255 252 恭喜玩家%s成功将【三级镖车】押到.完成任务获得【3000万经验+三级镖车声望礼包】奖励！
 CHANGEEXP + 30000000
-GIVE 二级镖车声望礼包 1
+GIVE 三级镖车声望礼包 1
 ;MONEY 火龙币 + 600
 close
 #IF
@@ -70,9 +70,9 @@ CheckSlaveInRange 二级镖车 5
 Sendmsg 6 恭喜您，镖车任务成功完成！
 KILLCALLMOB 二级镖车 1 1
 MOV U237 0
-GuildNoticeMsg 255 252 恭喜玩家%s成功将【二级镖车】押到.完成任务获得【2000万经验+三级镖车声望礼包】奖励！
+GuildNoticeMsg 255 252 恭喜玩家%s成功将【二级镖车】押到.完成任务获得【2000万经验+二级镖车声望礼包】奖励！
 CHANGEEXP + 20000000
-GIVE 三级镖车声望礼包 1
+GIVE 二级镖车声望礼包 1
 ;MONEY 火龙币 + 300
 close
 #IF
@@ -81,9 +81,9 @@ CheckSlaveInRange 一级镖车 5
 Sendmsg 6 恭喜您，镖车任务成功完成！
 KILLCALLMOB 一级镖车 1 1
 MOV U237 0
-GuildNoticeMsg 255 252 恭喜玩家%s成功将【一级镖车】押到.完成任务获得【1000万经验+四级镖车声望礼包】奖励！
+GuildNoticeMsg 255 252 恭喜玩家%s成功将【一级镖车】押到.完成任务获得【1000万经验+一级镖车声望礼包】奖励！
 CHANGEEXP + 10000000
-GIVE 四级镖车声望礼包 1
+GIVE 一级镖车声望礼包 1
 close
 
 
