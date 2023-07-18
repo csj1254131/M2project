@@ -25,7 +25,7 @@ GOTO @会员专属界面
 <Img|id=52|children={521}|x=5|y=38|img=custom/hl/hl_ui/icon_target_01.png>
 <Text|id=521|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=共五层>
 <Img|id=53|children={531}|x=5|y=78|img=custom/hl/hl_ui/icon_target_01.png>
-<Text|id=531|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=精英怪不定时刷新，领主怪刷新时间见BOSS列表>
+<Text|id=531|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=领主怪刷新时间见BOSS列表>
 <Img|id=54|children={541}|x=5|y=118|img=custom/hl/hl_ui/icon_target_01.png>
 <Text|id=541|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=怪物难度略有提高，建议更新自身装备提升斗笠盾牌，主辅星后再进入>
 <Img|id=56|children={561}|x=5|y=158|img=custom/hl/hl_ui/icon_target_01.png>

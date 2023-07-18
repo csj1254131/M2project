@@ -17,7 +17,7 @@ MOV S$地图编号 lzld
 <Img|id=5|children={51}|x=50|y=98|img=custom/hl/hl_ui/icon_target_01.png>
 <Text|id=51|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=狂暴专属地图，共二层>
 <Img|id=6|children={61}|x=50|y=138|img=custom/hl/hl_ui/icon_target_01.png>
-<Text|id=61|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=精英怪不定时刷新，领主怪刷新时间见BOSS列表>
+<Text|id=61|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=领主怪刷新时间见BOSS列表>
 <Img|id=7|children={71}|x=50|y=178|img=custom/hl/hl_ui/icon_target_01.png>
 <Text|id=71|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=怪物难度较高，建议提升斗笠盾牌，主辅星\装备升星，装备注灵后再进入>
 
