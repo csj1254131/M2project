@@ -308,7 +308,6 @@ Mov A459 此位暂无人占领
 
 
 
-
 [@LoadGuild]
 #IF
 #ACT
@@ -320,6 +319,7 @@ Savevar GUILD 参加沙巴克人数
 #IF
 #ACT
 #CALL [\游戏变量\玩家变量声明.txt] @玩家变量声明
+
 
 
 

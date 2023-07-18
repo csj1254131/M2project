@@ -1,4 +1,5 @@
 
+
 [em000 激情泡点] noreconnect(3:330:330) safe
 [sjboss|em000 世界boss] noreconnect(3:330:330) onkillmon  
 [dbqb|nlts102 夺宝奇兵] noreconnect(3:330:330) onkillmon incmoney(88/10/10/@加夺宝积分)  

@@ -2,7 +2,6 @@
 (@@InPutInteger @@InPutString @@useitemname @@OffLineMsg @@dealgold)
 
 
-
 //Ê×±¬µôÂä¼ì²â
 [@MonDropItemEX]
 #if
