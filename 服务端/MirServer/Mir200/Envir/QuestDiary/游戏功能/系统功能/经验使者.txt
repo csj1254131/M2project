@@ -60,6 +60,7 @@ DEC N$剩余聚元丹次数 <$HUMAN(B_聚元丹次数)>
 <Layout|id=701|children={702}|width=196|height=282|color=x>
 <Img|id=702|img=custom/hl/hl_ui/<$STR(S$古陵选择状态_0)>.png|width=196|height=282>
 
+
 <Img|id=71|children={710,711}|img=custom/hl/hdyg_ui/tjyb.jpg|width=196|height=282|grey=<$STR(N$古陵灰显_1)>|link=@选择古陵地图#选择序号=1>
 <RText|id=710|x=0|y=285|color=255|size=18|outline=2|outlinecolor=0|text=古陵一层(<1转/FCOLOR=250>以上进入)>
 <Layout|id=711|children={712}|width=196|height=282|color=x>
@@ -280,7 +281,7 @@ CHECKITEM 聚元丹 1
 SENDMSG 9 <font color='#ff0000'>您的背包里没有聚元丹！</font>
 BREAK
 #IF
-CHECKVAR HUMAN B_聚元丹次数 < 1
+not small N$剩余聚元丹次数 1
 #ACT
 MOV N$选择地图 0
 MOV N$转生恢复值 <$RELEVEL>
@@ -290,7 +291,7 @@ MOV N$等级恢复值 <$LEVEL>
 DIV N$等级恢复值 10
 MUL N$转生恢复值 <$STR(N$等级恢复值)>
 #ELSEACT
-SENDMSG 9 <font color='#ff0000'>今日使用聚元丹次数已超过1次！</font>
+SENDMSG 9 <font color='#ff0000'>今日聚元丹次数已用尽！</font>
 BREAK
 #IF
 SMALL N$转生恢复值 30000000

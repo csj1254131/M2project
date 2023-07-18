@@ -394,7 +394,7 @@ INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=58|color=255|size=17|text=<ºÅ£¬/FCOLOR=58>»÷°ÜBOSS¸ü¿É»
 INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=59|color=255|size=17|text=<4.ËøÑýËþ£º³£×¤»î¶¯£¬/FCOLOR=251>Í¨¹ØËøÑýËþÃ¿ÈÕ¿É»ñµÃÏ¡ÓÐÇ¿»¯×¢Áé½±Àø£¬Ã¿10²ã¸ü¿É>
 INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=60|color=255|size=17|text=»ñµÃ½×¶Î½±Àø¡£>
 INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=61|color=255|size=17|text=<5.È«ÃñÑºïÚ£ºÃ¿Ìì¿ªÆô£¬/FCOLOR=251>ÔËËÍïÚ³µµ½Ö¸¶¨Î»ÖÃ£¬²»Í¬µÈ¼¶µÄïÚ³µ¿ÉÒÔ»ñµÃ²»Í¬>
-INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=62|color=255|size=17|text=µÈ¼¶µÄ¾­Ñé½±Àø£¬Ò»Ìì¿ÉÔËËÍÈý´Î¡£<¿ª·þµ±Ìì½öÔÚ¿ª·þ2Ð¡Ê±ºó¿ªÆô£¡/FCOLOR=58>>
+INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=62|color=255|size=17|text=µÈ¼¶µÄ¾­Ñé½±Àø£¬Ò»Ìì¿ÉÔËËÍÈý´Î¡£>
 INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=63|color=255|size=17|text=<6.ÊÀ½çBOSS£ºÃ¿ÖÜÒ»¡¢Îå¡¢ÈÕ¿ªÆô£¬/FCOLOR=251>½øÈëµØÍ¼¶áÈ¡Î¨Ò»Ò»Ö»µÄÊÀ½çBOSS£¬BO>
 INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=64|color=255|size=17|text=SSËÀÍöºó¸ù¾ÝÍæ¼Ò×ÜÉËº¦¼ÆËãÅÅÃû¡£>
 INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=65|color=255|size=17|text=<7.½£Ö¸É³°Í¿Ë£º¿ª·þ2Ììºó¿ªÆô£¬/FCOLOR=251>ËÄ·½ÈºÐÛÇ°À´Õ÷Õ½É³°Í¿Ë£¬»ñÊ¤ÐÐ»á»ñµÃÉ³°Í¿Ë>
@@ -402,7 +402,7 @@ INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=66|color=255|size=17|text=³ÆºÅ¡¢Ôª±¦ºÍ»ðÁú±Ò½±Àø£¬»ñÊ¤Ð
 INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=67|color=255|size=17|text=<8.¾­ÑéÊ¹Õß£º/FCOLOR=251>Ã¿ÈÕÁè³¿»Ö¸´¸ß±¶¾­Ñé¶î¶È£¬×ªÉúµÈ¼¶Ô½¸ß£¬»Ö¸´¶î¶ÈÔ½¶à£¬>
 INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=68|color=255|size=17|text=¿ÉÇ°ÍùÍÁ³Ç<¾­ÑéÊ¹Õß/FCOLOR=58>½øÈë¡£>
 INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=69|color=255|size=17|text=<9.³¬¼¶¾­ÑéÖí£º/FCOLOR=251>ËùÓÐµØÍ¼¾ùÓÐË¢ÐÂ£¬µØÍ¼µÈ¼¶Ô½¸ß³¬¼¶¾­ÑéÖí¾­ÑéÔ½¶à£¬Ã¿>
-INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=70|color=255|size=17|text=¸öÍæ¼ÒÃ¿ÈÕ½öÏÞ»÷É±10¸ö¡£>
+INC S$ÏÔÊ¾ÄÚÈÝ <RText|id=70|color=255|size=17|text=¸öÍæ¼ÒÃ¿ÈÕ½öÏÞ»÷É±10¸ö£¬¶¥¼¶¾­ÑéÖí±Ø±¬<Ö±Éý1¼¶µ¤/FCOLOR=58>¡£>
 GOTO @×ÓÏîÑ¡Ôñ
 
 
