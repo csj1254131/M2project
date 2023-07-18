@@ -1,0 +1,221 @@
+[@main]
+#IF
+#ACT
+#SAY
+<Img|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|bg=1|loadCount=4|img=public/bg_main_6.png|esc=1|show=4>
+<Img|id=10|children={11,12,13,14,15,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Img|id=11|x=135|y=60|height=449|img=custom/hl/hl_ui/fg_1.png>
+<Text|id=12|a=0|x=347|y=5|outlinecolor=0|outline=2|size=20|color=103|text=礼包兑换>
+<Button|id=13|x=770|y=5|color=103|pimg=custom/hl/hl_ui/close_02.png|size=18|nimg=custom/hl/hl_ui/close_01.png|link=@exit>
+<Layout|id=14|x=765|y=0|width=70|height=70|link=@exit>
+<Button|id=15|x=20|y=62|color=100|pimg=custom/hl/hl_ui/115_2.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=快捷功能>
+<Button|id=28|x=350.0|y=170.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=礼包码输入|link=@@InPutString20>
+
+
+#if
+CHECKDUMMYPLAYCOUNT <>=
+#act
+sendmsg 0 当前服务器假人数量大于0
+#elseact
+sendmsg 0 当前服务器假人数量等于0
+
+
+[@InPutString20]
+#IF
+CheckContainsText <$STR(S20)> @
+#ACT
+MESSAGEBOX \\输入含有非法字符，你已被T下线
+KICK
+break
+
+
+
+#IF
+CheckContainsText <$STR(S20)> SVIP888
+#ACT
+goto @直播礼包1检测
+
+
+#IF
+CheckContainsText <$STR(S20)> SVIP666
+#ACT
+goto @直播礼包2检测
+
+
+#IF
+CheckContainsText <$STR(S20)> 888888
+#ACT
+goto @直播礼包3检测
+
+#IF
+CheckContainsText <$STR(S20)> zb1111
+#ACT
+goto @主播礼包1检测
+
+#IF
+CheckContainsText <$STR(S20)> zb2222
+#ACT
+goto @主播礼包2检测
+
+#IF
+CheckContainsText <$STR(S20)> zb3333
+#ACT
+goto @主播礼包3检测
+
+#IF
+CheckContainsText <$STR(S20)> zb4444
+#ACT
+goto @主播礼包4检测
+
+#IF
+CheckContainsText <$STR(S20)> zb5555
+#ACT
+goto @主播礼包5检测
+
+#IF
+#act
+goto @粉丝群礼包检测
+#elseact
+MESSAGEBOX \\提示：礼包码不对，请重新输入。
+break
+
+
+[@直播礼包1检测]
+#IF
+NOT Check [130] 0
+#ACT
+MESSAGEBOX \\你已经领取过该礼包。
+break
+#IF
+Check [130] 0
+#ACT
+SET [130] 1
+give 10W绑定元宝 1
+give 凡品升星石 40
+give 中品注灵石 50
+give 觉醒石 1
+MESSAGEBOX \\提示：正确！恭喜您获得直播特权礼包一！
+break
+
+
+[@直播礼包2检测]
+#IF
+NOT Check [131] 0
+#ACT
+MESSAGEBOX \\你已经领取过该礼包。
+break
+#IF
+Check [131] 0
+#ACT
+SET [131] 1
+give 10W绑定元宝 1
+give 拾取小精灵（7天）1
+give 队伍召集令 5
+MESSAGEBOX \\提示：正确！恭喜您获得直播特权礼包二！
+break
+
+
+[@直播礼包3检测]
+#IF
+NOT Check [132] 0
+#ACT
+MESSAGEBOX \\你已经领取过该礼包。
+break
+#IF
+Check [132] 0
+#ACT
+SET [132] 1
+give 10W绑定元宝 1
+give 火龙凭证 100
+give 凡品升星石 30
+give 中品注灵石 40
+MESSAGEBOX \\提示：正确！恭喜您获得直播特权礼包三！
+break
+
+
+[@主播礼包1检测]
+#IF
+NOT Check [133] 0
+#ACT
+MESSAGEBOX \\你已经领取过该礼包。
+break
+#IF
+Check [133] 0
+#ACT
+SET [133] 1
+give 红包(100元) 5
+break
+
+
+[@主播礼包2检测]
+#IF
+NOT Check [134] 0
+#ACT
+MESSAGEBOX \\你已经领取过该礼包。
+break
+#IF
+Check [134] 0
+#ACT
+SET [134] 1
+give 红包(100元) 10
+break
+
+[@主播礼包3检测]
+#IF
+NOT Check [135] 0
+#ACT
+MESSAGEBOX \\你已经领取过该礼包。
+break
+#IF
+Check [135] 0
+#ACT
+SET [135] 1
+give 红包(100元) 20
+break
+
+[@主播礼包4检测]
+#IF
+NOT Check [136] 0
+#ACT
+MESSAGEBOX \\你已经领取过该礼包。
+break
+#IF
+Check [136] 0
+#ACT
+SET [136] 1
+give 红包(100元) 20
+break
+
+[@主播礼包5检测]
+#IF
+NOT Check [137] 0
+#ACT
+MESSAGEBOX \\你已经领取过该礼包。
+break
+#IF
+Check [137] 0
+#ACT
+SET [137] 1
+give 红包(100元) 20
+break
+
+
+[@粉丝群礼包检测]
+#IF
+NOT Check [129] 0
+#ACT
+MESSAGEBOX \\你已经领取过该礼包。
+break
+#IF
+Check [129] 0
+CHECKTEXTLIST ..\QuestDiary\礼包码\粉丝群礼包.txt <$STR(S20)>
+#ACT
+DelTextList ..\QuestDiary\礼包码\粉丝群礼包.txt <$STR(S20)>
+SET [129] 1
+give 红包(10元) 2
+give 20W绑定元宝 1
+give 洗髓丹 40
+give 恶魔头颅 40
+give 龍の魄 40
+give 龍の心 40
+MESSAGEBOX \\提示：正确！恭喜您获得粉丝群特权礼包！
