@@ -32,8 +32,6 @@
 #AutoRun NPC RUNONDAY 11:45 @关闭勇闯炼狱
 
 
-//#AutoRun NPC RUNONDAY 16:00 @开启个人押镖
-//#AutoRun NPC RUNONDAY 16:20 @关闭个人押镖
 
 #AutoRun NPC RUNONDAY 16:40 @勇闯炼狱提醒
 #AutoRun NPC RUNONDAY 16:45 @开启勇闯炼狱
