@@ -118,7 +118,7 @@ INC S$地图简介 <Text|id=51|x=5|y=8|color=251|size=18|outline=2|outlinecolor=0|te
 INC S$地图简介 <Img|id=52|children={521}|x=5|y=38|img=custom/hl/hl_ui/icon_target_01.png>
 INC S$地图简介 <Text|id=521|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=总共二层>
 INC S$地图简介 <Img|id=53|children={531}|x=5|y=78|img=custom/hl/hl_ui/icon_target_01.png>
-INC S$地图简介 <Text|id=531|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=精英怪30分钟，领主怪90分钟>
+INC S$地图简介 <Text|id=531|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=精英怪不定时刷新，领主怪刷新时间见BOSS列表>
 INC S$地图简介 <Img|id=54|children={541}|x=5|y=118|img=custom/hl/hl_ui/icon_target_01.png>
 INC S$地图简介 <Text|id=541|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=怪物血厚攻高，建议提升斗笠、盾牌\主辅星装备升星，装备注灵后再进入>
 INC S$地图简介 <Img|id=56|children={561}|x=5|y=183|img=custom/hl/hl_ui/icon_target_01.png>
@@ -145,7 +145,7 @@ INC S$地图简介 <Text|id=51|x=5|y=8|color=251|size=18|outline=2|outlinecolor=0|te
 INC S$地图简介 <Img|id=52|children={521}|x=5|y=38|img=custom/hl/hl_ui/icon_target_01.png>
 INC S$地图简介 <Text|id=521|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=总共三层>
 INC S$地图简介 <Img|id=53|children={531}|x=5|y=78|img=custom/hl/hl_ui/icon_target_01.png>
-INC S$地图简介 <Text|id=531|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=精英怪30分钟，领主怪90分钟>
+INC S$地图简介 <Text|id=531|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=精英怪不定时刷新，领主怪刷新时间见BOSS列表>
 INC S$地图简介 <Img|id=54|children={541}|x=5|y=118|img=custom/hl/hl_ui/icon_target_01.png>
 INC S$地图简介 <Text|id=541|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=怪物血厚攻高，建议提升斗笠、盾牌\主辅星装备升星，装备注灵后再进入>
 INC S$地图简介 <Img|id=56|children={561}|x=5|y=183|img=custom/hl/hl_ui/icon_target_01.png>

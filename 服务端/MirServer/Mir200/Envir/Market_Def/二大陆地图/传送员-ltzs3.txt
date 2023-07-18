@@ -17,7 +17,7 @@ MOV S$地图编号 ltzs4
 <Img|id=5|children={51}|x=50|y=98|img=custom/hl/hl_ui/icon_target_01.png>
 <Text|id=51|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=总共八层>
 <Img|id=6|children={61}|x=50|y=148|img=custom/hl/hl_ui/icon_target_01.png>
-<Text|id=61|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=普通怪10分钟，精英怪30分钟，BOSS60分钟>
+<Text|id=61|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=精英怪不定时刷新，领主怪刷新时间见BOSS列表>
 <Img|id=7|children={71}|x=50|y=198|img=custom/hl/hl_ui/icon_target_01.png>
 <Text|id=71|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=怪物难度低，非常适合新人玩家打宝>
 <Img|id=8|children={81}|x=10|y=270|img=custom/hl/dtcs_ui/map_ui_01.png>
