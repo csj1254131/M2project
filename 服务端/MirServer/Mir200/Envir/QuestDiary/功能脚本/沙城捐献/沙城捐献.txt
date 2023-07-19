@@ -306,6 +306,18 @@ Mov N$全区总额 0
 Mov N$全区总额分成 0
 Mov N$胜利行会 0
 Mov N$失败行会 0
+
+
+#if
+CHECKVAR GLOBAL 攻沙次数统计 < 2
+#act
+inc N$全区总额 50000
+#elseact
+inc N$全区总额 10000
+
+
+#if
+#act
 Inc N$全区总额 N$一区沙捐金额
 Inc N$全区总额 N$二区沙捐金额
 Inc N$全区总额 N$三区沙捐金额
@@ -440,59 +452,6 @@ Inc S$详细信息 <RText|x=317.0|y=80.0|size=18|color=255|text=<全区捐献总额：/FCOL
 Inc S$详细信息 <RText|x=317.0|y=112.0|size=18|color=255|text=<胜利行会可得：/FCOLOR=249><<$Str(N$胜利行会)>/FCOLOR=255><火龙币/FCOLOR=254>>
 Inc S$详细信息 <RText|x=317.0|y=144.0|rotate=0|size=18|color=255|text=<失败行会可得：/FCOLOR=168><<$Str(N$失败行会)>/FCOLOR=255><火龙币/FCOLOR=254>>
 Inc S$详细信息 <ListView|id=13|children={14,15,16,17,18,19,20,21,22,23}|x=0|y=0|direction=1|bounce=0|margin=12|width=428|height=313>
-#IF
-Large N$一区沙捐金额 0
-#Act
-Inc S$详细信息 <Layout|id=14|children={14a,14b}|height=20>
-Inc S$详细信息 <Img|id=14a||x=5.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
-Inc S$详细信息 <RText|id=14b|x=28.0|y=0.0|color=255|size=18|text=<<$Str(A490)>/FCOLOR=147><<$Str(S$今日一区)>/FCOLOR=253><沙城捐献总额：/FCOLOR=147><<$Str(N$一区沙捐金额)>/FCOLOR=249><火龙币/FCOLOR=147>>
-#IF
-Large N$二区沙捐金额 0
-#Act
-Inc S$详细信息 <Layout|id=15|children={15a,15b}|height=20>
-Inc S$详细信息 <Img|id=15a||x=5.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
-Inc S$详细信息 <RText|id=15b|x=28.0|y=0.0|color=255|size=18|text=<<$Str(A490)>/FCOLOR=147><<$Str(S$今日二区)>/FCOLOR=253><沙城捐献总额：/FCOLOR=147><<$Str(N$二区沙捐金额)>/FCOLOR=249><火龙币/FCOLOR=147>>
-#IF
-Large N$三区沙捐金额 0
-#Act
-Inc S$详细信息 <Layout|id=16|children={16a,16b}|height=20>
-Inc S$详细信息 <Img|id=16a||x=5.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
-Inc S$详细信息 <RText|id=16b|x=28.0|y=0.0|color=255|size=18|text=<<$Str(A490)>/FCOLOR=147><<$Str(S$今日三区)>/FCOLOR=253><沙城捐献总额：/FCOLOR=147><<$Str(N$三区沙捐金额)>/FCOLOR=249><火龙币/FCOLOR=147>>
-#IF
-Large N$四区沙捐金额 0
-#Act
-Inc S$详细信息 <Layout|id=17|children={17a,17b}|height=20>
-Inc S$详细信息 <Img|id=17a||x=5.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
-Inc S$详细信息 <RText|id=17b|x=28.0|y=0.0|color=255|size=18|text=<<$Str(A490)>/FCOLOR=147><<$Str(S$今日四区)>/FCOLOR=253><沙城捐献总额：/FCOLOR=147><<$Str(N$四区沙捐金额)>/FCOLOR=249><火龙币/FCOLOR=147>>
-
-#IF
-Large N$五区沙捐金额 0
-#Act
-Inc S$详细信息 <Layout|id=18|children={18a,18b}|height=20>
-Inc S$详细信息 <Img|id=18a||x=5.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
-Inc S$详细信息 <RText|id=18b|x=28.0|y=0.0|color=255|size=18|text=<<$Str(A490)>/FCOLOR=147><<$Str(S$今日五区)>/FCOLOR=253><沙城捐献总额：/FCOLOR=147><<$Str(N$五区沙捐金额)>/FCOLOR=249><火龙币/FCOLOR=147>>
-
-#IF
-Large N$六区沙捐金额 0
-#Act
-Inc S$详细信息 <Layout|id=19|children={19a,19b}|height=20>
-Inc S$详细信息 <Img|id=19a||x=5.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
-Inc S$详细信息 <RText|id=19b|x=28.0|y=0.0|color=255|size=18|text=<<$Str(A490)>/FCOLOR=147><<$Str(S$今日六区)>/FCOLOR=253><沙城捐献总额：/FCOLOR=147><<$Str(N$六区沙捐金额)>/FCOLOR=249><火龙币/FCOLOR=147>>
-
-#IF
-Large N$七区沙捐金额 0
-#Act
-Inc S$详细信息 <Layout|id=20|children={20a,20b}|height=20>
-Inc S$详细信息 <Img|id=20a||x=5.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
-Inc S$详细信息 <RText|id=20b|x=28.0|y=0.0|color=255|size=18|text=<<$Str(A490)>/FCOLOR=147><<$Str(S$今日七区)>/FCOLOR=253><沙城捐献总额：/FCOLOR=147><<$Str(N$七区沙捐金额)>/FCOLOR=249><火龙币/FCOLOR=147>>
-
-#IF
-Large N$八区沙捐金额 0
-#Act
-Inc S$详细信息 <Layout|id=21|children={21a,21b}|height=20>
-Inc S$详细信息 <Img|id=21a||x=5.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
-Inc S$详细信息 <RText|id=21b|x=28.0|y=0.0|color=255|size=18|text=<<$Str(A490)>/FCOLOR=147><<$Str(S$今日八区)>/FCOLOR=253><沙城捐献总额：/FCOLOR=147><<$Str(N$八区沙捐金额)>/FCOLOR=249><火龙币/FCOLOR=147>>
-
 
 #IF
 #Act

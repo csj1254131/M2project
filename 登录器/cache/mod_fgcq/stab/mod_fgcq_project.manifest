@@ -1,5 +1,5 @@
 {
-    "version": "3.3.3067",
+    "version": "3.3.3068",
     "assets": {
         "anim_effect.zip": {
             "md5": "f7b49059a3b601b0c794cafb15dec2da",
@@ -37,9 +37,10 @@
             "size": 17390
         },
         "assets_sub.zip": {
-            "md5": "4c0353fbbe275bb1188e56203274db6f",
+            "md5": "785779952c0f5e19ad5574980d4c2a1c",
             "compressed": true,
-            "size": 3474627
+            "size": 3474859,
+            "downloadState": 1
         },
         "data_config.zip": {
             "md5": "06d9117d9d94d4fb25dae19f3b821907",
@@ -764,8 +765,7 @@
         "scripts_game_command_auto.zip": {
             "md5": "7bc89759c8fd99f76816507316e71a68",
             "compressed": true,
-            "size": 16489,
-            "downloadState": 1
+            "size": 16489
         },
         "scripts_game_command_gamestates.zip": {
             "md5": "01db4fe6e16b012fe8bb3489abc4efcb",
@@ -1923,9 +1923,10 @@
             "size": 44509
         },
         "scripts_game_view_layersui_setting_layer.zip": {
-            "md5": "ba882fb4ce658811b086f31a38b8fe2d",
+            "md5": "3fe84903574393bb94b19ecf6dcb0596",
             "compressed": true,
-            "size": 62255
+            "size": 62243,
+            "downloadState": 2
         },
         "scripts_game_view_layersui_sight_bead_layer.zip": {
             "md5": "e0a107732d6bc28840289907fc79f833",

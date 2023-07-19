@@ -177,6 +177,8 @@ Sendcustommsg 0 征战沙巴克活动开始了... 0 249 500 333
 Sendcustommsg 0 荣誉、瓜分沙城奖池,希望大家勇于参与... 0 249 500 333
 Sendcustommsg 0 征战沙巴克活动开始了... 0 249 500 333
 Sendmsgnew 255 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1 10
+calcvar global 攻沙次数统计 + 1
+savevar global 攻沙次数统计
 GMEXECUTE 开始提问 @开启沙城狂暴保护
 
 
@@ -216,7 +218,7 @@ Gmexecute 开始提问 @清理沙城捐献平时xx
 
 [@清理沙城捐献]
 #If
-Equal <$Hfcount> <$Str(G490)>
+Large <$KFDAY> 1
 #Act
 Inc G490 1
 Mov G492 0

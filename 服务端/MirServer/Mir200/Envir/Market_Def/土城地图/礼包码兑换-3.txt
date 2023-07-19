@@ -12,12 +12,6 @@
 <Button|id=28|x=350.0|y=170.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=礼包码输入|link=@@InPutString20>
 
 
-#if
-CHECKDUMMYPLAYCOUNT <>=
-#act
-sendmsg 0 当前服务器假人数量大于0
-#elseact
-sendmsg 0 当前服务器假人数量等于0
 
 
 [@InPutString20]
@@ -75,6 +69,18 @@ goto @主播礼包5检测
 #IF
 #act
 goto @粉丝群礼包检测
+
+#or
+CheckContainsText <$STR(S20)> zb5555
+CheckContainsText <$STR(S20)> zb4444
+CheckContainsText <$STR(S20)> zb3333
+CheckContainsText <$STR(S20)> zb2222
+CheckContainsText <$STR(S20)> zb1111
+CheckContainsText <$STR(S20)> 888888
+CheckContainsText <$STR(S20)> SVIP666
+CheckContainsText <$STR(S20)> SVIP888
+
+#act
 #elseact
 MESSAGEBOX \\提示：礼包码不对，请重新输入。
 break

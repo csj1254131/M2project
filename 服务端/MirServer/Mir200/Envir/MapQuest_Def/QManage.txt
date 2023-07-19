@@ -108,6 +108,7 @@ Mov A491 ◆◆◆沙城争霸◆◆◆\虚位以待
 #IF
 #ACT
 Var Integer Global 全区沙捐金额
+Var Integer Global 攻沙次数统计
 #CALL [\游戏功能\系统功能\BOSS状态.txt] @清空BOSS变量
 
 
@@ -1081,68 +1082,90 @@ sendmsg 0 当前占领行会：<$OWNERGUILD>
 
 
 
+
+
+
 [@攻城奖励前统计]
 #If
 Checkofguild <$Ownerguild>
 #ACT
 Mov G498 <$Guild(参加沙巴克人数)>
 
+
+;非首次攻沙胜利方奖励
 [@攻城奖励发放]
 #If
-Not Equal <$Hfcount> <$Str(G490)>
+CHECKVAR GLOBAL 攻沙次数统计 ? 2
 Checkofguild <$Ownerguild>
 Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
 #Act
-Div N$沙城员火龙 10000 <$Guild(参加沙巴克人数)>
 Div N$沙城员元宝 3500000 <$Guild(参加沙巴克人数)>
-MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
-MailGIVE 火龙币 <$Str(N$沙城员火龙)>
-SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
-Mov N$沙城员元宝 0
-Mov N$沙城员火龙 0
-
-
-#If
-Not Equal <$Hfcount> <$Str(G490)>
-Not Checkofguild <$Ownerguild>
-Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
-#Act
-Mov N$总沙城人数 <$Str(G495)>
-Dec N$总沙城人数 <$Str(G498)>
-Div N$沙城员火龙 1800 <$Str(N$总沙城人数)>
-Div N$沙城员元宝 1500000 <$Str(N$总沙城人数)>
-MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
-MailGIVE 火龙币 <$Str(N$沙城员火龙)>
-SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
-Mov N$沙城员元宝 0
-Mov N$沙城员火龙 0
-
-
-
-#IF
-Equal <$Hfcount> <$Str(G490)>
-Checkofguild <$Ownerguild>
-Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
-#Act
 Div N$沙城员 <$Str(G493)> <$Guild(参加沙巴克人数)>
-MailGIVE 绑定元宝 100000
+MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
 MailGIVE 火龙币 <$Str(N$沙城员)>
 SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
 Mov N$沙城员 0
+Mov N$沙城员元宝 0
 
 
-
-#IF
-Equal <$Hfcount> <$Str(G490)>
+;非首次攻沙失败方奖励
+#If
+CHECKVAR GLOBAL 攻沙次数统计 ? 2
 Not Checkofguild <$Ownerguild>
 Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
 #Act
+Mov N$沙城员元宝 0
 Mov N$总沙城人数 <$Str(G495)>
-Dec N$总沙城人数 <$Str(G498)>
+Dec N$总沙城人数 <$Guild(参加沙巴克人数)>
+Div N$沙城员元宝 1500000 <$Str(N$总沙城人数)>
 Div N$非沙城员 <$Str(G494)> <$Str(N$总沙城人数)>
+MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
 MailGIVE 火龙币 <$Str(N$非沙城员)>
 SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
 Mov N$非沙城员 0
+Mov N$沙城员元宝 0
+Mov N$非沙城员首次元宝 0
+
+;首次攻沙胜利方奖励
+#IF
+CHECKVAR GLOBAL 攻沙次数统计 < 2
+Checkofguild <$Ownerguild>
+Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Div N$沙城员元宝 3500000 <$Guild(参加沙巴克人数)>
+Div N$沙城员首次元宝 2000000 <$Guild(参加沙巴克人数)>
+Div N$沙城员 <$Str(G493)> <$Guild(参加沙巴克人数)>
+MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
+MailGIVE 绑定元宝 <$Str(N$沙城员首次元宝)>
+MailGIVE 火龙币 <$Str(N$沙城员)>
+SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
+Mov N$沙城员 0
+Mov N$沙城员元宝 0
+Mov N$沙城员首次元宝 0
+
+
+;首次攻沙失败方奖励
+#IF
+CHECKVAR GLOBAL 攻沙次数统计 < 2
+Not Checkofguild <$Ownerguild>
+Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+#Act
+Mov N$沙城员元宝 0
+Mov N$沙城员火龙 0
+Mov N$总沙城人数 <$Str(G495)>
+Dec N$总沙城人数 <$Guild(参加沙巴克人数)>
+Div N$沙城员元宝 1500000 <$Str(N$总沙城人数)>
+Div N$非沙城员 <$Str(G494)> <$Str(N$总沙城人数)>
+Div N$非沙城员首次元宝 1000000 <$Str(N$总沙城人数)>
+MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
+MailGIVE 绑定元宝 <$Str(N$非沙城员首次元宝)>
+MailGIVE 火龙币 <$Str(N$非沙城员)>
+SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
+Mov N$非沙城员 0
+Mov N$沙城员元宝 0
+Mov N$非沙城员首次元宝 0
+
+
 
 
 [@清理沙城捐献xx]
@@ -1151,6 +1174,16 @@ Mov N$非沙城员 0
 Deprivetitle 沙捐大佬
 ClearHumCustVar 沙城捐献|顶戴展示四|沙城捐献金额 0
 ClearGlobalCustVar 全区沙捐金额
+mov N$一区沙捐金额 0
+mov N$二区沙捐金额 0
+mov N$三区沙捐金额 0
+mov N$四区沙捐金额 0
+mov N$五区沙捐金额 0
+mov N$六区沙捐金额 0
+mov N$七区沙捐金额 0
+mov N$八区沙捐金额 0
+mov N$九区沙捐金额 0
+mov N$十区沙捐金额 0
 Calcvar Guild 参加沙巴克人数 = 0
 Savevar Guild 参加沙巴克人数
 Clearnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt

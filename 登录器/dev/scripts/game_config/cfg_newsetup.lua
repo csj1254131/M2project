@@ -11,7 +11,7 @@ local config = {
 		idx=2,
 		id=33,
 		content="只显人名",
-		default=1,
+		default=0,
 		platform=0,
 		order=1001,
 	},

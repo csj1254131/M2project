@@ -2211,8 +2211,6 @@ INC S$显示内容 <ItemShow|id=1059|itemid=<$STR(S$道士铭文9)>|itemcount=0|showtips
 INC S$显示内容 <ItemShow|id=10511|itemid=<$STR(S$道士铭文10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
 INC S$显示内容 <ItemShow|id=10512|itemid=<$STR(S$道士铭文11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
 INC S$显示内容 <ItemShow|id=10513|itemid=<$STR(S$道士铭文12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
-INC S$显示内容 <ItemShow|id=10514|itemid=<$STR(S$道士铭文13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
-INC S$显示内容 <ItemShow|id=10515|itemid=<$STR(S$道士铭文14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
 
 GOTO @子项选择
 

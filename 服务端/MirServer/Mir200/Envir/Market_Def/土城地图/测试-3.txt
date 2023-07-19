@@ -229,17 +229,65 @@ CHECKSKILL 护体神盾 ? 0
 #act
 PLAYEFFECT 17104 10 10 0 0 0
 #elseact
-sendmsg 0 你还未学习护体神盾
+sendmsg 0  <$GLOBAL(攻沙次数统计)> 
+sendmsg 0 沙巴克归属的总人数：<$Guild(参加沙巴克人数)>
+Mov N$总沙城人数1 <$Str(G495)>
+sendmsg 0  总沙城人数：<$Str(N$总沙城人数1)>
+Dec N$总沙城人数1 <$Guild(参加沙巴克人数)>
+sendmsg 0  胜利方沙城人数：<$Guild(参加沙巴克人数)>
+sendmsg 0  失败方沙城人数：<$STR(N$总沙城人数1)>
+
 
 
 
 [@开启攻沙]
 #If
+#Act
+AddToCastleWarListEx 沙巴克 *
+GMEXECUTE ForcedWallConQuestWar
+goto @攻城提示
+goto @攻城开始
+
+
+
+[@攻城结束]
+#If
+Large <$KFDAY> 1
+#Act
+Mov A491 <$LORD>
+Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
+Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
+Sendmsgnew 255 0 征战沙巴克活动结束了,请耐心等待奖励发放... 1 10 
+goto @攻城统计
+goto @攻城奖励
+DELAYGOTO 5000 @清理沙城捐献平时
+DELAYGOTO 5000 @清理沙城捐献
+
+
+[@攻城提示]
+#If
 Large <$KFDAY> 1
 #Act
 AddAttackSabukAll 0
-AddToCastleWarListEx 沙巴克 *
-GMEXECUTE ForcedWallConQuestWar
+Scenevibration 1 1 1
+ClearHumCustVar 顶戴展示七
+SendMsg 1 ぐ系统：今日集体攻城20:00开启!--请提早建会!否则参加不了集体攻城!
+SendMsg 1 ぐ系统：今日集体攻城20:00开启!--今日晚上8点开启全服大型攻城!
+SendMsg 1 ぐ系统：今日集体攻城20:00开启!--每个行会都可以攻城!无需提交头像
+SendMsg 1 ぐ系统：今日集体攻城20:00开启!--如果您的势力不行!建议找结盟好友!
+SendMsg 1 ぐ系统：今日集体攻城20:00开启!--所有行会做好准备!它是否属于你呢?
+SendMsg 0 ぐ温馨提示：攻沙前清理所有城主顶戴...新届花落谁家呢....
+Sendcustommsg 0 征战沙巴克活动将在30分钟后开启... 0 249 500 333
+Sendcustommsg 0 荣誉、瓜分沙城奖池,希望大家勇于参与... 0 249 500 333
+Sendcustommsg 0 征战沙巴克活动将在30分钟后开启... 0 249 500 333
+Sendmsgnew 255 0 征战沙巴克活动将在30分钟后开启... 1 10
+GMEXECUTE 开始提问 @清理城主顶戴
+
+
+[@攻城开始]
+#If
+Large <$KFDAY> 1
+#Act
 Scenevibration 1 1 1
 SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
 SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
@@ -250,6 +298,10 @@ Sendcustommsg 0 征战沙巴克活动开始了... 0 249 500 333
 Sendcustommsg 0 荣誉、瓜分沙城奖池,希望大家勇于参与... 0 249 500 333
 Sendcustommsg 0 征战沙巴克活动开始了... 0 249 500 333
 Sendmsgnew 255 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1 10
+sendmsg 0  <$GLOBAL(攻沙次数统计)> 
+calcvar global 攻沙次数统计 + 1
+savevar global
+sendmsg 0  <$GLOBAL(攻沙次数统计)> 
 GMEXECUTE 开始提问 @开启沙城狂暴保护
 
 
@@ -262,129 +314,42 @@ Mov A491 <$LORD>
 Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
 Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
 Sendmsgnew 255 0 征战沙巴克活动结束了,请耐心等待奖励发放... 1 10
+Gmexecute 开始提问 @清理狂暴保护
 
 
-
+[@攻城统计]
 #If
-Checkofguild <$Ownerguild>
-#ACT
-Mov G498 <$Guild(参加沙巴克人数)>
+Large <$KFDAY> 1
+#Act
+Gmexecute 开始提问 @攻城奖励前统计
 
+[@攻城奖励]
 #If
-Not Equal <$Hfcount> <$Str(G490)>
-Checkofguild <$Ownerguild>
-Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+Large <$KFDAY> 1
 #Act
-Div N$沙城员火龙 1400 <$Guild(参加沙巴克人数)>
-Div N$沙城员元宝 3500000 <$Guild(参加沙巴克人数)>
-MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
-MailGIVE 火龙币 <$Str(N$沙城员火龙)>
-SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
-Mov N$沙城员元宝 0
-Mov N$沙城员火龙 0
+Gmexecute 开始提问 @攻城奖励发放
 
-
-
+[@清理沙城捐献平时]
 #If
-Not Equal <$Hfcount> <$Str(G490)>
-Not Checkofguild <$Ownerguild>
-Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
+Large <$KFDAY> 1
 #Act
-Mov N$总沙城人数 <$Str(G495)>
-Dec N$总沙城人数 <$Str(G498)>
-Div N$沙城员火龙 600 <$Str(N$总沙城人数)>
-Div N$沙城员元宝 1500000 <$Str(N$总沙城人数)>
-MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
-MailGIVE 火龙币 <$Str(N$沙城员火龙)>
-SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
-Mov N$沙城员元宝 0
-Mov N$沙城员火龙 0
-
-
-
-#IF
-Equal <$Hfcount> <$Str(G490)>
-Checkofguild <$Ownerguild>
-Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
-#Act
-Div N$沙城员 <$Str(G493)> <$Guild(参加沙巴克人数)>
-MailGIVE 绑定元宝 100000
-MailGIVE 火龙币 <$Str(N$沙城员)>
-SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
-Mov N$沙城员 0
-
-
-
-#IF
-Equal <$Hfcount> <$Str(G490)>
-Not Checkofguild <$Ownerguild>
-Checknamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
-#Act
-Mov N$总沙城人数 <$Str(G495)>
-Dec N$总沙城人数 <$Str(G498)>
-Div N$非沙城员 <$Str(G494)> <$Str(N$总沙城人数)>
-MailGIVE 火龙币 <$Str(N$非沙城员)>
-SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
-Mov N$非沙城员 0
-
-
-
-#IF
-#Act
-Deprivetitle 沙捐大佬
-ClearHumCustVar 沙城捐献|顶戴展示四|沙城捐献金额 0
-ClearGlobalCustVar 全区沙捐金额
-Calcvar Guild 参加沙巴克人数 = 0
-Savevar Guild 参加沙巴克人数
+Mov G495 0
+Mov G498 0
 Clearnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
-Clearnamelist ..\Questdiary\通区\<$Str(A490)>\<$Servername>.Txt
-#CALL [\吸血刷新.txt] @吸血刷新
-#CALL [\爆率刷新.txt] @爆率刷新
-#CALL [\元素刷新.txt] @元素刷新
-#CALL [\属性刷新.txt] @属性刷新
-#CALL [\顶戴刷新.txt] @顶戴刷新
-#CALL [\游戏功能\顶戴系统\顶戴界面.txt] @顶戴界面
+Gmexecute 开始提问 @清理沙城捐献平时xx
 
 
-
-
-#IF
-#ACT
-Calcvar Guild 参加沙巴克人数 = 0
-Savevar Guild 参加沙巴克人数
-[@OnTimer255]
-#IF
-Checkvar Human 狂暴保护 = 已开启
-Checkunderwar 沙巴克
-NOT CheckInWarArea
-LARGE <$Human(神龙之力)> 0
+[@清理沙城捐献]
+#If
+Large <$KFDAY> 1
 #Act
-MOV N$清空狂暴保护层 1
-#IF
-Checkvar Human 狂暴保护 = 已开启
-Checkunderwar 沙巴克
-NOT CheckInWarArea
-LARGE <$Human(庇护之力)> 0
-#Act
-MOV N$清空狂暴保护层 1
-
-#IF
-EQUAL N$清空狂暴保护层 1
-#ACT
-Mov N$神龙之力 0
-Mov N$庇护之力 0
-#CALL [\元素刷新.txt] @元素刷新
-MOV N$清空狂暴保护层 0
-
-#IF
-Checkunderwar 沙巴克
-CheckInWarArea
-Checkvar Human 沙城捐献 =
-#ACT
-Mapmove 3 335 327 3
-Sendmsg 9 你没有开启【沙城捐献】不能参加攻城活动...
-Sendmsg 6 你没有开启【沙城捐献】不能参加攻城活动...
-
+Inc G490 1
+Mov G492 0
+Mov G493 0
+Mov G494 0
+Mov G495 0
+Mov G498 0
+Gmexecute 开始提问 @清理沙城捐献xx
 
 
 [@礼包码领取]
