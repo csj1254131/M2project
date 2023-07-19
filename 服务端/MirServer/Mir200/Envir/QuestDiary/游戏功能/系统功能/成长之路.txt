@@ -397,7 +397,7 @@ INC S$显示内容 <RText|id=61|color=255|size=17|text=<5.全民押镖：每天开启，/FCOLO
 INC S$显示内容 <RText|id=62|color=255|size=17|text=等级的经验奖励，一天可运送三次。>
 INC S$显示内容 <RText|id=63|color=255|size=17|text=<6.世界BOSS：每周一、五、日开启，/FCOLOR=251>进入地图夺取唯一一只的世界BOSS，BO>
 INC S$显示内容 <RText|id=64|color=255|size=17|text=SS死亡后根据玩家总伤害计算排名。>
-INC S$显示内容 <RText|id=65|color=255|size=17|text=<7.剑指沙巴克：开服2天后开启，/FCOLOR=251>四方群雄前来征战沙巴克，获胜行会获得沙巴克>
+INC S$显示内容 <RText|id=65|color=255|size=17|text=<7.剑指沙巴克：开服5天后开启，/FCOLOR=251>四方群雄前来征战沙巴克，获胜行会获得沙巴克>
 INC S$显示内容 <RText|id=66|color=255|size=17|text=称号、元宝和火龙币奖励，获胜行会会长可获得沙巴克<唯一限时称号奖励。/FCOLOR=58>>
 INC S$显示内容 <RText|id=67|color=255|size=17|text=<8.经验使者：/FCOLOR=251>每日凌晨恢复高倍经验额度，转生等级越高，恢复额度越多，>
 INC S$显示内容 <RText|id=68|color=255|size=17|text=可前往土城<经验使者/FCOLOR=58>进入。>

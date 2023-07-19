@@ -142,10 +142,10 @@ SENDMSG 1 游戏虽然好玩，也别忘了陪朋友和家人吃顿晚饭
 SENDMSG 1 亲爱的玩家，现在已经是凌晨了
 SENDMSG 1 游戏虽然好玩，也别忘了是不是该休息了
 
-
+//——————————————首次攻沙脚本——————————————————————
 [@攻城提示]
 #If
-Large <$KFDAY> 1
+Large <$KFDAY> 4
 #Act
 AddAttackSabukAll 0
 Scenevibration 1 1 1
@@ -165,7 +165,7 @@ GMEXECUTE 开始提问 @清理城主顶戴
 
 [@攻城开始]
 #If
-Large <$KFDAY> 1
+Large <$KFDAY> 4
 #Act
 Scenevibration 1 1 1
 SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
@@ -196,19 +196,19 @@ Gmexecute 开始提问 @清理狂暴保护
 
 [@攻城统计]
 #If
-Large <$KFDAY> 1
+Large <$KFDAY> 4
 #Act
 Gmexecute 开始提问 @攻城奖励前统计
 
 [@攻城奖励]
 #If
-Large <$KFDAY> 1
+Large <$KFDAY> 4
 #Act
 Gmexecute 开始提问 @攻城奖励发放
 
 [@清理沙城捐献平时]
 #If
-Large <$KFDAY> 1
+Large <$KFDAY> 4
 #Act
 Mov G495 0
 Mov G498 0
@@ -218,7 +218,7 @@ Gmexecute 开始提问 @清理沙城捐献平时xx
 
 [@清理沙城捐献]
 #If
-Large <$KFDAY> 1
+Large <$KFDAY> 4
 #Act
 Inc G490 1
 Mov G492 0

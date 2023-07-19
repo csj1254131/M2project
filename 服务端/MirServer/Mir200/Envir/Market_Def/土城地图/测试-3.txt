@@ -237,6 +237,10 @@ Dec N$总沙城人数1 <$Guild(参加沙巴克人数)>
 sendmsg 0  胜利方沙城人数：<$Guild(参加沙巴克人数)>
 sendmsg 0  失败方沙城人数：<$STR(N$总沙城人数1)>
 sendmsg 0 开服天数：<$KFDAY>
+sendmsg 0 开服时间：<$showtime>
+sendmsg 0 开服时间：<$KFTIME>
+sendmsg 0 开服时间：<$KFTIMEEX>
+
 
 
 
