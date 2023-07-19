@@ -1922,15 +1922,14 @@ BREAK
 
 #IF
 CheckHpPer < 40
-checkHumanState 2
 CheckContainsText <$STR(T90)> 护身印
 large <$UTCNOW8> <$HUMAN(C_护身印CD)>
 #ACT
-AddhpPer + 20
+AddhpPer + 40
 CALCVAR HUMAN C_护身印CD = <$UTCNOW8>
-CALCVAR HUMAN C_护身印CD + 80
+CALCVAR HUMAN C_护身印CD + 60
 SAVEVAR HUMAN C_护身印CD
-SENDMSG 9 【护身印】生效。你恢复了20%血量！
+SENDMSG 9 【护身印】生效。你恢复了40%血量！
 
 #IF
 checkHumanState 2

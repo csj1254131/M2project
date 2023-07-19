@@ -25,21 +25,32 @@
 #AutoRun NPC RUNONDAY 10:40 @ำยดณมถำüฬแะั
 #AutoRun NPC RUNONDAY 10:45 @ฟชฦ๔ำยดณมถำü
 #AutoRun NPC RUNONDAY 10:55 @ำยดณมถำüฒนนึ
+#AutoRun NPC RUNONDAY 11:00 @ำยดณมถำüฒนนึ
 #AutoRun NPC RUNONDAY 11:05 @ำยดณมถำüฒนนึ
+#AutoRun NPC RUNONDAY 11:10 @ำยดณมถำüฒนนึ
 #AutoRun NPC RUNONDAY 11:15 @ำยดณมถำüฒนนึ
+#AutoRun NPC RUNONDAY 11:20 @ำยดณมถำüฒนนึ
 #AutoRun NPC RUNONDAY 11:25 @ำยดณมถำüฒนนึ
+#AutoRun NPC RUNONDAY 11:30 @ำยดณมถำüฒนนึ
 #AutoRun NPC RUNONDAY 11:35 @ำยดณมถำüฒนนึ
+#AutoRun NPC RUNONDAY 11:40 @ำยดณมถำüฒนนึ
 #AutoRun NPC RUNONDAY 11:45 @นุฑีำยดณมถำü
 
 
 
 #AutoRun NPC RUNONDAY 16:40 @ำยดณมถำüฬแะั
 #AutoRun NPC RUNONDAY 16:45 @ฟชฦ๔ำยดณมถำü
+#AutoRun NPC RUNONDAY 16:50 @ำยดณมถำüฒนนึ
 #AutoRun NPC RUNONDAY 16:55 @ำยดณมถำüฒนนึ
+#AutoRun NPC RUNONDAY 17:00 @ำยดณมถำüฒนนึ
 #AutoRun NPC RUNONDAY 17:05 @ำยดณมถำüฒนนึ
+#AutoRun NPC RUNONDAY 17:10 @ำยดณมถำüฒนนึ
 #AutoRun NPC RUNONDAY 17:15 @ำยดณมถำüฒนนึ
+#AutoRun NPC RUNONDAY 17:20 @ำยดณมถำüฒนนึ
 #AutoRun NPC RUNONDAY 17:25 @ำยดณมถำüฒนนึ
+#AutoRun NPC RUNONDAY 17:30 @ำยดณมถำüฒนนึ
 #AutoRun NPC RUNONDAY 17:35 @ำยดณมถำüฒนนึ
+#AutoRun NPC RUNONDAY 17:40 @ำยดณมถำüฒนนึ
 #AutoRun NPC RUNONDAY 17:45 @นุฑีำยดณมถำü
 
 
