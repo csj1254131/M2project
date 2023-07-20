@@ -3937,9 +3937,11 @@ MESSAGEBOX 需要在盟重使用摆摊功能.
 ForbidMyShop
 BREAK
 
-#if
-small <$RELEVEL> 5  
-small U119 1
+
+
+#or
+small  <$RELEVEL> 5  
+small U119 2
 #ACT
 MESSAGEBOX 需要五转及完成首充才可以使用摆摊功能！
 ForbidMyShop

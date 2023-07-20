@@ -399,7 +399,7 @@ Goto @沙捐Npc会话
 
 <Layout|id=9|children={9a,9b}|height=20>
 <Img|id=9a||x=0.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
-<RText|id=9b|x=23.0|y=0.0|color=255|size=18|text=<3./FCOLOR=242><攻沙获胜方会获得/FCOLOR=242><神秘称号/FCOLOR=249><,及每人获得/FCOLOR=242><10万绑定元宝/FCOLOR=249>>
+<RText|id=9b|x=23.0|y=0.0|color=255|size=18|text=<3./FCOLOR=242><攻沙获胜方会长获得/FCOLOR=242><神秘称号/FCOLOR=249><,及每人平分/FCOLOR=242><奖池元宝/FCOLOR=249>>
 
 <Layout|id=10|children={10a,10b}|height=20>
 <Img|id=10a||x=0.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
@@ -411,7 +411,7 @@ Goto @沙捐Npc会话
 
 <Layout|id=12|children={12a,12b}|height=20>
 <Img|id=12a||x=0.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
-<RText|id=12b|x=23.0|y=0.0|color=255|size=18|text=<6./FCOLOR=242><每次合区首次后会清空沙城捐献,玩家需重新捐献/FCOLOR=249>>
+<RText|id=12b|x=23.0|y=0.0|color=255|size=18|text=<6./FCOLOR=242><每次攻沙后会清空沙城捐献,玩家需重新捐献/FCOLOR=249>>
 
 <Layout|id=xx13|children={xx13a,xx13b}|height=30>
 <Img|id=xx13a||x=0.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
