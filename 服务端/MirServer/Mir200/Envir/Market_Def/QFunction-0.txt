@@ -1967,7 +1967,7 @@ NOT EQUAL <$STR(N$C_三刀甲)> 0
 #ACT
 DEC N$C_三刀甲 1
 ChangeDamageValue 0 = 0
-sendmsg 9 三刀甲生效
+sendmsg 9 【守护印】生效
 
 #IF
 check [412] 1
