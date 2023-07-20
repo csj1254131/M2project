@@ -29,7 +29,6 @@ WriteConfigFileItem ..\QuestDiary\ÒÑ±¬ÎïÆ·.txt <$CURRTEMNAME> ÏŞÖÆÊı <$STR(N$ÊıÁ
 #IF
 #Act
 money »ğÁú±Ò + 1000
-MONEY ³äÖµµã + 10
 money VIP¾­Ñé + 10
 
 //100Ôªºì°üÊ¹ÓÃ¼ì²â
