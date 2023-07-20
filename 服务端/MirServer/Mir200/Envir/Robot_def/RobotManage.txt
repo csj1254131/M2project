@@ -185,7 +185,7 @@ GMEXECUTE 开始提问 @开启沙城狂暴保护
 
 [@攻城结束]
 #If
-Large <$KFDAY> 1
+Large <$KFDAY> 4
 #Act
 Mov A491 <$LORD>
 Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
