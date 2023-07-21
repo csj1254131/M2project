@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plist version="1.0">
+  <dict>
+    <key>frames</key>
+    <dict>
+      <key>sfx_1111_0_0000.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{88,0},{38,77}}</string>
+        <key>offset</key>
+        <string>{3,65}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{38,77}}</string>
+        <key>sourceSize</key>
+        <string>{40,77}</string>
+      </dict>
+      <key>sfx_1111_0_0001.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{44,0},{42,83}}</string>
+        <key>offset</key>
+        <string>{1,65}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{42,83}}</string>
+        <key>sourceSize</key>
+        <string>{44,83}</string>
+      </dict>
+      <key>sfx_1111_0_0002.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,0},{42,89}}</string>
+        <key>offset</key>
+        <string>{1,66}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{42,89}}</string>
+        <key>sourceSize</key>
+        <string>{44,89}</string>
+      </dict>
+    </dict>
+    <key>metadata</key>
+    <dict>
+      <key>format</key>
+      <integer>2</integer>
+      <key>realTextureFileName</key>
+      <string>sfx_1111_0.plist</string>
+      <key>size</key>
+      <string>{126,89}</string>
+      <key>smartupdate</key>
+      <string>$TexturePacker:SmartUpdate:180861f73107aeea1eee3088edf2e129:e7791aa5fa6149bf3366f6f455187912:a606d6660fac062e244a3483527b9407$</string>
+      <key>textureFileName</key>
+      <string>sfx_1111_0.plist</string>
+    </dict>
+  </dict>
+</plist>

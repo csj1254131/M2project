@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plist version="1.0">
+  <dict>
+    <key>frames</key>
+    <dict>
+      <key>sfx_0023_0_0000.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{113,223},{29,37}}</string>
+        <key>offset</key>
+        <string>{4,35}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{29,37}}</string>
+        <key>sourceSize</key>
+        <string>{29,37}</string>
+      </dict>
+      <key>sfx_0023_0_0001.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{113,148},{73,70}}</string>
+        <key>offset</key>
+        <string>{-21,46}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{73,70}}</string>
+        <key>sourceSize</key>
+        <string>{73,70}</string>
+      </dict>
+      <key>sfx_0023_0_0002.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,148},{100,111}}</string>
+        <key>offset</key>
+        <string>{-35,63}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{100,111}}</string>
+        <key>sourceSize</key>
+        <string>{100,111}</string>
+      </dict>
+      <key>sfx_0023_0_0003.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{139,0},{123,131}}</string>
+        <key>offset</key>
+        <string>{-40,68}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{123,131}}</string>
+        <key>sourceSize</key>
+        <string>{123,131}</string>
+      </dict>
+      <key>sfx_0023_0_0004.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,0},{137,146}}</string>
+        <key>offset</key>
+        <string>{-39,70}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{137,146}}</string>
+        <key>sourceSize</key>
+        <string>{137,146}</string>
+      </dict>
+      <key>sfx_0023_0_0005.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,254},{1,1}}</string>
+        <key>offset</key>
+        <string>{-299,340}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{1,1}}</string>
+        <key>sourceSize</key>
+        <string>{1,1}</string>
+      </dict>
+    </dict>
+    <key>metadata</key>
+    <dict>
+      <key>format</key>
+      <integer>2</integer>
+      <key>realTextureFileName</key>
+      <string>sfx_0023_0.png</string>
+      <key>size</key>
+      <string>{317,257}</string>
+      <key>textureFileName</key>
+      <string>sfx_0023_0.png</string>
+    </dict>
+  </dict>
+</plist>

@@ -1,0 +1,33 @@
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>sfx_6006_0_0000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,0},{166,183}}</string>
+                <key>offset</key>
+                <string>{12,66}</string>
+                <key>rotated</key>
+                <false />
+                <key>sourceColorRect</key>
+                <string>{{0,0},{166,183}}</string>
+                <key>sourceSize</key>
+                <string>{166,183}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>sfx_6006_0.png</string>
+            <key>size</key>
+            <string>{166,183}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:0eba3ce1deef326a27abb60faf0d55ae:5b9a940af0a73bc5c3d12c4571c25f20:f53e17cfaf832c1f3d1e654bef7bec56$</string>
+            <key>textureFileName</key>
+            <string>sfx_6006_0.png</string>
+        </dict>
+    </dict>
+</plist>

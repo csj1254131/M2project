@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plist version="1.0">
+  <dict>
+    <key>frames</key>
+    <dict>
+      <key>sfx_1006_1_0000.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,0},{1000,1000}}</string>
+        <key>offset</key>
+        <string>{-480,480}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{1000,1000}}</string>
+        <key>sourceSize</key>
+        <string>{1000,1000}</string>
+      </dict>
+      <key>sfx_1006_1_0001.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{964,1002},{100,100}}</string>
+        <key>offset</key>
+        <string>{-480,480}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{100,100}}</string>
+        <key>sourceSize</key>
+        <string>{100,100}</string>
+      </dict>
+      <key>sfx_1006_1_0002.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{964,1104},{100,100}}</string>
+        <key>offset</key>
+        <string>{-480,480}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{100,100}}</string>
+        <key>sourceSize</key>
+        <string>{100,100}</string>
+      </dict>
+      <key>sfx_1006_1_0003.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{349,1002},{310,223}}</string>
+        <key>offset</key>
+        <string>{-1,225}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{310,223}}</string>
+        <key>sourceSize</key>
+        <string>{310,223}</string>
+      </dict>
+      <key>sfx_1006_1_0004.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{661,1002},{301,201}}</string>
+        <key>offset</key>
+        <string>{9,223}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{301,201}}</string>
+        <key>sourceSize</key>
+        <string>{301,201}</string>
+      </dict>
+      <key>sfx_1006_1_0005.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,1002},{347,236}}</string>
+        <key>offset</key>
+        <string>{-6,247}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{347,236}}</string>
+        <key>sourceSize</key>
+        <string>{347,236}</string>
+      </dict>
+    </dict>
+    <key>metadata</key>
+    <dict>
+      <key>format</key>
+      <integer>2</integer>
+      <key>realTextureFileName</key>
+      <string>sfx_1006_1.png</string>
+      <key>size</key>
+      <string>{1282,1260}</string>
+      <key>textureFileName</key>
+      <string>sfx_1006_1.png</string>
+    </dict>
+  </dict>
+</plist>
