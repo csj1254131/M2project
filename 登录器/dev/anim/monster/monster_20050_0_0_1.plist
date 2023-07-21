@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plist version="1.0">
+  <dict>
+    <key>frames</key>
+    <dict>
+      <key>monster_20050_0_0_1_0000.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{599,0},{305,433}}</string>
+        <key>offset</key>
+        <string>{-75,306}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{305,433}}</string>
+        <key>sourceSize</key>
+        <string>{305,433}</string>
+      </dict>
+      <key>monster_20050_0_0_1_0001.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{296,0},{301,439}}</string>
+        <key>offset</key>
+        <string>{-69,310}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{301,439}}</string>
+        <key>sourceSize</key>
+        <string>{301,439}</string>
+      </dict>
+      <key>monster_20050_0_0_1_0002.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,453},{295,445}}</string>
+        <key>offset</key>
+        <string>{-66,315}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{295,445}}</string>
+        <key>sourceSize</key>
+        <string>{295,445}</string>
+      </dict>
+      <key>monster_20050_0_0_1_0003.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,0},{294,451}}</string>
+        <key>offset</key>
+        <string>{-68,321}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{294,451}}</string>
+        <key>sourceSize</key>
+        <string>{294,451}</string>
+      </dict>
+    </dict>
+    <key>metadata</key>
+    <dict>
+      <key>format</key>
+      <integer>2</integer>
+      <key>realTextureFileName</key>
+      <string>monster_20050_0_0_1.png</string>
+      <key>size</key>
+      <string>{1024,1024}</string>
+      <key>textureFileName</key>
+      <string>monster_20050_0_0_1.png</string>
+    </dict>
+  </dict>
+</plist>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plist version="1.0">
+  <dict>
+    <key>frames</key>
+    <dict>
+      <key>monster_20041_0_1_1_0000.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{362,0},{513,408}}</string>
+        <key>offset</key>
+        <string>{-334,242}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{513,408}}</string>
+        <key>sourceSize</key>
+        <string>{513,408}</string>
+      </dict>
+      <key>monster_20041_0_1_1_0001.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{520,515},{472,393}}</string>
+        <key>offset</key>
+        <string>{-310,236}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{472,393}}</string>
+        <key>sourceSize</key>
+        <string>{472,393}</string>
+      </dict>
+      <key>monster_20041_0_1_1_0002.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{915,461},{436,404}}</string>
+        <key>offset</key>
+        <string>{-271,230}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{436,404}}</string>
+        <key>sourceSize</key>
+        <string>{436,404}</string>
+      </dict>
+      <key>monster_20041_0_1_1_0003.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{772,0},{459,400}}</string>
+        <key>offset</key>
+        <string>{-294,240}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{459,400}}</string>
+        <key>sourceSize</key>
+        <string>{459,400}</string>
+      </dict>
+      <key>monster_20041_0_1_1_0004.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,558},{518,410}}</string>
+        <key>offset</key>
+        <string>{-327,241}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{518,410}}</string>
+        <key>sourceSize</key>
+        <string>{518,410}</string>
+      </dict>
+      <key>monster_20041_0_1_1_0005.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,0},{556,360}}</string>
+        <key>offset</key>
+        <string>{-359,234}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{556,360}}</string>
+        <key>sourceSize</key>
+        <string>{556,360}</string>
+      </dict>
+    </dict>
+    <key>metadata</key>
+    <dict>
+      <key>format</key>
+      <integer>2</integer>
+      <key>realTextureFileName</key>
+      <string>monster_20041_0_1_1.png</string>
+      <key>size</key>
+      <string>{2048,1024}</string>
+      <key>textureFileName</key>
+      <string>monster_20041_0_1_1.png</string>
+    </dict>
+  </dict>
+</plist>

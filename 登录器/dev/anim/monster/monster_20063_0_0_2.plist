@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plist version="1.0">
+  <dict>
+    <key>frames</key>
+    <dict>
+      <key>monster_20063_0_0_2_0000.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{284,0},{231,553}}</string>
+        <key>offset</key>
+        <string>{-152,538}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{231,553}}</string>
+        <key>sourceSize</key>
+        <string>{231,553}</string>
+      </dict>
+      <key>monster_20063_0_0_2_0001.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,0},{282,557}}</string>
+        <key>offset</key>
+        <string>{-182,535}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{282,557}}</string>
+        <key>sourceSize</key>
+        <string>{282,557}</string>
+      </dict>
+      <key>monster_20063_0_0_2_0002.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{284,466},{323,497}}</string>
+        <key>offset</key>
+        <string>{-157,477}</string>
+        <key>rotated</key>
+        <false />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{323,497}}</string>
+        <key>sourceSize</key>
+        <string>{323,497}</string>
+      </dict>
+      <key>monster_20063_0_0_2_0003.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{284,233},{231,553}}</string>
+        <key>offset</key>
+        <string>{-152,538}</string>
+        <key>rotated</key>
+        <true />
+        <key>sourceColorRect</key>
+        <string>{{0,0},{231,553}}</string>
+        <key>sourceSize</key>
+        <string>{231,553}</string>
+      </dict>
+    </dict>
+    <key>metadata</key>
+    <dict>
+      <key>format</key>
+      <integer>2</integer>
+      <key>realTextureFileName</key>
+      <string>monster_20063_0_0_2.png</string>
+      <key>size</key>
+      <string>{1024,1024}</string>
+      <key>textureFileName</key>
+      <string>monster_20063_0_0_2.png</string>
+    </dict>
+  </dict>
+</plist>
