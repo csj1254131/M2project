@@ -54,7 +54,6 @@ DEC N$开始天数 1
 
 
 
-
 [@MagSelfFunc2005]
 #if
 #act
@@ -1434,12 +1433,24 @@ CheckContainsText <$map> syt
 ;=====================主线============================
 
 
-
 [@EnterMap]
 #IF
 NOT CheckContainsText <$map> xssl
 #ACT
 CLEARDELAYGOTO 1
+#CALL [\游戏功能\界面按钮\其它按钮QF.txt] @开始挂机
+#elseact
+#CALL [\游戏功能\界面按钮\其它按钮QF.txt] @开始挂机
+
+#if
+LARGE U247 <$UTCNOW8>
+EQUAL S$精灵召唤状态 召唤精灵
+NOT CHECKSPRITELEVEL
+#ACT
+CREATESPRITE 月之精灵
+PICKUPITEMS 1 5 500
+CLOSE
+break
 
 #OR
 ISONMAP sjboss

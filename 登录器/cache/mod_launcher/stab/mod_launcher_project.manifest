@@ -1,10 +1,11 @@
 {
-    "version": "3.2.8034",
+    "version": "3.2.8038",
     "assets": {
         "assets_sub.zip": {
-            "md5": "fa17ab2314bebf053e1d0bec6782aa69",
+            "md5": "0549ba989f3235be7d442634508e9f3d",
             "compressed": true,
-            "size": 471563
+            "size": 299703,
+            "downloadState": 1
         },
         "Default.zip": {
             "md5": "97c2bda758edb50e640596074bfe88ad",
@@ -52,9 +53,10 @@
             "size": 39654
         },
         "scripts_init.zip": {
-            "md5": "ddcadeb520aed3ec5c26fedfe3184e65",
+            "md5": "bc047226bc239e948c168bf6e4e6b570",
             "compressed": true,
-            "size": 30562
+            "size": 30670,
+            "downloadState": 2
         },
         "scripts_lockbox_cipher_mode.zip": {
             "md5": "0bcb67aed3062cff28bdbfad5b40c4e2",
@@ -72,10 +74,10 @@
             "size": 5671
         },
         "scripts_logic.zip": {
-            "md5": "04534e8c15be193f1457308250780a4d",
+            "md5": "58578ded37469956b2a0e5c31ba742a4",
             "compressed": true,
-            "size": 164385,
-            "downloadState": 1
+            "size": 169373,
+            "downloadState": 2
         },
         "scripts_pbc.zip": {
             "md5": "9bfb940709eead9acdb806d78f380689",

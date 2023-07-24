@@ -1,5 +1,5 @@
 {
-    "version": "3.3.3068",
+    "version": "3.3.3071",
     "assets": {
         "anim_effect.zip": {
             "md5": "f7b49059a3b601b0c794cafb15dec2da",
@@ -37,9 +37,9 @@
             "size": 17390
         },
         "assets_sub.zip": {
-            "md5": "785779952c0f5e19ad5574980d4c2a1c",
+            "md5": "e771958a568bc6d0f35c60f859567088",
             "compressed": true,
-            "size": 3474859,
+            "size": 3474935,
             "downloadState": 1
         },
         "data_config.zip": {
@@ -713,9 +713,10 @@
             "size": 10512
         },
         "scripts_config.zip": {
-            "md5": "9ab193eb547f4d7e1320bf632bbe52fc",
+            "md5": "b0100cbbb8d561b2ef3caf4c3869fa66",
             "compressed": true,
-            "size": 205273
+            "size": 205393,
+            "downloadState": 2
         },
         "scripts_framework_core.zip": {
             "md5": "d2d4a2413659f953c6a0be4644fb5448",
@@ -1183,9 +1184,10 @@
             "size": 4112
         },
         "scripts_game_mediator_trading_bank_layer.zip": {
-            "md5": "3672cc7d22eaef0ab4b306b4df8115c5",
+            "md5": "2af955192ad9fbdfccebbbdd743ec294",
             "compressed": true,
-            "size": 31999
+            "size": 32011,
+            "downloadState": 2
         },
         "scripts_game_proxy_local.zip": {
             "md5": "5aa66dc78383e16e2264eac21886bf13",
@@ -1925,8 +1927,7 @@
         "scripts_game_view_layersui_setting_layer.zip": {
             "md5": "3fe84903574393bb94b19ecf6dcb0596",
             "compressed": true,
-            "size": 62243,
-            "downloadState": 2
+            "size": 62243
         },
         "scripts_game_view_layersui_sight_bead_layer.zip": {
             "md5": "e0a107732d6bc28840289907fc79f833",
@@ -1964,9 +1965,10 @@
             "size": 14831
         },
         "scripts_game_view_layersui_tradingBankLayer.zip": {
-            "md5": "6692412d6e10c98d23cdd991478054ec",
+            "md5": "b46bc8b80beca6ab5c567e6853ba5d22",
             "compressed": true,
-            "size": 126650
+            "size": 127346,
+            "downloadState": 2
         },
         "scripts_game_view_mainui-win32.zip": {
             "md5": "da3fbc978d78fc2ba5ebc54a1e1fb2a9",

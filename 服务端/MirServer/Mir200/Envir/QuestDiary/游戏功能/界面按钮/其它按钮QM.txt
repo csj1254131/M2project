@@ -20,6 +20,8 @@ INC   S$界面绘制 <Button|x=200|y=-102|nimg=private/main/Button_3/1900012051.png|
 INC   S$界面绘制 <Button|x=202|y=-65|nimg=private/main/Button_3/1900012055.png|link=@设置>
 INC   S$界面绘制 <Effect|effectid=3021|effecttype=0|scale=1|scale=1|x=-220|y=-85>
 INC   S$界面绘制 <Effect|effectid=3022|effecttype=0|scale=1|scale=1|x=205|y=-85>
+inc S$界面绘制 <Button|x=-270|y=-65|color=255|size=18|mimg=custom/hl/hl_ui/btn_chongzhi_01.png|pimg=custom/hl/hl_ui/btn_chongzhi_02.png|nimg=custom/hl/hl_ui/btn_chongzhi_01.png|link=@充值>
+
 ADDBUTTON 108 108 <$STR(S$界面绘制)>
 #IF
 EQUAL U136 0

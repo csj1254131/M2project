@@ -70,20 +70,7 @@ goto @主播礼包5检测
 #act
 goto @粉丝群礼包检测
 
-#or
-CheckContainsText <$STR(S20)> zb5555
-CheckContainsText <$STR(S20)> zb4444
-CheckContainsText <$STR(S20)> zb3333
-CheckContainsText <$STR(S20)> zb2222
-CheckContainsText <$STR(S20)> zb1111
-CheckContainsText <$STR(S20)> 888888
-CheckContainsText <$STR(S20)> SVIP666
-CheckContainsText <$STR(S20)> SVIP888
 
-#act
-#elseact
-MESSAGEBOX \\提示：礼包码不对，请重新输入。
-break
 
 
 [@直播礼包1检测]
