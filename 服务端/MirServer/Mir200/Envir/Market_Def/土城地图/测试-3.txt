@@ -3,7 +3,7 @@
 #ACT
 #SAY
 <Img|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|bg=1|loadCount=4|img=public/bg_main_6.png|esc=1|show=4>
-<Img|id=10|children={11,12,13,14,15,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Img|id=10|children={11,12,13,14,15,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
 <Img|id=11|x=135|y=60|height=449|img=custom/hl/hl_ui/fg_1.png>
 <Text|id=12|a=0|x=347|y=5|outlinecolor=0|outline=2|size=20|color=103|text=万能商人>
 <Button|id=13|x=770|y=5|color=103|pimg=custom/hl/hl_ui/close_02.png|size=18|nimg=custom/hl/hl_ui/close_01.png|link=@exit>
@@ -27,6 +27,35 @@
 <Button|id=35|x=639|y=230|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=结束攻沙|link=@攻城结束>
 <Button|id=36|x=142|y=290|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=礼包码|link=@礼包码领取>
 <Button|id=37|x=268|y=290|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=技能添加|link=@技能添加>
+<Button|id=38|x=394|y=290|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=关闭勇闯炼狱|link=@勇闯炼狱关闭>
+
+
+[@勇闯炼狱关闭]
+#IF
+#ACT
+MOV G231 0
+MoveMapPlay ycly1 3 330 330
+MoveMapPlay ycly2 3 330 330
+MoveMapPlay ycly3 3 330 330
+MoveMapPlay ycly4 3 330 330
+MoveMapPlay ycly5 3 330 330
+MoveMapPlay ycly6 3 330 330
+MoveMapPlay ycly7 3 330 330
+MoveMapPlay ycly8 3 330 330
+MoveMapPlay ycly9 3 330 330
+MoveMapPlay ycly10 3 330 330
+CLEARMAPMON ycly1
+CLEARMAPMON ycly2
+CLEARMAPMON ycly3
+CLEARMAPMON ycly4
+CLEARMAPMON ycly5
+CLEARMAPMON ycly6
+CLEARMAPMON ycly7
+CLEARMAPMON ycly8
+CLEARMAPMON ycly9
+CLEARMAPMON ycly10
+SENDMSGNEW 255 0 {勇闯炼狱/FCOLOR=58}活动关闭。 1 5
+GMEXECUTE 开始提问 @勇闯炼狱奖励
 
 
 [@技能添加]
