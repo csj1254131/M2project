@@ -388,18 +388,55 @@ break
 EQUAL <$CURRTASKID> 9
 EQUAL <$STR(U91)> 15
 #ACT
-MOV U91 16
-MOV U92 <$LEVEL>
+MOV U91 28
 NEWCOMPLETETASK 9
 NEWDELETETASK 9
+NEWPICKTASK 15 <$STR(N$三转地图怪物数量)>
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+GiveStateItem 中品注灵石 2 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成三重转生任务，奖励已发放到包裹！
+break
+
+
+#IF
+EQUAL <$CURRTASKID> 15
+EQUAL <$STR(U91)> 28
+not isonmap 3
+#ACT
+mapmove 3 330 330
+OPENNPCSHOWEX 25
+break
+
+#IF
+EQUAL <$CURRTASKID> 15
+EQUAL <$STR(U91)> 28
+#ACT
+OPENNPCSHOWEX 25
+break
+
+
+#IF
+EQUAL <$CURRTASKID> 15
+EQUAL <$STR(U91)> 29
+#ACT
+MOV U91 16
+MOV U92 <$LEVEL>
+NEWCOMPLETETASK 15
+NEWDELETETASK 15
 NEWPICKTASK 10 <$STR(U92)>
 money 经验 + 200000
 money 绑定元宝 + 500
 GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
 GiveStateItem 中品注灵石 2 0 1 0 1 1 1 1 1
 GOTO @任务提前完成处理主线十
-sendmsg 9 恭喜完成三重转生任务，奖励已发放到包裹！
+sendmsg 9 恭喜完成杀怪任务，奖励已发放到包裹！
 break
+
+
+
+
 
 #IF
 EQUAL <$CURRTASKID> 10
@@ -492,21 +529,82 @@ break
 EQUAL <$CURRTASKID> 13
 EQUAL <$STR(U91)> 22
 #ACT
-OPENNPCSHOWEX 89 50 2
+#CALL [\功能脚本\沙城捐献\沙城捐献.txt] @全沙城捐献
+NEWCOMPLETETASK 13
+MOV U91 23
 break
 
 #IF
 EQUAL <$CURRTASKID> 13
 EQUAL <$STR(U91)> 23
-#ACT
-MOV U91 24
-NEWCOMPLETETASK 13
+#act
 NEWDELETETASK 13
+NEWPICKTASK 14 <$STR(N$四转地图怪物数量)>
+MOV U91 24
 money 经验 + 500000
-money 绑定元宝 + 5000
+money 绑定元宝 + 50000
+GiveStateItem 小还丹 50 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成任务，奖励已发放到包裹！
+break
+
+
+
+#IF
+EQUAL <$CURRTASKID> 14
+EQUAL <$STR(U91)> 24
+not isonmap 3
+#ACT
+mapmove 3 330 330
+OPENNPCSHOWEX 26
+break
+
+#IF
+EQUAL <$CURRTASKID> 14
+EQUAL <$STR(U91)> 24
+#ACT
+OPENNPCSHOWEX 26
+break
+
+
+#IF
+EQUAL <$CURRTASKID> 14
+EQUAL <$STR(U91)> 25
+#ACT
+MOV U91 26
+NEWCOMPLETETASK 14
+NEWDELETETASK 14
+NEWPICKTASK 25
+money 经验 + 500000
+money 绑定元宝 + 50000
+GiveStateItem 小还丹 50 0 1 0 1 1 1 1 1
+GiveStateItem 审判の甲 50 0 0 0 0 0 0 0 0
+sendmsg 9 恭喜完成杀怪任务，奖励已发放到包裹！
+break
+
+
+#IF
+EQUAL <$CURRTASKID> 25
+EQUAL <$STR(U91)> 26
+#ACT
+OPENNPCSHOWEX 89 50 2
+break
+
+#IF
+EQUAL <$CURRTASKID> 25
+EQUAL <$STR(U91)> 27
+#ACT
+NEWCOMPLETETASK 25
+NEWDELETETASK 25
+money 经验 + 500000
+money 绑定元宝 + 50000
 GiveStateItem 小还丹 50 0 1 0 1 1 1 1 1
 sendmsg 9 恭喜完成主线任务，奖励已发放到包裹！
 break
+
+
+
+
+
 
 #IF
 EQUAL <$CURRTASKID> 33

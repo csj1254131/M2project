@@ -248,6 +248,10 @@ EQUAL <$STR(U91)> 15
 #ACT
 NEWCHANGETASK 9
 break
+
+
+
+
 #IF
 EQUAL <$STR(U91)> 16
 #ACT
@@ -295,12 +299,56 @@ NEWCHANGETASK 13
 break
 
 
+#IF
+EQUAL <$STR(U91)> 24
+#ACT
+NEWPICKTASK 14 <$STR(N$四转地图怪物数量)>
+break
+
+#IF
+EQUAL <$STR(U91)> 25
+#ACT
+NEWCHANGETASK 14 <$STR(N$四转地图怪物数量)>
+break
 
 
+#IF
+EQUAL <$STR(U91)> 26
+#ACT
+NEWPICKTASK 25
+break
+
+#IF
+EQUAL <$STR(U91)> 27
+#ACT
+NEWCHANGETASK 25
+break
 
 
+#IF
+EQUAL <$STR(U91)> 28
+#ACT
+NEWPICKTASK 15 <$STR(N$三转地图怪物数量)>
+break
+
+#IF
+EQUAL <$STR(U91)> 29
+#ACT
+NEWCHANGETASK 15 <$STR(N$三转地图怪物数量)>
+break
 
 
+#IF
+EQUAL <$STR(U91)> 28
+#ACT
+NEWPICKTASK 15 <$STR(N$三转地图怪物数量)>
+break
+
+#IF
+EQUAL <$STR(U91)> 29
+#ACT
+NEWCHANGETASK 15 <$STR(N$三转地图怪物数量)>
+break
 
 
 

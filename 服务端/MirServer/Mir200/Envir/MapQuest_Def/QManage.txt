@@ -322,11 +322,6 @@ Savevar GUILD 参加沙巴克人数
 #CALL [\游戏变量\玩家变量声明.txt] @玩家变量声明
 
 
-
-
-
-
-
 ;提高背包上限
 #IF
 #ACT
@@ -1170,6 +1165,7 @@ Mov N$非沙城员首次元宝 0
 
 [@清理沙城捐献xx]
 #IF
+dayofweek sun
 #Act
 Deprivetitle 沙捐大佬
 ClearHumCustVar 沙城捐献|顶戴展示四|沙城捐献金额 0
@@ -1200,6 +1196,7 @@ Clearnamelist ..\Questdiary\通区\<$Str(A490)>\<$Servername>.Txt
 #ACT
 Calcvar Guild 参加沙巴克人数 = 0
 Savevar Guild 参加沙巴克人数
+Clearnamelist ..\Questdiary\数据文件\参加沙巴克人员.Txt
 [@OnTimer255]
 #IF
 Checkvar Human 狂暴保护 = 已开启

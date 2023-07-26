@@ -1410,6 +1410,21 @@ CheckKillMonName 鸡7
 #ACT
 #CALL [\游戏功能\任务系统\任务杀怪.txt] @任务杀怪触发
 BREAK
+
+
+
+#or
+CheckContainsText <$map> hldt
+CheckContainsText <$map> cyxg
+CheckContainsText <$map> ltl
+CheckContainsText <$map> emgc
+CheckContainsText <$map> zmsm
+#ACT
+#CALL [\游戏功能\任务系统\任务杀怪.txt] @任务杀怪触发
+
+
+
+
 #IF
 CheckContainsText <$str(A352)> <$KILLMONNAME>
 #ACT
@@ -1435,20 +1450,35 @@ CheckContainsText <$map> syt
 
 [@EnterMap]
 #IF
+EQUAL <$MAP> erdalu
+EQUAL <$STR(U91)> 26
+#ACT
+MOV U91 27
+NEWCHANGETASK 25
+
+
+#IF
 NOT CheckContainsText <$map> xssl
 #ACT
 CLEARDELAYGOTO 1
+
+#if
+not isonmap 3
+#act
+mov N$挂机状态 0
 #CALL [\游戏功能\界面按钮\其它按钮QF.txt] @开始挂机
-#elseact
-#CALL [\游戏功能\界面按钮\其它按钮QF.txt] @开始挂机
+break
+
+
 
 #if
 LARGE U247 <$UTCNOW8>
 EQUAL S$精灵召唤状态 召唤精灵
 NOT CHECKSPRITELEVEL
 #ACT
+MOV S$精灵召唤状态 收回精灵
 CREATESPRITE 月之精灵
-PICKUPITEMS 1 5 500
+PICKUPITEMS 0 6 500
 CLOSE
 break
 
@@ -1460,7 +1490,6 @@ ISONMAP 0150
 SETSPRITEMODE 2
 RELEASESPRITE
 sendmsg 6 当前地图不允许携带拾取小精灵，小精灵已收回。
-
 
 
 
@@ -3524,13 +3553,6 @@ VAR Integer HUMAN 活跃度_夺宝奇兵
 VAR Integer HUMAN 活跃度_勇闯炼狱
 VAR Integer HUMAN 活跃度_世界BOSS
 VAR Integer HUMAN 活跃度_天降元宝
-
-#IF
-EQUAL <$MAP> erdalu
-EQUAL <$STR(U91)> 22
-#ACT
-MOV U91 23
-NEWCHANGETASK 13
 
 #IF
 EQUAL N$行会集合 1

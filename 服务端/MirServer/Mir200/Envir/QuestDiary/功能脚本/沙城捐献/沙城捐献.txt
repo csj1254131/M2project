@@ -411,14 +411,14 @@ Goto @沙捐Npc会话
 
 <Layout|id=12|children={12a,12b}|height=20>
 <Img|id=12a||x=0.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
-<RText|id=12b|x=23.0|y=0.0|color=255|size=18|text=<6./FCOLOR=242><每次攻沙后会清空沙城捐献,玩家需重新捐献/FCOLOR=249>>
+<RText|id=12b|x=23.0|y=0.0|color=255|size=18|text=<6./FCOLOR=242><沙城捐献及奖池每周日清空，需要重新捐献/FCOLOR=249>>
 
 <Layout|id=xx13|children={xx13a,xx13b}|height=30>
 <Img|id=xx13a||x=0.0|y=2.0|img=custom/hl/shajuan/icon_target_01.png|esc=0>
 <RText|id=xx13b|x=23.0|y=0.0|color=255|size=18|text=<7./FCOLOR=242><攻城奖励发放时间为:攻沙后的22:10分/FCOLOR=249>>
 
 <Button|ax=0|x=571.0|y=315.0|width=140|pimg=custom/hl/hl_ui/115_1.png|nimg=custom/hl/hl_ui/115_2.png|size=18|color=251|outline=2|text=开启沙城捐献|link=@我要捐献>
-<Text|x=606.0|y=481.0|color=159|size=18|outline=2|text=查看各区详细捐献|link=@查看详细捐献>
+<Text|x=606.0|y=481.0|color=159|size=18|outline=2|text=查看全区捐献总额|link=@查看详细捐献>
 <$Str(S$详细信息)>
 
 [@查看详细捐献]
