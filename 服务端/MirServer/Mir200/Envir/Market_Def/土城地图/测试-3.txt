@@ -286,8 +286,11 @@ sendmsg 0 开服时间：<$KFTIMEEX>
 [@开启攻沙]
 #If
 #Act
+calcvar global 攻沙次数统计 = 0
+savevar global 攻沙次数统计
 AddToCastleWarListEx 沙巴克 *
 GMEXECUTE ForcedWallConQuestWar
+sendmsg 0 <$Str(G493)>
 goto @攻城提示
 goto @攻城开始
 
@@ -295,12 +298,12 @@ goto @攻城开始
 
 [@攻城结束]
 #If
-Large <$KFDAY> 1
 #Act
 Mov A491 <$LORD>
 Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
 Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
 Sendmsgnew 255 0 征战沙巴克活动结束了,请耐心等待奖励发放... 1 10 
+Gmexecute 开始提问 @清理狂暴保护
 goto @攻城统计
 goto @攻城奖励
 DELAYGOTO 5000 @清理沙城捐献平时
@@ -309,7 +312,6 @@ DELAYGOTO 5000 @清理沙城捐献
 
 [@攻城提示]
 #If
-Large <$KFDAY> 1
 #Act
 AddAttackSabukAll 0
 Scenevibration 1 1 1
@@ -329,7 +331,6 @@ GMEXECUTE 开始提问 @清理城主顶戴
 
 [@攻城开始]
 #If
-Large <$KFDAY> 1
 #Act
 Scenevibration 1 1 1
 SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
@@ -349,32 +350,18 @@ GMEXECUTE 开始提问 @开启沙城狂暴保护
 
 
 
-[@攻城结束]
-#If
-Large <$KFDAY> 1
-#Act
-Mov A491 <$LORD>
-Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
-Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
-Sendmsgnew 255 0 征战沙巴克活动结束了,请耐心等待奖励发放... 1 10
-Gmexecute 开始提问 @清理狂暴保护
-
-
 [@攻城统计]
 #If
-Large <$KFDAY> 1
 #Act
 Gmexecute 开始提问 @攻城奖励前统计
 
 [@攻城奖励]
 #If
-Large <$KFDAY> 1
 #Act
 Gmexecute 开始提问 @攻城奖励发放
 
 [@清理沙城捐献平时]
 #If
-Large <$KFDAY> 1
 #Act
 Mov G495 0
 Mov G498 0
@@ -384,7 +371,6 @@ Gmexecute 开始提问 @清理沙城捐献平时xx
 
 [@清理沙城捐献]
 #If
-Large <$KFDAY> 1
 #Act
 Inc G490 1
 Mov G492 0

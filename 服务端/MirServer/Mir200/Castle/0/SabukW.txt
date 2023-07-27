@@ -1,11 +1,11 @@
 [Setup]
 CastleName=沙巴克
-ChangeDate=2023/7/20 10:47:51
-WarDate=2023/7/19 19:16:42
-IncomeToday=2023/7/19 12:44:48
+ChangeDate=2023/7/27 10:30:20
+WarDate=2023/7/27 11:28:55
+IncomeToday=2023/7/27 9:58:29
 TotalGold=0
 TodayIncome=0
-OwnGuild=订单的
+OwnGuild=的
 [Defense]
 CastleMapList=0151,0152,0153,0154,0155,0156,
 CastleMap=3
@@ -163,6 +163,6 @@ Guard_8_Name=守卫
 Guard_8_HP=1000
 MainDoorOpen=1
 MainDoorHP=6958
-LeftWallHP=4433
+LeftWallHP=4440
 CenterWallHP=0
-RightWallHP=4500
+RightWallHP=4507

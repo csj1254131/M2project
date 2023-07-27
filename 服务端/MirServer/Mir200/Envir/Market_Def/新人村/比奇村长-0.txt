@@ -37,8 +37,6 @@ MOV S$C_职业标签 道士
 EQUAL <$STR(U91)> 2
 #ACT
 
-sendmsg 0 领取奖励
-
 ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备1 S$C_新手装备1
 ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备2 S$C_新手装备2
 ReadConfigFileItem  ..\QuestDiary\游戏功能\任务系统\基本奖励配置.ini <$STR(S$C_职业标签)>新手 装备3 S$C_新手装备3

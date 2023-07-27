@@ -7,33 +7,6 @@ UpDateTongFile \通区\<$Str(A490)>\<$Servername>.txt
 LARGE G100 0
 #ACT
 DEC   G100 1
-#IF
-EQUAL G261 2
-#ACT
-BREAK
-#IF
-EQUAL G261 0
-#ACT
-MOV G261 <$UTCNOW8>
-INC G261 7200
-#IF
-NOT EQUAL G248 2
-SMALL G261 <$UTCNOW8>
-LARGE G261 2
-#ACT
-INC G261 3600
-MOV G248 2
-SENDMSGNEW 255 0 {个人押镖/FCOLOR=250}活动已经开启。 1 5
-
-#IF
-LARGE G261 2
-SMALL G261 <$UTCNOW8>
-#ACT
-MOV G248 0
-MOV G261 2
-SENDMSGNEW 255 0 {个人押镖/FCOLOR=250}活动已经关闭。 1 5
-
-
 
 [@排行榜奖励AA]
 #IF
@@ -212,7 +185,6 @@ Gmexecute 开始提问 @清理沙城捐献平时xx
 
 [@清理沙城捐献]
 #If
-Large <$KFDAY> 4
 #Act
 Inc G490 1
 Mov G492 0

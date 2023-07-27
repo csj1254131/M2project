@@ -16,7 +16,7 @@ Inc S$沙传送页面 <Button|x=389.0|y=222.0|color=103|size=18|nimg=custom/hl/hl_ui/
 Inc S$沙传送页面 <Button|x=392.0|y=305.0|color=103|size=18|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=衣服店|link=@衣服店>
 Inc S$沙传送页面 <Button|x=565.0|y=222.0|color=103|size=18|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=武器店|link=@武器店>
 Inc S$沙传送页面 <Button|x=566.0|y=305.0|color=103|size=18|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|text=首饰店|link=@首饰店>
-Inc S$沙传送页面 <Text|x=210.0|y=435.0|color=147|size=18|text=沙巴克每天8点开启，所有行会参与攻城，争夺沙城奖励\每周日22：30清空奖池及沙城捐献，需重新捐献>
+Inc S$沙传送页面 <Text|x=210.0|y=435.0|color=147|size=18|text=沙巴克每天8点开启，所有行会参与攻城，争夺沙城奖励>
 
 #If
 Equal A491 ◆◆◆沙城争霸◆◆◆\虚位以待

@@ -10,6 +10,8 @@
 <Layout|id=14|x=765|y=0|width=70|height=70|link=@exit>
 <Button|id=15|x=20|y=62|color=100|pimg=custom/hl/hl_ui/115_2.png|size=18|nimg=custom/hl/hl_ui/115_1.png|text=快捷功能>
 <Button|id=28|x=350.0|y=170.0|pimg=custom/hl/hl_ui/140_2.png|nimg=custom/hl/hl_ui/140_1.png|color=103|size=18|text=礼包码输入|link=@@InPutString20>
+<Text|id=37|a=0|x=272|y=286|outlinecolor=0|outline=2|size=20|color=103|text=输入QQ群礼包码：868068392>
+
 
 
 
@@ -21,6 +23,13 @@ CheckContainsText <$STR(S20)> @
 MESSAGEBOX \\输入含有非法字符，你已被T下线
 KICK
 break
+
+
+#IF
+CheckContainsText <$STR(S20)> 868068392
+#ACT
+goto @QQ群礼包码1检测
+
 
 
 
@@ -71,7 +80,22 @@ goto @主播礼包5检测
 goto @粉丝群礼包检测
 
 
-
+[@QQ群礼包码1检测]
+#IF
+NOT Check [127] 0
+#ACT
+MESSAGEBOX \\你已经领取过该礼包。
+break
+#IF
+Check [127] 0
+#ACT
+SET [127] 1
+give 10W绑定元宝 1
+give 凡品升星石 30
+give 中品注灵石 40
+give 觉醒石 1
+MESSAGEBOX \\提示：正确！恭喜您获得QQ群礼包！
+break
 
 [@直播礼包1检测]
 #IF

@@ -1165,7 +1165,6 @@ Mov N$非沙城员首次元宝 0
 
 [@清理沙城捐献xx]
 #IF
-dayofweek sun
 #Act
 Deprivetitle 沙捐大佬
 ClearHumCustVar 沙城捐献|顶戴展示四|沙城捐献金额 0
