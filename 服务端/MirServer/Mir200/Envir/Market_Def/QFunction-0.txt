@@ -31,6 +31,8 @@ WriteConfigFileItem ..\QuestDiary\ÒÑ±¬ÎïÆ·.txt <$CURRTEMNAME> ÏÞÖÆÊý <$STR(N$ÊýÁ
 money »ðÁú±Ò + 1000
 money VIP¾­Ñé + 10
 
+
+
 //100Ôªºì°üÊ¹ÓÃ¼ì²â
 [@StdModeFunc998]
 #IF
@@ -1449,6 +1451,15 @@ CheckContainsText <$map> syt
 
 
 [@EnterMap]
+#if
+CHECKJOB Taoist
+CheckMagicName ÕÙ»½°×»¢
+CHECKSLAVECOUNT < 2 °×»¢
+#act
+sendmsg ÕÙ»½°×»¢
+ReleaseMagicEx 2005 0 3 2
+
+
 #IF
 EQUAL <$MAP> erdalu
 EQUAL <$STR(U91)> 26

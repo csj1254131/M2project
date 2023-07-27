@@ -85,10 +85,8 @@ MOV U91 3
 money 经验 + 100000
 money 绑定元宝 + 2000
 ADDSKILL 灵魂火符
-ADDSKILL 困魔咒
 ADDSKILL 心灵启示
 SKILLLEVEL 灵魂火符 = 3
-SKILLLEVEL 困魔咒 = 3
 SKILLLEVEL 心灵启示 = 3
 ;GiveStateItem 乌木剑 1 0 1 0 0 1 1 1 1
 GiveOnItem 1 乌木剑 1
