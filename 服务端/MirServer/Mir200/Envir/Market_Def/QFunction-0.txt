@@ -1499,7 +1499,7 @@ ISONMAP EM000
 #ACT
 setautogetexp 1 20000 0 EM000 0 9999999 150
 #elseact
-setautogetexp 1 10000 0 * 0 9999999 100
+setautogetexp 1 1000 0 * 0 9999999 100
 
 #IF
 NOT CheckContainsText <$map> syt
