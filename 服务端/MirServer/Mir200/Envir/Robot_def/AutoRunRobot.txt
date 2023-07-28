@@ -11,10 +11,10 @@
 #AutoRun NPC RUNONDAY 19:30 @攻城提示
 #AutoRun NPC RUNONDAY 20:00 @攻城开始
 #AutoRun NPC RUNONDAY 22:00 @攻城结束
-#AutoRun NPC RUNONDAY 22:05 @攻城统计
-#AutoRun NPC RUNONDAY 22:10 @攻城奖励
-#AutoRun NPC RUNONDAY 22:15 @清理沙城捐献平时
-#AutoRun NPC RUNONDAY 22:20 @清理沙城捐献
+;#AutoRun NPC RUNONDAY 22:05 @攻城统计
+;#AutoRun NPC RUNONDAY 22:10 @攻城奖励
+;#AutoRun NPC RUNONDAY 22:15 @清理沙城捐献平时
+;#AutoRun NPC RUNONDAY 22:20 @清理沙城捐献
 
 
 #AutoRun NPC RUNONDAY 18:55 @世界BOSS提醒

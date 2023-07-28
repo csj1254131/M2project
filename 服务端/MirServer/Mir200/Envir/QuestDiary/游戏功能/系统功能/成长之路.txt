@@ -1425,6 +1425,13 @@ GOTO @查看地图BOSS
 
 [@直达BOSS]
 #if
+large S$返回怪物序号 0
+#act
+#elseact
+sendmsg 9 请选择传送BOSS
+break
+
+#if
 CHECKITEM BOSS传送卷轴 1
 #act
 take BOSS传送卷轴 1
@@ -2527,11 +2534,6 @@ CheckContainsText <$STR(S$当前查看地图)> VIP15地图
 CheckContainsText <$str(S$返回怪物序号)> 3
 #act
 mapmove hydt5 94 91 1
-
-
-
-#elseact
-senmsg 9 请选择传送BOSS
 break
 
 
@@ -2552,7 +2554,7 @@ SENDMSG 6 <$STR(S$BOSS选中状态6)>
 <Button|id=33|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=10|size=18|outline=2|outlinecolor=0|text=装备图鉴|link=@装备>
 <Button|id=34|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|color=100|size=18|outline=2|outlinecolor=0|text=BOSS图鉴|link=@怪物>
 <Button|id=35|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=10|size=18|outline=2|outlinecolor=0|text=技能铭文|link=@铭文技能>
-<Button|id=20|x=520|y=275|nimg=custom/hl/hl_ui/1900000660.png|pimg=custom/hl/hl_ui/1900000661.png|color=251|size=18|outline=2|outlinecolor=0|text=直达BOSS|link=@直达BOSS>
+<Button|id=20|x=520|y=275|nimg=custom/hl/hl_ui/1900000660.png|pimg=custom/hl/hl_ui/1900000661.png|color=251|size=18|outline=2|outlinecolor=0|text=传送至BOSS|link=@直达BOSS>
 
 <ListView|id=17|children={171}|x=18|y=108|width=735|height=3|margin=0|bounce=0|direction=2|color=x>
 <Img|id=171|img=custom/hl/hl_ui/hl_bg_01.png>
