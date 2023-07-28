@@ -1436,7 +1436,7 @@ CHECKITEM BOSS传送卷轴 1
 #act
 take BOSS传送卷轴 1
 #elseact
-sendmsg 9 凡品升星石不足，请前往商城购买或击杀BOSS获取！
+sendmsg 9 BOSS传送卷轴不足，请前往商城购买！
 break
 
 #if

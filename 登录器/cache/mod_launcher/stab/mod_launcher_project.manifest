@@ -1,5 +1,5 @@
 {
-    "version": "3.2.8039",
+    "version": "3.2.8041",
     "assets": {
         "assets_sub.zip": {
             "md5": "0549ba989f3235be7d442634508e9f3d",
@@ -72,9 +72,9 @@
             "size": 5671
         },
         "scripts_logic.zip": {
-            "md5": "a14c82cd9beda85aa9ab72057eb2d124",
+            "md5": "f66ed26cde24dc2a29f95ff8cbb3fef2",
             "compressed": true,
-            "size": 169761,
+            "size": 170561,
             "downloadState": 1
         },
         "scripts_pbc.zip": {
