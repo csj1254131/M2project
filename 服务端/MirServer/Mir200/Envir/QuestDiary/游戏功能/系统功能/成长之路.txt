@@ -1421,13 +1421,1128 @@ MOV P41 1
 MOV N$首次查看怪物 1
 GOTO @查看地图BOSS
 
+
+
+[@直达BOSS]
+#if
+CHECKITEM BOSS传送卷轴 1
+#act
+take BOSS传送卷轴 1
+#elseact
+sendmsg 9 凡品升星石不足，请前往商城购买或击杀BOSS获取！
+break
+
+#if
+CheckContainsText <$STR(S$当前查看地图)> 尸魔洞
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove smd3 23 57 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 骷髅洞
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove kld3 107 106 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 矿洞
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove kd4 138 136 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 死亡棺材
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove swgc4 80 45 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 死亡棺材
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove swgc4 70 73 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 蜈蚣洞
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove wgd3 78 170 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 沃玛寺庙
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove wmsm3 50 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷霆之路
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ltl4 45 45 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶魔广场
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove emgc3 45 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 祖玛寺庙
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove zmsm4 50 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 混乱殿堂
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hldt4 75 85 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 赤月峡谷
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove cyxg3 14 18 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔寺院
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove nmsy3 75 25 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 无间地狱
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove wjdy3 21 21 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 无间地狱
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove wjdy3 36 36 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 无间地狱
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove wjdy3 34 24 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔祭坛
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove nmjt2 65 62 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔祭坛
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove nmjt2 82 82 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔祭坛
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove nmjt3 25 75 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔祭坛
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove nmjt3 50 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔祭坛
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove nmjt3 75 25 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷炎洞穴
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove lyd2 82 165 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷炎洞穴
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove lyd2 127 48 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷炎洞穴
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove lyd2 178 130 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷炎洞穴
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove lyd2 140 160 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷炎洞穴
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove lyd2 33 180 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 魔龙之渊
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove mly3 170 115 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 魔龙之渊
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove mly3 66 228 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 魔龙之渊
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove mly3 125 162 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 魔龙之渊
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove mly3 210 78 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 魔龙之渊
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove mly3 60 140 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 狐月祭坛
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hyd3 34 32 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞窟
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hlzd3 82 165 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞窟
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hlzd3 127 48 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞窟
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove hlzd3 168 70 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞窟
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove hlzd3 178 130 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞窟
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove hlzd3 140 160 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞窟
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove hlzd3 33 180 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove elsy3 55 180 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove elsy3 205 52 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove elsy3 17 106 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove elsy3 125 210 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove elsy3 235 113 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove elsy3 128 116 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 7
+#act
+mapmove elsy3 184 190 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 狐月庄
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hyz1 266 99 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 狐仙岛
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hxd3 75 85 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙殿
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hld3 35 35 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove boss 92 258 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove boss 250 205 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove boss 210 46 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove boss 104 168 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove boss 104 98 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove boss2 92 258 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 7
+#act
+mapmove boss2 190 260 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 8
+#act
+mapmove boss2 250 205 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 9
+#act
+mapmove boss2 210 46 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 10
+#act
+mapmove boss2 40 70 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 11
+#act
+mapmove boss2 40 180 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 12
+#act
+mapmove boss2 104 168 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 13
+#act
+mapmove boss2 104 98 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 14
+#act
+mapmove lzld 65 130 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 15
+#act
+mapmove lzld 65 60 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 16
+#act
+mapmove lzld 82 30 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 17
+#act
+mapmove lzld 138 60 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 18
+#act
+mapmove lzld 135 132 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 19
+#act
+mapmove lzld2 120 30 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 20
+#act
+mapmove lzld2 162 37 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 21
+#act
+mapmove lzld2 99 102 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 22
+#act
+mapmove lzld2 162 162 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 龙族领地
+CheckContainsText <$str(S$返回怪物序号)> 23
+#act
+mapmove lzld2 39 162 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷霆之路
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hyltl4 45 45 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶魔广场
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hyemgc3 45 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 祖玛寺庙
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hyzmsm4 50 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 混乱殿堂
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hyhldt4 75 85 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 赤月峡谷
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hycyxg3 14 18 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔寺院
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hynmsy3 75 25 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 无间地狱
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove hywjdy3 21 21 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 无间地狱
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove hywjdy3 36 36 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 无间地狱
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove hywjdy3 34 24 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔祭坛
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove hynmjt2 65 62 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔祭坛
+CheckContainsText <$str(S$返回怪物序号)> 7
+#act
+mapmove hynmjt2 82 82 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔祭坛
+CheckContainsText <$str(S$返回怪物序号)> 8
+#act
+mapmove hynmjt3 25 75 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔祭坛
+CheckContainsText <$str(S$返回怪物序号)> 9
+#act
+mapmove hynmjt3 50 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 牛魔祭坛
+CheckContainsText <$str(S$返回怪物序号)> 10
+#act
+mapmove hynmjt3 75 25 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷炎洞穴
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove hylyd2 82 165 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷炎洞穴
+CheckContainsText <$str(S$返回怪物序号)> 7
+#act
+mapmove hylyd2 127 48 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷炎洞穴
+CheckContainsText <$str(S$返回怪物序号)> 8
+#act
+mapmove hylyd2 178 130 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷炎洞穴
+CheckContainsText <$str(S$返回怪物序号)> 9
+#act
+mapmove hylyd2 140 160 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雷炎洞穴
+CheckContainsText <$str(S$返回怪物序号)> 10
+#act
+mapmove hylyd2 33 180 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 魔龙之渊
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove hymly3 170 115 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 魔龙之渊
+CheckContainsText <$str(S$返回怪物序号)> 7
+#act
+mapmove hymly3 66 228 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 魔龙之渊
+CheckContainsText <$str(S$返回怪物序号)> 8
+#act
+mapmove hymly3 125 162 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 魔龙之渊
+CheckContainsText <$str(S$返回怪物序号)> 9
+#act
+mapmove hymly3 210 78 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 魔龙之渊
+CheckContainsText <$str(S$返回怪物序号)> 10
+#act
+mapmove hymly3 60 140 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 狐月岛
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hyhyd3 34 32 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hyhlzd3 82 165 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hyhlzd3 127 48 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove hyhlzd3 168 70 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove hyhlzd3 178 130 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove hyhlzd3 140 160 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙洞
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove hyhlzd3 33 180 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 8
+#act
+mapmove hyelsy3 55 180 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 9
+#act
+mapmove hyelsy3 205 52 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 10
+#act
+mapmove hyelsy3 17 106 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 11
+#act
+mapmove hyelsy3 125 210 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 12
+#act
+mapmove hyelsy3 235 113 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 13
+#act
+mapmove hyelsy3 128 116 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 恶龙神域
+CheckContainsText <$str(S$返回怪物序号)> 14
+#act
+mapmove hyelsy3 184 190 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 狐月庄
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hyhyz1 266 99 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 狐仙岛
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hyhxd3 75 85 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 火龙殿
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hyhld3 35 35 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 八品专属
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove gzzs8 143 97 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 七品专属
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove gzzs7 143 97 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 五品专属
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove gzzs5 114 147 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 三品专属
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove gzzs3 126 200 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 三品专属
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove gzzs3 56 239 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 三品专属
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove gzzs3 267 231 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 三品专属
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove gzzs3 183 89 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 三品专属
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove gzzs3 247 126 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 一品专属
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove gzzs1 126 200 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 一品专属
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove gzzs1 56 239 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 一品专属
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove gzzs1 267 231 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 一品专属
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove gzzs1 183 89 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 一品专属
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove gzzs1 247 126 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 大都督
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove gzzsdd 126 208 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 大都督
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove gzzsdd 56 239 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 大都督
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove gzzsdd 267 231 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 大都督
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove gzzsdd 202 93 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 大都督
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove gzzsdd 266 112 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 大都督
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove gzzsdd 135 268 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 冠绝一世
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove gzzsgj 126 208 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 冠绝一世
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove gzzsgj 56 239 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 冠绝一世
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove gzzsgj 267 231 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 冠绝一世
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove gzzsgj 202 93 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 冠绝一世
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove gzzsgj 266 112 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 冠绝一世
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove gzzsgj 135 268 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 冠绝一世
+CheckContainsText <$str(S$返回怪物序号)> 7
+#act
+mapmove gzzsgj 129 51 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 逐鹿群雄
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove gzzszl 138 149 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 雄霸天下
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove gzzsxb 138 149 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体一阶
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ltzs1 50 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体二阶
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ltzs2 50 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体二阶
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove ltzs2 25 75 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体二阶
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove ltzs2 75 25 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体三阶
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ltzs3 50 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体三阶
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove ltzs3 25 75 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体三阶
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove ltzs3 75 25 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体三阶
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove ltzs3 25 25 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体三阶
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove ltzs3 75 75 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体四阶
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ltzs4 50 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体四阶
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove ltzs4 25 75 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体四阶
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove ltzs4 75 25 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体四阶
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove ltzs4 25 25 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体四阶
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove ltzs4 75 75 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体五阶
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ltzs5 200 175 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体五阶
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove ltzs5 200 57 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体五阶
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove ltzs5 76 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体五阶
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove ltzs5 57 176 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体五阶
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove ltzs5 126 116 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体五阶
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove ltzs5 102 92 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体六阶
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ltzs6 200 175 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体六阶
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove ltzs6 200 57 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体六阶
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove ltzs6 76 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体六阶
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove ltzs6 57 176 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体六阶
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove ltzs6 126 116 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体六阶
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove ltzs6 102 92 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体六阶
+CheckContainsText <$str(S$返回怪物序号)> 7
+#act
+mapmove ltzs6 168 118 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体七阶
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ltzs7 126 116 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 炼体八阶
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ltzs8 126 116 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神一层
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ysdj8 50 45 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神二层
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ysdj12 70 70 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神二层
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove ysdj12 52 52 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神二层
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove ysdj12 30 30 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神三层
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ysdj16 45 45 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神三层
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove ysdj16 66 66 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神三层
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove ysdj16 66 25 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神三层
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove ysdj16 24 69 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神三层
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove ysdj16 30 30 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神四层
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ysdj20 72 72 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神四层
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove ysdj20 60 60 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神四层
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove ysdj20 50 50 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神四层
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove ysdj20 40 20 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神四层
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove ysdj20 20 40 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神五层
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ysdj24 76 78 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神五层
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove ysdj24 63 42 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神五层
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove ysdj24 42 23 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神五层
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove ysdj24 22 44 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神五层
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove ysdj24 43 64 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神五层
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove ysdj24 40 42 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神六层
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ysdj30 40 75 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神六层
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove ysdj30 55 135 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神六层
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove ysdj30 106 134 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神六层
+CheckContainsText <$str(S$返回怪物序号)> 4
+#act
+mapmove ysdj30 160 127 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神六层
+CheckContainsText <$str(S$返回怪物序号)> 5
+#act
+mapmove ysdj30 156 70 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神六层
+CheckContainsText <$str(S$返回怪物序号)> 6
+#act
+mapmove ysdj30 98 45 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神六层
+CheckContainsText <$str(S$返回怪物序号)> 7
+#act
+mapmove ysdj30 100 100 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神七层
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ysdj40 100 100 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 元神八层
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove ysdj50 100 100 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 11转地图
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove zsdt1 138 80 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 13转地图
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove zsdt2 46 46 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 15转地图
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove zsdt3 38 94 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 17转地图
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove zsdt4 38 35 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 19转地图
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove zsdt5 145 40 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 19转地图
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove zsdt5 73 114 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 11转地图
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove djdt1 138 80 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 13转地图
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove djdt2 46 46 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 15转地图
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove djdt3 38 94 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 17转地图
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove djdt4 38 35 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 19转地图
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove djdt5 145 40 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> 300级地图
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove djdt6 98 112 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> VIP11地图
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hydt1 143 178 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> VIP12地图
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hydt2 143 178 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> VIP13地图
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hydt3 98 112 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> VIP13地图
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hydt3 32 173 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> VIP14地图
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hydt4 129 139 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> VIP14地图
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hydt4 49 71 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> VIP15地图
+CheckContainsText <$str(S$返回怪物序号)> 1
+#act
+mapmove hydt5 25 96 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> VIP15地图
+CheckContainsText <$str(S$返回怪物序号)> 2
+#act
+mapmove hydt5 48 23 1
+#if
+CheckContainsText <$STR(S$当前查看地图)> VIP15地图
+CheckContainsText <$str(S$返回怪物序号)> 3
+#act
+mapmove hydt5 94 91 1
+
+
+
+#elseact
+senmsg 9 请选择传送BOSS
+break
+
+
+
 [@怪物界面显示]
 #IF
 #ACT
 SENDMSG 6 <$STR(S$BOSS选中状态6)>
 #SAY
 <Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4|reload=0>
-<Img|children={0,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Img|children={0,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
 <Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
 <Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
 <Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=成长之路>
@@ -1437,6 +2552,8 @@ SENDMSG 6 <$STR(S$BOSS选中状态6)>
 <Button|id=33|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=10|size=18|outline=2|outlinecolor=0|text=装备图鉴|link=@装备>
 <Button|id=34|nimg=custom/hl/hl_ui/115_1.png|pimg=custom/hl/hl_ui/115_2.png|color=100|size=18|outline=2|outlinecolor=0|text=BOSS图鉴|link=@怪物>
 <Button|id=35|nimg=custom/hl/hl_ui/115_2.png|pimg=custom/hl/hl_ui/115_1.png|color=10|size=18|outline=2|outlinecolor=0|text=技能铭文|link=@铭文技能>
+<Button|id=20|x=520|y=275|nimg=custom/hl/hl_ui/1900000660.png|pimg=custom/hl/hl_ui/1900000661.png|color=251|size=18|outline=2|outlinecolor=0|text=直达BOSS|link=@直达BOSS>
+
 <ListView|id=17|children={171}|x=18|y=108|width=735|height=3|margin=0|bounce=0|direction=2|color=x>
 <Img|id=171|img=custom/hl/hl_ui/hl_bg_01.png>
 <ListView|id=18|children={181}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
@@ -1729,11 +2846,6 @@ SENDMSG 6 <$STR(S$BOSS选中状态6)>
 
 
 
-
-
-
-
-
 <ListView|id=9|children={90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107}|x=150|y=115|width=240|height=395|margin=0|bounce=0|direction=1|color=X>
 <$STR(S$领主状态)>
 <Layout|id=10|children={11}|x=395|y=115|width=355|height=390|color=x>
@@ -1744,6 +2856,7 @@ SENDMSG 6 <$STR(S$BOSS选中状态6)>
 <Layout|id=12|children={121,122,123,124}|x=395|y=160|width=355|height=160|color=x>
 <Text|id=121|color=255|size=18|a=4|percentx=50|percenty=30|text=攻高血厚>
 <RText|id=122|color=255|size=18|a=4|percentx=50|percenty=50|text=出没于<<$STR(S$当前查看地图)>/FCOLOR=250>地图>
+
 <Img|id=112|children={1121,1122}|img=public/bg_hhdb_01.jpg|width=355|height=40|y=220>
 <Img|id=1121|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
 <Text|id=1122|a=4|percentx=50|percenty=50|color=251|size=18|text=极品掉落>
@@ -1806,6 +2919,8 @@ EQUAL S$上次查看地图名 <$STR(S$当前查看地图)>
 #ACT
 GOTO @选中状态恢复
 MOV S$BOSS选中状态<$str(S$返回怪物序号)> hl_xz_01
+
+
 #ELSEACT
 GOTO @选中状态恢复
 MOV S$BOSS选中状态1 hl_xz_01
@@ -1824,6 +2939,7 @@ MOV S$领主状态
 GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt <$str(S$配置行)> S$本图怪物 |
 MOV N$读取行数 <$str(S$本图怪物0)>
 MOV S$上次查看地图名 <$STR(S$当前查看地图)>
+
 GOTO @循环取怪物
 
 [@循环取怪物]
@@ -1833,16 +2949,23 @@ NOT EQUAL S$本图怪物<$STR(N$怪物流水号)>
 INC S$领主状态 <Img|id=<$STR(N$领主序号)>|children={<$STR(N$领主序号)>1,<$STR(N$领主序号)>2,<$STR(N$领主序号)>3,<$STR(N$领主序号)>4}|img=custom/hl/bianqiang_ui/bq_01.png|link=@查看怪物#返回怪物序号=<$STR(N$按钮序号)>>
 INC S$领主状态 <Layout|id=<$STR(N$领主序号)>1|x=0|y=0|width=235|height=85|color=x>
 INC S$领主状态 <Text|id=<$STR(N$领主序号)>2|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=<$str(S$本图怪物<$STR(N$怪物流水号)>)>>
+
+mov S$选择BOSS名称  <$str(S$本图怪物<$STR(N$怪物流水号)>)>
+;sendmsg 0 当前选择怪物1：<$str(S$本图怪物<$STR(N$怪物流水号)>)>
+;sendmsg 0 当前选择怪物2：<$str(S$选择BOSS名称)>
+
+
 INC S$领主状态 <Img|id=<$STR(N$领主序号)>4|width=235|height=85|img=custom/hl/hl_ui/<$STR(S$BOSS选中状态<$STR(N$按钮序号)>)>.png>
 MOV N$变量数 <$STR(N$怪物流水号)>
 INC N$变量数 1
 MOV N$全局变量名  <$STR(S$本图怪物<$STR(N$变量数)>)>
+
 GOTO @BOSS刷新状态
 INC N$按钮序号 1
 INC N$领主序号 1
 INC N$怪物流水号 2
 GOTO @循环取怪物
-#ELSEACT
+#ELSEACT 
 GOTO @读取掉落显示
 GOTO @怪物界面显示
 BREAK
