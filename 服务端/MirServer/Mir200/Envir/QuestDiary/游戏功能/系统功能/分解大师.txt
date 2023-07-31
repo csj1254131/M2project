@@ -189,6 +189,12 @@ CheckContainsText <$STR(S$火龙装备)> <$STR(S$当前装备)>
 MOV S$当前等级 火龙
 GOTO @去装备分解
 BREAK
+#IF
+CheckContainsText <$STR(S$特殊装备)> <$STR(S$特殊装备)>
+#ACT
+MOV S$当前等级 特殊
+GOTO @去装备分解
+BREAK
 
 
 [@去装备分解]
@@ -263,6 +269,13 @@ CheckContainsText <$STR(S$火龙装备)> <$STR(S$当前装备)>
 MOV S$分解等级 火龙
 MOV S$分解结果 成功
 GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 36 S$读取列 |
+#IF
+CheckContainsText <$STR(S$特殊装备)> <$STR(S$当前装备)>
+#ACT
+MOV S$分解等级 特殊
+MOV S$分解结果 成功
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\分解配置.txt 64 S$读取列 |
+
 
 #IF
 #ACT
@@ -368,6 +381,11 @@ MOV N$当前范围 <$STR(S$经验范围10)>
 EQUAL S$当前等级 火龙
 #ACT
 MOV N$当前范围 <$STR(S$经验范围11)>
+
+#IF
+EQUAL S$当前等级 特殊
+#ACT
+MOV N$当前范围 <$STR(S$经验范围12)>
 
 #IF
 #ACT
@@ -514,6 +532,11 @@ MOV N$当前范围 <$STR(S$元宝范围10)>
 EQUAL S$当前等级 火龙
 #ACT
 MOV N$当前范围 <$STR(S$元宝范围11)>
+
+#IF
+EQUAL S$当前等级 特殊
+#ACT
+MOV N$当前范围 <$STR(S$元宝范围12)>
 
 #IF
 #ACT
@@ -668,6 +691,11 @@ EQUAL S$当前等级 火龙
 MOV N$当前范围 <$STR(S$炼体范围11)>
 
 #IF
+EQUAL S$当前等级 特殊
+#ACT
+MOV N$当前范围 <$STR(S$炼体范围12)>
+
+#IF
 #ACT
 DEC N$奖品递减 1
 
@@ -782,6 +810,11 @@ EQUAL S$当前等级 火龙
 MOV N$当前范围 <$STR(S$锻造范围11)>
 
 #IF
+EQUAL S$当前等级 特殊
+#ACT
+MOV N$当前范围 <$STR(S$锻造范围12)>
+
+#IF
 #ACT
 DEC N$奖品递减 1
 
@@ -855,7 +888,7 @@ MOV S$剩余串
 <Text|id=4|a=4|percentx=50|y=37|color=103|outline=2|outlinecolor=0|size=18|text=分解奖品>
 <Img|id=5|children={51}|x=75|y=35|img=custom/hl/fenjie_ui/hl_fj_02.png>
 <Img|id=51|x=170|y=0|img=custom/hl/fenjie_ui/hl_fj_04.png>
-<ListView|id=3|children={31,32,33,34,35,36,37,38,39,40,41}|x=20|y=60|width=370|height=340|margin=0|bounce=0|direction=1|color=x>
+<ListView|id=3|children={31,32,33,34,35,36,37,38,39,40,41,42}|x=20|y=60|width=370|height=340|margin=0|bounce=0|direction=1|color=x>
 ;<Img|id=31|children={311,312}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
 ;<RText|id=311|x=10|y=5|color=255|size=18|text=逐月套装　<几率获得洗髓丹、凡品升星石/FCOLOR=253>>
 ;<Img|id=32|children={321}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
@@ -878,6 +911,8 @@ MOV S$剩余串
 <RText|id=401|x=10|y=5|color=255|size=18|text=辉煌套装　<几率获得龍の心、上品注灵石/FCOLOR=253>>
 <Img|id=41|children={411}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
 <RText|id=411|x=10|y=5|color=255|size=18|text=火龙套装　<几率获得龍の心、上品注灵石/FCOLOR=253>>
+<Img|id=42|children={421}|img=custom/hl/equip_xlqh/bg_hhzy_01_1.png|scale9l=10|scale9r=10|scale9t=10|scale9b=10|width=370>
+<RText|id=421|x=10|y=5|color=255|size=18|text=特殊套装　<几率获得觉醒石、上品注灵石/FCOLOR=253>>
 
 <Text|id=11|x=348|y=400|color=250|outline=2|outlinecolor=0|size=18|text=返回|link=@启动分解>
 
@@ -888,7 +923,7 @@ MOV S$剩余串
 MOV S0
 MOV S$剩余串
 #SAY
-<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}|img=custom/hl/fenjie_ui/hl_fj_01.png|move=1|bg=1|reload=1|layerid=1|bagPos=1|x=<$STR(N$宽)>|y=<$STR(N$高)>|width=405|height=447>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21}|img=custom/hl/fenjie_ui/hl_fj_01.png|move=1|bg=1|reload=1|layerid=1|bagPos=1|x=<$STR(N$宽)>|y=<$STR(N$高)>|width=405|height=447>
 <Layout|id=0|children={1}|x=405|y=0|width=50|height=50|color=x|link=@exit>
 <Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
 <Text|id=4|a=4|percentx=50|y=37|color=103|outline=2|outlinecolor=0|size=18|text=分解设置>
@@ -916,6 +951,8 @@ MOV S$剩余串
 <Text|id=191|x=30|y=0|color=255|size=18|text=辉煌套装|link=@设置分解辉煌套装>
 <CheckBox|id=20|x=25|y=177|children={201}|checkboxid=6|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U246)>|link=@分解火龙套装>
 <Text|id=201|x=30|y=0|color=255|size=18|text=火龙套装|link=@设置分解火龙套装>
+<CheckBox|id=21|x=240|y=177|children={211}|checkboxid=6|nimg=custom/hl/hl_ui/gxk_1.png|pimg=custom/hl/hl_ui/gxk_2.png|default=<$STR(U247)>|link=@分解特殊套装>
+<Text|id=211|x=30|y=0|color=255|size=18|text=特殊套装|link=@设置分解特殊套装>
 <Text|id=12|a=4|percentx=50|y=317|color=103|outline=2|outlinecolor=0|size=18|text=特殊设置>
 <Img|id=13|children={131}|x=75|y=315|img=custom/hl/fenjie_ui/hl_fj_02.png>
 <Img|id=131|x=170|y=0|img=custom/hl/fenjie_ui/hl_fj_04.png>
@@ -1024,6 +1061,16 @@ GOTO @分解设置
 #ELSEACT
 MOV U246 0
 GOTO @分解设置
+[@设置分解特殊套装]
+#IF
+EQUAL U247 0
+#ACT
+MOV U247 1
+GOTO @分解设置
+#ELSEACT
+MOV U247 0
+GOTO @分解设置
+
 
 
 
@@ -1112,6 +1159,13 @@ EQUAL U246 0
 MOV U246 1
 #ELSEACT
 MOV U246 0
+[@分解特殊套装]
+#IF
+EQUAL U247 0
+#ACT
+MOV U247 1
+#ELSEACT
+MOV U247 0
 
 
 [@自动分解]
@@ -1278,6 +1332,12 @@ CheckContainsText <$STR(S$火龙装备)> <$STR(S$物品的名称)>
 #ACT
 break
 
+#IF
+EQUAL U247 0
+CheckContainsText <$STR(S$特殊装备)> <$STR(S$物品的名称)>
+#ACT
+break
+
 
 #IF
 CheckContainsText <$STR(S$分解总串)> <$STR(S$物品的名称)>
@@ -1333,7 +1393,8 @@ GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$龙腾装备 9
 GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$盛世装备 10
 GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$辉煌装备 11
 GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$火龙装备 12
-MOV S$分解总串 <$STR(S$龙吟装备)>,<$STR(S$荣耀装备)>,<$STR(S$永恒装备)>,<$STR(S$龙腾装备)>,<$STR(S$盛世装备)>,<$STR(S$辉煌装备)>,<$STR(S$火龙装备)>
+GetRandomText ..\QuestDiary\游戏功能\系统功能\分解配置.txt S$特殊装备 62
+MOV S$分解总串 <$STR(S$龙吟装备)>,<$STR(S$荣耀装备)>,<$STR(S$永恒装备)>,<$STR(S$龙腾装备)>,<$STR(S$盛世装备)>,<$STR(S$辉煌装备)>,<$STR(S$火龙装备)>,<$STR(S$特殊装备)>
 
 
 [@活跃任务_装备分解]
