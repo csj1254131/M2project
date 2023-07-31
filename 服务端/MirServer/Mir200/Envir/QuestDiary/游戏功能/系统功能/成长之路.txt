@@ -561,6 +561,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<Button|id=47|<$STR(S$默认按钮)>|text=特殊装备|link=@特殊装备>
 <ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121}|x=150|y=115|width=600|height=390|margin=1|bounce=0|direction=1|color=x>
 <Layout|id=9|children={91,92}|width=590|height=40|color=x>
 <Img|id=91|children={92}|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
@@ -959,6 +960,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 42 S$龙吟装备 |
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<Button|id=47|<$STR(S$默认按钮)>|text=特殊装备|link=@特殊装备>
 <ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
 <Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
 <Button|id=42|<$STR(S$激活按钮)>|text=高级装备|link=@转生装备>
@@ -966,6 +968,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 42 S$龙吟装备 |
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<Button|id=47|<$STR(S$默认按钮)>|text=特殊装备|link=@特殊装备>
 <ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124}|x=150|y=115|width=600|height=390|margin=1|bounce=0|direction=1|color=x>
 
 <Layout|id=111|children={1111,1112}|width=590|height=40|color=x>
@@ -1089,6 +1092,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 56 S$终极附件 |
 <Button|id=44|<$STR(S$激活按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<Button|id=47|<$STR(S$默认按钮)>|text=特殊装备|link=@特殊装备>
 <RText|id=5|x=150|y=110|color=251|size=18|text=斗笠、盾牌、魔血石、火龙之心可在合成大师处进行合成>
 <RText|id=6|x=150|y=140|color=254|size=18|text=各地图小怪及BOSS也有几率掉落高级附件>
 <ListView|id=10|children={9,101}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
@@ -1134,6 +1138,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 58 S$特戒装备 |
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$激活按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<Button|id=47|<$STR(S$默认按钮)>|text=特殊装备|link=@特殊装备>
 <RText|id=5|x=150|y=110|color=251|size=18|text=特戒装备可在合成大师处合成>
 <RText|id=6|x=150|y=140|color=254|size=18|text=<麻痹特戒/FCOLOR=249>每次攻击有几率对目标造成<石化效果/FCOLOR=249>>
 <ListView|id=10|children={9,101}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
@@ -1189,6 +1194,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 276 S$唯我独尊 |
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<Button|id=47|<$STR(S$默认按钮)>|text=特殊装备|link=@特殊装备>
 ;<RText|id=5|x=150|y=110|color=251|size=18|text=神器分<残神器/FCOLOR=250>和<成品神器/FCOLOR=250>>
 ;<RText|id=6|x=150|y=140|color=254|size=18|text=<神器/FCOLOR=250>可晋级为<上古神器/FCOLOR=254>，<上古神器/FCOLOR=254>可以晋级为<荣耀神器/FCOLOR=253>>
 <ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
@@ -1378,6 +1384,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 62 S$辅令装备 |
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$激活按钮)>|text=辅助令牌|link=@辅助令牌>
+<Button|id=47|<$STR(S$默认按钮)>|text=特殊装备|link=@特殊装备>
 <RText|id=5|x=150|y=110|color=251|size=18|text=主令装备一共12件，辅令装备一共12件，代表十二星座>
 <RText|id=6|x=150|y=140|color=254|size=18|text=对应的属性各不相同，玩家可自由搭配主辅令牌以适应复杂多变的PK环境>
 <ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
@@ -1412,6 +1419,75 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 62 S$辅令装备 |
 <ItemShow|id=10311|itemid=<$STR(S$辅令装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
 <ItemShow|id=10312|itemid=<$STR(S$辅令装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
 
+[@特殊装备]
+#IF
+#ACT
+MOV S$选择_攻略 <$STR(S$默认按钮)>
+MOV S$选择_玩法 <$STR(S$默认按钮)>
+MOV S$选择_装备 <$STR(S$默认按钮)>
+MOV S$选择_怪物 <$STR(S$默认按钮)>
+MOV S$选择_技能 <$STR(S$默认按钮)>
+MOV S$选择_<$STR(S$当前选择)> <$STR(S$激活按钮)>
+GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 280 S$特殊装备 |
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4|reload=1|loadDelay=1|loadCount=15|loadStep=5>
+<Img|children={0,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/close_01.png|pimg=custom/hl/hl_ui/close_02.png|link=@exit>
+<Text|id=2|x=345|y=5|color=100|size=20|outline=2|outlinecolor=0|text=成长之路>
+<ListView|id=3|children={31,32,33,34,35}|x=28|y=65|width=800|height=42|margin=10|bounce=0|direction=2|color=x>
+<Button|id=31|<$STR(S$选择_攻略)>|text=游戏攻略|link=@攻略>
+<Button|id=32|<$STR(S$选择_玩法)>|text=玩法推荐|link=@玩法>
+<Button|id=33|<$STR(S$选择_装备)>|text=装备图鉴|link=@装备>
+<Button|id=34|<$STR(S$选择_怪物)>|text=BOSS图鉴|link=@怪物>
+<Button|id=35|<$STR(S$选择_技能)>|text=技能铭文|link=@铭文技能>
+<ListView|id=7|children={71}|x=18|y=108|width=735|height=3|margin=0|bounce=0|direction=2|color=x>
+<Img|id=71|img=custom/hl/hl_ui/hl_bg_01.png>
+<ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
+<Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
+<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+<Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
+<Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
+<Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
+<Button|id=47|<$STR(S$激活按钮)>|text=特殊装备|link=@特殊装备>
+<RText|id=5|x=150|y=110|color=254|size=18|text=特殊装备通过BOSS掉落>
+<RText|id=6|x=150|y=140|color=249|size=18|text=特殊装备无等级限制，且有额外属性加成，是毕业的一大选择！>
+<ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
+<Layout|id=9|children={91,92}|width=590|height=40|color=x>
+<Img|id=91|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
+<Text|id=92|a=4|percentx=50|percenty=50|color=249|size=18|text=特殊装备>
+<Layout|id=101|children={99001,99002,99003,99004,99005,99006,99007,99008,99009,99010,99011,99012,99013,99014,99015,99016,99017,99018,99019,99020,99021,99022,99023,99024,99025,99026,99027,99028}|width=590|height=130|color=x>
+<ItemShow|id=99001|itemid=<$STR(S$特殊装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
+<ItemShow|id=99002|itemid=<$STR(S$特殊装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
+<ItemShow|id=99003|itemid=<$STR(S$特殊装备3)>|itemcount=0|showtips=1|bgtype=1|x=130|y=0>
+<ItemShow|id=99004|itemid=<$STR(S$特殊装备4)>|itemcount=0|showtips=1|bgtype=1|x=195|y=0>
+<ItemShow|id=99005|itemid=<$STR(S$特殊装备5)>|itemcount=0|showtips=1|bgtype=1|x=260|y=0>
+<ItemShow|id=99006|itemid=<$STR(S$特殊装备6)>|itemcount=0|showtips=1|bgtype=1|x=325|y=0>
+<ItemShow|id=99007|itemid=<$STR(S$特殊装备7)>|itemcount=0|showtips=1|bgtype=1|x=390|y=0>
+<ItemShow|id=99008|itemid=<$STR(S$特殊装备8)>|itemcount=0|showtips=1|bgtype=1|x=455|y=0>
+<ItemShow|id=99009|itemid=<$STR(S$特殊装备9)>|itemcount=0|showtips=1|bgtype=1|x=520|y=0>
+<ItemShow|id=99010|itemid=<$STR(S$特殊装备10)>|itemcount=0|showtips=1|bgtype=1|x=0|y=65>
+<ItemShow|id=99011|itemid=<$STR(S$特殊装备11)>|itemcount=0|showtips=1|bgtype=1|x=65|y=65>
+<ItemShow|id=99012|itemid=<$STR(S$特殊装备12)>|itemcount=0|showtips=1|bgtype=1|x=130|y=65>
+<ItemShow|id=99013|itemid=<$STR(S$特殊装备13)>|itemcount=0|showtips=1|bgtype=1|x=195|y=65>
+<ItemShow|id=99014|itemid=<$STR(S$特殊装备14)>|itemcount=0|showtips=1|bgtype=1|x=260|y=65>
+<ItemShow|id=99015|itemid=<$STR(S$特殊装备15)>|itemcount=0|showtips=1|bgtype=1|x=325|y=65>
+<ItemShow|id=99016|itemid=<$STR(S$特殊装备16)>|itemcount=0|showtips=1|bgtype=1|x=390|y=65>
+<ItemShow|id=99017|itemid=<$STR(S$特殊装备17)>|itemcount=0|showtips=1|bgtype=1|x=455|y=65>
+<ItemShow|id=99018|itemid=<$STR(S$特殊装备18)>|itemcount=0|showtips=1|bgtype=1|x=520|y=65>
+<ItemShow|id=99019|itemid=<$STR(S$特殊装备19)>|itemcount=0|showtips=1|bgtype=1|x=0|y=130>
+<ItemShow|id=99020|itemid=<$STR(S$特殊装备20)>|itemcount=0|showtips=1|bgtype=1|x=65|y=130>
+<ItemShow|id=99021|itemid=<$STR(S$特殊装备21)>|itemcount=0|showtips=1|bgtype=1|x=130|y=130>
+<ItemShow|id=99022|itemid=<$STR(S$特殊装备22)>|itemcount=0|showtips=1|bgtype=1|x=195|y=130>
+<ItemShow|id=99023|itemid=<$STR(S$特殊装备23)>|itemcount=0|showtips=1|bgtype=1|x=260|y=130>
+<ItemShow|id=99024|itemid=<$STR(S$特殊装备24)>|itemcount=0|showtips=1|bgtype=1|x=325|y=130>
+<ItemShow|id=99025|itemid=<$STR(S$特殊装备25)>|itemcount=0|showtips=1|bgtype=1|x=390|y=130>
+<ItemShow|id=99026|itemid=<$STR(S$特殊装备26)>|itemcount=0|showtips=1|bgtype=1|x=455|y=130>
+<ItemShow|id=99027|itemid=<$STR(S$特殊装备27)>|itemcount=0|showtips=1|bgtype=1|x=520|y=130>
+<ItemShow|id=99028|itemid=<$STR(S$特殊装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
 
 [@怪物]
 #IF
