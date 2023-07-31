@@ -1453,7 +1453,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 280 S$特殊装备 |
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
 <Button|id=47|<$STR(S$激活按钮)>|text=特殊装备|link=@特殊装备>
-<RText|id=5|x=150|y=110|color=254|size=18|text=特殊装备通过BOSS掉落>
+<RText|id=5|x=150|y=110|color=254|size=18|text=特殊装备通过BOSS掉落，可分解获得大量元宝及特殊材料>
 <RText|id=6|x=150|y=140|color=249|size=18|text=特殊装备无等级限制，且有额外属性加成，是毕业的一大选择！>
 <ListView|id=10|children={9,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117}|x=150|y=165|width=600|height=340|margin=1|bounce=0|direction=1|color=x>
 <Layout|id=9|children={91,92}|width=590|height=40|color=x>
