@@ -315,6 +315,140 @@ check [417] 0
 set [417] 1
 NEWCHANGETASK 26
 break
+[@StdModeFunc1301]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc1302]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+[@StdModeFunc1303]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1304]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1305]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1306]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1307]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1308]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1309]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1310]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1311]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1312]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1313]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1401]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+[@StdModeFunc1402]
+#IF
+check [416] 1
+check [417] 0
+#ACT
+set [417] 1
+NEWCHANGETASK 26
+break
+
+
 
 
 [@取消首冲推荐]

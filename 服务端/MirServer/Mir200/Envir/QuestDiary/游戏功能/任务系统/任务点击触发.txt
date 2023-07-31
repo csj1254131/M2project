@@ -577,7 +577,8 @@ NEWPICKTASK 25
 money 经验 + 500000
 money 绑定元宝 + 50000
 GiveStateItem 小还丹 50 0 1 0 1 1 1 1 1
-GiveStateItem 审判の甲 50 0 0 0 0 0 0 0 0
+GiveStateItem 审判の甲 1 0 0 0 0 0 0 0 0
+GiveStateItem 审判の袍 1 0 0 0 0 0 0 0 0
 sendmsg 9 恭喜完成杀怪任务，奖励已发放到包裹！
 break
 
