@@ -1,7 +1,7 @@
 [Setup]
 CastleName=É³°Í¿Ë
 ChangeDate=2023/8/1 10:38:02
-WarDate=2023/8/1 10:50:00
+WarDate=2023/8/1 17:50:21
 IncomeToday=2023/8/1 10:34:39
 TotalGold=0
 TodayIncome=0

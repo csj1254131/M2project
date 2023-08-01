@@ -252,7 +252,7 @@ Goto @等级目标展示
 
 <Layout|id=9a|children={90a,91a,92a,93a}|width=610|height=96|color=x|x=125>
 <Text|id=90a|text=剩余时间：|x=20|y=20|size=16|color=255|outline=2|outlinecolor=0>
-<TIMETIPS|id=91a|time=<$str(G100)>|color=250|size=16|outline=2|outlinecolor=0|x=105|y=20>
+<Text|id=91a|text=长期开放|color=250|size=17|outline=2|outlinecolor=0|x=105|y=20>
 <Text|id=92a|text=活动说明： 活动期间，玩家等级达到目标要求，可以获得大量奖励！|x=20|y=50|size=16|color=x|outline=2|outlinecolor=0>
 ;<Button|id=93a|nimg=custom/hl/kqhd_ui/tstj.png|x=525|y=18|link=@跳转目标途径>
 <$Str(s$连充红点)>

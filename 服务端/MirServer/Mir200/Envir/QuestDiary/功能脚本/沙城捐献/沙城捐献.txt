@@ -318,16 +318,8 @@ inc N$全区总额 10000
 
 #if
 #act
-Inc N$全区总额 N$一区沙捐金额
-Inc N$全区总额 N$二区沙捐金额
-Inc N$全区总额 N$三区沙捐金额
-Inc N$全区总额 N$四区沙捐金额
-Inc N$全区总额 N$五区沙捐金额
-Inc N$全区总额 N$六区沙捐金额
-Inc N$全区总额 N$七区沙捐金额
-Inc N$全区总额 N$八区沙捐金额
-Inc N$全区总额 N$九区沙捐金额
-Inc N$全区总额 N$十区沙捐金额
+Inc N$全区总额 <$GLOBAL(全区沙捐金额)>
+sendmsg 6 当前沙城捐献总奖池：<$str(N$全区总额)>
 Mov G492 <$Str(N$全区总额)>
 CalcPer <$Str(N$全区总额)> 90 N$全区总额分成
 CalcPer <$Str(N$全区总额分成)> 70 N$胜利行会
@@ -492,6 +484,7 @@ Savevar Human 沙城捐献
 Calcvar Human 沙城捐献金额 = <$Str(N$所需货币)>
 Savevar Human 沙城捐献金额
 AddTextListEx ..\QuestDiary\通区\<$Str(A490)>\<$Servername>.txt <$GLOBAL(全区沙捐金额)> 0
+
 #CALL [\吸血刷新.txt] @吸血刷新
 #CALL [\爆率刷新.txt] @爆率刷新
 #CALL [\元素刷新.txt] @元素刷新
