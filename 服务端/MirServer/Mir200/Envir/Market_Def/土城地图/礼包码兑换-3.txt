@@ -51,27 +51,27 @@ CheckContainsText <$STR(S20)> 888888
 goto @Ö±²¥Àñ°ü3¼ì²â
 
 #IF
-CheckContainsText <$STR(S20)> zb1111
+CheckContainsText <$STR(S20)> qqzb1111
 #ACT
 goto @Ö÷²¥Àñ°ü1¼ì²â
 
 #IF
-CheckContainsText <$STR(S20)> zb2222
+CheckContainsText <$STR(S20)> qqzb2222
 #ACT
 goto @Ö÷²¥Àñ°ü2¼ì²â
 
 #IF
-CheckContainsText <$STR(S20)> zb3333
+CheckContainsText <$STR(S20)> qqzb3333
 #ACT
 goto @Ö÷²¥Àñ°ü3¼ì²â
 
 #IF
-CheckContainsText <$STR(S20)> zb4444
+CheckContainsText <$STR(S20)> qqzb4444
 #ACT
 goto @Ö÷²¥Àñ°ü4¼ì²â
 
 #IF
-CheckContainsText <$STR(S20)> zb5555
+CheckContainsText <$STR(S20)> qqzb5555
 #ACT
 goto @Ö÷²¥Àñ°ü5¼ì²â
 
