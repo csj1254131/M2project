@@ -262,10 +262,7 @@ sendmsg 0 杀怪爆率 <$STR(N$杀怪爆率1)>
 
 [@夺宝奇兵测试]
 #if
-CHECKSKILL 护体神盾 ? 0
 #act
-PLAYEFFECT 17104 10 10 0 0 0
-#elseact
 sendmsg 0  <$GLOBAL(攻沙次数统计)> 
 sendmsg 0 沙巴克归属的总人数：<$Guild(参加沙巴克人数)>
 Mov N$总沙城人数1 <$Str(G495)>
@@ -273,11 +270,7 @@ sendmsg 0  总沙城人数：<$Str(N$总沙城人数1)>
 Dec N$总沙城人数1 <$Guild(参加沙巴克人数)>
 sendmsg 0  胜利方沙城人数：<$Guild(参加沙巴克人数)>
 sendmsg 0  失败方沙城人数：<$STR(N$总沙城人数1)>
-sendmsg 0 开服天数：<$KFDAY>
-sendmsg 0 开服时间：<$showtime>
-sendmsg 0 开服时间：<$KFTIME>
-sendmsg 0 开服时间：<$KFTIMEEX>
-
+sendmsg 0  沙城奖池：<$STR(G493)>
 
 
 
@@ -300,6 +293,7 @@ goto @攻城开始
 #If
 #Act
 Mov A491 <$LORD>
+GMEXECUTE ForcedWallConQuestWar
 Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
 Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
 Sendmsgnew 255 0 征战沙巴克活动结束了,请耐心等待奖励发放... 1 10 

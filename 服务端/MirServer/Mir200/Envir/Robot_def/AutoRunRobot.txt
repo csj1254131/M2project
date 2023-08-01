@@ -8,9 +8,9 @@
 #AutoRun NPC RUNONDAY 00:00:05 @活跃系统重置每周
 #AutoRun NPC RUNONDAY 00:00:08 @活跃系统重置每日
 
-#AutoRun NPC RUNONDAY 19:30 @攻城提示
-#AutoRun NPC RUNONDAY 20:00 @攻城开始
-#AutoRun NPC RUNONDAY 22:00 @攻城结束
+#AutoRun NPC RUNONDAY 10:49 @攻城提示
+#AutoRun NPC RUNONDAY 10:50 @攻城开始
+#AutoRun NPC RUNONDAY 10:51 @攻城结束
 ;#AutoRun NPC RUNONDAY 22:05 @攻城统计
 ;#AutoRun NPC RUNONDAY 22:10 @攻城奖励
 ;#AutoRun NPC RUNONDAY 22:15 @清理沙城捐献平时

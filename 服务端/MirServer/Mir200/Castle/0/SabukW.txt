@@ -1,11 +1,11 @@
 [Setup]
 CastleName=沙巴克
-ChangeDate=2023/7/27 10:30:20
-WarDate=2023/7/27 11:28:55
-IncomeToday=2023/7/27 9:58:29
+ChangeDate=2023/8/1 10:38:02
+WarDate=2023/8/1 10:50:00
+IncomeToday=2023/8/1 10:34:39
 TotalGold=0
 TodayIncome=0
-OwnGuild=的
+OwnGuild=天下无敌
 [Defense]
 CastleMapList=0151,0152,0153,0154,0155,0156,
 CastleMap=3

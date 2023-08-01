@@ -10,7 +10,7 @@ MOV S$地图编号_2 jtdt1
 MOV S$默认按钮 nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|color=160
 MOV S$激活按钮 nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|color=103
 
-MOVR N$随机地图显示 1 2
+MOVR N$随机地图显示 1 1
 
 #IF
 EQUAL N$随机地图显示 1
@@ -41,7 +41,7 @@ GOTO @打开祭坛
 <Img|id=131|img=custom/hl/hl_ui/hl_bg_02.png>
 <ListView|id=4|children={41,42,43,44,45}|x=22|y=63|width=110|height=450|margin=2|bounce=0|direction=1|color=x>
 <Button|id=41|<$STR(S$<$STR(S$地图名称_1)>按钮)>|size=18|text=<$STR(S$地图名称_1)>|link=@打开<$STR(S$地图名称_1)>>
-<Button|id=42|<$STR(S$<$STR(S$地图名称_2)>按钮)>|color=160|size=18|text=<$STR(S$地图名称_2)>|link=@打开<$STR(S$地图名称_2)>>
+;<Button|id=42|<$STR(S$<$STR(S$地图名称_2)>按钮)>|color=160|size=18|text=<$STR(S$地图名称_2)>|link=@打开<$STR(S$地图名称_2)>>
 <$STR(S$地图简介)>
 <ListView|id=9|x=155|y=265|children={91,92,93,94,95,96,97,98,99,990,991,992,993}|width=275|height=65|direction=2|bounce=0|margin=3|color=x>
 <ItemShow|id=92|itemid=40047|itemcount=1|showtips=1|bgtype=1>

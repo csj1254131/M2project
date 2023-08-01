@@ -138,6 +138,8 @@ GMEXECUTE 开始提问 @清理城主顶戴
 [@攻城开始]
 #If
 #Act
+AddToCastleWarListEx 沙巴克 *
+GMEXECUTE ForcedWallConQuestWar
 Scenevibration 1 1 1
 SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
 SendCenterMsg 249 0 【沙巴克争夺战】：号角已经吹响,沙巴克之战正式开启,沙城花落谁家让我们拭目以待！ 1  10
@@ -158,6 +160,7 @@ GMEXECUTE 开始提问 @开启沙城狂暴保护
 #If
 #Act
 Mov A491 <$LORD>
+GMEXECUTE ForcedWallConQuestWar
 Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
 Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
 Sendmsgnew 255 0 征战沙巴克活动结束了,请耐心等待奖励发放... 1 10
