@@ -166,7 +166,7 @@ Sendmsg 1 ぐ系统：征战沙巴克活动结束了,请耐心等待奖励发放...
 Sendmsgnew 255 0 征战沙巴克活动结束了,请耐心等待奖励发放... 1 10
 Gmexecute 开始提问 @清理狂暴保护
 goto @攻城统计
-goto @攻城奖励
+DELAYGOTO 5000 @攻城奖励
 DELAYGOTO 5000 @清理沙城捐献平时
 DELAYGOTO 5000 @清理沙城捐献
 

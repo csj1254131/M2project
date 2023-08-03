@@ -597,7 +597,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 <ItemShow|id=10131|itemid=<$STR(S$35装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
 <Layout|id=102|children={1021,1022}|width=590|height=40|color=x>
 <Img|id=1021|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1022|a=4|percentx=50|percenty=50|color=254|size=18|text=纵横套装>
+<Text|id=1022|a=4|percentx=50|percenty=50|color=254|size=18|text=雷霆套装>
 <Layout|id=103|a=2|children={1031,1032,1033,1034,1035,1036,1037,1038,1039,10311,10312,10313,10314,10315,10316,10317,10318,10319,10321,10322,10323,10324,10325,10326,10327,10328,10329,10331}|width=590|height=260|color=x>
 <ItemShow|id=1031|itemid=<$STR(S$40装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
 <ItemShow|id=1032|itemid=<$STR(S$40装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
@@ -629,7 +629,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 <ItemShow|id=10331|itemid=<$STR(S$40装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
 <Layout|id=104|children={1041,1042}|width=590|height=40|color=x>
 <Img|id=1041|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1042|a=4|percentx=50|percenty=50|color=254|size=18|text=王者套装>
+<Text|id=1042|a=4|percentx=50|percenty=50|color=254|size=18|text=强化雷霆套装>
 <Layout|id=105|a=2|children={1051,1052,1053,1054,1055,1056,1057,1058,1059,10511,10512,10513,10514,10515,10516,10517,10518,10519,10521,10522,10523,10524,10525,10526,10527,10528,10529,10531}|width=590|height=260|color=x>
 <ItemShow|id=1051|itemid=<$STR(S$55装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
 <ItemShow|id=1052|itemid=<$STR(S$55装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
@@ -661,7 +661,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 <ItemShow|id=10531|itemid=<$STR(S$55装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
 <Layout|id=106|children={1061,1062}|width=590|height=40|color=x>
 <Img|id=1061|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1062|a=4|percentx=50|percenty=50|color=254|size=18|text=赤焰套装>
+<Text|id=1062|a=4|percentx=50|percenty=50|color=254|size=18|text=战神套装>
 <Layout|id=107|a=2|children={1071,1072,1073,1074,1075,1076,1077,1078,1079,10711,10712,10713,10714,10715,10716,10717,10718,10719,10721,10722,10723,10724,10725,10726,10727,10728,10729,10731}|width=590|height=260|color=x>
 <ItemShow|id=1071|itemid=<$STR(S$70装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
 <ItemShow|id=1072|itemid=<$STR(S$70装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
@@ -693,7 +693,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 <ItemShow|id=10731|itemid=<$STR(S$70装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
 <Layout|id=108|children={1081,1082}|width=590|height=40|color=x>
 <Img|id=1081|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1082|a=4|percentx=50|percenty=50|color=254|size=18|text=传说套装>
+<Text|id=1082|a=4|percentx=50|percenty=50|color=254|size=18|text=纵横套装>
 <Layout|id=109|a=2|children={1091,1092,1093,1094,1095,1096,1097,1098,1099,10911,10912,10913,10914,10915,10916,10917,10918,10919,10921,10922,10923,10924,10925,10926,10927,10928,10929,10931}|width=590|height=260|color=x>
 <ItemShow|id=1091|itemid=<$STR(S$90装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
 <ItemShow|id=1092|itemid=<$STR(S$90装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
@@ -725,7 +725,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 <ItemShow|id=10931|itemid=<$STR(S$90装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
 <Layout|id=110|children={1101,1102}|width=590|height=40|color=x>
 <Img|id=1101|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1102|a=4|percentx=50|percenty=50|color=254|size=18|text=雄霸套装>
+<Text|id=1102|a=4|percentx=50|percenty=50|color=254|size=18|text=王者套装>
 <Layout|id=111|a=2|children={1111,1112,1113,1114,1115,1116,1117,1118,1119,11111,11112,11113,11114,11115,11116,11117,11118,11119,11121,11122,11123,11124,11125,11126,11127,11128,11129,11131}|width=590|height=260|color=x>
 <ItemShow|id=1111|itemid=<$STR(S$105装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
 <ItemShow|id=1112|itemid=<$STR(S$105装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
@@ -758,7 +758,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 
 <Layout|id=112|children={1121,1122}|width=590|height=40|color=x>
 <Img|id=1121|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1122|a=4|percentx=50|percenty=50|color=254|size=18|text=苍穹套装>
+<Text|id=1122|a=4|percentx=50|percenty=50|color=254|size=18|text=赤焰套装>
 <Layout|id=113|a=2|children={1131,1132,1133,1134,1135,1136,1137,1138,1139,11311,11312,11313,11314,11315,11316,11317,11318,11319,11321,11322,11323,11324,11325,11326,11327,11328,11329,11331}|width=590|height=260|color=x>
 <ItemShow|id=1131|itemid=<$STR(S$120装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
 <ItemShow|id=1132|itemid=<$STR(S$120装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
@@ -790,7 +790,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 <ItemShow|id=11331|itemid=<$STR(S$120装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
 <Layout|id=114|children={1141,1142}|width=590|height=40|color=x>
 <Img|id=1141|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1142|a=4|percentx=50|percenty=50|color=254|size=18|text=乾坤套装>
+<Text|id=1142|a=4|percentx=50|percenty=50|color=254|size=18|text=传说套装>
 <Layout|id=115|a=2|children={1151,1152,1153,1154,1155,1156,1157,1158,1159,11511,11512,11513,11514,11515,11516,11517,11518,11519,11521,11522,11523,11524,11525,11526,11527,11528,11529,11531}|width=590|height=260|color=x>
 <ItemShow|id=1151|itemid=<$STR(S$135装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
 <ItemShow|id=1152|itemid=<$STR(S$135装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
@@ -823,7 +823,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 
 <Layout|id=116|children={1161,1162}|width=590|height=40|color=x>
 <Img|id=1161|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1162|a=4|percentx=50|percenty=50|color=254|size=18|text=雷霆套装>
+<Text|id=1162|a=4|percentx=50|percenty=50|color=254|size=18|text=雄霸套装>
 <Layout|id=117|a=2|children={1171,1172,1173,1174,1175,1176,1177,1178,1179,11711,11712,11713,11714,11715,11716,11717,11718,11719,11721,11722,11723,11724,11725,11726,11727,11728,11729,11731}|width=590|height=260|color=x>
 <ItemShow|id=1171|itemid=<$STR(S$155装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
 <ItemShow|id=1172|itemid=<$STR(S$155装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
@@ -855,7 +855,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 <ItemShow|id=11731|itemid=<$STR(S$155装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
 <Layout|id=118|children={1181,1182}|width=590|height=40|color=x>
 <Img|id=1181|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1182|a=4|percentx=50|percenty=50|color=254|size=18|text=强化套装>
+<Text|id=1182|a=4|percentx=50|percenty=50|color=254|size=18|text=苍穹套装>
 <Layout|id=119|a=2|children={1191,1192,1193,1194,1195,1196,1197,1198,1199,11911,11912,11913,11914,11915,11916,11917,11918,11919,11921,11922,11923,11924,11925,11926,11927,11928,11929,11931}|width=590|height=260|color=x>
 <ItemShow|id=1191|itemid=<$STR(S$175装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
 <ItemShow|id=1192|itemid=<$STR(S$175装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>
@@ -887,7 +887,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 <ItemShow|id=11931|itemid=<$STR(S$175装备28)>|itemcount=0|showtips=1|bgtype=1|x=0|y=195>
 <Layout|id=120|children={1201,1202}|width=590|height=40|color=x>
 <Img|id=1201|a=4|percentx=50|percenty=50|img=public/word_sxbt_05.png>
-<Text|id=1202|a=4|percentx=50|percenty=50|color=254|size=18|text=天之套装>
+<Text|id=1202|a=4|percentx=50|percenty=50|color=254|size=18|text=乾坤套装>
 <Layout|id=121|a=2|children={1211,1212,1213,1214,1215,1216,1217,1218,1219,12111,12112,12113,12114,12115,12116,12117,12118,12119,12121,12122,12123,12124,12125,12126,12127,12128,12129,12131}|width=590|height=260|color=x>
 <ItemShow|id=1211|itemid=<$STR(S$195装备1)>|itemcount=0|showtips=1|bgtype=1|x=0|y=0>
 <ItemShow|id=1212|itemid=<$STR(S$195装备2)>|itemcount=0|showtips=1|bgtype=1|x=65|y=0>

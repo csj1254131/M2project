@@ -1,8 +1,8 @@
 [Setup]
 CastleName=沙巴克
 ChangeDate=2023/8/1 10:38:02
-WarDate=2023/8/1 17:50:21
-IncomeToday=2023/8/1 10:34:39
+WarDate=2023/8/2 11:21:20
+IncomeToday=2023/8/2 10:47:40
 TotalGold=0
 TodayIncome=0
 OwnGuild=天下无敌
@@ -163,6 +163,6 @@ Guard_8_Name=守卫
 Guard_8_HP=1000
 MainDoorOpen=1
 MainDoorHP=6958
-LeftWallHP=4440
+LeftWallHP=4447
 CenterWallHP=0
-RightWallHP=4507
+RightWallHP=4514

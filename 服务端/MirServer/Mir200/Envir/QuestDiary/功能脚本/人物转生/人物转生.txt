@@ -89,7 +89,7 @@ SMALL <$RELEVEL> 10
 <Text|id=90|text=Hp ：<$Str(s$下级Hp)>|color=250|size=18|outline=2|outlinecolor=0|x=95|y=20>
 <Text|id=91|text=mp：<$Str(s$下级mp)>|color=250|size=18|outline=2|outlinecolor=0|x=95|y=50>
 <Text|id=92|text=<$Str(s$职业)>：<$Str(s$下级sxxx)> - <$Str(s$下级sxsx)>|color=250|size=18|outline=2|outlinecolor=0|x=85.5|y=80>
-<Text|a=4|id=10|text=人物等级<$Str(s$下级dj)>，转生后降<$Str(s$下级jj)>级|color=255|size=18|outline=2|outlinecolor=0|percentx=50|percenty=70>
+<Text|a=4|id=10|text=人物等级要求：<$Str(s$下级dj)>|color=255|size=18|outline=2|outlinecolor=0|percentx=50|percenty=70>
 <Text|a=4|id=11|text=消耗材料：|color=255|size=18|outline=2|outlinecolor=0|percentx=30|percenty=82>
 <ItemShow|a=4|id=12|children={12a}|itemid=<$Str(s$下级clid_1)>|itemcount=1|showtips=1|bgtype=1|percentx=40|percenty=82>
 <Text|a=4|id=12a|text=<$Str(s$下级clsl_1)>|color=<$Str(s$材料ys_1)>|size=17|outline=2|outlinecolor=0|percentx=82|percenty=80>

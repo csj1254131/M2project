@@ -6,7 +6,7 @@ Mov S$沙按钮B custom/hl/hl_ui/115_2.png
 Mov S$沙传送页面
 Inc S$沙传送页面 <Button|x=19.0|y=62.0|color=103|size=18|nimg=<$Str(S$沙按钮A)>|pimg=<$Str(S$沙按钮B)>|text=沙城传送|link=@沙城传送>
 Inc S$沙传送页面 <Button|x=19.0|y=105.0|color=10|size=18|nimg=<$Str(S$沙按钮B)>|pimg=<$Str(S$沙按钮A)>|text=沙城奖励|link=@城主奖励>
-Inc S$沙传送页面 <Button|x=19.0|y=148.0|color=10|size=18|nimg=<$Str(S$沙按钮B)>|pimg=<$Str(S$沙按钮A)>|text=沙城城主|link=@沙城城主>
+;Inc S$沙传送页面 <Button|x=19.0|y=148.0|color=10|size=18|nimg=<$Str(S$沙按钮B)>|pimg=<$Str(S$沙按钮A)>|text=沙城城主|link=@沙城城主>
 Inc S$沙传送页面 <Text|x=161.0|y=71.0|color=249|size=18|text=血战沙城,无上荣耀,实力和地位决定你的命运...>
 Inc S$沙传送页面 <Text|x=161.0|y=142.0|color=151|size=18|text=别啰嗦了,速度传我到沙巴克,我兄弟被人砍了...>
 Inc S$沙传送页面 <RText|x=161.0|y=106.0|color=255|size=18|text=<攻城期间只有开启/FCOLOR=255><沙城捐献/FCOLOR=254><才能参加攻城活动.../FCOLOR=255>>
