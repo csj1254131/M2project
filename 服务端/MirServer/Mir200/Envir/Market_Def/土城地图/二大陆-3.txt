@@ -36,7 +36,7 @@ MOV S$地图编号 erdalu
 <ItemShow|id=994|itemid=50332|itemcount=1|showtips=1|bgtype=1>
 <ItemShow|id=995|itemid=50333|itemcount=1|showtips=1|bgtype=1>
 <Text|id=10|x=50|y=420|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
-<RText|id=11|x=150|y=450|color=250|size=18|outline=2|outlinecolor=0|text=五转\且任意攻击属性达到1000>
+<RText|id=11|x=150|y=450|color=250|size=18|outline=2|outlinecolor=0|text=五转&开服7天后\且任意攻击属性达到1000>
 <Layout|id=12|children={121}|x=490|y=79|width=230|height=30|color=x>
 <Text|id=121|a=4|percentx=50|percenty=50||color=251|size=18|outline=2|outlinecolor=0|text=<$STR(S$地图名称)>>
 <Img|id=13|children={131}|x=480|y=117|img=custom/hl/dtcs_ui/<$STR(S$小地图编号)>.png|width=253|height=207>
@@ -50,6 +50,11 @@ LARGE <$RELEVEL> 4
 #ELSEACT
 SENDMSG 9 <font color='#ff0000'>转生等级不足</font>
 
+#if
+LARGE <$KFDAY> 6
+#act
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>开服7天后开放</font>
 
 #or
 LARGE <$MAXDC> 1000
@@ -59,6 +64,5 @@ LARGE <$MAXSC> 1000
 mapmove <$STR(S$地图编号)> 195 240
 #ELSEACT
 SENDMSG 9 <font color='#ff0000'>攻魔道不足1000</font>
-
 
 
