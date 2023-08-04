@@ -90,10 +90,10 @@ break
 Check [127] 0
 #ACT
 SET [127] 1
-give 10W绑定元宝 1
-give 凡品升星石 30
-give 中品注灵石 40
-give 觉醒石 1
+GiveStateItem 10W绑定元宝 1 1 1 1 1 1 1 1 1
+GiveStateItem 凡品升星石 30 1 1 1 1 1 1 1 1
+GiveStateItem 中品注灵石 40 1 1 1 1 1 1 1 1
+GiveStateItem 觉醒石 1 1 1 1 1 1 1 1 1
 MESSAGEBOX \\提示：正确！恭喜您获得QQ群礼包！
 break
 
@@ -107,10 +107,10 @@ break
 Check [130] 0
 #ACT
 SET [130] 1
-give 10W绑定元宝 1
-give 凡品升星石 40
-give 中品注灵石 50
-give 觉醒石 1
+GiveStateItem 10W绑定元宝 1 1 1 1 1 1 1 1 1
+GiveStateItem 凡品升星石 40 1 1 1 1 1 1 1 1
+GiveStateItem 中品注灵石 50 1 1 1 1 1 1 1 1
+GiveStateItem 觉醒石 1 1 1 1 1 1 1 1 1
 MESSAGEBOX \\提示：正确！恭喜您获得直播特权礼包一！
 break
 
@@ -125,9 +125,9 @@ break
 Check [131] 0
 #ACT
 SET [131] 1
-give 10W绑定元宝 1
-give 拾取小精灵（7天） 1
-give 队伍召集令 5
+GiveStateItem 10W绑定元宝 1 1 1 1 1 1 1 1 1
+GiveStateItem 拾取小精灵（7天） 1 1 1 1 1 1 1 1 1
+GiveStateItem 队伍召集令 5 0 1 1 1 1 1 1 1
 MESSAGEBOX \\提示：正确！恭喜您获得直播特权礼包二！
 break
 
@@ -142,10 +142,10 @@ break
 Check [132] 0
 #ACT
 SET [132] 1
-give 10W绑定元宝 1
-give 火龙凭证 100
-give 凡品升星石 30
-give 中品注灵石 40
+GiveStateItem 10W绑定元宝 1 0 1 1 1 1 1 1 1
+GiveStateItem 火龙凭证 100 0 1 1 1 1 1 1 1
+GiveStateItem 凡品升星石 30 0 1 1 1 1 1 1 1
+GiveStateItem 中品注灵石 40 0 1 1 1 1 1 1 1
 MESSAGEBOX \\提示：正确！恭喜您获得直播特权礼包三！
 break
 

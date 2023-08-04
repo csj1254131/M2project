@@ -1,0 +1,72 @@
+[@MAIN]
+#IF
+#ACT
+MOV S$小地图编号 000133
+MOV S$地图名称  元神五层
+MOV S$地图编号 ysdj24
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=300|y=5|width=170|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=100|size=20|outline=2|outlinecolor=0|text=<$STR(S$地图名称)>>
+<Layout|id=3|children={31,9}|x=20|y=62|width=730|height=445>
+<Img|id=31|img=custom/hl/dtcs_ui/map_ui_bg.jpg|width=730|height=445>
+<Text|id=4|x=50|y=68|color=251|size=18|outline=2|outlinecolor=0|text=地图介绍>
+<Img|id=5|children={51}|x=50|y=98|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=51|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=总共八层>
+<Img|id=6|children={61}|x=50|y=148|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=61|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=精英怪不定时刷新，领主怪刷新时间见BOSS列表>
+<Img|id=7|children={71}|x=50|y=198|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=71|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=怪物难度低，非常适合新人玩家打宝>
+<Img|id=8|children={81}|x=10|y=270|img=custom/hl/dtcs_ui/map_ui_01.png>
+<Img|id=81|x=395|y=25|img=custom/hl/duanzhao_ui/zyjt.png>
+<ListView|id=9|x=60|y=285|children={91,92,93,94,95,96,97,98,99,990,991,992,993,994,995}|width=348|height=65|direction=2|bounce=0|margin=3|color=x>
+<ItemShow|id=92|itemid=62501|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=93|itemid=62502|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=94|itemid=61301|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=95|itemid=61302|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=96|itemid=50288|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=97|itemid=50289|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=98|itemid=50299|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=99|itemid=50300|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=990|itemid=50310|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=991|itemid=50311|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=992|itemid=50321|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=993|itemid=50322|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=994|itemid=50332|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=995|itemid=50333|itemcount=1|showtips=1|bgtype=1>
+<Text|id=10|x=50|y=380|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
+<Text|id=11|x=150|y=420|color=250|size=18|outline=2|outlinecolor=0|text=元神24级>
+<Layout|id=12|children={121}|x=490|y=79|width=230|height=30|color=x>
+<Text|id=121|a=4|percentx=50|percenty=50||color=251|size=18|outline=2|outlinecolor=0|text=<$STR(S$地图名称)>>
+<Img|id=13|children={131}|x=480|y=117|img=custom/hl/dtcs_ui/<$STR(S$小地图编号)>.png|width=253|height=207>
+<Img|id=131|img=custom/hl/hl_ui/hl_xz_01.png|width=253|height=208>
+<Button|id=14|x=535|y=380|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=进入地图|link=@进入地图>
+
+[@进入地图]
+#IF
+NOT SMALL U13 10
+#ACT
+map ysdj25
+BREAK
+#IF
+#ACT
+GOTO @计算元神总层数
+#IF
+LARGE N$元神总层数 23
+#ACT
+map <$STR(S$地图编号)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元神等级不足</font>
+
+[@计算元神总层数]
+#IF
+#ACT
+MOV N$元神总层数 0
+INC N$元神总层数 U1
+INC N$元神总层数 U2
+INC N$元神总层数 U3
+INC N$元神总层数 U4
+INC N$元神总层数 U5

@@ -1,0 +1,226 @@
+[@MAIN]
+#IF
+#ACT
+MOV N$进图元宝需求 3000
+MOV S$小地图编号_1 000128
+MOV S$地图名称_1 雷霆之路
+MOV S$地图编号_1 ltl1
+MOV S$小地图编号_2 010004
+MOV S$地图名称_2 恶魔广场
+MOV S$地图编号_2 emgc1
+MOV S$小地图编号_3 003072
+MOV S$地图名称_3 祖玛寺庙
+MOV S$地图编号_3 zmsm1
+MOV S$默认按钮 nimg=custom/hl/hl_ui/an_02.png|pimg=custom/hl/hl_ui/an_01.png|color=160
+MOV S$激活按钮 nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|color=103
+
+MOVR N$随机地图显示 1 4
+
+#IF
+EQUAL N$随机地图显示 1
+#ACT
+GOTO @打开雷霆之路
+
+#IF
+EQUAL N$随机地图显示 2
+#ACT
+GOTO @打开恶魔广场
+
+#IF
+EQUAL N$随机地图显示 3
+#ACT
+GOTO @打开祖玛寺庙
+
+
+
+
+
+[@地图界面]
+#IF
+#ACT
+#SAY
+<Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=300|y=5|width=170|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=100|size=20|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>>
+<Layout|id=3|children={31}|x=20|y=62|width=730|height=445|color=250>
+<Img|id=31|img=custom/hl/dtcs_ui/map_ui_bg.jpg|width=730|height=445>
+
+<ListView|id=13|children={131}|x=132|y=65|width=3|height=445|margin=2|bounce=1|direction=1|color=x>
+<Img|id=131|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45}|x=22|y=63|width=110|height=450|margin=2|bounce=0|direction=1|color=x>
+<Button|id=41|<$STR(S$<$STR(S$地图名称_1)>按钮)>|size=18|text=<$STR(S$地图名称_1)>|link=@打开<$STR(S$地图名称_1)>>
+<Button|id=42|<$STR(S$<$STR(S$地图名称_2)>按钮)>|size=18|text=<$STR(S$地图名称_2)>|link=@打开<$STR(S$地图名称_2)>>
+<Button|id=43|<$STR(S$<$STR(S$地图名称_3)>按钮)>|size=18|text=<$STR(S$地图名称_3)>|link=@打开<$STR(S$地图名称_3)>>
+<$STR(S$地图简介)>
+<ListView|id=9|x=155|y=335|children={91,92,93,94,95,96,97,98,99,990,991,992,993,994,995}|width=275|height=65|direction=2|bounce=0|margin=3|color=x>
+<ItemShow|id=92|itemid=60501|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=93|itemid=60502|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=94|itemid=60601|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=95|itemid=60602|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=96|itemid=50283|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=97|itemid=50284|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=98|itemid=50293|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=99|itemid=50394|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=990|itemid=50305|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=991|itemid=50306|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=992|itemid=50316|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=993|itemid=50317|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=994|itemid=50327|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=995|itemid=50328|itemcount=1|showtips=1|bgtype=1>
+
+<Layout|id=10|children={101}|x=490|y=79|width=230|height=30|color=x>
+<Text|id=101|a=4|percentx=50|percenty=50||color=251|size=18|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>>
+<Img|id=11|children={111}|x=480|y=117|img=custom/hl/dtcs_ui/<$STR(S$当前地图编号)>.png|width=253|height=207>
+<Img|id=111|img=custom/hl/hl_ui/hl_xz_01.png|width=253|height=208>
+<Text|id=12|children={121}|x=490|y=360|color=254|size=18|outline=2|outlinecolor=0|text=<$STR(N$进图元宝需求)>元宝进入|link=@进入地图>
+<Text|id=121|x=120|y=0|color=255|size=18|outline=2|outlinecolor=0|text=(VIP<$STR(N$进图条件)>免费进入)>
+<Text|id=13|children={131}|x=490|y=400|color=254|size=18|outline=2|outlinecolor=0|text=会员专属地图|link=@进入会员地图>
+<Text|id=131|x=120|y=0|color=255|size=18|outline=2|outlinecolor=0|text=(VIP<$STR(S$进入条件显示)>可进入)>
+
+
+
+[@进入地图]
+#IF
+LARGE <$HFCOUNT> 0
+#ACT
+CLOSE
+SENDMSG 9 <font color='#ff0000'>地图已关闭</font>
+break
+#IF
+LARGE <$RELEVEL> <$STR(N$进图条件)>
+#ACT
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>转生等级不足<$STR(S$进入条件显示)>级</font>
+BREAK
+#IF
+LARGE U13 1
+#ACT
+map <$STR(S$当前地图)>
+#CALL [\游戏功能\任务系统\前期任务自动挂机.txt] @前期任务自动挂机
+BREAK
+#IF
+CheckBindMoney 元宝 ? <$STR(N$进图元宝需求)>
+#ACT
+ChangeBindMoney 元宝 <$STR(N$进图元宝需求)>
+map <$STR(S$当前地图)>
+#CALL [\游戏功能\任务系统\前期任务自动挂机.txt] @前期任务自动挂机
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>元宝不足<$STR(N$进图元宝需求)></font>
+
+[@进入会员地图]
+#IF
+LARGE <$HFCOUNT> 0
+#ACT
+CLOSE
+SENDMSG 9 <font color='#ff0000'>地图已关闭</font>
+break
+#IF
+LARGE U13 <$STR(N$进图条件)>
+#ACT
+map hy<$STR(S$当前地图)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>会员等级不足</font>
+
+
+[@打开雷霆之路]
+#IF
+#ACT
+GOTO @按钮初始化
+MOV S$<$STR(S$地图名称_1)>按钮 <$STR(S$激活按钮)>
+MOV S$当前地图名称 <$STR(S$地图名称_1)>
+MOV S$当前地图编号 <$STR(S$小地图编号_1)>
+MOV S$当前地图 <$STR(S$地图编号_1)>
+MOV N$进图条件 2
+MOV S$进入条件显示 3
+MOV S$地图简介 <Layout|id=5|children={51,52,53,54,55,56}|x=140|y=60|width=320|height=450|color=X>
+INC S$地图简介 <Text|id=51|x=5|y=8|color=251|size=18|outline=2|outlinecolor=0|text=地图介绍>
+INC S$地图简介 <Img|id=52|children={521}|x=5|y=38|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=521|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=总共四层>
+INC S$地图简介 <Img|id=53|children={531}|x=5|y=78|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=531|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=精英怪不定时刷新，领主怪刷新时间见BOSS列表>
+INC S$地图简介 <Img|id=54|children={541}|x=5|y=118|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=541|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=怪物难度较高，建议提升斗笠盾牌\主辅星，装备注灵后再进入>
+
+INC S$地图简介 <Img|id=56|children={561}|x=5|y=183|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=561|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=顶层刷新领主，领主极强，爆率\超高，建议组队前往>
+INC S$地图简介 <Img|id=55|children={551}|x=0|y=260|width=320|img=custom/hl/dtcs_ui/map_ui_01.png>
+INC S$地图简介 <Img|id=551|x=285|y=25|img=custom/hl/duanzhao_ui/zyjt.png>
+INC S$地图简介 <Text|id=7|x=150|y=430|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
+INC S$地图简介 <RText|id=8|x=250|y=450|color=250|size=18|outline=2|outlinecolor=0|text=<$STR(S$进入条件显示)>转\<推荐攻魔道：320点以上/FCOLOR=58>>
+GOTO @地图界面
+
+
+[@打开恶魔广场]
+#IF
+#ACT
+GOTO @按钮初始化
+MOV S$<$STR(S$地图名称_2)>按钮 <$STR(S$激活按钮)>
+MOV S$当前地图名称 <$STR(S$地图名称_2)>
+MOV S$当前地图编号 <$STR(S$小地图编号_2)>
+MOV S$当前地图 <$STR(S$地图编号_2)>
+MOV N$进图条件 2
+MOV S$进入条件显示 3
+MOV S$地图简介 <Layout|id=5|children={51,52,53,54,55,56}|x=140|y=60|width=320|height=450|color=X>
+INC S$地图简介 <Text|id=51|x=5|y=8|color=251|size=18|outline=2|outlinecolor=0|text=地图介绍>
+INC S$地图简介 <Img|id=52|children={521}|x=5|y=38|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=521|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=总共三层>
+INC S$地图简介 <Img|id=53|children={531}|x=5|y=78|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=531|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=精英怪不定时刷新，领主怪刷新时间见BOSS列表>
+INC S$地图简介 <Img|id=54|children={541}|x=5|y=118|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=541|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=怪物难度较高，建议提升斗笠盾牌\主辅星，装备注灵后再进入>
+
+INC S$地图简介 <Img|id=56|children={561}|x=5|y=183|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=561|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=顶层刷新领主，领主极强，爆率\超高，建议组队前往>
+INC S$地图简介 <Img|id=55|children={551}|x=0|y=260|width=320|img=custom/hl/dtcs_ui/map_ui_01.png>
+INC S$地图简介 <Img|id=551|x=285|y=25|img=custom/hl/duanzhao_ui/zyjt.png>
+INC S$地图简介 <Text|id=7|x=150|y=430|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
+INC S$地图简介 <RText|id=8|x=250|y=450|color=250|size=18|outline=2|outlinecolor=0|text=<$STR(S$进入条件显示)>转\<推荐攻魔道：350点以上/FCOLOR=58>>
+
+GOTO @地图界面
+
+[@打开祖玛寺庙]
+#IF
+#ACT
+GOTO @按钮初始化
+MOV S$<$STR(S$地图名称_3)>按钮 <$STR(S$激活按钮)>
+MOV S$当前地图名称 <$STR(S$地图名称_3)>
+MOV S$当前地图编号 <$STR(S$小地图编号_3)>
+MOV S$当前地图 <$STR(S$地图编号_3)>
+MOV N$进图条件 2
+MOV S$进入条件显示 3
+MOV S$地图简介 <Layout|id=5|children={51,52,53,54,55,56}|x=140|y=60|width=320|height=450|color=X>
+INC S$地图简介 <Text|id=51|x=5|y=8|color=251|size=18|outline=2|outlinecolor=0|text=地图介绍>
+INC S$地图简介 <Img|id=52|children={521}|x=5|y=38|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=521|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=总共四层>
+INC S$地图简介 <Img|id=53|children={531}|x=5|y=78|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=531|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=精英怪不定时刷新，领主怪刷新时间见BOSS列表>
+INC S$地图简介 <Img|id=54|children={541}|x=5|y=118|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=541|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=怪物难度较高，建议提升斗笠盾牌\主辅星，装备注灵后再进入>
+
+INC S$地图简介 <Img|id=56|children={561}|x=5|y=183|img=custom/hl/hl_ui/icon_target_01.png>
+INC S$地图简介 <Text|id=561|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=顶层刷新领主，领主极强，爆率\超高，建议组队前往>
+INC S$地图简介 <Img|id=55|children={551}|x=0|y=260|width=320|img=custom/hl/dtcs_ui/map_ui_01.png>
+INC S$地图简介 <Img|id=551|x=285|y=25|img=custom/hl/duanzhao_ui/zyjt.png>
+INC S$地图简介 <Text|id=7|x=150|y=430|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
+INC S$地图简介 <RText|id=8|x=250|y=450|color=250|size=18|outline=2|outlinecolor=0|text=<$STR(S$进入条件显示)>转\<推荐攻魔道：360点以上/FCOLOR=58>>
+
+GOTO @地图界面
+
+
+[@按钮初始化]
+#IF
+#ACT
+MOV S$<$STR(S$地图名称_1)>按钮 <$STR(S$默认按钮)>
+MOV S$<$STR(S$地图名称_2)>按钮 <$STR(S$默认按钮)>
+MOV S$<$STR(S$地图名称_3)>按钮 <$STR(S$默认按钮)>
+MOV S$<$STR(S$地图名称_4)>按钮 <$STR(S$默认按钮)>
+
+
+
+
+
+
+

@@ -1,0 +1,435 @@
+[@MAIN]
+#IF
+#ACT
+MOV S$当前地图名称 炼体
+MOV N$炼体计算流水号 0
+GOTO @炼体重数计算
+GOTO @炼体条件显示
+GOTO @炼体专属界面
+
+[@炼体专属界面]
+#IF
+#ACT
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=300|y=5|width=170|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=100|size=20|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>专属>
+<Layout|id=3|children={31}|x=20|y=62|width=730|height=445|color=x>
+<ListView|id=13|children={131}|x=132|y=65|width=3|height=445|margin=2|bounce=1|direction=1|color=x>
+<Img|id=131|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48}|x=22|y=63|width=110|height=450|margin=2|bounce=0|direction=1|color=x>
+<Button|id=41|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|color=103|size=18|text=炼体专属|link=@打开炼体专属>
+
+<Layout|id=5|children={51,52,53,54,55,56}|x=140|y=60|width=320|height=450|color=X>
+<Text|id=51|x=5|y=8|color=251|size=18|outline=2|outlinecolor=0|text=地图介绍>
+<Img|id=52|children={521}|x=5|y=38|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=521|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=共八层>
+<Img|id=53|children={531}|x=5|y=78|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=531|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=精英怪不定时刷新，领主怪刷新时间见BOSS列表>
+<Img|id=54|children={541}|x=5|y=118|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=541|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=怪物难度略有提高，建议更新自身装备提升斗笠盾牌，主辅星后再进入>
+<Img|id=56|children={561}|x=5|y=158|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=561|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=每层刷新领主，领主极强，爆率超高，建议组队前往>
+<Img|id=55|children={551}|x=100|y=200|width=380|img=custom/hl/dtcs_ui/map_ui_01.png>
+<ListView|id=551|a=4|percentx=50|percenty=50|children={91,92,93,94,95,96,97,98,99,990,991,992,993,994,995}|width=275|height=65|direction=2|bounce=0|margin=3|color=x>
+<ItemShow|id=92|itemid=62501|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=93|itemid=62502|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=94|itemid=61301|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=95|itemid=61302|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=96|itemid=50288|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=97|itemid=50289|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=98|itemid=50299|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=99|itemid=50300|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=990|itemid=50310|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=991|itemid=50311|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=992|itemid=50321|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=993|itemid=50322|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=994|itemid=50332|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=995|itemid=50333|itemcount=1|showtips=1|bgtype=1>
+
+<ListView|id=7|x=185|y=370|children={70,71,72,73,74,75,76}|width=600|height=65|direction=2|bounce=0|margin=3|color=x>
+<Layout|id=70|children={701,702}|width=80|height=40|color=x>
+<Text|id=701|a=4|percentx=50|percenty=30|color=<$STR(N$颜色_1)>|size=18|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>一层|link=@进入地图一层>
+<Text|id=702|a=4|percentx=50|percenty=85|color=255|size=16|outline=2|outlinecolor=0|text=(<$STR(S$当前地图名称)>10级)>
+<Layout|id=71|children={711,712}|width=60|height=40|color=x>
+<Layout|id=72|children={721,722,723}|width=80|height=65|color=x>
+<Text|id=721|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_2)>|size=18|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>二层|link=@进入地图二层>
+<Text|id=722|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(<$STR(S$当前地图名称)>20级)>
+<Text|id=723|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP3直达)>
+<Layout|id=73|children={731,732}|width=60|height=40|color=x>
+<Layout|id=74|children={741,742,743}|width=80|height=65|color=x>
+<Text|id=741|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_3)>|size=18|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>三层|link=@进入地图三层>
+<Text|id=742|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(<$STR(S$当前地图名称)>30级)>
+<Text|id=743|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP5直达)>
+<Layout|id=75|children={751,752}|width=60|height=40|color=x>
+<Layout|id=76|children={761,762,763}|width=80|height=65|color=x>
+<Text|id=761|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_4)>|size=18|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>四层|link=@进入地图四层>
+<Text|id=762|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(<$STR(S$当前地图名称)>40级)>
+<Text|id=763|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP8直达)>
+<ListView|id=8|x=185|y=435|children={80,81,82,83,84,85,86}|width=610|height=65|direction=2|bounce=0|margin=3|color=x>
+<Layout|id=80|children={801,802,803}|width=80|height=65|color=x>
+<Text|id=801|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_5)>|size=18|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>五层|link=@进入地图五层>
+<Text|id=802|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(<$STR(S$当前地图名称)>50级)>
+<Text|id=803|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP10直达)>
+<Layout|id=81|children={811,812}|width=60|height=40|color=x>
+<Layout|id=82|children={821,822,823}|width=80|height=65|color=x>
+<Text|id=821|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_6)>|size=18|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>六层|link=@进入地图六层>
+<Text|id=822|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(<$STR(S$当前地图名称)>60级)>
+<Text|id=823|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP12直达)>
+<Layout|id=83|children={831,832}|width=60|height=40|color=x>
+<Layout|id=84|children={841,842,843}|width=80|height=65|color=x>
+<Text|id=841|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_7)>|size=18|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>七层|link=@进入地图七层>
+<Text|id=842|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(<$STR(S$当前地图名称)>70级)>
+<Text|id=843|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP14直达)>
+<Layout|id=85|children={851,852}|width=60|height=40|color=x>
+<Layout|id=86|children={861,862,863}|width=80|height=65|color=x>
+<Text|id=861|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_8)>|size=18|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>八层|link=@进入地图八层>
+<Text|id=862|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(<$STR(S$当前地图名称)>80级)>
+<Text|id=863|a=4|percentx=50|percenty=80|color=253|size=16|outline=2|outlinecolor=0|text=(VIP15直达)>
+
+[@炼体条件显示]
+#IF
+LARGE N$总重数  9
+#ACT
+MOV N$颜色_1 250
+#ELSEACT
+MOV N$颜色_1 248
+#IF
+LARGE N$总重数  19
+LARGE U13 2
+#ACT
+MOV N$颜色_2 250
+#ELSEACT
+MOV N$颜色_2 248
+#IF
+LARGE N$总重数  29
+LARGE U13 4
+#ACT
+MOV N$颜色_3 250
+#ELSEACT
+MOV N$颜色_3 248
+#IF
+LARGE N$总重数  39
+LARGE U13 7
+#ACT
+MOV N$颜色_4 250
+#ELSEACT
+MOV N$颜色_4 248
+#IF
+LARGE N$总重数  49
+LARGE U13 9
+#ACT
+MOV N$颜色_5 250
+#ELSEACT
+MOV N$颜色_5 248
+#IF
+LARGE N$总重数  59
+LARGE U13 11
+#ACT
+MOV N$颜色_6 250
+#ELSEACT
+MOV N$颜色_6 248
+#IF
+LARGE N$总重数  69
+LARGE U13 13
+#ACT
+MOV N$颜色_7 250
+#ELSEACT
+MOV N$颜色_7 248
+#IF
+LARGE N$总重数  79
+LARGE U13 14
+#ACT
+MOV N$颜色_8 250
+#ELSEACT
+MOV N$颜色_8 248
+
+
+[@炼体重数计算]
+#IF
+#ACT
+INC N$炼体计算流水号 1
+#IF
+EQUAL N$炼体计算流水号 1
+#ACT
+MOV S$当前炼体名称 <$SNECKLACE>
+MOV S$前缀 龙头·
+GOTO @单个炼体判断
+break
+#IF
+EQUAL N$炼体计算流水号 2
+#ACT
+MOV S$当前炼体名称 <$SBUJUK>
+MOV S$前缀 龙躯·
+GOTO @单个炼体判断
+break
+#IF
+EQUAL N$炼体计算流水号 3
+#ACT
+MOV S$当前炼体名称 <$SRIGHTHAND>
+MOV S$前缀 龙骨·
+GOTO @单个炼体判断
+break
+#IF
+EQUAL N$炼体计算流水号 4
+#ACT
+MOV S$当前炼体名称 <$SCHARM>
+MOV S$前缀 龙尾·
+GOTO @单个炼体判断
+break
+
+
+[@单个炼体判断]
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>未修炼
+#ACT
+MOV N$当前炼体层数 0
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>一阶
+#ACT
+MOV N$当前炼体层数 1
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二阶
+#ACT
+MOV N$当前炼体层数 2
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>三阶
+#ACT
+MOV N$当前炼体层数 3
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>四阶
+#ACT
+MOV N$当前炼体层数 4
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>五阶
+#ACT
+MOV N$当前炼体层数 5
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>六阶
+#ACT
+MOV N$当前炼体层数 6
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>七阶
+#ACT
+MOV N$当前炼体层数 7
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>八阶
+#ACT
+MOV N$当前炼体层数 8
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>九阶
+#ACT
+MOV N$当前炼体层数 9
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十阶
+#ACT
+MOV N$当前炼体层数 10
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十一阶
+#ACT
+MOV N$当前炼体层数 11
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十二阶
+#ACT
+MOV N$当前炼体层数 12
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十三阶
+#ACT
+MOV N$当前炼体层数 13
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十四阶
+#ACT
+MOV N$当前炼体层数 14
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十五阶
+#ACT
+MOV N$当前炼体层数 15
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十六阶
+#ACT
+MOV N$当前炼体层数 16
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十七阶
+#ACT
+MOV N$当前炼体层数 17
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十八阶
+#ACT
+MOV N$当前炼体层数 18
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>十九阶
+#ACT
+MOV N$当前炼体层数 19
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+#IF
+EQUAL <$STR(S$当前炼体名称)> <$STR(S$前缀)>二十阶
+#ACT
+MOV N$当前炼体层数 20
+INC N$总重数 <$STR(N$当前炼体层数)>
+GOTO @炼体重数计算
+break
+
+
+[@进入地图一层]
+#IF
+#ACT
+MOV S$进图条件 9
+MOV S$当前地图 ltzs1
+MOV S$会员条件 0
+MOV N$总重数 0
+MOV N$炼体计算流水号 0
+GOTO @炼体重数计算
+GOTO @最终传送判断
+
+[@进入地图二层]
+#IF
+#ACT
+MOV S$进图条件 19
+MOV S$当前地图 ltzs2
+MOV S$会员条件 3
+MOV N$总重数 0
+MOV N$炼体计算流水号 0
+GOTO @炼体重数计算
+GOTO @最终传送判断
+[@进入地图三层]
+#IF
+#ACT
+MOV S$进图条件 29
+MOV S$当前地图 ltzs3
+MOV S$会员条件 5
+MOV N$总重数 0
+MOV N$炼体计算流水号 0
+GOTO @炼体重数计算
+GOTO @最终传送判断
+[@进入地图四层]
+#IF
+#ACT
+MOV S$进图条件 39
+MOV S$当前地图 ltzs4
+MOV S$会员条件 8
+MOV N$总重数 0
+MOV N$炼体计算流水号 0
+GOTO @炼体重数计算
+GOTO @最终传送判断
+[@进入地图五层]
+#IF
+#ACT
+MOV S$进图条件 49
+MOV S$当前地图 ltzs5
+MOV S$会员条件 10
+MOV N$总重数 0
+MOV N$炼体计算流水号 0
+GOTO @炼体重数计算
+GOTO @最终传送判断
+[@进入地图六层]
+#IF
+#ACT
+MOV S$进图条件 59
+MOV S$当前地图 ltzs6
+MOV S$会员条件 12
+MOV N$总重数 0
+MOV N$炼体计算流水号 0
+GOTO @炼体重数计算
+GOTO @最终传送判断
+[@进入地图七层]
+#IF
+#ACT
+MOV S$进图条件 69
+MOV S$当前地图 ltzs7
+MOV S$会员条件 14
+MOV N$总重数 0
+MOV N$炼体计算流水号 0
+GOTO @炼体重数计算
+GOTO @最终传送判断
+[@进入地图八层]
+#IF
+#ACT
+MOV S$进图条件 79
+MOV S$当前地图 ltzs8
+MOV S$会员条件 15
+MOV N$总重数 0
+MOV N$炼体计算流水号 0
+GOTO @炼体重数计算
+GOTO @最终传送判断
+
+
+[@最终传送判断]
+#IF
+LARGE N$总重数 <$STR(S$进图条件)>
+#ACT
+#ELSEACT
+MOV N$进入条件显示 <$STR(S$进图条件)>
+INC N$进入条件显示 1
+SENDMSG 9 <font color='#ff0000'>未到达炼体<$STR(N$进入条件显示)>层:</font><font color='#00ff00'>当前炼体<$STR(N$总重数)>重</font>
+BREAK
+#IF
+NOT SMALL U13 <$STR(S$会员条件)>
+#ACT
+map <$STR(S$当前地图)>
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>您的会员等级不足</font>
+BREAK
+
+
+

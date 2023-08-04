@@ -1,0 +1,16 @@
+10:34:21:036 TIocpCrossSocket.ProcessIoEvent.GetQueuedCompletionStatus : System Error.  Code: 64(0040), 指定的网络名不再可用。
+10:48:08:671 TIocpCrossSocket.ProcessIoEvent.GetQueuedCompletionStatus : System Error.  Code: 64(0040), 指定的网络名不再可用。
+14:28:27:978 TIocpCrossSocket.ProcessIoEvent.GetQueuedCompletionStatus : System Error.  Code: 64(0040), 指定的网络名不再可用。
+15:13:04:571 TIocpCrossSocket.ProcessIoEvent.GetQueuedCompletionStatus : System Error.  Code: 64(0040), 指定的网络名不再可用。
+15:40:38:938 TIocpCrossSocket.ProcessIoEvent.GetQueuedCompletionStatus : System Error.  Code: 64(0040), 指定的网络名不再可用。
+18:00:23:978 TIocpCrossSocket.ProcessIoEvent.GetQueuedCompletionStatus : System Error.  Code: 64(0040), 指定的网络名不再可用。
+18:00:26:990 TIocpCrossSocket._NewReadZero.WSARecv : System Error.  Code: 10038(2736), 在一个非套接字上尝试了一个操作。
+18:00:30:023 TIocpCrossSocket._NewReadZero.WSARecv : System Error.  Code: 10038(2736), 在一个非套接字上尝试了一个操作。
+18:00:33:057 TIocpCrossSocket._NewReadZero.WSARecv : System Error.  Code: 10038(2736), 在一个非套接字上尝试了一个操作。
+18:00:36:090 TIocpCrossSocket._NewReadZero.WSARecv : System Error.  Code: 10038(2736), 在一个非套接字上尝试了一个操作。
+18:11:12:539 TIocpCrossSocket.ProcessIoEvent.GetQueuedCompletionStatus : System Error.  Code: 64(0040), 指定的网络名不再可用。
+18:11:15:559 TIocpCrossSocket._NewReadZero.WSARecv : System Error.  Code: 10038(2736), 在一个非套接字上尝试了一个操作。
+18:11:18:590 TIocpCrossSocket._NewReadZero.WSARecv : System Error.  Code: 10038(2736), 在一个非套接字上尝试了一个操作。
+18:15:00:522 TIocpCrossSocket.ProcessIoEvent.GetQueuedCompletionStatus : System Error.  Code: 64(0040), 指定的网络名不再可用。
+18:15:03:553 TIocpCrossSocket._NewReadZero.WSARecv : System Error.  Code: 10038(2736), 在一个非套接字上尝试了一个操作。
+18:15:08:352 TIocpCrossSocket._NewReadZero.WSARecv : System Error.  Code: 10038(2736), 在一个非套接字上尝试了一个操作。
