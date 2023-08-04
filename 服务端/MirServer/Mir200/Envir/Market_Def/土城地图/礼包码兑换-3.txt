@@ -126,7 +126,7 @@ Check [131] 0
 #ACT
 SET [131] 1
 give 10W绑定元宝 1
-give 拾取小精灵（7天）1
+give 拾取小精灵（7天） 1
 give 队伍召集令 5
 MESSAGEBOX \\提示：正确！恭喜您获得直播特权礼包二！
 break

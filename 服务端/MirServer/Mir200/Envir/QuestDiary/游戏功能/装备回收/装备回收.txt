@@ -623,6 +623,7 @@ NEWCHANGETASK 27
 break
 
 [@跳转回收设置]
+#IF
 #ACT
 #CALL [\游戏功能\装备回收\设置弹窗.txt] @设置弹窗
 }
