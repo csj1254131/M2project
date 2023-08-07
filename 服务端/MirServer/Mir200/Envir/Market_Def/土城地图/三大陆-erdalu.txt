@@ -26,7 +26,7 @@ MOV S$地图编号 sandalu
 <Text|id=71|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=四象八卦轮转演变成无穷宇宙>
 
 <Text|id=10|x=150|y=320|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
-<RText|id=11|x=240|y=350|color=250|size=18|outline=2|outlinecolor=0|text=九转\大都督\<推荐攻魔道：6000点以上/FCOLOR=58>>
+<RText|id=11|x=240|y=350|color=250|size=18|outline=2|outlinecolor=0|text=九转&开服30天后\大都督\<推荐攻魔道：6000点以上/FCOLOR=58>>
 
 <Layout|id=12|children={121}|x=490|y=79|width=230|height=30|color=x>
 <Text|id=121|a=4|percentx=50|percenty=50||color=251|size=18|outline=2|outlinecolor=0|text=<$STR(S$地图名称)>>
@@ -35,6 +35,12 @@ MOV S$地图编号 sandalu
 <Button|id=14|x=535|y=380|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=进入地图|link=@进入地图>
 
 [@进入地图]
+#if
+large <$KFDAY> 29
+#act
+#elseact
+SENDMSG 9 <font color='#ff0000'>开服30天后开启</font>
+
 #IF
 LARGE <$RELEVEL> 8
 LARGE u23 10
