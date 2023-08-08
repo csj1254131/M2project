@@ -44,19 +44,10 @@ GOTO @打开祭坛
 ;<Button|id=42|<$STR(S$<$STR(S$地图名称_2)>按钮)>|color=160|size=18|text=<$STR(S$地图名称_2)>|link=@打开<$STR(S$地图名称_2)>>
 <$STR(S$地图简介)>
 <ListView|id=9|x=155|y=265|children={91,92,93,94,95,96,97,98,99,990,991,992,993}|width=275|height=65|direction=2|bounce=0|margin=3|color=x>
-<ItemShow|id=92|itemid=40047|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=93|itemid=60401|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=94|itemid=60410|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=95|itemid=60419|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=96|itemid=60402|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=97|itemid=60404|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=98|itemid=60405|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=99|itemid=60406|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=990|itemid=60407|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=991|itemid=60408|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=992|itemid=60409|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=993|itemid=60428|itemcount=1|showtips=1|bgtype=1>
-
+<ItemShow|id=92|itemid=60201|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=93|itemid=60210|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=94|itemid=60219|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=95|itemid=60202|itemcount=1|showtips=1|bgtype=1>
 <Layout|id=10|children={101}|x=490|y=79|width=230|height=30|color=x>
 <Text|id=101|a=4|percentx=50|percenty=50||color=251|size=18|outline=2|outlinecolor=0|text=<$STR(S$当前地图名称)>>
 <Img|id=11|children={111}|x=480|y=117|img=custom/hl/dtcs_ui/<$STR(S$当前地图编号)>.png|width=253|height=207>
@@ -102,7 +93,7 @@ INC S$地图简介 <Text|id=531|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0
 INC S$地图简介 <Img|id=54|children={541}|x=5|y=138|img=custom/hl/hl_ui/icon_target_01.png>
 INC S$地图简介 <Text|id=541|x=25|y=-3|color=100|size=18|outline=2|outlinecolor=0|text=怪物难度低，新手玩家过度地图。>
 INC S$地图简介 <Img|id=55|children={551}|x=0|y=190|width=320|img=custom/hl/dtcs_ui/map_ui_01.png>
-INC S$地图简介 <Img|id=551|x=285|y=25|img=custom/hl/duanzhao_ui/zyjt.png>
+;INC S$地图简介 <Img|id=551|x=285|y=25|img=custom/hl/duanzhao_ui/zyjt.png>
 INC S$地图简介 <Text|id=7|x=150|y=380|color=251|size=18|outline=2|outlinecolor=0|text=进入条件：>
 INC S$地图简介 <Text|id=8|x=250|y=420|color=250|size=18|outline=2|outlinecolor=0|text=<$STR(S$进入条件显示)>级>
 GOTO @地图界面

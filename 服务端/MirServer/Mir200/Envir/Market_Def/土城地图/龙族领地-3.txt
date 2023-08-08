@@ -27,10 +27,10 @@ MOV S$µØÍ¼±àºÅ lzld
 <Img|id=8|children={81}|x=10|y=320|img=custom/hl/dtcs_ui/map_ui_01.png>
 <Img|id=81|x=395|y=25|img=custom/hl/duanzhao_ui/zyjt.png>
 <ListView|id=9|x=60|y=335|children={91,92,93,94,95,96,97,98,99,990,991,992,993,994,995}|width=348|height=65|direction=2|bounce=0|margin=3|color=x>
-<ItemShow|id=92|itemid=62501|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=93|itemid=62502|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=94|itemid=61301|itemcount=1|showtips=1|bgtype=1>
-<ItemShow|id=95|itemid=61302|itemcount=1|showtips=1|bgtype=1>
+;<ItemShow|id=92|itemid=62501|itemcount=1|showtips=1|bgtype=1>
+;<ItemShow|id=93|itemid=62502|itemcount=1|showtips=1|bgtype=1>
+;<ItemShow|id=94|itemid=61301|itemcount=1|showtips=1|bgtype=1>
+;<ItemShow|id=95|itemid=61302|itemcount=1|showtips=1|bgtype=1>
 <ItemShow|id=96|itemid=50288|itemcount=1|showtips=1|bgtype=1>
 <ItemShow|id=97|itemid=50289|itemcount=1|showtips=1|bgtype=1>
 <ItemShow|id=98|itemid=50299|itemcount=1|showtips=1|bgtype=1>
