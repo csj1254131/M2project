@@ -1558,6 +1558,12 @@ CheckContainsText <$map> zmsm
 #ACT
 #CALL [\游戏功能\任务系统\任务杀怪.txt] @任务杀怪触发
 
+#or
+equal <$STR(U91)> 30
+equal <$STR(U91)> 32
+equal <$STR(U91)> 34
+#act
+#CALL [\游戏功能\任务系统\任务杀怪.txt] @任务杀怪触发
 
 
 

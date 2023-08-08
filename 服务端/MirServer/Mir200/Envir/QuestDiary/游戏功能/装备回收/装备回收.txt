@@ -104,8 +104,8 @@ EQUAL S$展开价格 1
 
 <RText|id=702|text=新手套装                     <20元宝+5000经验/FCOLOR=250>|x=7|y=5|size=17|color=251|outline=2|outlinecolor=0>
 <RText|id=703|text=圣战套装[35级]          <50元宝+10000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=704|text=雷霆套装[50级]          <100元宝+15000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
-<RText|id=705|text=强化套装[55级]          <200元宝+20000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=704|text=雷霆套装[40级]          <100元宝+15000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
+<RText|id=705|text=强化套装[50级]          <200元宝+20000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
 <RText|id=706|text=战神套装[60级]          <400元宝+25000经验/FCOLOR=250>|x=7|y=45|size=17|color=251|outline=2|outlinecolor=0>
 <RText|id=707|text=纵横套装[65级]          <500元宝+30000经验/FCOLOR=250>|x=7|y=25|size=17|color=251|outline=2|outlinecolor=0>
 <RText|id=708|text=王者套装[70级]          <600元宝+35000经验/FCOLOR=250>|x=7|y=65|size=17|color=251|outline=2|outlinecolor=0>

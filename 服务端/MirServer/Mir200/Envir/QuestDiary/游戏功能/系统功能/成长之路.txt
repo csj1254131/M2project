@@ -515,7 +515,7 @@ GOTO @子项选择
 #ACT
 MOV S$当前选择 装备
 MOV P41 0
-GOTO @基础装备
+GOTO @合成装备
 
 
 [@基础装备]
@@ -555,9 +555,9 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 22 S$195装备 |
 <ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
 <Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
 <ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
-<Button|id=41|<$STR(S$激活按钮)>|text=等级装备|link=@基础装备>
-<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
-<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+;<Button|id=41|<$STR(S$激活按钮)>|text=等级装备|link=@基础装备>
+;<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+;;<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
@@ -954,17 +954,17 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 42 S$龙吟装备 |
 <ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
 <Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
 <ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
-<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+;;;;<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
 <Button|id=42|<$STR(S$激活按钮)>|text=高级装备|link=@转生装备>
-<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+;;<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
 <Button|id=47|<$STR(S$默认按钮)>|text=特殊装备|link=@特殊装备>
 <ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
-<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
-<Button|id=42|<$STR(S$激活按钮)>|text=高级装备|link=@转生装备>
-<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+;;;;<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+;<Button|id=42|<$STR(S$激活按钮)>|text=高级装备|link=@转生装备>
+;;<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
@@ -1086,9 +1086,9 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 56 S$终极附件 |
 <ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
 <Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
 <ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
-<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
-<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
-<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+;;;;<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+;<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+;;<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
 <Button|id=44|<$STR(S$激活按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
@@ -1132,9 +1132,9 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 58 S$特戒装备 |
 <ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
 <Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
 <ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
-<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
-<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
-<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+;;;;<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+;<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+;;<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$激活按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>
@@ -1188,8 +1188,8 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 276 S$唯我独尊 |
 <ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
 <Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
 <ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
-<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
-<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+;;;;<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+;<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
 <Button|id=43|<$STR(S$激活按钮)>|text=顶级装备|link=@顶级装备>
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
@@ -1378,9 +1378,9 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 62 S$辅令装备 |
 <ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
 <Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
 <ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
-<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
-<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
-<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+;;;;<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+;<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+;;<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$激活按钮)>|text=辅助令牌|link=@辅助令牌>
@@ -1446,9 +1446,9 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 280 S$特殊装备 |
 <ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
 <Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
 <ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
-<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
-<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
-<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
+;;;;<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+;<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
+;;;<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
 <Button|id=45|<$STR(S$默认按钮)>|text=特戒装备|link=@特戒装备>
 <Button|id=46|<$STR(S$默认按钮)>|text=辅助令牌|link=@辅助令牌>

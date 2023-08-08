@@ -1,5 +1,5 @@
 {
-    "version": "3.3.3077",
+    "version": "3.3.3079",
     "assets": {
         "anim_effect.zip": {
             "md5": "f7b49059a3b601b0c794cafb15dec2da",
@@ -897,9 +897,9 @@
             "size": 1321
         },
         "scripts_game_mediator_dark_layer.zip": {
-            "md5": "085c58d23437332b6a82260fbcca9a8b",
+            "md5": "f22c6a82da0d70de056e40b9309400b6",
             "compressed": true,
-            "size": 2063
+            "size": 2135
         },
         "scripts_game_mediator_debug_map.zip": {
             "md5": "189ef142e05b854f6e3089ee4cfbe7f2",
@@ -1682,9 +1682,10 @@
             "size": 4577
         },
         "scripts_game_view_layersui_bag_layer.zip": {
-            "md5": "902ad67d98d0072501ec26680803533a",
+            "md5": "9092c4424569ad4a34b9b4a2ff29ae80",
             "compressed": true,
-            "size": 42278
+            "size": 42310,
+            "downloadState": 1
         },
         "scripts_game_view_layersui_bag_layer_hero.zip": {
             "md5": "ab7098652dcdbd6245ba9f65af2c40eb",
@@ -1692,9 +1693,10 @@
             "size": 22212
         },
         "scripts_game_view_layersui_bag_layer_merge.zip": {
-            "md5": "8c3ad5b18157bd3fe18a8d5225dc5295",
+            "md5": "08b62b8c1b489d2a2e24f644c4800576",
             "compressed": true,
-            "size": 25220
+            "size": 25236,
+            "downloadState": 2
         },
         "scripts_game_view_layersui_be_strong_layer.zip": {
             "md5": "48adc74ba2eef8a05498d56449c51609",
@@ -2029,8 +2031,7 @@
         "scripts_sui.zip": {
             "md5": "cab5f218ea648d43a6409bab05d8559d",
             "compressed": true,
-            "size": 177593,
-            "downloadState": 1
+            "size": 177593
         },
         "scripts_util.zip": {
             "md5": "6095d58182ea125e16f7472abf685fe7",

@@ -246,11 +246,101 @@ break
 
 
 #IF
-EQUAL <$CURRTASKID> 4
-EQUAL <$STR(U91)> 5
+EQUAL <$CURRTASKID> 16
+EQUAL <$STR(U91)> 31
 #ACT
-OPENNPCSHOWEX 48 50 2
+MOV U91 32
+NEWCOMPLETETASK 16
+NEWDELETETASK 16
+NEWPICKTASK 17 <$STR(N$任意地图怪物数量二)>
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+
+sendmsg 9 恭喜完成杀怪任务一，奖励已发放到包裹！
+
+
+#IF
+EQUAL <$CURRTASKID> 17
+EQUAL <$STR(U91)> 33
+#ACT
+MOV U91 34
+NEWCOMPLETETASK 17
+NEWDELETETASK 17
+NEWPICKTASK 18 <$STR(N$任意地图怪物数量三)>
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+
+sendmsg 9 恭喜完成杀怪任务二，奖励已发放到包裹！
+
+
+#if
+EQUAL <$CURRTASKID> 18
+EQUAL <$STR(U91)> 35
+#ACT
+MOV U91 6
+NEWCOMPLETETASK 18
+NEWDELETETASK 18
+NEWPICKTASK 5  <$STR(N$转生任务材料一)>
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+
+sendmsg 9 恭喜完成杀怪任务三，奖励已发放到包裹！
+
+
+
+#if
+EQUAL <$CURRTASKID> 16
+EQUAL <$STR(U91)> 30
+not isonmap 3
+#ACT
+mapmove 3 330 330
+OPENNPCSHOWEX 21
 break
+
+#IF
+EQUAL <$CURRTASKID> 15
+EQUAL <$STR(U91)> 28
+#ACT
+OPENNPCSHOWEX 21
+break
+
+#if
+EQUAL <$CURRTASKID> 17
+EQUAL <$STR(U91)> 32
+not isonmap 3
+#ACT
+mapmove 3 330 330
+OPENNPCSHOWEX 21
+break
+
+#IF
+EQUAL <$CURRTASKID> 17
+EQUAL <$STR(U91)> 32
+#ACT
+OPENNPCSHOWEX 21
+break
+
+#if
+EQUAL <$CURRTASKID> 18
+EQUAL <$STR(U91)> 34
+not isonmap 3
+#ACT
+mapmove 3 330 330
+OPENNPCSHOWEX 22
+break
+
+#IF
+EQUAL <$CURRTASKID> 18
+EQUAL <$STR(U91)> 34
+#ACT
+OPENNPCSHOWEX 22
+break
+
+
+
 
 #IF
 EQUAL <$CURRTASKID> 5
@@ -348,17 +438,17 @@ break
 #IF
 EQUAL <$CURRTASKID> 8
 EQUAL <$STR(U91)> 12
+not isonmap 3
 #ACT
-DELBUTTON 110 50
-MOV n$top 0
-#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
-MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
-INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
-INC S$C_任务界面 <ListView|id=2|children={11,12,13,14,15,16,17,18,19,20}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=25> 
-INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=一转地图|color=103|size=18|link=@55级去一转地图>
-INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=二转地图|color=103|size=18|link=@70级去蜈蚣洞>
-INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
-ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+mapmove 3 330 330
+OPENNPCSHOWEX 127
+break
+
+#IF
+EQUAL <$CURRTASKID> 8
+EQUAL <$STR(U91)> 12
+#ACT
+OPENNPCSHOWEX 127
 break
 
 #IF
@@ -594,7 +684,7 @@ break
 EQUAL <$CURRTASKID> 25
 EQUAL <$STR(U91)> 27
 #ACT
-mov U91 30
+mov U91 99
 NEWCOMPLETETASK 25
 NEWDELETETASK 25
 money 经验 + 500000

@@ -66,6 +66,58 @@ break
 
 
 
+#IF
+EQUAL <$STR(U91)> 30
+small <$STR(N$任意地图怪物数量一)> 9
+#ACT
+INC N$任意地图怪物数量一 1
+NEWPICKTASK 16 <$STR(N$任意地图怪物数量一)>
+break
+
+#IF
+EQUAL <$STR(U91)> 30
+EQUAL <$STR(N$任意地图怪物数量一)> 9
+#ACT
+MOV U91 31
+INC N$任意地图怪物数量一 1
+NEWCHANGETASK 16
+break
+
+
+#IF
+EQUAL <$STR(U91)> 32
+small <$STR(N$任意地图怪物数量二)> 19
+#ACT
+INC N$任意地图怪物数量二 1
+NEWPICKTASK 17 <$STR(N$任意地图怪物数量二)>
+break
+
+#IF
+EQUAL <$STR(U91)> 32
+EQUAL <$STR(N$任意地图怪物数量二)> 19
+#ACT
+MOV U91 33
+INC N$任意地图怪物数量二 1
+NEWCHANGETASK 17
+break
+
+
+#IF
+EQUAL <$STR(U91)> 34
+small <$STR(N$任意地图怪物数量三)> 29
+#ACT
+INC N$任意地图怪物数量三 1
+NEWPICKTASK 18 <$STR(N$任意地图怪物数量三)>
+break
+
+#IF
+EQUAL <$STR(U91)> 34
+EQUAL <$STR(N$任意地图怪物数量三)> 29
+#ACT
+MOV U91 35
+INC N$任意地图怪物数量三 1
+NEWCHANGETASK 18
+break
 
 
 
