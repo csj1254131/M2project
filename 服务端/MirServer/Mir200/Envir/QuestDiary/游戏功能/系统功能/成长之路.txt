@@ -1446,7 +1446,7 @@ GetListStringEx ..\QuestDiary\游戏功能\系统功能\成长配置.txt 280 S$特殊装备 |
 <ListView|id=8|children={81}|x=140|y=110|width=3|height=400|margin=0|bounce=0|direction=1|color=x>
 <Img|id=81|img=custom/hl/hl_ui/hl_bg_02.png>
 <ListView|id=4|children={41,42,43,44,45,46,47,48,49}|x=23|y=115|width=112|height=380|margin=3|bounce=0|direction=1|color=x>
-;<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
+<Button|id=41|<$STR(S$默认按钮)>|text=等级装备|link=@基础装备>
 ;<Button|id=42|<$STR(S$默认按钮)>|text=高级装备|link=@转生装备>
 ;<Button|id=43|<$STR(S$默认按钮)>|text=顶级装备|link=@顶级装备>
 <Button|id=44|<$STR(S$默认按钮)>|text=合成装备|link=@合成装备>
