@@ -55,6 +55,7 @@ LARGE <$KFDAY> 6
 #act
 #ELSEACT
 SENDMSG 9 <font color='#ff0000'>开服7天后开放</font>
+break
 
 #or
 LARGE <$MAXDC> 1000
