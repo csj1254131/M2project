@@ -232,17 +232,34 @@ break
 EQUAL <$CURRTASKID> 4
 EQUAL <$STR(U91)> 4
 #ACT
-DELBUTTON 110 50
-MOV n$top 0
-#CALL [\游戏功能\活动图标\活动图标QF.txt] @开关图标
-MOV S$C_任务界面 <Img|show=0|bg=1|img=public/bg_main_6.png|esc=1|children={10}|width=<$SCREENWIDTH>|height=<$SCREENHEIGHT>|loadDelay=4|loadCount=4|link=@关闭任务小界面>
-INC S$C_任务界面 <Img|a=0|id=10|x=221|y=0|width=260|height=190|children={1,2}|img=public/1900012391.png|link=@关闭任务小界面>
-INC S$C_任务界面 <ListView|id=2|children={11,12,13}|width=185|height=190|direction=1|bounce=0|margin=10|default=1|x=42|y=20> 
-INC S$C_任务界面 <Button|id=11|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=新手试炼|color=103|size=18|link=@40级去新手试炼>
-INC S$C_任务界面 <Button|id=12|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=新手迷宫|color=103|size=18|link=@40级去新手迷宫>
-INC S$C_任务界面 <Button|id=13|width=180|height=40|nimg=public/1900000668.png|pimg=public/1900000668.png|text=快速提升|color=224|size=18|link=@40级去购买会员>
-ADDBUTTON 110 50 <$STR(S$C_任务界面)>
+OPENNPCSHOWEX 81 50 2
+
 break
+
+
+
+#IF
+EQUAL <$CURRTASKID> 4
+EQUAL <$STR(U91)> 5
+#act
+mov u91 30
+NEWCOMPLETETASK 4
+NEWDELETETASK 4
+NEWPICKTASK 16 <$STR(N$任意地图怪物数量一)>
+money 经验 + 200000
+money 绑定元宝 + 500
+GiveStateItem 小还丹 20 0 1 0 1 1 1 1 1
+sendmsg 9 恭喜完成升级任务，奖励已发放到包裹！
+
+
+
+#IF
+EQUAL <$CURRTASKID> 16
+EQUAL <$STR(U91)> 30
+#ACT
+OPENNPCSHOWEX 21 50 2
+
+
 
 
 #IF

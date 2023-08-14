@@ -244,13 +244,3 @@ Break
 Mov S$界面tips
 Goto @界面会话
 Break
-
-[@拉起充值]
-#Act
-Openhyperlink 26
-Break
-
-[@弹出兑换]
-#Act
-#Call [\万能商人\货币兑换.txt] @界面弹出货币兑换
-Break
