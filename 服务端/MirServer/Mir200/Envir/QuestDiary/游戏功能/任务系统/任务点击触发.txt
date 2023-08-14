@@ -693,15 +693,12 @@ break
 
 
 
-
-
-
 #IF
 EQUAL <$CURRTASKID> 33
 check [420] 1
 check [421] 0
 #ACT
-OPENNPCSHOWEX 34 50 2
+OPENNPCSHOWEX 89 50 2
 break
 
 #IF
