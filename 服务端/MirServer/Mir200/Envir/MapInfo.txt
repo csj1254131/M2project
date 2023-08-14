@@ -2951,3 +2951,6 @@ h202   6 50   -> h201   120 190
 h202  90 20  ->  h203 47 90 
 h203  48 91  ->  h202 89 21
 h203  77 15  ->  h204 50 50
+
+;技能地图尸王殿
+[swd1|Q004 尸王殿]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon(1)
