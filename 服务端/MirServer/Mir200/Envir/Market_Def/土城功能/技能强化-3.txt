@@ -1,0 +1,256 @@
+[@Main]
+#Act
+Mov S$界面tips
+Mov S$特效1 3
+Mov S$特效2
+Mov S$特效3
+Mov S$特效4
+Mov S$特效5
+Mov S$特效6
+Mov S$特效7
+Mov S$编号 1
+Goto @读取配置文件
+Break
+
+[@界面会话]
+<Img|ay=1|x=0.0|y=0.0|width=2000|height=2000|move=0|img=custom/gameui/main/heibg.png|scale9t=10|reset=1|show=0|scale9b=10|loadDelay=0|bg=1|scale9l=10|scale9r=10|esc=0>
+<Img|children={m1,m2}|x=240.0|y=85.0|width=680|height=455|img=custom/hl/shajuan/hl_bg.png|esc=0>
+<Img|id=m1|x=278.0|y=0.0|img=custom/gameui/title/8.png|esc=0>
+<Button|id=m2|x=645.0|y=5.0|pimg=public/x2.png|color=255|size=18|nimg=public/x1.png|link=@exit>
+<Img|children={nt1,nt2,nt3,nt4}|img=custom/gameui/head/top_bn.png>
+
+<Img|ax=0|ay=1|x=259.0|y=141.0|width=366|height=386|scale9l=5|esc=0|img=custom/gameui/main/ao2.png|scale9r=5|scale9t=5|scale9b=5>
+<ListView|children={l1,l2,l3,l4,l5,l6,l7,l8}|ax=0|x=264.0|y=146.0|width=360|height=376|margin=0|direction=1|bounce=0>
+
+#IF
+CheckMagicName <$Str(S$角色技能1)>
+#Say
+<Layout|id=l1|children={l1-0,l1-1,l1-2,l1-3,l1-4}|ay=1|x=0.0|y=0.0|width=360|height=85>
+<Img|id=l1-0|ay=1|x=0.0|y=3.0|img=custom/gameui/main/bg1.png|esc=0|link=@选取内切换#特效1=3#特效2=#特效3=#特效4=#特效5=#特效6=#特效7=#编号=1>
+<Img|id=l1-1|x=7.0|y=12.0|img=custom/gameui/jineng/<$Str(S$技能图标1)>.png|esc=0>
+<RText|id=l1-2|a=4|x=193.0|y=20.0|color=255|outlinecolor=0|outline=2|size=16|text=<<$Str(S$角色技能1)>/FCOLOR=161><<$Str(N$技能等级1)>重/FCOLOR=249>>
+<RText|id=l1-3|a=4|x=203.0|y=59.0|color=255|size=16|text=<强化需求：/FCOLOR=147><<$Str(S$技能1需求2)>张<$Str(S$技能1需求1)> <$Str(S$技能1需求4)>个<$Str(S$技能1需求3)>/FCOLOR=254>>
+<Frames|id=l1-4|ax=0|ay=1|x=-31.0|y=-19.0|width=420|height=122|count=12|loop=-1|prefix=custom/gameui/ef/ef_<$Str(S$特效1)>_|suffix=.png|speed=25>
+#IF
+CheckMagicName <$Str(S$角色技能2)>
+#Say
+<Layout|id=l2|children={l2-0,l2-1,l2-2,l2-3,l2-4}|ay=1|x=0.0|y=0.0|width=360|height=85>
+<Img|id=l2-0|ay=1|x=0.0|y=3.0|img=custom/gameui/main/bg1.png|esc=0|link=@选取内切换#特效1=#特效2=3#特效3=#特效4=#特效5=#特效6=#特效7=#编号=2>
+<Img|id=l2-1|x=7.0|y=12.0|img=custom/gameui/jineng/<$Str(S$技能图标2)>.png|esc=0>
+<RText|id=l2-2|a=4|x=193.0|y=20.0|color=255|outlinecolor=0|outline=2|size=16|text=<<$Str(S$角色技能2)>/FCOLOR=161><<$Str(N$技能等级2)>重/FCOLOR=249>>
+<RText|id=l2-3|a=4|x=203.0|y=59.0|color=255|size=16|text=<强化需求：/FCOLOR=147><<$Str(S$技能2需求2)>张<$Str(S$技能2需求1)> <$Str(S$技能2需求4)>个<$Str(S$技能2需求3)>/FCOLOR=254>>
+<Frames|id=l2-4|ax=0|ay=1|x=-31.0|y=-19.0|width=420|height=122|count=12|loop=-1|prefix=custom/gameui/ef/ef_<$Str(S$特效2)>_|suffix=.png|speed=25>
+#IF
+CheckMagicName <$Str(S$角色技能3)>
+#Say
+<Layout|id=l3|children={l3-0,l3-1,l3-2,l3-3,l3-4}|ay=1|x=0.0|y=0.0|width=360|height=85>
+<Img|id=l3-0|ay=1|x=0.0|y=3.0|img=custom/gameui/main/bg1.png|esc=0|link=@选取内切换#特效1=#特效2=#特效3=3#特效4=#特效5=#特效6=#特效7=#编号=3>
+<Img|id=l3-1|x=7.0|y=12.0|img=custom/gameui/jineng/<$Str(S$技能图标3)>.png|esc=0>
+<RText|id=l3-2|a=4|x=193.0|y=20.0|color=255|outlinecolor=0|outline=2|size=16|text=<<$Str(S$角色技能3)>/FCOLOR=161><<$Str(N$技能等级3)>重/FCOLOR=249>>
+<RText|id=l3-3|a=4|x=203.0|y=59.0|color=255|size=16|text=<强化需求：/FCOLOR=147><<$Str(S$技能3需求2)>张<$Str(S$技能3需求1)> <$Str(S$技能3需求4)>个<$Str(S$技能3需求3)>/FCOLOR=254>>
+<Frames|id=l3-4|ax=0|ay=1|x=-31.0|y=-19.0|width=420|height=122|count=12|loop=-1|prefix=custom/gameui/ef/ef_<$Str(S$特效3)>_|suffix=.png|speed=25>
+#IF
+CheckMagicName <$Str(S$角色技能4)>
+#Say
+<Layout|id=l4|children={l4-0,l4-1,l4-2,l4-3,l4-4}|ay=1|x=0.0|y=0.0|width=360|height=85>
+<Img|id=l4-0|ay=1|x=0.0|y=3.0|img=custom/gameui/main/bg1.png|esc=0|link=@选取内切换#特效1=#特效2=#特效3=#特效4=3#特效5=#特效6=#特效7=#编号=4>
+<Img|id=l4-1|x=7.0|y=12.0|img=custom/gameui/jineng/<$Str(S$技能图标4)>.png|esc=0>
+<RText|id=l4-2|a=4|x=193.0|y=20.0|color=255|outlinecolor=0|outline=2|size=16|text=<<$Str(S$角色技能4)>/FCOLOR=161><<$Str(N$技能等级4)>重/FCOLOR=249>>
+<RText|id=l4-3|a=4|x=203.0|y=59.0|color=255|size=16|text=<强化需求：/FCOLOR=147><<$Str(S$技能4需求2)>张<$Str(S$技能4需求1)> <$Str(S$技能4需求4)>个<$Str(S$技能4需求3)>/FCOLOR=254>>
+<Frames|id=l4-4|ax=0|ay=1|x=-31.0|y=-19.0|width=420|height=122|count=12|loop=-1|prefix=custom/gameui/ef/ef_<$Str(S$特效4)>_|suffix=.png|speed=25>
+#IF
+CheckMagicName <$Str(S$角色技能5)>
+#Say
+<Layout|id=l5|children={l5-0,l5-1,l5-2,l5-3,l5-4}|ay=1|x=0.0|y=0.0|width=360|height=85>
+<Img|id=l5-0|ay=1|x=0.0|y=3.0|img=custom/gameui/main/bg1.png|esc=0|link=@选取内切换#特效1=#特效2=#特效3=#特效4=#特效5=3#特效6=#特效7=#编号=5>
+<Img|id=l5-1|x=7.0|y=12.0|img=custom/gameui/jineng/<$Str(S$技能图标5)>.png|esc=0>
+<RText|id=l5-2|a=4|x=193.0|y=20.0|color=255|outlinecolor=0|outline=2|size=16|text=<<$Str(S$角色技能5)>/FCOLOR=161><<$Str(N$技能等级5)>重/FCOLOR=249>>
+<RText|id=l5-3|a=4|x=203.0|y=59.0|color=255|size=16|text=<强化需求：/FCOLOR=147><<$Str(S$技能5需求2)>张<$Str(S$技能5需求1)> <$Str(S$技能5需求4)>个<$Str(S$技能5需求3)>/FCOLOR=254>>
+<Frames|id=l5-4|ax=0|ay=1|x=-31.0|y=-19.0|width=420|height=122|count=12|loop=-1|prefix=custom/gameui/ef/ef_<$Str(S$特效5)>_|suffix=.png|speed=25>
+#IF
+CheckMagicName <$Str(S$角色技能6)>
+#Say
+<Layout|id=l6|children={l6-0,l6-1,l6-2,l6-3,l6-4}|ay=1|x=0.0|y=0.0|width=360|height=85>
+<Img|id=l6-0|ay=1|x=0.0|y=3.0|img=custom/gameui/main/bg1.png|esc=0|link=@选取内切换#特效1=#特效2=#特效3=#特效4=#特效5=#特效6=3#特效7=#编号=6>
+<Img|id=l6-1|x=7.0|y=12.0|img=custom/gameui/jineng/<$Str(S$技能图标6)>.png|esc=0>
+<RText|id=l6-2|a=4|x=193.0|y=20.0|color=255|outlinecolor=0|outline=2|size=16|text=<<$Str(S$角色技能6)>/FCOLOR=161><<$Str(N$技能等级6)>重/FCOLOR=249>>
+<RText|id=l6-3|a=4|x=203.0|y=59.0|color=255|size=16|text=<强化需求：/FCOLOR=147><<$Str(S$技能6需求2)>张<$Str(S$技能6需求1)> <$Str(S$技能6需求4)>个<$Str(S$技能6需求3)>/FCOLOR=254>>
+<Frames|id=l6-4|ax=0|ay=1|x=-31.0|y=-19.0|width=420|height=122|count=12|loop=-1|prefix=custom/gameui/ef/ef_<$Str(S$特效6)>_|suffix=.png|speed=25>
+#IF
+CheckMagicName <$Str(S$角色技能7)>
+#Say
+<Layout|id=l7|children={l7-0,l7-1,l7-2,l7-3,l7-4}|ay=1|x=0.0|y=0.0|width=360|height=85>
+<Img|id=l7-0|ay=1|x=0.0|y=3.0|img=custom/gameui/main/bg1.png|esc=0|link=@选取内切换#特效1=#特效2=#特效3=#特效4=#特效5=#特效6=#特效7=3#编号=7>
+<Img|id=l7-1|x=7.0|y=12.0|img=custom/gameui/jineng/<$Str(S$技能图标7)>.png|esc=0>
+<RText|id=l7-2|a=4|x=193.0|y=20.0|color=255|outlinecolor=0|outline=2|size=16|text=<<$Str(S$角色技能7)>/FCOLOR=161><<$Str(N$技能等级7)>重/FCOLOR=249>>
+<RText|id=l7-3|a=4|x=203.0|y=59.0|color=255|size=16|text=<强化需求：/FCOLOR=147><<$Str(S$技能7需求2)>张<$Str(S$技能7需求1)> <$Str(S$技能7需求4)>个<$Str(S$技能7需求3)>/FCOLOR=254>>
+<Frames|id=l7-4|ax=0|ay=1|x=-31.0|y=-19.0|width=420|height=122|count=12|loop=-1|prefix=custom/gameui/ef/ef_<$Str(S$特效7)>_|suffix=.png|speed=25>
+
+#IF
+#Say
+<Img|x=635.0|y=139.0|img=custom/gameui/main/ban2.png|esc=0>
+<Text|a=4|x=763.0|y=160.0|size=16|color=161|outlinecolor=0|outline=2|text=<$Str(S$初始技能)>>
+<Img|ay=1|x=631.0|y=177.0|width=265|height=150|scale9l=5|scale9b=5|img=custom/gameui/main/ao3.png|scale9r=5|scale9t=5|esc=0>
+<Img|ax=0|ay=1|x=743.0|y=241.0|width=34|height=20|esc=0|img=custom/gameui/main/jt.png>
+<Text|x=658.0|y=190.0|color=251|size=16|text=当前等级>
+<Text|x=793.0|y=190.0|color=251|size=16|text=强化等级>
+<RText|x=680.0|y=240.0|size=16|text=<<$Str(N$技能等级<$Str(S$编号)>)>/FCOLOR=254><重/FCOLOR=255>>
+<RText|x=811.0|y=240.0|color=255|size=16|text=<<$Str(N$下级等级)>/FCOLOR=249><重/FCOLOR=255>>
+<Text|x=704.0|y=285.0|color=250|size=16|text=技能伤害增加5%>
+<ItemShow|x=675.0|y=353.0|width=70|height=70|itemid=<$Str(N$idx1)>|itemcount=<$Str(S$技能<$Str(S$编号)>需求2)>|showtips=1|bgtype=1>
+<ItemShow|x=796.0|y=353.0|width=70|height=70|itemid=<$Str(N$idx2)>|itemcount=<$Str(S$技能<$Str(S$编号)>需求4)>|showtips=1|bgtype=1>
+<Button|x=592.0|y=145.0|nimg=custom/gameui/main/tips.png|color=255|size=18|link=@弹出tips>
+#IF
+Checkskill <$Str(S$角色技能<$Str(S$编号)>)> < 9 1
+#Say
+<Button|x=703.0|y=458.0|nimg=custom/gameui/main/btn2.png|color=1003|size=18|text=开始强化|link=@技能强化开始>
+#Elsesay
+<RText|x=683.0|y=458.0|color=251|size=16|text=恭喜<<$Str(S$角色技能<$Str(S$编号)>)>/FCOLOR=249>已强化至九重>
+
+#IF
+#Say
+<$Str(S$界面tips)>
+
+[@技能强化开始]
+#IF
+Checkskill <$Str(S$角色技能<$Str(S$编号)>)> = 9 1
+#Act
+SendMsg 9 <font colorStyleID='1025'>该技能已经强化到九重,不能再强化了...</font>
+Break
+
+#IF
+CheckMagicName <$Str(S$角色技能<$Str(S$编号)>)>
+#Act
+GetMagicLevel <$Str(S$角色技能<$Str(S$编号)>)> 1 N$技能等级
+ReadConfigFileItem ..\QuestDiary\游戏功能\技能强化\技能强化.ini <$Str(S$角色技能<$Str(S$编号)>)> <$Str(N$技能等级)> S$技能需求
+Getvalidstrsuper <$Str(S$技能需求)> | S$技能需求
+#Elseact
+Break
+
+#OR
+Not Checkitem <$Str(S$技能需求1)> <$Str(S$技能需求2)>
+CheckMoney <$Str(S$技能需求3)> < <$Str(S$技能需求4)>
+#Act
+SendMsg 9 <font colorStyleID='1017'>强化失败:强化该技能材料不足...</font>
+Break
+
+#IF
+Checkitem <$Str(S$技能需求1)> <$Str(S$技能需求2)>
+CheckMoney <$Str(S$技能需求3)> ? <$Str(S$技能需求4)>
+#Act
+Take <$Str(S$技能需求1)> <$Str(S$技能需求2)>
+Money <$Str(S$技能需求3)> - <$Str(S$技能需求4)>
+Inc N$技能等级 1
+Skilllevel <$Str(S$角色技能<$Str(S$编号)>)> = <$Str(N$技能等级)> 1
+SendMsg 0 70 255 [通告]：玩家{<$Username>|253:0:1}成功强化了技能{<$Str(S$角色技能<$Str(S$编号)>)>|251:0:1}...
+SendMsg 9 <font colorStyleID='1025'>恭喜技能强化成功...</font>
+Goto @选取内切换
+Break
+
+[@选取内切换]
+#IF
+CheckMagicName <$Str(S$角色技能<$Str(S$编号)>)>
+#Act
+GetMagicLevel <$Str(S$角色技能<$Str(S$编号)>)> 1 N$技能等级<$Str(S$编号)>
+ReadConfigFileItem ..\QuestDiary\游戏功能\技能强化\技能强化.ini <$Str(S$角色技能<$Str(S$编号)>)> <$Str(N$技能等级<$Str(S$编号)>)> S$技能<$Str(S$编号)>需求
+Getvalidstrsuper <$Str(S$技能<$Str(S$编号)>需求)> | S$技能<$Str(S$编号)>需求
+GetDBItemFieldValue <$Str(S$技能<$Str(S$编号)>需求1)> idx N$idx1
+GetDBItemFieldValue <$Str(S$技能<$Str(S$编号)>需求3)> idx N$idx2
+Mov N$技能需求1 <$Str(S$技能<$Str(S$编号)>需求2)>
+Mov N$技能需求2 <$Str(S$技能<$Str(S$编号)>需求4)>
+Mov N$下级等级 <$Str(N$技能等级<$Str(S$编号)>)>
+Inc N$下级等级 1
+Mov S$初始技能 <$Str(S$角色技能<$Str(S$编号)>)>
+Goto @界面会话
+Break
+
+
+[@读取配置文件]
+#Act
+ReadConfigFileItem ..\QuestDiary\游戏功能\技能强化\技能强化.ini <$JOB> 技能 S$角色技能
+ReadConfigFileItem ..\QuestDiary\游戏功能\技能强化\技能强化.ini <$JOB> 图标 S$技能图标
+Getvalidstrsuper <$Str(S$角色技能)> | S$角色技能
+Getvalidstrsuper <$Str(S$技能图标)> | S$技能图标
+#IF
+CheckMagicName <$Str(S$角色技能1)>
+#Act
+GetMagicLevel <$Str(S$角色技能1)> 1 N$技能等级1
+ReadConfigFileItem ..\QuestDiary\游戏功能\技能强化\技能强化.ini <$Str(S$角色技能1)> <$Str(N$技能等级1)> S$技能1需求
+Getvalidstrsuper <$Str(S$技能1需求)> | S$技能1需求
+GetDBItemFieldValue <$Str(S$技能1需求1)> idx N$idx1
+GetDBItemFieldValue <$Str(S$技能1需求3)> idx N$idx2
+Mov N$技能需求1 <$Str(S$技能1需求2)>
+Mov N$技能需求2 <$Str(S$技能1需求4)>
+Mov N$下级等级 <$Str(N$技能等级1)>
+Inc N$下级等级 1
+Mov S$初始技能 <$Str(S$角色技能1)>
+#IF
+CheckMagicName <$Str(S$角色技能2)>
+#Act
+GetMagicLevel <$Str(S$角色技能2)> 1 N$技能等级2
+ReadConfigFileItem ..\QuestDiary\游戏功能\技能强化\技能强化.ini <$Str(S$角色技能2)> <$Str(N$技能等级2)> S$技能2需求
+Getvalidstrsuper <$Str(S$技能2需求)> | S$技能2需求
+#IF
+CheckMagicName <$Str(S$角色技能3)>
+#Act
+GetMagicLevel <$Str(S$角色技能3)> 1 N$技能等级3
+ReadConfigFileItem ..\QuestDiary\游戏功能\技能强化\技能强化.ini <$Str(S$角色技能3)> <$Str(N$技能等级3)> S$技能3需求
+Getvalidstrsuper <$Str(S$技能3需求)> | S$技能3需求
+#IF
+CheckMagicName <$Str(S$角色技能4)>
+#Act
+GetMagicLevel <$Str(S$角色技能4)> 1 N$技能等级4
+ReadConfigFileItem ..\QuestDiary\游戏功能\技能强化\技能强化.ini <$Str(S$角色技能4)> <$Str(N$技能等级4)> S$技能4需求
+Getvalidstrsuper <$Str(S$技能4需求)> | S$技能4需求
+#IF
+CheckMagicName <$Str(S$角色技能5)>
+#Act
+GetMagicLevel <$Str(S$角色技能5)> 1 N$技能等级5
+ReadConfigFileItem ..\QuestDiary\游戏功能\技能强化\技能强化.ini <$Str(S$角色技能5)> <$Str(N$技能等级5)> S$技能5需求
+Getvalidstrsuper <$Str(S$技能5需求)> | S$技能5需求
+#IF
+CheckMagicName <$Str(S$角色技能6)>
+#Act
+GetMagicLevel <$Str(S$角色技能6)> 1 N$技能等级6
+ReadConfigFileItem ..\QuestDiary\游戏功能\技能强化\技能强化.ini <$Str(S$角色技能6)> <$Str(N$技能等级6)> S$技能6需求
+Getvalidstrsuper <$Str(S$技能6需求)> | S$技能6需求
+#IF
+CheckMagicName <$Str(S$角色技能7)>
+#Act
+GetMagicLevel <$Str(S$角色技能7)> 1 N$技能等级7
+ReadConfigFileItem ..\QuestDiary\游戏功能\技能强化\技能强化.ini <$Str(S$角色技能7)> <$Str(N$技能等级7)> S$技能7需求
+Getvalidstrsuper <$Str(S$技能7需求)> | S$技能7需求
+
+#IF
+#Act
+Goto @界面会话
+Break
+
+
+[@弹出tips]
+#Act
+Mov S$界面tips <Layout|children={tips}|x=0.0|y=0.0|width=2000|height=2000|link=@关闭tips>
+Inc S$界面tips <Img|id=tips|children={tips1,tips2,tips3,tips4,tips5}|ay=1|x=309.0|y=157.0|width=300|height=210|scale9t=8|scale9r=8|scale9b=8|esc=0|img=custom/gameui/main/tipsbg.png|scale9l=8|link=@>
+Inc S$界面tips <Img|id=tips1|x=5.0|y=13.0|img=custom/gameui/main/r1.png|esc=0>
+Inc S$界面tips <Text|id=tips2|x=29.0|y=8.0|outline=2|color=161|size=18|outlinecolor=0|text=技能强化介绍>
+Inc S$界面tips <Text|id=tips3|x=6.0|y=40.0|color=254|size=16|text=不是所有的技能都能强化\界面显示角色当前拥有可强化技能\没有拥有的可强化技能不显示>
+Inc S$界面tips <Text|id=tips4|x=6.0|y=110.0|size=16|color=151|text=单个技能最高强化九重\每重都需要相应数量的书页和货币\每重强化成功几率100%>
+Inc S$界面tips <Text|id=tips5|outline=2|outlinecolor=0|x=6.0|y=180.0|size=16|color=249|text=技能强化到九重,技能伤害大幅提升...>
+Goto @界面会话
+Break
+
+[@关闭tips]
+#Act
+Mov S$界面tips
+Goto @界面会话
+Break
+
+[@拉起充值]
+#Act
+Openhyperlink 26
+Break
+
+[@弹出兑换]
+#Act
+#Call [\万能商人\货币兑换.txt] @界面弹出货币兑换
+Break
