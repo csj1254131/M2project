@@ -49,8 +49,8 @@ GOTO @开通检测
 <ListView|id=5|children={<$STR(S$排列序号_3)>}|x=30|y=248|width=720|height=120|margin=5|bounce=0|direction=2|color=x>
 <Img|id=<$STR(N$变强_37)>|children={<$STR(N$变强_37)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
 <Layout|id=<$STR(N$变强_37)>0|children={<$STR(N$变强_37)>01,<$STR(N$变强_37)>02,<$STR(N$变强_37)>0<$STR(N$红点_37)>}|x=0|y=0|width=235|height=85|color=x|link=@变强神器大师>
-<Text|id=<$STR(N$变强_37)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=神器大师>
-<Text|id=<$STR(N$变强_37)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=神器合成，傲视群雄>
+<Text|id=<$STR(N$变强_37)>01|a=4|percentx=50|percenty=30|color=251|size=18|outline=2|outlinecolor=0|text=装备注灵>
+<Text|id=<$STR(N$变强_37)>02|a=4|percentx=50|percenty=70|color=250|size=18|outline=2|outlinecolor=0|text=装备注灵，套装属性>
 <Img|id=<$STR(N$变强_37)>03|x=210|y=8|img=custom/hl/hl_ui/hd.png>
 <Img|id=<$STR(N$变强_38)>|children={<$STR(N$变强_38)>0}|img=custom/hl/bianqiang_ui/bq_01.png>
 <Layout|id=<$STR(N$变强_38)>0|children={<$STR(N$变强_38)>01,<$STR(N$变强_38)>02,<$STR(N$变强_38)>0<$STR(N$红点_38)>}|x=0|y=0|width=235|height=85|color=x|link=@变强加官进爵>
@@ -124,7 +124,7 @@ Navigation 0 <$STR(N$变强_龙魂)>0 开始提升
 [@变强神器大师]
 #IF
 #ACT
-#CALL [\游戏功能\神器大师\移动端神器大师.txt] @移动端神器大师
+#CALL [\功能脚本\装备注灵\装备注灵.txt] @装备注灵
 
 [@变强加官进爵]
 #IF

@@ -7,7 +7,7 @@ VAR Integer HUMAN B_世界BOSS伤害
 #IF
 #ACT
 MOV S$小地图编号 0001235
-MOV S$地图名称  世界BOSS
+MOV S$地图名称 世界BOSS
 MOV S$地图编号 sjboss
 #SAY
 <Img|x=203.0|y=108.0|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
