@@ -59,53 +59,53 @@ GOTO @按钮初始化
 ;左侧按钮
 <Layout|id=31|children={310,311,312}|width=160|height=37|color=x>
 <Img|id=310|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_1)>>
-<Text|id=311|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=鬼の血光摄魂>
-<Layout|id=312|width=160|height=37|color=x|link=@按钮初始化#套装序号=1#选择类名=鬼の血光摄魂>
+<Text|id=311|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=血光摄魂套装>
+<Layout|id=312|width=160|height=37|color=x|link=@按钮初始化#套装序号=1#选择类名=血光摄魂套装>
 
 <Layout|id=32|children={320,321,322}|width=160|height=37|color=x>
 <Img|id=320|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_2)>>
-<Text|id=321|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=魔の嗜血狂杀>
-<Layout|id=322|width=160|height=37|color=x|link=@按钮初始化#套装序号=2#选择类名=魔の嗜血狂杀>
+<Text|id=321|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=嗜血狂杀套装>
+<Layout|id=322|width=160|height=37|color=x|link=@按钮初始化#套装序号=2#选择类名=嗜血狂杀套装>
 
 <Layout|id=33|children={330,331,332}|width=160|height=37|color=x>
 <Img|id=330|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_3)>>
-<Text|id=331|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=狂の纵横天下>
-<Layout|id=332|width=160|height=37|color=x|link=@按钮初始化#套装序号=3#选择类名=狂の纵横天下>
+<Text|id=331|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=纵横天下套装>
+<Layout|id=332|width=160|height=37|color=x|link=@按钮初始化#套装序号=3#选择类名=纵横天下套装>
 
 <Layout|id=34|children={340,341,342}|width=160|height=37|color=x>
 <Img|id=340|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_4)>>
-<Text|id=341|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=怒の战无不胜>
-<Layout|id=342|width=160|height=37|color=x|link=@按钮初始化#套装序号=4#选择类名=怒の战无不胜>
+<Text|id=341|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=战无不胜套装>
+<Layout|id=342|width=160|height=37|color=x|link=@按钮初始化#套装序号=4#选择类名=战无不胜套装>
 
 <Layout|id=35|children={350,351,352}|width=160|height=37|color=x>
 <Img|id=350|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_5)>>
-<Text|id=351|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=神の永恒霸主>
-<Layout|id=352|width=160|height=37|color=x|link=@按钮初始化#套装序号=5#选择类名=神の永恒霸主>
+<Text|id=351|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=永恒霸主套装>
+<Layout|id=352|width=160|height=37|color=x|link=@按钮初始化#套装序号=5#选择类名=永恒霸主套装>
 
 <Layout|id=36|children={360,361,362}|width=160|height=37|color=x>
 <Img|id=360|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_6)>>
-<Text|id=361|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=扭转乾坤㊣绝杀>
-<Layout|id=362|width=160|height=37|color=x|link=@按钮初始化#套装序号=6#选择类名=扭转乾坤㊣绝杀>
+<Text|id=361|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=扭转乾坤套装>
+<Layout|id=362|width=160|height=37|color=x|link=@按钮初始化#套装序号=6#选择类名=扭转乾坤套装>
 
 <Layout|id=37|children={370,371,372}|width=160|height=37|color=x>
 <Img|id=370|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_7)>>
-<Text|id=371|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=独孤求败㊣弑神>
-<Layout|id=372|width=160|height=37|color=x|link=@按钮初始化#套装序号=7#选择类名=独孤求败㊣弑神>
+<Text|id=371|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=独孤求败套装>
+<Layout|id=372|width=160|height=37|color=x|link=@按钮初始化#套装序号=7#选择类名=独孤求败套装>
 
 <Layout|id=38|children={380,381,382}|width=160|height=37|color=x>
 <Img|id=380|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_8)>>
-<Text|id=381|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=鬼嚎神啸㊣无敌>
-<Layout|id=382|width=160|height=37|color=x|link=@按钮初始化#套装序号=8#选择类名=鬼嚎神啸㊣无敌>
+<Text|id=381|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=鬼嚎神啸套装>
+<Layout|id=382|width=160|height=37|color=x|link=@按钮初始化#套装序号=8#选择类名=鬼嚎神啸套装>
 
 <Layout|id=39|children={390,391,392}|width=160|height=37|color=x>
 <Img|id=390|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_9)>>
-<Text|id=391|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=斩尽杀绝㊣帝陨>
-<Layout|id=392|width=160|height=37|color=x|link=@按钮初始化#套装序号=9#选择类名=斩尽杀绝㊣帝陨>
+<Text|id=391|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=斩尽杀绝套装>
+<Layout|id=392|width=160|height=37|color=x|link=@按钮初始化#套装序号=9#选择类名=斩尽杀绝套装>
 
 <Layout|id=40|children={400,401,402}|width=160|height=37|color=x>
 <Img|id=400|width=160|img=custom/hl/hl_ui/<$STR(S$合成按钮_10)>>
-<Text|id=401|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=无极㊣唯我独尊>
-<Layout|id=402|width=160|height=37|color=x|link=@按钮初始化#套装序号=10#选择类名=无极㊣唯我独尊>
+<Text|id=401|a=4|percentx=50|percenty=50|color=103|size=18|outline=2|outlinecolor=0|text=唯我独尊套装>
+<Layout|id=402|width=160|height=37|color=x|link=@按钮初始化#套装序号=10#选择类名=唯我独尊套装>
 
 
 
