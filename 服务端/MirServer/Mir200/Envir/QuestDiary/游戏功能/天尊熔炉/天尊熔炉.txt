@@ -1876,9 +1876,9 @@ CheckContainsText <$str(S$可分解装备)> <$str(S$分解装备名)>
 <Img|id=83|children={830,831,832}|img=custom/hl/equip_xlqh/xyqh_dj.png>
 <ItemShow|id=830|children={830}|itemid=<$str(S$分解收益IDX_7)>|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
 <RText|id=831|a=3|percentx=90|percenty=98|color=250|size=16|outline=2|outlinecolor=0|text=<$str(S$分解收益IDX_8)>>
-<Img|id=84|children={840,841,842}|img=custom/hl/equip_xlqh/xyqh_dj.png>
-<ItemShow|id=840|children={840}|itemid=7|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
-<RText|id=841|a=3|percentx=90|percenty=98|color=250|size=16|outline=2|outlinecolor=0|text=<$str(S$分解收益IDX_10)>>
+;<Img|id=84|children={840,841,842}|img=custom/hl/equip_xlqh/xyqh_dj.png>
+;<ItemShow|id=840|children={840}|itemid=7|itemcount=1|a=4|percentx=50|percenty=50|showtips=1>
+;<RText|id=841|a=3|percentx=90|percenty=98|color=250|size=16|outline=2|outlinecolor=0|text=<$str(S$分解收益IDX_10)>>
 <Button|id=12|a=4|percentx=64|percenty=84|color=103|nimg=custom/hl/hl_ui/140_2.png|pimg=custom/hl/hl_ui/140_1.png|text=天尊分解|link=@执行天尊分解>
 #ELSESAY
 <ListView|id=8|children={80,81,82,83,84,85}|a=4|percentx=63|percenty=70|width=350|height=70|margin=2|bounce=0|direction=2|color=X>

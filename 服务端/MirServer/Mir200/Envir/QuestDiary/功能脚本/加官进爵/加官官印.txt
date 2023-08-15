@@ -200,7 +200,7 @@ SMALL U28 6
 <Img|id=109|img=custom/hl/guanyin_ui/xx_<$Str(n$官星_10)>.png|x=405>
 <Text|id=1001|text=当前声望：$STM(ITEMCOUNT_15)|size=18|percentx=2|percenty=65|outline=2|outlinecolor=0|color=250>
 #ELSESAY
-<Text|a=4|id=91|text=请前往三大陆晋升|color=250|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Text|a=4|id=91|text=请前往二大陆晋升|color=250|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
 
 #IF
 EQUAL N$升印特效 1

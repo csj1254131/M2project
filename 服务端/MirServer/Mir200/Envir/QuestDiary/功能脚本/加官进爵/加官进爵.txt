@@ -134,7 +134,7 @@ LARGE U23 0
 #IF
 #SAY
 <Img|a=4|id=9|children={90,91,92,93}|img=custom/hl/zhuansheng_ui/bg_hhzy_01_1.png|percentx=80|percenty=40|width=270|height=130|scale9l=10|scale9r=10|scale9t=10|scale9b=10>
-<Text|a=4|id=90|text=ÇëÇ°ÍùÈý´óÂ½½úÉý|color=250|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
+<Text|a=4|id=90|text=ÇëÇ°Íù¶þ´óÂ½½úÉý|color=250|size=18|outline=2|outlinecolor=0|percentx=50|percenty=50>
 
 
 #IF
