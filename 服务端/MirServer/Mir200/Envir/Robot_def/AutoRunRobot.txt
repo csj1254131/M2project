@@ -54,13 +54,13 @@
 #AutoRun NPC RUNONDAY 17:45 @关闭勇闯炼狱
 
 
-#AutoRun NPC RUNONDAY 18:55 @夺宝奇兵提醒
-#AutoRun NPC RUNONDAY 19:00 @开启夺宝奇兵
-#AutoRun NPC RUNONDAY 19:00:30 @刷夺宝BOSS
-#AutoRun NPC RUNONDAY 19:14:00 @夺宝一分钟
-#AutoRun NPC RUNONDAY 19:14:30 @夺宝30秒
-#AutoRun NPC RUNONDAY 19:15 @关闭夺宝奇兵
-#AutoRun NPC RUNONDAY 19:16 @清理夺宝顶戴
+#AutoRun NPC RUNONDAY 19:25 @夺宝奇兵提醒
+#AutoRun NPC RUNONDAY 19:30 @开启夺宝奇兵
+#AutoRun NPC RUNONDAY 19:30:30 @刷夺宝BOSS
+#AutoRun NPC RUNONDAY 19:44:00 @夺宝一分钟
+#AutoRun NPC RUNONDAY 19:44:30 @夺宝30秒
+#AutoRun NPC RUNONDAY 19:45 @关闭夺宝奇兵
+#AutoRun NPC RUNONDAY 19:25 @清理夺宝顶戴
 
 
 #AutoRun NPC RUNONDAY 17:55 @天降元宝提醒

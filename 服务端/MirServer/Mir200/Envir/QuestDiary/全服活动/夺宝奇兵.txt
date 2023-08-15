@@ -25,8 +25,7 @@ MOV S$地图编号 dbqb
 <Img|id=4|children={41}|x=150|y=80|img=custom/hl/hl_ui/icon_target_01.png>
 <Text|id=41|x=25|y=-3|color=251|size=18|outline=2|outlinecolor=0|text=活动时间:>
 
-<Text|id=5|children={51}|x=174|y=100|color=100|size=18|outline=2|outlinecolor=0|text=每周二、四开启>
-<RText|id=51|x=0|y=23|color=100|size=18|text=<19:00-19:15/FCOLOR=250>>
+<Text|id=5|children={51}|x=174|y=100|color=100|size=18|outline=2|outlinecolor=0|text=每天19：30-19：45开启>
 <Img|id=6|children={61}|x=150|y=148|img=custom/hl/hl_ui/icon_target_01.png>
 <Text|id=61|x=25|y=-3|color=251|size=18|outline=2|outlinecolor=0|text=活动规则:>
 

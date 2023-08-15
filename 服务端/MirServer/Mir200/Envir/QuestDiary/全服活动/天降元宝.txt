@@ -21,8 +21,7 @@ MOV S$地图编号 tjyb
 <Img|id=4|children={41}|x=150|y=80|img=custom/hl/hl_ui/icon_target_01.png>
 <Text|id=41|x=25|y=-3|color=251|size=18|outline=2|outlinecolor=0|text=活动时间:>
 
-<Text|id=5|children={51}|x=174|y=100|color=100|size=18|outline=2|outlinecolor=0|text=每周二、四、六>
-<Text|id=51|x=0|y=23|color=250|size=18|text=18:00-18:30>
+<Text|id=5|children={51}|x=174|y=100|color=100|size=18|outline=2|outlinecolor=0|text=每天18:00-18:30>
 <Img|id=6|children={61}|x=150|y=148|img=custom/hl/hl_ui/icon_target_01.png>
 <Text|id=61|x=25|y=-3|color=251|size=18|outline=2|outlinecolor=0|text=活动规则:>
 
@@ -32,7 +31,7 @@ MOV S$地图编号 tjyb
 <Text|id=74|x=0|y=75|color=100|size=18|outline=2|outlinecolor=0|text=击杀它们可以爆出大量的绑定元宝。>
 <Img|id=8|children={81}|x=150|y=272|img=custom/hl/hl_ui/icon_target_01.png>
 <Text|id=81|x=25|y=-3|color=251|size=18|outline=2|outlinecolor=0|text=奖励预览:>
-<ItemShow|id=9|itemid=2|itemcount=1|showtips=1|bgtype=1|x=285|y=306>
+<ItemShow|id=9|itemid=2|itemcount=3000000|showtips=1|bgtype=1|x=285|y=306>
 <Layout|id=12|children={121}|x=490|y=79|width=230|height=30|color=x>
 <Text|id=121|a=4|percentx=50|percenty=50||color=251|size=18|outline=2|outlinecolor=0|text=<$STR(S$地图名称)>>
 <Img|id=13|children={131}|x=480|y=117|img=custom/hl/dtcs_ui/<$STR(S$小地图编号)>.png|width=253|height=207>

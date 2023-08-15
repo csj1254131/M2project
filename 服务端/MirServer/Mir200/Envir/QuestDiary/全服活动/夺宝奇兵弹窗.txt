@@ -14,7 +14,7 @@ VAR Integer HUMAN B_夺宝奇兵积分
 <Layout|id=2|children={21}|x=170|y=8|width=120|height=30|color=x>
 <Text|id=21|a=4|percentx=50|percenty=50|color=251|size=18|outline=2|outlinecolor=0|text=夺宝奇兵>
 <Text|id=3|children={31,32,33}|x=30|y=50|color=251|size=18|outline=2|outlinecolor=0|text=夺宝奇兵>
-<RText|id=31|x=0|y=23|color=250|size=18|outline=2|outlinecolor=0|text=[活动介绍]:<每周二、四下午19:00准时开启/FCOLOR=255>>
+<RText|id=31|x=0|y=23|color=250|size=18|outline=2|outlinecolor=0|text=[活动介绍]:<每天下午19:30准时开启/FCOLOR=255>>
 <RText|id=32|x=0|y=48|color=250|size=18|outline=2|outlinecolor=0|text=[活动奖励]:<活动持续15分钟/FCOLOR=255>>
 <RText|id=33|x=0|y=73|color=250|size=18|outline=2|outlinecolor=0|text=[活动奖励]:<专属称号、材料和炼体丹/FCOLOR=253>>
 <Button|id=4|x=75|y=157|color=100|size=18|outline=2|outlinecolor=0|nimg=custom/hl/hl_ui/140_1.png|pimg=custom/hl/hl_ui/140_2.png|text=参加活动|link=@进入夺宝地图>

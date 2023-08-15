@@ -392,18 +392,18 @@ MOV S$子项目显示
 MOV S$显示内容
 INC S$显示内容 <ListView|id=5|children={51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70}|x=155|y=110|width=580|height=375|margin=5|bounce=0|direction=1|color=x>
 INC S$显示内容 <RText|id=51|color=58|size=20|text=每日活动处可查看日常多种活动，参与活动更可以获得额外奖励！>
-INC S$显示内容 <RText|id=52|color=255|size=17|text=<1.天降元宝：每周二、四、六开启，/FCOLOR=251>传送到地图后开始抢夺散财猪，击杀怪物>
+INC S$显示内容 <RText|id=52|color=255|size=17|text=<1.天降元宝：每天开启，/FCOLOR=251>传送到地图后开始抢夺散财猪，击杀怪物>
 INC S$显示内容 <RText|id=53|color=255|size=17|text=可爆出大量元宝奖励。>
 INC S$显示内容 <RText|id=54|color=255|size=17|text=<2.勇闯炼狱：每天开启，/FCOLOR=251>活动期间，炼狱每层都会刷新强力BOSS，击杀可获>
 INC S$显示内容 <RText|id=55|color=255|size=17|text=得丰厚奖励！当日首次通关每一层炼狱更可获得通关奖励！<活动地图死亡不掉/FCOLOR=58>>
 INC S$显示内容 <RText|id=56|color=255|size=17|text=<装备和狂暴！/FCOLOR=58>>
-INC S$显示内容 <RText|id=57|color=255|size=17|text=<3.夺宝奇兵：每周二、四开启，/FCOLOR=251>活动地图内击败其他玩家争夺<全服唯一限时称/FCOLOR=58>>
+INC S$显示内容 <RText|id=57|color=255|size=17|text=<3.夺宝奇兵：每天开启，/FCOLOR=251>活动地图内击败其他玩家争夺<全服唯一限时称/FCOLOR=58>>
 INC S$显示内容 <RText|id=58|color=255|size=17|text=<号，/FCOLOR=58>击败BOSS更可获得稀有奖励！>
 INC S$显示内容 <RText|id=59|color=255|size=17|text=<4.锁妖塔：常驻活动，/FCOLOR=251>通关锁妖塔每日可获得稀有强化注灵奖励，每10层更可>
 INC S$显示内容 <RText|id=60|color=255|size=17|text=获得阶段奖励。>
 INC S$显示内容 <RText|id=61|color=255|size=17|text=<5.全民押镖：每天开启，/FCOLOR=251>运送镖车到指定位置，不同等级的镖车可以获得不同>
 INC S$显示内容 <RText|id=62|color=255|size=17|text=等级的经验奖励，一天可运送三次。>
-INC S$显示内容 <RText|id=63|color=255|size=17|text=<6.世界BOSS：每周一、五、日开启，/FCOLOR=251>进入地图夺取唯一一只的世界BOSS，BO>
+INC S$显示内容 <RText|id=63|color=255|size=17|text=<6.世界BOSS：每天开启，/FCOLOR=251>进入地图夺取唯一一只的世界BOSS，BO>
 INC S$显示内容 <RText|id=64|color=255|size=17|text=SS死亡后根据玩家总伤害计算排名。>
 INC S$显示内容 <RText|id=65|color=255|size=17|text=<7.剑指沙巴克：每日20：00开启，/FCOLOR=251>四方群雄前来征战沙巴克，获胜行会获得沙巴克>
 INC S$显示内容 <RText|id=66|color=255|size=17|text=称号、元宝和火龙币奖励，获胜行会会长可获得沙巴克<唯一限时称号奖励。/FCOLOR=58>>

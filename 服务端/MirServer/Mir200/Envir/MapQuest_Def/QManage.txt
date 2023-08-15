@@ -755,17 +755,6 @@ sendmsg 9 【撕裂印】效果已清除！
 break
 
 
-
-
-
-
-
-
-
-
-
-
-
 [@刷新捐献排行]
 #IF
 CHECKVAR HUMAN 捐献灵符 < 200
@@ -1060,6 +1049,8 @@ SAVEVAR HUMAN 顶戴展示六
 
 
 ;================================================
+
+
 [@清理狂暴保护]
 #If
 #Act
@@ -1068,12 +1059,6 @@ Set [597] 0
 ClearHumCustVar 神龙之力|庇护之力|狂暴保护 0
 SetOffTimer 255
 #CALL [\元素刷新.txt] @元素刷新
-
-//占领行会
-#if
-equal <$MAPTITLE> 0150
-#act
-sendmsg 0 当前占领行会：<$OWNERGUILD>
 
 
 
@@ -1098,7 +1083,7 @@ Div N$沙城员元宝 3500000 <$Guild(参加沙巴克人数)>
 Div N$沙城员 <$Str(G493)> <$Guild(参加沙巴克人数)>
 MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
 MailGIVE 火龙币 <$Str(N$沙城员)>
-SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
+SendMail 1 攻城奖励1 你好<$USERNAME>沙城奖励已经发放,请点提取!
 Mov N$沙城员 0
 Mov N$沙城员元宝 0
 
@@ -1116,7 +1101,7 @@ Div N$沙城员元宝 1500000 <$Str(N$总沙城人数)>
 Div N$非沙城员 <$Str(G494)> <$Str(N$总沙城人数)>
 MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
 MailGIVE 火龙币 <$Str(N$非沙城员)>
-SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
+SendMail 1 攻城奖励2 你好<$USERNAME>沙城奖励已经发放,请点提取!
 Mov N$非沙城员 0
 Mov N$沙城员元宝 0
 Mov N$非沙城员首次元宝 0
@@ -1133,7 +1118,7 @@ Div N$沙城员 <$Str(G493)> <$Guild(参加沙巴克人数)>
 MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
 MailGIVE 绑定元宝 <$Str(N$沙城员首次元宝)>
 MailGIVE 火龙币 <$Str(N$沙城员)>
-SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
+SendMail 1 攻城奖励3 你好<$USERNAME>沙城奖励已经发放,请点提取
 Mov N$沙城员 0
 Mov N$沙城员元宝 0
 Mov N$沙城员首次元宝 0
@@ -1155,7 +1140,7 @@ Div N$非沙城员首次元宝 1000000 <$Str(N$总沙城人数)>
 MailGIVE 绑定元宝 <$Str(N$沙城员元宝)>
 MailGIVE 绑定元宝 <$Str(N$非沙城员首次元宝)>
 MailGIVE 火龙币 <$Str(N$非沙城员)>
-SendMail 1 攻城奖励 你好<$USERNAME>沙城奖励已经发放,请点提取! 
+SendMail 1 攻城奖励4 你好<$USERNAME>沙城奖励已经发放,请点提取!
 Mov N$非沙城员 0
 Mov N$沙城员元宝 0
 Mov N$非沙城员首次元宝 0
