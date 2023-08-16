@@ -7,6 +7,10 @@ Mov s$条目红点_1
 Mov s$条目红点_2
 Mov s$条目红点_3
 Mov s$条目红点_4
+Mov s$条目红点_5
+Mov s$条目红点_6
+Mov s$条目红点_7
+Mov s$条目红点_8
 MOV S$合成选择 麻痹戒指
 MOV S$回调序号 1
 Mov n$默认读取 1
@@ -21,22 +25,101 @@ Goto @特戒装备合成
 MOV s$条目_1Tp 115_2
 MOV s$条目_2Tp 115_2
 MOV s$条目_3Tp 115_2
+MOV s$条目_4Tp 115_2
+MOV s$条目_5Tp 115_2
+MOV s$条目_6Tp 115_2
+MOV s$条目_7Tp 115_2
+MOV s$条目_8Tp 115_2
 MOV s$条目_<$STR(S$回调序号)>Tp 115_1
 Mov s$条目_1Ys 10
 Mov s$条目_2Ys 10
 Mov s$条目_3Ys 10
+Mov s$条目_4Ys 10
+Mov s$条目_5Ys 10
+Mov s$条目_6Ys 10
+Mov s$条目_7Ys 10
+Mov s$条目_8Ys 10
 Mov s$条目_<$STR(S$回调序号)>Ys 100
 ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\新合成配置.ini 特戒合成 <$STR(S$合成选择)> s$消耗材料串
 GETVALIDSTRSUPER <$STR(s$消耗材料串)> | s$消耗材料_
 GETBAGITEMCOUNT <$STR(S$合成选择)>① N$散特戒数量1
 GETBAGITEMCOUNT <$STR(S$合成选择)>② N$散特戒数量2
-GETBAGITEMCOUNT <$STR(S$合成选择)>③ N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$)合成选择>③ N$散特戒数量3
 GETBAGITEMCOUNT <$STR(S$合成选择)>④ N$散特戒数量4
 GETBAGITEMCOUNT <$STR(S$合成选择)>⑤ N$散特戒数量5
 GETBAGITEMCOUNT <$STR(S$合成选择)>⑥ N$散特戒数量6
 GETBAGITEMCOUNT <$STR(S$合成选择)>⑦ N$散特戒数量7
 GETBAGITEMCOUNT <$STR(S$合成选择)>⑧ N$散特戒数量8
 GETBAGITEMCOUNT <$STR(S$合成选择)>⑨ N$散特戒数量9
+
+
+#IF
+Equal <$STR(S$合成选择)> 火红之石
+#ACT
+GETBAGITEMCOUNT <$STR(S$合成选择)>1级 N$散特戒数量1
+GETBAGITEMCOUNT <$STR(S$合成选择)>2级 N$散特戒数量2
+GETBAGITEMCOUNT <$STR(S$)合成选择>3级 N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>4级 N$散特戒数量4
+GETBAGITEMCOUNT <$STR(S$合成选择)>5级 N$散特戒数量5
+GETBAGITEMCOUNT <$STR(S$合成选择)>6级 N$散特戒数量6
+GETBAGITEMCOUNT <$STR(S$合成选择)>7级 N$散特戒数量7
+GETBAGITEMCOUNT <$STR(S$合成选择)>8级 N$散特戒数量8
+GETBAGITEMCOUNT <$STR(S$合成选择)>9级 N$散特戒数量9
+
+#IF
+Equal <$STR(S$合成选择)> 冰凝之石
+#ACT
+GETBAGITEMCOUNT <$STR(S$合成选择)>1级 N$散特戒数量1
+GETBAGITEMCOUNT <$STR(S$合成选择)>2级 N$散特戒数量2
+GETBAGITEMCOUNT <$STR(S$)合成选择>3级 N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>4级 N$散特戒数量4
+GETBAGITEMCOUNT <$STR(S$合成选择)>5级 N$散特戒数量5
+GETBAGITEMCOUNT <$STR(S$合成选择)>6级 N$散特戒数量6
+GETBAGITEMCOUNT <$STR(S$合成选择)>7级 N$散特戒数量7
+GETBAGITEMCOUNT <$STR(S$合成选择)>8级 N$散特戒数量8
+GETBAGITEMCOUNT <$STR(S$合成选择)>9级 N$散特戒数量9
+
+#IF
+Equal <$STR(S$合成选择)> 暗青之石
+#ACT
+GETBAGITEMCOUNT <$STR(S$合成选择)>1级 N$散特戒数量1
+GETBAGITEMCOUNT <$STR(S$合成选择)>2级 N$散特戒数量2
+GETBAGITEMCOUNT <$STR(S$)合成选择>3级 N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>4级 N$散特戒数量4
+GETBAGITEMCOUNT <$STR(S$合成选择)>5级 N$散特戒数量5
+GETBAGITEMCOUNT <$STR(S$合成选择)>6级 N$散特戒数量6
+GETBAGITEMCOUNT <$STR(S$合成选择)>7级 N$散特戒数量7
+GETBAGITEMCOUNT <$STR(S$合成选择)>8级 N$散特戒数量8
+GETBAGITEMCOUNT <$STR(S$合成选择)>9级 N$散特戒数量9
+
+#IF
+Equal <$STR(S$合成选择)> 苍茫之石
+#ACT
+GETBAGITEMCOUNT <$STR(S$合成选择)>1级 N$散特戒数量1
+GETBAGITEMCOUNT <$STR(S$合成选择)>2级 N$散特戒数量2
+GETBAGITEMCOUNT <$STR(S$)合成选择>3级 N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>4级 N$散特戒数量4
+GETBAGITEMCOUNT <$STR(S$合成选择)>5级 N$散特戒数量5
+GETBAGITEMCOUNT <$STR(S$合成选择)>6级 N$散特戒数量6
+GETBAGITEMCOUNT <$STR(S$合成选择)>7级 N$散特戒数量7
+GETBAGITEMCOUNT <$STR(S$合成选择)>8级 N$散特戒数量8
+GETBAGITEMCOUNT <$STR(S$合成选择)>9级 N$散特戒数量9
+
+#IF
+Equal <$STR(S$合成选择)> 金魄之石
+#ACT
+GETBAGITEMCOUNT <$STR(S$合成选择)>1级 N$散特戒数量1
+GETBAGITEMCOUNT <$STR(S$合成选择)>2级 N$散特戒数量2
+GETBAGITEMCOUNT <$STR(S$)合成选择>3级 N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>4级 N$散特戒数量4
+GETBAGITEMCOUNT <$STR(S$合成选择)>5级 N$散特戒数量5
+GETBAGITEMCOUNT <$STR(S$合成选择)>6级 N$散特戒数量6
+GETBAGITEMCOUNT <$STR(S$合成选择)>7级 N$散特戒数量7
+GETBAGITEMCOUNT <$STR(S$合成选择)>8级 N$散特戒数量8
+GETBAGITEMCOUNT <$STR(S$合成选择)>9级 N$散特戒数量9
+
+#IF
+#ACT
 #CALL [\功能脚本\装备合成\合成红点.txt] @麻痹红点判断
 #CALL [\功能脚本\装备合成\合成红点.txt] @护身红点判断
 #CALL [\功能脚本\装备合成\合成红点.txt] @复活红点判断
@@ -49,6 +132,9 @@ MOV s$合成红点_6 <$STR(S$<$STR(S$合成选择)>红点_6)>
 MOV s$合成红点_7 <$STR(S$<$STR(S$合成选择)>红点_7)>
 MOV s$合成红点_8 <$STR(S$<$STR(S$合成选择)>红点_8)>
 MOV s$合成红点_9 <$STR(S$<$STR(S$合成选择)>红点_9)>
+
+
+
 #IF
 #ACT
 Goto @装备合成展示
@@ -64,7 +150,7 @@ BREAK
 <Button|id=1|x=0|y=0|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
 <Img|id=2|img=custom/hl/hl_ui/fg_1.png|x=142|y=60|height=449>
 
-<Layout|id=3|children={5,7,9,11,13a,15a,17a,19a,21a}|width=120|height=380|color=x|x=20|y=65>
+<Layout|id=3|children={5,7,9,11,501,503,505,507}|width=120|height=999|color=x|x=20|y=65>
 <Button|id=5|x=3|y=0|children={6,6a}|nimg=custom/hl/hl_ui/<$Str(s$条目_1Tp)>.png|link=@特戒装备合成#合成选择=麻痹戒指#回调序号=1>
 <Text|a=4|id=6|percentx=50|percenty=50|text=麻痹合成|color=<$Str(s$条目_1Ys)>|size=18|outline=2|outlinecolor=0>
 <Img|id=6a|img=custom/hl/hl_ui/<$str(s$条目红点_1)>.png|x=95|y=5>
@@ -77,6 +163,25 @@ BREAK
 <Text|a=4|id=10|percentx=50|percenty=50|text=复活合成|color=<$Str(s$条目_3Ys)>|size=18|outline=2|outlinecolor=0>
 <Img|id=10a|img=custom/hl/hl_ui/<$str(s$条目红点_3)>.png|x=95|y=5>
 
+<Button|id=11|x=3|y=120|children={12,12a}|nimg=custom/hl/hl_ui/<$Str(s$条目_4Tp)>.png|link=@特戒装备合成#合成选择=火红之石#回调序号=4>
+<Text|a=4|id=12|percentx=50|percenty=50|text=火红之石|color=<$Str(s$条目_4Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=12a|img=custom/hl/hl_ui/<$str(s$条目红点_4)>.png|x=95|y=5>
+
+<Button|id=501|x=3|y=160|children={502,502a}|nimg=custom/hl/hl_ui/<$Str(s$条目_5Tp)>.png|link=@特戒装备合成#合成选择=冰凝之石#回调序号=5>
+<Text|a=4|id=502|percentx=50|percenty=50|text=冰凝之石|color=<$Str(s$条目_5Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=502a|img=custom/hl/hl_ui/<$str(s$条目红点_5)>.png|x=95|y=5>
+
+<Button|id=503|x=3|y=200|children={504,504a}|nimg=custom/hl/hl_ui/<$Str(s$条目_6Tp)>.png|link=@特戒装备合成#合成选择=暗青之石#回调序号=6>
+<Text|a=4|id=504|percentx=50|percenty=50|text=暗青之石|color=<$Str(s$条目_6Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=504a|img=custom/hl/hl_ui/<$str(s$条目红点_6)>.png|x=95|y=5>
+
+<Button|id=505|x=3|y=240|children={506,506a}|nimg=custom/hl/hl_ui/<$Str(s$条目_7Tp)>.png|link=@特戒装备合成#合成选择=苍茫之石#回调序号=7>
+<Text|a=4|id=506|percentx=50|percenty=50|text=苍茫之石|color=<$Str(s$条目_7Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=506a|img=custom/hl/hl_ui/<$str(s$条目红点_7)>.png|x=95|y=5>
+
+<Button|id=507|x=3|y=280|children={508,508a}|nimg=custom/hl/hl_ui/<$Str(s$条目_8Tp)>.png|link=@特戒装备合成#合成选择=金魄之石#回调序号=8>
+<Text|a=4|id=508|percentx=50|percenty=50|text=金魄之石|color=<$Str(s$条目_8Ys)>|size=18|outline=2|outlinecolor=0>
+<Img|id=508a|img=custom/hl/hl_ui/<$str(s$条目红点_8)>.png|x=95|y=5>
 
 <ListView|id=13|width=600|height=445|color=250|x=150|y=62|children={14,17,20,23,26,29,32,35,38,41}|direction=1|bounce=0|margin=4|color=x>
 <Layout|id=14|children={15,16}|width=606|height=170|color=x>
