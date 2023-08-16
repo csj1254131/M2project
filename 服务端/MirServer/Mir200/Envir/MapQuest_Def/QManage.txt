@@ -1067,7 +1067,6 @@ SetOffTimer 255
 
 [@攻城奖励前统计]
 #If
-Checkofguild <$Ownerguild>
 #ACT
 Mov G498 <$Guild(参加沙巴克人数)>
 
