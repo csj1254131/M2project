@@ -1,0 +1,657 @@
+[@宝石镶嵌系统]
+{
+#Act
+Mov S$开孔装备名
+Mov S$开孔勾选装备
+Mov S$镶嵌弹出界面
+Mov S$镶嵌宝石名
+Mov S$镶嵌
+Mov S$镶嵌tips界面
+Mov N$循环 1
+While N$循环 < 6
+Mov N$宝石idx<$Str(N$循环)> 0
+Mov S$宝石名称<$Str(N$循环)>
+Inc N$循环 1
+EndWhile
+Mov S$镶嵌左界面 <Button|children={ef1}|x=440.0|y=190.0|size=18|nimg=custom/gameui/xiangqian/kt1.png|color=255>
+Inc S$镶嵌左界面 <Button|x=555.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt2.png>
+Inc S$镶嵌左界面 <Button|x=510.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt3.png>
+Inc S$镶嵌左界面 <Button|x=369.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt4.png>
+Inc S$镶嵌左界面 <Button|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png>
+Mov S$镶嵌右界面 <Text|x=728.0|y=475.0|outline=2|color=253|size=16|text=请选择镶嵌的装备>
+Goto @宝石镶嵌会话界面
+Break
+
+
+
+[@宝石镶嵌会话界面]
+<Img|ay=1|x=0.0|y=0.0|width=2000|height=2000|move=0|img=custom/gameui/main/heibg.png|scale9t=10|reset=1|show=0|scale9b=10|loadDelay=0|bg=1|scale9l=10|scale9r=10|esc=0>
+<Img|children={m1,m2}|x=240.0|y=85.0|width=680|height=455|img=custom/hl/shajuan/hl_bg.png|esc=0>
+<Img|id=m1|x=278.0|y=0.0|img=custom/gameui/title/32.png|esc=0>
+<Button|id=m2|x=629.0|y=12.0|pimg=public/x2.png|color=255|size=18|nimg=public/x1.png|link=@exit>
+<Img|children={nt1,nt2,nt3,nt4}|img=custom/gameui/head/top_bn.png>
+<Img|id=nt1|children={nt1-1,nt1-2,nt1-3}|x=262.0|y=3.0|esc=0|img=custom/gameui/head/top_bg.png>
+<Img|x=260.0|y=141.0|img=custom/gameui/xiangqian/bg.png|esc=0>
+<Button|x=641.0|y=144.0|color=255|size=18|nimg=custom/gameui/main/tips.png|link=@镶嵌tips>
+<$Str(S$镶嵌左界面)>
+<DBItemShow|x=435.0|y=303.0|width=70|height=70|makeindex=<$Str(S0)>|itemid=<$Str(N$目标装备idx)>|showstar=1|showtips=1>
+<Img|x=678.0|y=140.0|width=220|img=custom/gameui/main/ban2.png|esc=0>
+<Text|x=744.0|y=148.0|outline=2|color=251|size=16|text=身上佩戴装备>
+<Img|ax=0|ay=1|x=677.0|y=178.0|width=225|height=235|scale9t=6|scale9b=6|scale9r=6|scale9l=6|img=custom/gameui/main/ao4.png|esc=0>
+<ListView|children={bag}|ay=1|x=684.0|y=182.0|width=225|height=227|direction=1|bounce=0|margin=0>
+<EQUIPITEMS|id=bag|x=0.0|y=0.0|count=11|row=4|select=<$STR(S0)>|positions=0,1,2,3,4,5,6,7,8,10,11|selecttype=2|showstar=1|link=@镶嵌选择装备开孔>
+<Img|x=678.0|y=412.0|width=220|esc=0|img=custom/gameui/main/ban2.png>
+<Text|x=744.0|y=420.0|outline=2|color=251|size=16|text=装备开孔需求>
+<$Str(S$镶嵌右界面)>
+
+<$Str(S$镶嵌弹出界面)>
+
+<$Str(S$镶嵌tips界面)>
+
+
+[@镶嵌tips]
+#Act
+Mov S$镶嵌tips界面 <Layout|children={tips}|x=0.0|y=0.0|width=2000|height=2000|link=@宝石镶嵌系统>
+Inc S$镶嵌tips界面 <Img|id=tips|children={tips1,tips2,tips3,tips4,tips5,tips6}|ay=1|x=360.0|y=157.0|width=300|height=151|scale9t=8|scale9b=8|scale9l=8|scale9r=8|img=custom/gameui/main/tipsbg.png|esc=0|link=@>
+Inc S$镶嵌tips界面 <Img|id=tips1|x=5.0|y=13.0|img=custom/gameui/main/r1.png|esc=0>
+Inc S$镶嵌tips界面 <Text|id=tips2|x=29.0|y=8.0|outline=2|color=161|size=18|outlinecolor=0|text=宝石镶嵌介绍>
+Inc S$镶嵌tips界面 <Text|id=tips3|x=4.0|y=36.0|size=16|color=251|text=宝石分别有:火红,冰凝,暗青,苍茫,金魄之石>
+Inc S$镶嵌tips界面 <Text|id=tips4|x=3.0|y=58.0|size=16|color=70|text=装备镶嵌宝石后即可附加宝石的属性\装备必须先开孔后才能镶嵌宝石>
+Inc S$镶嵌tips界面 <RText|id=tips5|x=3.0|y=102.0|size=16|color=255|text=<开孔：/FCOLOR=254><剑甲可开孔5个,其余开孔3个/FCOLOR=70>>
+Inc S$镶嵌tips界面 <RText|id=tips6|x=3.0|y=124.0|size=16|color=255|text=<镶嵌：/FCOLOR=254><一件装备只能镶嵌一颗同类型宝石/FCOLOR=70>>
+Goto @宝石镶嵌会话界面
+Break
+
+
+
+[@镶嵌选择装备开孔]
+#IF
+Equal <$Dressid> <$Str(S0)>
+#Act
+Mov S$镶嵌位置 0
+#IF
+Equal <$Weaponid> <$Str(S0)>
+#Act
+Mov S$镶嵌位置 1
+#IF
+Equal <$RIGHTHANDID> <$Str(S0)>
+#Act
+Mov S$镶嵌位置 2
+#IF
+Equal <$Necklaceid> <$Str(S0)>
+#Act
+Mov S$镶嵌位置 3
+#IF
+Equal <$Helmetid> <$Str(S0)>
+#Act
+Mov S$镶嵌位置 4
+#IF
+Equal <$Armring_Rid> <$Str(S0)>
+#Act
+Mov S$镶嵌位置 5
+#IF
+Equal <$Armring_Lid> <$Str(S0)>
+#Act
+Mov S$镶嵌位置 6
+#IF
+Equal <$Ring_Rid> <$Str(S0)>
+#Act
+Mov S$镶嵌位置 7
+#IF
+Equal <$Ring_Lid> <$Str(S0)>
+#Act
+Mov S$镶嵌位置 8
+#IF
+Equal <$Beltid> <$Str(S0)>
+#Act
+Mov S$镶嵌位置 10
+#IF
+Equal <$Bootsid> <$Str(S0)>
+#Act
+Mov S$镶嵌位置 11
+
+
+#IF
+#Act
+GetItemNameByMakeIndex <$Str(S0)> S$开孔装备名
+Mov N$循环 1
+While N$循环 < 6
+Mov N$宝石idx<$Str(N$循环)> 0
+Mov S$宝石名称<$Str(N$循环)>
+Inc N$循环 1
+EndWhile
+
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 0 N$宝石idx1 S$宝石名称1
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 1 N$宝石idx2 S$宝石名称2
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 2 N$宝石idx3 S$宝石名称3
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 3 N$宝石idx4 S$宝石名称4
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 4 N$宝石idx5 S$宝石名称5
+
+
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 0
+#Act
+MOV N$开孔费用 1
+Mov S$镶嵌左界面 <Button|children={ef1}|x=440.0|y=190.0|size=18|nimg=custom/gameui/xiangqian/kt1.png|color=255|link=@镶嵌开孔1>
+Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Inc S$镶嵌左界面 <Button|x=555.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt2.png>
+Inc S$镶嵌左界面 <Button|x=510.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt3.png>
+Inc S$镶嵌左界面 <Button|x=369.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt4.png>
+Inc S$镶嵌左界面 <Button|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第一个孔：/FCOLOR=70>>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=45069|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 1
+#Act
+MOV N$开孔费用 3
+Mov S$镶嵌左界面 <Button|children={ef1}|x=555.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt2.png|link=@镶嵌开孔2>
+Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Inc S$镶嵌左界面 <Button|x=510.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt3.png>
+Inc S$镶嵌左界面 <Button|x=369.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt4.png>
+Inc S$镶嵌左界面 <Button|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png>
+Inc S$镶嵌左界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第二个孔：/FCOLOR=70>>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=45069|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 2
+#Act
+MOV N$开孔费用 5
+Mov S$镶嵌左界面 <Button|children={ef1}|x=510.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt3.png|link=@镶嵌开孔3>
+Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Inc S$镶嵌左界面 <Button|x=369.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt4.png>
+Inc S$镶嵌左界面 <Button|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png>
+Inc S$镶嵌左界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Inc S$镶嵌左界面 <ItemShow|x=550.0|y=265.0|width=70|height=70|itemid=<$Str(N$宝石idx2)>|itemcount=1|showtips=1|link=@镶嵌位置2>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第三个孔：/FCOLOR=70>>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=45069|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 3
+Large S$镶嵌位置 2
+#Act
+MOV N$开孔费用 10
+Mov S$镶嵌左界面 <Button|children={ef1}|x=369.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt4.png|link=@镶嵌开孔4>
+;Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Inc S$镶嵌左界面 <Button|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png>
+Inc S$镶嵌左界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Inc S$镶嵌左界面 <ItemShow|x=550.0|y=265.0|width=70|height=70|itemid=<$Str(N$宝石idx2)>|itemcount=1|showtips=1|link=@镶嵌位置2>
+Inc S$镶嵌左界面 <ItemShow|x=507.0|y=402.0|width=70|height=70|itemid=<$Str(N$宝石idx3)>|itemcount=1|showtips=1|link=@镶嵌位置3>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第四个孔：/FCOLOR=70>>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=45069|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 3
+Small S$镶嵌位置 3
+#Act
+MOV N$开孔费用 30
+Mov S$镶嵌左界面 <Button|children={ef1}|x=369.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt4.png|link=@镶嵌开孔4>
+Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Inc S$镶嵌左界面 <Button|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png>
+Inc S$镶嵌左界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Inc S$镶嵌左界面 <ItemShow|x=550.0|y=265.0|width=70|height=70|itemid=<$Str(N$宝石idx2)>|itemcount=1|showtips=1|link=@镶嵌位置2>
+Inc S$镶嵌左界面 <ItemShow|x=507.0|y=402.0|width=70|height=70|itemid=<$Str(N$宝石idx3)>|itemcount=1|showtips=1|link=@镶嵌位置3>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第四个孔：/FCOLOR=70>>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=45069|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 4
+#Act
+MOV N$开孔费用 80
+Mov S$镶嵌左界面 <Button|children={ef1}|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png|link=@镶嵌开孔5>
+Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第五个孔：/FCOLOR=70>>
+Mov S$镶嵌右界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Inc S$镶嵌左界面 <ItemShow|x=550.0|y=265.0|width=70|height=70|itemid=<$Str(N$宝石idx2)>|itemcount=1|showtips=1|link=@镶嵌位置2>
+Inc S$镶嵌左界面 <ItemShow|x=507.0|y=402.0|width=70|height=70|itemid=<$Str(N$宝石idx3)>|itemcount=1|showtips=1|link=@镶嵌位置3>
+Inc S$镶嵌左界面 <ItemShow|x=364.0|y=404.0|width=70|height=70|itemid=<$Str(N$宝石idx4)>|itemcount=1|showtips=1|link=@镶嵌位置4>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=45069|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 5
+#Act
+Mov S$镶嵌左界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Inc S$镶嵌左界面 <ItemShow|x=550.0|y=265.0|width=70|height=70|itemid=<$Str(N$宝石idx2)>|itemcount=1|showtips=1|link=@镶嵌位置2>
+Inc S$镶嵌左界面 <ItemShow|x=507.0|y=402.0|width=70|height=70|itemid=<$Str(N$宝石idx3)>|itemcount=1|showtips=1|link=@镶嵌位置3>
+Inc S$镶嵌左界面 <ItemShow|x=364.0|y=404.0|width=70|height=70|itemid=<$Str(N$宝石idx4)>|itemcount=1|showtips=1|link=@镶嵌位置4>
+Inc S$镶嵌左界面 <ItemShow|x=319.0|y=264.0|width=70|height=70|itemid=<$Str(N$宝石idx5)>|itemcount=1|showtips=1|link=@镶嵌位置5>
+Mov S$镶嵌右界面 <Text|x=728.0|y=475.0|outline=2|color=253|size=16|text=装备已经开满5孔>
+Goto @宝石镶嵌会话界面
+Break
+
+
+[@镶嵌位置1]
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 0 N$宝石idx1 S$宝石名称1
+#Act
+Socketableitem <$Str(S$镶嵌位置)> 0 0
+Give <$Str(S$宝石名称1)> 1
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Messagebox 成功卸下宝石...
+Goto @镶嵌选择装备开孔
+Break
+#Elseact
+Mov S$镶嵌弹出界面 <Layout|ax=0|x=0|y=0|width=1500|height=1500|link=@空空如也>
+Inc S$镶嵌弹出界面 <Img|children={bb1,bb2}|ay=1|x=313.0|y=205.0|height=240|scale9b=20|scale9t=20|scale9r=20|esc=0|img=custom/gameui/main/npc_bg6.png|scale9l=20>
+Inc S$镶嵌弹出界面 <BAGITEMS|id=bb1|x=17.0|y=15.0|count=12|row=3|select=<$STR(S0)>|condition=*|selecttype=1|filter3=火红之石1级,火红之石2级,火红之石3级,火红之石4级,火红之石5级,火红之石6级,火红之石7级,火红之石8级,火红之石9级,冰凝之石1级,冰凝之石2级,冰凝之石3级,冰凝之石4级,冰凝之石5级,冰凝之石6级,冰凝之石7级,冰凝之石8级,冰凝之石9级,暗青之石1级,暗青之石2级,暗青之石3级,暗青之石4级,暗青之石5级,暗青之石6级,暗青之石7级,暗青之石8级,暗青之石9级,苍茫之石1级,苍茫之石2级,苍茫之石3级,苍茫之石4级,苍茫之石5级,苍茫之石6级,苍茫之石7级,苍茫之石8级,苍茫之石9级,金魄之石1级,金魄之石2级,金魄之石3级,金魄之石4级,金魄之石5级,金魄之石6级,金魄之石7级,金魄之石8级,金魄之石9级|link=@镶嵌选择宝石>
+Inc S$镶嵌弹出界面 <Button|id=bb2|x=312.0|y=3.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@关闭镶嵌弹窗>
+Mov N$宝石idx 1
+Mov S$镶嵌 0
+Goto @宝石镶嵌会话界面
+Break
+[@镶嵌位置2]
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 1 N$宝石idx2 S$宝石名称2
+#Act
+Socketableitem <$Str(S$镶嵌位置)> 1 0
+Give <$Str(S$宝石名称2)> 1
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Messagebox 成功卸下宝石...
+Goto @镶嵌选择装备开孔
+Break
+#Elseact
+Mov S$镶嵌弹出界面 <Layout|ax=0|x=0|y=0|width=1500|height=1500|link=@空空如也>
+Inc S$镶嵌弹出界面 <Img|children={bb1,bb2}|ay=1|x=313.0|y=205.0|height=240|scale9b=20|scale9t=20|scale9r=20|esc=0|img=custom/gameui/main/npc_bg6.png|scale9l=20>
+Inc S$镶嵌弹出界面 <BAGITEMS|id=bb1|x=17.0|y=15.0|count=12|row=3|select=<$STR(S0)>|condition=*|selecttype=1|filter3=火红之石1级,火红之石2级,火红之石3级,火红之石4级,火红之石5级,火红之石6级,火红之石7级,火红之石8级,火红之石9级,冰凝之石1级,冰凝之石2级,冰凝之石3级,冰凝之石4级,冰凝之石5级,冰凝之石6级,冰凝之石7级,冰凝之石8级,冰凝之石9级,暗青之石1级,暗青之石2级,暗青之石3级,暗青之石4级,暗青之石5级,暗青之石6级,暗青之石7级,暗青之石8级,暗青之石9级,苍茫之石1级,苍茫之石2级,苍茫之石3级,苍茫之石4级,苍茫之石5级,苍茫之石6级,苍茫之石7级,苍茫之石8级,苍茫之石9级,金魄之石1级,金魄之石2级,金魄之石3级,金魄之石4级,金魄之石5级,金魄之石6级,金魄之石7级,金魄之石8级,金魄之石9级|link=@镶嵌选择宝石>
+Inc S$镶嵌弹出界面 <Button|id=bb2|x=312.0|y=3.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@关闭镶嵌弹窗>
+Mov N$宝石idx 2
+Mov S$镶嵌 1
+Goto @宝石镶嵌会话界面
+Break
+[@镶嵌位置3]
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 2 N$宝石idx3 S$宝石名称3
+#Act
+Socketableitem <$Str(S$镶嵌位置)> 2 0
+Give <$Str(S$宝石名称3)> 1
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Messagebox 成功卸下宝石...
+Goto @镶嵌选择装备开孔
+Break
+#Elseact
+Mov S$镶嵌弹出界面 <Layout|ax=0|x=0|y=0|width=1500|height=1500|link=@空空如也>
+Inc S$镶嵌弹出界面 <Img|children={bb1,bb2}|ay=1|x=313.0|y=205.0|height=240|scale9b=20|scale9t=20|scale9r=20|esc=0|img=custom/gameui/main/npc_bg6.png|scale9l=20>
+Inc S$镶嵌弹出界面 <BAGITEMS|id=bb1|x=17.0|y=15.0|count=12|row=3|select=<$STR(S0)>|condition=*|selecttype=1|filter3=火红之石1级,火红之石2级,火红之石3级,火红之石4级,火红之石5级,火红之石6级,火红之石7级,火红之石8级,火红之石9级,冰凝之石1级,冰凝之石2级,冰凝之石3级,冰凝之石4级,冰凝之石5级,冰凝之石6级,冰凝之石7级,冰凝之石8级,冰凝之石9级,暗青之石1级,暗青之石2级,暗青之石3级,暗青之石4级,暗青之石5级,暗青之石6级,暗青之石7级,暗青之石8级,暗青之石9级,苍茫之石1级,苍茫之石2级,苍茫之石3级,苍茫之石4级,苍茫之石5级,苍茫之石6级,苍茫之石7级,苍茫之石8级,苍茫之石9级,金魄之石1级,金魄之石2级,金魄之石3级,金魄之石4级,金魄之石5级,金魄之石6级,金魄之石7级,金魄之石8级,金魄之石9级|link=@镶嵌选择宝石>
+Inc S$镶嵌弹出界面 <Button|id=bb2|x=312.0|y=3.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@关闭镶嵌弹窗>
+Mov N$宝石idx 3
+Mov S$镶嵌 2
+Goto @宝石镶嵌会话界面
+Break
+[@镶嵌位置4]
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 3 N$宝石idx4 S$宝石名称4
+#Act
+Socketableitem <$Str(S$镶嵌位置)> 3 0
+Give <$Str(S$宝石名称4)> 1
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Messagebox 成功卸下宝石...
+Goto @镶嵌选择装备开孔
+Break
+#Elseact
+Mov S$镶嵌弹出界面 <Layout|ax=0|x=0|y=0|width=1500|height=1500|link=@空空如也>
+Inc S$镶嵌弹出界面 <Img|children={bb1,bb2}|ay=1|x=313.0|y=205.0|height=240|scale9b=20|scale9t=20|scale9r=20|esc=0|img=custom/gameui/main/npc_bg6.png|scale9l=20>
+Inc S$镶嵌弹出界面 <BAGITEMS|id=bb1|x=17.0|y=15.0|count=12|row=3|select=<$STR(S0)>|condition=*|selecttype=1|filter3=火红之石1级,火红之石2级,火红之石3级,火红之石4级,火红之石5级,火红之石6级,火红之石7级,火红之石8级,火红之石9级,冰凝之石1级,冰凝之石2级,冰凝之石3级,冰凝之石4级,冰凝之石5级,冰凝之石6级,冰凝之石7级,冰凝之石8级,冰凝之石9级,暗青之石1级,暗青之石2级,暗青之石3级,暗青之石4级,暗青之石5级,暗青之石6级,暗青之石7级,暗青之石8级,暗青之石9级,苍茫之石1级,苍茫之石2级,苍茫之石3级,苍茫之石4级,苍茫之石5级,苍茫之石6级,苍茫之石7级,苍茫之石8级,苍茫之石9级,金魄之石1级,金魄之石2级,金魄之石3级,金魄之石4级,金魄之石5级,金魄之石6级,金魄之石7级,金魄之石8级,金魄之石9级|link=@镶嵌选择宝石>
+Inc S$镶嵌弹出界面 <Button|id=bb2|x=312.0|y=3.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@关闭镶嵌弹窗>
+Mov N$宝石idx 4
+Mov S$镶嵌 3
+Goto @宝石镶嵌会话界面
+Break
+[@镶嵌位置5]
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 4 N$宝石idx5 S$宝石名称5
+#Act
+Socketableitem <$Str(S$镶嵌位置)> 4 0
+Give <$Str(S$宝石名称5)> 1
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Messagebox 成功卸下宝石...
+Goto @镶嵌选择装备开孔
+Break
+#Elseact
+Mov S$镶嵌弹出界面 <Layout|ax=0|x=0|y=0|width=1500|height=1500|link=@空空如也>
+Inc S$镶嵌弹出界面 <Img|children={bb1,bb2}|ay=1|x=313.0|y=205.0|height=240|scale9b=20|scale9t=20|scale9r=20|esc=0|img=custom/gameui/main/npc_bg6.png|scale9l=20>
+Inc S$镶嵌弹出界面 <BAGITEMS|id=bb1|x=17.0|y=15.0|count=12|row=3|select=<$STR(S0)>|condition=*|selecttype=1|filter3=火红之石1级,火红之石2级,火红之石3级,火红之石4级,火红之石5级,火红之石6级,火红之石7级,火红之石8级,火红之石9级,冰凝之石1级,冰凝之石2级,冰凝之石3级,冰凝之石4级,冰凝之石5级,冰凝之石6级,冰凝之石7级,冰凝之石8级,冰凝之石9级,暗青之石1级,暗青之石2级,暗青之石3级,暗青之石4级,暗青之石5级,暗青之石6级,暗青之石7级,暗青之石8级,暗青之石9级,苍茫之石1级,苍茫之石2级,苍茫之石3级,苍茫之石4级,苍茫之石5级,苍茫之石6级,苍茫之石7级,苍茫之石8级,苍茫之石9级,金魄之石1级,金魄之石2级,金魄之石3级,金魄之石4级,金魄之石5级,金魄之石6级,金魄之石7级,金魄之石8级,金魄之石9级|link=@镶嵌选择宝石>
+Inc S$镶嵌弹出界面 <Button|id=bb2|x=312.0|y=3.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@关闭镶嵌弹窗>
+Mov N$宝石idx 5
+Mov S$镶嵌 4
+Goto @宝石镶嵌会话界面
+Break
+
+[@镶嵌选择宝石]
+#IF
+Equal S$镶嵌
+#Act
+Break
+#Elseact
+Mov S$宝石名称1
+Mov S$宝石名称2
+Mov S$宝石名称3
+Mov S$宝石名称4
+Mov S$宝石名称5
+GetItemNameByMakeIndex <$Str(S0)> S$镶嵌宝石名
+LeftStr <$Str(S$镶嵌宝石名)> 4 S$镶嵌宝石别名
+
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 0 N$宝石idx1 S$宝石名称1
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 1 N$宝石idx2 S$宝石名称2
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 2 N$宝石idx3 S$宝石名称3
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 3 N$宝石idx4 S$宝石名称4
+#IF
+Checksocketableitem <$Str(S$镶嵌位置)> 4 N$宝石idx5 S$宝石名称5
+#IF
+#Act
+LeftStr <$Str(S$宝石名称1)> 4 S$镶嵌宝石别名1
+LeftStr <$Str(S$宝石名称2)> 4 S$镶嵌宝石别名2
+LeftStr <$Str(S$宝石名称3)> 4 S$镶嵌宝石别名3
+LeftStr <$Str(S$宝石名称4)> 4 S$镶嵌宝石别名4
+LeftStr <$Str(S$宝石名称5)> 4 S$镶嵌宝石别名5
+
+#OR
+Equal S$镶嵌宝石别名1 <$Str(S$镶嵌宝石别名)>
+Equal S$镶嵌宝石别名2 <$Str(S$镶嵌宝石别名)>
+Equal S$镶嵌宝石别名3 <$Str(S$镶嵌宝石别名)>
+Equal S$镶嵌宝石别名4 <$Str(S$镶嵌宝石别名)>
+Equal S$镶嵌宝石别名5 <$Str(S$镶嵌宝石别名)>
+#Act
+Mov S$镶嵌宝石别名1
+Mov S$镶嵌宝石别名2
+Mov S$镶嵌宝石别名3
+Mov S$镶嵌宝石别名4
+Mov S$镶嵌宝石别名5
+Messagebox 一件装备同类型宝石只能镶嵌一颗...
+Break
+#Elseact
+Mov S$镶嵌宝石别名1
+Mov S$镶嵌宝石别名2
+Mov S$镶嵌宝石别名3
+Mov S$镶嵌宝石别名4
+Mov S$镶嵌宝石别名5
+
+
+#IF
+Equal S$宝石名称<$Str(N$宝石idx)>
+#Act
+GetDBItemFieldValue <$Str(S$镶嵌宝石名)> idx N$宝石idx<$Str(N$宝石idx)>
+Mov S$镶嵌弹出界面
+Take <$Str(S$镶嵌宝石名)> 1
+Socketableitem <$Str(S$镶嵌位置)> <$Str(S$镶嵌)> <$Str(N$宝石idx<$Str(N$宝石idx)>)>
+;Mov S$镶嵌
+Sendmsg 6 恭喜宝石镶嵌成功...
+Goto @宝石镶嵌公共检测段
+Break
+#Elseact
+Messagebox 你没有选择需要镶嵌的宝石...
+Break
+
+[@宝石镶嵌公共检测段]
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 0
+#Act
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 开孔 1 N$开孔费用
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Mov S$镶嵌左界面 <Button|children={ef1}|x=440.0|y=190.0|size=18|nimg=custom/gameui/xiangqian/kt1.png|color=255|link=@镶嵌开孔1>
+Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Inc S$镶嵌左界面 <Button|x=555.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt2.png>
+Inc S$镶嵌左界面 <Button|x=510.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt3.png>
+Inc S$镶嵌左界面 <Button|x=369.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt4.png>
+Inc S$镶嵌左界面 <Button|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第一个孔：/FCOLOR=70>>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=2|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 1
+#Act
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 开孔 2 N$开孔费用
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Mov S$镶嵌左界面 <Button|children={ef1}|x=555.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt2.png|link=@镶嵌开孔2>
+Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Inc S$镶嵌左界面 <Button|x=510.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt3.png>
+Inc S$镶嵌左界面 <Button|x=369.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt4.png>
+Inc S$镶嵌左界面 <Button|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png>
+Inc S$镶嵌左界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第二个孔：/FCOLOR=70>>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=2|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 2
+#Act
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 开孔 3 N$开孔费用
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Mov S$镶嵌左界面 <Button|children={ef1}|x=510.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt3.png|link=@镶嵌开孔3>
+Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Inc S$镶嵌左界面 <Button|x=369.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt4.png>
+Inc S$镶嵌左界面 <Button|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png>
+Inc S$镶嵌左界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Inc S$镶嵌左界面 <ItemShow|x=550.0|y=265.0|width=70|height=70|itemid=<$Str(N$宝石idx2)>|itemcount=1|showtips=1|link=@镶嵌位置2>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第三个孔：/FCOLOR=70>>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=2|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 3
+Large S$镶嵌位置 2
+#Act
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 开孔 4 N$开孔费用
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Mov S$镶嵌左界面 <Button|children={ef1}|x=369.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt4.png|link=@镶嵌开孔4>
+;Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Inc S$镶嵌左界面 <Button|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png>
+Inc S$镶嵌左界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Inc S$镶嵌左界面 <ItemShow|x=550.0|y=265.0|width=70|height=70|itemid=<$Str(N$宝石idx2)>|itemcount=1|showtips=1|link=@镶嵌位置2>
+Inc S$镶嵌左界面 <ItemShow|x=507.0|y=402.0|width=70|height=70|itemid=<$Str(N$宝石idx3)>|itemcount=1|showtips=1|link=@镶嵌位置3>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第四个孔：/FCOLOR=70>>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=2|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 3
+Small S$镶嵌位置 3
+#Act
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 开孔 4 N$开孔费用
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Mov S$镶嵌左界面 <Button|children={ef1}|x=369.0|y=409.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt4.png|link=@镶嵌开孔4>
+Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Inc S$镶嵌左界面 <Button|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png>
+Inc S$镶嵌左界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Inc S$镶嵌左界面 <ItemShow|x=550.0|y=265.0|width=70|height=70|itemid=<$Str(N$宝石idx2)>|itemcount=1|showtips=1|link=@镶嵌位置2>
+Inc S$镶嵌左界面 <ItemShow|x=507.0|y=402.0|width=70|height=70|itemid=<$Str(N$宝石idx3)>|itemcount=1|showtips=1|link=@镶嵌位置3>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第四个孔：/FCOLOR=70>>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=2|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 4
+#Act
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 开孔 5 N$开孔费用
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Mov S$镶嵌左界面 <Button|children={ef1}|x=324.0|y=271.0|color=255|size=18|nimg=custom/gameui/xiangqian/kt5.png|link=@镶嵌开孔5>
+Inc S$镶嵌左界面 <Effect|id=ef1|x=28.0|y=28.0|speed=1|effectid=4003|dir=5|act=0|effecttype=0|scale=1>
+Mov S$镶嵌右界面 <RText|x=689.0|y=478.0|outline=2|color=161|size=16|text=<开第五个孔：/FCOLOR=70>>
+Mov S$镶嵌右界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Inc S$镶嵌左界面 <ItemShow|x=550.0|y=265.0|width=70|height=70|itemid=<$Str(N$宝石idx2)>|itemcount=1|showtips=1|link=@镶嵌位置2>
+Inc S$镶嵌左界面 <ItemShow|x=507.0|y=402.0|width=70|height=70|itemid=<$Str(N$宝石idx3)>|itemcount=1|showtips=1|link=@镶嵌位置3>
+Inc S$镶嵌左界面 <ItemShow|x=364.0|y=404.0|width=70|height=70|itemid=<$Str(N$宝石idx4)>|itemcount=1|showtips=1|link=@镶嵌位置4>
+Inc S$镶嵌右界面 <ItemShow|x=797.0|y=456.0|width=70|height=70|itemid=2|itemcount=<$Str(N$开孔费用)>|showtips=1|bgtype=1>
+Goto @宝石镶嵌会话界面
+Break
+
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 5
+#Act
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Mov S$镶嵌左界面 <ItemShow|x=434.0|y=186.0|width=70|height=70|itemid=<$Str(N$宝石idx1)>|itemcount=1|showtips=1|link=@镶嵌位置1>
+Inc S$镶嵌左界面 <ItemShow|x=550.0|y=265.0|width=70|height=70|itemid=<$Str(N$宝石idx2)>|itemcount=1|showtips=1|link=@镶嵌位置2>
+Inc S$镶嵌左界面 <ItemShow|x=507.0|y=402.0|width=70|height=70|itemid=<$Str(N$宝石idx3)>|itemcount=1|showtips=1|link=@镶嵌位置3>
+Inc S$镶嵌左界面 <ItemShow|x=364.0|y=404.0|width=70|height=70|itemid=<$Str(N$宝石idx4)>|itemcount=1|showtips=1|link=@镶嵌位置4>
+Inc S$镶嵌左界面 <ItemShow|x=319.0|y=264.0|width=70|height=70|itemid=<$Str(N$宝石idx5)>|itemcount=1|showtips=1|link=@镶嵌位置5>
+Mov S$镶嵌右界面 <Text|x=728.0|y=475.0|outline=2|color=253|size=16|text=装备已经开满5孔>
+Goto @宝石镶嵌会话界面
+Break
+
+
+
+
+[@关闭镶嵌弹窗]
+#Act
+Mov S$镶嵌弹出界面
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+Goto @宝石镶嵌会话界面
+Break
+
+
+
+
+[@镶嵌开孔1]
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 0
+#Act
+MOV N$开孔费用 1
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+#Elseact
+Break
+
+#IF
+Checkitem 开孔石 <$Str(N$开孔费用)>
+#Act
+Take 开孔石 <$Str(N$开孔费用)>
+Sendmsg 0 开孔费用<$Str(N$开孔费用)>
+Drillhole <$Str(S$镶嵌位置)> 0 1
+Sendmsg 6 恭喜装备开孔成功...
+Goto @镶嵌选择装备开孔
+Break
+#Elseact
+Messagebox 你没有足够的材料给装备开孔...
+Break
+
+[@镶嵌开孔2]
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 1
+#Act
+MOV N$开孔费用 3
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+#Elseact
+Break
+
+#IF
+Checkitem 开孔石 <$Str(N$开孔费用)>
+#Act
+Take 开孔石 <$Str(N$开孔费用)>
+Drillhole <$Str(S$镶嵌位置)> 1 1
+Sendmsg 6 恭喜装备开孔成功...
+Goto @镶嵌选择装备开孔
+Break
+#Elseact
+Messagebox 你没有足够的材料给装备开孔...
+Break
+
+[@镶嵌开孔3]
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 2
+#Act
+MOV N$开孔费用 5
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+#Elseact
+Break
+
+#IF
+Checkitem 开孔石 <$Str(N$开孔费用)>
+#Act
+Take 开孔石 <$Str(N$开孔费用)>
+Drillhole <$Str(S$镶嵌位置)> 2 1
+Sendmsg 6 恭喜装备开孔成功...
+Goto @镶嵌选择装备开孔
+Break
+#Elseact
+Messagebox 你没有足够的材料给装备开孔...
+Break
+
+[@镶嵌开孔4]
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 3
+#Act
+MOV N$开孔费用 10
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+#Elseact
+Break
+
+#OR
+Equal S$镶嵌位置 2
+Equal S$镶嵌位置 3
+Equal S$镶嵌位置 4
+Equal S$镶嵌位置 5
+Equal S$镶嵌位置 6
+Equal S$镶嵌位置 7
+Equal S$镶嵌位置 8
+Equal S$镶嵌位置 10
+Equal S$镶嵌位置 11
+#Act
+Messagebox 只有武器和衣服能开5个孔...
+Break
+
+
+#IF
+Checkitem 开孔石 <$Str(N$开孔费用)>
+#Act
+Take 开孔石 <$Str(N$开孔费用)>
+Drillhole <$Str(S$镶嵌位置)> 3 1
+Sendmsg 6 恭喜装备开孔成功...
+Goto @镶嵌选择装备开孔
+Break
+#Elseact
+Messagebox 你没有足够的材料给装备开孔...
+Break
+
+[@镶嵌开孔5]
+#IF
+Checkdrillholecount <$Str(S$镶嵌位置)> = 4
+#Act
+MOV N$开孔费用 30
+ReadConfigFileItem ..\QuestDiary\宝石镶嵌\镶嵌配置.ini 位置 <$Str(S$镶嵌位置)> S0
+#Elseact
+Break
+
+#OR
+Equal S$镶嵌位置 2
+Equal S$镶嵌位置 3
+Equal S$镶嵌位置 4
+Equal S$镶嵌位置 5
+Equal S$镶嵌位置 6
+Equal S$镶嵌位置 7
+Equal S$镶嵌位置 8
+Equal S$镶嵌位置 10
+Equal S$镶嵌位置 11
+#Act
+Messagebox 只有武器和衣服能开5个孔...
+Break
+
+#IF
+Checkitem 开孔石 <$Str(N$开孔费用)>
+#Act
+Take 开孔石 <$Str(N$开孔费用)>
+Drillhole <$Str(S$镶嵌位置)> 4 1
+Sendmsg 6 恭喜装备开孔成功...
+Goto @镶嵌选择装备开孔
+Break
+#Elseact
+Messagebox 你没有足够的材料给装备开孔...
+Break
+
+}
