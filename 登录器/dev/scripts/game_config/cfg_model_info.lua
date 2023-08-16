@@ -70724,5 +70724,16 @@ local config = {
 		showstand_interval=10,
 		ready_interval=0.2,
 	},
+	[4097] = { 
+		index=4084,
+		id=6420,
+		type=4,
+		sex=0,
+		dir=1,
+		blendmode=2,
+		stand_pos_x=0,
+		stand_pos_y=1,
+		idle_interval=0.085,
+	},
 }
 return config

@@ -1,5 +1,5 @@
 {
-    "version": "3.3.3079",
+    "version": "3.3.3082",
     "assets": {
         "anim_effect.zip": {
             "md5": "f7b49059a3b601b0c794cafb15dec2da",
@@ -37,9 +37,10 @@
             "size": 17390
         },
         "assets_sub.zip": {
-            "md5": "e771958a568bc6d0f35c60f859567088",
+            "md5": "a4fa579c9c98414e17c56f81e40bafcf",
             "compressed": true,
-            "size": 3474935
+            "size": 3475159,
+            "downloadState": 1
         },
         "data_config.zip": {
             "md5": "06d9117d9d94d4fb25dae19f3b821907",
@@ -912,9 +913,10 @@
             "size": 2009
         },
         "scripts_game_mediator_disconnect.zip": {
-            "md5": "79960ff38600c7c4d027d6ea89a138b4",
+            "md5": "66a8d531171d91d40554eef26c16bfbb",
             "compressed": true,
-            "size": 6113
+            "size": 6141,
+            "downloadState": 2
         },
         "scripts_game_mediator_dress_layer.zip": {
             "md5": "efac2a5134755842e9a6ef257513e23b",
@@ -1182,9 +1184,10 @@
             "size": 4112
         },
         "scripts_game_mediator_trading_bank_layer.zip": {
-            "md5": "2af955192ad9fbdfccebbbdd743ec294",
+            "md5": "846de11b70ecec44c708096e37fed6ca",
             "compressed": true,
-            "size": 32011
+            "size": 32139,
+            "downloadState": 2
         },
         "scripts_game_proxy_local.zip": {
             "md5": "5aa66dc78383e16e2264eac21886bf13",
@@ -1684,8 +1687,7 @@
         "scripts_game_view_layersui_bag_layer.zip": {
             "md5": "9092c4424569ad4a34b9b4a2ff29ae80",
             "compressed": true,
-            "size": 42310,
-            "downloadState": 1
+            "size": 42310
         },
         "scripts_game_view_layersui_bag_layer_hero.zip": {
             "md5": "ab7098652dcdbd6245ba9f65af2c40eb",
@@ -1695,8 +1697,7 @@
         "scripts_game_view_layersui_bag_layer_merge.zip": {
             "md5": "08b62b8c1b489d2a2e24f644c4800576",
             "compressed": true,
-            "size": 25236,
-            "downloadState": 2
+            "size": 25236
         },
         "scripts_game_view_layersui_be_strong_layer.zip": {
             "md5": "48adc74ba2eef8a05498d56449c51609",
@@ -1964,9 +1965,10 @@
             "size": 14831
         },
         "scripts_game_view_layersui_tradingBankLayer.zip": {
-            "md5": "b46bc8b80beca6ab5c567e6853ba5d22",
+            "md5": "9f380b9e0a4985943101e3878ccdbf86",
             "compressed": true,
-            "size": 127346
+            "size": 127406,
+            "downloadState": 2
         },
         "scripts_game_view_mainui-win32.zip": {
             "md5": "da3fbc978d78fc2ba5ebc54a1e1fb2a9",
@@ -1994,9 +1996,10 @@
             "size": 4248
         },
         "scripts_logic.zip": {
-            "md5": "3b24d633cef843a2fb6337bd9ccc496c",
+            "md5": "d699460af4d7d9ec246a028c28a06f0a",
             "compressed": true,
-            "size": 158026
+            "size": 158198,
+            "downloadState": 2
         },
         "scripts_network_jsonproto.zip": {
             "md5": "a80172930e503cbf1eb5647be2d04c62",
