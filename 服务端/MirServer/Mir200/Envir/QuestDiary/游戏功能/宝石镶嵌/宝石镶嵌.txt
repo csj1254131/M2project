@@ -532,7 +532,6 @@ Break
 Checkitem 开孔石 <$Str(N$开孔费用)>
 #Act
 Take 开孔石 <$Str(N$开孔费用)>
-Sendmsg 0 开孔费用<$Str(N$开孔费用)>
 Drillhole <$Str(S$镶嵌位置)> 0 1
 Sendmsg 6 恭喜装备开孔成功...
 Goto @镶嵌选择装备开孔
