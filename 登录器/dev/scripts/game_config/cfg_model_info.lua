@@ -70730,9 +70730,9 @@ local config = {
 		type=4,
 		sex=0,
 		dir=1,
-		blendmode=2,
+		blendmode=0,
 		stand_pos_x=0,
-		stand_pos_y=1,
+		stand_pos_y=0,
 		idle_interval=0.085,
 	},
 }

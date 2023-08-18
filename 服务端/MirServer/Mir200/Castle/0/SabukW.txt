@@ -1,7 +1,7 @@
 [Setup]
 CastleName=É³°Í¿Ë
 ChangeDate=2023/8/16 12:02:56
-WarDate=2023/8/16 12:04:30
+WarDate=2023/8/16 20:14:00
 IncomeToday=2023/8/16 10:28:33
 TotalGold=0
 TodayIncome=0
@@ -163,6 +163,6 @@ Guard_8_Name=ÊØÎÀ
 Guard_8_HP=1000
 MainDoorOpen=1
 MainDoorHP=6958
-LeftWallHP=4475
+LeftWallHP=0
 CenterWallHP=0
 RightWallHP=4542
