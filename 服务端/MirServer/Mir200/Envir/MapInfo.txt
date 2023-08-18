@@ -1,3 +1,4 @@
+[bsfb1|d716 宝石副本] noreconnect(3:330:330) maxplayer(15) noreconnect(3:330:330)  runmon
 
 
 [em000 激情泡点] noreconnect(3:330:330) safe
@@ -28,7 +29,6 @@
 [lzld2|f011 龙族领地二层]  noreconnect(3:330:330) norecall nodearrecall   runmon
 
 [xssl1|62 新手试炼] noreconnect(3:330:330) maxplayer(15) noreconnect(3:330:330)  runmon
-
 
 [mgdt1|d2004 迷宫一层] noreconnect(3:330:330) maxplayer(10) runmon
 mgdt1    19 16  -> mgdt2    85 88
