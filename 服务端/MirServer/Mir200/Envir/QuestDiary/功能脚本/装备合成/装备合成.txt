@@ -44,7 +44,7 @@ ReadConfigFileItem  ..\QuestDiary\功能脚本\装备合成\新合成配置.ini 特戒合成 <$ST
 GETVALIDSTRSUPER <$STR(s$消耗材料串)> | s$消耗材料_
 GETBAGITEMCOUNT <$STR(S$合成选择)>① N$散特戒数量1
 GETBAGITEMCOUNT <$STR(S$合成选择)>② N$散特戒数量2
-GETBAGITEMCOUNT <$STR(S$)合成选择>③ N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>③ N$散特戒数量3
 GETBAGITEMCOUNT <$STR(S$合成选择)>④ N$散特戒数量4
 GETBAGITEMCOUNT <$STR(S$合成选择)>⑤ N$散特戒数量5
 GETBAGITEMCOUNT <$STR(S$合成选择)>⑥ N$散特戒数量6
@@ -58,7 +58,7 @@ Equal <$STR(S$合成选择)> 火红之石
 #ACT
 GETBAGITEMCOUNT <$STR(S$合成选择)>1级 N$散特戒数量1
 GETBAGITEMCOUNT <$STR(S$合成选择)>2级 N$散特戒数量2
-GETBAGITEMCOUNT <$STR(S$)合成选择>3级 N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>3级 N$散特戒数量3
 GETBAGITEMCOUNT <$STR(S$合成选择)>4级 N$散特戒数量4
 GETBAGITEMCOUNT <$STR(S$合成选择)>5级 N$散特戒数量5
 GETBAGITEMCOUNT <$STR(S$合成选择)>6级 N$散特戒数量6
@@ -71,7 +71,7 @@ Equal <$STR(S$合成选择)> 冰凝之石
 #ACT
 GETBAGITEMCOUNT <$STR(S$合成选择)>1级 N$散特戒数量1
 GETBAGITEMCOUNT <$STR(S$合成选择)>2级 N$散特戒数量2
-GETBAGITEMCOUNT <$STR(S$)合成选择>3级 N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>3级 N$散特戒数量3
 GETBAGITEMCOUNT <$STR(S$合成选择)>4级 N$散特戒数量4
 GETBAGITEMCOUNT <$STR(S$合成选择)>5级 N$散特戒数量5
 GETBAGITEMCOUNT <$STR(S$合成选择)>6级 N$散特戒数量6
@@ -84,7 +84,7 @@ Equal <$STR(S$合成选择)> 暗青之石
 #ACT
 GETBAGITEMCOUNT <$STR(S$合成选择)>1级 N$散特戒数量1
 GETBAGITEMCOUNT <$STR(S$合成选择)>2级 N$散特戒数量2
-GETBAGITEMCOUNT <$STR(S$)合成选择>3级 N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>3级 N$散特戒数量3
 GETBAGITEMCOUNT <$STR(S$合成选择)>4级 N$散特戒数量4
 GETBAGITEMCOUNT <$STR(S$合成选择)>5级 N$散特戒数量5
 GETBAGITEMCOUNT <$STR(S$合成选择)>6级 N$散特戒数量6
@@ -97,7 +97,7 @@ Equal <$STR(S$合成选择)> 苍茫之石
 #ACT
 GETBAGITEMCOUNT <$STR(S$合成选择)>1级 N$散特戒数量1
 GETBAGITEMCOUNT <$STR(S$合成选择)>2级 N$散特戒数量2
-GETBAGITEMCOUNT <$STR(S$)合成选择>3级 N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>3级 N$散特戒数量3
 GETBAGITEMCOUNT <$STR(S$合成选择)>4级 N$散特戒数量4
 GETBAGITEMCOUNT <$STR(S$合成选择)>5级 N$散特戒数量5
 GETBAGITEMCOUNT <$STR(S$合成选择)>6级 N$散特戒数量6
@@ -110,7 +110,7 @@ Equal <$STR(S$合成选择)> 金魄之石
 #ACT
 GETBAGITEMCOUNT <$STR(S$合成选择)>1级 N$散特戒数量1
 GETBAGITEMCOUNT <$STR(S$合成选择)>2级 N$散特戒数量2
-GETBAGITEMCOUNT <$STR(S$)合成选择>3级 N$散特戒数量3
+GETBAGITEMCOUNT <$STR(S$合成选择)>3级 N$散特戒数量3
 GETBAGITEMCOUNT <$STR(S$合成选择)>4级 N$散特戒数量4
 GETBAGITEMCOUNT <$STR(S$合成选择)>5级 N$散特戒数量5
 GETBAGITEMCOUNT <$STR(S$合成选择)>6级 N$散特戒数量6
