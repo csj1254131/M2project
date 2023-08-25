@@ -1,0 +1,261 @@
+[@装备栏洗炼触发]
+{
+#IF
+CheckContainsText 0;1;3;4;5;6;7;8;10;11; <$STR(N$装备栏洗炼位置)>;
+#ELSEACT
+MESSAGEBOX 请不要封包！！
+BREAK
+
+#IF
+EQUAL N$装备栏洗炼位置 0
+#ACT
+MOV S$装备栏洗炼位置 衣服
+
+#IF
+EQUAL N$装备栏洗炼位置 1
+#ACT
+MOV S$装备栏洗炼位置 武器
+
+#IF
+EQUAL N$装备栏洗炼位置 3
+#ACT
+MOV S$装备栏洗炼位置 项链
+
+#IF
+EQUAL N$装备栏洗炼位置 4
+#ACT
+MOV S$装备栏洗炼位置 头盔
+
+#IF
+EQUAL N$装备栏洗炼位置 5
+#ACT
+MOV S$装备栏洗炼位置 左手
+
+#IF
+EQUAL N$装备栏洗炼位置 6
+#ACT
+MOV S$装备栏洗炼位置 右手
+
+#IF
+EQUAL N$装备栏洗炼位置 7
+#ACT
+MOV S$装备栏洗炼位置 左戒
+
+#IF
+EQUAL N$装备栏洗炼位置 8
+#ACT
+MOV S$装备栏洗炼位置 右戒
+
+#IF
+EQUAL N$装备栏洗炼位置 10
+#ACT
+MOV S$装备栏洗炼位置 腰带
+
+#IF
+EQUAL N$装备栏洗炼位置 11
+#ACT
+MOV S$装备栏洗炼位置 靴子
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX \ \洗炼位置：<$STR(S$装备栏洗炼位置)>\ \点击[确定]使用RMB洗炼----费用：1RMB\ \点击[取消]使用元宝洗炼----费用：50W元宝\  @确定装备栏RMB洗炼 @确定装备栏元宝洗炼
+
+[@确定装备栏RMB洗炼]
+#IF
+CheckContainsText 0;1;3;4;5;6;7;8;10;11; <$STR(N$装备栏洗炼位置)>;
+#ELSEACT
+MESSAGEBOX 请不要封包！！
+BREAK
+
+#IF
+EQUAL N$装备栏洗炼位置 0
+#ACT
+MOV S$装备栏洗炼位置 衣服
+
+#IF
+EQUAL N$装备栏洗炼位置 1
+#ACT
+MOV S$装备栏洗炼位置 武器
+
+#IF
+EQUAL N$装备栏洗炼位置 3
+#ACT
+MOV S$装备栏洗炼位置 项链
+
+#IF
+EQUAL N$装备栏洗炼位置 4
+#ACT
+MOV S$装备栏洗炼位置 头盔
+
+#IF
+EQUAL N$装备栏洗炼位置 5
+#ACT
+MOV S$装备栏洗炼位置 左手
+
+#IF
+EQUAL N$装备栏洗炼位置 6
+#ACT
+MOV S$装备栏洗炼位置 右手
+
+#IF
+EQUAL N$装备栏洗炼位置 7
+#ACT
+MOV S$装备栏洗炼位置 左戒
+
+#IF
+EQUAL N$装备栏洗炼位置 8
+#ACT
+MOV S$装备栏洗炼位置 右戒
+
+#IF
+EQUAL N$装备栏洗炼位置 10
+#ACT
+MOV S$装备栏洗炼位置 腰带
+
+#IF
+EQUAL N$装备栏洗炼位置 11
+#ACT
+MOV S$装备栏洗炼位置 靴子
+
+#IF
+CHECKUSEITEM <$STR(N$装备栏洗炼位置)>
+#ACT
+#ELSEACT
+MESSAGEBOX 你并未穿戴[<$STR(S$装备栏洗炼位置)>]!!
+BREAK
+
+#IF
+CHECKGAMEDIAMOND ? 1
+#ACT
+GAMEDIAMOND - 1
+GETRANDOMLINETEXT ..\QuestDiary\老王数据\装备栏洗炼\洗炼品质.txt <$STR(S$洗炼品质)>
+GetStringPos ..\QuestDiary\老王数据\装备栏洗炼\洗炼参数.txt 颜色属性<$STR(S$洗炼品质)>
+INC N0 1
+GetListString ..\QuestDiary\老王数据\装备栏洗炼\洗炼参数.txt <$STR(N0)> N$品质颜色 N$品质属性
+CHANGECUSTOMITEMTEXT <$STR(N$装备栏洗炼位置)> [<$STR(S$洗炼品质)>]
+CHANGECUSTOMITEMTEXTCOLOR <$STR(N$装备栏洗炼位置)> <$STR(N$品质颜色)>
+#ELSEACT
+MESSAGEBOX RMB不足，无法洗炼！！
+BREAK
+
+#OR
+EQUAL N$装备栏洗炼位置 1
+EQUAL N$装备栏洗炼位置 5
+EQUAL N$装备栏洗炼位置 6
+EQUAL N$装备栏洗炼位置 7
+EQUAL N$装备栏洗炼位置 8
+#ACT
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 0 = <$STR(N$品质属性)>
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 1 = <$STR(N$品质属性)>
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 4 = <$STR(N$品质属性)>
+SENDMSG 6 [<$STR(S$装备栏洗炼位置)>]洗炼成功，获得[<$STR(S$洗炼品质)>]品质属性!!
+BREAK
+#ELSEACT
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 2 = <$STR(N$品质属性)>
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 3 = <$STR(N$品质属性)>
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 7 = <$STR(N$品质属性)>
+SENDMSG 6 [<$STR(S$装备栏洗炼位置)>]洗炼成功，获得[<$STR(S$洗炼品质)>]品质属性!!
+BREAK
+
+[@确定装备栏元宝洗炼]
+#IF
+CheckContainsText 0;1;3;4;5;6;7;8;10;11; <$STR(N$装备栏洗炼位置)>;
+#ELSEACT
+MESSAGEBOX 请不要封包！！
+BREAK
+
+#IF
+EQUAL N$装备栏洗炼位置 0
+#ACT
+MOV S$装备栏洗炼位置 衣服
+
+#IF
+EQUAL N$装备栏洗炼位置 1
+#ACT
+MOV S$装备栏洗炼位置 武器
+
+#IF
+EQUAL N$装备栏洗炼位置 3
+#ACT
+MOV S$装备栏洗炼位置 项链
+
+#IF
+EQUAL N$装备栏洗炼位置 4
+#ACT
+MOV S$装备栏洗炼位置 头盔
+
+#IF
+EQUAL N$装备栏洗炼位置 5
+#ACT
+MOV S$装备栏洗炼位置 左手
+
+#IF
+EQUAL N$装备栏洗炼位置 6
+#ACT
+MOV S$装备栏洗炼位置 右手
+
+#IF
+EQUAL N$装备栏洗炼位置 7
+#ACT
+MOV S$装备栏洗炼位置 左戒
+
+#IF
+EQUAL N$装备栏洗炼位置 8
+#ACT
+MOV S$装备栏洗炼位置 右戒
+
+#IF
+EQUAL N$装备栏洗炼位置 10
+#ACT
+MOV S$装备栏洗炼位置 腰带
+
+#IF
+EQUAL N$装备栏洗炼位置 11
+#ACT
+MOV S$装备栏洗炼位置 靴子
+
+#IF
+CHECKUSEITEM <$STR(N$装备栏洗炼位置)>
+#ACT
+#ELSEACT
+MESSAGEBOX 你并未穿戴[<$STR(S$装备栏洗炼位置)>]!!
+BREAK
+
+#IF
+CHECKGAMEGOLD ? 500000
+#ACT
+GAMEGOLD - 500000
+GETRANDOMLINETEXT ..\QuestDiary\老王数据\装备栏洗炼\洗炼品质.txt <$STR(S$洗炼品质)>
+GetStringPos ..\QuestDiary\老王数据\装备栏洗炼\洗炼参数.txt 颜色属性<$STR(S$洗炼品质)>
+INC N0 1
+GetListString ..\QuestDiary\老王数据\装备栏洗炼\洗炼参数.txt <$STR(N0)> N$品质颜色 N$品质属性
+CHANGECUSTOMITEMTEXT <$STR(N$装备栏洗炼位置)> [<$STR(S$洗炼品质)>]
+CHANGECUSTOMITEMTEXTCOLOR <$STR(N$装备栏洗炼位置)> <$STR(N$品质颜色)>
+#ELSEACT
+MESSAGEBOX 元宝不足，无法洗炼！！
+BREAK
+
+#OR
+EQUAL N$装备栏洗炼位置 1
+EQUAL N$装备栏洗炼位置 5
+EQUAL N$装备栏洗炼位置 6
+EQUAL N$装备栏洗炼位置 7
+EQUAL N$装备栏洗炼位置 8
+#ACT
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 0 = <$STR(N$品质属性)>
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 1 = <$STR(N$品质属性)>
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 4 = <$STR(N$品质属性)>
+SENDMSG 6 [<$STR(S$装备栏洗炼位置)>]洗炼成功，获得[<$STR(S$洗炼品质)>]品质属性!!
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 2 = <$STR(N$品质属性)>
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 3 = <$STR(N$品质属性)>
+SetNewItemValue <$STR(N$装备栏洗炼位置)> 7 = <$STR(N$品质属性)>
+SENDMSG 6 [<$STR(S$装备栏洗炼位置)>]洗炼成功，获得[<$STR(S$洗炼品质)>]品质属性!!
+BREAK
+}
+
