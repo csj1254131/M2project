@@ -77,7 +77,7 @@ MOVR N$鉴定暴击伤害加成 1 8
 break
 
 #IF
-CheckContainsTextList ..\QuestDiary\游戏功能\鉴定系统\六介装备.txt <$CURRTEMNAME>
+CheckContainsTextList ..\QuestDiary\游戏功能\鉴定系统\十一到十二转装备.txt <$CURRTEMNAME>
 #act
 MOVR N$鉴定暴击率 1 5
 MOVR N$鉴定暴击抵抗 1 5
