@@ -5396,6 +5396,7 @@ equal N$宝石精英刷新概率 1
 #act
 MonGenEx bsfb1 29 25 [技能]尸王 1 1 0 249 
 sendmsg 0 触发了宝石怪刷怪
+
 [@刷新尸魔洞尸魔王]
 #ACT
 MOV G300 1
