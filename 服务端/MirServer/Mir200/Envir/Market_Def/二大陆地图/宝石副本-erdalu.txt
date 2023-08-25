@@ -1,0 +1,210 @@
+[@MAIN]
+#IF
+#ACT
+GOTO @宝石条件检测
+GOTO @宝石专属界面
+[@宝石专属界面]
+#IF
+#ACT
+#SAY
+<Img|width=3000|height=3000|bg=1|img=public/1900000651_1.png|show=4>
+<Img|children={0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}|a=4|percentx=50|percenty=50|img=custom/hl/hl_ui/hl_bg.png>
+<Layout|id=0|children={1}|x=770|y=5|width=50|height=50|color=x|link=@exit>
+<Button|id=1|nimg=custom/hl/hl_ui/1900000510.png|pimg=custom/hl/hl_ui/1900000511.png|link=@exit>
+<Layout|id=2|children={21}|x=300|y=5|width=170|height=30|color=x>
+<Text|id=21|a=4|percentx=50|percenty=50|color=100|size=20|outline=2|outlinecolor=0|text=宝石专属>
+<Layout|id=3|children={31}|x=20|y=62|width=730|height=445|color=x>
+<ListView|id=13|children={131}|x=132|y=65|width=3|height=445|margin=2|bounce=1|direction=1|color=x>
+<Img|id=131|img=custom/hl/hl_ui/hl_bg_02.png>
+<ListView|id=4|children={41,42,43,44,45,46,47,48}|x=22|y=63|width=110|height=450|margin=2|bounce=0|direction=1|color=x>
+<Button|id=41|nimg=custom/hl/hl_ui/an_01.png|pimg=custom/hl/hl_ui/an_02.png|color=103|size=18|text=宝石专属|link=@等级专属界面>
+
+
+<Layout|id=5|children={51,52,53,54,55,56}|x=140|y=60|width=320|height=450|color=X>
+<Text|id=51|x=5|y=8|color=251|size=18|outline=2|outlinecolor=0|text=地图介绍>
+<Img|id=52|children={521}|x=5|y=38|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=521|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=共十层>
+<Img|id=53|children={531}|x=5|y=78|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=531|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=击杀小怪有概率刷新精英和BOSS>
+<Img|id=54|children={541}|x=5|y=118|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=541|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=怪物难度较高，建议有足够实力后挑战>
+<Img|id=56|children={561}|x=5|y=158|img=custom/hl/hl_ui/icon_target_01.png>
+<Text|id=561|x=25|y=-3|color=255|size=18|outline=2|outlinecolor=0|text=每层都有概率掉落稀有百分比宝石，极大提升战斗力，打宝不容错过！>
+<Img|id=55|children={551}|x=10|y=200|width=580|img=custom/hl/dtcs_ui/map_ui_01.png>
+<ListView|id=551|a=4|percentx=50|percenty=50|children={91,92,93,94,95,96,97}|width=475|height=65|direction=2|bounce=0|margin=3|color=x>
+<ItemShow|id=92|itemid=45014|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=93|itemid=45025|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=94|itemid=45036|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=95|itemid=45047|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=96|itemid=45058|itemcount=1|showtips=1|bgtype=1>
+<ItemShow|id=97|itemid=40005|itemcount=1|showtips=1|bgtype=1>
+
+
+<ListView|id=7|x=175|y=370|children={70a,70,71,72,73,74,75,76,77,78}|width=600|height=65|direction=2|bounce=0|margin=2|color=x>
+<Layout|id=70a|children={70a1,70a2}|width=10|height=40|color=x>
+<Layout|id=70|children={701,702}|width=60|height=40|color=x>
+<Text|id=701|a=4|percentx=50|percenty=30|color=<$STR(N$颜色_1)>|size=18|outline=2|outlinecolor=0|text=1层地图|link=@进入1层地图>
+<Text|id=702|a=4|percentx=50|percenty=85|color=255|size=16|outline=2|outlinecolor=0|text=(宝石数5)>
+<Layout|id=71|children={711,712}|width=40|height=40|color=x>
+<Layout|id=72|children={721,722,723}|width=60|height=65|color=x>
+<Text|id=721|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_2)>|size=18|outline=2|outlinecolor=0|text=2层地图|link=@进入2层地图>
+<Text|id=722|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(宝石数8)>
+<Layout|id=73|children={731,732}|width=40|height=40|color=x>
+<Layout|id=74|children={741,742,743}|width=60|height=65|color=x>
+<Text|id=741|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_3)>|size=18|outline=2|outlinecolor=0|text=3层地图|link=@进入3层地图>
+<Text|id=742|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(宝石数11)>
+<Layout|id=75|children={751,752}|width=40|height=40|color=x>
+<Layout|id=76|children={761,762,763}|width=60|height=65|color=x>
+<Text|id=761|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_4)>|size=18|outline=2|outlinecolor=0|text=4层地图|link=@进入4层地图>
+<Text|id=762|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(宝石数14)>
+<Layout|id=77|children={771,772}|width=40|height=40|color=x>
+<Layout|id=78|children={781,782,783}|width=60|height=65|color=x>
+<Text|id=781|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_5)>|size=18|outline=2|outlinecolor=0|text=5层地图|link=@进入5层地图>
+<Text|id=782|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(宝石数17)>
+<ListView|id=8|x=175|y=435|children={80a,80,81,82,83,84,85,86,87,88}|width=610|height=65|direction=2|bounce=0|margin=3|color=x>
+<Layout|id=80a|children={80a1,80a2}|width=10|height=40|color=x>
+<Layout|id=80|children={801,802}|width=60|height=40|color=x>
+<Text|id=801|a=4|percentx=50|percenty=30|color=<$STR(N$颜色_6)>|size=18|outline=2|outlinecolor=0|text=6层地图|link=@进入6层地图>
+<Text|id=802|a=4|percentx=50|percenty=85|color=255|size=16|outline=2|outlinecolor=0|text=(宝石数20)>
+<Layout|id=81|children={811,812}|width=35|height=40|color=x>
+<Layout|id=82|children={821,822,823}|width=60|height=65|color=x>
+<Text|id=821|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_7)>|size=18|outline=2|outlinecolor=0|text=7层地图|link=@进入7层地图>
+<Text|id=822|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(宝石数23)>
+<Layout|id=83|children={831,832}|width=40|height=40|color=x>
+<Layout|id=84|children={841,842,843}|width=60|height=65|color=x>
+<Text|id=841|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_8)>|size=18|outline=2|outlinecolor=0|text=8层地图|link=@进入8层地图>
+<Text|id=842|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(宝石数26)>
+<Layout|id=85|children={851,852}|width=40|height=40|color=x>
+<Layout|id=86|children={861,862,863}|width=60|height=65|color=x>
+<Text|id=861|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_9)>|size=18|outline=2|outlinecolor=0|text=9层地图|link=@进入9层地图>
+<Text|id=862|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(宝石数30)>
+<Layout|id=87|children={871,872}|width=35|height=40|color=x>
+<Layout|id=88|children={881,882,883}|width=60|height=65|color=x>
+<Text|id=881|a=4|percentx=50|percenty=18|color=<$STR(N$颜色_10)>|size=18|outline=2|outlinecolor=0|text=10层地图|link=@进入10层地图>
+<Text|id=882|a=4|percentx=50|percenty=52|color=255|size=16|outline=2|outlinecolor=0|text=(宝石数34)>
+
+[@宝石条件检测]
+#IF
+#ACT
+GetStoneCount * N宝石数量
+#IF
+//CHECKVAR HUMAN N宝石数量 > 4
+#ACT
+MOV N$颜色_1 250
+#ELSEACT
+MOV N$颜色_1 248
+#IF
+//CHECKVAR HUMAN N宝石数量 > 7
+#ACT
+MOV N$颜色_2 250
+#ELSEACT
+MOV N$颜色_2 248
+#IF
+//CHECKVAR HUMAN N宝石数量 > 10
+#ACT
+MOV N$颜色_3 250
+#ELSEACT
+MOV N$颜色_3 248
+#IF
+//CHECKVAR HUMAN N宝石数量 > 13
+#ACT
+MOV N$颜色_4 250
+#ELSEACT
+MOV N$颜色_4 248
+#IF
+//CHECKVAR HUMAN N宝石数量 > 16
+#ACT
+MOV N$颜色_5 250
+#ELSEACT
+MOV N$颜色_5 248
+#IF
+//CHECKVAR HUMAN N宝石数量 > 19
+#ACT
+MOV N$颜色_6 248
+#IF
+//CHECKVAR HUMAN N宝石数量 > 22
+#ACT
+MOV N$颜色_7 248
+#IF
+//CHECKVAR HUMAN N宝石数量 > 25
+#ACT
+MOV N$颜色_8 248
+#IF
+//CHECKVAR HUMAN N宝石数量 > 29
+#ACT
+MOV N$颜色_9 248
+#IF
+//CHECKVAR HUMAN N宝石数量 > 33
+#ACT
+MOV N$颜色_10 248
+
+[@进入1层地图]
+#IF
+//CHECKVAR HUMAN N宝石数量 > 4
+#ACT
+MAP bsdt1
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>宝石数量不足5个</font>
+
+[@进入2层地图]
+#IF
+//CHECKVAR HUMAN N宝石数量 > 7
+#ACT
+MAP bsdt2
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>宝石数量不足8个</font>
+
+[@进入3层地图]
+#IF
+//CHECKVAR HUMAN N宝石数量 > 10
+#ACT
+MAP bsdt3
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>宝石数量不足11个</font>
+
+[@进入4层地图]
+#IF
+//CHECKVAR HUMAN N宝石数量 > 13
+#ACT
+MAP bsdt4
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>宝石数量不足14个</font>
+
+[@进入5层地图]
+#IF
+//CHECKVAR HUMAN N宝石数量 > 16
+#ACT
+MAP bsdt5
+#ELSEACT
+SENDMSG 9 <font color='#ff0000'>宝石数量不足17个</font>
+
+[@进入6层地图]
+#IF
+//CHECKVAR HUMAN N宝石数量 > 19
+#ACT
+SENDMSG 9 <font color='#ff0000'>暂未开放</font>
+
+[@进入7层地图]
+#IF
+//CHECKVAR HUMAN N宝石数量 > 22
+#ACT
+SENDMSG 9 <font color='#ff0000'>暂未开放</font>
+
+[@进入8层地图]
+#IF
+//CHECKVAR HUMAN N宝石数量 > 25
+#ACT
+SENDMSG 9 <font color='#ff0000'>暂未开放</font>
+
+[@进入9层地图]
+#IF
+//CHECKVAR HUMAN N宝石数量 > 29
+#ACT
+SENDMSG 9 <font color='#ff0000'>暂未开放</font>
+
+
+[@进入10层地图]
+#IF
+//CHECKVAR HUMAN N宝石数量 > 33
+#ACT
+SENDMSG 9 <font color='#ff0000'>暂未开放</font>

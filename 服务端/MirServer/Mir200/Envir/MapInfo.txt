@@ -2954,3 +2954,15 @@ h203  77 15  ->  h204 50 50
 
 ;技能地图尸王殿
 [swd1|Q004 尸王殿]  noreconnect(3:330:330) norecall nodearrecall norandommove norandommove runmon(1)
+
+;宝石副本
+[bsdt1|bsrlm04 宝石副本]  noreconnect(3:330:330) norecall nodearrecall norandommove runmon(1)
+[bsdt2|bsrlm04 宝石副本]  noreconnect(3:330:330) norecall nodearrecall norandommove runmon(1)
+[bsdt3|bsrlm04 宝石副本]  noreconnect(3:330:330) norecall nodearrecall norandommove runmon(1)
+[bsdt4|bsrlm04 宝石副本]  noreconnect(3:330:330) norecall nodearrecall norandommove runmon(1)
+[bsdt5|bsrlm04 宝石副本]  noreconnect(3:330:330) norecall nodearrecall norandommove runmon(1)
+[bsdt6|bsrlm04 宝石副本]  noreconnect(3:330:330) norecall nodearrecall norandommove runmon(1)
+[bsdt7|bsrlm04 宝石副本]  noreconnect(3:330:330) norecall nodearrecall norandommove runmon(1)
+[bsdt8|bsrlm04 宝石副本]  noreconnect(3:330:330) norecall nodearrecall norandommove runmon(1)
+[bsdt9|bsrlm04 宝石副本]  noreconnect(3:330:330) norecall nodearrecall norandommove runmon(1)
+[bsdt10|bsrlm04 宝石副本]  noreconnect(3:330:330) norecall nodearrecall norandommove runmon(1)

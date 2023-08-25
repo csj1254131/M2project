@@ -6273,7 +6273,182 @@ SENDMSG 0 255 191 怪物【[VIP]领主·唯我独尊·鬼王】在地图【VIP15地图】强势复活，
 #ACT
 MOV G428 1
 SENDMSG 0 255 191 怪物【[VIP]领主·唯我独尊·妖王】在地图【VIP15地图】强势复活，请各位勇士速去击杀！
+[@宝石地图1刷怪]
+#if
+#act
+movr N$宝石精英1刷新概率 20
+movr N$宝石BOSS1刷新概率 200
+#if
+equal N$宝石精英1刷新概率 1
+#act
+MonGenEx bsdt1 126 114 【十倍】宝石猪卫1 50 1 0 249 
 
+#if
+equal N$宝石BOSS1刷新概率 1
+#act
+MonGenEx bsdt1 126 114 【百倍】宝石煌金龙1 50 1 0 249 
+
+[@宝石地图2刷怪]
+#if
+#act
+movr N$宝石精英2刷新概率 20
+movr N$宝石BOSS2刷新概率 200
+#if
+equal N$宝石精英2刷新概率 1
+#act
+MonGenEx bsdt2 126 114 【十倍】宝石猪卫2 50 1 0 249 
+
+#if
+equal N$宝石BOSS2刷新概率 1
+#act
+MonGenEx bsdt2 126 114 【百倍】宝石煌金龙2 50 1 0 249 
+
+[@宝石地图3刷怪]
+#if
+#act
+movr N$宝石精英3刷新概率 20
+movr N$宝石BOSS3刷新概率 200
+#if
+equal N$宝石精英3刷新概率 1
+#act
+MonGenEx bsdt3 126 114 【十倍】宝石猪卫3 50 1 0 249 
+
+#if
+equal N$宝石BOSS3刷新概率 1
+#act
+MonGenEx bsdt3 126 114 【百倍】宝石煌金龙3 50 1 0 249 
+
+[@宝石地图4刷怪]
+#if
+#act
+movr N$宝石精英4刷新概率 20
+movr N$宝石BOSS4刷新概率 200
+#if
+equal N$宝石精英4刷新概率 1
+#act
+MonGenEx bsdt4 126 114 【十倍】宝石猪卫4 50 1 0 249 
+
+#if
+equal N$宝石BOSS4刷新概率 1
+#act
+MonGenEx bsdt4 126 114 【百倍】宝石煌金龙4 50 1 0 249 
+
+[@宝石地图5刷怪]
+#if
+#act
+movr N$宝石精英5刷新概率 20
+movr N$宝石BOSS5刷新概率 200
+#if
+equal N$宝石精英5刷新概率 1
+#act
+MonGenEx bsdt5 126 114 【十倍】宝石猪卫5 50 1 0 249 
+
+#if
+equal N$宝石BOSS5刷新概率 1
+#act
+MonGenEx bsdt5 126 114 【百倍】宝石煌金龙5 50 1 0 249 
+
+[@宝石地图6刷怪]
+#if
+#act
+movr N$宝石精英6刷新概率 20
+movr N$宝石BOSS6刷新概率 200
+#if
+equal N$宝石精英6刷新概率 1
+#act
+MonGenEx bsdt6 126 114 【十倍】宝石猪卫6 50 1 0 249 
+
+#if
+equal N$宝石BOSS6刷新概率 1
+#act
+MonGenEx bsdt6 126 114 【百倍】宝石煌金龙6 50 1 0 249 
+
+[@宝石地图7刷怪]
+#if
+#act
+movr N$宝石精英7刷新概率 20
+movr N$宝石BOSS7刷新概率 200
+#if
+equal N$宝石精英7刷新概率 1
+#act
+MonGenEx bsdt7 126 114 【十倍】宝石猪卫7 50 1 0 249 
+
+#if
+equal N$宝石BOSS7刷新概率 1
+#act
+MonGenEx bsdt7 126 114 【百倍】宝石煌金龙7 50 1 0 249 
+
+[@宝石地图8刷怪]
+#if
+#act
+movr N$宝石精英8刷新概率 20
+movr N$宝石BOSS8刷新概率 200
+#if
+equal N$宝石精英8刷新概率 1
+#act
+MonGenEx bsdt8 126 114 【十倍】宝石猪卫8 50 1 0 249 
+
+#if
+equal N$宝石BOSS8刷新概率 1
+#act
+MonGenEx bsdt8 126 114 【百倍】宝石煌金龙8 50 1 0 249 
+
+[@宝石地图9刷怪]
+#if
+#act
+movr N$宝石精英9刷新概率 20
+movr N$宝石BOSS9刷新概率 200
+#if
+equal N$宝石精英9刷新概率 1
+#act
+MonGenEx bsdt9 126 114 【十倍】宝石猪卫9 50 1 0 249 
+
+#if
+equal N$宝石BOSS9刷新概率 1
+#act
+MonGenEx bsdt9 126 114 【百倍】宝石煌金龙9 50 1 0 249 
+
+[@宝石地图10刷怪]
+#if
+#act
+movr N$宝石精英10刷新概率 20
+movr N$宝石BOSS10刷新概率 200
+#if
+equal N$宝石精英10刷新概率 1
+#act
+MonGenEx bsdt10 126 114 【十倍】宝石猪卫10 50 1 0 249 
+
+#if
+equal N$宝石BOSS10刷新概率 1
+#act
+MonGenEx bsdt10 126 114 【百倍】宝石煌金龙10 50 1 0 249 
+
+
+//拾取鉴定
+[@PickUpItemEX]
+#IF
+#OR
+equal <$CURRTEMSTDMODE> 5
+equal <$CURRTEMSTDMODE> 10
+equal <$CURRTEMSTDMODE> 66
+equal <$CURRTEMSTDMODE> 68
+#ACT
+break
+#elseact
+LinkPickUpItem
+
+#OR
+CheckItemFlag -1 1 1
+CheckItemFlag -1 2 1
+CheckItemFlag -1 3 1
+CheckItemFlag -1 4 1
+CheckItemFlag -1 5 1
+CheckItemFlag -1 6 1 
+CheckItemFlag -1 10 1 
+#ACT
+break
+#elseact
+#CALL [\游戏功能\鉴定系统\捡取鉴定.txt] @捡取鉴定
 
 
 
