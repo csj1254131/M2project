@@ -221,6 +221,25 @@ CHANGECUSTOMITEMVALUE -1 5 = <$STR(N$鉴定魔法值)> 3
 CHANGECUSTOMITEMVALUE -1 6 = <$STR(N$鉴定防御上限)> 3 
 CHANGECUSTOMITEMVALUE -1 7 = <$STR(N$鉴定魔防上限)> 3 
 CHANGECUSTOMITEMVALUE -1 8 = <$STR(N$鉴定暴击伤害加成)> 3 
+CLEARNAMELIST ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt
+AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 0
+AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 1
+AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 2
+AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 3
+AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 4
+AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 5
+AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 6
+AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 7
+AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 8
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
 CHANGECUSTOMITEMTEXT -1 [装备品质]：绝世 3
 CHANGECUSTOMITEMTEXTColor -1 70 3
 SetItemFlag 0 1 0
@@ -260,6 +279,15 @@ AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 5
 AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 6
 AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 7
 AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 8
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
 GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
 DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
 CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
@@ -305,6 +333,15 @@ CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
 GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
 DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
 CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
 CHANGECUSTOMITEMTEXT -1 [装备品质]：完美 3
 CHANGECUSTOMITEMTEXTColor -1 241 3
 ChangeItemNameColor -1 241
@@ -343,6 +380,15 @@ AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 5
 AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 6
 AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 7
 AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 8
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
 GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
 DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
 CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
@@ -402,6 +448,15 @@ CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
 GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
 DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
 CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
 CHANGECUSTOMITEMTEXT -1 [装备品质]：优秀 3
 CHANGECUSTOMITEMTEXTColor -1 227 3
 ChangeItemNameColor -1 227
@@ -440,6 +495,15 @@ AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 5
 AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 6
 AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 7
 AddTextList  ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt 8
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
+GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
+CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
 GetRandomText ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
 DelTextList ..\QuestDiary\游戏功能\鉴定系统\随机取值.txt S10
 CHANGECUSTOMITEMVALUE -1 <$STR(S10)> = 0 3
